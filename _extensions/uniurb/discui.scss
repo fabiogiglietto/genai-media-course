@@ -1,0 +1,643 @@
+/*-- scss:defaults --*/
+
+// ============================================
+// UNIVERSITÀ DEGLI STUDI DI URBINO CARLO BO
+// DISCUI — Dipartimento di Scienze della
+// Comunicazione, Studi Umanistici e Internazionali
+// Brand Identity Theme for Quarto Reveal.js
+// Piano di Comunicazione 2024-2026
+// ============================================
+
+// Import Google Fonts (Atkinson Hyperlegible + Montserrat)
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+// ============================================
+// DISCUI DEPARTMENT COLOR PALETTE
+// ============================================
+
+// Primary orange palette (from Brand Manual)
+$discui-primary: #E06029;        // RGB(224, 96, 41) — Primary department color
+$discui-medium: #F68B5F;         // RGB(246, 139, 95)
+$discui-coral: #F56D65;          // RGB(245, 109, 101)
+$discui-light: #F2A7A0;          // RGB(242, 167, 160)
+$discui-bg: #F2F2F2;             // RGB(242, 242, 242)
+
+// Derived tones for slide design
+$discui-dark: #B84D20;           // Darker variant for hover/active
+$discui-warm-bg: #C5612E;        // Warm background (matches PPTX template bg)
+
+// Ateneo blue (kept for university header and accents)
+$uniurb-blue-dark: #294973;      // RGB(41, 73, 115)
+$uniurb-blue-medium: #49668C;    // RGB(73, 102, 140)
+$uniurb-blue-light: #7289A6;     // RGB(114, 137, 166)
+$uniurb-blue-pale: #A4B0BF;      // RGB(164, 176, 191)
+
+// Semantic colors
+$color-success: #027368;
+$color-warning: #FAC73C;
+$color-danger: #D92B04;
+$color-info: $uniurb-blue-medium;
+
+// ============================================
+// REVEAL.JS THEME VARIABLES
+// ============================================
+
+// Backgrounds — light default (content slides)
+$body-bg: $discui-bg;
+$body-color: #333333;
+
+// Links
+$link-color: $discui-primary;
+$link-color-hover: $discui-dark;
+
+// Selection
+$selection-bg: $discui-primary;
+$selection-color: white;
+
+// Typography - Body
+$font-family-sans-serif: 'Atkinson Hyperlegible', Arial, Helvetica, sans-serif;
+$presentation-font-size-root: 40px;
+$presentation-line-height: 1.5;
+
+// Typography - Headings
+$presentation-heading-font: 'Montserrat', Arial, Helvetica, sans-serif;
+$presentation-heading-color: $discui-primary;
+$presentation-heading-font-weight: 600;
+$presentation-heading-letter-spacing: -0.02em;
+$presentation-heading-text-transform: none;
+
+// Heading sizes
+$presentation-h1-font-size: 2.4em;
+$presentation-h2-font-size: 1.6em;
+$presentation-h3-font-size: 1.3em;
+$presentation-h4-font-size: 1.1em;
+
+// Code
+$code-block-bg: white;
+$code-block-border-color: $discui-light;
+$code-color: #333333;
+
+/*-- scss:rules --*/
+
+// ============================================
+// SLIDE LAYOUTS
+// ============================================
+
+// Base slide styling
+.reveal .slides section {
+  text-align: left;
+  padding: 40px 60px;
+}
+
+// ============================================
+// TITLE SLIDE — Dark orange background
+// Matches PPTX template slide 2
+// ============================================
+.reveal .slides section.title-slide,
+.reveal .slides > section:first-child {
+  background: linear-gradient(135deg, $discui-warm-bg 0%, darken($discui-warm-bg, 6%) 100%);
+  color: white;
+  text-align: left;
+
+  h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 2.6em;
+    margin-bottom: 0.3em;
+    margin-top: 1.5em;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  h2, .subtitle {
+    color: rgba(255, 255, 255, 0.90);
+    font-weight: 400;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+  }
+
+  .author {
+    color: rgba(255, 255, 255, 0.95);
+    font-family: $presentation-heading-font;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: 1.5em;
+  }
+
+  .institute {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 0.85em;
+    margin-top: 0.3em;
+  }
+
+  .date {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8em;
+    margin-top: 0.8em;
+  }
+
+  .quarto-title-author-name {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+// ============================================
+// SECTION DIVIDER SLIDES — Dark orange bg
+// Usage: # Titolo {background-color="#C5612E"}
+// ============================================
+.reveal .slides section[data-background-color="#C5612E"],
+.reveal .slides section.section-slide {
+  color: white;
+  text-align: left;
+
+  h2 {
+    color: white;
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 1.2em;
+  }
+}
+
+// ============================================
+// CONTENT SLIDES — Light background (default)
+// ============================================
+.reveal .slides section h2 {
+  color: $discui-primary;
+  border-bottom: 3px solid $discui-primary;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.8em;
+}
+
+.reveal .slides section h3 {
+  color: $discui-dark;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+// ============================================
+// DARK CONTENT SLIDES — Orange background
+// Usage: ## Titolo {background-color="#C5612E"}
+// Matches PPTX template slides 3, 4, 7, etc.
+// ============================================
+.reveal .slides section[data-background-color="#C5612E"] {
+  h2 {
+    color: white;
+    border-bottom-color: rgba(255,255,255,0.4);
+  }
+
+  h3 {
+    color: rgba(255,255,255,0.9);
+  }
+
+  p, li {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  strong {
+    color: white;
+  }
+
+  em {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  code {
+    background-color: rgba(255,255,255,0.15);
+    color: white;
+  }
+
+  a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: underline;
+  }
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+.reveal p {
+  margin-bottom: 0.8em;
+  line-height: 1.6;
+}
+
+.reveal strong {
+  color: $discui-primary;
+  font-weight: 700;
+}
+
+.reveal em {
+  color: $discui-dark;
+}
+
+// ============================================
+// LISTS
+// ============================================
+
+.reveal ul,
+.reveal ol {
+  margin-left: 0.8em;
+  margin-bottom: 1em;
+}
+
+.reveal ul li,
+.reveal ol li {
+  margin-bottom: 0.6em;
+  line-height: 1.5;
+  padding-left: 0.3em;
+}
+
+.reveal ul li::marker {
+  color: $discui-primary;
+  font-weight: bold;
+}
+
+.reveal ol li::marker {
+  color: $discui-dark;
+  font-weight: 600;
+}
+
+// Nested lists
+.reveal ul ul,
+.reveal ol ol,
+.reveal ul ol,
+.reveal ol ul {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+// ============================================
+// BLOCKQUOTES
+// ============================================
+
+.reveal blockquote {
+  border-left: 5px solid $discui-primary;
+  background-color: white;
+  padding: 1.2em 1.8em;
+  margin: 1.5em 0;
+  font-style: italic;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  border-radius: 0 8px 8px 0;
+
+  p {
+    margin: 0;
+  }
+
+  cite, footer {
+    display: block;
+    margin-top: 0.8em;
+    font-style: normal;
+    font-weight: 600;
+    color: $discui-dark;
+    font-size: 0.9em;
+
+    &::before {
+      content: "— ";
+    }
+  }
+}
+
+// ============================================
+// TABLES — Matches PPTX template table style
+// ============================================
+
+.reveal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.85em;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.reveal table th {
+  background-color: $discui-primary;
+  color: white;
+  padding: 0.8em 1.2em;
+  text-align: left;
+  font-family: $presentation-heading-font;
+  font-weight: 600;
+}
+
+.reveal table td {
+  padding: 0.7em 1.2em;
+  border-bottom: 1px solid $discui-light;
+  background-color: white;
+}
+
+.reveal table tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal table tr:nth-child(even) td {
+  background-color: rgba($discui-light, 0.25);
+}
+
+.reveal table tr:hover td {
+  background-color: rgba($discui-medium, 0.15);
+}
+
+// ============================================
+// CODE BLOCKS
+// ============================================
+
+.reveal pre {
+  background-color: #fafbfc;
+  border: 1px solid $discui-light;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 0.7em;
+  padding: 1em;
+  margin: 1em 0;
+}
+
+.reveal code {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+  background-color: rgba($discui-light, 0.35);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.reveal pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+// Syntax highlighting accent
+.reveal .sourceCode .kw { color: $discui-primary; font-weight: 600; }
+.reveal .sourceCode .dt { color: $discui-dark; }
+.reveal .sourceCode .st { color: $color-success; }
+.reveal .sourceCode .fu { color: #6f42c1; }
+.reveal .sourceCode .co { color: #6a737d; font-style: italic; }
+
+// ============================================
+// IMAGES
+// ============================================
+
+.reveal img {
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.reveal figure {
+  margin: 1em 0;
+}
+
+.reveal figcaption {
+  font-size: 0.75em;
+  color: $discui-dark;
+  text-align: center;
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+// ============================================
+// CALLOUT BOXES
+// ============================================
+
+.callout {
+  border-radius: 8px;
+  border-left-width: 5px;
+  margin: 1em 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.callout-note {
+  border-left-color: $uniurb-blue-medium;
+  background-color: rgba($uniurb-blue-pale, 0.2);
+}
+
+.callout-tip {
+  border-left-color: $color-success;
+  background-color: rgba($color-success, 0.08);
+}
+
+.callout-warning {
+  border-left-color: $discui-primary;
+  background-color: rgba($discui-light, 0.3);
+}
+
+.callout-important,
+.callout-caution {
+  border-left-color: $color-danger;
+  background-color: rgba($color-danger, 0.08);
+}
+
+// ============================================
+// CUSTOM UTILITY CLASSES
+// ============================================
+
+// Highlight box — white card with orange border
+.highlight-box {
+  background-color: white;
+  border: 2px solid $discui-primary;
+  border-radius: 10px;
+  padding: 1.2em 1.5em;
+  margin: 1.2em 0;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+// Orange box — dark background card
+.orange-box {
+  background-color: $discui-warm-bg;
+  color: white;
+  border-radius: 10px;
+  padding: 1.2em 1.5em;
+  margin: 1.2em 0;
+
+  h3, h4 {
+    color: white;
+    margin-top: 0;
+  }
+
+  strong {
+    color: white;
+  }
+}
+
+// Blue box (kept for Ateneo-level content)
+.blue-box {
+  background-color: $uniurb-blue-dark;
+  color: white;
+  border-radius: 10px;
+  padding: 1.2em 1.5em;
+  margin: 1.2em 0;
+
+  h3, h4 {
+    color: $discui-medium;
+    margin-top: 0;
+  }
+}
+
+// Centered content
+.center {
+  text-align: center;
+}
+
+// Small text
+.small {
+  font-size: 0.8em;
+}
+
+// Large text
+.large {
+  font-size: 1.3em;
+}
+
+// Muted text
+.muted {
+  color: #888888;
+}
+
+// ============================================
+// UNIVERSITY HEADER BAR
+// (Mimics the PPTX top-left branding)
+// ============================================
+
+.uni-header {
+  font-family: $presentation-heading-font;
+  font-size: 0.55em;
+  font-weight: 700;
+  color: $discui-primary;
+  line-height: 1.4;
+  margin-bottom: 1.5em;
+
+  .dept {
+    font-weight: 400;
+    color: $discui-dark;
+  }
+}
+
+// On dark slides
+section[data-background-color="#C5612E"] .uni-header {
+  color: white;
+
+  .dept {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+// ============================================
+// THIS WEEK IN AI — Recurring segment style
+// ============================================
+
+.twiai-badge {
+  display: inline-block;
+  background-color: $discui-primary;
+  color: white;
+  font-family: $presentation-heading-font;
+  font-weight: 700;
+  font-size: 0.7em;
+  padding: 0.3em 0.8em;
+  border-radius: 6px;
+  margin-bottom: 0.8em;
+  letter-spacing: 0.03em;
+}
+
+// ============================================
+// FOOTER & NAVIGATION
+// ============================================
+
+.reveal .slide-number {
+  color: $discui-dark;
+  font-family: $presentation-heading-font;
+  font-size: 0.55em;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.reveal .footer {
+  font-family: $presentation-heading-font;
+  font-size: 0.45em;
+  font-weight: 400;
+  color: $discui-dark;
+  letter-spacing: 0.02em;
+}
+
+// Progress bar
+.reveal .progress {
+  background-color: rgba($discui-light, 0.4);
+  height: 4px;
+}
+
+.reveal .progress span {
+  background: linear-gradient(90deg, $discui-primary, $discui-medium);
+}
+
+// ============================================
+// LOGO
+// ============================================
+
+.reveal .slide-logo {
+  max-height: 70px;
+  max-width: 200px;
+}
+
+// ============================================
+// ACCESSIBILITY
+// ============================================
+
+// Focus states
+.reveal a:focus,
+.reveal button:focus,
+.reveal [tabindex]:focus {
+  outline: 3px solid $discui-primary;
+  outline-offset: 3px;
+}
+
+// Skip link (for accessibility)
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $discui-primary;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+// ============================================
+// PRINT STYLES
+// ============================================
+
+@media print {
+  .reveal .slides section {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .reveal .slides section h1,
+  .reveal .slides section h2,
+  .reveal .slides section h3 {
+    color: $discui-primary !important;
+  }
+
+  .reveal table th {
+    background-color: $discui-bg !important;
+    color: $discui-primary !important;
+  }
+}
+
+// ============================================
+// RESPONSIVE ADJUSTMENTS
+// ============================================
+
+@media screen and (max-width: 1200px) {
+  .reveal .slides section {
+    padding: 30px 40px;
+  }
+
+  $presentation-font-size-root: 32px;
+}

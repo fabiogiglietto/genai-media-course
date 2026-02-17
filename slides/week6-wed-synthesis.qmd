@@ -1,0 +1,425 @@
+---
+title: "Sintesi del Corso e Consultazioni Finali"
+subtitle: "IA Generativa e Media — Settimana 6"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "1 Aprile 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge} — Edizione Finale
+
+### Il futuro della persuasione automatizzata
+
+L'IA conversazionale puo essere fino al **52% piu persuasiva** di un messaggio statico, con effetti misurabili anche **dopo un mese**. Ma i modelli piu persuasivi producono il **30% di affermazioni inaccurate** [@hackenburg2025].
+
+::: {.callout-note}
+## Da discutere
+In un mondo dove l'IA e sempre piu persuasiva e sempre meno accurata, quale ruolo spetta alla ricerca come quella che avete condotto?
+:::
+
+::: {.notes}
+Ultima edizione del segmento This Week in AI. Il dato di Hackenburg et al. (2025, Science) e particolarmente significativo come chiusura del corso: sintetizza il trade-off fondamentale dell'IA generativa — piu potente ma meno affidabile. Studio con 76.977 risposte, 42.357 persone, 19 LLM su 707 questioni politiche. Il trade-off persuasione-accuratezza e confermato empiricamente: ottimizzare per la persuasione porta a sacrificare l'accuratezza. Le strategie basate su densita informativa sono le piu efficaci, ma anche le piu prone a imprecisioni. Collegamento con il progetto degli studenti: la ricerca empirica sulla ricezione dei contenuti IA e parte della risposta a questa sfida.
+:::
+
+## [This Week in AI]{.twiai-badge} — Edizione Finale
+
+### Sciami IA e minacce alla democrazia
+
+> "Gli sciami IA sono particolarmente attrezzati per ingegnerizzare un **consenso sintetico** che sembra colmare le divisioni esistenti."
+>
+> — @schroeder2026
+
+Le reti "Pravda" creano siti con articoli fabbricati, progettati per essere **ingeriti dai LLM** durante il riaddestramento. Le narrative false si **cristallizzano nei pesi del modello** [@schroeder2026].
+
+::: {.notes}
+Secondo segmento TWIAI finale. Schroeder et al. (2026, Science) descrivono lo scenario degli sciami IA: reti coordinate di agenti autonomi che usano LLM e architetture multi-agente per manipolare il discorso pubblico. L'avvelenamento dei dati (data poisoning) e particolarmente insidioso: le reti "Pravda" pro-Cremlino creano centinaia di siti con contenuti duplicati, ottimizzati non per i lettori umani ma per i web crawler. Quando i LLM vengono riaddestrati su questi dati contaminati, le narrative false si incorporano nei pesi del modello. Questo e il livello piu profondo della manipolazione: non singoli contenuti falsi, ma la corruzione dell'infrastruttura epistemica stessa.
+:::
+
+## [This Week in AI]{.twiai-badge} — Edizione Finale
+
+### La sicurezza dell'IA come problema sociotecnico
+
+::: {.highlight-box}
+**Lezione chiave:** Il *red-teaming* dell'IA non e solo un problema tecnico ma un **problema sociotecnico** che coinvolge valori, lavoro e danni psicologici [@gillespie2026].
+:::
+
+Come per la moderazione dei contenuti, rischiamo di scoprire **troppo tardi** i costi umani delle pratiche di sicurezza dell'IA.
+
+::: {.notes}
+Terzo e ultimo segmento TWIAI. Gillespie et al. (2026) analizzano il red-teaming dell'IA — la pratica di testare i modelli IA cercando di farli produrre contenuti dannosi — come un problema sociotecnico. Tre dimensioni critiche: (1) i valori e i pregiudizi dietro la definizione di "danno" — chi decide cosa e pericoloso?; (2) le condizioni di lavoro dei red-teamer, spesso precarie e con poche tutele; (3) l'impatto psicologico su chi deve immaginare e provocare scenari dannosi quotidianamente. Il parallelo con la moderazione dei contenuti sui social media e illuminante: ci sono voluti anni per riconoscere che i moderatori subivano danni psicologici significativi (PTSD documentato). Rischiamo di ripetere lo stesso errore con i red-teamer dell'IA. Questo inquadra la sicurezza dell'IA come una questione sociale, non solo tecnica.
+:::
+
+## Roadmap della sessione
+
+1. **This Week in AI** — edizione finale
+2. **Il filo del corso** — dai fondamenti al progetto
+3. **Il Paradosso dell'IA Generativa** — revisitato
+4. **Riflessioni metodologiche** — cosa abbiamo imparato
+5. **Prospettive future** — verso dove andiamo
+6. **Consultazioni finali** — ultime domande sul paper
+7. **Chiusura del corso**
+
+::: {.notes}
+Struttura dell'ultima sessione. Oggi chiudiamo il cerchio: partiamo dai temi delle prime settimane e vediamo come il percorso del corso — dalla teoria alla pratica — ha costruito le competenze per analizzare criticamente l'IA generativa nel sistema mediale. Le consultazioni finali occuperanno l'ultima parte della sessione. Il tono e riflessivo: non solo cosa abbiamo imparato, ma come possiamo continuare ad imparare in un campo che evolve cosi rapidamente.
+:::
+
+## Il Filo del Corso {background-color="#C5612E"}
+
+::: {.notes}
+Sezione centrale: ricostruire il percorso del corso, collegando i temi delle 6 settimane.
+:::
+
+## Dalle definizioni al progetto: il percorso
+
+| Settimana | Tema | Concetto chiave |
+|-----------|------|-----------------|
+| **1** | Fondamenti | IA generativa, sistema mediale ibrido, paradosso GenAI |
+| **2** | Produzione e rischi | Deepfake, disinformazione, persuasione, regolamentazione |
+| **3** | Seminario | Comunicazione politica, LLMs-in-the-loop, detection |
+| **4** | Progetto | AI slop, raccolta dati, Meta Content Library |
+| **5** | Analisi | Classificazione IA, validazione umana, intercoder reliability |
+| **6** | Scrittura | Struttura IMRaD, revisione tra pari, sintesi |
+
+::: {.notes}
+Panoramica delle 6 settimane. Il percorso segue una logica precisa: le prime 2 settimane costruiscono il framework teorico (cos'e l'IA generativa, come trasforma i media, quali rischi comporta, come si regola). La settimana 3 con Bruna Paroni introduce la metodologia. Le settimane 4-5 applicano la teoria ai dati attraverso il progetto. La settimana 6 sintetizza tutto nel paper. Ogni tappa era necessaria: senza la teoria, l'analisi sarebbe cieca; senza la pratica, la teoria resterebbe astratta. Chiedere agli studenti: "Quale passaggio vi ha sorpreso di piu?"
+:::
+
+## Il sistema mediale ibrido nell'era dell'IA
+
+::: {.columns}
+::: {.column width="50%"}
+### Il framework di Chadwick
+
+Il sistema mediale ibrido e costruito sulle **interazioni** tra vecchi e nuovi media [@chadwick2011].
+
+L'IA generativa aggiunge un nuovo attore: un agente che produce contenuti, simula identita e interagisce con gli utenti.
+:::
+
+::: {.column width="50%"}
+### Cosa avete osservato
+
+Nel vostro progetto avete analizzato un fenomeno che **esiste** grazie a questa ibridita:
+
+- Immagini IA generate da account automatizzati
+- Distribuite su piattaforme con algoritmi
+- Commentate da utenti reali
+:::
+:::
+
+::: {.notes}
+Collegamento tra la teoria della settimana 1 e il progetto. Il framework di Chadwick (2011) descrive un sistema in cui vecchi media (TV, giornali) e nuovi media (social, piattaforme) interagiscono. L'IA generativa complica ulteriormente questo sistema: ora abbiamo contenuti generati da macchine, distribuiti da algoritmi, e consumati/commentati da utenti umani. L'AI slop e un esempio perfetto di questa ibridita: le immagini sono prodotte dall'IA, amplificate dagli algoritmi di Facebook, e poi gli utenti umani reagiscono — a volte con consapevolezza dell'artificialita, a volte no. Il progetto degli studenti analizza esattamente questo nodo: la ricezione umana di contenuti non-umani.
+:::
+
+## Dall'IA generativa alla disinformazione
+
+Il corso ha tracciato un percorso che collega **produzione**, **circolazione** e **ricezione**:
+
+- L'IA **produce** contenuti indistinguibili [@gilardi2025; @mattis2025]
+- Le piattaforme **amplificano** attraverso algoritmi di raccomandazione
+- Gli utenti faticano a **riconoscere** i contenuti generati [@pewresearch2025]
+- La fiducia nell'intero ecosistema si **erode** [@ferrara2026]
+
+::: {.highlight-box}
+**Il vostro progetto** si inserisce nella terza fase: avete analizzato empiricamente **come gli utenti reagiscono** ai contenuti generati dall'IA sulle piattaforme.
+:::
+
+::: {.notes}
+Sintesi del percorso concettuale del corso. Produzione: Gilardi et al. (2025) mostrano che la qualita percepita dei contenuti IA e equivalente a quella umana; Mattis & de Vreese (2025) documentano come l'IA sta trasformando ogni fase del giornalismo. Circolazione: gli algoritmi delle piattaforme amplificano i contenuti ad alto engagement, indipendentemente dalla loro autenticita. Ricezione: il Pew Research Center (2025) mostra che il 76% ritiene importante riconoscere l'IA ma solo il 47% si sente in grado di farlo. Erosione della fiducia: Ferrara (2026) teorizza il paradosso GenAI. Il progetto degli studenti contribuisce alla comprensione della fase di ricezione — un'area ancora poco studiata empiricamente.
+:::
+
+## Il Paradosso Rivisitato {background-color="#C5612E"}
+
+::: {.notes}
+Sezione dedicata a rivisitare il concetto centrale del corso — il Paradosso dell'IA Generativa di Ferrara (2026) — alla luce di tutto cio che abbiamo studiato e scoperto.
+:::
+
+## Il Paradosso dell'IA Generativa, 6 settimane dopo
+
+::: {.orange-box}
+### Il Paradosso
+Man mano che i contenuti sintetici diventano onnipresenti e indistinguibili, le societa potrebbero razionalmente **scontare tutte le prove digitali**. La verifica diventa un privilegio, e la responsabilita si erode [@ferrara2026].
+:::
+
+Dopo 6 settimane, avete gli strumenti per valutare questo paradosso:
+
+- I **deepfake** generano incertezza, non solo inganno [@vaccari2020]
+- La **disinformazione visiva** dipende dal contesto [@hameleers2026]
+- La **persuasione IA** cresce con l'inaccuratezza [@hackenburg2025]
+- Gli **sciami IA** possono fabbricare consenso [@schroeder2026]
+
+::: {.notes}
+Rivisitazione del paradosso GenAI di Ferrara alla luce di tutto il corso. Nella settimana 1 lo abbiamo introdotto come concetto teorico. Ora, dopo aver studiato i deepfake (Vaccari & Chadwick), la disinformazione visiva (Hameleers & van der Meer), la persuasione IA (Hackenburg et al.), gli sciami IA (Schroeder et al.) e il red-teaming (Gillespie et al.), e dopo aver analizzato empiricamente le reazioni degli utenti all'AI slop, il paradosso non e piu un'astrazione ma un fenomeno osservabile. Chiedere agli studenti: "Dopo aver analizzato i commenti degli utenti ai contenuti AI slop, il paradosso di Ferrara vi sembra confermato, smentito o sfumato?"
+:::
+
+## La realta sintetica: un bilancio
+
+| Livello | Minaccia | Cosa abbiamo studiato |
+|---------|----------|----------------------|
+| **Contenuto** | Testo, immagini, audio, video generati | AI slop su Facebook, deepfake, Gemini |
+| **Identita** | Persona fittizie, cloni vocali | Account automatizzati, bot |
+| **Interazione** | Persuasione adattiva, chatbot | Persuasione IA [@hackenburg2025], chatbot [@dubey2026] |
+| **Istituzioni** | Corruzione dei processi di verifica | EU AI Act, Code of Practice, red-teaming |
+
+Adattato da @ferrara2026
+
+::: {.notes}
+Il modello a strati di Ferrara (2026) come strumento di sintesi del corso. Livello 1 (contenuto sintetico): lo abbiamo studiato nella settimana 1 con le definizioni, nella settimana 2 con i deepfake, e applicato nel progetto con l'AI slop. Livello 2 (identita sintetica): le pagine che diffondono AI slop su Facebook usano account automatizzati. Livello 3 (interazione sintetica): Hackenburg et al. (2025) sulla persuasione conversazionale e Dubey et al. (2026) sui chatbot di notizie mostrano come l'interazione IA influenza le credenze. Livello 4 (istituzioni sintetiche): la regolamentazione europea (AI Act, Code of Practice) e il red-teaming (Gillespie et al.) sono risposte istituzionali a questa sfida. Il corso ha toccato tutti e 4 i livelli.
+:::
+
+## Riflessioni Metodologiche {background-color="#C5612E"}
+
+::: {.notes}
+Sezione sulle riflessioni metodologiche — cosa abbiamo imparato sull'uso dell'IA come strumento di ricerca.
+:::
+
+## L'IA come strumento di ricerca: lezioni apprese
+
+::: {.columns}
+::: {.column width="50%"}
+### Punti di forza
+
+- **Scala** — analisi di centinaia di contenuti
+- **Coerenza** — applicazione sistematica del codebook
+- **Velocita** — classificazione rapida
+- **Multimodalita** — analisi di testo e immagini
+:::
+
+::: {.column width="50%"}
+### Limiti
+
+- **Variabilita** — risultati non perfettamente replicabili
+- **Opacita** — il "ragionamento" del modello resta oscuro
+- **Bias** — i modelli riflettono i dati di addestramento
+- **Validazione necessaria** — l'IA non sostituisce l'umano
+:::
+:::
+
+::: {.notes}
+Riflessione collettiva sull'esperienza del progetto. Chiedere agli studenti: "Quali sono stati i punti di forza e i limiti dell'uso di Gemini nella vostra analisi?" L'IA permette di analizzare dataset che sarebbero ingestibili manualmente, ma introduce variabilita e opacita. La lezione piu importante: la validazione umana non e opzionale ma strutturale. La metodologia LLMs-in-the-loop di Marino & Giglietto (2024) funziona proprio perche tratta l'IA come un codificatore da validare, non come un oracolo. Questo approccio critico e la competenza piu preziosa che gli studenti portano via dal corso.
+:::
+
+## La validazione come principio
+
+::: {.highlight-box}
+**Lezione fondamentale del corso:** In un mondo di contenuti sintetici, la **validazione** non e un optional metodologico ma un **principio epistemico**. Cio che non e verificato non e conoscenza.
+:::
+
+Questo vale per:
+
+- La **ricerca** — validazione umana delle classificazioni IA
+- Il **giornalismo** — verifica delle fonti e dei contenuti [@mattis2025]
+- La **democrazia** — contrasto al consenso sintetico [@schroeder2026]
+- La **vita quotidiana** — scetticismo calibrato verso i contenuti digitali [@ferrara2026]
+
+::: {.notes}
+Concetto trasversale che unisce tutto il corso. La validazione e il filo rosso: nel progetto, abbiamo validato le classificazioni di Gemini contro il giudizio umano. Nel giornalismo, la verifica delle fonti diventa ancora piu cruciale nell'era dei contenuti sintetici. Nella democrazia, il contrasto al consenso sintetico richiede meccanismi di validazione delle informazioni. Nella vita quotidiana, Ferrara propone il concetto di "igiene epistemica" — abitudini che riducono l'esposizione alla manipolazione. La competenza critica che gli studenti hanno sviluppato nel progetto e trasferibile a tutti questi ambiti.
+:::
+
+## Prospettive Future {background-color="#C5612E"}
+
+::: {.notes}
+Sezione sulle prospettive future. Cosa ci aspetta nel campo dell'IA generativa e dei media.
+:::
+
+## Verso dove andiamo
+
+::: {.columns}
+::: {.column width="50%"}
+### Sfide emergenti
+
+- Agenti IA **autonomi** che agiscono nel mondo
+- **Multimodalita** crescente (testo + immagini + video + azione)
+- Sciami IA sempre piu **sofisticati** [@schroeder2026]
+- **Erosione della fiducia** istituzionale [@ferrara2026]
+:::
+
+::: {.column width="50%"}
+### Risposte possibili
+
+- Infrastruttura di **provenienza** dei contenuti
+- **Governance** delle piattaforme (frizione per la viralita)
+- Riprogettazione dei **processi istituzionali**
+- **Resilienza pubblica** e igiene epistemica
+:::
+:::
+
+::: {.notes}
+Le sfide e le risposte possibili. Lato sfide: gli agenti IA autonomi (Google ha annunciato Project Astra, OpenAI ha Operator) amplieranno le capacita degli sciami IA; la multimodalita renderà i contenuti sintetici ancora piu convincenti; l'erosione della fiducia e un trend strutturale non facilmente invertibile. Lato risposte: Ferrara (2026) propone una "pila di mitigazione" che tratta provenance, governance delle piattaforme, riprogettazione istituzionale e resilienza pubblica come interventi complementari, non sostituibili. Il concetto chiave: non esiste una soluzione singola, serve un approccio sistemico.
+:::
+
+## La pila di mitigazione
+
+::: {.orange-box}
+### Un approccio sistemico
+Il rischio della realta sintetica non puo essere "risolto" da un singolo strumento o policy. La mitigazione deve essere trattata come una **pila di interventi complementari** [@ferrara2026].
+:::
+
+| Livello | Intervento |
+|---------|-----------|
+| **Infrastruttura** | Provenienza crittografica, credenziali dei contenuti |
+| **Piattaforme** | Frizione alla viralita, trasparenza algoritmica |
+| **Istituzioni** | Processi basati su verifica, non su artefatti |
+| **Societa** | Igiene epistemica, scetticismo calibrato |
+
+::: {.notes}
+La "mitigation stack" di Ferrara (2026) come quadro per le risposte future. A livello infrastrutturale: sistemi di provenienza crittografica (come C2PA) che certificano l'origine dei contenuti. A livello di piattaforme: limitare l'amplificazione algoritmica di contenuti non verificati, soprattutto durante periodi critici (elezioni, crisi). A livello istituzionale: passare dalla "fiducia basata sugli artefatti" (credere a cio che sembra autentico) alla "fiducia basata sui processi" (credere a cio che e generato e trasmesso attraverso procedure autenticate). A livello sociale: l'igiene epistemica — abitudini che riducono la vulnerabilita alla manipolazione, come l'affidarsi a canali autenticati per le informazioni critiche.
+:::
+
+## Il ruolo della ricerca
+
+La ricerca che avete condotto in questo corso contribuisce a una missione piu ampia:
+
+- **Comprendere** come gli utenti interagiscono con contenuti sintetici
+- **Misurare** la capacita di riconoscimento dell'IA generativa
+- **Documentare** i pattern di ricezione nelle comunita online
+- **Informare** le policy delle piattaforme e la regolamentazione
+
+::: {.callout-note}
+## Da discutere
+Dopo 6 settimane di studio e ricerca, come e cambiata la vostra percezione dell'IA generativa e del suo impatto sul sistema mediale?
+:::
+
+::: {.notes}
+Momento riflessivo. Il progetto degli studenti non e solo un esercizio didattico ma un contributo reale alla comprensione del fenomeno AI slop. Dare qualche minuto alla classe per riflettere e condividere come e cambiata la loro percezione dell'IA generativa. All'inizio del corso, molti probabilmente vedevano l'IA come uno strumento (utile o minaccioso); ora dovrebbero avere una visione piu sfumata: l'IA come attore nel sistema mediale ibrido, con implicazioni che vanno oltre il singolo contenuto. Questa capacita di analisi critica e il risultato piu importante del corso.
+:::
+
+## Consultazioni Finali {background-color="#C5612E"}
+
+::: {.notes}
+Spazio per le ultime consultazioni sui paper prima della consegna.
+:::
+
+## Ultime domande sul paper
+
+::: {.highlight-box}
+**Promemoria consegna:**
+
+- Formato **PDF** caricato su Moodle (blended.uniurb.it)
+- Scadenza: **2 settimane prima dell'appello** di giugno
+- Un file per gruppo con i nomi di tutti i membri
+- Dichiarazione d'uso degli strumenti IA inclusa
+:::
+
+Domande frequenti:
+
+- Lunghezza consigliata: **5.000-6.000 parole** (esclusa bibliografia)
+- Il prompt va incluso **integralmente** (anche in appendice)
+- Le tabelle di dati contano come contenuto, non come appendice
+
+::: {.notes}
+Spazio per le consultazioni finali. Rispondere alle domande dei gruppi sulla struttura, i contenuti e i requisiti del paper. Domande frequenti: lunghezza (5.000-6.000 parole e un indicazione, non un vincolo rigido), inclusione del prompt (obbligatoria, anche in appendice se molto lungo), formato delle tabelle (le tabelle di dati fanno parte del corpo del paper). Ricordare la dichiarazione d'uso dell'IA: un breve paragrafo nel metodo che specifichi quali strumenti IA sono stati usati e come.
+:::
+
+## Valutazione: riepilogo
+
+| Componente | Peso | Dettaglio |
+|-----------|:----:|-----------|
+| **Progetto di gruppo** | 75% | Paper di ricerca (max 23,25 punti) |
+| **Partecipazione** | 10% | Presenze alle lezioni (max 3,1 punti) |
+| **Colloquio orale** | 15% | Discussione del progetto (max 4,65 punti) |
+
+::: {.callout-tip}
+## Suggerimento
+Il colloquio orale consiste nella **discussione del paper**. Tutti i membri del gruppo devono essere in grado di presentare e difendere ogni sezione.
+:::
+
+::: {.notes}
+Riepilogo del sistema di valutazione. Il colloquio orale e individuale: ogni studente deve dimostrare di conoscere l'intero paper, non solo la sezione che ha scritto. Domande tipiche: perche avete scelto questa domanda di ricerca? Come avete disegnato il codebook? Quali sono i limiti del vostro studio? Come si collegano i risultati alla teoria? Invitare gli studenti a prepararsi rileggendo il paper e le letture del corso prima dell'appello.
+:::
+
+## Competenze Acquisite {background-color="#C5612E"}
+
+::: {.notes}
+Sezione finale prima della chiusura: riepilogo delle competenze sviluppate nel corso.
+:::
+
+## Cosa portate via da questo corso
+
+::: {.columns}
+::: {.column width="50%"}
+### Conoscenze
+
+- Framework teorici sull'IA e i media
+- Comprendere la realta sintetica
+- Conoscere i rischi e le opportunita
+- Orientarsi nella regolamentazione
+:::
+
+::: {.column width="50%"}
+### Competenze
+
+- Analizzare contenuti IA con spirito critico
+- Usare LLM come strumenti di ricerca
+- Validare le classificazioni automatiche
+- Scrivere un paper di ricerca
+:::
+:::
+
+::: {.highlight-box}
+**La competenza piu importante:** Saper valutare criticamente cio che vedete, leggete e ascoltate in un mondo di contenuti sintetici.
+:::
+
+::: {.notes}
+Momento di chiusura riflessiva. Le competenze elencate corrispondono ai Descrittori di Dublino del corso: conoscenza e comprensione (framework teorici), applicazione delle conoscenze (uso di strumenti IA, metodologia LLMs-in-the-loop), autonomia di giudizio (valutazione critica), abilita comunicative (scrittura del paper, presentazione). La competenza trasversale piu importante e la capacita di analisi critica: in un mondo dove tutto puo essere generato, la capacita di valutare, verificare e contestualizzare e il bene piu prezioso. Questo corso ha cercato di fornire gli strumenti concettuali e pratici per farlo.
+:::
+
+## Continuare ad imparare
+
+L'IA generativa evolve piu rapidamente di qualsiasi corso possa coprire.
+
+Per restare aggiornati:
+
+- **Leggere** le riviste di riferimento (Digital Journalism, Political Communication, New Media & Society)
+- **Sperimentare** con gli strumenti (Gemini, NotebookLM, nuovi modelli)
+- **Valutare criticamente** le notizie sull'IA (distinguere hype da sostanza)
+- **Applicare** i framework teorici a nuovi fenomeni
+
+::: {.notes}
+Ultimo messaggio didattico. Il campo dell'IA generativa evolve cosi rapidamente che le conoscenze specifiche (quali modelli esistono, quali piattaforme dominano) diventeranno presto obsolete. Cio che resta sono i framework teorici (sistema mediale ibrido, realta sintetica, paradosso GenAI) e le competenze metodologiche (analisi critica, validazione, scrittura scientifica). Incoraggiare gli studenti a continuare a seguire il campo, applicando gli strumenti concettuali appresi a nuovi fenomeni che non possiamo ancora prevedere.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+Grazie per la partecipazione e l'impegno in queste 6 settimane.
+
+**Consegna paper:** 2 settimane prima dell'appello di giugno
+
+**Colloquio orale:** durante l'appello di giugno
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura del corso. Ringraziare gli studenti per la partecipazione attiva, il lavoro sui progetti e l'impegno nelle 6 settimane. Ricordare le scadenze finali: consegna del paper 2 settimane prima dell'appello, colloquio orale durante l'appello. Augurare buon lavoro per la finalizzazione dei paper. In bocca al lupo!
+:::
+
+## Riferimenti

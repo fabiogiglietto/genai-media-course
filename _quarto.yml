@@ -1,0 +1,53 @@
+project:
+  type: default
+  output-dir: _output
+
+format:
+  revealjs:
+    theme: [default, _extensions/uniurb/discui.scss]
+    logo: assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    background-transition: fade
+    highlight-style: github
+    code-line-numbers: false
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+    navigation-mode: linear
+    loop: false
+    history: true
+    touch: true
+    keyboard: true
+    overview: true
+    help: true
+    auto-animate: true
+    auto-play-media: false
+    preload-iframes: false
+    auto-slide: 0
+    mouse-wheel: false
+    preview-links: auto
+    pdf-separate-fragments: true
+    pdf-max-pages-per-slide: 1
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+
+lang: it
+
+bibliography: references.bib
+csl: apa.csl

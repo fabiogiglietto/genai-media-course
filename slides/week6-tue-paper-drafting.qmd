@@ -1,0 +1,319 @@
+---
+title: "Lavoro di Gruppo: Stesura Paper"
+subtitle: "IA Generativa e Media — Settimana 6"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "31 Marzo 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## Roadmap della sessione
+
+1. **Obiettivi della giornata** — struttura del lavoro in aula
+2. **Revisione tra pari** — come dare e ricevere feedback
+3. **Checklist metodologica e teorica** — verifica finale
+4. **Indicatori di qualita** — criteri di valutazione
+5. **Blocchi di lavoro** — sessioni strutturate di scrittura
+6. **Scadenze** — timeline verso la consegna
+
+::: {.notes}
+Sessione prevalentemente operativa: la maggior parte del tempo sara dedicata alla scrittura in aula. Le slide iniziali forniscono la cornice, poi i gruppi lavorano con il supporto del docente. La revisione tra pari e un momento importante: ogni gruppo leggera e commentera il lavoro di un altro gruppo. Circolare tra i gruppi per monitorare lo stato di avanzamento e rispondere a domande specifiche.
+:::
+
+## Obiettivi della Sessione {background-color="#C5612E"}
+
+::: {.notes}
+Oggi e una giornata di lavoro. L'obiettivo e uscire con una bozza avanzata del paper.
+:::
+
+## Cosa fare oggi
+
+::: {.highlight-box}
+**Obiettivo:** Al termine della sessione, ogni gruppo dovra avere una **bozza completa** (anche se grezza) di almeno **3 delle 4 sezioni principali** del paper.
+:::
+
+Struttura della sessione:
+
+| Tempo | Attivita |
+|-------|----------|
+| 14:00 – 14:15 | Introduzione e organizzazione |
+| 14:15 – 14:45 | **Blocco 1:** Scrittura individuale/gruppo |
+| 14:45 – 15:00 | **Revisione tra pari** (scambio bozze) |
+| 15:00 – 15:15 | Feedback e discussione collettiva |
+| 15:15 – 15:50 | **Blocco 2:** Scrittura con integrazioni |
+| 15:50 – 16:00 | Riepilogo e prossimi passi |
+
+::: {.notes}
+Struttura della sessione in blocchi di lavoro. Il primo blocco (30 minuti) e per la scrittura libera: ogni gruppo lavora sulla sezione che ritiene piu urgente. Poi uno scambio di bozze tra gruppi per la revisione tra pari (15 minuti per leggere e commentare). Feedback collettivo per condividere osservazioni generali. Il secondo blocco (35 minuti) e per integrare il feedback ricevuto e continuare la scrittura. Questa struttura alternata scrittura-feedback e piu produttiva della scrittura continua.
+:::
+
+## Revisione tra Pari {background-color="#C5612E"}
+
+::: {.notes}
+La revisione tra pari e una competenza accademica fondamentale. Corrisponde al descrittore di Dublino sulle competenze comunicative.
+:::
+
+## Come dare feedback costruttivo
+
+::: {.columns}
+::: {.column width="50%"}
+### Cosa valutare
+
+- **Chiarezza** — il testo e comprensibile?
+- **Struttura** — le sezioni sono ben organizzate?
+- **Coerenza** — l'argomentazione e logica?
+- **Citazioni** — le fonti sono pertinenti?
+- **Metodo** — la procedura e replicabile?
+:::
+
+::: {.column width="50%"}
+### Come commentare
+
+- Essere **specifici** (non "bello" o "brutto")
+- Indicare il **punto esatto** del testo
+- Suggerire **alternative** concrete
+- Bilanciare **punti di forza** e criticita
+- Usare un tono **rispettoso** e professionale
+:::
+:::
+
+::: {.notes}
+La revisione tra pari non e solo utile per chi la riceve, ma anche per chi la fa: leggere criticamente il lavoro altrui affina la propria capacita di scrittura. Dare indicazioni precise: non "l'introduzione non funziona" ma "nel secondo paragrafo dell'introduzione, il collegamento tra AI slop e sistema mediale ibrido non e chiaro — forse aggiungere un passaggio intermedio". Bilanciare sempre i commenti positivi con quelli critici. Ogni gruppo ricevera la bozza di un altro gruppo e avra 15 minuti per leggerla e scrivere 3-5 commenti.
+:::
+
+## Scheda di revisione
+
+| Criterio | Punteggio (1-5) | Commento |
+|----------|:---------------:|----------|
+| L'introduzione e focalizzata sulla domanda di ricerca? | | |
+| Il metodo e sufficientemente dettagliato? | | |
+| I risultati sono presentati senza interpretazione? | | |
+| La discussione collega dati e teoria? | | |
+| Le citazioni sono corrette e pertinenti? | | |
+
+::: {.callout-tip}
+## Suggerimento
+Usate questa scheda come guida. Scrivete **almeno 3 commenti specifici** per il gruppo che state revisionando.
+:::
+
+::: {.notes}
+Fornire una copia della scheda a ogni gruppo (oppure condividerla su Google Docs). I gruppi devono assegnare un punteggio da 1 a 5 per ogni criterio e scrivere commenti specifici. I commenti scritti sono piu utili dei commenti orali perche possono essere consultati durante la revisione successiva. Dopo la revisione, restituire la scheda al gruppo originale con i commenti.
+:::
+
+## Checklist Metodologica {background-color="#C5612E"}
+
+::: {.notes}
+Verifica finale della solidita metodologica del paper.
+:::
+
+## Verifica del metodo
+
+::: {.orange-box}
+### Domanda chiave
+Se un altro ricercatore leggesse il vostro metodo, sarebbe in grado di **replicare** la vostra analisi?
+:::
+
+Elementi indispensabili:
+
+- **Dataset:** dimensione, fonte, periodo, criteri di selezione
+- **Pipeline LLMs-in-the-loop:** prompt esatto, modello, parametri
+- **Codebook:** ogni categoria con definizione ed esempio
+- **Validazione:** dimensione del campione, codificatori, protocollo
+- **Metriche:** tipo di misura (Cohen's kappa), soglie di accettabilita
+
+::: {.notes}
+Questa checklist deve essere soddisfatta prima della consegna. Il criterio ultimo e la replicabilita: un ricercatore esterno, con accesso agli stessi dati, deve poter riprodurre la vostra analisi. Questo richiede: (1) descrizione precisa del dataset, (2) prompt esatto dato a Gemini, (3) codebook completo, (4) procedura di validazione dettagliata, (5) metriche di affidabilita con valori numerici. Se manca uno di questi elementi, il metodo e incompleto.
+:::
+
+## Verifica teorica
+
+::: {.highlight-box}
+**Domanda chiave:** I vostri risultati **dialogano** con almeno 2-3 framework teorici del corso?
+:::
+
+| Framework | Collegamento possibile |
+|-----------|----------------------|
+| Paradosso GenAI [@ferrara2026] | Fiducia, erosione epistemica, realta sintetica |
+| Sistema mediale ibrido [@chadwick2011] | Ruolo delle piattaforme, ciclo informativo |
+| Deepfake e incertezza [@vaccari2020] | Effetti sulla fiducia, riconoscimento |
+| Disinformazione visiva [@hameleers2026] | Credibilita per tipo di contenuto |
+| Percezione pubblica [@pewresearch2025] | Gap tra importanza e capacita di riconoscimento |
+
+::: {.notes}
+La discussione del paper deve collegare esplicitamente i risultati empirici ai framework teorici studiati nel corso. Non tutti i framework saranno rilevanti per ogni progetto, ma almeno 2-3 devono essere discussi. Esempio: se i risultati mostrano che molti utenti non riconoscono le immagini AI, questo si collega al gap di detection (Pew, 2025) e al paradosso GenAI (Ferrara, 2026). Se le reazioni variano per tipo di immagine, questo si collega a Hameleers & van der Meer (2026). Se i commenti rivelano incertezza piuttosto che inganno, questo conferma Vaccari & Chadwick (2020).
+:::
+
+## Indicatori di Qualita {background-color="#C5612E"}
+
+::: {.notes}
+Criteri di valutazione del paper. Trasparenza sui criteri aiuta gli studenti a calibrare lo sforzo.
+:::
+
+## Criteri di valutazione del paper
+
+| Criterio | Peso | Descrizione |
+|----------|:----:|-------------|
+| **Domanda di ricerca** | 15% | Chiara, specifica, motivata |
+| **Metodo** | 25% | Pipeline documentata, validazione rigorosa |
+| **Risultati** | 20% | Dati presentati chiaramente con visualizzazioni |
+| **Discussione** | 25% | Collegamento teoria-dati, limiti riconosciuti |
+| **Scrittura** | 15% | Coerenza, citazioni, lingua corretta |
+
+::: {.callout-note}
+## Nota
+Il paper vale il **75%** del voto finale (max 23,25 punti su 31). Investite tempo nella qualita.
+:::
+
+::: {.notes}
+Rendere trasparenti i criteri di valutazione. Il peso maggiore e su metodo (25%) e discussione (25%): sono le sezioni che dimostrano la competenza metodologica e la capacita critica. I risultati (20%) devono essere chiari e ben presentati. La domanda di ricerca (15%) deve essere specifica e motivata. La qualita della scrittura (15%) include coerenza argomentativa, correttezza delle citazioni e qualita della lingua italiana. Il voto complessivo del paper e collettivo per il gruppo.
+:::
+
+## Blocchi di Lavoro {background-color="#C5612E"}
+
+::: {.notes}
+Inizio della fase operativa. I gruppi lavorano in aula.
+:::
+
+## Blocco 1: Scrittura (30 minuti)
+
+::: {.orange-box}
+### Istruzioni
+Ogni membro del gruppo lavora sulla sezione assegnata. Il coordinatore verifica la coerenza. Usate il **Google Docs condiviso** per scrivere in simultanea.
+:::
+
+Suggerimento per la distribuzione del lavoro:
+
+- **Membro 1:** Introduzione e revisione della letteratura
+- **Membro 2:** Metodo (pipeline, codebook, validazione)
+- **Membro 3:** Risultati (tabelle, grafici, dati)
+- **Membro 4:** Discussione (collegamento teoria-dati)
+- **Coordinatore:** Coerenza generale, abstract, conclusione
+
+::: {.notes}
+Avviare il primo blocco di scrittura. Dare 30 minuti di lavoro concentrato. Circolare tra i gruppi per rispondere a domande specifiche. La divisione del lavoro suggerita e flessibile — ogni gruppo puo adattarla. L'importante e che tutti scrivano contemporaneamente e che il coordinatore verifichi la coerenza tra le sezioni. Al termine dei 30 minuti, interrompere per la revisione tra pari.
+:::
+
+## Scambio per revisione tra pari (15 minuti)
+
+::: {.highlight-box}
+**Procedura:**
+
+1. Ogni gruppo condivide il **link Google Docs** con il gruppo assegnato
+2. Leggete la bozza dell'altro gruppo (10 minuti)
+3. Compilate la **scheda di revisione** con almeno 3 commenti (5 minuti)
+4. Restituite il feedback al gruppo originale
+:::
+
+::: {.notes}
+Fase di revisione tra pari. Assegnare le coppie di gruppi in modo casuale o strategico (gruppi con temi simili o diversi, a seconda dell'obiettivo). Dare 10 minuti per la lettura e 5 per i commenti. La scheda di revisione presentata prima funge da guida. Dopo la revisione, momento di feedback collettivo: il docente raccoglie le osservazioni generali e le condivide con tutta la classe.
+:::
+
+## Blocco 2: Scrittura con integrazioni (35 minuti)
+
+Dopo il feedback:
+
+- **Integrate** i commenti ricevuti nella vostra bozza
+- **Verificate** la coerenza tra le sezioni
+- **Completate** le sezioni mancanti
+- **Aggiungete** le citazioni dove necessario
+
+::: {.callout-warning}
+## Attenzione
+Verificate che tutte le citazioni nel testo corrispondano a riferimenti nella bibliografia. Le citazioni inventate sono un errore grave.
+:::
+
+::: {.notes}
+Secondo blocco di scrittura: integrare il feedback ricevuto e continuare a scrivere. Questo blocco e piu lungo (35 minuti) perche i gruppi hanno ora una direzione piu chiara grazie al feedback. Circolare tra i gruppi per verificare che il feedback venga effettivamente integrato. Ricordare la verifica delle citazioni: ogni riferimento nel testo deve avere una voce corrispondente nella bibliografia, e viceversa. Le citazioni inventate (generate da IA o ricordate in modo errato) sono un errore grave.
+:::
+
+## Scadenze e Prossimi Passi {background-color="#C5612E"}
+
+::: {.notes}
+Riepilogo delle scadenze finali.
+:::
+
+## Timeline verso la consegna
+
+| Data | Attivita |
+|------|----------|
+| **Oggi (31 Mar)** | Prima bozza completa |
+| **Domani (1 Apr)** | Ultima sessione: sintesi e consultazioni |
+| Dopo il corso | Revisione finale e rifinitura |
+| **2 sett. prima appello** | **Consegna paper su Moodle** |
+
+::: {.highlight-box}
+**Formato di consegna:** Documento PDF caricato sullo spazio blended entro la scadenza. Un unico file per gruppo, con i nomi di tutti i membri.
+:::
+
+::: {.notes}
+Riepilogo delle scadenze. La bozza di oggi non e la versione finale: i gruppi avranno tempo dopo la fine del corso per rifinire il paper. La scadenza di consegna e 2 settimane prima dell'appello di giugno — la data esatta verra comunicata su Moodle. Il formato e PDF, caricato sullo spazio blended. Un solo membro del gruppo carica il file, con i nomi di tutti i membri chiaramente indicati sulla prima pagina. Domani e l'ultima sessione: sintesi del corso e ultime consultazioni.
+:::
+
+## Per domani
+
+**Mercoledi 1 Aprile:** Sintesi del Corso e Consultazioni Finali
+
+::: {.columns}
+::: {.column width="50%"}
+### Cosa aspettarsi
+
+- This Week in AI — edizione finale
+- Ricapitolazione dei temi del corso
+- Riflessioni metodologiche
+- Prospettive future
+- Ultime consultazioni
+:::
+
+::: {.column width="50%"}
+### Da preparare
+
+- Domande aperte sul paper
+- Dubbi metodologici da risolvere
+- Riflessioni sul percorso del corso
+:::
+:::
+
+::: {.notes}
+Domani e l'ultima sessione del corso. Sara un momento di sintesi che collega tutti i temi affrontati nelle 6 settimane. Ci sara anche spazio per le ultime consultazioni sui paper. Invitare gli studenti a portare domande aperte e dubbi metodologici. Sara anche un momento di riflessione sul percorso del corso: cosa hanno imparato, come vedono l'IA generativa dopo queste 6 settimane.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Sintesi del Corso e Consultazioni Finali (1 Aprile 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) continuare a lavorare sulla bozza stasera, (2) portare domande aperte domani, (3) domani e l'ultima sessione — non mancate! A domani.
+:::
+
+## Riferimenti

@@ -1,0 +1,279 @@
+---
+title: "Lancio Progetto: Analisi Ricezione AI Slop"
+subtitle: "IA Generativa e Media — Settimana 4"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "17 Marzo 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## Roadmap della sessione
+
+1. **Il fenomeno AI slop** — ricapitolazione dal seminario di ieri
+2. **Briefing del progetto** — obiettivi, domanda di ricerca, deliverable
+3. **Metodologia LLMs-in-the-loop** — panoramica della pipeline
+4. **Formazione dei gruppi** — composizione e ruoli
+5. **Strumenti e risorse** — Meta Content Library, Gemini, NotebookLM
+6. **Prossimi passi** — raccolta dati domani
+
+::: {.notes}
+Oggi lanciamo il progetto di gruppo che occuperà le prossime 3 settimane. Ieri il seminario di Massimo Terenzi ha introdotto il fenomeno dell'AI slop e la ricerca sulla viralità sintetica nelle comunità Facebook italiane. Oggi definiamo obiettivi, metodologia e organizzazione. Domani iniziamo la raccolta dati. Il tono della sessione è operativo: meno teoria, più pianificazione.
+:::
+
+## Il fenomeno AI Slop {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: breve ricapitolazione del fenomeno AI slop per contestualizzare il progetto. Si basa sul seminario di Terenzi di ieri.
+:::
+
+## Cos'è l'*AI slop*
+
+::: {.orange-box}
+### Definizione
+*AI slop:* contenuti generati dall'IA — tipicamente immagini — diffusi sui social media come **engagement bait**, senza pretesa di autenticità ma con impatto degradante sull'ecosistema informativo [@terenzi2025].
+:::
+
+Caratteristiche principali:
+
+- Immagini sintetiche con **stile riconoscibile** (iperrealismo lucido, dita imprecise)
+- Distribuite in **pagine e gruppi Facebook** per massimizzare le interazioni
+- Sfruttano **leve emotive** (nostalgia, compassione, indignazione)
+- Spesso **amplificate dagli algoritmi** di raccomandazione
+
+::: {.notes}
+Ripresa dal seminario di Terenzi. L'AI slop è diverso dal deepfake: non intende ingannare su chi ha detto/fatto cosa, ma degrada la qualità dell'ecosistema informativo inondandolo di contenuti sintetici. Le immagini tipiche: bambini in situazioni commoventi, anziani sorridenti, scene impossibili che generano engagement attraverso like, commenti e condivisioni. L'algoritmo di Facebook amplifica questi contenuti perché generano interazioni — anche se le interazioni sono spesso critiche. Collegamento con i framework delle settimane 1-2: l'AI slop opera al livello 1 della realtà sintetica di Ferrara (2026) e sfrutta i meccanismi del sistema mediale ibrido di Chadwick (2011).
+:::
+
+## Perché studiare la ricezione
+
+::: {.highlight-box}
+**Domanda di ricerca del progetto:** Come reagiscono gli utenti ai contenuti *AI slop* nelle comunità Facebook italiane? Quali pattern emergono dai commenti e dalle reazioni?
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+### Cosa sappiamo
+
+- L'AI slop è diffuso [@terenzi2025]
+- Gli algoritmi lo amplificano
+- Genera engagement elevato
+:::
+
+::: {.column width="50%"}
+### Cosa non sappiamo
+
+- **Come** reagiscono gli utenti
+- Se riconoscono l'IA
+- Quali **emozioni** prevalgono
+- Che **strategie retoriche** usano
+:::
+:::
+
+::: {.notes}
+Il progetto si concentra sulla ricezione — il lato meno studiato del fenomeno AI slop. La ricerca di Terenzi & Giglietto (2025) ha mappato la produzione e diffusione; il nostro contributo sarà analizzare i commenti e le reazioni degli utenti. Domande specifiche che i gruppi potranno esplorare: gli utenti riconoscono che le immagini sono generate dall'IA? Come esprimono questa consapevolezza? Prevalgono reazioni critiche o emotive? Ci sono differenze tra temi diversi (es. immagini con bambini vs. immagini con animali)?
+:::
+
+## La Pipeline LLMs-in-the-loop {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: panoramica della metodologia. Dettaglio sufficiente per orientare il lavoro, senza entrare nella tecnica che verrà approfondita nella settimana 5.
+:::
+
+## Che cos'è un approccio LLMs-in-the-loop
+
+::: {.highlight-box}
+**LLMs-in-the-loop:** metodologia che integra l'analisi automatizzata dei LLM con la **validazione sistematica umana**, trattando l'IA come un "codificatore" le cui classificazioni vengono verificate contro il giudizio umano [@marino2024].
+:::
+
+Fasi della pipeline:
+
+1. **Definizione del codebook** — categorie di analisi e regole
+2. **Prompting sistematico** — istruzioni strutturate al LLM
+3. **Classificazione automatizzata** — il LLM analizza i dati
+4. **Validazione umana** — campione codificato da umani
+5. **Calcolo dell'affidabilità** — intercoder reliability IA-umano
+6. **Iterazione** — raffinamento del prompt se necessario
+
+::: {.notes}
+La metodologia LLMs-in-the-loop di Marino & Giglietto (2024) è l'approccio che useremo nel progetto. L'idea chiave: l'IA non sostituisce l'analisi umana ma la affianca. Il LLM viene trattato come un "codificatore" aggiuntivo, e la sua affidabilità viene misurata contro il giudizio umano usando metriche standard (Cohen's kappa, Krippendorff's alpha). Questo permette di analizzare grandi dataset (centinaia o migliaia di commenti) mantenendo il rigore metodologico. Il seminario di Bruna Paroni la settimana scorsa ha approfondito questa metodologia con un caso studio brasiliano. Nelle settimane 5 implementeremo ogni fase in dettaglio.
+:::
+
+## Il progetto in sintesi
+
+| Componente | Dettaglio |
+|-----------|----------|
+| **Tema** | Ricezione dell'AI slop nelle comunità Facebook italiane |
+| **Dati** | Post con immagini IA + commenti degli utenti |
+| **Strumenti** | Meta Content Library, Google Gemini, NotebookLM |
+| **Metodologia** | LLMs-in-the-loop [@marino2024] |
+| **Output** | Paper di ricerca (struttura IMRaD) |
+| **Peso** | 75% del voto finale (max 23,25 punti) |
+| **Scadenza** | 2 settimane prima dell'appello di giugno |
+
+::: {.notes}
+Panoramica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione) — la struttura standard della ricerca scientifica. Il peso è significativo: 75% della valutazione. I gruppi saranno composti da 4-6 studenti. Ogni gruppo sceglierà un angolo specifico della domanda di ricerca (es. un tipo specifico di AI slop, un gruppo di utenti, una reazione particolare). Le prossime 3 settimane sono dedicate al progetto: raccolta dati (questa settimana), analisi (settimana 5), scrittura (settimana 6).
+:::
+
+## Formazione dei Gruppi {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: operativa. Formazione dei gruppi e assegnazione delle aree tematiche.
+:::
+
+## Composizione e ruoli
+
+::: {.columns}
+::: {.column width="50%"}
+### Composizione
+
+- **4-6 studenti** per gruppo
+- Mix di competenze consigliato
+- Autoformazione con supervisione
+- Registrazione su Moodle entro oggi
+:::
+
+::: {.column width="50%"}
+### Ruoli suggeriti
+
+- **Coordinatore:** organizzazione e scadenze
+- **Data collector:** raccolta post e commenti
+- **Analista IA:** prompt design e classificazione
+- **Validatore:** codifica umana del campione
+- **Writer:** stesura del paper
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+I ruoli non sono rigidi: tutti dovrebbero partecipare a tutte le fasi. Ma avere un responsabile per ogni fase facilita l'organizzazione.
+:::
+
+::: {.notes}
+Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I ruoli sono suggeriti, non obbligatori: l'importante è che ogni studente partecipi a tutte le fasi del progetto. Il coordinatore è responsabile del rispetto delle scadenze e della distribuzione del lavoro. Registrare i gruppi su Moodle entro la fine della giornata.
+:::
+
+## Sviluppare la domanda di ricerca
+
+::: {.orange-box}
+### Esercizio di gruppo (15 minuti)
+1. Partendo dalla domanda generale, formulate una **domanda di ricerca specifica** per il vostro gruppo
+2. Identificate **2-3 variabili** che intendete analizzare
+3. Proponete **ipotesi preliminari** su cosa vi aspettate di trovare
+4. Presentate brevemente alla classe (2 minuti per gruppo)
+:::
+
+Esempi di angoli specifici:
+
+- Differenze di ricezione per **tipo di immagine** (bambini, animali, paesaggi)
+- Pattern nei commenti: **riconoscimento IA** vs. reazioni emotive
+- Confronto tra **pagine/gruppi** con diverso orientamento
+
+::: {.notes}
+Esercizio fondamentale per avviare il progetto. Ogni gruppo deve restringere la domanda di ricerca generale a un angolo specifico e gestibile. Le variabili tipiche: tipo di contenuto AI slop (categoria dell'immagine), tipo di reazione (commento critico, emotivo, neutro), caratteristiche del contesto (tipo di pagina/gruppo). Le ipotesi preliminari servono a orientare la raccolta dati e l'analisi, non sono vincolanti. Dare 15 minuti, poi presentazione rapida di ogni gruppo.
+:::
+
+## Strumenti e Risorse {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: panoramica degli strumenti che useremo. Dettagli operativi per la raccolta dati di domani.
+:::
+
+## Gli strumenti del progetto
+
+| Strumento | Uso | Fase |
+|----------|-----|------|
+| **Meta Content Library** | Raccolta post e commenti da Facebook/Instagram | Raccolta (settimana 4) |
+| **Google Gemini** | Classificazione contenuti, analisi immagini e testo | Analisi (settimana 5) |
+| **NotebookLM** | Organizzazione letteratura, sintesi fonti | Scrittura (settimana 6) |
+| **Foglio di calcolo** | Dataset strutturato, codifica, calcoli | Tutte le fasi |
+
+::: {.notes}
+Panoramica degli strumenti. Meta Content Library è lo strumento di Facebook per la ricerca accademica: permette di cercare e scaricare post pubblici con relativi commenti e metriche di engagement. L'accesso avviene tramite il portale di ricerca di Meta. Gemini sarà usato per la classificazione automatizzata nella settimana 5: caricheremo i commenti e chiederemo al modello di classificarli secondo il nostro codebook. NotebookLM per la parte di scrittura: organizzare la letteratura, generare bozze della sezione teorica. Il foglio di calcolo (Google Sheets) è lo strumento di base per il dataset.
+:::
+
+## Timeline del progetto
+
+| Settimana | Data | Attività |
+|-----------|------|----------|
+| **4** | Mar 17 | Formazione gruppi, domanda di ricerca |
+| **4** | Mer 18 | **Lab:** raccolta post e commenti |
+| **5** | Lun 23 | **Lab:** analisi contenuti con Gemini |
+| **5** | Mar 24 | **Workshop:** validazione umana vs IA |
+| **5** | Mer 25 | Consultazione gruppi |
+| **6** | Lun 30 | **Workshop:** scrittura del paper |
+| **6** | Mar 31 | Lavoro di gruppo in aula |
+| **6** | Mer 1 Apr | Sintesi e consultazioni finali |
+| — | 2 sett. prima appello | **Consegna paper** |
+
+::: {.notes}
+Timeline completa del progetto. Le settimane 4-5 sono le più intensive: raccolta dati, analisi automatizzata, validazione. La settimana 6 è dedicata alla scrittura. Il paper va consegnato 2 settimane prima dell'appello di giugno. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere in parallelo tra le sessioni. I gruppi che restano indietro nella raccolta dati avranno difficoltà a recuperare.
+:::
+
+## Per domani: preparazione alla raccolta dati
+
+**Mercoledì 18 Marzo:** Lab — Raccolta Post e Commenti
+
+::: {.columns}
+::: {.column width="50%"}
+### Cosa preparare
+
+- Account Meta Content Library configurato
+- Laptop con browser aggiornato
+- Foglio di calcolo condiviso nel gruppo
+- Criteri di selezione dei post definiti
+:::
+
+::: {.column width="50%"}
+### Cosa faremo
+
+- Ricerca di post con immagini AI slop
+- Download di post e commenti
+- Costruzione del dataset iniziale
+- Screening preliminare con Gemini
+:::
+:::
+
+::: {.notes}
+Istruzioni operative per domani. I gruppi dovrebbero arrivare con un'idea chiara di quali tipi di post cercare e con gli strumenti tecnici configurati. Meta Content Library richiede un account verificato — verificare che tutti abbiano completato la procedura. Il foglio di calcolo condiviso (Google Sheets) sarà il repository centrale del dataset. Domani è una sessione di lavoro pratico: il docente e i tutor saranno disponibili per assistenza tecnica.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Lab — Raccolta Post e Commenti (18 Marzo 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) registrare il gruppo su Moodle oggi, (2) configurare Meta Content Library, (3) preparare il foglio di calcolo condiviso. A domani per il lab di raccolta dati!
+:::
+
+## Riferimenti

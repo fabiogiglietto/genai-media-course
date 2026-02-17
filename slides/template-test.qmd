@@ -1,0 +1,287 @@
+---
+title: "Test Template: Tutti i Tipi di Slide"
+subtitle: "IA Generativa e Media — Verifica Tema DISCUI"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "16 Febbraio 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## Roadmap del Test
+
+Questa presentazione verifica **tutti i 13 tipi di slide** definiti nel tema DISCUI.
+
+- **Layout:** divisori di sezione, contenuto chiaro/scuro, due colonne
+- **Elementi visivi:** immagini, tabelle, grafici R
+- **Box:** highlight box, orange box, callout (note, tip, warning)
+- **Testo:** citazioni, badge TWIAI, riferimenti bibliografici
+- **Chiusura:** slide finale con contatti
+
+::: {.notes}
+Questa slide elenca tutti i tipi che verranno testati. Verificare che l'elenco puntato sia leggibile e che i marcatori arancioni siano visibili. In totale sono 13 tipi di slide raggruppati in 5 categorie.
+:::
+
+# Sezione 1: Layout di Base {background-color="#C5612E"}
+
+::: {.notes}
+Questo è il tipo 1: divisore di sezione con sfondo arancione scuro (#C5612E). Verificare che il testo sia bianco, il titolo sia grande e centrato a sinistra, e che il logo bianco sia visibile nell'angolo.
+:::
+
+## Slide di Contenuto Standard
+
+Questo è il tipo di slide **più utilizzato** nel corso.
+
+- Sfondo chiaro (`#F2F2F2`)
+- Titolo arancione con linea inferiore
+- Testo scuro ad alta leggibilità
+- Massimo **6-8 righe** di testo per slide
+- Un **concetto** per slide
+
+Le parole in grassetto appaiono in arancione grazie al tema CSS.
+
+::: {.notes}
+Tipo 2: slide di contenuto standard su sfondo chiaro. Verificare che il titolo h2 sia arancione (#E06029) con una linea inferiore arancione. Il grassetto deve essere in arancione. Il testo body deve essere scuro (#333333).
+:::
+
+## Slide su Sfondo Scuro {background-color="#C5612E"}
+
+Questo tipo crea **variazione visiva** nel flusso della presentazione.
+
+- Il testo diventa automaticamente bianco
+- Rapporto consigliato: 1 scura ogni 5-6 chiare
+- Il grassetto resta **evidenziato**
+- Utile per enfatizzare concetti chiave
+
+::: {.notes}
+Tipo 3: slide di contenuto su sfondo arancione scuro. Verificare che tutto il testo (titolo, body, liste) sia bianco o quasi bianco. Il grassetto dovrebbe apparire in bianco pieno.
+:::
+
+## Layout a Due Colonne
+
+::: {.columns}
+::: {.column width="50%"}
+### Colonna Sinistra
+
+L'*intelligenza artificiale generativa* sta trasformando il panorama mediale contemporaneo.
+
+- Produzione automatizzata
+- Distribuzione algoritmica
+- Consumo personalizzato
+:::
+
+::: {.column width="50%"}
+### Colonna Destra
+
+Le sfide principali riguardano:
+
+- Verifica delle fonti
+- Fiducia nel sistema informativo
+- Regolamentazione e policy
+- Alfabetizzazione mediale
+:::
+:::
+
+::: {.notes}
+Tipo 4: layout a due colonne. Verificare che le colonne siano allineate, che i titoli h3 siano visibili e che gli elenchi puntati non si sovrappongano. Controllare lo spacing tra le colonne.
+:::
+
+## Immagine + Testo
+
+![Logo dell'Università degli Studi di Urbino Carlo Bo](../assets/logo-nh-uniurb.svg){fig-align="center" width="50%"}
+
+Il logo a colori viene utilizzato su sfondi chiari come questa slide.
+
+::: {.notes}
+Tipo 5: immagine + testo. Verificare che il logo SVG sia caricato e centrato correttamente, con la didascalia in stile corsivo sotto l'immagine. Controllare l'ombra e il border-radius applicati dal CSS.
+:::
+
+## Highlight Box
+
+::: {.highlight-box}
+**Concetto chiave:** L'*IA generativa* si riferisce a sistemi di intelligenza artificiale in grado di creare contenuti originali — testo, immagini, audio, video — a partire da modelli addestrati su grandi quantità di dati.
+:::
+
+Questo box ha bordo arancione e sfondo bianco, ideale per evidenziare definizioni e concetti fondamentali.
+
+::: {.notes}
+Tipo 6a: highlight box. Verificare il bordo arancione (#E06029), lo sfondo bianco, gli angoli arrotondati e l'ombra leggera. Il testo all'interno deve essere leggibile.
+:::
+
+## Orange Box
+
+::: {.orange-box}
+### Definizione
+
+Il **sistema mediale ibrido** è un framework teorico proposto da Andrew Chadwick che descrive l'interazione tra vecchi e nuovi media, attori politici e pubblici connessi.
+:::
+
+Il box arancione è efficace per definizioni formali e concetti da memorizzare.
+
+::: {.notes}
+Tipo 6b: orange box con sfondo arancione scuro (#C5612E) e testo bianco. Verificare che il titolo h3 e il testo body siano entrambi bianchi e leggibili.
+:::
+
+## Callout: Nota
+
+::: {.callout-note}
+## Nota
+I *deepfake* rappresentano una delle applicazioni più controverse dell'IA generativa, con implicazioni significative per la fiducia nell'informazione politica [@vaccari2020].
+:::
+
+Le note utilizzano il blu dell'Ateneo per il bordo.
+
+::: {.notes}
+Tipo 7a: callout-note. Verificare che il bordo sia nel blu Ateneo (#49668C), lo sfondo leggermente azzurro, e che la citazione bibliografica sia formattata correttamente.
+:::
+
+## Callout: Suggerimento e Attenzione
+
+::: {.callout-tip}
+## Suggerimento
+Utilizzare sempre prompt strutturati e specifici quando si lavora con strumenti di IA generativa come Google Gemini.
+:::
+
+::: {.callout-warning}
+## Attenzione
+I contenuti generati dall'IA possono contenere informazioni imprecise o completamente inventate (*hallucination*). Verificare sempre le fonti.
+:::
+
+::: {.notes}
+Tipo 7b-c: callout-tip (bordo verde) e callout-warning (bordo arancione). Verificare che i colori dei bordi siano distinti tra loro e rispetto al callout-note.
+:::
+
+## Citazione
+
+> "La diffusione dei deepfake politici rischia di creare un contesto informativo in cui i cittadini non riescono più a distinguere il vero dal falso, minando la fiducia nelle istituzioni democratiche."
+>
+> — Vaccari & Chadwick, 2020
+
+::: {.notes}
+Tipo 8: blockquote. Verificare il bordo sinistro arancione, lo sfondo bianco con ombra, il testo in corsivo e l'attribuzione in grassetto sotto la citazione.
+:::
+
+# Sezione 2: Elementi Avanzati {background-color="#C5612E"}
+
+::: {.notes}
+Secondo divisore di sezione. Verificare la coerenza con il primo divisore.
+:::
+
+## Tabella
+
+| Tecnologia | Tipo | Anno | Esempio |
+|------------|------|------|---------|
+| GPT-4 | Testo | 2023 | ChatGPT |
+| DALL-E 3 | Immagine | 2023 | Generazione da testo |
+| Gemini | Multimodale | 2024 | Google AI Studio |
+| Sora | Video | 2024 | OpenAI video gen |
+| Stable Diffusion | Immagine | 2022 | Open source |
+
+::: {.notes}
+Tipo 9: tabella. Verificare che l'intestazione abbia sfondo arancione con testo bianco, che le righe alternate abbiano sfondo leggermente colorato, e che l'hover funzioni. Font Montserrat per i titoli.
+:::
+
+## [This Week in AI]{.twiai-badge}
+
+### Google rilascia Gemini 2.0 con capacità agentiche
+
+Google ha presentato Gemini 2.0, la nuova generazione del suo modello multimodale, con capacità di interagire autonomamente con applicazioni e servizi web.
+
+::: {.callout-note}
+## Da discutere
+Quali implicazioni ha la capacità "agentica" dell'IA per il sistema mediale? Come cambia il ruolo del giornalista se l'IA può raccogliere informazioni in autonomia?
+:::
+
+::: {.notes}
+Tipo 10: badge "This Week in AI". Verificare che il badge sia un rettangolo arancione con testo bianco in Montserrat, posizionato sopra il titolo della slide. Il callout "Da discutere" serve per stimolare la discussione in aula.
+:::
+
+## Grafico R con tema Uniurb
+
+```{r}
+#| label: esempio-grafico-discui
+#| echo: true
+#| eval: true
+#| fig-width: 12
+#| fig-height: 5
+
+source("../R/uniurb_theme.R")
+
+library(ggplot2)
+
+# Dati di esempio: atteggiamenti verso l'IA
+dati <- data.frame(
+  categoria = c("Entusiasti", "Cauti", "Preoccupati", "Indifferenti"),
+  percentuale = c(35, 30, 25, 10)
+)
+
+ggplot(dati, aes(x = reorder(categoria, -percentuale), y = percentuale,
+                 fill = categoria)) +
+  geom_col(show.legend = FALSE) +
+  scale_fill_uniurb_dept("discui") +
+  theme_uniurb() +
+  labs(
+    title = "Atteggiamenti verso l'IA Generativa",
+    subtitle = "Distribuzione percentuale (dati di esempio)",
+    x = NULL,
+    y = "Percentuale (%)"
+  )
+```
+
+::: {.notes}
+Tipo 11: grafico R con ggplot2, palette DISCUI e theme_uniurb(). Verificare che i colori delle barre corrispondano alla palette dipartimentale (arancione, salmone, corallo, rosa). Il font del grafico dovrebbe essere Atkinson Hyperlegible se disponibile, altrimenti sans-serif.
+:::
+
+## Esempio di Citazione Bibliografica
+
+La ricerca mostra che i video sintetici politici (*deepfake*) possono ridurre la fiducia nell'informazione anche quando vengono successivamente corretti [@vaccari2020].
+
+Studi recenti indicano che la disponibilità a leggere notizie generate dall'IA non dipende dalla qualità percepita dei contenuti [@gilardi2025].
+
+### Riferimenti utilizzati in questa slide
+
+Le citazioni sopra utilizzano la sintassi `@chiave` e vengono formattate automaticamente in stile APA grazie al file `references.bib`.
+
+::: {.notes}
+Tipo 12 (extra): test del sistema bibliografico. Verificare che le citazioni inline siano formattate in stile APA (Cognome, Anno) e che la bibliografia completa appaia alla fine della presentazione.
+:::
+
+# Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Introduzione all'IA Generativa (23 Febbraio 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Tipo 13: slide di chiusura. Verificare lo sfondo arancione scuro, il testo bianco, le emoji per i contatti. Questa è l'unica slide in cui le emoji sono consentite.
+:::
+
+## Riferimenti

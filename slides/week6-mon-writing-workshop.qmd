@@ -1,0 +1,475 @@
+---
+title: "Workshop di Scrittura"
+subtitle: "IA Generativa e Media — Settimana 6"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "30 Marzo 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## Roadmap della sessione
+
+1. **Struttura del paper** — il formato IMRaD
+2. **Ogni sezione in dettaglio** — cosa scrivere e come
+3. **NotebookLM per la scrittura** — sintetizzare fonti e risultati
+4. **IA e scrittura accademica** — cosa e consentito e cosa no
+5. **Citazioni e riferimenti** — pratiche corrette
+6. **Errori comuni** — e come evitarli
+7. **Esercizio** — costruire l'outline del paper
+
+::: {.notes}
+Oggi e un workshop pratico sulla scrittura del paper di ricerca. L'obiettivo e che ogni gruppo esca dalla sessione con un outline dettagliato e una strategia di scrittura chiara. La struttura IMRaD (Introduzione, Metodo, Risultati e Discussione) e lo standard internazionale per i paper scientifici. Passeremo in rassegna ogni sezione con esempi concreti, poi vedremo come usare NotebookLM per supportare la scrittura. L'ultima parte della sessione sara dedicata all'esercizio pratico.
+:::
+
+## Il Formato IMRaD {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: panoramica della struttura IMRaD. Questa struttura e usata nella grande maggioranza dei paper scientifici in comunicazione e scienze sociali.
+:::
+
+## Che cos'e il formato IMRaD
+
+::: {.highlight-box}
+**IMRaD:** Introduzione, Metodo, Risultati e Discussione — la struttura standard della comunicazione scientifica.
+:::
+
+| Sezione | Domanda a cui risponde | Peso indicativo |
+|---------|----------------------|-----------------|
+| **Introduzione** | Perche lo studiamo? | 20-25% |
+| **Metodo** | Come lo studiamo? | 20-25% |
+| **Risultati** | Cosa abbiamo trovato? | 25-30% |
+| **Discussione** | Cosa significa? | 20-25% |
+
+::: {.notes}
+Il formato IMRaD e lo standard delle scienze sociali e della comunicazione. Ogni sezione risponde a una domanda specifica. Le percentuali sono indicative: un paper di circa 5.000-6.000 parole dovrebbe bilanciare le sezioni. L'errore piu comune degli studenti e scrivere un'introduzione troppo lunga e una discussione troppo corta. La discussione e la sezione piu importante: e dove dimostrate di aver compreso il significato dei vostri risultati.
+:::
+
+## Struttura completa del paper
+
+1. **Titolo** — descrittivo, specifico, conciso
+2. **Abstract** — 150-250 parole (scriverlo per ultimo)
+3. **Introduzione** — contesto, gap, domanda di ricerca
+4. **Revisione della letteratura** — framework teorico
+5. **Metodo** — dati, strumenti, procedura, validazione
+6. **Risultati** — dati, tabelle, grafici
+7. **Discussione** — interpretazione, limiti, implicazioni
+8. **Conclusione** — sintesi finale
+9. **Riferimenti bibliografici**
+
+::: {.notes}
+Struttura completa del paper. Nota: l'abstract si scrive per ultimo, perche deve riassumere tutto il contenuto. La revisione della letteratura puo essere integrata nell'introduzione o costituire una sezione separata — per questo progetto, suggeriamo una sezione separata breve che presenti i framework teorici chiave (sistema mediale ibrido, realta sintetica, deepfake e fiducia). Il metodo deve essere sufficientemente dettagliato da permettere la replicabilita.
+:::
+
+## L'Introduzione {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: dettaglio su ogni parte del paper. Iniziamo dall'introduzione.
+:::
+
+## Scrivere l'introduzione
+
+::: {.orange-box}
+### La struttura a imbuto
+L'introduzione parte dal **generale** (il fenomeno dell'IA generativa nei media) e si restringe fino allo **specifico** (la vostra domanda di ricerca).
+:::
+
+Quattro elementi essenziali:
+
+1. **Contesto** — l'IA generativa e il sistema mediale ibrido
+2. **Problema** — il fenomeno dell'AI slop e i suoi effetti
+3. **Gap** — cosa non sappiamo (la ricezione da parte degli utenti)
+4. **Domanda di ricerca** — la vostra domanda specifica
+
+::: {.notes}
+L'introduzione segue una logica a imbuto: dal generale al particolare. Iniziare con il contesto ampio (l'IA generativa sta trasformando il sistema mediale, come descritto da Chadwick, Mattis, Ferrara), poi restringere al problema specifico (l'AI slop come forma di contenuto sintetico su Facebook), poi identificare il gap conoscitivo (sappiamo come viene prodotto e diffuso, ma non come reagiscono gli utenti), e infine formulare la domanda di ricerca specifica del gruppo. Ogni passaggio deve essere supportato da riferimenti bibliografici.
+:::
+
+## Esempio di apertura
+
+> L'avvento dell'IA generativa ha profondamente trasformato il sistema mediale contemporaneo, creando quello che Ferrara (2026) definisce il "Paradosso dell'IA Generativa": una tecnologia sempre piu capace di produrre contenuti indistinguibili da quelli umani, che al contempo erode la fiducia nell'intero ecosistema informativo.
+
+::: {.callout-tip}
+## Suggerimento
+Ogni affermazione nell'introduzione deve essere **supportata da un riferimento**. Non fate affermazioni generiche senza citazione.
+:::
+
+::: {.notes}
+Esempio concreto di come aprire l'introduzione. Notare: la prima frase introduce il tema generale (IA generativa e media), la seconda introduce subito un framework teorico con citazione. Gli studenti devono evitare aperture troppo generiche ("Da sempre l'uomo ha comunicato...") e andare dritti al punto. Le letture del corso forniscono tutto il materiale necessario per l'introduzione: Ferrara (2026) per il paradosso, Chadwick (2011) per il sistema mediale ibrido, Terenzi & Giglietto (2025) per l'AI slop specificamente.
+:::
+
+## La Sezione Metodo {background-color="#C5612E"}
+
+::: {.notes}
+Sezione sul metodo. Per questo progetto, il metodo e particolarmente importante perche include la pipeline LLMs-in-the-loop.
+:::
+
+## Scrivere il metodo
+
+Il metodo deve rispondere a **cinque domande**:
+
+| Domanda | Contenuto |
+|---------|-----------|
+| **Cosa** avete analizzato? | Descrizione del dataset (N post, N commenti, periodo) |
+| **Come** avete raccolto i dati? | Meta Content Library, criteri di selezione |
+| **Come** avete analizzato? | Pipeline LLMs-in-the-loop con Gemini |
+| **Come** avete validato? | Codifica umana, intercoder reliability |
+| **Quali strumenti** avete usato? | Gemini, fogli di calcolo, metriche statistiche |
+
+::: {.notes}
+Il metodo e la sezione piu "tecnica" del paper. Deve essere abbastanza dettagliato da permettere a un altro ricercatore di replicare l'analisi. Per questo progetto, il metodo include: (1) descrizione del dataset (quanti post, quanti commenti, da quali pagine/gruppi, in quale periodo), (2) procedura di raccolta tramite Meta Content Library, (3) descrizione della pipeline LLMs-in-the-loop con il prompt esatto utilizzato, (4) procedura di validazione umana con il codebook, (5) metriche di intercoder reliability utilizzate.
+:::
+
+## Descrivere la pipeline LLMs-in-the-loop
+
+::: {.highlight-box}
+**Requisito fondamentale:** Il metodo deve includere il **prompt esatto** utilizzato per la classificazione con Gemini e la **procedura completa** di validazione [@marino2024].
+:::
+
+Elementi da includere:
+
+- **Modello utilizzato** — versione specifica di Gemini
+- **Prompt** — testo completo delle istruzioni di classificazione
+- **Codebook** — categorie, definizioni, esempi
+- **Procedura di validazione** — campione, codificatori, protocollo
+- **Metriche** — Cohen's kappa, percentuale di accordo
+
+::: {.notes}
+La descrizione della pipeline LLMs-in-the-loop e il cuore metodologico del paper. Seguendo Marino & Giglietto (2024), il metodo deve documentare ogni passaggio. Il prompt dato a Gemini deve essere riportato integralmente (eventualmente in appendice se molto lungo). Il codebook deve specificare ogni categoria con definizione ed esempi. La procedura di validazione deve indicare: quanti commenti sono stati codificati da umani, quanti codificatori umani, quale protocollo hanno seguito, e quali metriche di affidabilita sono state calcolate. Senza questi dettagli, il metodo non e replicabile.
+:::
+
+## I Risultati {background-color="#C5612E"}
+
+::: {.notes}
+Sezione sui risultati. La regola d'oro: i risultati presentano i dati, la discussione li interpreta.
+:::
+
+## Scrivere i risultati
+
+::: {.orange-box}
+### Regola d'oro
+Nella sezione Risultati **presentate i dati**. Nella Discussione **interpretateli**. Non mescolate le due cose.
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+### Da includere
+
+- Statistiche descrittive del dataset
+- Distribuzione delle categorie
+- Risultati dell'intercoder reliability
+- Tabelle e grafici
+- Pattern principali nei dati
+:::
+
+::: {.column width="50%"}
+### Da evitare
+
+- Interpretazioni teoriche
+- Giudizi di valore
+- Speculazioni sulle cause
+- Confronti con la letteratura
+- Opinioni personali
+:::
+:::
+
+::: {.notes}
+La separazione tra risultati e discussione e fondamentale nella scrittura scientifica. Nella sezione Risultati, limitarsi a presentare i dati in modo chiaro e organizzato: quanti commenti sono stati analizzati, come si distribuiscono nelle categorie, qual e la percentuale di accordo tra IA e umano. Usare tabelle e grafici per rendere i dati leggibili. Nella Discussione, poi, collegare questi risultati alla teoria. Errore comune: anticipare l'interpretazione nella sezione Risultati.
+:::
+
+## Tabelle e grafici efficaci
+
+::: {.columns}
+::: {.column width="50%"}
+### Tabelle: per dati precisi
+
+- Distribuzione delle categorie
+- Confronto IA vs. umano
+- Metriche di affidabilita
+- Dati demografici del dataset
+:::
+
+::: {.column width="50%"}
+### Grafici: per pattern visivi
+
+- Distribuzione delle reazioni
+- Confronti tra gruppi/pagine
+- Evoluzione temporale
+- Proporzioni e rapporti
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+Ogni tabella e ogni grafico deve avere un **titolo descrittivo** e deve essere **commentato nel testo**. Non inserite visualizzazioni senza spiegarle.
+:::
+
+::: {.notes}
+Indicazioni pratiche per la visualizzazione dei dati. Le tabelle sono preferibili quando i numeri esatti contano (intercoder reliability, percentuali di distribuzione). I grafici sono preferibili quando il pattern visivo e piu informativo dei singoli numeri (distribuzione delle reazioni, confronti tra categorie). Ogni elemento visivo deve essere numerato (Tabella 1, Figura 1), avere un titolo descrittivo, e deve essere esplicitamente citato e commentato nel testo. Una tabella senza commento e un dato perso.
+:::
+
+## La Discussione {background-color="#C5612E"}
+
+::: {.notes}
+Sezione sulla discussione — la parte piu importante e spesso la piu trascurata dai studenti.
+:::
+
+## Scrivere la discussione
+
+La discussione e dove il vostro paper **acquista valore scientifico**.
+
+Quattro passaggi obbligatori:
+
+1. **Sintesi dei risultati principali** — cosa avete trovato
+2. **Collegamento alla letteratura** — come i risultati dialogano con la teoria
+3. **Limiti dello studio** — cosa non potete affermare
+4. **Implicazioni** — cosa significano i risultati per il campo
+
+::: {.notes}
+La discussione e la sezione dove lo studente dimostra maturita intellettuale. Non basta riportare i dati — occorre interpretarli alla luce della letteratura studiata. Il collegamento alla letteratura e il cuore della discussione: i risultati confermano o contraddicono le teorie studiate? Aggiungono nuove sfumature? I limiti non sono un segno di debolezza ma di onesta metodologica: ogni studio ha limiti, e riconoscerli dimostra consapevolezza. Le implicazioni guardano avanti: cosa significano i risultati per la comprensione dell'AI slop, per le piattaforme, per la regolamentazione?
+:::
+
+## Collegare i risultati alla teoria
+
+::: {.highlight-box}
+**Esempio:** "I risultati mostrano che il 65% degli utenti non riconosce le immagini come generate dall'IA, confermando il gap tra importanza percepita e capacita effettiva di riconoscimento evidenziato da @pewresearch2025."
+:::
+
+Framework teorici da collegare:
+
+- **Il Paradosso GenAI** — utilita vs. erosione della fiducia [@ferrara2026]
+- **Incertezza epistemica** — non inganno ma incertezza [@vaccari2020]
+- **Disinformazione visiva** — gli effetti dipendono dal contesto [@hameleers2026]
+- **Sistema mediale ibrido** — le interazioni tra vecchi e nuovi media [@chadwick2011]
+
+::: {.notes}
+Esempi concreti di come collegare i risultati alla teoria. Se i dati mostrano che gli utenti non riconoscono l'IA, questo si collega al gap di detection del rapporto Pew (2025). Se gli utenti mostrano incertezza piuttosto che inganno diretto, questo conferma la tesi di Vaccari & Chadwick (2020). Se le reazioni variano per tipo di immagine, questo supporta la tesi di Hameleers & van der Meer (2026) sulla dipendenza dal contesto. Incoraggiare gli studenti a fare questi collegamenti esplicitamente nel testo.
+:::
+
+## NotebookLM per la Scrittura {background-color="#C5612E"}
+
+::: {.notes}
+Sezione pratica sull'uso di NotebookLM per supportare la fase di scrittura.
+:::
+
+## Usare NotebookLM per il paper
+
+::: {.columns}
+::: {.column width="50%"}
+### Cosa caricare
+
+- Le **letture del corso** (PDF)
+- I vostri **appunti** e note
+- Le **slides** delle lezioni rilevanti
+- I **risultati preliminari**
+:::
+
+::: {.column width="50%"}
+### Cosa chiedere
+
+- "Quali framework teorici collegano X e Y?"
+- "Riassumi gli argomenti di Ferrara sulla fiducia"
+- "Quali citazioni supportano il concetto di X?"
+- "Come si collega il mio risultato alla letteratura?"
+:::
+:::
+
+::: {.notes}
+NotebookLM e lo strumento ideale per la fase di revisione della letteratura e di discussione. Caricare le letture del corso, i propri appunti e i risultati dell'analisi. Poi usare le domande per esplorare i collegamenti tra i propri dati e la letteratura. NotebookLM fornisce risposte con citazioni specifiche alle fonti caricate, facilitando il collegamento tra risultati e teoria. Ricordare: NotebookLM supporta la scrittura, non la sostituisce.
+:::
+
+## IA e Scrittura: Cosa e Consentito {background-color="#C5612E"}
+
+::: {.notes}
+Sezione cruciale: la policy del corso sull'uso dell'IA nella scrittura accademica.
+:::
+
+## Policy del corso: promemoria
+
+::: {.columns}
+::: {.column width="50%"}
+### Consentito
+
+- **Brainstorming** — "Dammi idee per strutturare la discussione"
+- **Critica** — "Rivedi la coerenza argomentativa di questo paragrafo"
+- **Revisione linguistica** — "Correggi gli errori di sintassi"
+- **Sintesi fonti** — NotebookLM per collegare letteratura
+:::
+
+::: {.column width="50%"}
+### Vietato
+
+- **Generazione sostitutiva** — "Scrivi la sezione Risultati"
+- **Parafrasi totale** — "Riscrivi questo testo in modo diverso"
+- **Invenzione** di dati o citazioni
+- Uso **non dichiarato** di qualsiasi strumento IA
+:::
+:::
+
+::: {.callout-warning}
+## Attenzione
+L'uso dell'IA va **sempre dichiarato** nel paper, specificando quale strumento e come e stato utilizzato.
+:::
+
+::: {.notes}
+Ripasso della policy del corso. La regola di base: l'IA supporta il pensiero critico dello studente, non lo sostituisce. Brainstorming, critica e revisione linguistica sono consentiti. Generazione sostitutiva (far scrivere all'IA intere sezioni) e vietata. La trasparenza e obbligatoria: nel paper deve esserci una dichiarazione esplicita degli strumenti IA utilizzati. Suggerire di inserire un breve paragrafo nel metodo: "Per la stesura del paper sono stati utilizzati i seguenti strumenti: NotebookLM per la sintesi della letteratura, Gemini per la revisione linguistica. L'uso e stato limitato a supporto e revisione, come previsto dalla policy del corso."
+:::
+
+## Citazioni e Riferimenti {background-color="#C5612E"}
+
+::: {.notes}
+Sezione sulle pratiche di citazione. Fondamentale per la correttezza accademica.
+:::
+
+## Citare correttamente
+
+::: {.highlight-box}
+**Regola fondamentale:** Ogni affermazione derivata da una fonte **deve** essere accompagnata da una citazione. L'assenza di citazione equivale ad appropriarsi del lavoro altrui.
+:::
+
+| Tipo di citazione | Esempio |
+|-------------------|---------|
+| **Autore nel testo** | Come evidenziato da Ferrara (2026), l'IA generativa... |
+| **Riferimento a fine frase** | ...un fenomeno di crescente preoccupazione (Vaccari & Chadwick, 2020). |
+| **Citazione diretta** | "Il paradosso dell'IA generativa" (Ferrara, 2026, p. 3). |
+| **Fonte con piu autori** | Schroeder et al. (2026) descrivono... |
+
+::: {.notes}
+Pratiche di citazione in stile APA, lo standard del paper. Tre regole d'oro: (1) ogni affermazione derivata da una fonte deve avere una citazione, (2) le citazioni dirette (parole esatte dell'autore) devono essere tra virgolette con il numero di pagina, (3) quando si parafrasano le idee di un autore, la citazione e comunque obbligatoria anche se non si usano le parole esatte. Errore gravissimo: le citazioni inventate. Se NotebookLM o Gemini suggeriscono un riferimento, verificare sempre che esista realmente.
+:::
+
+## Errori Comuni nella Scrittura {background-color="#C5612E"}
+
+::: {.notes}
+Sezione sugli errori piu frequenti nei paper degli studenti.
+:::
+
+## I 5 errori piu frequenti
+
+1. **Introduzione troppo generica** — partire dalla notte dei tempi invece che dal problema
+2. **Metodo insufficiente** — non riportare il prompt o la procedura di validazione
+3. **Risultati e discussione mescolati** — interpretare mentre si presentano i dati
+4. **Discussione senza teoria** — presentare risultati senza collegarli alla letteratura
+5. **Limiti assenti** — non riconoscere le debolezze dello studio
+
+::: {.callout-tip}
+## Suggerimento
+Scrivete la sezione Metodo **per prima**: e la piu concreta e vi aiutera a strutturare il resto.
+:::
+
+::: {.notes}
+Questi sono gli errori che si riscontrano piu frequentemente nei paper degli studenti. Per ognuno: (1) l'introduzione deve partire dal problema specifico, non dalla storia dell'umanita; (2) il metodo deve essere dettagliato — se qualcuno non puo replicare il vostro studio, il metodo e insufficiente; (3) nella sezione Risultati, limitarsi ai dati; l'interpretazione va nella Discussione; (4) la Discussione senza teoria e una lista di osservazioni, non una discussione scientifica; (5) ogni studio ha limiti — riconoscerli dimostra onesta e maturita. Il suggerimento di scrivere il metodo per primo e pratico: il metodo descrive quello che avete effettivamente fatto, quindi e il punto di partenza piu concreto.
+:::
+
+## Esercizio: Costruire l'Outline {background-color="#C5612E"}
+
+::: {.notes}
+Fase pratica della sessione. I gruppi lavorano alla costruzione dell'outline del paper.
+:::
+
+## Esercizio di gruppo (30 minuti)
+
+::: {.orange-box}
+### Costruite l'outline del vostro paper
+Per ogni sezione, scrivete **2-3 punti** che intendete sviluppare. Usate NotebookLM per identificare i collegamenti con la letteratura.
+:::
+
+**Struttura da completare:**
+
+1. **Titolo provvisorio:** ___
+2. **Domanda di ricerca:** ___
+3. **Introduzione:** 3 punti chiave
+4. **Metodo:** 3 elementi principali
+5. **Risultati attesi/preliminari:** 3 evidenze
+6. **Discussione:** 2 collegamenti alla teoria
+
+::: {.notes}
+Esercizio pratico: dare 30 minuti ai gruppi per costruire l'outline del paper. Circolare tra i gruppi per fornire feedback. L'obiettivo non e scrivere il paper, ma avere una struttura chiara. Ogni sezione deve avere 2-3 punti che indicano il contenuto previsto. Il titolo provvisorio aiuta a focalizzare l'argomento. La domanda di ricerca deve essere specifica e misurabile. I risultati possono essere preliminari — l'importante e avere un'idea di cosa presentare. Alla fine dei 30 minuti, ogni gruppo presenta brevemente il proprio outline (2 minuti).
+:::
+
+## Checklist di qualita del paper
+
+| Criterio | Verifica |
+|----------|----------|
+| Il titolo e descrittivo e specifico? | |
+| L'introduzione parte dal problema e arriva alla domanda? | |
+| Il metodo include prompt e procedura di validazione? | |
+| I risultati presentano dati senza interpretazione? | |
+| La discussione collega i risultati alla teoria? | |
+| I limiti sono esplicitamente riconosciuti? | |
+| Tutte le citazioni sono corrette e verificate? | |
+| L'uso dell'IA e dichiarato? | |
+
+::: {.notes}
+Checklist da usare come guida durante la stesura e come strumento di auto-valutazione prima della consegna. Ogni punto della checklist corrisponde a un criterio di valutazione del paper. I gruppi possono usarla anche per la revisione tra pari di domani: ogni gruppo leggera una bozza di un altro gruppo e la valutera usando questa checklist.
+:::
+
+## Per la prossima sessione
+
+**Domani (Martedi 31 Marzo):** Lavoro di Gruppo — Stesura Paper
+
+::: {.highlight-box}
+**Obiettivo della sessione di domani:** Lavorare in aula alla prima bozza del paper. Portate laptop, dati, e l'outline costruito oggi.
+:::
+
+::: {.columns}
+::: {.column width="50%"}
+### Da completare oggi/stasera
+
+- Outline del paper finalizzato
+- Divisione del lavoro nel gruppo
+- Risultati consolidati
+:::
+
+::: {.column width="50%"}
+### Da portare domani
+
+- Laptop con Google Docs condiviso
+- Dataset e risultati finali
+- Letture del corso (per citazioni)
+:::
+:::
+
+::: {.notes}
+Istruzioni per domani. La sessione di domani e dedicata al lavoro di gruppo in aula con supporto del docente. L'obiettivo e iniziare la stesura effettiva del paper. I gruppi dovrebbero arrivare con l'outline completato, i risultati consolidati e una chiara divisione del lavoro. Suggerire di dividere la scrittura: un membro scrive l'introduzione, un altro il metodo, un altro i risultati, e cosi via. Poi revisione incrociata per coerenza. Il Google Docs condiviso permette la scrittura simultanea.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Lavoro di Gruppo — Stesura Paper (31 Marzo 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) completare l'outline del paper, (2) dividere il lavoro nel gruppo, (3) portare tutto il necessario domani. Domani lavoriamo! A domani.
+:::
+
+## Riferimenti

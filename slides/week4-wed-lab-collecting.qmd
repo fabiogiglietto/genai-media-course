@@ -1,0 +1,350 @@
+---
+title: "Lab: Raccolta Post e Commenti"
+subtitle: "IA Generativa e Media — Settimana 4"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "18 Marzo 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+### Le piattaforme aggiornano le policy sui contenuti sintetici
+
+Meta annuncia nuove etichette per i contenuti generati dall'IA su Facebook e Instagram, estendendo il sistema di marcatura a immagini, video e audio sintetici.
+
+::: {.callout-note}
+## Da discutere
+Queste etichette possono aiutare gli utenti a riconoscere l'*AI slop*? O rischiano di creare un falso senso di sicurezza per i contenuti non etichettati?
+:::
+
+::: {.notes}
+This Week in AI: aprire con una notizia recente sulle policy delle piattaforme rispetto ai contenuti sintetici. Il collegamento con il progetto e' diretto: i gruppi stanno raccogliendo proprio contenuti AI-generated su Facebook. La domanda posta collega le policy piattaforma alla ricerca di Ferrara (2026) sullo stack della realta' sintetica. Dedicare 5-10 minuti alla discussione. Chiedere agli studenti se hanno notato etichette di questo tipo durante la loro navigazione.
+:::
+
+## [This Week in AI]{.twiai-badge}
+
+### Contenuti sintetici: il volume cresce
+
+- Il volume di **contenuti generati dall'IA** sui social media continua a crescere
+- Ferrara (2026) identifica il **collasso dei costi** come driver principale: produrre contenuti sintetici ha un costo marginale quasi nullo [@ferrara2026]
+- Le piattaforme faticano a distinguere contenuti autentici da quelli generati
+
+::: {.highlight-box}
+**Collegamento con il progetto:** il fenomeno che studierete oggi nasce proprio da questa dinamica di sovrapproduzione a basso costo.
+:::
+
+::: {.notes}
+Seconda slide TWIAI. Il collegamento con il progetto e' diretto: Ferrara (2026) descrive come il collasso dei costi di produzione e l'elevato throughput rendano possibile inondare le piattaforme di contenuti sintetici. L'AI slop che i gruppi studiano e' la manifestazione piu' visibile di questa dinamica nel Layer 1 (contenuto sintetico) dello stack proposto da Ferrara. Transizione: passiamo ora alla sessione pratica di raccolta dati.
+:::
+
+## Roadmap del lab
+
+1. **Ricapitolazione** — cosa raccogliere e perche'
+2. **Meta Content Library** — panoramica dello strumento
+3. **Strategie di ricerca** — come trovare contenuti *AI slop*
+4. **Workflow di raccolta** — dal post al dataset
+5. **Screening con Gemini** — classificazione preliminare
+6. **Lavoro pratico** — raccolta dati per gruppi
+
+::: {.notes}
+Struttura del lab. La sessione e' prevalentemente pratica: dopo una breve introduzione (20 minuti circa), i gruppi lavoreranno autonomamente alla raccolta dei dati. Il docente e i tutor saranno disponibili per assistenza tecnica e metodologica. Ogni gruppo dovrebbe uscire dal lab con un dataset iniziale di almeno 30-50 post con i relativi commenti.
+:::
+
+## Cosa Raccogliere e Perche' {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: breve ricapitolazione degli obiettivi di raccolta. Collegamento con la sessione di ieri sul lancio del progetto.
+:::
+
+## Obiettivi e struttura del dataset
+
+::: {.orange-box}
+### Il dataset del progetto
+Ogni gruppo costruisce un dataset di **post con immagini AI-generated** e i relativi **commenti**, raccolti da pagine e gruppi Facebook italiani.
+:::
+
+| Campo | Tipo | Esempio |
+|-------|------|---------|
+| **post_id** | Identificativo | FB_12345 |
+| **page_name** | Testo | "Nostalgia Italia" |
+| **image_type** | Categoria | Bambini / Animali / Paesaggi |
+| **engagement** | Numerico | 1.200 reazioni, 350 commenti |
+| **comment_text** | Testo | "Ma questa e' fatta con l'IA!" |
+| **comment_type** | Da classificare | Riconoscimento IA / Emotivo / Critico |
+
+::: {.notes}
+Ricapitolazione dalla sessione di ieri. Il dataset ha struttura gerarchica: i post con immagini AI slop sono le unita' di primo livello; i commenti sono le unita' di secondo livello. Ogni gruppo raccoglie almeno 30-50 post con relativi commenti. La colonna "comment_type" sara' classificata nella settimana 5 usando Gemini e validata con codifica umana. Per ora i gruppi si concentrano sulla raccolta dei campi oggettivi. I dati devono essere raccolti in un foglio Google Sheets condiviso nel gruppo.
+:::
+
+## Meta Content Library {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: panoramica pratica di Meta Content Library. Lo strumento chiave per la raccolta dei dati del progetto.
+:::
+
+## Meta Content Library: funzionalita' e limiti
+
+::: {.columns}
+::: {.column width="50%"}
+### Funzionalita'
+
+- Accesso a **post pubblici** di Facebook e Instagram
+- Ricerca per **parole chiave, pagine, gruppi**
+- Filtri per **data, tipo di contenuto, lingua**
+- Download dei **commenti** associati ai post
+:::
+
+::: {.column width="50%"}
+### Limiti
+
+- Solo contenuti **pubblici**
+- Accesso riservato a **ricercatori verificati**
+- Rate limit sulle **query**
+- Dati **anonimizzati** per gli utenti
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+Salvate ogni query con un nome descrittivo. Annotate i parametri di ricerca per la sezione "Metodo" del paper.
+:::
+
+::: {.notes}
+Meta Content Library e' lo strumento di Meta per la ricerca accademica. L'accesso e' stato configurato nelle settimane precedenti tramite il portale di ricerca. Passaggi operativi: accedere a contentlibrary.meta.com, selezionare "Posts", applicare filtri (lingua italiana, con immagine), impostare l'intervallo temporale (ultimi 6 mesi consigliati), esportare in CSV o JSON. Limiti importanti: dati solo pubblici, utenti anonimizzati, limiti sul volume di query. I gruppi dovranno pianificare le ricerche con attenzione. Mostrare l'interfaccia in tempo reale proiettando lo schermo.
+:::
+
+## Strategie di Ricerca {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: come identificare in modo efficace contenuti AI slop su Facebook. Strategie di ricerca specifiche.
+:::
+
+## Come trovare contenuti *AI slop*
+
+::: {.columns}
+::: {.column width="50%"}
+### Per parole chiave
+
+- "intelligenza artificiale" + "immagine"
+- "creato con IA"
+- Nomi di pagine note per AI slop
+- Temi tipici: "preghiera", "nostalgia", "animali"
+:::
+
+::: {.column width="50%"}
+### Per caratteristiche visive
+
+- Immagini con **stile iperrealista lucido**
+- Soggetti ricorrenti: **bambini, anziani, animali**
+- Anomalie: **dita, testo, simmetria**
+- Engagement **insolitamente alto**
+:::
+:::
+
+::: {.callout-warning}
+## Attenzione
+Non tutti i contenuti con alto engagement sono AI slop. Usate il vostro giudizio critico per lo screening iniziale.
+:::
+
+::: {.notes}
+Due strategie complementari per la ricerca. La ricerca per parole chiave funziona bene quando gli utenti stessi commentano che l'immagine e' generata dall'IA. La ricerca per caratteristiche visive richiede piu' esperienza ma permette di trovare contenuti non ancora identificati. Terenzi & Giglietto (2025) hanno identificato alcuni pattern tipici dell'AI slop nelle comunita' italiane: immagini di bambini in situazioni commoventi, anziani sorridenti, animali in contesti improbabili. Lo stile e' tipicamente iperrealista con una "lucentezza" caratteristica. Importante: lo screening iniziale e' necessariamente soggettivo; la classificazione sistematica verra' fatta nella settimana 5.
+:::
+
+## Esempio di query di ricerca
+
+::: {.highlight-box}
+**Query 1 — Ricerca diretta:**
+Parole chiave: `"fatto con intelligenza artificiale"` OR `"generato dall'IA"`
+Filtri: lingua italiana, con immagine, ultimi 6 mesi
+:::
+
+::: {.highlight-box}
+**Query 2 — Ricerca per contesto:**
+Pagine/gruppi identificati dal seminario Terenzi [@terenzi2025]
+Filtri: con immagine, ordinamento per engagement
+:::
+
+::: {.highlight-box}
+**Query 3 — Ricerca per tema:**
+Parole chiave: `"preghiera"` OR `"angelo"` OR `"Gesu'"` + immagine
+Filtri: engagement > 500 reazioni
+:::
+
+::: {.notes}
+Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto e' generato dall'IA. La Query 2 parte dalle pagine e dai gruppi gia' identificati nella ricerca di Terenzi & Giglietto (2025). La Query 3 cerca per temi tipici dell'AI slop nelle comunita' italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.
+:::
+
+## Il Workflow di Raccolta {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: il flusso di lavoro completo dalla ricerca al dataset strutturato.
+:::
+
+## Dal post al dataset: il flusso operativo
+
+**Fase 1 — Ricerca e selezione**
+
+1. Eseguire le query su Meta Content Library
+2. Identificare i post candidati (immagini AI-generated)
+3. **Screening manuale:** verificare che l'immagine sia effettivamente generata dall'IA
+
+**Fase 2 — Raccolta dati**
+
+4. Esportare i **dati del post** (testo, metriche, metadata)
+5. Esportare i **commenti** associati a ogni post selezionato
+6. Inserire tutto nel **foglio Google Sheets** condiviso
+
+**Fase 3 — Documentazione**
+
+7. Registrare le **query usate** e i **criteri di selezione**
+8. Annotare eventuali **decisioni discrezionali**
+
+::: {.notes}
+Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle scelte metodologiche e' fondamentale per la riproducibilita' e per la sezione Metodo del paper. Ogni decisione discrezionale (perche' un post e' stato incluso o escluso) deve essere annotata. Questo approccio riflette la metodologia LLMs-in-the-loop di Marino & Giglietto (2024): la trasparenza del processo e' importante quanto i risultati.
+:::
+
+## Organizzare il foglio di calcolo
+
+::: {.columns}
+::: {.column width="50%"}
+### Foglio "Post"
+
+| Colonna | Contenuto |
+|---------|-----------|
+| A | post_id |
+| B | data_pubblicazione |
+| C | pagina_gruppo |
+| D | testo_post |
+| E | tipo_immagine |
+| F | n_reazioni |
+| G | n_commenti |
+| H | n_condivisioni |
+:::
+
+::: {.column width="50%"}
+### Foglio "Commenti"
+
+| Colonna | Contenuto |
+|---------|-----------|
+| A | comment_id |
+| B | post_id (ref) |
+| C | testo_commento |
+| D | n_reazioni_commento |
+| E | classificazione_ai |
+| F | classificazione_umana |
+| G | note |
+:::
+:::
+
+::: {.notes}
+Struttura concreta del foglio di calcolo. Due fogli collegati dalla colonna post_id. Il foglio Post contiene i metadati dei post selezionati. Il foglio Commenti contiene tutti i commenti raccolti. Le colonne E e F del foglio Commenti (classificazione_ai e classificazione_umana) saranno compilate nella settimana 5 durante le fasi di analisi e validazione. Per ora restano vuote. La colonna G (note) serve per annotazioni qualitative durante la raccolta.
+:::
+
+## Screening con Gemini {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 5: uso di Google Gemini per lo screening preliminare dei contenuti raccolti. Primo assaggio della pipeline LLMs-in-the-loop.
+:::
+
+## Screening con Gemini: prompt e workflow
+
+::: {.orange-box}
+### Prompt di esempio per lo screening
+*"Analizza questa immagine e rispondi: (1) Presenta caratteristiche di un'immagine generata da IA? (Si/No/Incerto) (2) Quali indizi visivi supportano la valutazione? (3) Classifica il tema: bambini / animali / religione / paesaggio / altro"*
+:::
+
+Il prompt segue la struttura **Obiettivo + Istruzioni + Output** raccomandata da @cosenza2025.
+
+::: {.callout-tip}
+## Suggerimento pratico
+Usate la funzionalita' multimodale di Gemini: caricate l'immagine direttamente nella chat. Lo screening e' un supporto, non un sostituto del giudizio umano.
+:::
+
+::: {.notes}
+Primo uso operativo di Gemini nel progetto. Il prompt segue la struttura raccomandata da Cosenza (2025): obiettivo chiaro, istruzioni specifiche, formato di output definito. Gemini serve come strumento di supporto allo screening, non come classificatore finale. Cosenza nella regola "Valuta" ricorda di trattare il risultato dell'IA come una bozza da sottoporre a giudizio umano. La classificazione sistematica sara' fatta nella sessione di lunedi'. Gemini puo' sbagliare, specialmente con immagini di alta qualita'. I risultati dello screening vanno annotati ma non presi come classificazione definitiva.
+:::
+
+## Lavoro Pratico {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 6: inizio del lavoro pratico in gruppi. La parte centrale del lab.
+:::
+
+## Istruzioni per il lavoro di gruppo
+
+::: {.orange-box}
+### Obiettivo del lab (90 minuti)
+Ogni gruppo raccoglie almeno **30 post** con immagini *AI slop* e i relativi **commenti** su Meta Content Library, organizzandoli nel foglio di calcolo condiviso.
+:::
+
+**Divisione dei compiti suggerita:**
+
+1. **Ricercatore/i:** eseguono le query su Meta Content Library
+2. **Screener:** verificano che le immagini siano AI-generated (con supporto Gemini)
+3. **Data entry:** inseriscono i dati nel foglio Google Sheets
+4. **Documentatore:** annota query, criteri e decisioni
+
+::: {.notes}
+Fase pratica del lab. I gruppi lavorano autonomamente per circa 90 minuti. Il docente e i tutor circolano tra i gruppi per assistenza tecnica e metodologica. Problemi comuni da anticipare: (1) accesso a Meta Content Library, (2) difficolta' nell'esportazione dei commenti, (3) dubbi sulla classificazione delle immagini come AI-generated. Se un gruppo ha problemi tecnici con Meta Content Library, suggerire di iniziare con la ricerca manuale su Facebook e poi recuperare i dati strutturati in un secondo momento.
+:::
+
+## Checklist di fine lab
+
+Prima di uscire, ogni gruppo verifica:
+
+- [ ] **Almeno 30 post** raccolti nel foglio condiviso
+- [ ] **Commenti scaricati** per ogni post selezionato
+- [ ] **Query documentate** con parametri e criteri
+- [ ] **Screening preliminare** delle immagini completato
+- [ ] **Problemi e note** annotati nel foglio
+
+::: {.callout-warning}
+## Per lunedi'
+I dati raccolti oggi saranno il materiale di lavoro per il **Lab di analisi contenuti** di lunedi' 23 Marzo. Assicuratevi che il dataset sia completo e accessibile a tutti i membri del gruppo.
+:::
+
+::: {.notes}
+Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per controllare che tutti abbiano raggiunto il minimo di 30 post. I gruppi che hanno lavorato bene ne avranno molti di piu'. Quelli in difficolta' dovranno completare la raccolta tra oggi e lunedi'. Sottolineare che il dataset deve essere pronto per lunedi': la sessione di analisi richiede dati su cui lavorare. Se un gruppo e' molto indietro, suggerire di ridurre l'ambito della domanda di ricerca piuttosto che raccogliere dati di bassa qualita'.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Lab — Analisi Contenuti con IA (23 Marzo 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) completare la raccolta dati se necessario prima di lunedi', (2) verificare che il foglio di calcolo sia condiviso con tutti i membri del gruppo e con il docente, (3) lunedi' lavoreremo sull'analisi con Gemini — portare i laptop carichi. Il passo successivo e' passare dalla raccolta all'analisi sistematica dei contenuti.
+:::
+
+## Riferimenti

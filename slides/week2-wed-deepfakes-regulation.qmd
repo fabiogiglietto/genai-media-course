@@ -1,0 +1,392 @@
+---
+title: "Deepfake, Policy e Regolamentazione"
+subtitle: "IA Generativa e Media — Settimana 2"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "4 Marzo 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+### Deepfake nelle elezioni: casi recenti
+
+Nel 2024, deepfake audio e video hanno colpito elezioni in **Taiwan, India, Indonesia e Stati Uniti**. Siti di notizie fabbricate e reti di bot coordinati hanno diffuso contenuti sintetici su scala industriale [@schroeder2026].
+
+::: {.callout-note}
+## Da discutere
+La disinformazione sintetica nelle elezioni è un problema di **singoli contenuti falsi** o di **ecosistemi informativi corrotti**?
+:::
+
+::: {.notes}
+This Week in AI: aprire con esempi recenti di deepfake nelle elezioni. Schroeder et al. (2026) documentano come il 2024 sia stato un anno critico per i deepfake elettorali. In Taiwan: audio deepfake di candidati. In India: video deepfake distribuiti via WhatsApp. Negli USA: siti di notizie fabbricate ("Pravda networks") progettati per inquinare i dati di addestramento dei LLM. La domanda da porre alla classe introduce il tema centrale della lezione: il danno non è solo la singola bugia, ma l'erosione sistemica della fiducia.
+:::
+
+## Roadmap della lezione
+
+1. **Deepfake e incertezza** — il vero impatto sulla fiducia
+2. **Disinformazione visiva** — IA-generata vs. video decontestualizzato
+3. **Sciami IA malevoli** — la nuova frontiera della manipolazione
+4. **IA e persuasione** — il trade-off accuratezza-persuasione
+5. **Regolamentazione** — EU AI Act e Code of Practice
+6. **Prossimi passi** — verso il progetto di ricerca
+
+::: {.notes}
+Struttura della lezione. Oggi affrontiamo il lato oscuro dell'IA generativa: deepfake, disinformazione e manipolazione. Partiremo dai dati empirici (Vaccari & Chadwick, Hameleers & van der Meer), poi vedremo le minacce sistemiche (Schroeder et al.), il ruolo della persuasione IA (Hackenburg et al., Czarnek et al.) e infine il quadro regolamentare europeo. Questa lezione è densa: 5 letture e normativa UE.
+:::
+
+## Deepfake e Incertezza Epistemica {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: il lavoro fondamentale di Vaccari & Chadwick (2020) sui deepfake politici. L'intuizione chiave: il danno principale non è l'inganno diretto ma l'incertezza generata.
+:::
+
+## I deepfake non ingannano, creano incertezza
+
+::: {.highlight-box}
+**Risultato chiave:** Le persone esposte ai deepfake sono più propense a sentirsi **incerte** che ad essere **ingannate**. Questa incertezza, a sua volta, **riduce la fiducia** nelle notizie sui social media [@vaccari2020].
+:::
+
+- Studio sperimentale con **N = 2.005** partecipanti nel Regno Unito
+- Esposti a variazioni del deepfake Obama/Peele di BuzzFeed
+- Solo ~50% identifica correttamente i deepfake come falsi
+- L'accuratezza di rilevamento peggiora con la **compressione video** (tipica dei social)
+
+::: {.notes}
+Vaccari & Chadwick (2020) è il paper fondativo sugli effetti politici dei deepfake. L'esperimento utilizza il famoso deepfake di BuzzFeed (Obama/Peele) modificato per rimuovere la rivelazione finale. Il risultato più importante: i deepfake non funzionano principalmente come strumenti di inganno diretto (molte persone capiscono che qualcosa non va) ma come generatori di incertezza. E l'incertezza è altrettanto dannosa dell'inganno: se non ti fidi di nessun video, sei vulnerabile quanto chi crede ai video falsi. Collegamento con la strategia di propaganda russa citata nel paper: "L'obiettivo è inquinare lo spazio informativo affinché il pubblico rinunci a cercare la verità" (Pomerantsev, 2015).
+:::
+
+## Dall'inganno alla "vertigine epistemica"
+
+> "Seminare incertezza su cosa è vero e cosa non lo è è diventato un obiettivo strategico chiave della propaganda di stato."
+>
+> — @vaccari2020
+
+::: {.columns}
+::: {.column width="50%"}
+### Effetto diretto (limitato)
+- Alcuni credono al deepfake
+- Effetto di breve durata
+- Correggibile con fact-checking
+:::
+
+::: {.column width="50%"}
+### Effetto indiretto (profondo)
+- **Tutti** diventano più incerti
+- Effetto duraturo e cumulativo
+- Erode la fiducia nell'intero ecosistema
+:::
+:::
+
+::: {.notes}
+La distinzione tra effetto diretto e indiretto è cruciale. L'effetto diretto (credere a un deepfake specifico) è limitato e correggibile. L'effetto indiretto (incertezza generalizzata) è molto più pericoloso perché è cumulativo e resistente alla correzione. Se vedo un deepfake e mi rendo conto che è falso, il mio livello di fiducia nei video successivi è comunque diminuito. Questo è ciò che Schroeder et al. (2026) chiamano "vertigine epistemica" (epistemic vertigo): uno stato in cui le persone non si fidano più di nulla. Collegamento con Ferrara (2026) dalla settimana 1: la "tassa epistemica" è il costo crescente di verificare cosa è vero.
+:::
+
+## Disinformazione Visiva {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: Hameleers & van der Meer (2026). Sfida la narrativa dominante sui deepfake come minaccia principale.
+:::
+
+## Immagini IA vs. video decontestualizzati
+
+::: {.orange-box}
+### Risultato sorprendente
+La disinformazione visiva **non** supera uniformemente quella testuale in credibilità. Gli effetti dipendono dal **contesto** e dalla **salienza** dell'argomento [@hameleers2026].
+:::
+
+Studio sperimentale, **N = 982** partecipanti statunitensi, due temi testati:
+
+| Tema | Salienza | Effetto video vs. testo |
+|------|----------|------------------------|
+| Guerra in Ucraina | **Alta** (polarizzante) | Video significativamente **più credibile** |
+| Volo MH370 | **Bassa** | **Nessuna differenza** significativa |
+
+::: {.notes}
+Hameleers & van der Meer (2026) smontano l'assunto che i deepfake e le immagini IA siano sempre più persuasive del testo. L'effetto dipende dal contesto: per temi politicamente salienti e polarizzanti (come la guerra in Ucraina), i video decontestualizzati sono effettivamente più credibili. Ma per temi meno salienti, la modalità visiva non aggiunge credibilità rispetto al testo. Un altro dato importante: le immagini generate dall'IA non si sono dimostrate più credibili né del testo né dei video. Questo suggerisce che il problema principale non sono i deepfake sofisticati ma i video reali usati fuori contesto — una forma di disinformazione molto più semplice e diffusa.
+:::
+
+## La minaccia low-tech
+
+> "La disinformazione visiva che richiede meno sofisticazione manipolativa ma è alta in ricchezza modale (video decontestualizzati) è più prevalente online."
+>
+> — @hameleers2026
+
+::: {.columns}
+::: {.column width="50%"}
+### Deepfake sofisticati
+- Richiedono competenze tecniche
+- Costi di produzione elevati
+- Relativamente rari
+- Più facili da rilevare
+:::
+
+::: {.column width="50%"}
+### Video decontestualizzati
+- **Nessuna competenza tecnica** richiesta
+- Costo zero
+- **Estremamente diffusi**
+- Difficili da verificare
+:::
+:::
+
+::: {.callout-note}
+## Da discutere
+Per il nostro progetto: le immagini *AI slop* su Facebook sono un esempio di disinformazione visiva "low-tech" ad alto impatto?
+:::
+
+::: {.notes}
+Insight fondamentale per il corso: la narrativa mediatica si concentra sui deepfake sofisticati (face swap realistici, video generati), ma la minaccia quotidiana più grande è la disinformazione "low-tech" — video reali usati fuori contesto, immagini reali con didascalie false. I fact-checker spendono la maggior parte del loro tempo su questo tipo di contenuti, usando strumenti OSINT e geolocalizzazione. Per il progetto di gruppo: le immagini AI slop su Facebook sono un ibrido — generate dall'IA (quindi tecnicamente sofisticate) ma distribuite come engagement bait senza pretesa di autenticità. Il fatto-checking visivo è una competenza cruciale.
+:::
+
+## L'efficacia del fact-checking
+
+::: {.highlight-box}
+**Buone notizie:** Le correzioni (fact-check) risultano efficaci nel **ridurre la credibilità** della disinformazione, indipendentemente dalla modalità (testo, immagine IA, video) [@hameleers2026].
+:::
+
+Ma ci sono limiti:
+
+- Il fact-check raggiunge **meno persone** della disinformazione originale
+- L'effetto è **temporaneo** se non rinforzato
+- I soggetti con bassa fiducia nei media e **mentalità complottista** sono meno sensibili
+- La **velocità di diffusione** supera quella di verifica
+
+::: {.notes}
+Il dato positivo è che il fact-checking funziona: riduce la credibilità percepita della disinformazione in tutte le modalità testate. Questo è coerente con la meta-letteratura sul fact-checking. Tuttavia, i limiti sono significativi: nel ciclo dell'informazione politica di Chadwick, la disinformazione si diffonde più velocemente della correzione. E i soggetti più vulnerabili (bassa fiducia nei media, tendenze complottiste) sono anche i meno sensibili alle correzioni. Hameleers & van der Meer trovano che bassa fiducia nei media e mentalità complottista moderano (aumentano) la credibilità percepita della disinformazione, ma l'effetto è moderato.
+:::
+
+## Sciami IA Malevoli {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: la nuova frontiera della manipolazione. Schroeder et al. (2026) descrivono gli "sciami IA" come minaccia sistemica alla democrazia.
+:::
+
+## Dagli account fake agli sciami IA
+
+::: {.highlight-box}
+**Sciami IA malevoli:** reti coordinate di agenti IA autonomi che utilizzano LLM e architetture multi-agente per manipolare il discorso pubblico su scala industriale, con **adattamento in tempo reale** al comportamento degli utenti [@schroeder2026].
+:::
+
+Cinque capacità senza precedenti:
+
+1. **Coordinamento fluido** — migliaia di persona IA senza comando centrale
+2. **Mappatura sociale** — infiltrazione di comunità vulnerabili
+3. **Mimetismo umano** — avatar fotorealistici, linguaggio contestuale
+4. **Auto-ottimizzazione** — A/B testing delle narrative a "velocità macchina"
+5. **Presenza continua** — operatività 24/7, spostamento graduale del discorso
+
+::: {.notes}
+Schroeder et al. (2026) descrivono uno scenario in cui la manipolazione dell'informazione passa dai bot relativamente primitivi (IRA russa nel 2016: operazione umana, costosa, limitata) a sciami di agenti IA che operano autonomamente. Le cinque capacità elencate vanno oltre ciò che qualsiasi operazione umana può fare. La coordinazione senza comando centrale rende gli sciami resistenti alla takedown. Il mimetismo umano supera le capacità di detection attuali. L'auto-ottimizzazione significa che le narrative manipolative vengono testate e raffinate in tempo reale. La presenza continua permette di infiltrare comunità e spostare gradualmente il consenso. Collegamento con Ferrara (2026): dal contenuto sintetico (livello 1) all'interazione sintetica (livello 3) della realtà sintetica.
+:::
+
+## Il consenso sintetico
+
+> "Gli sciami IA sono particolarmente attrezzati per ingegnerizzare un **consenso sintetico** che sembra colmare le divisioni esistenti. Questo coro erode l'indipendenza essenziale per l'intelligenza collettiva e la democrazia."
+>
+> — @schroeder2026
+
+::: {.columns}
+::: {.column width="50%"}
+### La "saggezza delle folle"
+
+Richiede **indipendenza** tra i giudizi individuali.
+
+Se le opinioni sono influenzate da bot, il meccanismo si rompe.
+:::
+
+::: {.column width="50%"}
+### L'avvelenamento dei dati
+
+Le reti "Pravda" creano siti con articoli fabbricati → i crawler li indicizzano → i LLM li ingeriscono → le narrative false si **cristallizzano** nei pesi del modello.
+:::
+:::
+
+::: {.notes}
+Due concetti chiave da Schroeder et al. Il consenso sintetico: se la maggioranza apparente delle opinioni online è generata da bot, i meccanismi democratici che si basano sull'aggregazione delle opinioni (sondaggi online, trend di Twitter, recensioni) vengono corrotti. La "saggezza delle folle" funziona solo se i giudizi sono indipendenti — gli sciami IA violano sistematicamente questa condizione. L'avvelenamento dei dati (data poisoning): le reti "Pravda" (pro-Cremlino) creano centinaia di siti web con articoli duplicati, progettati per essere indicizzati dai web crawler. Quando i LLM vengono riaddestrati su questi dati, le narrative false si incorporano nei pesi del modello. È una forma di manipolazione a lungo termine dell'intero ecosistema informativo.
+:::
+
+## IA e Persuasione {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: la capacità di persuasione dell'IA, con il trade-off accuratezza-persuasione (Hackenburg et al.) e l'uso prosociale della persuasione IA (Czarnek et al.).
+:::
+
+## Il trade-off persuasione-accuratezza
+
+::: {.highlight-box}
+**Risultato chiave:** I sistemi IA più persuasivi producono **più affermazioni inaccurate**. Il modello più persuasivo conteneva il **30% di claim inaccurati** [@hackenburg2025].
+:::
+
+- Studio su **76.977 risposte**, **42.357 persone**, **19 LLM**, **707 questioni politiche**
+- L'IA conversazionale è fino al **52% più persuasiva** di un messaggio statico
+- Effetti misurabili ancora **dopo un mese**
+- Le strategie basate su **densità informativa** sono le più efficaci
+
+::: {.notes}
+Hackenburg et al. (2025), pubblicato su Science, è uno degli studi più ampi sulla persuasione IA. Il trade-off persuasione-accuratezza è la scoperta centrale: ottimizzare per la persuasione porta inevitabilmente a sacrificare l'accuratezza. Questo ha implicazioni profonde per la regolamentazione: se i modelli vengono ottimizzati per l'engagement (come accade sui social media), saranno anche più inaccurati. Da notare: anche modelli piccoli, con il giusto fine-tuning, possono diventare altamente persuasivi — il rischio non è limitato ai modelli frontier. Collegamento con Ferrara (2026): il paradosso dell'IA generativa (utilità crescente, fiducia decrescente) è confermato empiricamente.
+:::
+
+## L'IA persuasiva per il bene comune?
+
+Conversazioni personalizzate con LLM sulla **crisi climatica** [@czarnek2025]:
+
+| Condizione | Riduzione dello scetticismo | Persistenza |
+|------------|---------------------------|-------------|
+| LLM personalizzato | **-9 punti** (d=0.55) | ~40% dopo 4 settimane |
+| Messaggio consenso scientifico | -1 punto (non significativo) | — |
+
+- L'IA personalizzata è **1,7 volte più efficace** del messaggio standard
+- Funziona anche con i **Repubblicani** (-5,73 punti, d=0.38)
+- La strategia: **fatti, emozioni positive, riduzione distanza psicologica**
+
+::: {.notes}
+Czarnek et al. (2025) mostrano il lato prosociale della persuasione IA. Due esperimenti (N=2.402 e N=1.510) testano conversazioni personalizzate con LLM che affrontano le specifiche riserve di ogni individuo sul cambiamento climatico. Risultato: l'IA personalizzata è molto più efficace del messaggio standard di consenso scientifico, e funziona anche con i soggetti più scettici (Repubblicani). La strategia vincente NON usa valori o appelli identitari, ma fatti, emozioni positive e riduzione della distanza psicologica. Collegamento: la stessa capacità di personalizzazione che Schroeder et al. descrivono come minaccia democratica, qui viene usata per il bene comune. È la natura dual-use dell'IA che rende la regolamentazione così complessa.
+:::
+
+## Il Quadro Regolamentare {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 5: panoramica del quadro regolamentare europeo. EU AI Act, Code of Practice on Disinformation, policy delle piattaforme.
+:::
+
+## Il quadro europeo
+
+| Normativa | Ambito | Stato |
+|-----------|--------|-------|
+| **EU AI Act** | Classificazione e regolamentazione sistemi IA | In vigore (attuazione graduale) |
+| **Code of Practice on Disinformation** | Autoregolamentazione piattaforme | Versione rafforzata 2022 |
+| **Digital Services Act** | Trasparenza e accountability piattaforme | In vigore |
+
+::: {.highlight-box}
+**Nota:** Nel AI Act, il giornalismo è **esentato** a condizione che ci sia un redattore umano alla fine della catena. Ma questa esenzione potrebbe essere **insufficiente** per i rischi identificati [@mattis2025].
+:::
+
+::: {.notes}
+Panoramica del quadro regolamentare europeo. L'EU AI Act è la normativa più ambiziosa al mondo sulla regolamentazione dell'IA: classifica i sistemi per livello di rischio (inaccettabile, alto, limitato, minimo) e impone obblighi proporzionali. Il Code of Practice on Disinformation (versione rafforzata 2022) è un codice di autoregolamentazione firmato dalle principali piattaforme. Il Digital Services Act impone trasparenza sugli algoritmi di raccomandazione. L'esenzione del giornalismo dal AI Act è discussa da Mattis & de Vreese: se l'IA pervade l'intera catena del valore, basta un redattore umano "alla fine" per garantire la qualità?
+:::
+
+## L'EU AI Act: livelli di rischio
+
+| Livello | Descrizione | Esempi |
+|---------|-------------|--------|
+| **Inaccettabile** | Vietato | Scoring sociale, manipolazione subliminale |
+| **Alto** | Regolamentazione stringente | Riconoscimento biometrico, infrastrutture critiche |
+| **Limitato** | Obblighi di trasparenza | Chatbot, deepfake (obbligo di etichettatura) |
+| **Minimo** | Nessun obbligo specifico | Filtri spam, videogiochi |
+
+Per i **deepfake**: obbligo di **etichettatura chiara** come contenuto generato artificialmente.
+
+::: {.notes}
+L'approccio dell'EU AI Act è basato sul rischio: più alto il rischio, più stringenti gli obblighi. I deepfake rientrano nel livello "limitato" con obbligo di trasparenza. Questo significa che chiunque generi un deepfake deve etichettarlo chiaramente come contenuto sintetico. L'enforcement è la sfida principale: come si fa a garantire l'etichettatura su milioni di contenuti generati quotidianamente? E come si gestiscono i contenuti generati fuori dall'UE ma distribuiti in Europa? Collegamento con Schroeder et al.: gli sciami IA operano al di là delle giurisdizioni nazionali, rendendo la regolamentazione nazionale necessaria ma insufficiente.
+:::
+
+## Le policy delle piattaforme
+
+::: {.columns}
+::: {.column width="50%"}
+### Meta (Facebook/Instagram)
+
+- Etichettatura IA per immagini generate
+- Rimozione contenuti manipolati se rischiano di **ingannare**
+- Partnership con fact-checker indipendenti
+- Standard AI di Oversight Board
+:::
+
+::: {.column width="50%"}
+### TikTok
+
+- Obbligo di etichettatura contenuti IA
+- Strumenti di rilevamento automatico
+- Linee guida su media sintetici
+- Rimozione deepfake che possono **fuorviare**
+:::
+:::
+
+::: {.callout-warning}
+## Attenzione
+Le policy delle piattaforme si concentrano sul **deepfake intenzionalmente ingannevole**, ma non affrontano adeguatamente l'*AI slop* (contenuto IA non ingannevole ma degradante per l'ecosistema informativo).
+:::
+
+::: {.notes}
+Le policy di Meta e TikTok si concentrano sui deepfake intenzionalmente ingannevoli, con un approccio reattivo (rimozione dopo segnalazione). Ma il problema dell'AI slop è diverso: le immagini generate dall'IA su Facebook spesso non pretendono di essere reali (non sono "deepfake" in senso stretto) ma degradano la qualità dell'ecosistema informativo attraverso engagement bait. Le policy attuali non catturano adeguatamente questo fenomeno. Collegamento con il progetto: analizzeremo come gli utenti reagiscono a contenuti AI slop che non violano le policy ma inquinano il feed.
+:::
+
+## Sintesi e Prossimi Passi {background-color="#C5612E"}
+
+::: {.notes}
+Sezione finale: riepilogo e orientamento verso il progetto.
+:::
+
+## Concetti chiave di oggi
+
+- I deepfake generano **incertezza**, non solo inganno [@vaccari2020]
+- La disinformazione visiva è **contesto-dipendente**: non tutti i formati sono uguali [@hameleers2026]
+- Gli **sciami IA** rappresentano una minaccia sistemica alla democrazia [@schroeder2026]
+- Il **trade-off persuasione-accuratezza** è empiricamente confermato [@hackenburg2025]
+- L'IA personalizzata può persuadere sia per il bene che per il male [@czarnek2025]
+- La regolamentazione EU è un primo passo, ma l'enforcement resta una sfida
+
+::: {.notes}
+Riepilogo dei concetti fondamentali. I temi di oggi formano il background teorico per il progetto di gruppo: l'AI slop opera nel sistema mediale ibrido, sfrutta meccanismi di engagement visivo, e sfugge alle policy delle piattaforme pensate per i deepfake tradizionali. Nelle prossime settimane (4-6) applicheremo questi framework all'analisi empirica.
+:::
+
+## Per le prossime sessioni
+
+**Settimana 3 (9-11 Marzo):** Seminario di Bruna Paroni
+
+- IA generativa e comunicazione politica: un caso brasiliano
+- Metodologia LLMs-in-the-loop
+- Tecniche di rilevamento e fact-checking
+
+**Settimana 4 (16-18 Marzo):** Lancio del progetto di ricerca
+
+::: {.callout-tip}
+## Suggerimento
+Il seminario di Bruna Paroni è direttamente collegato alla metodologia del progetto di gruppo. Approfittatene per fare domande sulla pipeline LLMs-in-the-loop.
+:::
+
+::: {.notes}
+La settimana 3 è dedicata al seminario di Bruna Paroni (3 sessioni da 2 ore). Paroni presenterà un caso studio brasiliano di analisi dell'IA nella comunicazione politica, con particolare focus sulla metodologia LLMs-in-the-loop di Marino & Giglietto (2024). Questo seminario è fondamentale per il progetto: fornirà la base metodologica per l'analisi che gli studenti condurranno nelle settimane 4-5. La settimana 4 inizia con il guest di Massimo Terenzi su AI slop, poi il lancio del progetto e la raccolta dati.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Seminario Bruna Paroni — Parte 1 (9 Marzo 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) la settimana prossima è il seminario Paroni (3 giorni), (2) preparare domande sulla metodologia LLMs-in-the-loop, (3) la settimana 4 inizia il progetto. Buon fine settimana!
+:::
+
+## Riferimenti

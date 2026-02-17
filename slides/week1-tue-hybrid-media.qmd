@@ -1,0 +1,617 @@
+---
+title: "Il Sistema Mediale Ibrido nell'Era dell'IA"
+subtitle: "IA Generativa e Media — Settimana 1"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "24 Febbraio 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## Roadmap della lezione
+
+1. **L'ontologia dell'ibridità** — un nuovo modo di pensare i media
+2. **Il sistema mediale ibrido** — il framework di Chadwick
+3. **Il ciclo dell'informazione politica** — come si costruiscono le notizie oggi
+4. **Il giornalismo nell'era dell'IA** — trasformazioni della catena del valore
+5. **Potere, agentività e autorità** — chi decide cosa nel sistema ibrido
+6. **Prossimi passi** — workshop di domani
+
+::: {.notes}
+Presentare la struttura della lezione. Oggi costruiamo il framework teorico centrale del corso: il sistema mediale ibrido di Chadwick (2011). Questo framework ci permette di capire dove si inserisce l'IA generativa nel sistema dei media contemporanei. Partiremo dal concetto di ibridità, poi analizzeremo come sta cambiando il giornalismo e infine discuteremo le dinamiche di potere nel sistema ibrido. La lezione dura 2 ore con una pausa intermedia.
+:::
+
+## L'Ontologia dell'Ibridità {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: introduzione al concetto di ibridità. Prima di parlare del sistema mediale, dobbiamo capire cosa significa "ibrido" nelle scienze sociali. Chadwick (2011) parte da una ricognizione interdisciplinare del concetto.
+:::
+
+## Pensare in termini di ibridità
+
+::: {.highlight-box}
+**Ibridità:** un modo di vedere il mondo che evidenzia **complessità**, **interdipendenza** e **transizione**. Cattura l'eterogeneità e ciò che non è riducibile a essenze semplici e unificate [@chadwick2011].
+:::
+
+L'ibridità ci spinge a superare le **dicotomie rigide**:
+
+- Non "vecchi OPPURE nuovi media", ma **interazione** tra i due
+- Non sostituzione, ma **coesistenza complessa**
+- Attenzione alle continuità tra vecchio e nuovo
+
+::: {.notes}
+Chadwick propone l'ibridità come una vera e propria ontologia — un modo di guardare la realtà. Non è un termine vago: ha radici in diverse discipline delle scienze sociali. L'idea chiave è che le dicotomie (vecchio/nuovo, online/offline, professionale/amatoriale) non funzionano più per descrivere il sistema dei media. La realtà è più "sporca" e complessa di quanto le categorie tradizionali permettano di catturare. Chiedere: "Pensate a un esempio di contenuto mediale che non si riesce a classificare come 'vecchio' o 'nuovo' media."
+:::
+
+## L'ibridità nelle scienze sociali
+
+| Disciplina | Applicazione | Principio chiave |
+|-----------|-------------|-----------------|
+| Scienza politica | Regimi ibridi | Coesistenza di pratiche democratiche e autoritarie |
+| Governance | Regolamentazione ibrida | Mix di mercato, stato e auto-regolazione |
+| Organizzazioni | Strutture ibride | Gerarchia e rete coesistono |
+| Studi culturali | Culture ibride | Resistenza attraverso l'adattamento selettivo |
+| Sociologia della scienza | Actor-Network Theory | Reti sociotecniche di umani e non-umani |
+
+Adattato da @chadwick2011
+
+::: {.notes}
+Chadwick dimostra che l'ibridità è un concetto genuinamente interdisciplinare. Nei regimi politici: molti paesi non sono né democrazie né autocrazie, ma regimi ibridi (Levitsky & Way, 2010). Nelle organizzazioni: le aziende combinano gerarchia e rete. Negli studi culturali: le culture "subalterne" resistono attraverso l'incorporazione selettiva di elementi della cultura dominante (Bhabha, 1994). L'Actor-Network Theory di Latour è la forma più radicale: gli "attanti" non-umani (tecnologie, algoritmi) hanno una forma di agency che emerge dall'interazione con gli umani. Questa idea è fondamentale per capire il ruolo dell'IA nel sistema mediale.
+:::
+
+## Ibridità "particolata"
+
+::: {.columns}
+::: {.column width="50%"}
+### Ibridità "diluita"
+
+Gli ibridi sono versioni **attenuate** dei loro antecedenti.
+
+Un semplice mix senza novità reale.
+:::
+
+::: {.column width="50%"}
+### Ibridità "particolata"
+
+Le caratteristiche degli antecedenti vengono **ricombinate selettivamente** in modi nuovi.
+
+Gli ibridi sono **riconoscibili** per le loro origini, ma sono anche **genuinamente nuovi**.
+:::
+:::
+
+::: {.highlight-box}
+**Concetto chiave:** L'ibridizzazione è un processo di integrazione **e** frammentazione. Elementi contraddittori possono costituire un insieme significativo, senza mai risolversi completamente [@chadwick2011].
+:::
+
+::: {.notes}
+Distinzione cruciale di Chadwick. L'ibridità "particolata" (Wade, 2005) è il tipo che ci interessa: non è un semplice mix, ma una ricombinazione creativa che produce qualcosa di genuinamente nuovo. Esempio attuale: un articolo giornalistico scritto con l'assistenza dell'IA non è né giornalismo tradizionale né output automatico — è un ibrido particolato con caratteristiche proprie. L'ibridizzazione è anche il risultato di lotte di potere e competizione per la preminenza durante periodi di transizione.
+:::
+
+## Il Sistema Mediale Ibrido {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: il cuore della lezione. Il framework di Chadwick applicato al sistema dei media. Questo modello ci permetterà di analizzare dove l'IA generativa si colloca e come modifica le relazioni di potere esistenti.
+:::
+
+## Definizione del sistema mediale ibrido
+
+::: {.orange-box}
+### Il Sistema Mediale Ibrido
+Il sistema mediale ibrido è costruito sulle **interazioni tra vecchi e nuovi media** e le loro tecnologie, generi, norme, comportamenti e organizzazioni associate. Gli attori sono articolati da **relazioni di potere complesse e in evoluzione** basate su adattamento e interdipendenza [@chadwick2011].
+:::
+
+::: {.notes}
+Questa è la definizione fondamentale di Chadwick. Tre parole chiave: interazione (non sostituzione), potere (le relazioni non sono simmetriche) e interdipendenza (ogni attore dipende dagli altri). Il sistema non è statico ma in continua evoluzione. Chadwick propone un approccio olistico: non studiare solo i nuovi media o solo i vecchi, ma mappare empiricamente dove le distinzioni contano e dove no.
+:::
+
+## Dal ciclo delle notizie al ciclo dell'informazione politica
+
+::: {.columns}
+::: {.column width="50%"}
+### Ciclo tradizionale delle notizie
+
+- Controllato da **pochi attori d'élite**
+- Politici, comunicatori, giornalisti
+- Flusso **lineare** e prevedibile
+- Tempi scanditi dalla stampa e dai TG
+:::
+
+::: {.column width="50%"}
+### Ciclo dell'informazione politica
+
+- Attori più **numerosi e diversificati**
+- Include cittadini, attivisti, blogger
+- Strutture temporali **complesse**
+- Iterazione e ricorsione **cross-platform**
+:::
+:::
+
+::: {.notes}
+Chadwick introduce il concetto di "political information cycle" in sostituzione del tradizionale "news cycle". Non si tratta solo di un'accelerazione dei tempi: la struttura stessa è cambiata. I casi studio di Chadwick (il caso "Bullygate" nel 2010 e i primi dibattiti televisivi tra leader nel Regno Unito) mostrano come cittadini su Twitter abbiano influenzato l'agenda dei media professionali in tempo reale. I frammenti di notizie possono restare dormienti per settimane prima che nuove informazioni li riattivino. L'IA generativa aggiunge un ulteriore livello di complessità a questo ciclo.
+:::
+
+## Gli assemblage della produzione di notizie
+
+> "Gli assemblage della produzione di notizie sono composti da molteplici individui, gruppi, siti e istanze temporali di interazione, debolmente accoppiati ma altamente interdipendenti, che si connettono e disconnettono dal processo, spesso in tempo reale."
+>
+> — @chadwick2011
+
+Caratteristiche principali:
+
+- **Confini permeabili** tra moduli diversi
+- Attori non-élite possono **contestare i frame** dei media tradizionali
+- I broadcaster integrano sempre più informazioni dal mondo online
+- La produzione di notizie è un processo **fluido e dinamico**
+
+::: {.notes}
+Il concetto di "assemblage" viene dalla teoria sociale di DeLanda (2006). Chadwick lo applica alla produzione di notizie per catturare la natura modulare e ricombinabile del processo. L'esempio di WikiLeaks è emblematico: un attore ibrido (parte editore, parte movimento sociale, parte piattaforma tecnologica) che si è inserito nel sistema mediale creando nuove relazioni di interdipendenza con i giornali tradizionali (Guardian, New York Times, Der Spiegel). L'IA generativa può essere vista come un nuovo tipo di "attante" in questi assemblage: genera contenuti, simula identità, interagisce con utenti — e i confini tra produzione umana e automatizzata diventano sempre più permeabili.
+:::
+
+## Potere e interdipendenza nel sistema ibrido
+
+```{r}
+#| label: power-relations-diagram
+#| echo: false
+#| eval: true
+#| fig-width: 16
+#| fig-height: 8
+#| fig-align: center
+
+invisible(capture.output(source("../R/uniurb_theme.R")))
+library(ggplot2)
+
+actors <- data.frame(
+  attore = c("Media\ntradizionali", "Piattaforme\ndigitali", "Giornalisti\nprofessionisti",
+             "Cittadini e\nattivisti", "Politici e\nistituzioni", "IA\nGenerativa"),
+  potere = c(70, 85, 55, 30, 65, 45),
+  dipendenza = c(60, 40, 70, 50, 55, 20),
+  tipo = c("Vecchi media", "Nuovi media", "Professionisti", "Non-élite", "Istituzioni", "Tecnologia")
+)
+
+ggplot(actors, aes(x = dipendenza, y = potere, label = attore, color = tipo)) +
+  geom_point(size = 10, alpha = 0.8) +
+  geom_text(vjust = -1.5, size = 6, fontface = "bold", show.legend = FALSE) +
+  scale_color_manual(values = c(
+    "Vecchi media" = "#294973",
+    "Nuovi media" = "#E06029",
+    "Professionisti" = "#F68B5F",
+    "Non-élite" = "#F2A7A0",
+    "Istituzioni" = "#294973",
+    "Tecnologia" = "#F56D65"
+  )) +
+  theme_uniurb() +
+  labs(
+    title = "Potere e interdipendenza nel sistema mediale ibrido",
+    subtitle = "Posizionamento concettuale degli attori (adattato da Chadwick, 2011)",
+    x = "Livello di interdipendenza →",
+    y = "Capacità di influenza →",
+    color = "Tipo di attore"
+  ) +
+  scale_x_continuous(limits = c(10, 100), breaks = NULL) +
+  scale_y_continuous(limits = c(15, 100), breaks = NULL) +
+  theme(
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 14),
+    legend.position = "right",
+    legend.text = element_text(size = 14)
+  )
+```
+
+::: {.notes}
+Questo diagramma è una rappresentazione concettuale (non dati empirici) delle relazioni di potere nel sistema mediale ibrido. Le piattaforme digitali hanno alta capacità di influenza ma bassa interdipendenza (possono operare indipendentemente). I media tradizionali hanno ancora potere ma dipendono sempre più dalle piattaforme. L'IA generativa è un attore emergente con interdipendenza ancora bassa (non dipende dagli altri attori) ma con capacità di influenza crescente. I cittadini hanno bassa influenza individuale ma, come mostrano i casi di Chadwick, possono occasionalmente influenzare il flusso dell'informazione. La lezione chiave: il potere nel sistema ibrido non è a somma zero — emerge dalle interazioni tra attori.
+:::
+
+## WikiLeaks: un caso esemplare di ibridità
+
+::: {.columns}
+::: {.column width="50%"}
+### WikiLeaks come attore ibrido
+
+- Parte **editore**, parte **movimento sociale**
+- Parte piattaforma tecnologica
+- Infrastruttura crittografica distribuita
+- Rete di attivisti, hacker, giornalisti
+:::
+
+::: {.column width="50%"}
+### La collaborazione con i media
+
+- Partnership con Guardian, NYT, Der Spiegel
+- **Interdipendenza:** WikiLeaks forniva i dati, i giornali la legittimità
+- Nessuno dei due poteva operare da solo
+- Risultato: "assemblage" ibrido di risorse
+:::
+:::
+
+Chadwick analizza WikiLeaks come esempio paradigmatico del sistema mediale ibrido [@chadwick2011].
+
+::: {.notes}
+WikiLeaks è il caso studio principale di Chadwick. Non è solo un sito web, né solo un gruppo di attivisti: è un attore ibrido che combina tecnologie (server crittografati, Tor, BitTorrent), pratiche giornalistiche (editing video, conferenze stampa) e attivismo (campagne per la libertà di informazione). La collaborazione con i giornali per i cable diplomatici (2010) illustra perfettamente l'interdipendenza: WikiLeaks aveva i dati ma non la legittimità giornalistica; i giornali avevano la legittimità ma non l'infrastruttura tecnologica per gestire 250.000 documenti segreti. Il risultato fu una delle più importanti operazioni giornalistiche del decennio — un prodotto del sistema mediale ibrido. Collegamento: oggi l'IA generativa rappresenta un nuovo tipo di attore ibrido nel sistema, con capacità ancora più pervasive di WikiLeaks.
+:::
+
+## Il Giornalismo nell'Era dell'IA {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: come l'IA generativa sta trasformando il giornalismo. Qui utilizziamo principalmente Mattis & de Vreese (2025) e Munoriyarwa & de-Lima-Santos (2025) per aggiornare il framework di Chadwick al contesto dell'IA generativa.
+:::
+
+## L'IA come "motore di cambiamento istituzionale"
+
+L'IA generativa non è semplicemente un **nuovo strumento**: è un fattore di **cambiamento istituzionale** che trasforma norme e pratiche condivise del giornalismo [@mattis2025].
+
+::: {.columns}
+::: {.column width="50%"}
+### Cosa sta cambiando
+
+- Processi decisionali editoriali
+- Dinamiche interne alle redazioni
+- Ruoli professionali tradizionali
+- Standard di qualità giornalistica
+:::
+
+::: {.column width="50%"}
+### Cosa resta (per ora)
+
+- Il principio dell'*human-in-the-loop*
+- L'aspirazione alla trasparenza
+- Il ruolo di watchdog
+- L'autorità epistemica del giornalismo
+:::
+:::
+
+::: {.notes}
+Mattis & de Vreese (2025) adottano una lente istituzionale (Reese, 2022) per analizzare come l'IA trasforma il giornalismo. L'idea chiave è che l'IA non si limita ad automatizzare compiti: rinegozia i ruoli, le norme e le pratiche che definiscono il "buon giornalismo". Lewis et al. (2025) descrivono l'IA come un "central driver of institutional change" perché modifica il processo decisionale editoriale e le dinamiche delle redazioni. Tuttavia, come documentano Munoriyarwa & de-Lima-Santos (2025), in quasi tutti i contesti analizzati, i giornalisti insistono sull'insostituibilità del controllo umano — quello che viene chiamato il modello "human-in-the-loop".
+:::
+
+## La catena del valore giornalistica sotto pressione
+
+| Fase | Uso dell'IA | Rischio per la disinformazione |
+|------|------------|-------------------------------|
+| **Raccolta** | Aggregazione automatica, analisi trend | Perdita di controllo editoriale sulle fonti |
+| **Produzione** | Scrittura, traduzione, editing | Errori, bias, hallucination nei contenuti |
+| **Verifica** | Fact-checking automatizzato | Accuratezza insufficiente dei modelli |
+| **Distribuzione** | Personalizzazione, chatbot | Frammentazione e bolle informative |
+
+Adattato da @mattis2025
+
+::: {.notes}
+Mattis & de Vreese mappano l'impatto dell'IA su tutte e quattro le fasi della catena del valore giornalistica (Cools & Diakopoulos, 2024). Per ogni fase, identificano rischi specifici per la disinformazione. Nella raccolta: Bloomberg ha sviluppato tool interni per sintetizzare documenti, ma l'IA può amplificare propaganda se non controllata. Nella produzione: Express.de ha automatizzato il 5% degli articoli, ma con revisione umana obbligatoria. Nella verifica: il rapporto BBC mostra che il 50% delle risposte LLM presentava problemi, con il 19% che conteneva errori fattuali. Nella distribuzione: l'iperpersonalizzazione rischia di frammentare il pubblico e creare "news deserts" riempiti da "pink slime journalism" — siti di notizie generati automaticamente per profitto.
+:::
+
+## I quattro rischi per la disinformazione
+
+::: {.highlight-box}
+**Quattro rischi chiave** emergono dall'adozione dell'IA nel giornalismo [@mattis2025]:
+:::
+
+1. **Perdita di controllo editoriale** — le decisioni passano a modelli opachi
+2. **Diminuzione della qualità** — errori, bias, hallucination
+3. **Pressioni economiche aggravate** — dipendenza dalle piattaforme tech
+4. **Erosione della fiducia del pubblico** — scetticismo verso contenuti IA
+
+::: {.callout-warning}
+## Attenzione
+Questi rischi non sono indipendenti: la pressione economica spinge ad adottare l'IA in modo irresponsabile, il che riduce la qualità e la fiducia del pubblico.
+:::
+
+::: {.notes}
+I quattro rischi identificati da Mattis & de Vreese formano un circolo vizioso. La pressione economica (calo delle entrate pubblicitarie, competizione con piattaforme) spinge le testate ad adottare l'IA per ridurre i costi. Ma un'adozione frettolosa compromette la qualità e il controllo editoriale. Il pubblico percepisce il calo di qualità e perde fiducia (Fletcher & Kleis-Nielsen, 2024 mostrano che le preoccupazioni del pubblico per l'IA nel giornalismo sono diffuse in più paesi). La perdita di fiducia riduce ulteriormente le entrate, aumentando la pressione economica. Collegamento con Ferrara (2026) dalla lezione di ieri: l'erosione della fiducia come "tassa epistemica".
+:::
+
+## Il "paradosso della trasparenza"
+
+::: {.columns}
+::: {.column width="50%"}
+### Il principio
+
+Le testate giornalistiche dovrebbero **dichiarare** l'uso dell'IA per rispettare norme di trasparenza.
+
+Il **76%** del pubblico vuole sapere se un contenuto è generato dall'IA.
+:::
+
+::: {.column width="50%"}
+### Il paradosso
+
+Le *AI disclosure* tendono a **ridurre** la fiducia nei contenuti etichettati, anziché aumentarla [@mattis2025].
+
+Le testate sono in una **doppia trappola**: opacità o penalizzazione.
+:::
+:::
+
+::: {.notes}
+Mattis & de Vreese identificano un "transparency puzzle" particolarmente insidioso. Le linee guida editoriali di 52 testate globali (Becker, Simon & Crum, 2025) promuovono la trasparenza sull'uso dell'IA. Ma gli esperimenti mostrano che le etichette "generato con IA" tendono a ridurre la fiducia dei lettori, anche quando il contenuto è accurato (Longoni et al., 2022; Altay & Gilardi, 2024). Le persone sono scettiche verso i titoli etichettati come generati dall'IA, anche se sono veri o scritti da umani. Collegamento con Gilardi et al. (2025) dalla lezione di ieri: la qualità dei contenuti IA è equiparabile, ma la fiducia resta bassa. Come possono le testate essere trasparenti senza autopenalizzarsi?
+:::
+
+## Potere, Agentività e Autorità {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: sintesi delle dinamiche di potere nel sistema mediale ibrido contemporaneo, con focus sulla ridistribuzione del potere causata dall'IA. Utilizziamo principalmente Munoriyarwa & de-Lima-Santos (2025) per questa sezione.
+:::
+
+## Tre temi chiave nel sistema ibrido dell'IA
+
+Dall'analisi di contesti giornalistici globali emergono tre temi intrecciati [@munoriyarwa2025]:
+
+| Tema | Descrizione |
+|------|-------------|
+| **Riconfigurazione dell'agentività** | Il processo decisionale si sposta progressivamente verso sistemi tecnologici |
+| **Rinegoziazione del potere** | Cambia l'equilibrio tra redazioni, industria tech e regioni globali |
+| **Contestazione dell'autorità** | Supervisione umana, etica e accountability difese come salvaguardie |
+
+::: {.notes}
+Munoriyarwa & de-Lima-Santos (2025) identificano questi tre temi come fili conduttori che attraversano diverse ricerche sulla relazione tra IA e giornalismo in contesti diversi (Global North e Global South). L'agentività: chi decide cosa pubblicare, quando, per chi? Sempre più spesso, la risposta include algoritmi e modelli IA. Il potere: la dipendenza da strumenti IA sviluppati da big tech (Microsoft, Google, OpenAI) crea nuove forme di subordinazione. L'autorità: il diritto socialmente costruito del giornalismo ad essere ascoltato e creduto (Carlson, 2017) viene sfidato dall'automazione. Collegamento con Chadwick: queste dinamiche sono una manifestazione contemporanea delle relazioni di potere e interdipendenza nel sistema mediale ibrido.
+:::
+
+## L'*human-in-the-loop* come principio fondante
+
+> "In quasi tutti i contesti analizzati — dal giornalismo scientifico tedesco alle redazioni svizzere, dagli ambienti africani a quelli rumeni — i giornalisti sono fermi: l'IA deve restare uno strumento sotto il controllo umano."
+>
+> — @munoriyarwa2025
+
+L'*human-in-the-loop* funziona come una **polizza assicurativa** per salvaguardare l'autorità giornalistica nell'era dell'IA.
+
+::: {.notes}
+L'insistenza sull'human-in-the-loop è il dato più consistente che emerge dalla letteratura internazionale. Amigo e Porlezza (2025) trovano che i giornalisti svizzeri difendono l'intelligenza emotiva e la capacità di contestualizzazione come competenze "unicamente umane". Guenther et al. (2025) mostrano che i giornalisti scientifici tedeschi vedono l'IA come un "collega" utile per compiti di routine, ma rifiutano il suo uso per il giudizio giornalistico di base. In Africa, Umejei et al. (2025) trovano un mix di ottimismo, pessimismo e pragmatismo. Il principio dell'human-in-the-loop è anche al centro della metodologia che useremo nel progetto di gruppo (LLMs-in-the-loop di Marino & Giglietto, 2024), dove l'IA analizza ma l'umano valida.
+:::
+
+## Il divario digitale dell'IA
+
+::: {.columns}
+::: {.column width="50%"}
+### Global North
+
+- Sperimentazione attiva con IA
+- Dibattito su **autonomia editoriale**
+- Accesso a strumenti proprietari avanzati
+- Focus su collaborazione umano-IA
+:::
+
+::: {.column width="50%"}
+### Global South
+
+- Spesso **importatori** di tecnologia IA
+- Vincoli **finanziari e infrastrutturali**
+- IA come necessità per sopravvivenza
+- Rischio di **amplificare la disinformazione**
+:::
+:::
+
+Le tecnologie IA delle big tech **non** coprono le lingue minoritarie del Sud globale [@munoriyarwa2025].
+
+::: {.notes}
+Munoriyarwa & de-Lima-Santos pongono una domanda provocatoria: le big tech svilupperanno mai IA per lingue come il Chisena (Mozambico) o il Chindau (Zimbabwe)? La risposta è probabilmente no, perché le aziende tech mettono al centro il profitto, non il servizio pubblico. Questo crea un "AI divide" che ricalca e amplifica le disuguaglianze esistenti. In Tanzania, Gondwe (2025) mostra che gli strumenti di traduzione IA sono tecnicamente accurati ma culturalmente insensibili, e aumentano la dipendenza da fonti esterne, potenzialmente amplificando la disinformazione. In Italia: possiamo considerarci nel Global North, ma il nostro sistema mediale ha le sue specificità rispetto a UK o USA. Da discutere: il sistema mediale italiano è più o meno vulnerabile all'IA rispetto a quello anglosassone?
+:::
+
+## La tensione tra economia e valori
+
+```{r}
+#| label: tension-economy-values
+#| echo: false
+#| eval: true
+#| fig-width: 16
+#| fig-height: 7
+#| fig-align: center
+
+invisible(capture.output(source("../R/uniurb_theme.R")))
+library(ggplot2)
+
+tensions <- data.frame(
+  fattore = c("Pressione economica", "Ricerca di efficienza", "Dipendenza da big tech",
+              "Precariato lavorativo", "Principi etici", "Controllo editoriale",
+              "Supervisione umana", "Servizio pubblico"),
+  direzione = c("Adozione IA", "Adozione IA", "Adozione IA", "Adozione IA",
+                "Resistenza IA", "Resistenza IA", "Resistenza IA", "Resistenza IA"),
+  intensita = c(90, 80, 70, 75, 85, 80, 90, 70)
+)
+
+ggplot(tensions, aes(x = reorder(fattore, intensita), y = intensita, fill = direzione)) +
+  geom_col(width = 0.7) +
+  coord_flip() +
+  scale_fill_manual(values = c("Adozione IA" = "#E06029", "Resistenza IA" = "#294973")) +
+  theme_uniurb() +
+  labs(
+    title = "Le forze che guidano e frenano l'adozione dell'IA nel giornalismo",
+    subtitle = "Sintesi da Munoriyarwa & de-Lima-Santos (2025) e Mattis & de Vreese (2025)",
+    x = NULL,
+    y = "Intensità relativa",
+    fill = "Direzione"
+  ) +
+  scale_y_continuous(limits = c(0, 100), breaks = NULL) +
+  theme(
+    plot.title = element_text(size = 20),
+    plot.subtitle = element_text(size = 14),
+    axis.text.y = element_text(size = 16),
+    legend.position = "top",
+    legend.text = element_text(size = 14)
+  )
+```
+
+::: {.notes}
+Visualizzazione concettuale delle tensioni tra fattori che spingono verso l'adozione dell'IA e fattori di resistenza. Sul lato dell'adozione: la pressione economica è la forza dominante — le testate adottano l'IA non per scelta editoriale ma per necessità di sopravvivenza (Hermida & Simon, 2025 mostrano che le testate locali, più fragili, sono le più ricettive). Sul lato della resistenza: il principio dell'human-in-the-loop è la forza più forte, condiviso trasversalmente tra contesti diversi. La tensione non si risolve: è una delle manifestazioni dell'ibridità nel sistema mediale contemporaneo. Collegamento con Chadwick: il potere nel sistema ibrido emerge dalla negoziazione tra queste forze contrapposte.
+:::
+
+## Verso un modello ibrido di giornalismo con IA
+
+::: {.highlight-box}
+**L'impatto dell'IA sul giornalismo non è deterministico** ma contingente: dipende da norme istituzionali, economie politiche e realtà locali [@munoriyarwa2025].
+:::
+
+Tre scenari possibili (Thäsler-Kordonouri & Koliska, 2025, citati in @munoriyarwa2025):
+
+1. **Modello centrato sull'attore** — controllo umano prevalente
+2. **Modello ibrido** — collaborazione umano-IA bilanciata
+3. **Modello centrato sull'attante** — l'IA guida le decisioni
+
+::: {.callout-note}
+## Da discutere
+Quale modello pensate sia più probabile per il giornalismo italiano nei prossimi 5 anni?
+:::
+
+::: {.notes}
+Thäsler-Kordonouri & Koliska (2025) propongono una tipologia che ricorda la teoria della strutturazione di Giddens. Il modello centrato sull'attore (umano) è quello attualmente dominante nelle dichiarazioni delle testate, ma la pratica potrebbe già spostarsi verso il modello ibrido in molti contesti. Il modello centrato sull'attante (IA) è quello temuto dai critici. La realtà sarà probabilmente diversa in contesti diversi: testate locali sotto pressione economica potrebbero avvicinarsi al modello 3, mentre testate di qualità potrebbero restare nel modello 1 o 2. L'ibridità di Chadwick suggerisce che non ci sarà un modello unico, ma una coesistenza complessa e conflittuale di modelli diversi.
+:::
+
+## L'IA nel sistema mediale ibrido: una mappa concettuale {background-color="#C5612E"}
+
+::: {.notes}
+Slide di transizione verso la sintesi. Cerchiamo di mettere insieme i framework teorici discussi oggi in una visione unitaria.
+:::
+
+## Integrare i framework
+
+::: {.columns}
+::: {.column width="50%"}
+### Chadwick (2011)
+- Sistema mediale **ibrido**
+- Interazione vecchi/nuovi media
+- Relazioni di **potere e interdipendenza**
+- Ciclo dell'informazione politica
+- Assemblage della produzione di notizie
+:::
+
+::: {.column width="50%"}
+### Aggiornamenti per l'era IA
+- L'IA come nuovo **attante** nel sistema
+- Catena del valore giornalistica sotto pressione [@mattis2025]
+- Tre temi: agentività, potere, autorità [@munoriyarwa2025]
+- *Human-in-the-loop* come principio-guida
+- Tensione economia-valori irrisolta
+:::
+:::
+
+::: {.notes}
+Sintesi dei framework discussi oggi. Il sistema mediale ibrido di Chadwick ci fornisce la cornice teorica: i media non funzionano per dicotomie (vecchio/nuovo, umano/automatico) ma attraverso interazioni complesse tra attori diversi. Mattis & de Vreese aggiornano questa cornice alla catena del valore giornalistica nell'era dell'IA, identificando rischi specifici per la disinformazione. Munoriyarwa & de-Lima-Santos aggiungono la dimensione globale e la tensione tra economia e valori. Insieme, questi framework ci dicono che l'IA generativa non sostituisce il sistema esistente: lo rende più ibrido, più complesso e più conflittuale. E questo è esattamente ciò che studieremo nel resto del corso.
+:::
+
+## L'IA amplifica l'ibridità del sistema mediale
+
+| Caratteristica di Chadwick | Come l'IA la amplifica |
+|---------------------------|----------------------|
+| Interazione vecchi/nuovi media | L'IA opera **attraverso** sia vecchi che nuovi media |
+| Confini permeabili | L'IA rende i confini tra umano e macchina **ancora più porosi** |
+| Relazioni di potere | L'IA introduce un nuovo attore con **capacità senza precedenti** |
+| Interdipendenza | Le testate dipendono sempre più da **infrastrutture IA esterne** |
+| Assemblage fluidi | I contenuti IA si inseriscono negli assemblage **a tutti i livelli** |
+
+::: {.notes}
+Questa tabella sintetizza come ogni caratteristica del sistema mediale ibrido di Chadwick viene amplificata dall'IA generativa. L'IA non è semplicemente un "nuovo medium": è un attore che opera trasversalmente a tutto il sistema, rendendo i confini ancora più porosi e le relazioni di potere ancora più complesse. La dipendenza da infrastrutture IA esterne (Google, OpenAI, Microsoft) ricorda la dipendenza descritta da Chadwick tra WikiLeaks e i giornali, ma su scala molto più ampia e strutturale. Domanda retorica: se WikiLeaks era un attore ibrido dirompente nel 2010, cosa rappresenta l'IA generativa nel 2026?
+:::
+
+## Sintesi e Prossimi Passi {background-color="#C5612E"}
+
+::: {.notes}
+Sezione finale: riepilogo e orientamento per il workshop di domani.
+:::
+
+## Concetti chiave di oggi
+
+- Il **sistema mediale ibrido** è costruito su interazioni tra vecchi e nuovi media [@chadwick2011]
+- L'**ibridità particolata** produce forme genuinamente nuove, non semplici mix
+- Il **ciclo dell'informazione politica** sostituisce il ciclo lineare delle notizie
+- L'IA trasforma la **catena del valore giornalistica** in tutte e 4 le fasi [@mattis2025]
+- Quattro rischi: perdita di controllo, calo qualità, pressione economica, erosione fiducia
+- L'*human-in-the-loop* è il principio difensivo più condiviso globalmente [@munoriyarwa2025]
+
+::: {.notes}
+Riepilogo dei concetti fondamentali. Il sistema mediale ibrido di Chadwick è il framework teorico di base del corso. L'IA generativa non crea un sistema nuovo ma amplifica le caratteristiche ibride del sistema esistente. Il giornalismo è la prima istituzione democratica investita da questa trasformazione, con rischi specifici per la qualità dell'informazione e per la lotta alla disinformazione. Il principio dell'human-in-the-loop sarà al centro del progetto di gruppo (LLMs-in-the-loop).
+:::
+
+## Letture completate e consigliate
+
+::: {.columns}
+::: {.column width="50%"}
+### Per questa settimana
+
+- @chadwick2011 — Il Sistema Mediale Ibrido
+- @mattis2025 — IA generativa e giornalismo
+- @munoriyarwa2025 — IA e futuro delle notizie
+:::
+
+::: {.column width="50%"}
+### Per approfondire
+
+- @ferrara2026 — Il Paradosso dell'IA Generativa
+- @pewresearch2025 — Percezioni pubbliche dell'IA
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+Portate **tutte le letture** al workshop di domani: le caricheremo su NotebookLM per un esercizio pratico di analisi assistita dall'IA.
+:::
+
+::: {.notes}
+Ricordare l'assegnazione delle letture. Le tre letture obbligatorie di questa settimana coprono il framework teorico (Chadwick), l'impatto sull'informazione (Mattis) e la dimensione globale (Munoriyarwa). Per il workshop di domani serve avere accesso ai PDF delle letture per caricarli su NotebookLM. Verificare che tutti abbiano accesso funzionante a Google Gemini e NotebookLM con l'account uniurb.it.
+:::
+
+## Per il workshop di domani
+
+**Mercoledì 25 Febbraio:** Workshop pratico — Google Gemini & NotebookLM
+
+::: {.columns}
+::: {.column width="50%"}
+### Cosa faremo
+
+- Esplorare Gemini (testo, immagini, analisi)
+- Creare un notebook con le letture del corso
+- Sperimentare l'Audio Overview
+- Prompt design: regole di base
+:::
+
+::: {.column width="50%"}
+### Cosa preparare
+
+- Verificare accesso \@uniurb.it a Gemini
+- Scaricare i PDF delle letture
+- Portare un laptop con browser aggiornato
+:::
+:::
+
+::: {.callout-warning}
+## Attenzione
+Se non avete ancora verificato il vostro accesso a Gemini e NotebookLM, fatelo **oggi**.
+:::
+
+::: {.notes}
+Istruzioni operative per il workshop di domani. Il workshop sarà interamente pratico: gli studenti lavoreranno direttamente con Gemini e NotebookLM. L'esercizio principale consiste nel creare un notebook con le letture del corso e utilizzare le funzionalità di analisi di NotebookLM (Q&A con citazioni, audio overview, guide studio). Questo introduce anche il prompt design che verrà approfondito nella settimana 2 con la lezione sulla produzione di contenuti. Ricordare che l'accesso è tramite account istituzionale @uniurb.it, non account Gmail personale.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Workshop Google Gemini & NotebookLM (25 Febbraio 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) letture assegnate, (2) verifica accesso Gemini e NotebookLM, (3) portare laptop e PDF domani. Il workshop sarà in aula informatica, ore 14-16.
+:::
+
+## Riferimenti

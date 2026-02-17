@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<script src="week4-wed-lab-collecting_files/libs/clipboard/clipboard.min.js"></script>
+<script src="week4-wed-lab-collecting_files/libs/quarto-html/tabby.min.js"></script>
+<script src="week4-wed-lab-collecting_files/libs/quarto-html/popper.min.js"></script>
+<script src="week4-wed-lab-collecting_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="week4-wed-lab-collecting_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="week4-wed-lab-collecting_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="week4-wed-lab-collecting_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <meta name="author" content="Fabio Giglietto">
+  <title>Lab: Raccolta Post e Commenti</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="week4-wed-lab-collecting_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="week4-wed-lab-collecting_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="week4-wed-lab-collecting_files/libs/revealjs/dist/theme/quarto-bfe60d965afb32ba9079efc1d773584e.css">
+  <link href="week4-wed-lab-collecting_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="week4-wed-lab-collecting_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="week4-wed-lab-collecting_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="week4-wed-lab-collecting_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Lab: Raccolta Post e Commenti</h1>
+  <p class="subtitle">IA Generativa e Media — Settimana 4</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Fabio Giglietto 
+</div>
+        <p class="quarto-title-affiliation">
+            DISCUI · Università degli Studi di Urbino Carlo Bo
+          </p>
+    </div>
+</div>
+
+  <p class="date">18 marzo 2026</p>
+</section>
+<section id="this-week-in-ai" class="slide level2">
+<h2><span class="twiai-badge">This Week in AI</span></h2>
+<h3 id="le-piattaforme-aggiornano-le-policy-sui-contenuti-sintetici">Le piattaforme aggiornano le policy sui contenuti sintetici</h3>
+<p>Meta annuncia nuove etichette per i contenuti generati dall’IA su Facebook e Instagram, estendendo il sistema di marcatura a immagini, video e audio sintetici.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Da discutere</strong></p>
+</div>
+<div class="callout-content">
+<p>Queste etichette possono aiutare gli utenti a riconoscere l’<em>AI slop</em>? O rischiano di creare un falso senso di sicurezza per i contenuti non etichettati?</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>This Week in AI: aprire con una notizia recente sulle policy delle piattaforme rispetto ai contenuti sintetici. Il collegamento con il progetto e’ diretto: i gruppi stanno raccogliendo proprio contenuti AI-generated su Facebook. La domanda posta collega le policy piattaforma alla ricerca di Ferrara (2026) sullo stack della realta’ sintetica. Dedicare 5-10 minuti alla discussione. Chiedere agli studenti se hanno notato etichette di questo tipo durante la loro navigazione.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="this-week-in-ai-1" class="slide level2">
+<h2><span class="twiai-badge">This Week in AI</span></h2>
+<h3 id="contenuti-sintetici-il-volume-cresce">Contenuti sintetici: il volume cresce</h3>
+<ul>
+<li>Il volume di <strong>contenuti generati dall’IA</strong> sui social media continua a crescere</li>
+<li>Ferrara (2026) identifica il <strong>collasso dei costi</strong> come driver principale: produrre contenuti sintetici ha un costo marginale quasi nullo <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span></li>
+<li>Le piattaforme faticano a distinguere contenuti autentici da quelli generati</li>
+</ul>
+<div class="highlight-box">
+<p><strong>Collegamento con il progetto:</strong> il fenomeno che studierete oggi nasce proprio da questa dinamica di sovrapproduzione a basso costo.</p>
+</div>
+<aside class="notes">
+<p>Seconda slide TWIAI. Il collegamento con il progetto e’ diretto: Ferrara (2026) descrive come il collasso dei costi di produzione e l’elevato throughput rendano possibile inondare le piattaforme di contenuti sintetici. L’AI slop che i gruppi studiano e’ la manifestazione piu’ visibile di questa dinamica nel Layer 1 (contenuto sintetico) dello stack proposto da Ferrara. Transizione: passiamo ora alla sessione pratica di raccolta dati.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="roadmap-del-lab" class="slide level2">
+<h2>Roadmap del lab</h2>
+<ol type="1">
+<li><strong>Ricapitolazione</strong> — cosa raccogliere e perche’</li>
+<li><strong>Meta Content Library</strong> — panoramica dello strumento</li>
+<li><strong>Strategie di ricerca</strong> — come trovare contenuti <em>AI slop</em></li>
+<li><strong>Workflow di raccolta</strong> — dal post al dataset</li>
+<li><strong>Screening con Gemini</strong> — classificazione preliminare</li>
+<li><strong>Lavoro pratico</strong> — raccolta dati per gruppi</li>
+</ol>
+<aside class="notes">
+<p>Struttura del lab. La sessione e’ prevalentemente pratica: dopo una breve introduzione (20 minuti circa), i gruppi lavoreranno autonomamente alla raccolta dei dati. Il docente e i tutor saranno disponibili per assistenza tecnica e metodologica. Ogni gruppo dovrebbe uscire dal lab con un dataset iniziale di almeno 30-50 post con i relativi commenti.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cosa-raccogliere-e-perche" class="slide level2" data-background-color="#C5612E">
+<h2>Cosa Raccogliere e Perche’</h2>
+<aside class="notes">
+<p>Sezione 1: breve ricapitolazione degli obiettivi di raccolta. Collegamento con la sessione di ieri sul lancio del progetto.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="obiettivi-e-struttura-del-dataset" class="slide level2">
+<h2>Obiettivi e struttura del dataset</h2>
+<section id="il-dataset-del-progetto" class="orange-box">
+<h3>Il dataset del progetto</h3>
+<p>Ogni gruppo costruisce un dataset di <strong>post con immagini AI-generated</strong> e i relativi <strong>commenti</strong>, raccolti da pagine e gruppi Facebook italiani.</p>
+</section>
+<table class="caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 27%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Campo</th>
+<th>Tipo</th>
+<th>Esempio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>post_id</strong></td>
+<td>Identificativo</td>
+<td>FB_12345</td>
+</tr>
+<tr class="even">
+<td><strong>page_name</strong></td>
+<td>Testo</td>
+<td>“Nostalgia Italia”</td>
+</tr>
+<tr class="odd">
+<td><strong>image_type</strong></td>
+<td>Categoria</td>
+<td>Bambini / Animali / Paesaggi</td>
+</tr>
+<tr class="even">
+<td><strong>engagement</strong></td>
+<td>Numerico</td>
+<td>1.200 reazioni, 350 commenti</td>
+</tr>
+<tr class="odd">
+<td><strong>comment_text</strong></td>
+<td>Testo</td>
+<td>“Ma questa e’ fatta con l’IA!”</td>
+</tr>
+<tr class="even">
+<td><strong>comment_type</strong></td>
+<td>Da classificare</td>
+<td>Riconoscimento IA / Emotivo / Critico</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Ricapitolazione dalla sessione di ieri. Il dataset ha struttura gerarchica: i post con immagini AI slop sono le unita’ di primo livello; i commenti sono le unita’ di secondo livello. Ogni gruppo raccoglie almeno 30-50 post con relativi commenti. La colonna “comment_type” sara’ classificata nella settimana 5 usando Gemini e validata con codifica umana. Per ora i gruppi si concentrano sulla raccolta dei campi oggettivi. I dati devono essere raccolti in un foglio Google Sheets condiviso nel gruppo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="meta-content-library" class="slide level2" data-background-color="#C5612E">
+<h2>Meta Content Library</h2>
+<aside class="notes">
+<p>Sezione 2: panoramica pratica di Meta Content Library. Lo strumento chiave per la raccolta dei dati del progetto.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="meta-content-library-funzionalita-e-limiti" class="slide level2">
+<h2>Meta Content Library: funzionalita’ e limiti</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="funzionalita">Funzionalita’</h3>
+<ul>
+<li>Accesso a <strong>post pubblici</strong> di Facebook e Instagram</li>
+<li>Ricerca per <strong>parole chiave, pagine, gruppi</strong></li>
+<li>Filtri per <strong>data, tipo di contenuto, lingua</strong></li>
+<li>Download dei <strong>commenti</strong> associati ai post</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="limiti">Limiti</h3>
+<ul>
+<li>Solo contenuti <strong>pubblici</strong></li>
+<li>Accesso riservato a <strong>ricercatori verificati</strong></li>
+<li>Rate limit sulle <strong>query</strong></li>
+<li>Dati <strong>anonimizzati</strong> per gli utenti</li>
+</ul>
+</div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Suggerimento</strong></p>
+</div>
+<div class="callout-content">
+<p>Salvate ogni query con un nome descrittivo. Annotate i parametri di ricerca per la sezione “Metodo” del paper.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Meta Content Library e’ lo strumento di Meta per la ricerca accademica. L’accesso e’ stato configurato nelle settimane precedenti tramite il portale di ricerca. Passaggi operativi: accedere a contentlibrary.meta.com, selezionare “Posts”, applicare filtri (lingua italiana, con immagine), impostare l’intervallo temporale (ultimi 6 mesi consigliati), esportare in CSV o JSON. Limiti importanti: dati solo pubblici, utenti anonimizzati, limiti sul volume di query. I gruppi dovranno pianificare le ricerche con attenzione. Mostrare l’interfaccia in tempo reale proiettando lo schermo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="strategie-di-ricerca" class="slide level2" data-background-color="#C5612E">
+<h2>Strategie di Ricerca</h2>
+<aside class="notes">
+<p>Sezione 3: come identificare in modo efficace contenuti AI slop su Facebook. Strategie di ricerca specifiche.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="come-trovare-contenuti-ai-slop" class="slide level2">
+<h2>Come trovare contenuti <em>AI slop</em></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="per-parole-chiave">Per parole chiave</h3>
+<ul>
+<li>“intelligenza artificiale” + “immagine”</li>
+<li>“creato con IA”</li>
+<li>Nomi di pagine note per AI slop</li>
+<li>Temi tipici: “preghiera”, “nostalgia”, “animali”</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="per-caratteristiche-visive">Per caratteristiche visive</h3>
+<ul>
+<li>Immagini con <strong>stile iperrealista lucido</strong></li>
+<li>Soggetti ricorrenti: <strong>bambini, anziani, animali</strong></li>
+<li>Anomalie: <strong>dita, testo, simmetria</strong></li>
+<li>Engagement <strong>insolitamente alto</strong></li>
+</ul>
+</div></div>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Attenzione</strong></p>
+</div>
+<div class="callout-content">
+<p>Non tutti i contenuti con alto engagement sono AI slop. Usate il vostro giudizio critico per lo screening iniziale.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Due strategie complementari per la ricerca. La ricerca per parole chiave funziona bene quando gli utenti stessi commentano che l’immagine e’ generata dall’IA. La ricerca per caratteristiche visive richiede piu’ esperienza ma permette di trovare contenuti non ancora identificati. Terenzi &amp; Giglietto (2025) hanno identificato alcuni pattern tipici dell’AI slop nelle comunita’ italiane: immagini di bambini in situazioni commoventi, anziani sorridenti, animali in contesti improbabili. Lo stile e’ tipicamente iperrealista con una “lucentezza” caratteristica. Importante: lo screening iniziale e’ necessariamente soggettivo; la classificazione sistematica verra’ fatta nella settimana 5.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="esempio-di-query-di-ricerca" class="slide level2">
+<h2>Esempio di query di ricerca</h2>
+<div class="highlight-box">
+<p><strong>Query 1 — Ricerca diretta:</strong> Parole chiave: <code>"fatto con intelligenza artificiale"</code> OR <code>"generato dall'IA"</code> Filtri: lingua italiana, con immagine, ultimi 6 mesi</p>
+</div>
+<div class="highlight-box">
+<p><strong>Query 2 — Ricerca per contesto:</strong> Pagine/gruppi identificati dal seminario Terenzi <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span> Filtri: con immagine, ordinamento per engagement</p>
+</div>
+<div class="highlight-box">
+<p><strong>Query 3 — Ricerca per tema:</strong> Parole chiave: <code>"preghiera"</code> OR <code>"angelo"</code> OR <code>"Gesu'"</code> + immagine Filtri: engagement &gt; 500 reazioni</p>
+</div>
+<aside class="notes">
+<p>Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto e’ generato dall’IA. La Query 2 parte dalle pagine e dai gruppi gia’ identificati nella ricerca di Terenzi &amp; Giglietto (2025). La Query 3 cerca per temi tipici dell’AI slop nelle comunita’ italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="il-workflow-di-raccolta" class="slide level2" data-background-color="#C5612E">
+<h2>Il Workflow di Raccolta</h2>
+<aside class="notes">
+<p>Sezione 4: il flusso di lavoro completo dalla ricerca al dataset strutturato.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dal-post-al-dataset-il-flusso-operativo" class="slide level2">
+<h2>Dal post al dataset: il flusso operativo</h2>
+<p><strong>Fase 1 — Ricerca e selezione</strong></p>
+<ol type="1">
+<li>Eseguire le query su Meta Content Library</li>
+<li>Identificare i post candidati (immagini AI-generated)</li>
+<li><strong>Screening manuale:</strong> verificare che l’immagine sia effettivamente generata dall’IA</li>
+</ol>
+<p><strong>Fase 2 — Raccolta dati</strong></p>
+<ol start="4" type="1">
+<li>Esportare i <strong>dati del post</strong> (testo, metriche, metadata)</li>
+<li>Esportare i <strong>commenti</strong> associati a ogni post selezionato</li>
+<li>Inserire tutto nel <strong>foglio Google Sheets</strong> condiviso</li>
+</ol>
+<p><strong>Fase 3 — Documentazione</strong></p>
+<ol start="7" type="1">
+<li>Registrare le <strong>query usate</strong> e i <strong>criteri di selezione</strong></li>
+<li>Annotare eventuali <strong>decisioni discrezionali</strong></li>
+</ol>
+<aside class="notes">
+<p>Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle scelte metodologiche e’ fondamentale per la riproducibilita’ e per la sezione Metodo del paper. Ogni decisione discrezionale (perche’ un post e’ stato incluso o escluso) deve essere annotata. Questo approccio riflette la metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024): la trasparenza del processo e’ importante quanto i risultati.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="organizzare-il-foglio-di-calcolo" class="slide level2">
+<h2>Organizzare il foglio di calcolo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="foglio-post">Foglio “Post”</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Colonna</th>
+<th>Contenuto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>post_id</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>data_pubblicazione</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>pagina_gruppo</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>testo_post</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>tipo_immagine</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>n_reazioni</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>n_commenti</td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>n_condivisioni</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<h3 id="foglio-commenti">Foglio “Commenti”</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Colonna</th>
+<th>Contenuto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>comment_id</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>post_id (ref)</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>testo_commento</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>n_reazioni_commento</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>classificazione_ai</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>classificazione_umana</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>note</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<aside class="notes">
+<p>Struttura concreta del foglio di calcolo. Due fogli collegati dalla colonna post_id. Il foglio Post contiene i metadati dei post selezionati. Il foglio Commenti contiene tutti i commenti raccolti. Le colonne E e F del foglio Commenti (classificazione_ai e classificazione_umana) saranno compilate nella settimana 5 durante le fasi di analisi e validazione. Per ora restano vuote. La colonna G (note) serve per annotazioni qualitative durante la raccolta.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="screening-con-gemini" class="slide level2" data-background-color="#C5612E">
+<h2>Screening con Gemini</h2>
+<aside class="notes">
+<p>Sezione 5: uso di Google Gemini per lo screening preliminare dei contenuti raccolti. Primo assaggio della pipeline LLMs-in-the-loop.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="screening-con-gemini-prompt-e-workflow" class="slide level2">
+<h2>Screening con Gemini: prompt e workflow</h2>
+<section id="prompt-di-esempio-per-lo-screening" class="orange-box">
+<h3>Prompt di esempio per lo screening</h3>
+<p><em>“Analizza questa immagine e rispondi: (1) Presenta caratteristiche di un’immagine generata da IA? (Si/No/Incerto) (2) Quali indizi visivi supportano la valutazione? (3) Classifica il tema: bambini / animali / religione / paesaggio / altro”</em></p>
+</section>
+<p>Il prompt segue la struttura <strong>Obiettivo + Istruzioni + Output</strong> raccomandata da <span class="citation" data-cites="cosenza2025">Cosenza (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>.</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Suggerimento pratico</strong></p>
+</div>
+<div class="callout-content">
+<p>Usate la funzionalita’ multimodale di Gemini: caricate l’immagine direttamente nella chat. Lo screening e’ un supporto, non un sostituto del giudizio umano.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Primo uso operativo di Gemini nel progetto. Il prompt segue la struttura raccomandata da Cosenza (2025): obiettivo chiaro, istruzioni specifiche, formato di output definito. Gemini serve come strumento di supporto allo screening, non come classificatore finale. Cosenza nella regola “Valuta” ricorda di trattare il risultato dell’IA come una bozza da sottoporre a giudizio umano. La classificazione sistematica sara’ fatta nella sessione di lunedi’. Gemini puo’ sbagliare, specialmente con immagini di alta qualita’. I risultati dello screening vanno annotati ma non presi come classificazione definitiva.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lavoro-pratico" class="slide level2" data-background-color="#C5612E">
+<h2>Lavoro Pratico</h2>
+<aside class="notes">
+<p>Sezione 6: inizio del lavoro pratico in gruppi. La parte centrale del lab.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="istruzioni-per-il-lavoro-di-gruppo" class="slide level2">
+<h2>Istruzioni per il lavoro di gruppo</h2>
+<section id="obiettivo-del-lab-90-minuti" class="orange-box">
+<h3>Obiettivo del lab (90 minuti)</h3>
+<p>Ogni gruppo raccoglie almeno <strong>30 post</strong> con immagini <em>AI slop</em> e i relativi <strong>commenti</strong> su Meta Content Library, organizzandoli nel foglio di calcolo condiviso.</p>
+</section>
+<p><strong>Divisione dei compiti suggerita:</strong></p>
+<ol type="1">
+<li><strong>Ricercatore/i:</strong> eseguono le query su Meta Content Library</li>
+<li><strong>Screener:</strong> verificano che le immagini siano AI-generated (con supporto Gemini)</li>
+<li><strong>Data entry:</strong> inseriscono i dati nel foglio Google Sheets</li>
+<li><strong>Documentatore:</strong> annota query, criteri e decisioni</li>
+</ol>
+<aside class="notes">
+<p>Fase pratica del lab. I gruppi lavorano autonomamente per circa 90 minuti. Il docente e i tutor circolano tra i gruppi per assistenza tecnica e metodologica. Problemi comuni da anticipare: (1) accesso a Meta Content Library, (2) difficolta’ nell’esportazione dei commenti, (3) dubbi sulla classificazione delle immagini come AI-generated. Se un gruppo ha problemi tecnici con Meta Content Library, suggerire di iniziare con la ricerca manuale su Facebook e poi recuperare i dati strutturati in un secondo momento.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="checklist-di-fine-lab" class="slide level2">
+<h2>Checklist di fine lab</h2>
+<p>Prima di uscire, ogni gruppo verifica:</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><strong>Almeno 30 post</strong> raccolti nel foglio condiviso</label></li>
+<li><label><input type="checkbox"><strong>Commenti scaricati</strong> per ogni post selezionato</label></li>
+<li><label><input type="checkbox"><strong>Query documentate</strong> con parametri e criteri</label></li>
+<li><label><input type="checkbox"><strong>Screening preliminare</strong> delle immagini completato</label></li>
+<li><label><input type="checkbox"><strong>Problemi e note</strong> annotati nel foglio</label></li>
+</ul>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Per lunedi’</strong></p>
+</div>
+<div class="callout-content">
+<p>I dati raccolti oggi saranno il materiale di lavoro per il <strong>Lab di analisi contenuti</strong> di lunedi’ 23 Marzo. Assicuratevi che il dataset sia completo e accessibile a tutti i membri del gruppo.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per controllare che tutti abbiano raggiunto il minimo di 30 post. I gruppi che hanno lavorato bene ne avranno molti di piu’. Quelli in difficolta’ dovranno completare la raccolta tra oggi e lunedi’. Sottolineare che il dataset deve essere pronto per lunedi’: la sessione di analisi richiede dati su cui lavorare. Se un gruppo e’ molto indietro, suggerire di ridurre l’ambito della domanda di ricerca piuttosto che raccogliere dati di bassa qualita’.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="grazie" class="slide level2" data-background-color="#C5612E">
+<h2>Grazie!</h2>
+<p><strong>Prossima lezione:</strong> Lab — Analisi Contenuti con IA (23 Marzo 2026)</p>
+<p>📧 fabio.giglietto@uniurb.it</p>
+<p>🌐 blended.uniurb.it</p>
+<aside class="notes">
+<p>Chiusura. Ricordare: (1) completare la raccolta dati se necessario prima di lunedi’, (2) verificare che il foglio di calcolo sia condiviso con tutti i membri del gruppo e con il docente, (3) lunedi’ lavoreremo sull’analisi con Gemini — portare i laptop carichi. Il passo successivo e’ passare dalla raccolta all’analisi sistematica dei contenuti.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="riferimenti" class="slide level2 smaller scrollable">
+<h2>Riferimenti</h2>
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-cosenza2025" class="csl-entry" role="listitem">
+Cosenza, V. (2025). <em>Esercizi di Intelligenza Aumentata: Imparare a Collaborare con le <span>I.A.</span></em>
+</div>
+<div id="ref-ferrara2026" class="csl-entry" role="listitem">
+Ferrara, E. (2026). <em>The Generative <span>AI</span> Paradox: <span>GenAI</span> and the Erosion of Trust, the Corrosion of Information Verification, and the Demise of Truth</em> [Manoscritto].
+</div>
+<div id="ref-terenzi2025" class="csl-entry" role="listitem">
+Terenzi, M., &amp; Giglietto, F. (2025). <em>From <span>AI</span> Slop to Strategic Virality: The Impact of Synthetic Visuals on Public Discourse in <span>Italian</span> <span>Facebook</span> Communities</em> [Manoscritto].
+</div>
+</div>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../assets/logo-uniurb-white.svg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>IA Generativa e Media · A.A. 2025/2026</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="week4-wed-lab-collecting_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': true,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'pdfMaxPagesPerSlide': 1,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: false,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: false,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiato!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiato!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

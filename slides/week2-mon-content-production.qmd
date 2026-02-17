@@ -1,0 +1,450 @@
+---
+title: "Produzione di Contenuti con GenAI"
+subtitle: "IA Generativa e Media — Settimana 2"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "2 Marzo 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## Roadmap della lezione
+
+1. **I flussi di lavoro con GenAI** — come cambiano i processi creativi
+2. **Prompt engineering avanzato** — struttura, ruolo, formato
+3. **L'IA nella catena del valore giornalistica** — dalla raccolta alla distribuzione
+4. **Qualità percepita vs. disponibilità a leggere** — il paradosso dell'accettazione
+5. **Criteri di valutazione** — come giudicare i contenuti generati dall'IA
+6. **Prossimi passi** — deepfake e regolamentazione
+
+::: {.notes}
+Presentare la struttura della lezione. Oggi passiamo dalla teoria alla pratica della produzione di contenuti con IA generativa. Nella prima settimana abbiamo costruito i framework teorici (sistema mediale ibrido, paradosso dell'IA); oggi li applichiamo ai processi concreti di creazione di contenuti. Collegamento con il workshop di mercoledì scorso: approfondiremo il prompt engineering e aggiungeremo dati empirici sulla percezione dei contenuti IA.
+:::
+
+## I Flussi di Lavoro con GenAI {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: come l'IA generativa trasforma i processi di produzione di contenuti. Non solo giornalismo, ma produzione mediale in senso ampio.
+:::
+
+## Dal foglio bianco alla collaborazione con l'IA
+
+::: {.columns}
+::: {.column width="50%"}
+### Flusso tradizionale
+
+1. Ricerca delle fonti
+2. Organizzazione dei materiali
+3. Scrittura della bozza
+4. Revisione e editing
+5. Pubblicazione
+:::
+
+::: {.column width="50%"}
+### Flusso con GenAI
+
+1. **IA-assistita:** ricerca e aggregazione
+2. **IA-assistita:** strutturazione e outline
+3. **Ibrido:** scrittura con suggerimenti IA
+4. **Umano:** revisione critica e fact-checking
+5. **IA-assistita:** ottimizzazione e distribuzione
+:::
+:::
+
+::: {.highlight-box}
+**Concetto chiave:** L'IA non elimina fasi del processo ma le **trasforma**. La fase critica resta quella umana: revisione, verifica, giudizio editoriale.
+:::
+
+::: {.notes}
+Confronto tra flusso tradizionale e flusso assistito dall'IA. L'IA si inserisce in ogni fase, ma con intensità diversa. Nella ricerca: può aggregare fonti e sintetizzare documenti (come abbiamo visto con NotebookLM). Nella scrittura: può generare bozze, ma la qualità dipende dal prompt e dalla supervisione. Nella revisione: l'umano resta insostituibile per il fact-checking e il giudizio editoriale. Nella distribuzione: può personalizzare e ottimizzare. Collegamento con Mattis & de Vreese (2025): l'IA permeates the entire news value chain.
+:::
+
+## L'adozione dell'IA nelle redazioni
+
+L'IA generativa sta entrando in **tutte le fasi** della produzione giornalistica [@mattis2025]:
+
+| Fase | Esempi concreti | Rischi |
+|------|----------------|--------|
+| **Raccolta** | Bloomberg: tool per sintetizzare documenti | Amplificazione propaganda |
+| **Produzione** | Express.de: 5% articoli automatizzati | Errori e hallucination |
+| **Verifica** | Reuters: monitoraggio automatico fonti | Black-box dei modelli |
+| **Distribuzione** | Personalizzazione e chatbot informativi | Frammentazione pubblico |
+
+::: {.notes}
+Dati concreti da Mattis & de Vreese (2025) e dai report citati nel loro studio. Bloomberg ha sviluppato tool interni per sintetizzare documenti e grafici (Quinonez & Meij, 2024). Express.de ha automatizzato oltre il 5% degli articoli su una vasta gamma di argomenti, ma con revisione umana obbligatoria (Newman & Cherubini, 2025). Reuters usa strumenti IA per il monitoraggio automatico delle fonti (News Tracer). Tutti questi casi illustrano la tensione tra efficienza e controllo editoriale. Da notare: lo sviluppo di questi tool è largamente in mano alle aziende tech (Simon, 2024b), creando nuove dipendenze.
+:::
+
+## I giornalisti di fronte all'IA
+
+::: {.columns}
+::: {.column width="50%"}
+### Speranze
+
+- Maggiore **efficienza** nei compiti di routine
+- Più tempo per il giornalismo **di qualità**
+- Nuove forme di **storytelling**
+- Accessibilità e personalizzazione
+:::
+
+::: {.column width="50%"}
+### Timori
+
+- Perdita di **posti di lavoro**
+- Erosione delle **norme professionali**
+- Dipendenza dalle **piattaforme tech**
+- Proliferazione di informazione di **bassa qualità**
+:::
+:::
+
+I giornalisti adottano un approccio prevalentemente **pragmatico**: l'IA come "collega" per compiti di routine, mai per il giudizio giornalistico di base [@munoriyarwa2025].
+
+::: {.notes}
+Sintesi dalle ricerche qualitative citate in Munoriyarwa & de-Lima-Santos (2025) e Mattis & de Vreese (2025). Cools & Diakopoulos (2024) trovano che i giornalisti vedono l'IA come strumento di efficienza. Guenther et al. (2025) sui giornalisti scientifici tedeschi: l'IA è un "collega" per i compiti di routine, ma non per il giudizio editoriale. In Africa: mix di ottimismo (efficienza per redazioni sotto-finanziate), pessimismo (perdita di posti di lavoro), pragmatismo (adattamento necessario). Il tema comune è l'insistenza sul controllo umano (human-in-the-loop), anche quando l'IA viene usata estensivamente.
+:::
+
+## Il "pink slime journalism" {background-color="#F2F2F2"}
+
+::: {.highlight-box}
+**Pink slime journalism:** siti di notizie generati automaticamente dall'IA, spesso creati per profitto o per scopi ideologici, che riempiono i "deserti informativi" locali con contenuti di bassa qualità [@mattis2025].
+:::
+
+- Brand apparentemente **locali e legittimi**
+- Contenuti generati **senza supervisione editoriale**
+- Competono economicamente con testate **già in crisi**
+- Possono veicolare **disinformazione** su scala industriale
+
+::: {.callout-warning}
+## Attenzione
+Il fenomeno del *pink slime* è direttamente collegato al progetto del corso: le immagini *AI slop* sui social media sono l'equivalente visivo di questo fenomeno testuale.
+:::
+
+::: {.notes}
+Il termine "pink slime journalism" viene da Brewster, Fishman & Xu (2023), citato in Mattis & de Vreese (2025). Si riferisce a siti web che sembrano testate giornalistiche locali ma sono generati automaticamente, spesso con contenuti IA non verificati. NewsGuard ha identificato centinaia di questi siti. Il fenomeno è rilevante per il corso perché l'AI slop che studieremo nel progetto di gruppo è l'equivalente visivo: immagini generate dall'IA diffuse sui social media per engagement bait. Collegamento con Ferrara (2026): il livello 1 della "realtà sintetica" — contenuti sintetici che si confondono con quelli autentici.
+:::
+
+## Prompt Engineering Avanzato {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: approfondimento sul prompt engineering. Costruiamo sulle basi del workshop di mercoledì scorso con tecniche più avanzate.
+:::
+
+## Anatomia di un prompt efficace
+
+| Componente | Descrizione | Esempio |
+|-----------|-------------|---------|
+| **Ruolo** | Chi deve essere l'IA | "Agisci come un analista media" |
+| **Contesto** | Informazioni di sfondo | "Nel contesto del sistema mediale italiano..." |
+| **Compito** | Cosa deve fare | "Analizza i seguenti 5 articoli..." |
+| **Formato** | Come deve essere l'output | "Presenta i risultati in una tabella" |
+| **Vincoli** | Limiti e requisiti | "Max 200 parole, tono accademico" |
+| **Esempi** | Output desiderato | "Segui questo modello: [esempio]" |
+
+::: {.notes}
+Framework per la costruzione di prompt efficaci. Questo schema si basa sulle best practice del prompt engineering e sul principio "Dirigi" di Cosenza (2025): non lasciare spazi di libertà all'IA. Ogni componente riduce l'ambiguità e aumenta la qualità dell'output. Il ruolo orienta il tono e il livello di expertise. Il contesto fornisce informazioni che il modello potrebbe non avere. Il formato è cruciale: l'IA può produrre lo stesso contenuto come paragrafo, lista, tabella, o dialogo. I vincoli impediscono risposte troppo lunghe o off-topic. Gli esempi (few-shot prompting) sono il metodo più efficace per guidare l'output.
+:::
+
+## Tecniche di prompting
+
+::: {.columns}
+::: {.column width="50%"}
+### Zero-shot
+*"Classifica questo testo come positivo, negativo o neutro."*
+
+L'IA usa solo le sue conoscenze generali.
+
+### Few-shot
+*"Ecco 3 esempi di classificazione: [esempi]. Ora classifica questo testo."*
+
+L'IA impara dal pattern degli esempi.
+:::
+
+::: {.column width="50%"}
+### Chain-of-thought
+*"Analizza questo articolo passo dopo passo: prima identifica il tema, poi il tono, infine classifica."*
+
+L'IA esplicita il ragionamento.
+
+### Role-play
+*"Sei un fact-checker esperto. Verifica le affermazioni in questo testo."*
+
+L'IA assume una prospettiva specifica.
+:::
+:::
+
+::: {.notes}
+Le quattro tecniche principali di prompting. Zero-shot è il più semplice ma meno prevedibile. Few-shot è il più utile per il nostro progetto: fornendo esempi di classificazione, l'IA replica il pattern con maggiore consistenza. Chain-of-thought migliora il ragionamento su compiti complessi. Role-play orienta il tono e la prospettiva. Per il progetto di gruppo (settimane 4-5): useremo principalmente few-shot prompting per classificare i post e i commenti, e chain-of-thought per analisi più complesse. Queste tecniche saranno approfondite nella lezione-lab della settimana 5.
+:::
+
+## La Percezione dei Contenuti IA {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: dati empirici sulla percezione pubblica dei contenuti generati dall'IA. Utilizziamo principalmente Gilardi et al. (2025).
+:::
+
+## Il disaccoppiamento qualità-accettazione
+
+```{r}
+#| label: gilardi-quality-chart
+#| echo: false
+#| eval: true
+#| fig-width: 16
+#| fig-height: 8
+#| fig-align: center
+
+invisible(capture.output(source("../R/uniurb_theme.R")))
+library(ggplot2)
+
+dati_gilardi <- data.frame(
+  dimensione = rep(c("Credibilità", "Competenza", "Leggibilità"), each = 3),
+  gruppo = rep(c("Umano", "IA-assistito", "IA-generato"), 3),
+  punteggio = c(3.39, 3.37, 3.38,  # credibilità
+                3.56, 3.63, 3.62,  # competenza
+                3.15, 3.14, 3.19), # leggibilità
+  ordine = rep(1:3, 3)
+)
+
+ggplot(dati_gilardi, aes(x = dimensione, y = punteggio, fill = gruppo)) +
+  geom_col(position = position_dodge(width = 0.8), width = 0.7) +
+  geom_text(aes(label = sprintf("%.2f", punteggio)),
+            position = position_dodge(width = 0.8), vjust = -0.5, size = 5.5) +
+  scale_fill_manual(values = c("Umano" = "#294973", "IA-assistito" = "#E06029", "IA-generato" = "#F68B5F")) +
+  theme_uniurb() +
+  labs(
+    title = "Qualità percepita: nessuna differenza significativa tra umano e IA",
+    subtitle = "Punteggi medi (scala 1-5), N = 599 partecipanti svizzeri (Gilardi et al., 2025)",
+    x = NULL,
+    y = "Punteggio medio",
+    fill = "Tipo di articolo"
+  ) +
+  scale_y_continuous(limits = c(0, 4.2), expand = c(0, 0)) +
+  theme(
+    plot.title = element_text(size = 22),
+    plot.subtitle = element_text(size = 14),
+    axis.text.x = element_text(size = 18),
+    legend.position = "top",
+    legend.text = element_text(size = 14)
+  )
+```
+
+::: {.notes}
+Dati da Gilardi et al. (2025), studio preregistrato con 599 partecipanti svizzeri. I partecipanti hanno valutato articoli senza sapere chi li avesse scritti. I punteggi di credibilità, competenza e leggibilità sono praticamente identici tra articoli umani, IA-assistiti e IA-generati. Le differenze non sono statisticamente significative. Questo è un dato fondamentale: la resistenza ai contenuti IA non nasce dalla loro scarsa qualità. L'IA generativa produce contenuti che sono percepiti come equivalenti a quelli umani su tutte e tre le dimensioni di qualità misurate.
+:::
+
+## Il paradosso della disponibilità a leggere
+
+::: {.highlight-box}
+**Risultato chiave:** La qualità è equivalente, ma solo il **29%** degli svizzeri leggerebbe notizie interamente generate dall'IA [@gilardi2025].
+:::
+
+| Tipo di contenuto | Disponibilità a leggere |
+|-------------------|------------------------|
+| Senza IA | **84%** |
+| IA-assistito | **55%** |
+| Interamente IA | **29%** |
+
+La resistenza **non** dipende dalla qualità percepita, ma da preoccupazioni più profonde legate a **fiducia** e **autenticità**.
+
+::: {.notes}
+Dati da Vogler et al. (2023) citati in Gilardi et al. (2025). Il paradosso è evidente: gli articoli IA sono valutati come equivalenti in qualità, ma la disponibilità a leggerli cala drasticamente man mano che aumenta il coinvolgimento dell'IA. Questo "disaccoppiamento qualità-attitudine" suggerisce che la resistenza è radicata in fattori più profondi della qualità percepita: fiducia nell'istituzione giornalistica, autenticità della voce umana, preoccupazioni etiche sulla sostituzione dei giornalisti. Collegamento con Mattis & de Vreese (2025): l'erosione della fiducia è uno dei quattro rischi chiave.
+:::
+
+## L'effetto della disclosure
+
+::: {.columns}
+::: {.column width="50%"}
+### Effetto a breve termine
+
+Dopo aver saputo che l'articolo era generato dall'IA, i partecipanti mostravano una **maggiore** disponibilità a continuare a leggere.
+
+Possibile "effetto novità" o curiosità.
+:::
+
+::: {.column width="50%"}
+### Effetto a lungo termine
+
+Questo **non** si traduceva in una maggiore disponibilità a leggere notizie IA **in futuro**.
+
+Lo scetticismo di fondo resta invariato.
+:::
+:::
+
+> "L'avversione pubblica alle notizie generate dall'IA non è una questione di qualità percepita, ma piuttosto un problema più ampio di fiducia e percezione."
+>
+> — @gilardi2025
+
+::: {.notes}
+Distinzione cruciale tra effetto a breve e lungo termine. L'effetto novità (curiosità per qualcosa di nuovo) spiega l'aumento di engagement immediato dopo la disclosure. Ma l'atteggiamento generale verso le notizie IA non cambia con l'esposizione: la resistenza è strutturale, non legata alla mancanza di familiarità. Questo ha implicazioni importanti per le testate: la disclosure potrebbe funzionare per singoli articoli (più click immediati) ma non risolve il problema di fondo della fiducia. Collegamento con il paradosso della trasparenza di Mattis & de Vreese: dichiarare l'uso dell'IA può essere necessario eticamente ma controproducente commercialmente.
+:::
+
+## Criteri di Valutazione dei Contenuti IA {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: come valutare criticamente i contenuti generati dall'IA. Questo framework sarà utile sia per l'analisi critica sia per il progetto di gruppo.
+:::
+
+## Un framework di valutazione
+
+| Criterio | Domanda guida | Metodo di verifica |
+|----------|--------------|-------------------|
+| **Accuratezza** | I fatti sono corretti? | Cross-check con fonti primarie |
+| **Completezza** | Mancano prospettive rilevanti? | Confronto con esperti del settore |
+| **Coerenza** | Il testo è logicamente consistente? | Analisi argomentativa |
+| **Originalità** | Va oltre la "media di internet"? | Confronto con output standard |
+| **Trasparenza** | È dichiarata la generazione IA? | Verifica delle disclosure |
+| **Bias** | Perpetua stereotipi o pregiudizi? | Analisi critica del contenuto |
+
+::: {.notes}
+Framework operativo per la valutazione dei contenuti IA. L'accuratezza è il criterio più importante e il più difficile da verificare: le hallucination sono per definizione plausibili. La completezza riguarda ciò che l'IA non dice: prospettive mancanti, voci non rappresentate. La coerenza è dove l'IA eccelle (produce testi fluidi) ma può mascherare errori logici. L'originalità è la debolezza principale: l'IA tende a produrre la "media di internet" (Cosenza, 2025). La trasparenza è un requisito etico emergente. Il bias è strutturale: i modelli replicano i pregiudizi dei dati di addestramento. Questo framework sarà utile per il progetto di gruppo quando gli studenti dovranno classificare contenuti.
+:::
+
+## L'accuratezza come sfida centrale
+
+::: {.orange-box}
+### Il problema delle hallucination
+I LLM possono generare informazioni **plausibili ma false**: citazioni inesistenti, dati inventati, fatti alterati. Il **50%** delle risposte LLM sui contenuti BBC presentava problemi, con il **19%** contenente errori fattuali diretti (BBC, 2025, citato in @mattis2025).
+:::
+
+Strategie di verifica:
+
+- **Triangolazione:** verificare con almeno 2 fonti indipendenti
+- **Fonte primaria:** risalire sempre al dato originale
+- **Dominio specifico:** attenzione ai settori dove l'IA ha meno dati
+- **Attualità:** le conoscenze del modello hanno una data limite
+
+::: {.notes}
+Il dato BBC è uno dei più significativi per illustrare il problema delle hallucination nel contesto giornalistico. Se il 19% delle risposte IA che citano direttamente contenuti BBC contiene errori fattuali, il rischio per contenuti meno verificabili è ancora più alto. Le strategie di verifica sono classiche del giornalismo ma devono essere adattate: l'IA produce contenuti così fluidi che gli errori sono più difficili da individuare. Per il progetto: quando useremo Gemini per classificare post e commenti, dovremo prevedere un protocollo di validazione umana (settimana 5).
+:::
+
+## Verso la produzione responsabile
+
+::: {.columns}
+::: {.column width="50%"}
+### Il modello collaborativo
+
+L'IA **supporta** il giornalista ma non lo sostituisce [@mattis2025]:
+
+- Bozze e suggerimenti dall'IA
+- Verifica e giudizio dall'umano
+- Supervisione editoriale umana
+- Disclosure trasparente
+:::
+
+::: {.column width="50%"}
+### La sfida istituzionale
+
+Le redazioni devono [@munoriyarwa2025]:
+
+- Definire **policy interne** sull'uso IA
+- Formare i giornalisti sulla **AI literacy**
+- Bilanciare **efficienza** e **qualità**
+- Mantenere **indipendenza** dalle big tech
+:::
+:::
+
+::: {.notes}
+Sintesi delle raccomandazioni dalla letteratura. Il modello collaborativo (human-in-the-loop) è il consenso emerso dalla ricerca internazionale. Ma la sua implementazione richiede investimenti in formazione, policy e infrastrutture che molte testate, specialmente quelle locali, faticano a sostenere. Da Becker, Simon & Crum (2025, citati in Mattis & de Vreese): 52 testate globali hanno adottato linee guida sull'IA, ma la traduzione in pratiche concrete resta una sfida. La formazione in AI literacy è particolarmente critica: Brigham et al. (2024, citati in Mattis & de Vreese) trovano che alcuni giornalisti usano ChatGPT in modi non allineati con i codici etici.
+:::
+
+## Sintesi e Prossimi Passi {background-color="#C5612E"}
+
+::: {.notes}
+Sezione finale: riepilogo e orientamento.
+:::
+
+## Concetti chiave di oggi
+
+- L'IA trasforma **tutti i flussi** di produzione contenuti, ma la revisione umana resta centrale
+- Il **prompt engineering** strutturato migliora drasticamente la qualità dell'output
+- La qualità percepita dei contenuti IA è **equivalente** a quella umana [@gilardi2025]
+- Ma la disponibilità a leggere resta **bassa** (29%) — il problema è la **fiducia**
+- Il **pink slime journalism** è la faccia oscura della produzione automatizzata [@mattis2025]
+- La **valutazione critica** richiede triangolazione, fonti primarie, attenzione al bias
+
+::: {.notes}
+Riepilogo dei concetti fondamentali della lezione. Il dato più importante da ricordare: la resistenza ai contenuti IA non dipende dalla qualità (che è equiparabile) ma dalla fiducia. Questo ha implicazioni per il progetto di gruppo: quando analizzeremo i commenti degli utenti ai contenuti AI slop, dovremo cercare indicatori di fiducia/sfiducia, non solo valutazioni di qualità.
+:::
+
+## Letture per questa settimana
+
+::: {.columns}
+::: {.column width="50%"}
+### Già assegnate
+
+- @gilardi2025 — Disponibilità a leggere notizie IA
+- @mattis2025 — IA e giornalismo
+- @munoriyarwa2025 — IA e futuro delle notizie
+:::
+
+::: {.column width="50%"}
+### Per mercoledì
+
+- @vaccari2020 — Deepfake e fiducia politica
+- @hameleers2026 — Disinformazione visiva
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+Domani: guest lecture di **Vincenzo Cosenza** sull'intelligenza aumentata. Portate domande pratiche sull'uso professionale dell'IA.
+:::
+
+::: {.notes}
+Assegnazioni. Le letture per mercoledì introducono il tema dei deepfake e della regolamentazione: Vaccari & Chadwick (2020) sul impatto dei deepfake sulla fiducia politica, Hameleers & van der Meer (2026) sulla disinformazione visiva. Domani il guest speaker Vincenzo Cosenza approfondirà le 10 regole del suo libro con esercizi pratici — è un'ottima occasione per fare domande.
+:::
+
+## Per la prossima lezione
+
+**Domani (Martedì 3 Marzo):** Guest — Vincenzo Cosenza, "Intelligenza Aumentata"
+
+- Dalle regole agli esercizi pratici
+- Uso sistematico dell'IA nel lavoro professionale
+
+**Mercoledì 4 Marzo:** Deepfake, Policy e Regolamentazione
+
+- Tecnologie deepfake e impatto sulla fiducia
+- EU AI Act e Code of Practice on Disinformation
+- Policy delle piattaforme (Meta, TikTok)
+
+::: {.notes}
+Promemoria operativo. Domani Cosenza, mercoledì i deepfake e la regolamentazione. La lezione di mercoledì sarà densa: deepfake, EU AI Act, policy delle piattaforme. È importante aver letto Vaccari & Chadwick (2020) prima di mercoledì.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Guest — Vincenzo Cosenza (3 Marzo 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) domani guest speaker Cosenza, (2) letture per mercoledì, (3) continuare a esplorare Gemini e NotebookLM. A domani!
+:::
+
+## Riferimenti

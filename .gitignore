@@ -1,0 +1,16 @@
+/.quarto/
+
+# Reading materials (copyrighted PDFs and converted text files)
+readings/*.pdf
+readings/*.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# R session files
+.Rhistory
+.Rdata
+.RData
+.Ruserdata
+

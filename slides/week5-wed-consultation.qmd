@@ -1,0 +1,248 @@
+---
+title: "Consultazione Gruppi e Revisione"
+subtitle: "IA Generativa e Media — Settimana 5"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "25 Marzo 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+### IA e sicurezza epistemica: nuovi scenari
+
+La ricerca recente evidenzia come l'IA generativa stia trasformando non solo i singoli contenuti, ma l'intero **substrato epistemico** su cui si basano le istituzioni democratiche [@ferrara2026].
+
+::: {.callout-note}
+## Da discutere
+Nel vostro progetto, avete riscontrato segnali di **erosione della fiducia** nei commenti analizzati? Gli utenti mettono in dubbio l'autenticità dei contenuti che vedono?
+:::
+
+::: {.notes}
+This Week in AI: collegare le notizie recenti sull'IA al concetto di sicurezza epistemica di Ferrara (2026). Il tema è particolarmente rilevante perché gli studenti stanno analizzando le reazioni degli utenti ai contenuti AI slop — un fenomeno che si colloca al livello 1 (contenuto sintetico) della realtà sintetica. Chiedere agli studenti se nei dati che hanno raccolto emergono commenti che mettono in discussione l'autenticità delle immagini. Questo collegamento tra teoria e pratica rafforza il valore del progetto.
+:::
+
+## [This Week in AI]{.twiai-badge}
+
+### Verso una regolamentazione degli sciami IA
+
+Gli **sciami IA malevoli** possono fabbricare un consenso sintetico che appare colmare le divisioni sociali, minacciando l'indipendenza essenziale per l'intelligenza collettiva [@schroeder2026].
+
+::: {.highlight-box}
+**Implicazione per il progetto:** L'engagement bait generato dall'IA che analizzate potrebbe essere il livello base di operazioni di manipolazione molto piu ampie.
+:::
+
+::: {.notes}
+Secondo segmento TWIAI: collegare la notizia della settimana al quadro teorico di Schroeder et al. (2026) sugli sciami IA. L'AI slop che gli studenti analizzano nel progetto — immagini sintetiche distribuite come engagement bait — potrebbe sembrare innocuo rispetto ai deepfake politici, ma rappresenta lo stesso meccanismo di base: contenuti sintetici che inquinano l'ecosistema informativo. Gli sciami IA potrebbero amplificare questo tipo di contenuti su scala industriale. Transizione verso la sessione di consultazione.
+:::
+
+## Roadmap della sessione
+
+1. **This Week in AI** — scenari emergenti
+2. **Stato di avanzamento** — checklist per ogni gruppo
+3. **Problemi metodologici comuni** — soluzioni e suggerimenti
+4. **Consultazioni individuali** — revisione per gruppo
+5. **Timeline** — una settimana alla scrittura
+
+::: {.notes}
+Sessione leggera e operativa. L'obiettivo principale è incontrare ogni gruppo individualmente, verificare lo stato di avanzamento e risolvere eventuali problemi metodologici. Le slide servono come cornice per la sessione, ma la maggior parte del tempo sarà dedicata alle consultazioni individuali (circa 10-15 minuti per gruppo). Iniziare con una rapida panoramica dello stato generale, poi procedere con le consultazioni.
+:::
+
+## Stato di Avanzamento {background-color="#C5612E"}
+
+::: {.notes}
+Sezione di verifica dello stato di avanzamento. Prima di iniziare le consultazioni individuali, verificare collettivamente a che punto sono i gruppi.
+:::
+
+## Checklist del progetto
+
+| Fase | Stato atteso | Verificare |
+|------|-------------|------------|
+| **Raccolta dati** | Completata | Dataset con post e commenti |
+| **Classificazione IA** | Completata | Risultati della classificazione Gemini |
+| **Codebook** | Definito | Categorie e regole chiare |
+| **Validazione umana** | In corso / completata | Campione codificato da umani |
+| **Intercoder reliability** | In corso | Confronto IA-umano calcolato |
+| **Bozza struttura paper** | Da iniziare | Outline IMRaD |
+
+::: {.notes}
+Questa checklist copre tutte le fasi del progetto fino a questo punto. A questo stadio, i gruppi dovrebbero aver completato la raccolta dati (settimana 4) e l'analisi con Gemini (lunedi). La validazione umana (martedi) dovrebbe essere in corso o completata. L'intercoder reliability potrebbe essere ancora in fase di calcolo. La struttura del paper dovrebbe essere iniziata dalla prossima settimana. Usare questa checklist come base per ogni consultazione individuale.
+:::
+
+## Problemi Metodologici Comuni {background-color="#C5612E"}
+
+::: {.notes}
+Sezione dedicata ai problemi piu frequenti che emergono nei progetti di ricerca con la metodologia LLMs-in-the-loop. Basata sull'esperienza delle sessioni precedenti.
+:::
+
+## Problema 1: Classificazioni incoerenti
+
+::: {.highlight-box}
+**Sintomo:** Gemini classifica lo stesso tipo di commento in modi diversi in sessioni diverse.
+:::
+
+**Soluzioni:**
+
+- **Fissare la temperatura** a valori bassi (0.0-0.2) per ridurre la variabilita
+- **Codebook dettagliato** nel prompt con esempi per ogni categoria
+- **Batch processing** — analizzare gruppi di commenti in una sola sessione
+- Verificare la **coerenza del prompt** tra le sessioni
+
+::: {.notes}
+Problema molto comune con la pipeline LLMs-in-the-loop: i LLM sono stocastici per natura, quindi la stessa richiesta puo produrre risultati diversi. Le soluzioni sono pratiche: abbassare la temperatura del modello, fornire un codebook piu dettagliato con esempi concreti per ogni categoria, e processare i dati in batch per mantenere il contesto coerente. Se il problema persiste, potrebbe essere necessario rivedere le categorie del codebook (forse sono troppo ambigue o sovrapposte). Collegamento con la metodologia di Marino & Giglietto (2024): l'iterazione e il raffinamento del prompt sono parte integrante della pipeline.
+:::
+
+## Problema 2: Bassa intercoder reliability
+
+::: {.columns}
+::: {.column width="50%"}
+### Cause frequenti
+
+- Categorie **troppo numerose** o sovrapposte
+- Codebook **ambiguo** (regole interpretabili)
+- Campione di validazione **troppo piccolo**
+- **Disallineamento** tra prompt e codebook umano
+:::
+
+::: {.column width="50%"}
+### Soluzioni
+
+- **Ridurre** le categorie a macro-gruppi
+- Aggiungere **esempi limite** al codebook
+- Ampliare il campione (min. **50-100** unita)
+- **Allineare** le istruzioni IA e umane
+:::
+:::
+
+::: {.notes}
+La bassa intercoder reliability (sotto 0.6 di Cohen's kappa) indica problemi nel codebook o nelle istruzioni. La causa piu frequente e un codebook con troppe categorie o con categorie sovrapposte. La soluzione pragmatica: accorpare le categorie in macro-gruppi piu distinti, poi eventualmente analizzare le sotto-categorie in un secondo momento. Un'altra causa comune: il prompt dato a Gemini non corrisponde esattamente alle istruzioni date ai codificatori umani. Le istruzioni devono essere identiche. Il campione di validazione deve essere sufficientemente ampio per essere statisticamente significativo.
+:::
+
+## Problema 3: Collegamento teoria-dati
+
+::: {.orange-box}
+### Domanda chiave
+I vostri risultati empirici **dialogano** con i framework teorici del corso? Non basta presentare i dati: occorre interpretarli.
+:::
+
+Framework teorici da collegare ai risultati:
+
+- **Realta sintetica** a strati [@ferrara2026] — a quale livello opera l'AI slop?
+- **Sistema mediale ibrido** [@chadwick2011] — come si inserisce nel ciclo informativo?
+- **Incertezza epistemica** [@vaccari2020] — gli utenti sono incerti o consapevoli?
+
+::: {.notes}
+Problema tipico degli studenti: raccolgono dati e li presentano, ma non li collegano alla teoria. Nel paper, la sezione Discussione deve collegare esplicitamente i risultati ai framework teorici studiati nel corso. Suggerire ai gruppi di rileggere le slides delle prime settimane e identificare i concetti piu rilevanti per i loro dati. Esempio: se i commenti mostrano che gli utenti riconoscono le immagini come generate dall'IA ma continuano a interagire, questo si collega al paradosso dell'IA generativa di Ferrara — la consapevolezza non ferma l'engagement.
+:::
+
+## Timeline: una settimana alla scrittura
+
+| Data | Attivita | Stato |
+|------|----------|-------|
+| ~~Lun 23 Mar~~ | Analisi contenuti con Gemini | Fatto |
+| ~~Mar 24 Mar~~ | Validazione umana vs IA | Fatto |
+| **Mer 25 Mar** | **Consultazione (oggi)** | **In corso** |
+| Lun 30 Mar | **Workshop di scrittura** | Prossima |
+| Mar 31 Mar | Lavoro di gruppo: stesura paper | Settimana 6 |
+| Mer 1 Apr | Sintesi del corso, consultazioni finali | Ultima sessione |
+| 2 sett. prima appello | **Consegna paper** | Scadenza |
+
+::: {.notes}
+Riepilogo della timeline. Oggi e il momento per risolvere problemi prima di passare alla fase di scrittura. Da lunedi prossimo si scrive. Il workshop di scrittura di lunedi 30 fornira la struttura del paper (formato IMRaD) e strategie per usare NotebookLM nella fase di redazione. Sottolineare l'urgenza: chi ha problemi con i dati o l'analisi deve risolverli entro questa settimana. La settimana prossima e dedicata esclusivamente alla scrittura. La consegna del paper e 2 settimane prima dell'appello di giugno.
+:::
+
+## Consultazioni Individuali {background-color="#C5612E"}
+
+::: {.notes}
+Fase centrale della sessione. Incontrare ogni gruppo individualmente per 10-15 minuti. Usare la checklist come guida. Verificare: (1) qualita del dataset, (2) coerenza delle classificazioni, (3) risultati della validazione, (4) collegamento con la teoria. Prendere nota dei problemi ricorrenti per affrontarli collettivamente lunedi.
+:::
+
+## Guida alla consultazione
+
+Per ogni gruppo, discuteremo:
+
+::: {.columns}
+::: {.column width="50%"}
+### Dati e metodo
+
+- Dimensione e qualita del dataset
+- Risultati della classificazione IA
+- Intercoder reliability
+- Problemi tecnici aperti
+:::
+
+::: {.column width="50%"}
+### Contenuto e teoria
+
+- Domanda di ricerca aggiornata
+- Risultati preliminari
+- Collegamento con i framework teorici
+- Struttura prevista del paper
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+Preparate una **sintesi di 2 minuti** del vostro stato di avanzamento prima della consultazione.
+:::
+
+::: {.notes}
+Istruzioni operative per le consultazioni. Ogni gruppo ha circa 10-15 minuti. Chiedere di iniziare con una breve sintesi dello stato di avanzamento, poi entrare nei dettagli. Le domande chiave: il dataset e sufficientemente ampio? Le classificazioni sono affidabili? C'e un collegamento chiaro tra i dati e la teoria? Quale struttura prevede il paper? Prendere appunti sui problemi di ogni gruppo per fornire feedback personalizzato.
+:::
+
+## Preparazione per la prossima settimana
+
+**Lunedi 30 Marzo:** Workshop di Scrittura
+
+::: {.highlight-box}
+**Da portare al workshop:**
+
+- Risultati consolidati dell'analisi (classificazioni + validazione)
+- Una bozza di **outline del paper** (titolo, domanda, sezioni principali)
+- Le letture del corso piu rilevanti per la vostra domanda di ricerca
+:::
+
+::: {.notes}
+Istruzioni per la prossima sessione. Il workshop di scrittura di lunedi sara pratico: struttura del paper IMRaD, uso di NotebookLM per la sintesi della letteratura, strategie di scrittura accademica. I gruppi devono arrivare con i risultati dell'analisi consolidati e una bozza di outline. Chi non ha completato la validazione deve farlo entro il weekend. La settimana 6 e interamente dedicata alla scrittura: non ci sara tempo per tornare sui dati.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Workshop di Scrittura (30 Marzo 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) completare la validazione umana se non ancora fatta, (2) preparare l'outline del paper per lunedi, (3) rileggere le letture del corso rilevanti per la propria domanda di ricerca. A lunedi per il workshop di scrittura!
+:::
+
+## Riferimenti

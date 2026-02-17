@@ -1,0 +1,579 @@
+---
+title: "Introduzione all'IA Generativa"
+subtitle: "IA Generativa e Media — Settimana 1"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "23 Febbraio 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+## Roadmap della lezione
+
+1. **Presentazione del corso** — struttura, regole, valutazione
+2. **Che cos'è l'IA generativa** — definizioni e concetti fondamentali
+3. **Evoluzione storica** — dagli algoritmi ai modelli di linguaggio
+4. **Panoramica tecnologica** — GPT, DALL-E, Gemini, Stable Diffusion
+5. **Il Paradosso dell'IA Generativa** — fiducia e verifica
+6. **Prossimi passi** — letture e preparazione
+
+::: {.notes}
+Presentare la struttura della lezione. Oggi è una panoramica ampia: iniziamo con l'organizzazione del corso (regole, valutazione, strumenti), poi definiamo il campo dell'IA generativa, tracciamo la sua evoluzione e introduciamo le questioni centrali che affronteremo nelle prossime settimane. La lezione dura 2 ore con una pausa intermedia.
+:::
+
+## Presentazione del Corso {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: panoramica organizzativa del corso. Questa sezione copre logistica, regole di valutazione, presenze, policy sull'uso dell'IA e spazio blended. È necessariamente più "burocratica" ma è fondamentale per orientare gli studenti sulle aspettative.
+:::
+
+## Il corso in sintesi
+
+| | |
+|---|---|
+| **Insegnamento** | IA Generativa e Media (6 CFU) |
+| **Docente** | Prof. Fabio Giglietto |
+| **Durata** | 23 Febbraio – 1 Aprile 2026 (6 settimane) |
+| **Orari** | Lun/Mar 11:00–13:00, Mer 14:00–16:00 |
+| **Piattaforma AI** | Google Gemini + NotebookLM |
+| **Accesso** | Account `@uniurb.it` richiesto |
+
+::: {.notes}
+Dettagli logistici. Sottolineare che il corso è intensivo (6 settimane) e richiede partecipazione attiva. Verificare che tutti abbiano accesso all'account uniurb.it di Google Workspace per Gemini e NotebookLM.
+:::
+
+## Panoramica del corso
+
+- Tre incontri a settimana (LUN e MAR dalle 11 alle 13, MER dalle 14 alle 16)
+- Durata totale: **18 incontri** × 2 ore = **36 ore**
+- Struttura del corso:
+    - **Parte I** — Lezioni frontali e seminari: settimane 1–3 (9 incontri)
+    - **Parte II** — Progetto di gruppo: settimane 4–6 (9 incontri)
+
+::: {.notes}
+Panoramica della struttura. Le prime tre settimane includono lezioni frontali, un workshop pratico (Gemini e NotebookLM) e seminari ospiti (Cosenza, Paroni, Terenzi). Le settimane 4-6 sono dedicate al progetto di gruppo: raccolta dati, analisi assistita dall'IA e scrittura della relazione. Il passaggio da teoria a pratica è graduale.
+:::
+
+## Struttura delle 6 settimane
+
+| Settimana | Focus |
+|-----------|-------|
+| **1** | Fondamenti dell'IA generativa |
+| **2** | Produzione, disinformazione e regolamentazione |
+| **3** | Seminario ospite: IA e comunicazione politica |
+| **4** | Lancio progetto e raccolta dati |
+| **5** | Analisi assistita dall'IA e validazione |
+| **6** | Scrittura e sintesi del corso |
+
+::: {.notes}
+Panoramica delle 6 settimane. Le prime 2 settimane sono teoriche con un workshop pratico. La settimana 3 è un seminario ospite con Bruna Paroni. Le settimane 4-6 sono dedicate al progetto di gruppo. Menzionare anche i guest speaker: Vincenzo Cosenza (settimana 2) e Massimo Terenzi (settimana 4).
+:::
+
+## Modalità di valutazione per frequentanti
+
+1. È considerato frequentante chi risulta iscritto allo spazio blended entro **giovedì 26 Febbraio**, partecipa ad almeno **¾ delle lezioni** (14 su 18) e al lavoro di gruppo
+2. Il voto dell'attività di gruppo vale il **75%** della valutazione finale (max 23,25)
+3. Il **10%** (max 3,1) dalla partecipazione dello studente (n. lezioni frequentate)
+4. Il restante **15%** (max 4,65) dipende dalla valutazione del **colloquio orale**
+5. Il colloquio consiste nella **discussione del progetto** di lavoro
+6. Gli studenti non frequentanti sosterranno l'esame studiando i **libri di testo** in programma
+
+::: {.notes}
+Spiegare il sistema di valutazione nel dettaglio. Il progetto di gruppo è il cuore del corso: gli studenti analizzeranno contenuti generati dall'IA e le reazioni degli utenti su Facebook/Instagram. La metodologia sarà LLMs-in-the-loop (Marino & Giglietto, 2024). Valutazione collettiva per il gruppo. Per i non frequentanti: studio dei testi in programma e esame orale standard.
+:::
+
+## Rilevazione delle presenze
+
+1. Durante la lezione sarà mostrato un **codice di rilevamento** che lo studente dovrà inserire entro la fine della lezione nella sua App per risultare presente
+2. Verranno considerate valide solo le presenze **geolocalizzate**
+
+::: {.callout-warning}
+## Attenzione
+Assicuratevi di avere l'app Uniurb installata e di abilitare la geolocalizzazione.
+:::
+
+::: {.notes}
+Sistema di rilevazione presenze tramite app universitaria. Lo studente deve inserire il codice mostrato durante la lezione. La geolocalizzazione è obbligatoria: non è possibile registrare la presenza da remoto. Verificare che tutti abbiano l'app installata e funzionante.
+:::
+
+## Policy per giustificare le assenze
+
+1. La partecipazione (n. lezioni frequentate) è **parte integrante** del sistema di valutazione
+2. Ogni lezione frequentata vale circa **0,17 punti**
+3. Le assenze per validi motivi opportunamente giustificate sono considerate come **lezioni frequentate**
+4. Per giustificarsi: postare, **entro 2 giorni dall'assenza**, nel "Forum per le giustificazioni" dello spazio blended giustificando l'assenza e specificando i motivi
+
+::: {.notes}
+Dettagli sulla policy delle assenze. Il calcolo: 3,1 punti totali per partecipazione / 18 lezioni ≈ 0,17 punti per lezione. Le giustificazioni vanno postate tempestivamente (entro 2 giorni) nel forum dedicato su Moodle. Motivi validi: malattia, esami, impegni istituzionali documentabili. Non verranno accettate giustificazioni retroattive oltre il termine dei 2 giorni.
+:::
+
+## Policy per Generative AI
+
+1. L'uso degli strumenti di *Generative AI* (ChatGPT, Gemini, Le Chat, Claude, etc) è consentito come supporto al **brainstorming** ("Dammi qualche idea su...") e alla **critica** di un testo originale prodotto dallo studente ("Correggi la sintassi...", "Critica le argomentazioni...")
+
+2. Ogni uso meramente **sostitutivo** ("Scrivi un paragrafo su...") è **vietato**
+
+3. L'uso va **dichiarato** nella relazione specificando quale strumento è stato utilizzato
+
+::: {.notes}
+Policy fondamentale per il corso. Dato che il corso tratta esattamente di IA generativa, è essenziale che gli studenti imparino a usarla in modo critico e consapevole. Usi consentiti: brainstorming, revisione linguistica, critica argomentativa. Uso vietato: generazione sostitutiva di intere sezioni di testo. Trasparenza obbligatoria: dichiarare sempre quali strumenti sono stati usati e come. Questa policy sarà discussa anche nel workshop di mercoledì con esempi pratici.
+:::
+
+## Spazio blended
+
+I materiali del corso (incluse queste slides), il forum per le giustificazioni e le esercitazioni verranno resi disponibili sullo **spazio blended del corso**.
+
+![QR code spazio blended](../assets/qrcode_blended.uniurb.it_aigenmedia.png){fig-align="center" width="30%"}
+
+::: {.callout-tip}
+## Suggerimento
+Iscrivetevi allo spazio blended **entro giovedì 26 Febbraio** per risultare frequentanti.
+:::
+
+::: {.notes}
+Lo spazio blended (Moodle) è il punto di riferimento per tutti i materiali del corso. Gli studenti troveranno: slides delle lezioni, letture obbligatorie e consigliate, forum per le giustificazioni, esercitazioni e consegne del progetto di gruppo. L'iscrizione entro la prima settimana è requisito per lo status di frequentante.
+:::
+
+## Attività interattiva
+
+Compilare il **modulo di feedback** che abbiamo preparato nel blended.
+
+<!-- Link al modulo di feedback: da aggiungere a cura del docente -->
+
+::: {.notes}
+Attività rompighiaccio. Il modulo di feedback raccoglie informazioni sulle aspettative degli studenti, la familiarità con strumenti di IA generativa e le preferenze per il lavoro di gruppo. Dare 5 minuti per la compilazione. I risultati verranno utilizzati per calibrare il ritmo delle lezioni e per la formazione dei gruppi nella settimana 4.
+:::
+
+## Che cos'è l'IA Generativa? {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: definizioni fondamentali. Obiettivo: costruire un vocabolario condiviso. Questa sezione corrisponde al descrittore di Dublino "Conoscenza e comprensione".
+:::
+
+## Definizione
+
+::: {.highlight-box}
+**IA Generativa:** sistemi di intelligenza artificiale in grado di **creare contenuti originali** — testo, immagini, audio, video — a partire da modelli addestrati su grandi quantità di dati.
+:::
+
+A differenza dell'IA *analitica* (che classifica o prevede), l'IA **generativa** produce artefatti nuovi.
+
+::: {.notes}
+Definizione chiave del corso. L'IA generativa si distingue dall'IA tradizionale (classificazione, previsione) perché produce contenuti nuovi. Esempi: ChatGPT genera testo, DALL-E genera immagini, Sora genera video. Chiedere agli studenti: "Quanti di voi hanno già usato uno strumento di IA generativa?"
+:::
+
+## Concetti chiave
+
+| Termine | Definizione |
+|---------|-------------|
+| **LLM** (*Large Language Model*) | Modello addestrato su miliardi di testi per generare linguaggio |
+| **Modello di diffusione** | Genera immagini partendo da rumore casuale |
+| **Prompt** | Istruzione testuale fornita al modello |
+| **Hallucination** | Contenuto generato plausibile ma falso |
+| **Token** | Unità minima di testo elaborata dal modello |
+
+::: {.notes}
+Terminologia essenziale. I LLM (GPT, Gemini, Claude) predicono la parola successiva in una sequenza. I modelli di diffusione (Stable Diffusion, DALL-E, Imagen) generano immagini rimuovendo progressivamente il rumore. Il concetto di *hallucination* è cruciale: i modelli possono generare informazioni convincenti ma completamente inventate. Questo tema tornerà in tutto il corso.
+:::
+
+## Come funziona un LLM (semplificato)
+
+1. **Addestramento** — il modello legge miliardi di testi dal web
+2. **Apprendimento di pattern** — identifica relazioni statistiche tra parole
+3. **Generazione** — dato un *prompt*, predice la sequenza più probabile
+4. **Fine-tuning** — viene raffinato per seguire istruzioni e dialogare
+
+::: {.highlight-box}
+**Concetto chiave:** Un LLM non "capisce" il linguaggio. Calcola la **probabilità** della parola successiva basandosi sui pattern appresi.
+:::
+
+::: {.notes}
+Spiegazione semplificata del funzionamento. Non è necessario entrare nei dettagli tecnici (transformer, attention), ma è importante che gli studenti capiscano che i LLM sono modelli statistici, non entità pensanti. La metafora dell'"autocomplete molto sofisticato" può essere utile. Questo spiega anche perché le hallucination sono strutturali, non bug occasionali.
+:::
+
+## I tipi di contenuto generativo
+
+::: {.columns}
+::: {.column width="50%"}
+### Testo
+- Articoli, riassunti, traduzioni
+- Codice, email, post social
+- **Strumenti:** ChatGPT, Gemini, Claude
+
+### Audio
+- Voci sintetiche, cloni vocali
+- Podcast generati automaticamente
+- **Strumenti:** ElevenLabs, NotebookLM Audio
+:::
+
+::: {.column width="50%"}
+### Immagini
+- Foto realistiche, illustrazioni, arte
+- Editing e manipolazione
+- **Strumenti:** DALL-E, Midjourney, Imagen
+
+### Video
+- Scene generate da testo
+- *Deepfake* e face swap
+- **Strumenti:** Sora, Runway, Kling
+:::
+:::
+
+::: {.notes}
+Panoramica delle quattro modalità generative. Sottolineare che la multimodalità è la tendenza attuale: Gemini, ad esempio, gestisce testo, immagini e codice in un unico modello. Ogni modalità presenta sfide specifiche per la verifica e la fiducia nell'informazione. Il corso si concentrerà principalmente su testo e immagini, con riferimenti a video e audio.
+:::
+
+## Evoluzione Storica {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: breve storia dell'IA generativa per contestualizzare la rivoluzione attuale. Gli studenti devono capire che l'IA generativa non è apparsa dal nulla.
+:::
+
+## Dalla regola alla generazione
+
+| Periodo | Sviluppo | Impatto |
+|---------|----------|---------|
+| 1950-1960 | Test di Turing, ELIZA | Prime interazioni uomo-macchina |
+| 1980-2000 | Reti neurali, sistemi esperti | Applicazioni limitate a domini specifici |
+| 2014 | *Generative Adversarial Networks* (GAN) | Prime immagini sintetiche realistiche |
+| 2017 | Architettura *Transformer* | Rivoluzione nei modelli linguistici |
+| 2022 | ChatGPT (OpenAI) | IA generativa diventa mainstream |
+| 2024-2026 | Multimodalità, agenti IA | Integrazione in tutti i settori |
+
+::: {.notes}
+Timeline sintetica. I momenti chiave sono: (1) i GAN di Goodfellow (2014) che per primi hanno mostrato la capacità di generare immagini realistiche; (2) il paper "Attention Is All You Need" (2017) che introduce l'architettura transformer alla base di tutti i LLM moderni; (3) il lancio di ChatGPT (novembre 2022) che ha reso l'IA generativa accessibile al pubblico con 100 milioni di utenti in 2 mesi.
+:::
+
+## Il momento ChatGPT
+
+::: {.highlight-box}
+**Novembre 2022:** OpenAI rilascia ChatGPT. In **due mesi** raggiunge 100 milioni di utenti attivi, diventando l'applicazione con la crescita più rapida nella storia.
+:::
+
+Questo lancio ha trasformato l'IA generativa da **tecnologia di nicchia** a **fenomeno culturale e sociale**, con implicazioni profonde per:
+
+- Il giornalismo e la produzione di notizie
+- La circolazione dell'informazione online
+- La fiducia pubblica nei contenuti digitali
+
+::: {.notes}
+ChatGPT è il punto di svolta che rende rilevante un corso come questo. Prima di novembre 2022, l'IA generativa era conosciuta principalmente dagli addetti ai lavori. Dopo, è diventata una questione di policy pubblica, regolamentazione e trasformazione professionale. Collegamento con Mattis & de Vreese (2025): l'impatto sul giornalismo è sia una promessa (efficienza) che una minaccia (disinformazione).
+:::
+
+## Il panorama attuale
+
+| Modello | Azienda | Tipo | Caratteristica |
+|---------|---------|------|----------------|
+| GPT-4o / 4.5 | OpenAI | Multimodale | Testo, immagini, audio, video |
+| Gemini 2.0 | Google | Multimodale | Integrato in Google Workspace |
+| Claude | Anthropic | Testo | Focus su sicurezza e alignment |
+| Stable Diffusion | Stability AI | Immagini | Open source |
+| Midjourney | Midjourney | Immagini | Alta qualità artistica |
+| Sora | OpenAI | Video | Generazione video da testo |
+
+::: {.notes}
+Panoramica dei principali strumenti. Sottolineare che Google Gemini sarà la nostra piattaforma di lavoro nel corso, accessibile via account uniurb.it. La distinzione open source vs. proprietario è importante: Stable Diffusion è scaricabile e modificabile, mentre GPT-4 e Gemini sono accessibili solo via API o interfaccia web. Questa distinzione avrà implicazioni per la regolamentazione (settimana 2).
+:::
+
+## L'IA Generativa e il Sistema Mediale {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: introduzione al tema centrale del corso — come l'IA generativa trasforma il sistema dei media. Questa sezione prepara il terreno per la lezione di domani sul sistema mediale ibrido.
+:::
+
+##  {background-color="#F2F2F2"}
+
+```{r}
+#| label: pew-ai-views
+#| echo: false
+#| eval: true
+#| fig-width: 18
+#| fig-height: 9
+#| fig-align: center
+#| message: false
+#| warning: false
+
+invisible(capture.output(source("../R/uniurb_theme.R")))
+library(ggplot2)
+
+dati_pew <- data.frame(
+  risposta = c("Più preoccupati\nche entusiasti",
+               "Equamente preoccupati\ned entusiasti",
+               "Più entusiasti\nche preoccupati"),
+  percentuale = c(50, 38, 10),
+  ordine = c(1, 2, 3)
+)
+
+ggplot(dati_pew, aes(x = reorder(risposta, ordine), y = percentuale, fill = factor(ordine))) +
+  geom_col(show.legend = FALSE, width = 0.7) +
+  geom_text(aes(label = paste0(percentuale, "%")), vjust = -0.5, size = 10,
+            fontface = "bold", color = "#333333") +
+  scale_fill_manual(values = c("#E06029", "#F68B5F", "#F2A7A0")) +
+  theme_uniurb() +
+  labs(
+    title = "Come si sentono gli americani riguardo all'IA nella vita quotidiana",
+    subtitle = "Fonte: Pew Research Center, \"How Americans View AI and Its Impact\", settembre 2025 (N = 5.023)",
+    x = NULL,
+    y = "Percentuale (%)"
+  ) +
+  scale_y_continuous(limits = c(0, 60), expand = c(0, 0)) +
+  theme(
+    axis.text.x = element_text(size = 22),
+    axis.text.y = element_text(size = 16),
+    plot.title = element_text(size = 26),
+    plot.subtitle = element_text(size = 16)
+  )
+```
+
+::: {.notes}
+Dati dal rapporto Pew Research Center (settembre 2025, N = 5.023 adulti statunitensi). Il 50% degli americani è più preoccupato che entusiasta dell'IA nella vita quotidiana. Il 38% è ugualmente preoccupato ed entusiasta. Solo il 10% è più entusiasta che preoccupato. La preoccupazione è cresciuta significativamente: era il 37% nel 2021, ora è al 50%. Il rapporto è uno dei required readings del corso. Nota: i dati sono americani — come discussione, chiedere agli studenti come pensano si posizionino gli italiani.
+:::
+
+## I rischi percepiti
+
+> "Il rischio più alto dell'IA è l'erosione delle capacità umane — come la perdita delle competenze di pensiero critico."
+>
+> — Rispondente, Pew Research Center, 2025
+
+I principali rischi indicati dal **57%** degli americani che considerano i rischi dell'IA "alti" [@pewresearch2025]:
+
+- **Erosione delle capacità umane** (pensiero critico, creatività)
+- **Perdita di posti di lavoro** e trasformazione economica
+- **Accuratezza dell'informazione** e disinformazione
+- **Sorveglianza** e perdita di privacy
+
+::: {.notes}
+Dalla survey Pew Research 2025. Il 57% degli americani ritiene che i rischi societali dell'IA siano alti, mentre solo il 25% ritiene alti i benefici. Il 53% ritiene che l'IA peggiorerà la capacità delle persone di pensare creativamente, e il 50% teme un impatto negativo sulle relazioni significative. La preoccupazione principale non è tecnica ma umana: la paura di perdere competenze cognitive. Il tema della disinformazione è citato tra chi percepisce alti rischi. Collegamento con Ferrara (2026): l'erosione della fiducia è già percepita a livello di opinione pubblica.
+:::
+
+## Il riconoscimento dei contenuti IA
+
+::: {.columns}
+::: {.column width="50%"}
+### L'importanza percepita
+
+Il **76%** degli americani ritiene importante essere in grado di riconoscere contenuti generati dall'IA.
+:::
+
+::: {.column width="50%"}
+### La capacità effettiva
+
+Solo il **47%** si dichiara in grado di distinguere contenuti generati dall'IA da quelli creati da esseri umani.
+:::
+:::
+
+::: {.highlight-box}
+**Il gap della detection:** La maggioranza ritiene cruciale riconoscere l'IA, ma oltre la metà ammette di non saperlo fare [@pewresearch2025].
+:::
+
+::: {.notes}
+Questo gap tra importanza percepita e capacità effettiva è uno dei dati più significativi del rapporto Pew. Collegamento con Hackenburg et al. (2025): se le persone non riescono a riconoscere contenuti IA, sono più vulnerabili alla persuasione dell'IA conversazionale. Collegamento con Vaccari & Chadwick (2020): i deepfake sfruttano esattamente questo gap. Questo dato motiva anche il nostro progetto di ricerca: come reagiscono gli utenti ai contenuti generati dall'IA sui social media?
+:::
+
+## Il Paradosso dell'IA Generativa
+
+::: {.orange-box}
+**Il Paradosso dell'IA Generativa:** man mano che i contenuti sintetici diventano onnipresenti e indistinguibili, le società potrebbero razionalmente **scontare tutte le prove digitali**. La verifica diventa un privilegio, i processi istituzionali rallentano, e la responsabilità si erode [@ferrara2026].
+:::
+
+::: {.notes}
+Questo è il concetto teorico centrale del paper di Ferrara (2026), uno dei testi del corso. Il "paradosso" è che l'IA generativa è utile (produce contenuti di qualità) ma simultaneamente erode la fiducia (perché tutto potrebbe essere falso). La "tassa epistemica" è il costo crescente di verificare cosa è vero. Ferrara propone il concetto di "realtà sintetica" — non singoli contenuti falsi, ma interi "contesti di credenza" fabbricati.
+:::
+
+## La Realtà Sintetica: un modello a strati
+
+| Livello | Nome | Descrizione |
+|---------|------|-------------|
+| **1** | Contenuto sintetico | Testo, immagini, audio, video generati |
+| **2** | Identità sintetica | Persone fittizie con documenti, voce, volto |
+| **3** | Interazione sintetica | Dialoghi e persuasione adattiva automatizzata |
+| **4** | Istituzioni sintetiche | Corruzione dei processi di verifica istituzionale |
+
+Adattato da @ferrara2026
+
+::: {.notes}
+Il modello a strati di Ferrara (2026, Figura 2). Ogni livello amplifica il precedente: contenuti realistici + identità credibili + interazioni persuasive = corruzione dei processi istituzionali (elezioni, tribunali, giornalismo). Questo framework sarà utile per tutto il corso: il progetto di gruppo lavora al livello 1 (contenuto sintetico), ma le implicazioni toccano tutti e 4 i livelli. Collegamento con Schroeder et al. (2026) sugli "sciami IA malevoli" che operano a livello 2 e 3.
+:::
+
+## IA e persuasione politica
+
+::: {.highlight-box}
+**Risultato chiave:** In conversazioni di circa 9 minuti, i sistemi IA più avanzati sono risultati fino al **52% più persuasivi** di un messaggio statico, con effetti misurabili ancora **dopo un mese** [@hackenburg2025].
+:::
+
+Ma c'è un **trade-off preoccupante**:
+
+- I modelli ottimizzati per la persuasione producono **più affermazioni inaccurate**
+- Il modello più persuasivo conteneva il **30% di claim inaccurati**
+- Le strategie basate su **densità informativa** sono le più efficaci
+
+::: {.notes}
+Dati da Hackenburg et al. (2025), pubblicato su Science. Studio con 76.977 risposte, 42.357 persone, 19 LLM testati su 707 questioni politiche. La scoperta centrale è il trade-off persuasione-accuratezza: i modelli IA più persuasivi sono anche quelli che producono più disinformazione. Questo è un risultato empirico che supporta il paradosso teorico di Ferrara. Nota: anche modelli piccoli, con il giusto fine-tuning, possono diventare altamente persuasivi — il rischio non è limitato ai frontier models.
+:::
+
+## Verso il Sistema Mediale Ibrido {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 5: breve anteprima del tema di domani. Collegare le definizioni e i dati di oggi al framework teorico che verrà approfondito nella prossima lezione.
+:::
+
+## Dal broadcasting all'IA
+
+::: {.columns}
+::: {.column width="50%"}
+### Media tradizionali
+- Flusso **uno-a-molti**
+- Gatekeeping professionale
+- Verifica editoriale
+- Ciclo di notizie definito
+:::
+
+::: {.column width="50%"}
+### Sistema mediale ibrido + IA
+- Flusso **molti-a-molti** + IA
+- Gatekeeping algoritmico
+- Contenuti generati automaticamente
+- Ciclo informativo continuo
+:::
+:::
+
+> "Il sistema mediale ibrido è costruito sulle interazioni tra vecchi e nuovi media e le loro tecnologie, generi, norme, comportamenti e organizzazioni associate."
+>
+> — @chadwick2011
+
+::: {.notes}
+Anteprima del tema di domani: il sistema mediale ibrido di Chadwick (2011). L'IA generativa aggiunge un nuovo attore a questo sistema — un attore che può produrre contenuti, simulare identità e interagire con gli utenti. Domani approfondiremo il framework teorico; oggi basta capire che l'IA non opera in un vuoto ma all'interno di un ecosistema mediale complesso dove vecchi e nuovi media interagiscono. Il concetto di "ibridità" è cruciale: non è una sostituzione ma una coesistenza complessa.
+:::
+
+## Il giornalismo nell'era dell'IA
+
+L'IA generativa sta trasformando **ogni fase** della catena del valore giornalistica [@mattis2025]:
+
+- **Raccolta:** automazione delle fonti, monitoraggio in tempo reale
+- **Produzione:** articoli generati, editing automatizzato
+- **Verifica:** strumenti IA per il fact-checking, ma anche nuove sfide
+- **Distribuzione:** personalizzazione algoritmica, chatbot informativi
+- **Ricezione:** utenti che non distinguono contenuto umano da IA
+
+::: {.notes}
+Sintesi da Mattis & de Vreese (2025). Ogni fase presenta sia opportunità (efficienza, scala) che rischi (perdita del controllo editoriale, diminuzione della qualità, erosione della fiducia). Un dato significativo: la BBC ha riscontrato che il 50% delle risposte dei LLM presentava problemi di accuratezza. Express.de, un quotidiano tedesco, ha dovuto assumere un redattore umano per controllare gli articoli generati dall'IA dopo un'impennata di errori. Il giornalismo sarà un tema ricorrente nel corso.
+:::
+
+## Qualità percepita vs. disponibilità a leggere
+
+::: {.highlight-box}
+**Risultato sorprendente:** I lettori valutano la qualità degli articoli generati dall'IA come **equivalente** a quella degli articoli umani, ma restano **riluttanti** a leggere notizie prodotte dall'IA [@gilardi2025].
+:::
+
+- Nessuna differenza significativa su **credibilità**, **competenza** e **leggibilità**
+- Solo il **29%** degli svizzeri leggerebbe notizie completamente generate dall'IA
+- La resistenza non dipende dalla qualità ma da **fiducia e autenticità**
+
+::: {.notes}
+Dati da Gilardi et al. (2025), N = 599 partecipanti svizzeri. Questo studio dimostra il "disaccoppiamento qualità-attitudine": la resistenza ai contenuti IA non nasce dalla loro scarsa qualità (che è equiparabile) ma da preoccupazioni più profonde legate alla fiducia, alla trasparenza e all'autenticità giornalistica. Dato interessante: dopo la disclosure, la disponibilità a continuare a leggere lo specifico articolo AUMENTA — possibile "effetto novità". Ma la disponibilità futura resta bassa.
+:::
+
+## Sintesi e Prossimi Passi {background-color="#C5612E"}
+
+::: {.notes}
+Sezione finale: riepilogo e orientamento per le prossime lezioni.
+:::
+
+## Concetti chiave di oggi
+
+- L'**IA generativa** crea contenuti originali (testo, immagini, audio, video)
+- I **LLM** predicono sequenze probabili; non "comprendono" il linguaggio
+- Il **Paradosso dell'IA Generativa**: utilità crescente, fiducia decrescente
+- La **realtà sintetica** opera su 4 livelli: contenuto, identità, interazione, istituzioni
+- Il gap tra **importanza percepita** (76%) e **capacità effettiva** (47%) di riconoscere l'IA
+- La qualità dei contenuti IA è **equiparabile** a quella umana, ma la fiducia resta bassa
+
+::: {.notes}
+Riepilogo dei concetti fondamentali. Questi temi torneranno in tutto il corso. Assicurarsi che gli studenti abbiano compreso le definizioni di base (LLM, prompt, hallucination, modello di diffusione) e il paradosso centrale: l'IA genera contenuti di qualità ma erode la fiducia nell'ecosistema informativo.
+:::
+
+## Letture per questa settimana
+
+::: {.columns}
+::: {.column width="50%"}
+### Obbligatorie
+
+- @pewresearch2025 — Come gli americani vedono l'IA
+- @ferrara2026 — Il Paradosso dell'IA Generativa
+- @chadwick2011 — Il Sistema Mediale Ibrido
+:::
+
+::: {.column width="50%"}
+### Consigliate
+
+- @hackenburg2025 — Persuasione politica con IA
+- @mattis2025 — IA generativa e giornalismo
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+Portate le letture al workshop di mercoledì: le caricheremo su **NotebookLM** per un esercizio pratico.
+:::
+
+::: {.notes}
+Assegnazione delle letture. Le letture obbligatorie preparano la lezione di domani (Chadwick) e approfondiscono i temi di oggi (Pew, Ferrara). Le letture consigliate (Hackenburg, Mattis) saranno fondamentali nella settimana 2. Ricordare che mercoledì c'è il workshop su Gemini e NotebookLM: verificare l'accesso al proprio account uniurb.it.
+:::
+
+## Per la prossima lezione
+
+**Domani (Martedì 24 Febbraio):** Il Sistema Mediale Ibrido nell'Era dell'IA
+
+- Il framework di Chadwick: vecchi e nuovi media in interazione
+- Come l'IA si inserisce nel sistema mediale ibrido
+- Trasformazioni delle professioni della comunicazione
+
+**Mercoledì 25 Febbraio:** Workshop pratico su Google Gemini e NotebookLM
+
+::: {.callout-warning}
+## Attenzione
+Verificate **oggi stesso** il vostro accesso a Google Gemini e NotebookLM con l'account `@uniurb.it`. In caso di problemi, contattate il supporto IT.
+:::
+
+::: {.notes}
+Promemoria operativo. È fondamentale che tutti gli studenti abbiano accesso funzionante a Gemini e NotebookLM prima del workshop di mercoledì. Suggerire di provare ad accedere oggi stesso e di segnalare eventuali problemi. Transizione verso la slide finale.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Il Sistema Mediale Ibrido (24 Febbraio 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) iscrizione a Moodle, (2) verifica account uniurb.it per Gemini/NotebookLM, (3) letture assegnate. A domani!
+:::
+
+## Riferimenti

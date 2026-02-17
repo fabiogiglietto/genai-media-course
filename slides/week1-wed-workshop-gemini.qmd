@@ -1,0 +1,424 @@
+---
+title: "Workshop: Google Gemini & NotebookLM"
+subtitle: "IA Generativa e Media — Settimana 1"
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date: "25 Febbraio 2026"
+date-format: "D MMMM YYYY"
+format:
+  revealjs:
+    theme: [default, ../_extensions/uniurb/discui.scss]
+    logo: ../assets/logo-uniurb-white.svg
+    footer: "IA Generativa e Media · A.A. 2025/2026"
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+    controls: true
+    progress: true
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-width: 10
+  fig-height: 6
+  fig-dpi: 150
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+lang: it
+bibliography: ../references.bib
+csl: ../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+### Google lancia Gemini 2.0 con funzionalità agentiche
+
+Google ha rilasciato Gemini 2.0, con capacità di ragionamento avanzato e "agenti IA" capaci di eseguire compiti complessi in autonomia, integrati in Google Workspace.
+
+::: {.callout-note}
+## Da discutere
+Se gli agenti IA possono agire autonomamente, chi è responsabile delle loro azioni? Come cambia il concetto di *human-in-the-loop* che abbiamo discusso ieri?
+:::
+
+::: {.notes}
+This Week in AI: aprire con una notizia recente sull'evoluzione di Gemini o di un altro strumento IA. L'esempio qui riguarda le funzionalità agentiche di Gemini 2.0. Collegamento con la lezione di ieri: il modello "centrato sull'attante" (Thäsler-Kordonouri & Koliska, 2025) diventa più concreto quando l'IA può agire autonomamente. Chiedere agli studenti: hanno visto notizie sull'IA questa settimana? Dedicare 5-10 minuti alla discussione.
+:::
+
+## [This Week in AI]{.twiai-badge}
+
+### L'IA nelle redazioni: aggiornamenti
+
+- **Reuters:** integra strumenti IA per il monitoraggio automatico delle fonti
+- **The Guardian:** sperimenta la sintesi automatica di articoli lunghi
+- **BBC:** il 50% delle risposte dei LLM sui loro contenuti presenta problemi di accuratezza
+
+::: {.highlight-box}
+**Collegamento con il corso:** questi sviluppi illustrano i rischi per la catena del valore giornalistica discussi ieri con @mattis2025.
+:::
+
+::: {.notes}
+Seconda slide TWIAI. Esempi concreti di come l'IA sta entrando nelle redazioni. Il dato BBC è tratto da un rapporto interno citato in Mattis & de Vreese (2025): il 50% delle risposte dei LLM addestrati sui contenuti BBC presentava problemi, con il 19% delle risposte che contenevano errori fattuali diretti. Questo illustra il rischio "decreasing journalistic quality" della catena del valore. Transizione: oggi passiamo dalla teoria alla pratica — sperimenteremo direttamente con gli strumenti IA che le redazioni stanno adottando.
+:::
+
+## Roadmap del workshop
+
+1. **Google Gemini** — esplorare le funzionalità principali
+2. **Basi del prompt design** — le regole di Cosenza
+3. **Google NotebookLM** — analisi documentale con IA
+4. **Esercizio pratico** — creare un notebook con le letture del corso
+
+::: {.callout-tip}
+## Suggerimento
+Aprite già il browser con il vostro account \@uniurb.it. Oggi lavoriamo in modalità pratica.
+:::
+
+::: {.notes}
+Struttura del workshop. La prima metà sarà dedicata a Gemini e al prompt design, la seconda a NotebookLM con un esercizio pratico. Gli studenti dovrebbero avere il laptop acceso e l'account uniurb.it già attivo. Verificare che tutti abbiano accesso. In caso di problemi tecnici, gli studenti possono lavorare in coppia.
+:::
+
+## Google Gemini {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 1: introduzione a Google Gemini. Questo è lo strumento principale del corso. L'accesso è garantito tramite Google Workspace dell'università.
+:::
+
+## Cos'è Google Gemini
+
+::: {.columns}
+::: {.column width="50%"}
+### Caratteristiche
+
+- Modello **multimodale** di Google
+- Gestisce testo, immagini, audio, video
+- Finestra di contesto fino a **1 milione di token**
+- Integrato in **Google Workspace**
+- Generazione immagini con **Imagen**
+:::
+
+::: {.column width="50%"}
+### Accesso nel corso
+
+- URL: **gemini.google.com**
+- Accedere con account **\@uniurb.it**
+- NON usare account Gmail personale
+- Funzionalità complete via Workspace
+:::
+:::
+
+::: {.notes}
+Panoramica di Gemini. La finestra di contesto da 1 milione di token è particolarmente rilevante per il nostro corso: permette di analizzare interi dataset di post e commenti in una singola conversazione (lo useremo nelle settimane 4-5 per il progetto). L'accesso tramite account universitario garantisce funzionalità enterprise senza costi aggiuntivi. Mostrare come accedere: aprire gemini.google.com, verificare di essere connessi con l'account uniurb.it (non Gmail personale). Far fare la verifica a tutti gli studenti ora.
+:::
+
+## Funzionalità principali di Gemini
+
+| Funzionalità | Descrizione | Uso nel corso |
+|-------------|-------------|---------------|
+| **Chat testuale** | Dialogo, domande, analisi | Brainstorming, analisi testi |
+| **Analisi immagini** | Descrivere, classificare, confrontare | Classificazione contenuti visivi |
+| **Generazione immagini** | Creare immagini da descrizioni | Comprendere la produzione IA |
+| **Analisi documenti** | Caricare PDF, fogli di calcolo | Analisi dataset del progetto |
+| **Long context** | Fino a 1M token in input | Analisi di grandi dataset |
+| **Code execution** | Eseguire codice Python | Analisi dati e visualizzazioni |
+
+::: {.notes}
+Tabella riassuntiva delle funzionalità che useremo nel corso. La chat testuale è la funzionalità base. L'analisi immagini sarà fondamentale per il progetto di gruppo (classificare immagini generate dall'IA). La generazione immagini ci serve per capire come funzionano i contenuti che analizzeremo. Il long context è la funzionalità killer per la ricerca: permette di caricare interi dataset e analizzarli in conversazione. Nelle prossime settimane esploreremo ciascuna funzionalità in dettaglio.
+:::
+
+## Primo contatto con Gemini
+
+::: {.orange-box}
+### Esercizio guidato (5 minuti)
+1. Aprite **gemini.google.com** con l'account \@uniurb.it
+2. Scrivete: *"Spiega in 3 punti cos'è il sistema mediale ibrido di Chadwick"*
+3. Valutate la risposta: è accurata? Manca qualcosa?
+4. Chiedete di approfondire un punto specifico
+:::
+
+::: {.notes}
+Primo esercizio pratico. L'obiettivo non è solo esplorare Gemini, ma anche testare le conoscenze degli studenti sulla lezione di ieri. Dopo che gli studenti hanno ottenuto la risposta, discutere in classe: la risposta di Gemini è coerente con quello che abbiamo studiato? Manca il concetto di "ibridità particolata"? Il ciclo dell'informazione politica? Questo introduce il principio che l'IA va sempre valutata criticamente — non è un oracolo (come dice Cosenza).
+:::
+
+## Le Basi del Prompt Design {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: introduzione al prompt design. Utilizziamo il framework di Cosenza (2025) per strutturare l'approccio.
+:::
+
+## Dall'uso sporadico a quello sistematico
+
+::: {.highlight-box}
+**Il problema:** la maggior parte delle persone fa fatica a passare dall'uso sporadico all'uso sistematico dell'IA perché la tratta come un software tradizionale [@cosenza2025].
+:::
+
+L'IA generativa richiede un **cambio di paradigma**:
+
+- Il linguaggio è la **nuova interfaccia** di controllo
+- Non si tratta di "premere i comandi giusti"
+- Più preciso è il nostro modo di esprimerci, più potente è la collaborazione
+- Obiettivo: **intelligenza aumentata**, non IA al posto nostro
+
+::: {.notes}
+Punto di partenza di Cosenza (2025). La maggior parte delle persone usa l'IA come un motore di ricerca evoluto: fa una domanda, prende la prima risposta, se ne va. L'approccio corretto è dialogico e iterativo. Il linguaggio naturale è la nuova interfaccia: a differenza di un software tradizionale dove si premono pulsanti, con l'IA si comunica. Questa è una competenza che va allenata. Il concetto di "intelligenza aumentata" è chiave: non sostituire l'umano ma amplificarne le capacità.
+:::
+
+## Le 10 regole di Cosenza
+
+::: {.columns}
+::: {.column width="50%"}
+1. **Esplora** — tratta l'IA come un laboratorio
+2. **Dialoga** — non fermarti alla prima risposta
+3. **Dirigi** — guida con istruzioni strutturate
+4. **Prompt Design** — struttura le richieste
+5. **Valuta** — l'IA ragiona per probabilità
+:::
+
+::: {.column width="50%"}
+6. **Personalizza** — aggiungi il tuo materiale
+7. **Raffina** — l'output è materia grezza
+8. **Correggi** — attenzione a bias e stereotipi
+9. **Approfondisci** — diritti e aspetti legali
+10. **Impara** — non smettere di sperimentare
+:::
+:::
+
+Adattato da @cosenza2025
+
+::: {.notes}
+Il decalogo di Cosenza è un framework pratico per l'uso sistematico dell'IA. Oggi ci concentreremo su Esplora, Dialoga, Dirigi e Valuta. Le altre regole le approfondiremo nelle prossime settimane, in particolare durante la settimana 2 (produzione di contenuti) e la settimana 5 (analisi con IA). La regola più importante per oggi è "Valuta": l'IA ragiona per probabilità, non per verità. Ogni risposta va trattata come una bozza da sottoporre a giudizio critico.
+:::
+
+## La "frontiera frastagliata"
+
+> "Non esiste una frontiera chiara tra ciò che l'IA sa fare e ciò che non sa fare. Esiste una **frontiera frastagliata** i cui confini sono tutti da scoprire."
+>
+> — @cosenza2025 (riprendendo Ethan Mollick)
+
+L'IA potrebbe risolvere un problema matematico complesso ma **sbagliare** una semplice domanda fattuale.
+
+::: {.callout-note}
+## Da discutere
+Provate a trovare qualcosa che Gemini fa sorprendentemente bene e qualcosa che fa sorprendentemente male.
+:::
+
+::: {.notes}
+Il concetto di "frontiera frastagliata" (jagged frontier) è di Ethan Mollick, ripreso da Cosenza. A differenza di un software tradizionale dove le capacità sono definite e prevedibili, i LLM hanno capacità irregolari e imprevedibili. Possono scrivere poesie eccellenti ma sbagliare a contare le lettere in una parola. Questa imprevedibilità è strutturale (non un bug) e richiede un atteggiamento di esplorazione costante. Esercizio: dare 3 minuti per sperimentare con Gemini, poi raccogliere esempi sorprendenti dalla classe.
+:::
+
+## Principi di prompt design
+
+::: {.columns}
+::: {.column width="50%"}
+### Prompt scarno
+
+*"Parlami del giornalismo"*
+
+- Generico, nessun contesto
+- Risultato: risposta superficiale
+- L'IA riempie i "vuoti" con elementi banali
+:::
+
+::: {.column width="50%"}
+### Prompt strutturato
+
+*"Agisci come un esperto di media studies. Analizza in 5 punti come l'IA generativa sta trasformando il giornalismo, con esempi specifici dal contesto europeo. Ogni punto non deve superare le 3 righe."*
+
+- Ruolo, compito, formato, vincoli
+:::
+:::
+
+::: {.highlight-box}
+**Regola "Dirigi":** Non lasciare spazi di libertà: l'IA li riempirà con elementi mediocri [@cosenza2025].
+:::
+
+::: {.notes}
+Confronto tra prompt scarno e strutturato. Il prompt strutturato contiene: (1) un ruolo ("agisci come"), (2) un compito preciso, (3) un formato di output (5 punti, max 3 righe), (4) un contesto (europeo). Cosenza insegna che i prompt scarni danno risultati "che sono la media di internet". Per ottenere risultati di qualità superiore, bisogna guidare l'IA con istruzioni dettagliate. Mostrare dal vivo la differenza tra i due prompt su Gemini.
+:::
+
+## Il dialogo iterativo
+
+::: {.orange-box}
+### Esercizio guidato (10 minuti)
+1. Chiedete a Gemini: *"Quali sono i rischi dell'IA per la disinformazione?"*
+2. Leggete la risposta e chiedete: *"Approfondisci il secondo punto con dati specifici"*
+3. Poi: *"Confuta questa tesi — quali sono i controargomenti?"*
+4. Infine: *"Sintetizza il dibattito in una tabella pro/contro"*
+:::
+
+Ogni scambio **raffina** il risultato. La prima risposta è un punto di partenza, non di arrivo [@cosenza2025].
+
+::: {.notes}
+Esercizio pratico sul dialogo iterativo (regola 2 di Cosenza). L'obiettivo è mostrare che l'interazione con l'IA è come una jam session: ogni scambio aggiunge qualcosa. Il passaggio dalla domanda generica all'approfondimento, alla confutazione, alla sintesi illustra le diverse modalità di dialogo. La richiesta di confutazione è particolarmente importante: insegna agli studenti a usare l'IA per il pensiero critico, non solo per la conferma delle proprie idee. Dare 10 minuti, poi discutere i risultati in classe.
+:::
+
+## Google NotebookLM {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: introduzione a NotebookLM. Questo strumento sarà fondamentale per il progetto di gruppo (letteratura review, organizzazione fonti).
+:::
+
+## Cos'è NotebookLM
+
+::: {.columns}
+::: {.column width="50%"}
+### Caratteristiche
+
+- Assistente IA per la **ricerca documentale**
+- Carica PDF, Google Docs, pagine web
+- Q&A **con citazioni** dalle fonti
+- Genera guide studio, FAQ, timeline
+- **Audio Overview:** discussione podcast
+- Notebook collaborativi
+:::
+
+::: {.column width="50%"}
+### Accesso nel corso
+
+- URL: **notebooklm.google.com**
+- Accedere con account **\@uniurb.it**
+- Creare un notebook per il corso
+- Caricare le letture come fonti
+:::
+:::
+
+::: {.notes}
+NotebookLM è il secondo strumento chiave del corso. A differenza di Gemini (che lavora su conoscenza generale), NotebookLM lavora SOLO sui documenti caricati. Questo significa che le risposte sono "grounded" — basate sulle fonti con citazioni verificabili. Questa caratteristica lo rende ideale per la ricerca accademica. La funzionalità Audio Overview genera una discussione podcast sui materiali caricati — utile per lo studio. Per il progetto di gruppo, i notebook collaborativi permetteranno ai gruppi di organizzare fonti e risultati.
+:::
+
+## NotebookLM vs Gemini
+
+| Caratteristica | Gemini | NotebookLM |
+|---------------|--------|------------|
+| **Base di conoscenza** | Conoscenza generale del modello | Solo i documenti caricati |
+| **Citazioni** | Non sempre verificabili | Sempre con riferimento alla fonte |
+| **Hallucination** | Possibili e frequenti | Ridotte (grounded sulle fonti) |
+| **Collaborazione** | Conversazione individuale | Notebook condivisibili |
+| **Audio** | Non disponibile | Audio Overview (podcast) |
+| **Uso ideale** | Brainstorming, analisi, generazione | Ricerca documentale, sintesi |
+
+::: {.notes}
+Confronto tra i due strumenti per chiarire quando usare quale. Gemini è più flessibile e potente per compiti generali, ma meno affidabile per citazioni specifiche. NotebookLM è più limitato (lavora solo sui documenti caricati) ma molto più affidabile per la ricerca — le citazioni sono sempre verificabili. Per il progetto di gruppo: si userà NotebookLM per organizzare la letteratura e Gemini per analizzare i dataset di post e commenti. Mostrare dal vivo l'interfaccia di NotebookLM.
+:::
+
+## Esercizio: creare il notebook del corso
+
+::: {.orange-box}
+### Esercizio guidato (20 minuti)
+1. Aprite **notebooklm.google.com** con l'account \@uniurb.it
+2. Create un nuovo notebook: **"IA Generativa e Media — Letture"**
+3. Caricate **3 PDF** delle letture della prima settimana
+4. Provate a fare domande come:
+   - *"Cos'è il sistema mediale ibrido secondo Chadwick?"*
+   - *"Quali rischi dell'IA per il giornalismo identifica Mattis?"*
+   - *"Confronta le posizioni di Chadwick e Mattis"*
+5. Generate un **Audio Overview** delle fonti caricate
+:::
+
+::: {.notes}
+Esercizio centrale del workshop. Gli studenti dovrebbero avere già i PDF delle letture (scaricati da Moodle). Se non li hanno, possono scaricarli ora. I 3 PDF suggeriti: Chadwick (2011), Mattis & de Vreese (2025), Pew Research (2025). Guidare gli studenti passo passo: creazione notebook, upload PDF, prima domanda. Le domande suggerite testano sia la comprensione dei testi sia le capacità di NotebookLM. Il confronto tra autori è la domanda più avanzata. L'Audio Overview genera una discussione podcast di 5-10 minuti sui materiali — gli studenti possono ascoltarla per ripassare. Dare 20 minuti, girare tra i banchi per assistere.
+:::
+
+## Cosa osservare durante l'esercizio
+
+::: {.columns}
+::: {.column width="50%"}
+### Punti di forza
+
+- Citazioni precise con **riferimento alla fonte**
+- Capacità di **confrontare** tra documenti
+- Sintesi efficaci di testi lunghi
+- Audio Overview per lo studio
+:::
+
+::: {.column width="50%"}
+### Limiti da notare
+
+- Non va oltre i documenti caricati
+- Le domande troppo generiche danno risposte vaghe
+- Non sempre coglie le **sfumature** argomentative
+- L'Audio Overview può semplificare eccessivamente
+:::
+:::
+
+::: {.callout-tip}
+## Suggerimento
+Usate NotebookLM come punto di partenza per la comprensione, poi approfondite con la lettura diretta dei testi.
+:::
+
+::: {.notes}
+Meta-riflessione sull'esercizio. L'obiettivo non è solo usare lo strumento ma sviluppare consapevolezza critica (regola "Valuta" di Cosenza). NotebookLM è eccellente per orientarsi nei testi e trovare connessioni, ma le sue sintesi possono perdere sfumature importanti. Per il corso: NotebookLM è un assistente di studio, non un sostituto della lettura. Per il progetto di gruppo: sarà utile per organizzare la letteratura e generare bozze della sezione teorica.
+:::
+
+## Valutare criticamente l'output dell'IA
+
+> "L'IA ragiona per probabilità, non per verità. Sa molte cose su tanti argomenti, ma non è un oracolo. Tratta ogni risposta come una bozza da sottoporre a giudizio."
+>
+> — @cosenza2025
+
+**Checklist di valutazione:**
+
+- L'informazione è **fattualmente corretta**?
+- Le fonti citate **esistono davvero**?
+- Mancano prospettive o controargomenti?
+- Il risultato presenta **bias** o stereotipi?
+- È coerente con ciò che sappiamo dalle **letture**?
+
+::: {.notes}
+Regola "Valuta" di Cosenza applicata al contesto accademico. Sottolineare che nel contesto universitario la valutazione critica è ancora più importante: le hallucination possono sembrare plausibili e citare fonti inesistenti. Collegamento con la policy del corso: l'IA come strumento di brainstorming e critica è consentita, ma l'uso sostitutivo è vietato. La checklist di valutazione dovrebbe diventare un'abitudine per gli studenti. Nel progetto di gruppo, la validazione umana dei risultati dell'IA sarà la parte metodologica centrale.
+:::
+
+## Sintesi e Prossimi Passi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura del workshop. Riepilogo di cosa abbiamo imparato e cosa ci aspetta la prossima settimana.
+:::
+
+## Cosa abbiamo imparato oggi
+
+- **Google Gemini:** strumento multimodale per analisi, generazione e dialogo
+- **NotebookLM:** assistente di ricerca *grounded* sui documenti
+- **Prompt design:** dal generico allo strutturato, dall'uso sporadico al sistematico
+- Le **10 regole** di Cosenza: esplora, dialoga, dirigi, valuta [@cosenza2025]
+- La **frontiera frastagliata**: l'IA ha capacità irregolari e imprevedibili
+- L'output è sempre una **bozza**, mai un risultato definitivo
+
+::: {.notes}
+Riepilogo del workshop. Gli studenti ora hanno accesso operativo a entrambi gli strumenti e un framework per usarli in modo critico. Nelle prossime settimane approfondiremo le funzionalità specifiche: settimana 2 per la produzione di contenuti, settimane 4-5 per l'analisi dei dati del progetto.
+:::
+
+## Per la prossima settimana
+
+**Lunedì 2 Marzo:** Produzione di Contenuti con GenAI
+
+- Come l'IA trasforma i flussi di lavoro creativi
+- Approfondimento su *prompt engineering*
+- Criteri per valutare contenuti generati dall'IA
+
+**Martedì 3 Marzo:** Guest — Vincenzo Cosenza, "Intelligenza Aumentata"
+
+::: {.callout-tip}
+## Suggerimento
+Continuate a esplorare Gemini e NotebookLM durante la settimana. Caricate **tutti** i PDF del corso nel notebook.
+:::
+
+::: {.notes}
+Assegnazioni. Incoraggiare gli studenti a sperimentare con gli strumenti durante la settimana — la pratica è essenziale. Martedì 3 Marzo ci sarà il guest speaker Vincenzo Cosenza, autore del libro che abbiamo usato oggi: è un'ottima occasione per fare domande sull'uso professionale dell'IA. Ricordare le letture per la settimana 2: Gilardi et al. (2025) sulla percezione della qualità delle notizie generate dall'IA.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Produzione di Contenuti con GenAI (2 Marzo 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Chiusura. Ricordare: (1) esplorare Gemini e NotebookLM durante la settimana, (2) caricare tutti i PDF nel notebook, (3) martedì guest speaker Cosenza. A lunedì prossimo!
+:::
+
+## Riferimenti
