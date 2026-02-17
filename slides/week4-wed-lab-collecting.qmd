@@ -46,7 +46,7 @@ Queste etichette possono aiutare gli utenti a riconoscere l'*AI slop*? O rischia
 :::
 
 ::: {.notes}
-This Week in AI: aprire con una notizia recente sulle policy delle piattaforme rispetto ai contenuti sintetici. Il collegamento con il progetto e' diretto: i gruppi stanno raccogliendo proprio contenuti AI-generated su Facebook. La domanda posta collega le policy piattaforma alla ricerca di Ferrara (2026) sullo stack della realta' sintetica. Dedicare 5-10 minuti alla discussione. Chiedere agli studenti se hanno notato etichette di questo tipo durante la loro navigazione.
+This Week in AI: aprire con una notizia recente sulle policy delle piattaforme rispetto ai contenuti sintetici. Il collegamento con il progetto è diretto: i gruppi stanno raccogliendo proprio contenuti AI-generated su Facebook. La domanda posta collega le policy piattaforma alla ricerca di Ferrara (2026) sullo stack della realtà sintetica. Dedicare 5-10 minuti alla discussione. Chiedere agli studenti se hanno notato etichette di questo tipo durante la loro navigazione.
 :::
 
 ## [This Week in AI]{.twiai-badge}
@@ -62,12 +62,12 @@ This Week in AI: aprire con una notizia recente sulle policy delle piattaforme r
 :::
 
 ::: {.notes}
-Seconda slide TWIAI. Il collegamento con il progetto e' diretto: Ferrara (2026) descrive come il collasso dei costi di produzione e l'elevato throughput rendano possibile inondare le piattaforme di contenuti sintetici. L'AI slop che i gruppi studiano e' la manifestazione piu' visibile di questa dinamica nel Layer 1 (contenuto sintetico) dello stack proposto da Ferrara. Transizione: passiamo ora alla sessione pratica di raccolta dati.
+Seconda slide TWIAI. Il collegamento con il progetto è diretto: Ferrara (2026) descrive come il collasso dei costi di produzione e l'elevato throughput rendano possibile inondare le piattaforme di contenuti sintetici. L'AI slop che i gruppi studiano è la manifestazione più visibile di questa dinamica nel Layer 1 (contenuto sintetico) dello stack proposto da Ferrara. Transizione: passiamo ora alla sessione pratica di raccolta dati.
 :::
 
 ## Roadmap del lab
 
-1. **Ricapitolazione** — cosa raccogliere e perche'
+1. **Ricapitolazione** — cosa raccogliere e perché
 2. **Meta Content Library** — panoramica dello strumento
 3. **Strategie di ricerca** — come trovare contenuti *AI slop*
 4. **Workflow di raccolta** — dal post al dataset
@@ -75,10 +75,10 @@ Seconda slide TWIAI. Il collegamento con il progetto e' diretto: Ferrara (2026) 
 6. **Lavoro pratico** — raccolta dati per gruppi
 
 ::: {.notes}
-Struttura del lab. La sessione e' prevalentemente pratica: dopo una breve introduzione (20 minuti circa), i gruppi lavoreranno autonomamente alla raccolta dei dati. Il docente e i tutor saranno disponibili per assistenza tecnica e metodologica. Ogni gruppo dovrebbe uscire dal lab con un dataset iniziale di almeno 30-50 post con i relativi commenti.
+Struttura del lab. La sessione è prevalentemente pratica: dopo una breve introduzione (20 minuti circa), i gruppi lavoreranno autonomamente alla raccolta dei dati. Il docente e i tutor saranno disponibili per assistenza tecnica e metodologica. Ogni gruppo dovrebbe uscire dal lab con un dataset iniziale di almeno 30-50 post con i relativi commenti.
 :::
 
-## Cosa Raccogliere e Perche' {background-color="#C5612E"}
+## Cosa Raccogliere e Perché {background-color="#C5612E"}
 
 ::: {.notes}
 Sezione 1: breve ricapitolazione degli obiettivi di raccolta. Collegamento con la sessione di ieri sul lancio del progetto.
@@ -97,11 +97,11 @@ Ogni gruppo costruisce un dataset di **post con immagini AI-generated** e i rela
 | **page_name** | Testo | "Nostalgia Italia" |
 | **image_type** | Categoria | Bambini / Animali / Paesaggi |
 | **engagement** | Numerico | 1.200 reazioni, 350 commenti |
-| **comment_text** | Testo | "Ma questa e' fatta con l'IA!" |
+| **comment_text** | Testo | "Ma questa è fatta con l'IA!" |
 | **comment_type** | Da classificare | Riconoscimento IA / Emotivo / Critico |
 
 ::: {.notes}
-Ricapitolazione dalla sessione di ieri. Il dataset ha struttura gerarchica: i post con immagini AI slop sono le unita' di primo livello; i commenti sono le unita' di secondo livello. Ogni gruppo raccoglie almeno 30-50 post con relativi commenti. La colonna "comment_type" sara' classificata nella settimana 5 usando Gemini e validata con codifica umana. Per ora i gruppi si concentrano sulla raccolta dei campi oggettivi. I dati devono essere raccolti in un foglio Google Sheets condiviso nel gruppo.
+Ricapitolazione dalla sessione di ieri. Il dataset ha struttura gerarchica: i post con immagini AI slop sono le unità di primo livello; i commenti sono le unità di secondo livello. Ogni gruppo raccoglie almeno 30-50 post con relativi commenti. La colonna "comment_type" sarà classificata nella settimana 5 usando Gemini e validata con codifica umana. Per ora i gruppi si concentrano sulla raccolta dei campi oggettivi. I dati devono essere raccolti in un foglio Google Sheets condiviso nel gruppo.
 :::
 
 ## Meta Content Library {background-color="#C5612E"}
@@ -110,7 +110,7 @@ Ricapitolazione dalla sessione di ieri. Il dataset ha struttura gerarchica: i po
 Sezione 2: panoramica pratica di Meta Content Library. Lo strumento chiave per la raccolta dei dati del progetto.
 :::
 
-## Meta Content Library: funzionalita' e limiti
+## Meta Content Library: funzionalità e limiti
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -138,7 +138,7 @@ Salvate ogni query con un nome descrittivo. Annotate i parametri di ricerca per 
 :::
 
 ::: {.notes}
-Meta Content Library e' lo strumento di Meta per la ricerca accademica. L'accesso e' stato configurato nelle settimane precedenti tramite il portale di ricerca. Passaggi operativi: accedere a contentlibrary.meta.com, selezionare "Posts", applicare filtri (lingua italiana, con immagine), impostare l'intervallo temporale (ultimi 6 mesi consigliati), esportare in CSV o JSON. Limiti importanti: dati solo pubblici, utenti anonimizzati, limiti sul volume di query. I gruppi dovranno pianificare le ricerche con attenzione. Mostrare l'interfaccia in tempo reale proiettando lo schermo.
+Meta Content Library è lo strumento di Meta per la ricerca accademica. L'accesso è stato configurato nelle settimane precedenti tramite il portale di ricerca. Passaggi operativi: accedere a contentlibrary.meta.com, selezionare "Posts", applicare filtri (lingua italiana, con immagine), impostare l'intervallo temporale (ultimi 6 mesi consigliati), esportare in CSV o JSON. Limiti importanti: dati solo pubblici, utenti anonimizzati, limiti sul volume di query. I gruppi dovranno pianificare le ricerche con attenzione. Mostrare l'interfaccia in tempo reale proiettando lo schermo.
 :::
 
 ## Strategie di Ricerca {background-color="#C5612E"}
@@ -175,7 +175,7 @@ Non tutti i contenuti con alto engagement sono AI slop. Usate il vostro giudizio
 :::
 
 ::: {.notes}
-Due strategie complementari per la ricerca. La ricerca per parole chiave funziona bene quando gli utenti stessi commentano che l'immagine e' generata dall'IA. La ricerca per caratteristiche visive richiede piu' esperienza ma permette di trovare contenuti non ancora identificati. Terenzi & Giglietto (2025) hanno identificato alcuni pattern tipici dell'AI slop nelle comunita' italiane: immagini di bambini in situazioni commoventi, anziani sorridenti, animali in contesti improbabili. Lo stile e' tipicamente iperrealista con una "lucentezza" caratteristica. Importante: lo screening iniziale e' necessariamente soggettivo; la classificazione sistematica verra' fatta nella settimana 5.
+Due strategie complementari per la ricerca. La ricerca per parole chiave funziona bene quando gli utenti stessi commentano che l'immagine è generata dall'IA. La ricerca per caratteristiche visive richiede più esperienza ma permette di trovare contenuti non ancora identificati. Terenzi & Giglietto (2025) hanno identificato alcuni pattern tipici dell'AI slop nelle comunità italiane: immagini di bambini in situazioni commoventi, anziani sorridenti, animali in contesti improbabili. Lo stile è tipicamente iperrealista con una "lucentezza" caratteristica. Importante: lo screening iniziale è necessariamente soggettivo; la classificazione sistematica verrà fatta nella settimana 5.
 :::
 
 ## Esempio di query di ricerca
@@ -194,12 +194,12 @@ Filtri: con immagine, ordinamento per engagement
 
 ::: {.highlight-box}
 **Query 3 — Ricerca per tema:**
-Parole chiave: `"preghiera"` OR `"angelo"` OR `"Gesu'"` + immagine
+Parole chiave: `"preghiera"` OR `"angelo"` OR `"Gesù"` + immagine
 Filtri: engagement > 500 reazioni
 :::
 
 ::: {.notes}
-Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto e' generato dall'IA. La Query 2 parte dalle pagine e dai gruppi gia' identificati nella ricerca di Terenzi & Giglietto (2025). La Query 3 cerca per temi tipici dell'AI slop nelle comunita' italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.
+Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto è generato dall'IA. La Query 2 parte dalle pagine e dai gruppi già identificati nella ricerca di Terenzi & Giglietto (2025). La Query 3 cerca per temi tipici dell'AI slop nelle comunità italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.
 :::
 
 ## Il Workflow di Raccolta {background-color="#C5612E"}
@@ -227,8 +227,10 @@ Sezione 4: il flusso di lavoro completo dalla ricerca al dataset strutturato.
 7. Registrare le **query usate** e i **criteri di selezione**
 8. Annotare eventuali **decisioni discrezionali**
 
+La trasparenza del processo è centrale nella metodologia *LLMs-in-the-loop* [@marino2024].
+
 ::: {.notes}
-Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle scelte metodologiche e' fondamentale per la riproducibilita' e per la sezione Metodo del paper. Ogni decisione discrezionale (perche' un post e' stato incluso o escluso) deve essere annotata. Questo approccio riflette la metodologia LLMs-in-the-loop di Marino & Giglietto (2024): la trasparenza del processo e' importante quanto i risultati.
+Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle scelte metodologiche è fondamentale per la riproducibilità e per la sezione Metodo del paper. Ogni decisione discrezionale (perché un post è stato incluso o escluso) deve essere annotata. Questo approccio riflette la metodologia LLMs-in-the-loop di Marino & Giglietto (2024): la trasparenza del processo è importante quanto i risultati.
 :::
 
 ## Organizzare il foglio di calcolo
@@ -285,11 +287,11 @@ Il prompt segue la struttura **Obiettivo + Istruzioni + Output** raccomandata da
 
 ::: {.callout-tip}
 ## Suggerimento pratico
-Usate la funzionalita' multimodale di Gemini: caricate l'immagine direttamente nella chat. Lo screening e' un supporto, non un sostituto del giudizio umano.
+Usate la funzionalità multimodale di Gemini: caricate l'immagine direttamente nella chat. Lo screening è un supporto, non un sostituto del giudizio umano.
 :::
 
 ::: {.notes}
-Primo uso operativo di Gemini nel progetto. Il prompt segue la struttura raccomandata da Cosenza (2025): obiettivo chiaro, istruzioni specifiche, formato di output definito. Gemini serve come strumento di supporto allo screening, non come classificatore finale. Cosenza nella regola "Valuta" ricorda di trattare il risultato dell'IA come una bozza da sottoporre a giudizio umano. La classificazione sistematica sara' fatta nella sessione di lunedi'. Gemini puo' sbagliare, specialmente con immagini di alta qualita'. I risultati dello screening vanno annotati ma non presi come classificazione definitiva.
+Primo uso operativo di Gemini nel progetto. Il prompt segue la struttura raccomandata da Cosenza (2025): obiettivo chiaro, istruzioni specifiche, formato di output definito. Gemini serve come strumento di supporto allo screening, non come classificatore finale. Cosenza nella regola "Valuta" ricorda di trattare il risultato dell'IA come una bozza da sottoporre a giudizio umano. La classificazione sistematica sarà fatta nella sessione di lunedì. Gemini puo' sbagliare, specialmente con immagini di alta qualità. I risultati dello screening vanno annotati ma non presi come classificazione definitiva.
 :::
 
 ## Lavoro Pratico {background-color="#C5612E"}
@@ -313,7 +315,7 @@ Ogni gruppo raccoglie almeno **30 post** con immagini *AI slop* e i relativi **c
 4. **Documentatore:** annota query, criteri e decisioni
 
 ::: {.notes}
-Fase pratica del lab. I gruppi lavorano autonomamente per circa 90 minuti. Il docente e i tutor circolano tra i gruppi per assistenza tecnica e metodologica. Problemi comuni da anticipare: (1) accesso a Meta Content Library, (2) difficolta' nell'esportazione dei commenti, (3) dubbi sulla classificazione delle immagini come AI-generated. Se un gruppo ha problemi tecnici con Meta Content Library, suggerire di iniziare con la ricerca manuale su Facebook e poi recuperare i dati strutturati in un secondo momento.
+Fase pratica del lab. I gruppi lavorano autonomamente per circa 90 minuti. Il docente e i tutor circolano tra i gruppi per assistenza tecnica e metodologica. Problemi comuni da anticipare: (1) accesso a Meta Content Library, (2) difficoltà nell'esportazione dei commenti, (3) dubbi sulla classificazione delle immagini come AI-generated. Se un gruppo ha problemi tecnici con Meta Content Library, suggerire di iniziare con la ricerca manuale su Facebook e poi recuperare i dati strutturati in un secondo momento.
 :::
 
 ## Checklist di fine lab
@@ -327,12 +329,12 @@ Prima di uscire, ogni gruppo verifica:
 - [ ] **Problemi e note** annotati nel foglio
 
 ::: {.callout-warning}
-## Per lunedi'
-I dati raccolti oggi saranno il materiale di lavoro per il **Lab di analisi contenuti** di lunedi' 23 Marzo. Assicuratevi che il dataset sia completo e accessibile a tutti i membri del gruppo.
+## Per lunedì
+I dati raccolti oggi saranno il materiale di lavoro per il **Lab di analisi contenuti** di lunedì 23 Marzo. Assicuratevi che il dataset sia completo e accessibile a tutti i membri del gruppo.
 :::
 
 ::: {.notes}
-Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per controllare che tutti abbiano raggiunto il minimo di 30 post. I gruppi che hanno lavorato bene ne avranno molti di piu'. Quelli in difficolta' dovranno completare la raccolta tra oggi e lunedi'. Sottolineare che il dataset deve essere pronto per lunedi': la sessione di analisi richiede dati su cui lavorare. Se un gruppo e' molto indietro, suggerire di ridurre l'ambito della domanda di ricerca piuttosto che raccogliere dati di bassa qualita'.
+Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per controllare che tutti abbiano raggiunto il minimo di 30 post. I gruppi che hanno lavorato bene ne avranno molti di più. Quelli in difficoltà dovranno completare la raccolta tra oggi e lunedì. Sottolineare che il dataset deve essere pronto per lunedì: la sessione di analisi richiede dati su cui lavorare. Se un gruppo è molto indietro, suggerire di ridurre l'ambito della domanda di ricerca piuttosto che raccogliere dati di bassa qualità.
 :::
 
 ## Grazie! {background-color="#C5612E"}
@@ -344,7 +346,7 @@ Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per controlla
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) completare la raccolta dati se necessario prima di lunedi', (2) verificare che il foglio di calcolo sia condiviso con tutti i membri del gruppo e con il docente, (3) lunedi' lavoreremo sull'analisi con Gemini — portare i laptop carichi. Il passo successivo e' passare dalla raccolta all'analisi sistematica dei contenuti.
+Chiusura. Ricordare: (1) completare la raccolta dati se necessario prima di lunedì, (2) verificare che il foglio di calcolo sia condiviso con tutti i membri del gruppo e con il docente, (3) lunedì lavoreremo sull'analisi con Gemini — portare i laptop carichi. Il passo successivo è passare dalla raccolta all'analisi sistematica dei contenuti.
 :::
 
 ## Riferimenti

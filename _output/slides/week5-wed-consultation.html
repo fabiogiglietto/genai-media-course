@@ -199,7 +199,7 @@ Fabio Giglietto
 <h3 id="verso-una-regolamentazione-degli-sciami-ia">Verso una regolamentazione degli sciami IA</h3>
 <p>Gli <strong>sciami IA malevoli</strong> possono fabbricare un consenso sintetico che appare colmare le divisioni sociali, minacciando l’indipendenza essenziale per l’intelligenza collettiva <span class="citation" data-cites="schroeder2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Schroeder et al., 2026</a>)</span>.</p>
 <div class="highlight-box">
-<p><strong>Implicazione per il progetto:</strong> L’engagement bait generato dall’IA che analizzate potrebbe essere il livello base di operazioni di manipolazione molto piu ampie.</p>
+<p><strong>Implicazione per il progetto:</strong> L’engagement bait generato dall’IA che analizzate potrebbe essere il livello base di operazioni di manipolazione molto più ampie.</p>
 </div>
 <aside class="notes">
 <p>Secondo segmento TWIAI: collegare la notizia della settimana al quadro teorico di Schroeder et al.&nbsp;(2026) sugli sciami IA. L’AI slop che gli studenti analizzano nel progetto — immagini sintetiche distribuite come engagement bait — potrebbe sembrare innocuo rispetto ai deepfake politici, ma rappresenta lo stesso meccanismo di base: contenuti sintetici che inquinano l’ecosistema informativo. Gli sciami IA potrebbero amplificare questo tipo di contenuti su scala industriale. Transizione verso la sessione di consultazione.</p>
@@ -319,7 +319,7 @@ Fabio Giglietto
 <section id="problemi-metodologici-comuni" class="slide level2" data-background-color="#C5612E">
 <h2>Problemi Metodologici Comuni</h2>
 <aside class="notes">
-<p>Sezione dedicata ai problemi piu frequenti che emergono nei progetti di ricerca con la metodologia LLMs-in-the-loop. Basata sull’esperienza delle sessioni precedenti.</p>
+<p>Sezione dedicata ai problemi più frequenti che emergono nei progetti di ricerca con la metodologia LLMs-in-the-loop. Basata sull’esperienza delle sessioni precedenti.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -339,13 +339,13 @@ Fabio Giglietto
 </div>
 <p><strong>Soluzioni:</strong></p>
 <ul>
-<li><strong>Fissare la temperatura</strong> a valori bassi (0.0-0.2) per ridurre la variabilita</li>
+<li><strong>Fissare la temperatura</strong> a valori bassi (0.0-0.2) per ridurre la variabilità</li>
 <li><strong>Codebook dettagliato</strong> nel prompt con esempi per ogni categoria</li>
 <li><strong>Batch processing</strong> — analizzare gruppi di commenti in una sola sessione</li>
 <li>Verificare la <strong>coerenza del prompt</strong> tra le sessioni</li>
 </ul>
 <aside class="notes">
-<p>Problema molto comune con la pipeline LLMs-in-the-loop: i LLM sono stocastici per natura, quindi la stessa richiesta puo produrre risultati diversi. Le soluzioni sono pratiche: abbassare la temperatura del modello, fornire un codebook piu dettagliato con esempi concreti per ogni categoria, e processare i dati in batch per mantenere il contesto coerente. Se il problema persiste, potrebbe essere necessario rivedere le categorie del codebook (forse sono troppo ambigue o sovrapposte). Collegamento con la metodologia di Marino &amp; Giglietto (2024): l’iterazione e il raffinamento del prompt sono parte integrante della pipeline.</p>
+<p>Problema molto comune con la pipeline LLMs-in-the-loop: i LLM sono stocastici per natura, quindi la stessa richiesta può produrre risultati diversi. Le soluzioni sono pratiche: abbassare la temperatura del modello, fornire un codebook più dettagliato con esempi concreti per ogni categoria, e processare i dati in batch per mantenere il contesto coerente. Se il problema persiste, potrebbe essere necessario rivedere le categorie del codebook (forse sono troppo ambigue o sovrapposte). Collegamento con la metodologia di Marino &amp; Giglietto (2024): l’iterazione è il raffinamento del prompt sono parte integrante della pipeline.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -379,7 +379,7 @@ Fabio Giglietto
 </ul>
 </div></div>
 <aside class="notes">
-<p>La bassa intercoder reliability (sotto 0.6 di Cohen’s kappa) indica problemi nel codebook o nelle istruzioni. La causa piu frequente e un codebook con troppe categorie o con categorie sovrapposte. La soluzione pragmatica: accorpare le categorie in macro-gruppi piu distinti, poi eventualmente analizzare le sotto-categorie in un secondo momento. Un’altra causa comune: il prompt dato a Gemini non corrisponde esattamente alle istruzioni date ai codificatori umani. Le istruzioni devono essere identiche. Il campione di validazione deve essere sufficientemente ampio per essere statisticamente significativo.</p>
+<p>La bassa intercoder reliability (sotto 0.6 di Cohen’s kappa) indica problemi nel codebook o nelle istruzioni. La causa più frequente è un codebook con troppe categorie o con categorie sovrapposte. La soluzione pragmatica: accorpare le categorie in macro-gruppi più distinti, poi eventualmente analizzare le sotto-categorie in un secondo momento. Un’altra causa comune: il prompt dato a Gemini non corrisponde esattamente alle istruzioni date ai codificatori umani. Le istruzioni devono essere identiche. Il campione di validazione deve essere sufficientemente ampio per essere statisticamente significativo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -400,12 +400,12 @@ Fabio Giglietto
 </section>
 <p>Framework teorici da collegare ai risultati:</p>
 <ul>
-<li><strong>Realta sintetica</strong> a strati <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span> — a quale livello opera l’AI slop?</li>
+<li><strong>Realtà sintetica</strong> a strati <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span> — a quale livello opera l’AI slop?</li>
 <li><strong>Sistema mediale ibrido</strong> <span class="citation" data-cites="chadwick2011">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Chadwick, 2011</a>)</span> — come si inserisce nel ciclo informativo?</li>
 <li><strong>Incertezza epistemica</strong> <span class="citation" data-cites="vaccari2020">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Vaccari &amp; Chadwick, 2020</a>)</span> — gli utenti sono incerti o consapevoli?</li>
 </ul>
 <aside class="notes">
-<p>Problema tipico degli studenti: raccolgono dati e li presentano, ma non li collegano alla teoria. Nel paper, la sezione Discussione deve collegare esplicitamente i risultati ai framework teorici studiati nel corso. Suggerire ai gruppi di rileggere le slides delle prime settimane e identificare i concetti piu rilevanti per i loro dati. Esempio: se i commenti mostrano che gli utenti riconoscono le immagini come generate dall’IA ma continuano a interagire, questo si collega al paradosso dell’IA generativa di Ferrara — la consapevolezza non ferma l’engagement.</p>
+<p>Problema tipico degli studenti: raccolgono dati e li presentano, ma non li collegano alla teoria. Nel paper, la sezione Discussione deve collegare esplicitamente i risultati ai framework teorici studiati nel corso. Suggerire ai gruppi di rileggere le slides delle prime settimane e identificare i concetti più rilevanti per i loro dati. Esempio: se i commenti mostrano che gli utenti riconoscono le immagini come generate dall’IA ma continuano a interagire, questo si collega al paradosso dell’IA generativa di Ferrara — la consapevolezza non ferma l’engagement.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -429,7 +429,7 @@ Fabio Giglietto
 <thead>
 <tr class="header">
 <th>Data</th>
-<th>Attivita</th>
+<th>Attività</th>
 <th>Stato</th>
 </tr>
 </thead>
@@ -472,7 +472,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Riepilogo della timeline. Oggi e il momento per risolvere problemi prima di passare alla fase di scrittura. Da lunedi prossimo si scrive. Il workshop di scrittura di lunedi 30 fornira la struttura del paper (formato IMRaD) e strategie per usare NotebookLM nella fase di redazione. Sottolineare l’urgenza: chi ha problemi con i dati o l’analisi deve risolverli entro questa settimana. La settimana prossima e dedicata esclusivamente alla scrittura. La consegna del paper e 2 settimane prima dell’appello di giugno.</p>
+<p>Riepilogo della timeline. Oggi è il momento per risolvere problemi prima di passare alla fase di scrittura. Da lunedì prossimo si scrive. Il workshop di scrittura di lunedì 30 fornira la struttura del paper (formato IMRaD) e strategie per usare NotebookLM nella fase di redazione. Sottolineare l’urgenza: chi ha problemi con i dati o l’analisi deve risolverli entro questa settimana. La settimana prossima è dedicata esclusivamente alla scrittura. La consegna del paper e 2 settimane prima dell’appello di giugno.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -488,7 +488,7 @@ Fabio Giglietto
 <section id="consultazioni-individuali" class="slide level2" data-background-color="#C5612E">
 <h2>Consultazioni Individuali</h2>
 <aside class="notes">
-<p>Fase centrale della sessione. Incontrare ogni gruppo individualmente per 10-15 minuti. Usare la checklist come guida. Verificare: (1) qualita del dataset, (2) coerenza delle classificazioni, (3) risultati della validazione, (4) collegamento con la teoria. Prendere nota dei problemi ricorrenti per affrontarli collettivamente lunedi.</p>
+<p>Fase centrale della sessione. Incontrare ogni gruppo individualmente per 10-15 minuti. Usare la checklist come guida. Verificare: (1) qualità del dataset, (2) coerenza delle classificazioni, (3) risultati della validazione, (4) collegamento con la teoria. Prendere nota dei problemi ricorrenti per affrontarli collettivamente lunedi.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -508,7 +508,7 @@ Fabio Giglietto
 <div class="column" style="width:50%;">
 <h3 id="dati-e-metodo">Dati e metodo</h3>
 <ul>
-<li>Dimensione e qualita del dataset</li>
+<li>Dimensione e qualità del dataset</li>
 <li>Risultati della classificazione IA</li>
 <li>Intercoder reliability</li>
 <li>Problemi tecnici aperti</li>
@@ -536,7 +536,7 @@ Fabio Giglietto
 </div>
 </div>
 <aside class="notes">
-<p>Istruzioni operative per le consultazioni. Ogni gruppo ha circa 10-15 minuti. Chiedere di iniziare con una breve sintesi dello stato di avanzamento, poi entrare nei dettagli. Le domande chiave: il dataset e sufficientemente ampio? Le classificazioni sono affidabili? C’e un collegamento chiaro tra i dati e la teoria? Quale struttura prevede il paper? Prendere appunti sui problemi di ogni gruppo per fornire feedback personalizzato.</p>
+<p>Istruzioni operative per le consultazioni. Ogni gruppo ha circa 10-15 minuti. Chiedere di iniziare con una breve sintesi dello stato di avanzamento, poi entrare nei dettagli. Le domande chiave: il dataset è sufficientemente ampio? Le classificazioni sono affidabili? C’e un collegamento chiaro tra i dati è la teoria? Quale struttura prevede il paper? Prendere appunti sui problemi di ogni gruppo per fornire feedback personalizzato.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -551,17 +551,17 @@ Fabio Giglietto
 </section>
 <section id="preparazione-per-la-prossima-settimana" class="slide level2">
 <h2>Preparazione per la prossima settimana</h2>
-<p><strong>Lunedi 30 Marzo:</strong> Workshop di Scrittura</p>
+<p><strong>Lunedì 30 Marzo:</strong> Workshop di Scrittura</p>
 <div class="highlight-box">
 <p><strong>Da portare al workshop:</strong></p>
 <ul>
 <li>Risultati consolidati dell’analisi (classificazioni + validazione)</li>
 <li>Una bozza di <strong>outline del paper</strong> (titolo, domanda, sezioni principali)</li>
-<li>Le letture del corso piu rilevanti per la vostra domanda di ricerca</li>
+<li>Le letture del corso più rilevanti per la vostra domanda di ricerca</li>
 </ul>
 </div>
 <aside class="notes">
-<p>Istruzioni per la prossima sessione. Il workshop di scrittura di lunedi sara pratico: struttura del paper IMRaD, uso di NotebookLM per la sintesi della letteratura, strategie di scrittura accademica. I gruppi devono arrivare con i risultati dell’analisi consolidati e una bozza di outline. Chi non ha completato la validazione deve farlo entro il weekend. La settimana 6 e interamente dedicata alla scrittura: non ci sara tempo per tornare sui dati.</p>
+<p>Istruzioni per la prossima sessione. Il workshop di scrittura di lunedì sara pratico: struttura del paper IMRaD, uso di NotebookLM per la sintesi della letteratura, strategie di scrittura accademica. I gruppi devono arrivare con i risultati dell’analisi consolidati è una bozza di outline. Chi non ha completato la validazione deve farlo entro il weekend. La settimana 6 è interamente dedicata alla scrittura: non ci sara tempo per tornare sui dati.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -580,7 +580,7 @@ Fabio Giglietto
 <p>📧 fabio.giglietto@uniurb.it</p>
 <p>🌐 blended.uniurb.it</p>
 <aside class="notes">
-<p>Chiusura. Ricordare: (1) completare la validazione umana se non ancora fatta, (2) preparare l’outline del paper per lunedi, (3) rileggere le letture del corso rilevanti per la propria domanda di ricerca. A lunedi per il workshop di scrittura!</p>
+<p>Chiusura. Ricordare: (1) completare la validazione umana se non ancora fatta, (2) preparare l’outline del paper per lunedi, (3) rileggere le letture del corso rilevanti per la propria domanda di ricerca. A lunedì per il workshop di scrittura!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

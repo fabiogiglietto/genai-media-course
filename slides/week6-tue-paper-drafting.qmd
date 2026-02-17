@@ -44,13 +44,13 @@ csl: ../apa.csl
 6. **Scadenze** — timeline verso la consegna
 
 ::: {.notes}
-Sessione prevalentemente operativa: la maggior parte del tempo sara dedicata alla scrittura in aula. Le slide iniziali forniscono la cornice, poi i gruppi lavorano con il supporto del docente. La revisione tra pari e un momento importante: ogni gruppo leggera e commentera il lavoro di un altro gruppo. Circolare tra i gruppi per monitorare lo stato di avanzamento e rispondere a domande specifiche.
+Sessione prevalentemente operativa: la maggior parte del tempo sarà dedicata alla scrittura in aula. Le slide iniziali forniscono la cornice, poi i gruppi lavorano con il supporto del docente. La revisione tra pari è un momento importante: ogni gruppo leggerà e commentera il lavoro di un altro gruppo. Circolare tra i gruppi per monitorare lo stato di avanzamento e rispondere a domande specifiche.
 :::
 
 ## Obiettivi della Sessione {background-color="#C5612E"}
 
 ::: {.notes}
-Oggi e una giornata di lavoro. L'obiettivo e uscire con una bozza avanzata del paper.
+Oggi è una giornata di lavoro. L'obiettivo e uscire con una bozza avanzata del paper.
 :::
 
 ## Cosa fare oggi
@@ -61,7 +61,7 @@ Oggi e una giornata di lavoro. L'obiettivo e uscire con una bozza avanzata del p
 
 Struttura della sessione:
 
-| Tempo | Attivita |
+| Tempo | Attività |
 |-------|----------|
 | 14:00 – 14:15 | Introduzione e organizzazione |
 | 14:15 – 14:45 | **Blocco 1:** Scrittura individuale/gruppo |
@@ -71,13 +71,13 @@ Struttura della sessione:
 | 15:50 – 16:00 | Riepilogo e prossimi passi |
 
 ::: {.notes}
-Struttura della sessione in blocchi di lavoro. Il primo blocco (30 minuti) e per la scrittura libera: ogni gruppo lavora sulla sezione che ritiene piu urgente. Poi uno scambio di bozze tra gruppi per la revisione tra pari (15 minuti per leggere e commentare). Feedback collettivo per condividere osservazioni generali. Il secondo blocco (35 minuti) e per integrare il feedback ricevuto e continuare la scrittura. Questa struttura alternata scrittura-feedback e piu produttiva della scrittura continua.
+Struttura della sessione in blocchi di lavoro. Il primo blocco (30 minuti) e per la scrittura libera: ogni gruppo lavora sulla sezione che ritiene più urgente. Poi uno scambio di bozze tra gruppi per la revisione tra pari (15 minuti per leggere e commentare). Feedback collettivo per condividere osservazioni generali. Il secondo blocco (35 minuti) e per integrare il feedback ricevuto e continuare la scrittura. Questa struttura alternata scrittura-feedback e più produttiva della scrittura continua.
 :::
 
 ## Revisione tra Pari {background-color="#C5612E"}
 
 ::: {.notes}
-La revisione tra pari e una competenza accademica fondamentale. Corrisponde al descrittore di Dublino sulle competenze comunicative.
+La revisione tra pari è una competenza accademica fondamentale. Corrisponde al descrittore di Dublino sulle competenze comunicative.
 :::
 
 ## Come dare feedback costruttivo
@@ -113,7 +113,7 @@ La revisione tra pari non e solo utile per chi la riceve, ma anche per chi la fa
 | Criterio | Punteggio (1-5) | Commento |
 |----------|:---------------:|----------|
 | L'introduzione e focalizzata sulla domanda di ricerca? | | |
-| Il metodo e sufficientemente dettagliato? | | |
+| Il metodo è sufficientemente dettagliato? | | |
 | I risultati sono presentati senza interpretazione? | | |
 | La discussione collega dati e teoria? | | |
 | Le citazioni sono corrette e pertinenti? | | |
@@ -124,7 +124,7 @@ Usate questa scheda come guida. Scrivete **almeno 3 commenti specifici** per il 
 :::
 
 ::: {.notes}
-Fornire una copia della scheda a ogni gruppo (oppure condividerla su Google Docs). I gruppi devono assegnare un punteggio da 1 a 5 per ogni criterio e scrivere commenti specifici. I commenti scritti sono piu utili dei commenti orali perche possono essere consultati durante la revisione successiva. Dopo la revisione, restituire la scheda al gruppo originale con i commenti.
+Fornire una copia della scheda a ogni gruppo (oppure condividerla su Google Docs). I gruppi devono assegnare un punteggio da 1 a 5 per ogni criterio e scrivere commenti specifici. I commenti scritti sono più utili dei commenti orali perche possono essere consultati durante la revisione successiva. Dopo la revisione, restituire la scheda al gruppo originale con i commenti.
 :::
 
 ## Checklist Metodologica {background-color="#C5612E"}
@@ -149,7 +149,7 @@ Elementi indispensabili:
 - **Metriche:** tipo di misura (Cohen's kappa), soglie di accettabilita
 
 ::: {.notes}
-Questa checklist deve essere soddisfatta prima della consegna. Il criterio ultimo e la replicabilita: un ricercatore esterno, con accesso agli stessi dati, deve poter riprodurre la vostra analisi. Questo richiede: (1) descrizione precisa del dataset, (2) prompt esatto dato a Gemini, (3) codebook completo, (4) procedura di validazione dettagliata, (5) metriche di affidabilita con valori numerici. Se manca uno di questi elementi, il metodo e incompleto.
+Questa checklist deve essere soddisfatta prima della consegna. Il criterio ultimo è la replicabilita: un ricercatore esterno, con accesso agli stessi dati, deve poter riprodurre la vostra analisi. Questo richiede: (1) descrizione precisa del dataset, (2) prompt esatto dato a Gemini, (3) codebook completo, (4) procedura di validazione dettagliata, (5) metriche di affidabilità con valori numerici. Se manca uno di questi elementi, il metodo e incompleto.
 :::
 
 ## Verifica teorica
@@ -160,7 +160,7 @@ Questa checklist deve essere soddisfatta prima della consegna. Il criterio ultim
 
 | Framework | Collegamento possibile |
 |-----------|----------------------|
-| Paradosso GenAI [@ferrara2026] | Fiducia, erosione epistemica, realta sintetica |
+| Paradosso GenAI [@ferrara2026] | Fiducia, erosione epistemica, realtà sintetica |
 | Sistema mediale ibrido [@chadwick2011] | Ruolo delle piattaforme, ciclo informativo |
 | Deepfake e incertezza [@vaccari2020] | Effetti sulla fiducia, riconoscimento |
 | Disinformazione visiva [@hameleers2026] | Credibilita per tipo di contenuto |
@@ -192,7 +192,7 @@ Il paper vale il **75%** del voto finale (max 23,25 punti su 31). Investite temp
 :::
 
 ::: {.notes}
-Rendere trasparenti i criteri di valutazione. Il peso maggiore e su metodo (25%) e discussione (25%): sono le sezioni che dimostrano la competenza metodologica e la capacita critica. I risultati (20%) devono essere chiari e ben presentati. La domanda di ricerca (15%) deve essere specifica e motivata. La qualita della scrittura (15%) include coerenza argomentativa, correttezza delle citazioni e qualita della lingua italiana. Il voto complessivo del paper e collettivo per il gruppo.
+Rendere trasparenti i criteri di valutazione. Il peso maggiore e su metodo (25%) e discussione (25%): sono le sezioni che dimostrano la competenza metodologica è la capacita critica. I risultati (20%) devono essere chiari e ben presentati. La domanda di ricerca (15%) deve essere specifica e motivata. La qualità della scrittura (15%) include coerenza argomentativa, correttezza delle citazioni e qualità della lingua italiana. Il voto complessivo del paper e collettivo per il gruppo.
 :::
 
 ## Blocchi di Lavoro {background-color="#C5612E"}
@@ -217,7 +217,7 @@ Suggerimento per la distribuzione del lavoro:
 - **Coordinatore:** Coerenza generale, abstract, conclusione
 
 ::: {.notes}
-Avviare il primo blocco di scrittura. Dare 30 minuti di lavoro concentrato. Circolare tra i gruppi per rispondere a domande specifiche. La divisione del lavoro suggerita e flessibile — ogni gruppo puo adattarla. L'importante e che tutti scrivano contemporaneamente e che il coordinatore verifichi la coerenza tra le sezioni. Al termine dei 30 minuti, interrompere per la revisione tra pari.
+Avviare il primo blocco di scrittura. Dare 30 minuti di lavoro concentrato. Circolare tra i gruppi per rispondere a domande specifiche. La divisione del lavoro suggerita e flessibile — ogni gruppo può adattarla. L'importante e che tutti scrivano contemporaneamente e che il coordinatore verifichi la coerenza tra le sezioni. Al termine dei 30 minuti, interrompere per la revisione tra pari.
 :::
 
 ## Scambio per revisione tra pari (15 minuti)
@@ -250,7 +250,7 @@ Verificate che tutte le citazioni nel testo corrispondano a riferimenti nella bi
 :::
 
 ::: {.notes}
-Secondo blocco di scrittura: integrare il feedback ricevuto e continuare a scrivere. Questo blocco e piu lungo (35 minuti) perche i gruppi hanno ora una direzione piu chiara grazie al feedback. Circolare tra i gruppi per verificare che il feedback venga effettivamente integrato. Ricordare la verifica delle citazioni: ogni riferimento nel testo deve avere una voce corrispondente nella bibliografia, e viceversa. Le citazioni inventate (generate da IA o ricordate in modo errato) sono un errore grave.
+Secondo blocco di scrittura: integrare il feedback ricevuto e continuare a scrivere. Questo blocco e più lungo (35 minuti) perche i gruppi hanno ora una direzione più chiara grazie al feedback. Circolare tra i gruppi per verificare che il feedback venga effettivamente integrato. Ricordare la verifica delle citazioni: ogni riferimento nel testo deve avere una voce corrispondente nella bibliografia, e viceversa. Le citazioni inventate (generate da IA o ricordate in modo errato) sono un errore grave.
 :::
 
 ## Scadenze e Prossimi Passi {background-color="#C5612E"}
@@ -261,7 +261,7 @@ Riepilogo delle scadenze finali.
 
 ## Timeline verso la consegna
 
-| Data | Attivita |
+| Data | Attività |
 |------|----------|
 | **Oggi (31 Mar)** | Prima bozza completa |
 | **Domani (1 Apr)** | Ultima sessione: sintesi e consultazioni |
@@ -273,7 +273,7 @@ Riepilogo delle scadenze finali.
 :::
 
 ::: {.notes}
-Riepilogo delle scadenze. La bozza di oggi non e la versione finale: i gruppi avranno tempo dopo la fine del corso per rifinire il paper. La scadenza di consegna e 2 settimane prima dell'appello di giugno — la data esatta verra comunicata su Moodle. Il formato e PDF, caricato sullo spazio blended. Un solo membro del gruppo carica il file, con i nomi di tutti i membri chiaramente indicati sulla prima pagina. Domani e l'ultima sessione: sintesi del corso e ultime consultazioni.
+Riepilogo delle scadenze. La bozza di oggi non è la versione finale: i gruppi avranno tempo dopo la fine del corso per rifinire il paper. La scadenza di consegna e 2 settimane prima dell'appello di giugno — la data esatta verra comunicata su Moodle. Il formato e PDF, caricato sullo spazio blended. Un solo membro del gruppo carica il file, con i nomi di tutti i membri chiaramente indicati sulla prima pagina. Domani e l'ultima sessione: sintesi del corso e ultime consultazioni.
 :::
 
 ## Per domani
@@ -301,7 +301,7 @@ Riepilogo delle scadenze. La bozza di oggi non e la versione finale: i gruppi av
 :::
 
 ::: {.notes}
-Domani e l'ultima sessione del corso. Sara un momento di sintesi che collega tutti i temi affrontati nelle 6 settimane. Ci sara anche spazio per le ultime consultazioni sui paper. Invitare gli studenti a portare domande aperte e dubbi metodologici. Sara anche un momento di riflessione sul percorso del corso: cosa hanno imparato, come vedono l'IA generativa dopo queste 6 settimane.
+Domani e l'ultima sessione del corso. Sara un momento di sintesi che collega tutti i temi affrontati nelle 6 settimane. Ci sarà anche spazio per le ultime consultazioni sui paper. Invitare gli studenti a portare domande aperte e dubbi metodologici. Sara anche un momento di riflessione sul percorso del corso: cosa hanno imparato, come vedono l'IA generativa dopo queste 6 settimane.
 :::
 
 ## Grazie! {background-color="#C5612E"}

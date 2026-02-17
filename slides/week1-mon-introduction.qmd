@@ -263,7 +263,7 @@ Sezione 3: breve storia dell'IA generativa per contestualizzare la rivoluzione a
 | 2014 | *Generative Adversarial Networks* (GAN) | Prime immagini sintetiche realistiche |
 | 2017 | Architettura *Transformer* | Rivoluzione nei modelli linguistici |
 | 2022 | ChatGPT (OpenAI) | IA generativa diventa mainstream |
-| 2024-2026 | Multimodalità, agenti IA | Integrazione in tutti i settori |
+| 2025-2026 | Agenti IA, modelli di ragionamento | Open source competitivo, contesti da 1M+ token |
 
 ::: {.notes}
 Timeline sintetica. I momenti chiave sono: (1) i GAN di Goodfellow (2014) che per primi hanno mostrato la capacità di generare immagini realistiche; (2) il paper "Attention Is All You Need" (2017) che introduce l'architettura transformer alla base di tutti i LLM moderni; (3) il lancio di ChatGPT (novembre 2022) che ha reso l'IA generativa accessibile al pubblico con 100 milioni di utenti in 2 mesi.
@@ -285,19 +285,19 @@ Questo lancio ha trasformato l'IA generativa da **tecnologia di nicchia** a **fe
 ChatGPT è il punto di svolta che rende rilevante un corso come questo. Prima di novembre 2022, l'IA generativa era conosciuta principalmente dagli addetti ai lavori. Dopo, è diventata una questione di policy pubblica, regolamentazione e trasformazione professionale. Collegamento con Mattis & de Vreese (2025): l'impatto sul giornalismo è sia una promessa (efficienza) che una minaccia (disinformazione).
 :::
 
-## Il panorama attuale
+## Il panorama attuale (febbraio 2026)
 
 | Modello | Azienda | Tipo | Caratteristica |
 |---------|---------|------|----------------|
-| GPT-4o / 4.5 | OpenAI | Multimodale | Testo, immagini, audio, video |
-| Gemini 2.0 | Google | Multimodale | Integrato in Google Workspace |
-| Claude | Anthropic | Testo | Focus su sicurezza e alignment |
-| Stable Diffusion | Stability AI | Immagini | Open source |
-| Midjourney | Midjourney | Immagini | Alta qualità artistica |
-| Sora | OpenAI | Video | Generazione video da testo |
+| GPT-5 | OpenAI | Multimodale | Ragionamento avanzato, 200K contesto |
+| Gemini 3 | Google DeepMind | Multimodale | 1M contesto, integrato in Workspace |
+| Claude 4 | Anthropic | Multimodale | Eccelle in coding e scrittura, 1M contesto |
+| Llama 4 | Meta | Testo (open) | Contesto fino a 10M token, open source |
+| Midjourney v7 | Midjourney | Immagini | Alta qualità artistica |
+| Sora 2 | OpenAI | Video | Generazione video da testo |
 
 ::: {.notes}
-Panoramica dei principali strumenti. Sottolineare che Google Gemini sarà la nostra piattaforma di lavoro nel corso, accessibile via account uniurb.it. La distinzione open source vs. proprietario è importante: Stable Diffusion è scaricabile e modificabile, mentre GPT-4 e Gemini sono accessibili solo via API o interfaccia web. Questa distinzione avrà implicazioni per la regolamentazione (settimana 2).
+Panoramica dei principali strumenti a febbraio 2026. Sottolineare che Google Gemini sarà la nostra piattaforma di lavoro nel corso, accessibile via account uniurb.it. Novità rispetto al 2024: le finestre di contesto sono enormi (Gemini 3 e Claude 4 arrivano a 1 milione di token; Llama 4 fino a 10 milioni). I modelli open source (Llama 4, DeepSeek V3) competono ormai con quelli proprietari. La distinzione open source vs. proprietario resta importante per la regolamentazione (settimana 2): Llama 4 è scaricabile e modificabile, GPT-5 e Gemini 3 sono accessibili solo via API o interfaccia web. Anche i generatori di video sono maturati: Sora 2 è disponibile al pubblico.
 :::
 
 ## L'IA Generativa e il Sistema Mediale {background-color="#C5612E"}
@@ -306,7 +306,7 @@ Panoramica dei principali strumenti. Sottolineare che Google Gemini sarà la nos
 Sezione 4: introduzione al tema centrale del corso — come l'IA generativa trasforma il sistema dei media. Questa sezione prepara il terreno per la lezione di domani sul sistema mediale ibrido.
 :::
 
-##  {background-color="#F2F2F2"}
+## Percezioni pubbliche dell'IA {background-color="#F2F2F2"}
 
 ```{r}
 #| label: pew-ai-views
@@ -478,7 +478,6 @@ L'IA generativa sta trasformando **ogni fase** della catena del valore giornalis
 - **Produzione:** articoli generati, editing automatizzato
 - **Verifica:** strumenti IA per il fact-checking, ma anche nuove sfide
 - **Distribuzione:** personalizzazione algoritmica, chatbot informativi
-- **Ricezione:** utenti che non distinguono contenuto umano da IA
 
 ::: {.notes}
 Sintesi da Mattis & de Vreese (2025). Ogni fase presenta sia opportunità (efficienza, scala) che rischi (perdita del controllo editoriale, diminuzione della qualità, erosione della fiducia). Un dato significativo: la BBC ha riscontrato che il 50% delle risposte dei LLM presentava problemi di accuratezza. Express.de, un quotidiano tedesco, ha dovuto assumere un redattore umano per controllare gli articoli generati dall'IA dopo un'impennata di errori. Il giornalismo sarà un tema ricorrente nel corso.
@@ -557,7 +556,7 @@ Assegnazione delle letture. Le letture obbligatorie preparano la lezione di doma
 
 ::: {.callout-warning}
 ## Attenzione
-Verificate **oggi stesso** il vostro accesso a Google Gemini e NotebookLM con l'account `@uniurb.it`. In caso di problemi, contattate il supporto IT.
+Verificate **oggi stesso** il vostro accesso a Google Gemini e NotebookLM con l'account \@uniurb.it. In caso di problemi, contattate il supporto IT.
 :::
 
 ::: {.notes}

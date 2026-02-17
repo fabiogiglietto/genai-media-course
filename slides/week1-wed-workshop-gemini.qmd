@@ -36,33 +36,20 @@ csl: ../apa.csl
 
 ## [This Week in AI]{.twiai-badge}
 
-### Google lancia Gemini 2.0 con funzionalità agentiche
+### Notizie della settimana
 
-Google ha rilasciato Gemini 2.0, con capacità di ragionamento avanzato e "agenti IA" capaci di eseguire compiti complessi in autonomia, integrati in Google Workspace.
+<!-- PLACEHOLDER: aggiornare con le notizie IA della settimana corrente prima della lezione -->
+
+- **Notizia 1:** da aggiornare
+- **Notizia 2:** da aggiornare
 
 ::: {.callout-note}
 ## Da discutere
-Se gli agenti IA possono agire autonomamente, chi è responsabile delle loro azioni? Come cambia il concetto di *human-in-the-loop* che abbiamo discusso ieri?
+Avete visto notizie sull'IA questa settimana? Quale vi ha colpito di più e perché?
 :::
 
 ::: {.notes}
-This Week in AI: aprire con una notizia recente sull'evoluzione di Gemini o di un altro strumento IA. L'esempio qui riguarda le funzionalità agentiche di Gemini 2.0. Collegamento con la lezione di ieri: il modello "centrato sull'attante" (Thäsler-Kordonouri & Koliska, 2025) diventa più concreto quando l'IA può agire autonomamente. Chiedere agli studenti: hanno visto notizie sull'IA questa settimana? Dedicare 5-10 minuti alla discussione.
-:::
-
-## [This Week in AI]{.twiai-badge}
-
-### L'IA nelle redazioni: aggiornamenti
-
-- **Reuters:** integra strumenti IA per il monitoraggio automatico delle fonti
-- **The Guardian:** sperimenta la sintesi automatica di articoli lunghi
-- **BBC:** il 50% delle risposte dei LLM sui loro contenuti presenta problemi di accuratezza
-
-::: {.highlight-box}
-**Collegamento con il corso:** questi sviluppi illustrano i rischi per la catena del valore giornalistica discussi ieri con @mattis2025.
-:::
-
-::: {.notes}
-Seconda slide TWIAI. Esempi concreti di come l'IA sta entrando nelle redazioni. Il dato BBC è tratto da un rapporto interno citato in Mattis & de Vreese (2025): il 50% delle risposte dei LLM addestrati sui contenuti BBC presentava problemi, con il 19% delle risposte che contenevano errori fattuali diretti. Questo illustra il rischio "decreasing journalistic quality" della catena del valore. Transizione: oggi passiamo dalla teoria alla pratica — sperimenteremo direttamente con gli strumenti IA che le redazioni stanno adottando.
+This Week in AI: segmento da aggiornare ogni settimana con notizie fresche. Chiedere prima agli studenti se hanno visto notizie sull'IA durante la settimana. Poi presentare 1-2 notizie selezionate dal docente. Collegare le notizie ai temi del corso: sistema mediale ibrido, catena del valore giornalistica, human-in-the-loop. Dedicare 5-10 minuti alla discussione.
 :::
 
 ## Roadmap del workshop
@@ -399,6 +386,10 @@ Riepilogo del workshop. Gli studenti ora hanno accesso operativo a entrambi gli 
 - Criteri per valutare contenuti generati dall'IA
 
 **Martedì 3 Marzo:** Guest — Vincenzo Cosenza, "Intelligenza Aumentata"
+
+**Letture per lunedì:**
+
+- @gilardi2025 — Qualità percepita e disponibilità a leggere notizie IA
 
 ::: {.callout-tip}
 ## Suggerimento

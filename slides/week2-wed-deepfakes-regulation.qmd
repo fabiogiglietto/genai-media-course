@@ -163,7 +163,7 @@ Per il nostro progetto: le immagini *AI slop* su Facebook sono un esempio di dis
 :::
 
 ::: {.notes}
-Insight fondamentale per il corso: la narrativa mediatica si concentra sui deepfake sofisticati (face swap realistici, video generati), ma la minaccia quotidiana più grande è la disinformazione "low-tech" — video reali usati fuori contesto, immagini reali con didascalie false. I fact-checker spendono la maggior parte del loro tempo su questo tipo di contenuti, usando strumenti OSINT e geolocalizzazione. Per il progetto di gruppo: le immagini AI slop su Facebook sono un ibrido — generate dall'IA (quindi tecnicamente sofisticate) ma distribuite come engagement bait senza pretesa di autenticità. Il fatto-checking visivo è una competenza cruciale.
+Insight fondamentale per il corso: la narrativa mediatica si concentra sui deepfake sofisticati (face swap realistici, video generati), ma la minaccia quotidiana più grande è la disinformazione "low-tech" — video reali usati fuori contesto, immagini reali con didascalie false. I fact-checker spendono la maggior parte del loro tempo su questo tipo di contenuti, usando strumenti OSINT e geolocalizzazione. Per il progetto di gruppo: le immagini AI slop su Facebook sono un ibrido — generate dall'IA (quindi tecnicamente sofisticate) ma distribuite come engagement bait senza pretesa di autenticità. Il fact-checking visivo è una competenza cruciale.
 :::
 
 ## L'efficacia del fact-checking
@@ -336,7 +336,7 @@ Le policy delle piattaforme si concentrano sul **deepfake intenzionalmente ingan
 :::
 
 ::: {.notes}
-Le policy di Meta e TikTok si concentrano sui deepfake intenzionalmente ingannevoli, con un approccio reattivo (rimozione dopo segnalazione). Ma il problema dell'AI slop è diverso: le immagini generate dall'IA su Facebook spesso non pretendono di essere reali (non sono "deepfake" in senso stretto) ma degradano la qualità dell'ecosistema informativo attraverso engagement bait. Le policy attuali non catturano adeguatamente questo fenomeno. Collegamento con il progetto: analizzeremo come gli utenti reagiscono a contenuti AI slop che non violano le policy ma inquinano il feed.
+NOTA: le policy delle piattaforme cambiano rapidamente. Nel gennaio 2025 Meta ha annunciato la fine del programma di fact-checking con terze parti negli USA, sostituendolo con un sistema di "Community Notes" simile a X. Verificare lo stato aggiornato prima della lezione. Le policy di Meta e TikTok si concentrano sui deepfake intenzionalmente ingannevoli, con un approccio reattivo (rimozione dopo segnalazione). Ma il problema dell'AI slop è diverso: le immagini generate dall'IA su Facebook spesso non pretendono di essere reali (non sono "deepfake" in senso stretto) ma degradano la qualità dell'ecosistema informativo attraverso engagement bait. Le policy attuali non catturano adeguatamente questo fenomeno. Collegamento con il progetto: analizzeremo come gli utenti reagiscono a contenuti AI slop che non violano le policy ma inquinano il feed.
 :::
 
 ## Sintesi e Prossimi Passi {background-color="#C5612E"}
@@ -367,6 +367,11 @@ Riepilogo dei concetti fondamentali. I temi di oggi formano il background teoric
 - Tecniche di rilevamento e fact-checking
 
 **Settimana 4 (16-18 Marzo):** Lancio del progetto di ricerca
+
+**Letture consigliate** per preparare il progetto (settimana 4):
+
+- @ferrara2026 — Il Paradosso dell'IA Generativa (ripasso)
+- @schroeder2026 — Sciami IA e democrazia (ripasso)
 
 ::: {.callout-tip}
 ## Suggerimento

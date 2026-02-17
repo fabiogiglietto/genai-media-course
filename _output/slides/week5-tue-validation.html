@@ -166,7 +166,7 @@ Fabio Giglietto
 <section id="roadmap-della-sessione" class="slide level2">
 <h2>Roadmap della sessione</h2>
 <ol type="1">
-<li><strong>Perche’ validare</strong> — il ruolo della verifica umana</li>
+<li><strong>Perché validare</strong> — il ruolo della verifica umana</li>
 <li><strong>La metodologia LLMs-in-the-loop</strong> — pipeline e principi</li>
 <li><strong>Progettare il protocollo di validazione</strong> — campionamento e codifica</li>
 <li><strong>Misurare l’accordo</strong> — Cohen’s kappa e Krippendorff’s alpha</li>
@@ -174,7 +174,7 @@ Fabio Giglietto
 <li><strong>Iterazione e raffinamento</strong> — migliorare la pipeline</li>
 </ol>
 <aside class="notes">
-<p>Struttura della sessione. Oggi e’ il giorno chiave per la qualita’ metodologica del progetto. Ieri i gruppi hanno classificato i commenti con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. L’obiettivo e’ duplice: (1) verificare quanto l’IA e’ affidabile e (2) apprendere la metodologia di validazione che sara’ documentata nel paper. Questa sessione alterna teoria (30%) e pratica (70%).</p>
+<p>Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato i commenti con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. L’obiettivo è duplice: (1) verificare quanto l’IA è affidabile e (2) apprendere la metodologia di validazione che sarà documentata nel paper. Questa sessione alterna teoria (30%) e pratica (70%).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -187,10 +187,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="perche-validare" class="slide level2" data-background-color="#C5612E">
-<h2>Perche’ Validare</h2>
+<section id="perché-validare" class="slide level2" data-background-color="#C5612E">
+<h2>Perché Validare</h2>
 <aside class="notes">
-<p>Sezione 1: motivazione della validazione. Perche’ non basta la classificazione automatizzata.</p>
+<p>Sezione 1: motivazione della validazione. Perché non basta la classificazione automatizzata.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -203,20 +203,20 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="lia-non-e-un-oracolo" class="slide level2">
-<h2>L’IA non e’ un oracolo</h2>
+<section id="lia-non-è-un-oracolo" class="slide level2">
+<h2>L’IA non è un oracolo</h2>
 <div class="highlight-box">
-<p><strong>Principio fondamentale:</strong> come ci ricorda <span class="citation" data-cites="cosenza2025">Cosenza (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>, l’IA ragiona per <strong>probabilita’</strong>, non per verita’. Ogni classificazione automatizzata e’ una <strong>bozza</strong> che richiede verifica.</p>
+<p><strong>Principio fondamentale:</strong> come ci ricorda <span class="citation" data-cites="cosenza2025">Cosenza (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>, l’IA ragiona per <strong>probabilità</strong>, non per verità. Ogni classificazione automatizzata è una <strong>bozza</strong> che richiede verifica.</p>
 </div>
-<p>Perche’ la classificazione dell’IA puo’ essere inaffidabile:</p>
+<p>Perché la classificazione dell’IA può essere inaffidabile:</p>
 <ul>
-<li><strong>Sensibilita’ al prompt:</strong> piccole variazioni producono risultati diversi</li>
+<li><strong>Sensibilità al prompt:</strong> piccole variazioni producono risultati diversi</li>
 <li><strong>Bias del modello:</strong> tendenza a sovra-rappresentare alcune categorie</li>
-<li><strong>Ambiguita’ linguistica:</strong> ironia, sarcasmo, dialetto sono difficili da interpretare</li>
+<li><strong>Ambiguità linguistica:</strong> ironia, sarcasmo, dialetto sono difficili da interpretare</li>
 <li><strong>Mancanza di contesto:</strong> l’IA non conosce il contesto culturale specifico</li>
 </ul>
 <aside class="notes">
-<p>Collegamento con la regola 4 di Cosenza (2025): “Valuta”. L’IA non e’ stata progettata per dire la verita’, ma per generare l’output piu’ probabile. Nel contesto della classificazione dei commenti, questo significa che l’IA puo’ classificare correttamente i casi chiari ma sbagliare sistematicamente sui casi ambigui. L’ironia e’ particolarmente problematica: un commento come “bellissimo, proprio come una foto vera!” potrebbe essere sarcasmo (riconoscimento IA) o genuino (engagement). Il contesto culturale italiano aggiunge complessita’: espressioni dialettali, riferimenti locali, humor specifico. Per questo la validazione umana non e’ un optional ma un requisito metodologico.</p>
+<p>Collegamento con la regola 4 di Cosenza (2025): “Valuta”. L’IA non è stata progettata per dire la verità, ma per generare l’output più probabile. Nel contesto della classificazione dei commenti, questo significa che l’IA può classificare correttamente i casi chiari ma sbagliare sistematicamente sui casi ambigui. L’ironia è particolarmente problematica: un commento come “bellissimo, proprio come una foto vera!” potrebbe essere sarcasmo (riconoscimento IA) o genuino (engagement). Il contesto culturale italiano aggiunge complessità: espressioni dialettali, riferimenti locali, humor specifico. Per questo la validazione umana non è un optional ma un requisito metodologico.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -234,7 +234,7 @@ Fabio Giglietto
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="il-rischio">Il rischio</h3>
-<p>Ferrara (2026) descrive un <strong>paradosso</strong>: piu’ l’IA sembra affidabile, piu’ rischiamo di fidarci ciecamente dei suoi output <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span>.</p>
+<p>Ferrara (2026) descrive un <strong>paradosso</strong>: più l’IA sembra affidabile, più rischiamo di fidarci ciecamente dei suoi output <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span>.</p>
 <p>Nella ricerca, questo si traduce in:</p>
 <ul>
 <li>Accettare classificazioni senza verifica</li>
@@ -252,7 +252,7 @@ Fabio Giglietto
 </ul>
 </div></div>
 <aside class="notes">
-<p>Il collegamento con Ferrara (2026) e’ importante: il Generative AI Paradox si applica anche alla ricerca. Come i cittadini possono cadere nella “credulity” (credere a contenuti sintetici convincenti), i ricercatori possono cadere nell’accettare acriticamente classificazioni IA apparentemente plausibili. La validazione sistematica e’ l’antidoto: trattare l’IA come un codificatore le cui classificazioni devono essere verificate, esattamente come faremmo con un codificatore umano alle prime armi. Questo approccio e’ al centro della metodologia LLMs-in-the-loop.</p>
+<p>Il collegamento con Ferrara (2026) è importante: il Generative AI Paradox si applica anche alla ricerca. Come i cittadini possono cadere nella “credulity” (credere a contenuti sintetici convincenti), i ricercatori possono cadere nell’accettare acriticamente classificazioni IA apparentemente plausibili. La validazione sistematica è l’antidoto: trattare l’IA come un codificatore le cui classificazioni devono essere verificate, esattamente come faremmo con un codificatore umano alle prime armi. Questo approccio è al centro della metodologia LLMs-in-the-loop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -293,11 +293,11 @@ Fabio Giglietto
 <li>Prompting sistematico al LLM</li>
 <li>Classificazione automatizzata</li>
 <li><strong>Validazione umana</strong> (focus di oggi)</li>
-<li>Calcolo dell’affidabilita’ inter-codificatore</li>
+<li>Calcolo dell’affidabilità inter-codificatore</li>
 <li>Iterazione e raffinamento</li>
 </ol>
 <aside class="notes">
-<p>Ripresa piu’ approfondita della metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024). Il punto chiave e’ il ciclo iterativo: non si tratta di far classificare all’IA e poi verificare una volta. Si tratta di un processo in cui la validazione umana alimenta il raffinamento del prompt e del codebook, migliorando progressivamente la qualita’ della classificazione. Oggi ci concentriamo sulle fasi 4 e 5; nella parte finale della sessione affronteremo la fase 6. Il seminario di Bruna Paroni nella settimana 3 ha illustrato questa metodologia con un caso studio brasiliano.</p>
+<p>Ripresa più approfondita della metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024). Il punto chiave è il ciclo iterativo: non si tratta di far classificare all’IA e poi verificare una volta. Si tratta di un processo in cui la validazione umana alimenta il raffinamento del prompt e del codebook, migliorando progressivamente la qualità della classificazione. Oggi ci concentriamo sulle fasi 4 e 5; nella parte finale della sessione affronteremo la fase 6. Il seminario di Bruna Paroni nella settimana 3 ha illustrato questa metodologia con un caso studio brasiliano.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -312,7 +312,7 @@ Fabio Giglietto
 </section>
 <section id="lia-come-codificatore" class="slide level2">
 <h2>L’IA come “codificatore”</h2>
-<p>Nella ricerca tradizionale sull’analisi del contenuto, si usano <strong>codificatori umani</strong> multipli per garantire affidabilita’.</p>
+<p>Nella ricerca tradizionale sull’analisi del contenuto, si usano <strong>codificatori umani</strong> multipli per garantire affidabilità.</p>
 <p>Con la pipeline LLMs-in-the-loop, l’IA diventa un <strong>codificatore aggiuntivo</strong>:</p>
 <table class="caption-top">
 <thead>
@@ -325,8 +325,8 @@ Fabio Giglietto
 <tbody>
 <tr class="odd">
 <td><strong>Scala</strong></td>
-<td>Centinaia di unita’</td>
-<td>Migliaia di unita’</td>
+<td>Centinaia di unità</td>
+<td>Migliaia di unità</td>
 </tr>
 <tr class="even">
 <td><strong>Coerenza</strong></td>
@@ -351,7 +351,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Tabella comparativa che illustra i punti di forza e debolezza di codificatori umani e IA. L’IA eccelle nella scala (puo’ classificare migliaia di commenti in pochi minuti) e nel costo (quasi nullo). L’umano eccelle nella comprensione del contesto e nella capacita’ di cogliere sfumature. L’approccio LLMs-in-the-loop sfrutta entrambi: l’IA per la scala, l’umano per la qualita’ e la validazione. La metrica di affidabilita’ standard (intercoder reliability) viene applicata al confronto IA-umano esattamente come si applicherebbe al confronto tra due codificatori umani.</p>
+<p>Tabella comparativa che illustra i punti di forza e debolezza di codificatori umani e IA. L’IA eccelle nella scala (può classificare migliaia di commenti in pochi minuti) e nel costo (quasi nullo). L’umano eccelle nella comprensione del contesto e nella capacità di cogliere sfumature. L’approccio LLMs-in-the-loop sfrutta entrambi: l’IA per la scala, l’umano per la qualità e la validazione. La metrica di affidabilità standard (intercoder reliability) viene applicata al confronto IA-umano esattamente come si applicherebbe al confronto tra due codificatori umani.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -383,7 +383,7 @@ Fabio Giglietto
 <section id="selezionare-il-campione" class="slide level2">
 <h2>Selezionare il campione</h2>
 <div class="highlight-box">
-<p><strong>Regola pratica:</strong> validare almeno il <strong>20-30%</strong> del dataset totale, con un minimo di <strong>50 unita’</strong> per l’analisi di affidabilita’.</p>
+<p><strong>Regola pratica:</strong> validare almeno il <strong>20-30%</strong> del dataset totale, con un minimo di <strong>50 unità</strong> per l’analisi di affidabilità.</p>
 </div>
 <p>Strategie di campionamento:</p>
 <ul>
@@ -400,12 +400,12 @@ Fabio Giglietto
 <p><strong>Suggerimento</strong></p>
 </div>
 <div class="callout-content">
-<p>Combinate le strategie: un campione casuale (per la rappresentativita’) + tutti i casi “incerti” dell’IA (per capire dove l’IA fatica di piu’).</p>
+<p>Combinate le strategie: un campione casuale (per la rappresentatività) + tutti i casi “incerti” dell’IA (per capire dove l’IA fatica di più).</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Il campionamento e’ cruciale per la validita’ della validazione. Il 20-30% e’ una regola pratica consolidata nell’analisi del contenuto. Con dataset di 200-300 commenti (tipico per i gruppi), questo significa 50-80 commenti da classificare manualmente. Il campione stratificato garantisce che tutte le categorie siano rappresentate — importante perche’ alcune categorie (es. “riconoscimento IA”) potrebbero essere rare. I casi “incerti” sono particolarmente informativi: mostrano dove il codebook e’ ambiguo e dove il prompt va migliorato.</p>
+<p>Il campionamento è cruciale per la validità della validazione. Il 20-30% è una regola pratica consolidata nell’analisi del contenuto. Con dataset di 200-300 commenti (tipico per i gruppi), questo significa 50-80 commenti da classificare manualmente. Il campione stratificato garantisce che tutte le categorie siano rappresentate — importante perché alcune categorie (es. “riconoscimento IA”) potrebbero essere rare. I casi “incerti” sono particolarmente informativi: mostrano dove il codebook è ambiguo e dove il prompt va migliorato.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -438,7 +438,7 @@ Fabio Giglietto
 <li>Calcolare le metriche di <strong>accordo</strong></li>
 </ol>
 <aside class="notes">
-<p>Il punto chiave e’ la codifica cieca: i codificatori umani non devono vedere la classificazione dell’IA per evitare il bias di ancoraggio (tendenza a conformarsi alla classificazione gia’ presente). Idealmente, almeno 2 membri del gruppo codificano indipendentemente lo stesso campione: questo permette di calcolare sia l’accordo umano-umano (baseline) che l’accordo IA-umano. Se il gruppo ha 5 membri, suggerire 2 codificatori sul campione completo e gli altri 3 su sottoinsiemi. I casi difficili e le motivazioni alimentano la fase di iterazione.</p>
+<p>Il punto chiave è la codifica cieca: i codificatori umani non devono vedere la classificazione dell’IA per evitare il bias di ancoraggio (tendenza a conformarsi alla classificazione già presente). Idealmente, almeno 2 membri del gruppo codificano indipendentemente lo stesso campione: questo permette di calcolare sia l’accordo umano-umano (baseline) che l’accordo IA-umano. Se il gruppo ha 5 membri, suggerire 2 codificatori sul campione completo e gli altri 3 su sottoinsiemi. I casi difficili e le motivazioni alimentano la fase di iterazione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -467,13 +467,13 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="perche-non-basta-la-percentuale-di-accordo" class="slide level2">
-<h2>Perche’ non basta la percentuale di accordo</h2>
+<section id="perché-non-basta-la-percentuale-di-accordo" class="slide level2">
+<h2>Perché non basta la percentuale di accordo</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="il-problema">Il problema</h3>
 <p>Due codificatori possono concordare <strong>per caso</strong>.</p>
-<p>Se ci sono 2 categorie equiprobabili, il 50% di accordo e’ atteso anche con classificazioni casuali.</p>
+<p>Se ci sono 2 categorie equiprobabili, il 50% di accordo è atteso anche con classificazioni casuali.</p>
 <p>La <strong>percentuale di accordo grezzo</strong> non tiene conto del caso.</p>
 </div><div class="column" style="width:50%;">
 <h3 id="la-soluzione-1">La soluzione</h3>
@@ -486,7 +486,7 @@ Fabio Giglietto
 </ul>
 </div></div>
 <aside class="notes">
-<p>Concetto statistico fondamentale per la validazione. La percentuale di accordo grezzo (quante volte i codificatori concordano sul totale) e’ una metrica ingannevole perche’ non considera l’accordo casuale. Se abbiamo 5 categorie, l’accordo casuale atteso e’ circa il 20%. Un accordo del 60% sembra buono ma dopo la correzione potrebbe essere modesto. Le metriche kappa e alpha correggono questo problema sottraendo l’accordo atteso per caso dal denominatore.</p>
+<p>Concetto statistico fondamentale per la validazione. La percentuale di accordo grezzo (quante volte i codificatori concordano sul totale) è una metrica ingannevole perché non considera l’accordo casuale. Se abbiamo 5 categorie, l’accordo casuale atteso è circa il 20%. Un accordo del 60% sembra buono ma dopo la correzione potrebbe essere modesto. Le metriche kappa e alpha correggono questo problema sottraendo l’accordo atteso per caso dal denominatore.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -561,7 +561,7 @@ Fabio Giglietto
 </table>
 </div>
 <aside class="notes">
-<p>Le due metriche principali per la validazione. Cohen’s kappa e’ la piu’ usata quando si confrontano 2 codificatori (nel nostro caso, IA vs.&nbsp;umano). Krippendorff’s alpha e’ piu’ flessibile: funziona con piu’ di 2 codificatori e gestisce i dati mancanti. Per il progetto, il kappa di Cohen e’ sufficiente se si confronta 1 codificatore umano con l’IA; alpha di Krippendorff se si confrontano 2 codificatori umani + l’IA. L’obiettivo minimo per la ricerca e’ un kappa/alpha di 0.60 (accordo buono). Valori inferiori indicano che il codebook o il prompt vanno rivisti. Nella sezione Metodo del paper, bisogna riportare la metrica usata, il valore ottenuto e l’interpretazione.</p>
+<p>Le due metriche principali per la validazione. Cohen’s kappa è la più usata quando si confrontano 2 codificatori (nel nostro caso, IA vs.&nbsp;umano). Krippendorff’s alpha è più flessibile: funziona con più di 2 codificatori e gestisce i dati mancanti. Per il progetto, il kappa di Cohen è sufficiente se si confronta 1 codificatore umano con l’IA; alpha di Krippendorff se si confrontano 2 codificatori umani + l’IA. L’obiettivo minimo per la ricerca è un kappa/alpha di 0.60 (accordo buono). Valori inferiori indicano che il codebook o il prompt vanno rivisti. Nella sezione Metodo del paper, bisogna riportare la metrica usata, il valore ottenuto e l’interpretazione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -627,7 +627,7 @@ Fabio Giglietto
 </table>
 <p><span class="math inline">\(P_o = (12+18+11)/50 = 0.82\)</span> — Calcolo manuale o con Gemini <span class="citation" data-cites="cosenza2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Cosenza, 2025</a>)</span>.</p>
 <aside class="notes">
-<p>Esempio concreto di matrice di confusione. I valori in grassetto sulla diagonale sono i casi di accordo. I valori fuori diagonale sono i disaccordi. L’accordo osservato e’ 0.82 (82%). L’accordo atteso per caso si calcola dai totali marginali. Due approcci per il calcolo: (1) manuale con foglio di calcolo — creare la matrice, calcolare Po e Pe, applicare la formula; (2) con Gemini — caricare le due colonne e chiedere il calcolo. Come suggerisce Cosenza (2025), usate entrambi per verificare. La matrice rivela i pattern di errore: l’IA confonde “Riconoscimento” con “Emotivo” 3 volte, guidando il raffinamento del prompt.</p>
+<p>Esempio concreto di matrice di confusione. I valori in grassetto sulla diagonale sono i casi di accordo. I valori fuori diagonale sono i disaccordi. L’accordo osservato è 0.82 (82%). L’accordo atteso per caso si calcola dai totali marginali. Due approcci per il calcolo: (1) manuale con foglio di calcolo — creare la matrice, calcolare Po e Pe, applicare la formula; (2) con Gemini — caricare le due colonne e chiedere il calcolo. Come suggerisce Cosenza (2025), usate entrambi per verificare. La matrice rivela i pattern di errore: l’IA confonde “Riconoscimento” con “Emotivo” 3 volte, guidando il raffinamento del prompt.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -658,8 +658,8 @@ Fabio Giglietto
 </section>
 <section id="esercizio-validare-un-campione" class="slide level2">
 <h2>Esercizio: validare un campione</h2>
-<section id="attivita-45-minuti" class="orange-box">
-<h3>Attivita’ (45 minuti)</h3>
+<section id="attività-45-minuti" class="orange-box">
+<h3>Attività (45 minuti)</h3>
 <p><strong>Fase 1 — Preparazione (10 min):</strong></p>
 <ul>
 <li>Selezionate un campione di <strong>50 commenti</strong> dal vostro dataset</li>
@@ -679,7 +679,7 @@ Fabio Giglietto
 </ul>
 </section>
 <aside class="notes">
-<p>Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere rapida; i dati sono gia’ nel foglio di calcolo dal lab di ieri. Creare un foglio separato con solo ID e testo del commento, senza la colonna della classificazione IA. Fase 2: la codifica individuale deve essere davvero indipendente — i codificatori non devono comunicare durante questa fase. Fase 3: il confronto e’ il momento piu’ interessante — dove emergono i disaccordi e si capisce dove il codebook e’ ambiguo. Passare tra i gruppi durante la Fase 3 per aiutare con il calcolo del kappa e l’interpretazione dei risultati.</p>
+<p>Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere rapida; i dati sono già nel foglio di calcolo dal lab di ieri. Creare un foglio separato con solo ID e testo del commento, senza la colonna della classificazione IA. Fase 2: la codifica individuale deve essere davvero indipendente — i codificatori non devono comunicare durante questa fase. Fase 3: il confronto è il momento più interessante — dove emergono i disaccordi e si capisce dove il codebook è ambiguo. Passare tra i gruppi durante la Fase 3 per aiutare con il calcolo del kappa e l’interpretazione dei risultati.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -696,24 +696,24 @@ Fabio Giglietto
 <h2>Interpretare i risultati</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="se-il-kappa-e-alto-0.60">Se il kappa e’ alto (&gt; 0.60)</h3>
+<h3 id="se-il-kappa-è-alto-0.60">Se il kappa è alto (&gt; 0.60)</h3>
 <ul>
 <li>La pipeline funziona bene</li>
-<li>L’IA e’ un codificatore affidabile per queste categorie</li>
-<li>Si puo’ procedere con la classificazione del dataset completo</li>
+<li>L’IA è un codificatore affidabile per queste categorie</li>
+<li>Si può procedere con la classificazione del dataset completo</li>
 <li>Documentare nel paper</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="se-il-kappa-e-basso-0.60">Se il kappa e’ basso (&lt; 0.60)</h3>
+<h3 id="se-il-kappa-è-basso-0.60">Se il kappa è basso (&lt; 0.60)</h3>
 <ul>
 <li>Analizzare la <strong>matrice di confusione</strong>: dove sbaglia l’IA?</li>
 <li>Rivedere il <strong>codebook</strong>: le categorie sono ambigue?</li>
-<li>Raffinare il <strong>prompt</strong>: servono piu’ esempi?</li>
+<li>Raffinare il <strong>prompt</strong>: servono più esempi?</li>
 <li><strong>Iterare:</strong> ripetere la classificazione e la validazione</li>
 </ul>
 </div></div>
 <aside class="notes">
-<p>Guida all’interpretazione. Un kappa alto non significa che l’analisi e’ finita — significa che possiamo fidarci della classificazione IA per il dataset completo. Un kappa basso non e’ un fallimento — e’ un’opportunita’ di miglioramento. Le fonti di disaccordo piu’ comuni: (1) categorie del codebook sovrapposte, (2) esempi insufficienti nel prompt, (3) commenti ambigui che richiedono contesto culturale. L’iterazione e’ il cuore della metodologia: si raffina il prompt, si riclassifica, si ricalcola il kappa, fino a raggiungere un livello accettabile.</p>
+<p>Guida all’interpretazione. Un kappa alto non significa che l’analisi è finita — significa che possiamo fidarci della classificazione IA per il dataset completo. Un kappa basso non è un fallimento — è un’opportunità di miglioramento. Le fonti di disaccordo più comuni: (1) categorie del codebook sovrapposte, (2) esempi insufficienti nel prompt, (3) commenti ambigui che richiedono contesto culturale. L’iterazione è il cuore della metodologia: si raffina il prompt, si riclassifica, si ricalcola il kappa, fino a raggiungere un livello accettabile.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -772,7 +772,7 @@ Fabio Giglietto
 <p><strong>Da ricordare</strong></p>
 </div>
 <div class="callout-content">
-<p>La <strong>trasparenza metodologica</strong> e’ un valore fondamentale: documentate non solo i successi ma anche gli errori e le iterazioni. Questo rende la ricerca riproducibile e credibile.</p>
+<p>La <strong>trasparenza metodologica</strong> è un valore fondamentale: documentate non solo i successi ma anche gli errori e le iterazioni. Questo rende la ricerca riproducibile e credibile.</p>
 </div>
 </div>
 </div>
@@ -796,7 +796,7 @@ Fabio Giglietto
 <thead>
 <tr class="header">
 <th>Data</th>
-<th>Attivita’</th>
+<th>Attività</th>
 </tr>
 </thead>
 <tbody>
@@ -826,7 +826,7 @@ Fabio Giglietto
 <p><strong>Per domani:</strong> preparate una breve <strong>presentazione</strong> (5 minuti) dei risultati della validazione per la consultazione di gruppo. Includete: kappa ottenuto, problemi emersi, strategie di miglioramento.</p>
 </div>
 <aside class="notes">
-<p>Timeline aggiornata del progetto. Domani e’ la consultazione di gruppo: ogni gruppo presenta i risultati della validazione e discute i problemi metodologici. La settimana 6 e’ dedicata alla scrittura. Il paper va consegnato 2 settimane prima dell’appello di giugno. Enfatizzare che la validazione non deve essere perfetta per domani — l’importante e’ aver iniziato il processo e identificato i punti critici. La consultazione servira’ per risolvere i problemi e pianificare la scrittura.</p>
+<p>Timeline aggiornata del progetto. Domani è la consultazione di gruppo: ogni gruppo presenta i risultati della validazione e discute i problemi metodologici. La settimana 6 è dedicata alla scrittura. Il paper va consegnato 2 settimane prima dell’appello di giugno. Enfatizzare che la validazione non deve essere perfetta per domani — l’importante è aver iniziato il processo e identificato i punti critici. La consultazione servira’ per risolvere i problemi e pianificare la scrittura.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -845,7 +845,7 @@ Fabio Giglietto
 <p>📧 fabio.giglietto@uniurb.it</p>
 <p>🌐 blended.uniurb.it</p>
 <aside class="notes">
-<p>Chiusura. Ricordare: (1) completare la validazione se non terminata in aula, (2) preparare la presentazione per la consultazione di domani (5 minuti, informale), (3) portare i risultati del kappa e la matrice di confusione. Domani ogni gruppo avra’ un momento dedicato di consultazione con il docente per discutere problemi specifici.</p>
+<p>Chiusura. Ricordare: (1) completare la validazione se non terminata in aula, (2) preparare la presentazione per la consultazione di domani (5 minuti, informale), (3) portare i risultati del kappa e la matrice di confusione. Domani ogni gruppo avrà un momento dedicato di consultazione con il docente per discutere problemi specifici.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

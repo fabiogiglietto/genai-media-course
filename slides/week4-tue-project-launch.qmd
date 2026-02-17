@@ -71,6 +71,19 @@ Caratteristiche principali:
 Ripresa dal seminario di Terenzi. L'AI slop è diverso dal deepfake: non intende ingannare su chi ha detto/fatto cosa, ma degrada la qualità dell'ecosistema informativo inondandolo di contenuti sintetici. Le immagini tipiche: bambini in situazioni commoventi, anziani sorridenti, scene impossibili che generano engagement attraverso like, commenti e condivisioni. L'algoritmo di Facebook amplifica questi contenuti perché generano interazioni — anche se le interazioni sono spesso critiche. Collegamento con i framework delle settimane 1-2: l'AI slop opera al livello 1 della realtà sintetica di Ferrara (2026) e sfrutta i meccanismi del sistema mediale ibrido di Chadwick (2011).
 :::
 
+## Il progetto nel quadro teorico del corso
+
+| Settimane 1-2 (teoria) | Settimane 4-6 (progetto) |
+|------------------------|--------------------------|
+| Sistema mediale ibrido [@chadwick2011] | L'AI slop come fenomeno ibrido |
+| Catena del valore giornalistica [@mattis2025] | Analisi della **ricezione** dei contenuti IA |
+| Deepfake e incertezza [@vaccari2020] | Reazioni degli utenti: riconoscimento o engagement? |
+| Paradosso dell'IA generativa [@ferrara2026] | I commenti riflettono fiducia o sfiducia? |
+
+::: {.notes}
+Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli studenti devono capire che il progetto non è un esercizio isolato ma l'applicazione empirica dei framework studiati. Il sistema mediale ibrido spiega perché l'AI slop si diffonde (interazione tra piattaforme, algoritmi, utenti). I rischi di Mattis spiegano il contesto (degradamento della qualità informativa). Vaccari spiega il meccanismo (incertezza più che inganno). Ferrara spiega l'implicazione macro (erosione della fiducia). Il progetto testa queste teorie sui dati reali.
+:::
+
 ## Perché studiare la ricezione
 
 ::: {.highlight-box}
@@ -244,7 +257,7 @@ Timeline completa del progetto. Le settimane 4-5 sono le più intensive: raccolt
 ::: {.column width="50%"}
 ### Cosa preparare
 
-- Account Meta Content Library configurato
+- Account **Meta Content Library** configurato
 - Laptop con browser aggiornato
 - Foglio di calcolo condiviso nel gruppo
 - Criteri di selezione dei post definiti
@@ -258,6 +271,11 @@ Timeline completa del progetto. Le settimane 4-5 sono le più intensive: raccolt
 - Costruzione del dataset iniziale
 - Screening preliminare con Gemini
 :::
+:::
+
+::: {.callout-warning}
+## Attenzione
+L'accesso a Meta Content Library richiede un account verificato. Se non lo avete ancora configurato, fatelo **oggi stesso**: la procedura può richiedere alcune ore.
 :::
 
 ::: {.notes}

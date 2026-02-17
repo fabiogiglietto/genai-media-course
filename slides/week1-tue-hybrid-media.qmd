@@ -173,6 +173,17 @@ Caratteristiche principali:
 Il concetto di "assemblage" viene dalla teoria sociale di DeLanda (2006). Chadwick lo applica alla produzione di notizie per catturare la natura modulare e ricombinabile del processo. L'esempio di WikiLeaks è emblematico: un attore ibrido (parte editore, parte movimento sociale, parte piattaforma tecnologica) che si è inserito nel sistema mediale creando nuove relazioni di interdipendenza con i giornali tradizionali (Guardian, New York Times, Der Spiegel). L'IA generativa può essere vista come un nuovo tipo di "attante" in questi assemblage: genera contenuti, simula identità, interagisce con utenti — e i confini tra produzione umana e automatizzata diventano sempre più permeabili.
 :::
 
+## Da WikiLeaks all'IA: continuità e discontinuità
+
+::: {.callout-note}
+## Da discutere
+WikiLeaks era un attore ibrido che combinava tecnologia, attivismo e giornalismo. L'IA generativa è un attore **ancora più ibrido**: produce contenuti, simula identità, interagisce con utenti. Quali sono le **continuità** e le **discontinuità** tra i due fenomeni?
+:::
+
+::: {.notes}
+Slide di transizione che collega il caso WikiLeaks (2010) all'IA generativa (2026). Continuità: entrambi operano ai confini tra vecchi e nuovi media, entrambi sfidano il gatekeeping tradizionale, entrambi creano relazioni di interdipendenza con i media professionali. Discontinuità: WikiLeaks era un'organizzazione umana con obiettivi politici dichiarati; l'IA è un'infrastruttura tecnologica senza intenzionalità propria ma con capacità molto più pervasive. WikiLeaks aveva bisogno dei giornali per raggiungere il pubblico; l'IA generativa può bypassare completamente i media tradizionali. Dare 5 minuti per la discussione in classe.
+:::
+
 ## Potere e interdipendenza nel sistema ibrido
 
 ```{r}
@@ -208,7 +219,7 @@ ggplot(actors, aes(x = dipendenza, y = potere, label = attore, color = tipo)) +
   theme_uniurb() +
   labs(
     title = "Potere e interdipendenza nel sistema mediale ibrido",
-    subtitle = "Posizionamento concettuale degli attori (adattato da Chadwick, 2011)",
+    subtitle = "Rappresentazione illustrativa — valori non empirici (ispirato a Chadwick, 2011)",
     x = "Livello di interdipendenza →",
     y = "Capacità di influenza →",
     color = "Tipo di attore"
@@ -437,7 +448,7 @@ ggplot(tensions, aes(x = reorder(fattore, intensita), y = intensita, fill = dire
   theme_uniurb() +
   labs(
     title = "Le forze che guidano e frenano l'adozione dell'IA nel giornalismo",
-    subtitle = "Sintesi da Munoriyarwa & de-Lima-Santos (2025) e Mattis & de Vreese (2025)",
+    subtitle = "Rappresentazione illustrativa — intensità indicative (da Munoriyarwa & de-Lima-Santos, 2025; Mattis & de Vreese, 2025)",
     x = NULL,
     y = "Intensità relativa",
     fill = "Direzione"
@@ -462,7 +473,7 @@ Visualizzazione concettuale delle tensioni tra fattori che spingono verso l'adoz
 **L'impatto dell'IA sul giornalismo non è deterministico** ma contingente: dipende da norme istituzionali, economie politiche e realtà locali [@munoriyarwa2025].
 :::
 
-Tre scenari possibili (Thäsler-Kordonouri & Koliska, 2025, citati in @munoriyarwa2025):
+Tre scenari possibili [Thäsler-Kordonouri & Koliska, 2025, citati in @munoriyarwa2025]:
 
 1. **Modello centrato sull'attore** — controllo umano prevalente
 2. **Modello ibrido** — collaborazione umano-IA bilanciata
@@ -542,22 +553,22 @@ Sezione finale: riepilogo e orientamento per il workshop di domani.
 Riepilogo dei concetti fondamentali. Il sistema mediale ibrido di Chadwick è il framework teorico di base del corso. L'IA generativa non crea un sistema nuovo ma amplifica le caratteristiche ibride del sistema esistente. Il giornalismo è la prima istituzione democratica investita da questa trasformazione, con rischi specifici per la qualità dell'informazione e per la lotta alla disinformazione. Il principio dell'human-in-the-loop sarà al centro del progetto di gruppo (LLMs-in-the-loop).
 :::
 
-## Letture completate e consigliate
+## Letture della settimana (assegnate lunedì)
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Per questa settimana
+### Obbligatorie
 
 - @chadwick2011 — Il Sistema Mediale Ibrido
-- @mattis2025 — IA generativa e giornalismo
-- @munoriyarwa2025 — IA e futuro delle notizie
+- @pewresearch2025 — Come gli americani vedono l'IA
+- @ferrara2026 — Il Paradosso dell'IA Generativa
 :::
 
 ::: {.column width="50%"}
-### Per approfondire
+### Consigliate
 
-- @ferrara2026 — Il Paradosso dell'IA Generativa
-- @pewresearch2025 — Percezioni pubbliche dell'IA
+- @mattis2025 — IA generativa e giornalismo
+- @munoriyarwa2025 — IA e futuro delle notizie
 :::
 :::
 

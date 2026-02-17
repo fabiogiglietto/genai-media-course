@@ -82,7 +82,7 @@ Sezione 1: come l'IA generativa trasforma i processi di produzione di contenuti.
 :::
 
 ::: {.notes}
-Confronto tra flusso tradizionale e flusso assistito dall'IA. L'IA si inserisce in ogni fase, ma con intensità diversa. Nella ricerca: può aggregare fonti e sintetizzare documenti (come abbiamo visto con NotebookLM). Nella scrittura: può generare bozze, ma la qualità dipende dal prompt e dalla supervisione. Nella revisione: l'umano resta insostituibile per il fact-checking e il giudizio editoriale. Nella distribuzione: può personalizzare e ottimizzare. Collegamento con Mattis & de Vreese (2025): l'IA permeates the entire news value chain.
+Confronto tra flusso tradizionale e flusso assistito dall'IA. L'IA si inserisce in ogni fase, ma con intensità diversa. Nella ricerca: può aggregare fonti e sintetizzare documenti (come abbiamo visto con NotebookLM). Nella scrittura: può generare bozze, ma la qualità dipende dal prompt e dalla supervisione. Nella revisione: l'umano resta insostituibile per il fact-checking e il giudizio editoriale. Nella distribuzione: può personalizzare e ottimizzare. Collegamento con Mattis & de Vreese (2025): l'IA pervade l'intera catena del valore giornalistica.
 :::
 
 ## L'adozione dell'IA nelle redazioni
@@ -164,6 +164,8 @@ Sezione 2: approfondimento sul prompt engineering. Costruiamo sulle basi del wor
 | **Formato** | Come deve essere l'output | "Presenta i risultati in una tabella" |
 | **Vincoli** | Limiti e requisiti | "Max 200 parole, tono accademico" |
 | **Esempi** | Output desiderato | "Segui questo modello: [esempio]" |
+
+Struttura basata sul principio "Dirigi" di @cosenza2025.
 
 ::: {.notes}
 Framework per la costruzione di prompt efficaci. Questo schema si basa sulle best practice del prompt engineering e sul principio "Dirigi" di Cosenza (2025): non lasciare spazi di libertà all'IA. Ogni componente riduce l'ambiguità e aumenta la qualità dell'output. Il ruolo orienta il tono e il livello di expertise. Il contesto fornisce informazioni che il modello potrebbe non avere. Il formato è cruciale: l'IA può produrre lo stesso contenuto come paragrafo, lista, tabella, o dialogo. I vincoli impediscono risposte troppo lunghe o off-topic. Gli esempi (few-shot prompting) sono il metodo più efficace per guidare l'output.
@@ -269,6 +271,11 @@ Dati da Gilardi et al. (2025), studio preregistrato con 599 partecipanti svizzer
 | Interamente IA | **29%** |
 
 La resistenza **non** dipende dalla qualità percepita, ma da preoccupazioni più profonde legate a **fiducia** e **autenticità**.
+
+::: {.callout-note}
+## Da discutere
+Sapendo che un articolo è stato scritto dall'IA, lo leggereste? Cosa cambierebbe nella vostra percezione?
+:::
 
 ::: {.notes}
 Dati da Vogler et al. (2023) citati in Gilardi et al. (2025). Il paradosso è evidente: gli articoli IA sono valutati come equivalenti in qualità, ma la disponibilità a leggerli cala drasticamente man mano che aumenta il coinvolgimento dell'IA. Questo "disaccoppiamento qualità-attitudine" suggerisce che la resistenza è radicata in fattori più profondi della qualità percepita: fiducia nell'istituzione giornalistica, autenticità della voce umana, preoccupazioni etiche sulla sostituzione dei giornalisti. Collegamento con Mattis & de Vreese (2025): l'erosione della fiducia è uno dei quattro rischi chiave.
@@ -394,11 +401,10 @@ Riepilogo dei concetti fondamentali della lezione. Il dato più importante da ri
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Già assegnate
+### Assegnate in settimana 1
 
 - @gilardi2025 — Disponibilità a leggere notizie IA
 - @mattis2025 — IA e giornalismo
-- @munoriyarwa2025 — IA e futuro delle notizie
 :::
 
 ::: {.column width="50%"}

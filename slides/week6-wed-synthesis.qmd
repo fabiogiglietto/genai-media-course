@@ -38,15 +38,15 @@ csl: ../apa.csl
 
 ### Il futuro della persuasione automatizzata
 
-L'IA conversazionale puo essere fino al **52% piu persuasiva** di un messaggio statico, con effetti misurabili anche **dopo un mese**. Ma i modelli piu persuasivi producono il **30% di affermazioni inaccurate** [@hackenburg2025].
+L'IA conversazionale può essere fino al **52% più persuasiva** di un messaggio statico, con effetti misurabili anche **dopo un mese**. Ma i modelli più persuasivi producono il **30% di affermazioni inaccurate** [@hackenburg2025].
 
 ::: {.callout-note}
 ## Da discutere
-In un mondo dove l'IA e sempre piu persuasiva e sempre meno accurata, quale ruolo spetta alla ricerca come quella che avete condotto?
+In un mondo dove l'IA e sempre più persuasiva e sempre meno accurata, quale ruolo spetta alla ricerca come quella che avete condotto?
 :::
 
 ::: {.notes}
-Ultima edizione del segmento This Week in AI. Il dato di Hackenburg et al. (2025, Science) e particolarmente significativo come chiusura del corso: sintetizza il trade-off fondamentale dell'IA generativa — piu potente ma meno affidabile. Studio con 76.977 risposte, 42.357 persone, 19 LLM su 707 questioni politiche. Il trade-off persuasione-accuratezza e confermato empiricamente: ottimizzare per la persuasione porta a sacrificare l'accuratezza. Le strategie basate su densita informativa sono le piu efficaci, ma anche le piu prone a imprecisioni. Collegamento con il progetto degli studenti: la ricerca empirica sulla ricezione dei contenuti IA e parte della risposta a questa sfida.
+Ultima edizione del segmento This Week in AI. Il dato di Hackenburg et al. (2025, Science) è particolarmente significativo come chiusura del corso: sintetizza il trade-off fondamentale dell'IA generativa — più potente ma meno affidabile. Studio con 76.977 risposte, 42.357 persone, 19 LLM su 707 questioni politiche. Il trade-off persuasione-accuratezza è confermato empiricamente: ottimizzare per la persuasione porta a sacrificare l'accuratezza. Le strategie basate su densità informativa sono le più efficaci, ma anche le più prone a imprecisioni. Collegamento con il progetto degli studenti: la ricerca empirica sulla ricezione dei contenuti IA è parte della risposta a questa sfida.
 :::
 
 ## [This Week in AI]{.twiai-badge} — Edizione Finale
@@ -60,7 +60,7 @@ Ultima edizione del segmento This Week in AI. Il dato di Hackenburg et al. (2025
 Le reti "Pravda" creano siti con articoli fabbricati, progettati per essere **ingeriti dai LLM** durante il riaddestramento. Le narrative false si **cristallizzano nei pesi del modello** [@schroeder2026].
 
 ::: {.notes}
-Secondo segmento TWIAI finale. Schroeder et al. (2026, Science) descrivono lo scenario degli sciami IA: reti coordinate di agenti autonomi che usano LLM e architetture multi-agente per manipolare il discorso pubblico. L'avvelenamento dei dati (data poisoning) e particolarmente insidioso: le reti "Pravda" pro-Cremlino creano centinaia di siti con contenuti duplicati, ottimizzati non per i lettori umani ma per i web crawler. Quando i LLM vengono riaddestrati su questi dati contaminati, le narrative false si incorporano nei pesi del modello. Questo e il livello piu profondo della manipolazione: non singoli contenuti falsi, ma la corruzione dell'infrastruttura epistemica stessa.
+Secondo segmento TWIAI finale. Schroeder et al. (2026, Science) descrivono lo scenario degli sciami IA: reti coordinate di agenti autonomi che usano LLM e architetture multi-agente per manipolare il discorso pubblico. L'avvelenamento dei dati (data poisoning) è particolarmente insidioso: le reti "Pravda" pro-Cremlino creano centinaia di siti con contenuti duplicati, ottimizzati non per i lettori umani ma per i web crawler. Quando i LLM vengono riaddestrati su questi dati contaminati, le narrative false si incorporano nei pesi del modello. Questo è il livello più profondo della manipolazione: non singoli contenuti falsi, ma la corruzione dell'infrastruttura epistemica stessa.
 :::
 
 ## [This Week in AI]{.twiai-badge} — Edizione Finale
@@ -135,7 +135,7 @@ Nel vostro progetto avete analizzato un fenomeno che **esiste** grazie a questa 
 :::
 
 ::: {.notes}
-Collegamento tra la teoria della settimana 1 e il progetto. Il framework di Chadwick (2011) descrive un sistema in cui vecchi media (TV, giornali) e nuovi media (social, piattaforme) interagiscono. L'IA generativa complica ulteriormente questo sistema: ora abbiamo contenuti generati da macchine, distribuiti da algoritmi, e consumati/commentati da utenti umani. L'AI slop e un esempio perfetto di questa ibridita: le immagini sono prodotte dall'IA, amplificate dagli algoritmi di Facebook, e poi gli utenti umani reagiscono — a volte con consapevolezza dell'artificialita, a volte no. Il progetto degli studenti analizza esattamente questo nodo: la ricezione umana di contenuti non-umani.
+Collegamento tra la teoria della settimana 1 è il progetto. Il framework di Chadwick (2011) descrive un sistema in cui vecchi media (TV, giornali) e nuovi media (social, piattaforme) interagiscono. L'IA generativa complica ulteriormente questo sistema: ora abbiamo contenuti generati da macchine, distribuiti da algoritmi, e consumati/commentati da utenti umani. L'AI slop è un esempio perfetto di questa ibridita: le immagini sono prodotte dall'IA, amplificate dagli algoritmi di Facebook, e poi gli utenti umani reagiscono — a volte con consapevolezza dell'artificialita, a volte no. Il progetto degli studenti analizza esattamente questo nodo: la ricezione umana di contenuti non-umani.
 :::
 
 ## Dall'IA generativa alla disinformazione
@@ -152,7 +152,7 @@ Il corso ha tracciato un percorso che collega **produzione**, **circolazione** e
 :::
 
 ::: {.notes}
-Sintesi del percorso concettuale del corso. Produzione: Gilardi et al. (2025) mostrano che la qualita percepita dei contenuti IA e equivalente a quella umana; Mattis & de Vreese (2025) documentano come l'IA sta trasformando ogni fase del giornalismo. Circolazione: gli algoritmi delle piattaforme amplificano i contenuti ad alto engagement, indipendentemente dalla loro autenticita. Ricezione: il Pew Research Center (2025) mostra che il 76% ritiene importante riconoscere l'IA ma solo il 47% si sente in grado di farlo. Erosione della fiducia: Ferrara (2026) teorizza il paradosso GenAI. Il progetto degli studenti contribuisce alla comprensione della fase di ricezione — un'area ancora poco studiata empiricamente.
+Sintesi del percorso concettuale del corso. Produzione: Gilardi et al. (2025) mostrano che la qualità percepita dei contenuti IA e equivalente a quella umana; Mattis & de Vreese (2025) documentano come l'IA sta trasformando ogni fase del giornalismo. Circolazione: gli algoritmi delle piattaforme amplificano i contenuti ad alto engagement, indipendentemente dalla loro autenticita. Ricezione: il Pew Research Center (2025) mostra che il 76% ritiene importante riconoscere l'IA ma solo il 47% si sente in grado di farlo. Erosione della fiducia: Ferrara (2026) teorizza il paradosso GenAI. Il progetto degli studenti contribuisce alla comprensione della fase di ricezione — un'area ancora poco studiata empiricamente.
 :::
 
 ## Il Paradosso Rivisitato {background-color="#C5612E"}
@@ -165,7 +165,7 @@ Sezione dedicata a rivisitare il concetto centrale del corso — il Paradosso de
 
 ::: {.orange-box}
 ### Il Paradosso
-Man mano che i contenuti sintetici diventano onnipresenti e indistinguibili, le societa potrebbero razionalmente **scontare tutte le prove digitali**. La verifica diventa un privilegio, e la responsabilita si erode [@ferrara2026].
+Man mano che i contenuti sintetici diventano onnipresenti e indistinguibili, le societa potrebbero razionalmente **scontare tutte le prove digitali**. La verifica diventa un privilegio, è la responsabilita si erode [@ferrara2026].
 :::
 
 Dopo 6 settimane, avete gli strumenti per valutare questo paradosso:
@@ -176,10 +176,10 @@ Dopo 6 settimane, avete gli strumenti per valutare questo paradosso:
 - Gli **sciami IA** possono fabbricare consenso [@schroeder2026]
 
 ::: {.notes}
-Rivisitazione del paradosso GenAI di Ferrara alla luce di tutto il corso. Nella settimana 1 lo abbiamo introdotto come concetto teorico. Ora, dopo aver studiato i deepfake (Vaccari & Chadwick), la disinformazione visiva (Hameleers & van der Meer), la persuasione IA (Hackenburg et al.), gli sciami IA (Schroeder et al.) e il red-teaming (Gillespie et al.), e dopo aver analizzato empiricamente le reazioni degli utenti all'AI slop, il paradosso non e piu un'astrazione ma un fenomeno osservabile. Chiedere agli studenti: "Dopo aver analizzato i commenti degli utenti ai contenuti AI slop, il paradosso di Ferrara vi sembra confermato, smentito o sfumato?"
+Rivisitazione del paradosso GenAI di Ferrara alla luce di tutto il corso. Nella settimana 1 lo abbiamo introdotto come concetto teorico. Ora, dopo aver studiato i deepfake (Vaccari & Chadwick), la disinformazione visiva (Hameleers & van der Meer), la persuasione IA (Hackenburg et al.), gli sciami IA (Schroeder et al.) è il red-teaming (Gillespie et al.), e dopo aver analizzato empiricamente le reazioni degli utenti all'AI slop, il paradosso non e più un'astrazione ma un fenomeno osservabile. Chiedere agli studenti: "Dopo aver analizzato i commenti degli utenti ai contenuti AI slop, il paradosso di Ferrara vi sembra confermato, smentito o sfumato?"
 :::
 
-## La realta sintetica: un bilancio
+## La realtà sintetica: un bilancio
 
 | Livello | Minaccia | Cosa abbiamo studiato |
 |---------|----------|----------------------|
@@ -191,7 +191,7 @@ Rivisitazione del paradosso GenAI di Ferrara alla luce di tutto il corso. Nella 
 Adattato da @ferrara2026
 
 ::: {.notes}
-Il modello a strati di Ferrara (2026) come strumento di sintesi del corso. Livello 1 (contenuto sintetico): lo abbiamo studiato nella settimana 1 con le definizioni, nella settimana 2 con i deepfake, e applicato nel progetto con l'AI slop. Livello 2 (identita sintetica): le pagine che diffondono AI slop su Facebook usano account automatizzati. Livello 3 (interazione sintetica): Hackenburg et al. (2025) sulla persuasione conversazionale e Dubey et al. (2026) sui chatbot di notizie mostrano come l'interazione IA influenza le credenze. Livello 4 (istituzioni sintetiche): la regolamentazione europea (AI Act, Code of Practice) e il red-teaming (Gillespie et al.) sono risposte istituzionali a questa sfida. Il corso ha toccato tutti e 4 i livelli.
+Il modello a strati di Ferrara (2026) come strumento di sintesi del corso. Livello 1 (contenuto sintetico): lo abbiamo studiato nella settimana 1 con le definizioni, nella settimana 2 con i deepfake, e applicato nel progetto con l'AI slop. Livello 2 (identita sintetica): le pagine che diffondono AI slop su Facebook usano account automatizzati. Livello 3 (interazione sintetica): Hackenburg et al. (2025) sulla persuasione conversazionale e Dubey et al. (2026) sui chatbot di notizie mostrano come l'interazione IA influenza le credenze. Livello 4 (istituzioni sintetiche): la regolamentazione europea (AI Act, Code of Practice) è il red-teaming (Gillespie et al.) sono risposte istituzionali a questa sfida. Il corso ha toccato tutti e 4 i livelli.
 :::
 
 ## Riflessioni Metodologiche {background-color="#C5612E"}
@@ -223,13 +223,13 @@ Sezione sulle riflessioni metodologiche — cosa abbiamo imparato sull'uso dell'
 :::
 
 ::: {.notes}
-Riflessione collettiva sull'esperienza del progetto. Chiedere agli studenti: "Quali sono stati i punti di forza e i limiti dell'uso di Gemini nella vostra analisi?" L'IA permette di analizzare dataset che sarebbero ingestibili manualmente, ma introduce variabilita e opacita. La lezione piu importante: la validazione umana non e opzionale ma strutturale. La metodologia LLMs-in-the-loop di Marino & Giglietto (2024) funziona proprio perche tratta l'IA come un codificatore da validare, non come un oracolo. Questo approccio critico e la competenza piu preziosa che gli studenti portano via dal corso.
+Riflessione collettiva sull'esperienza del progetto. Chiedere agli studenti: "Quali sono stati i punti di forza e i limiti dell'uso di Gemini nella vostra analisi?" L'IA permette di analizzare dataset che sarebbero ingestibili manualmente, ma introduce variabilità e opacita. La lezione più importante: la validazione umana non e opzionale ma strutturale. La metodologia LLMs-in-the-loop di Marino & Giglietto (2024) funziona proprio perche tratta l'IA come un codificatore da validare, non come un oracolo. Questo approccio critico è la competenza più preziosa che gli studenti portano via dal corso.
 :::
 
 ## La validazione come principio
 
 ::: {.highlight-box}
-**Lezione fondamentale del corso:** In un mondo di contenuti sintetici, la **validazione** non e un optional metodologico ma un **principio epistemico**. Cio che non e verificato non e conoscenza.
+**Lezione fondamentale del corso:** In un mondo di contenuti sintetici, la **validazione** non è un optional metodologico ma un **principio epistemico**. Cio che non e verificato non e conoscenza.
 :::
 
 Questo vale per:
@@ -240,7 +240,7 @@ Questo vale per:
 - La **vita quotidiana** — scetticismo calibrato verso i contenuti digitali [@ferrara2026]
 
 ::: {.notes}
-Concetto trasversale che unisce tutto il corso. La validazione e il filo rosso: nel progetto, abbiamo validato le classificazioni di Gemini contro il giudizio umano. Nel giornalismo, la verifica delle fonti diventa ancora piu cruciale nell'era dei contenuti sintetici. Nella democrazia, il contrasto al consenso sintetico richiede meccanismi di validazione delle informazioni. Nella vita quotidiana, Ferrara propone il concetto di "igiene epistemica" — abitudini che riducono l'esposizione alla manipolazione. La competenza critica che gli studenti hanno sviluppato nel progetto e trasferibile a tutti questi ambiti.
+Concetto trasversale che unisce tutto il corso. La validazione è il filo rosso: nel progetto, abbiamo validato le classificazioni di Gemini contro il giudizio umano. Nel giornalismo, la verifica delle fonti diventa ancora più cruciale nell'era dei contenuti sintetici. Nella democrazia, il contrasto al consenso sintetico richiede meccanismi di validazione delle informazioni. Nella vita quotidiana, Ferrara propone il concetto di "igiene epistemica" — abitudini che riducono l'esposizione alla manipolazione. La competenza critica che gli studenti hanno sviluppato nel progetto e trasferibile a tutti questi ambiti.
 :::
 
 ## Prospettive Future {background-color="#C5612E"}
@@ -257,7 +257,7 @@ Sezione sulle prospettive future. Cosa ci aspetta nel campo dell'IA generativa e
 
 - Agenti IA **autonomi** che agiscono nel mondo
 - **Multimodalita** crescente (testo + immagini + video + azione)
-- Sciami IA sempre piu **sofisticati** [@schroeder2026]
+- Sciami IA sempre più **sofisticati** [@schroeder2026]
 - **Erosione della fiducia** istituzionale [@ferrara2026]
 :::
 
@@ -272,14 +272,14 @@ Sezione sulle prospettive future. Cosa ci aspetta nel campo dell'IA generativa e
 :::
 
 ::: {.notes}
-Le sfide e le risposte possibili. Lato sfide: gli agenti IA autonomi (Google ha annunciato Project Astra, OpenAI ha Operator) amplieranno le capacita degli sciami IA; la multimodalita renderà i contenuti sintetici ancora piu convincenti; l'erosione della fiducia e un trend strutturale non facilmente invertibile. Lato risposte: Ferrara (2026) propone una "pila di mitigazione" che tratta provenance, governance delle piattaforme, riprogettazione istituzionale e resilienza pubblica come interventi complementari, non sostituibili. Il concetto chiave: non esiste una soluzione singola, serve un approccio sistemico.
+Le sfide e le risposte possibili. Lato sfide: gli agenti IA autonomi (Google ha annunciato Project Astra, OpenAI ha Operator) amplieranno le capacita degli sciami IA; la multimodalita renderà i contenuti sintetici ancora più convincenti; l'erosione della fiducia è un trend strutturale non facilmente invertibile. Lato risposte: Ferrara (2026) propone una "pila di mitigazione" che tratta provenance, governance delle piattaforme, riprogettazione istituzionale e resilienza pubblica come interventi complementari, non sostituibili. Il concetto chiave: non esiste una soluzione singola, serve un approccio sistemico.
 :::
 
 ## La pila di mitigazione
 
 ::: {.orange-box}
 ### Un approccio sistemico
-Il rischio della realta sintetica non puo essere "risolto" da un singolo strumento o policy. La mitigazione deve essere trattata come una **pila di interventi complementari** [@ferrara2026].
+Il rischio della realtà sintetica non può essere "risolto" da un singolo strumento o policy. La mitigazione deve essere trattata come una **pila di interventi complementari** [@ferrara2026].
 :::
 
 | Livello | Intervento |
@@ -295,12 +295,12 @@ La "mitigation stack" di Ferrara (2026) come quadro per le risposte future. A li
 
 ## Il ruolo della ricerca
 
-La ricerca che avete condotto in questo corso contribuisce a una missione piu ampia:
+La ricerca che avete condotto in questo corso contribuisce a una missione più ampia:
 
 - **Comprendere** come gli utenti interagiscono con contenuti sintetici
 - **Misurare** la capacita di riconoscimento dell'IA generativa
 - **Documentare** i pattern di ricezione nelle comunita online
-- **Informare** le policy delle piattaforme e la regolamentazione
+- **Informare** le policy delle piattaforme è la regolamentazione
 
 ::: {.callout-note}
 ## Da discutere
@@ -308,7 +308,7 @@ Dopo 6 settimane di studio e ricerca, come e cambiata la vostra percezione dell'
 :::
 
 ::: {.notes}
-Momento riflessivo. Il progetto degli studenti non e solo un esercizio didattico ma un contributo reale alla comprensione del fenomeno AI slop. Dare qualche minuto alla classe per riflettere e condividere come e cambiata la loro percezione dell'IA generativa. All'inizio del corso, molti probabilmente vedevano l'IA come uno strumento (utile o minaccioso); ora dovrebbero avere una visione piu sfumata: l'IA come attore nel sistema mediale ibrido, con implicazioni che vanno oltre il singolo contenuto. Questa capacita di analisi critica e il risultato piu importante del corso.
+Momento riflessivo. Il progetto degli studenti non e solo un esercizio didattico ma un contributo reale alla comprensione del fenomeno AI slop. Dare qualche minuto alla classe per riflettere e condividere come e cambiata la loro percezione dell'IA generativa. All'inizio del corso, molti probabilmente vedevano l'IA come uno strumento (utile o minaccioso); ora dovrebbero avere una visione più sfumata: l'IA come attore nel sistema mediale ibrido, con implicazioni che vanno oltre il singolo contenuto. Questa capacita di analisi critica è il risultato più importante del corso.
 :::
 
 ## Consultazioni Finali {background-color="#C5612E"}
@@ -335,7 +335,7 @@ Domande frequenti:
 - Le tabelle di dati contano come contenuto, non come appendice
 
 ::: {.notes}
-Spazio per le consultazioni finali. Rispondere alle domande dei gruppi sulla struttura, i contenuti e i requisiti del paper. Domande frequenti: lunghezza (5.000-6.000 parole e un indicazione, non un vincolo rigido), inclusione del prompt (obbligatoria, anche in appendice se molto lungo), formato delle tabelle (le tabelle di dati fanno parte del corpo del paper). Ricordare la dichiarazione d'uso dell'IA: un breve paragrafo nel metodo che specifichi quali strumenti IA sono stati usati e come.
+Spazio per le consultazioni finali. Rispondere alle domande dei gruppi sulla struttura, i contenuti e i requisiti del paper. Domande frequenti: lunghezza (5.000-6.000 parole è un indicazione, non un vincolo rigido), inclusione del prompt (obbligatoria, anche in appendice se molto lungo), formato delle tabelle (le tabelle di dati fanno parte del corpo del paper). Ricordare la dichiarazione d'uso dell'IA: un breve paragrafo nel metodo che specifichi quali strumenti IA sono stati usati e come.
 :::
 
 ## Valutazione: riepilogo
@@ -368,7 +368,7 @@ Sezione finale prima della chiusura: riepilogo delle competenze sviluppate nel c
 ### Conoscenze
 
 - Framework teorici sull'IA e i media
-- Comprendere la realta sintetica
+- Comprendere la realtà sintetica
 - Conoscere i rischi e le opportunita
 - Orientarsi nella regolamentazione
 :::
@@ -384,16 +384,16 @@ Sezione finale prima della chiusura: riepilogo delle competenze sviluppate nel c
 :::
 
 ::: {.highlight-box}
-**La competenza piu importante:** Saper valutare criticamente cio che vedete, leggete e ascoltate in un mondo di contenuti sintetici.
+**La competenza più importante:** Saper valutare criticamente cio che vedete, leggete e ascoltate in un mondo di contenuti sintetici.
 :::
 
 ::: {.notes}
-Momento di chiusura riflessiva. Le competenze elencate corrispondono ai Descrittori di Dublino del corso: conoscenza e comprensione (framework teorici), applicazione delle conoscenze (uso di strumenti IA, metodologia LLMs-in-the-loop), autonomia di giudizio (valutazione critica), abilita comunicative (scrittura del paper, presentazione). La competenza trasversale piu importante e la capacita di analisi critica: in un mondo dove tutto puo essere generato, la capacita di valutare, verificare e contestualizzare e il bene piu prezioso. Questo corso ha cercato di fornire gli strumenti concettuali e pratici per farlo.
+Momento di chiusura riflessiva. Le competenze elencate corrispondono ai Descrittori di Dublino del corso: conoscenza e comprensione (framework teorici), applicazione delle conoscenze (uso di strumenti IA, metodologia LLMs-in-the-loop), autonomia di giudizio (valutazione critica), abilita comunicative (scrittura del paper, presentazione). La competenza trasversale più importante è la capacita di analisi critica: in un mondo dove tutto può essere generato, la capacita di valutare, verificare e contestualizzare è il bene più prezioso. Questo corso ha cercato di fornire gli strumenti concettuali e pratici per farlo.
 :::
 
 ## Continuare ad imparare
 
-L'IA generativa evolve piu rapidamente di qualsiasi corso possa coprire.
+L'IA generativa evolve più rapidamente di qualsiasi corso possa coprire.
 
 Per restare aggiornati:
 
@@ -403,7 +403,7 @@ Per restare aggiornati:
 - **Applicare** i framework teorici a nuovi fenomeni
 
 ::: {.notes}
-Ultimo messaggio didattico. Il campo dell'IA generativa evolve cosi rapidamente che le conoscenze specifiche (quali modelli esistono, quali piattaforme dominano) diventeranno presto obsolete. Cio che resta sono i framework teorici (sistema mediale ibrido, realta sintetica, paradosso GenAI) e le competenze metodologiche (analisi critica, validazione, scrittura scientifica). Incoraggiare gli studenti a continuare a seguire il campo, applicando gli strumenti concettuali appresi a nuovi fenomeni che non possiamo ancora prevedere.
+Ultimo messaggio didattico. Il campo dell'IA generativa evolve cosi rapidamente che le conoscenze specifiche (quali modelli esistono, quali piattaforme dominano) diventeranno presto obsolete. Cio che resta sono i framework teorici (sistema mediale ibrido, realtà sintetica, paradosso GenAI) e le competenze metodologiche (analisi critica, validazione, scrittura scientifica). Incoraggiare gli studenti a continuare a seguire il campo, applicando gli strumenti concettuali appresi a nuovi fenomeni che non possiamo ancora prevedere.
 :::
 
 ## Grazie! {background-color="#C5612E"}

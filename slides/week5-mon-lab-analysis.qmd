@@ -44,13 +44,13 @@ csl: ../apa.csl
 6. **Lavoro pratico** — codifica dei commenti per gruppi
 
 ::: {.notes}
-Struttura del lab. Oggi passiamo dalla raccolta all'analisi. La sessione di mercoledi' scorso ha prodotto i dataset; oggi applichiamo la prima fase della pipeline LLMs-in-the-loop per classificare i commenti. L'obiettivo e' che ogni gruppo esca con una prima classificazione automatizzata dei propri commenti, pronta per la validazione umana di domani.
+Struttura del lab. Oggi passiamo dalla raccolta all'analisi. La sessione di mercoledì scorso ha prodotto i dataset; oggi applichiamo la prima fase della pipeline LLMs-in-the-loop per classificare i commenti. L'obiettivo è che ogni gruppo esca con una prima classificazione automatizzata dei propri commenti, pronta per la validazione umana di domani.
 :::
 
 ## Stato dei Dataset {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 1: verifica rapida dei dati raccolti mercoledi'. Momento per risolvere problemi residui prima di procedere con l'analisi.
+Sezione 1: verifica rapida dei dati raccolti mercoledì. Momento per risolvere problemi residui prima di procedere con l'analisi.
 :::
 
 ## Verifica dei dati raccolti
@@ -66,7 +66,7 @@ Sezione 1: verifica rapida dei dati raccolti mercoledi'. Momento per risolvere p
 :::
 
 ::: {.column width="50%"}
-### Controllo qualita'
+### Controllo qualità
 
 - Le immagini sono effettivamente AI?
 - I commenti sono leggibili e completi?
@@ -81,16 +81,16 @@ Se il dataset ha meno di 30 post, dedicate i primi 20 minuti a integrare la racc
 :::
 
 ::: {.notes}
-Verifica rapida: ogni gruppo mostra il proprio foglio di calcolo. 5 minuti per verificare che tutti siano pronti. I gruppi con dataset incompleti dedicano i primi 20 minuti a integrare. Problemi comuni emersi mercoledi': commenti non completamente scaricati, duplicati, immagini ambigue. Per le immagini ambigue, suggerire di tenerle ma annotarle come "incerto" nella colonna tipo_immagine. Meglio avere dati in piu' da escludere dopo che dati insufficienti.
+Verifica rapida: ogni gruppo mostra il proprio foglio di calcolo. 5 minuti per verificare che tutti siano pronti. I gruppi con dataset incompleti dedicano i primi 20 minuti a integrare. Problemi comuni emersi mercoledì: commenti non completamente scaricati, duplicati, immagini ambigue. Per le immagini ambigue, suggerire di tenerle ma annotarle come "incerto" nella colonna tipo_immagine. Meglio avere dati in più da escludere dopo che dati insufficienti.
 :::
 
 ## Costruire il Codebook {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 2: definizione delle categorie di analisi. Il codebook e' il documento fondamentale per la classificazione sistematica.
+Sezione 2: definizione delle categorie di analisi. Il codebook è il documento fondamentale per la classificazione sistematica.
 :::
 
-## Cos'e' un codebook
+## Cos'è un codebook
 
 ::: {.highlight-box}
 **Codebook:** documento che definisce le **categorie di analisi**, le **regole di classificazione** e gli **esempi** per ogni categoria. Garantisce che tutti i codificatori (umani e IA) applichino gli stessi criteri [@marino2024].
@@ -105,27 +105,27 @@ Elementi essenziali:
 - **Regole per i casi ambigui** — come decidere nei casi limite
 
 ::: {.notes}
-Il codebook e' lo strumento centrale dell'analisi del contenuto. Nella metodologia LLMs-in-the-loop di Marino & Giglietto (2024), il codebook serve a due scopi: (1) guidare la classificazione umana e (2) fornire le istruzioni per il prompt che sara' dato al LLM. La qualita' del codebook determina la qualita' dell'analisi. Un codebook ambiguo produce classificazioni incoerenti sia negli umani che nell'IA. Enfatizzare che le categorie devono essere mutuamente esclusive e collettivamente esaustive.
+Il codebook è lo strumento centrale dell'analisi del contenuto. Nella metodologia LLMs-in-the-loop di Marino & Giglietto (2024), il codebook serve a due scopi: (1) guidare la classificazione umana e (2) fornire le istruzioni per il prompt che sarà dato al LLM. La qualità del codebook determina la qualità dell'analisi. Un codebook ambiguo produce classificazioni incoerenti sia negli umani che nell'IA. Enfatizzare che le categorie devono essere mutuamente esclusive e collettivamente esaustive.
 :::
 
 ## Categorie per i commenti *AI slop*
 
 | Categoria | Definizione | Esempio |
 |-----------|------------|---------|
-| **Riconoscimento IA** | L'utente identifica l'immagine come generata dall'IA | "Si vede che e' fatta con l'intelligenza artificiale" |
+| **Riconoscimento IA** | L'utente identifica l'immagine come generata dall'IA | "Si vede che è fatta con l'intelligenza artificiale" |
 | **Reazione emotiva** | Risposta emotiva senza riferimento all'IA | "Che bello, mi commuove!" |
 | **Critica** | Commento negativo verso il contenuto o la pagina | "Smettetela di postare questa spazzatura" |
 | **Engagement genuino** | Interazione con il contenuto come se fosse autentico | "Dove si trova questo posto?" |
 | **Altro** | Commenti non classificabili nelle categorie precedenti | Emoji senza testo, tag di amici |
 
 ::: {.notes}
-Proposta di codebook di base per l'analisi dei commenti. I gruppi possono adattare queste categorie alla loro domanda di ricerca specifica: ad esempio, un gruppo che studia il riconoscimento dell'IA potrebbe aggiungere sottocategorie ("riconoscimento esplicito", "sospetto", "richiesta di conferma"). Un gruppo che studia le emozioni potrebbe distinguere tra emozioni positive e negative. Ogni gruppo dovra' definire il proprio codebook specifico entro la fine della sessione. Le categorie proposte qui sono un punto di partenza, non un vincolo.
+Proposta di codebook di base per l'analisi dei commenti. I gruppi possono adattare queste categorie alla loro domanda di ricerca specifica: ad esempio, un gruppo che studia il riconoscimento dell'IA potrebbe aggiungere sottocategorie ("riconoscimento esplicito", "sospetto", "richiesta di conferma"). Un gruppo che studia le emozioni potrebbe distinguere tra emozioni positive e negative. Ogni gruppo dovrà definire il proprio codebook specifico entro la fine della sessione. Le categorie proposte qui sono un punto di partenza, non un vincolo.
 :::
 
 ## Esercizio: definire il codebook di gruppo
 
 ::: {.orange-box}
-### Attivita' (15 minuti)
+### Attività (15 minuti)
 1. Partendo dalle categorie di base, **adattate il codebook** alla vostra domanda di ricerca
 2. Aggiungete **almeno 3 esempi concreti** dal vostro dataset per ogni categoria
 3. Definite le **regole per i casi ambigui** (es. un commento che contiene sia riconoscimento IA che emozione)
@@ -138,18 +138,18 @@ Un buon test: prendete 5 commenti e chiedete a due membri del gruppo di classifi
 :::
 
 ::: {.notes}
-Esercizio pratico fondamentale. Dare 15 minuti per il lavoro in gruppo. Il test di concordanza e' molto importante: se due umani non concordano sulla classificazione di un commento, non possiamo aspettarci che lo faccia l'IA. Il codebook deve essere sufficientemente chiaro da ridurre al minimo l'ambiguita'. Passare tra i gruppi per verificare che le definizioni operative siano precise e che gli esempi siano effettivamente rappresentativi. Il documento del codebook servira' anche come base per la sezione Metodo del paper.
+Esercizio pratico fondamentale. Dare 15 minuti per il lavoro in gruppo. Il test di concordanza è molto importante: se due umani non concordano sulla classificazione di un commento, non possiamo aspettarci che lo faccia l'IA. Il codebook deve essere sufficientemente chiaro da ridurre al minimo l'ambiguità. Passare tra i gruppi per verificare che le definizioni operative siano precise e che gli esempi siano effettivamente rappresentativi. Il documento del codebook servira' anche come base per la sezione Metodo del paper.
 :::
 
 ## Prompt Engineering per la Codifica {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 3: come tradurre il codebook in un prompt efficace per Gemini. Questa e' la fase chiave del processo LLMs-in-the-loop.
+Sezione 3: come tradurre il codebook in un prompt efficace per Gemini. Questa è la fase chiave del processo LLMs-in-the-loop.
 :::
 
 ## Dal codebook al prompt
 
-La qualita' della classificazione automatizzata dipende dalla qualita' del prompt. Seguiamo la struttura di @cosenza2025:
+La qualità della classificazione automatizzata dipende dalla qualità del prompt. Seguiamo la struttura di @cosenza2025:
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -165,7 +165,7 @@ La qualita' della classificazione automatizzata dipende dalla qualita' del promp
 ::: {.column width="50%"}
 ### Principi chiave
 
-- **Esplicitare tutto:** non lasciare spazi di liberta'
+- **Esplicitare tutto:** non lasciare spazi di libertà
 - **Dare esempi:** few-shot per ogni categoria
 - **Definire il formato:** tabella con colonne fisse
 - **Gestire l'incertezza:** categoria "incerto" ammessa
@@ -173,13 +173,13 @@ La qualita' della classificazione automatizzata dipende dalla qualita' del promp
 :::
 
 ::: {.notes}
-Tradurre il codebook in un prompt e' l'operazione chiave della metodologia LLMs-in-the-loop. Cosenza (2025) nella regola "Dirigi" sottolinea che prompt vaghi producono risultati generici. Qui applichiamo lo stesso principio alla ricerca: piu' il prompt e' preciso e strutturato, piu' la classificazione sara' coerente. I principi chiave: (1) includere il codebook completo nel prompt, (2) fornire almeno 2-3 esempi per categoria (few-shot learning), (3) definire esattamente il formato dell'output per facilitare il data entry, (4) prevedere l'incertezza con una categoria dedicata piuttosto che forzare classificazioni dubbie.
+Tradurre il codebook in un prompt è l'operazione chiave della metodologia LLMs-in-the-loop. Cosenza (2025) nella regola "Dirigi" sottolinea che prompt vaghi producono risultati generici. Qui applichiamo lo stesso principio alla ricerca: più il prompt è preciso e strutturato, più la classificazione sarà coerente. I principi chiave: (1) includere il codebook completo nel prompt, (2) fornire almeno 2-3 esempi per categoria (few-shot learning), (3) definire esattamente il formato dell'output per facilitare il data entry, (4) prevedere l'incertezza con una categoria dedicata piuttosto che forzare classificazioni dubbie.
 :::
 
 ## Esempio di prompt per la classificazione
 
 ::: {.highlight-box}
-*"Agisci come un analista di contenuti specializzato in social media. Il tuo compito e' classificare i commenti degli utenti a post contenenti immagini generate dall'IA (AI slop) su Facebook.*
+*"Agisci come un analista di contenuti specializzato in social media. Il tuo compito è classificare i commenti degli utenti a post contenenti immagini generate dall'IA (AI slop) su Facebook.*
 
 *Classifica ogni commento in UNA delle seguenti categorie:*
 
@@ -195,7 +195,7 @@ Tradurre il codebook in un prompt e' l'operazione chiave della metodologia LLMs-
 :::
 
 ::: {.notes}
-Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (analista di contenuti), contesto (AI slop su Facebook), istruzioni precise (le categorie con definizioni), formato output (tabella CSV con colonne specifiche). Il livello di certezza e' importante: permette di identificare i casi su cui la validazione umana dovra' concentrarsi. La motivazione breve aiuta a capire il ragionamento dell'IA e a verificarne la coerenza. I gruppi dovranno sostituire le categorie con quelle del loro codebook specifico.
+Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (analista di contenuti), contesto (AI slop su Facebook), istruzioni precise (le categorie con definizioni), formato output (tabella CSV con colonne specifiche). Il livello di certezza è importante: permette di identificare i casi su cui la validazione umana dovrà concentrarsi. La motivazione breve aiuta a capire il ragionamento dell'IA e a verificarne la coerenza. I gruppi dovranno sostituire le categorie con quelle del loro codebook specifico.
 :::
 
 ## Strategie per prompt coerenti
@@ -204,9 +204,9 @@ Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (ana
 ::: {.column width="50%"}
 ### Il problema della coerenza
 
-- L'IA puo' classificare lo **stesso commento** in modo diverso in sessioni diverse
-- La **lunghezza del prompt** influisce sulla qualita'
-- Il **contesto accumulato** puo' creare drift
+- L'IA può classificare lo **stesso commento** in modo diverso in sessioni diverse
+- La **lunghezza del prompt** influisce sulla qualità
+- Il **contesto accumulato** può creare drift
 :::
 
 ::: {.column width="50%"}
@@ -215,12 +215,12 @@ Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (ana
 - **Prompt fisso:** usare sempre lo stesso testo base
 - **Batch piccoli:** classificare 20-30 commenti alla volta
 - **Nuova sessione:** aprire una chat pulita per ogni batch
-- **Temperatura bassa:** se disponibile, ridurre la variabilita'
+- **Temperatura bassa:** se disponibile, ridurre la variabilità
 :::
 :::
 
 ::: {.notes}
-Problema cruciale: la coerenza della classificazione. A differenza di un codificatore umano che migliora con la pratica, un LLM puo' produrre classificazioni leggermente diverse per lo stesso input in momenti diversi. Strategie pratiche: (1) usare sempre lo stesso prompt, copiandolo da un documento sorgente; (2) dividere il dataset in batch di 20-30 commenti; (3) aprire una nuova chat per ogni batch per evitare l'effetto del contesto accumulato; (4) annotare il batch e la sessione per ogni classificazione. Queste accortezze derivano dall'esperienza pratica con la metodologia LLMs-in-the-loop.
+Problema cruciale: la coerenza della classificazione. A differenza di un codificatore umano che migliora con la pratica, un LLM può produrre classificazioni leggermente diverse per lo stesso input in momenti diversi. Strategie pratiche: (1) usare sempre lo stesso prompt, copiandolo da un documento sorgente; (2) dividere il dataset in batch di 20-30 commenti; (3) aprire una nuova chat per ogni batch per evitare l'effetto del contesto accumulato; (4) annotare il batch e la sessione per ogni classificazione. Queste accortezze derivano dall'esperienza pratica con la metodologia LLMs-in-the-loop.
 :::
 
 ## Gestione del Contesto Lungo {background-color="#C5612E"}
@@ -244,11 +244,11 @@ Cosa significa per il progetto:
 
 ::: {.callout-warning}
 ## Attenzione
-Un contesto piu' lungo non garantisce risultati migliori. Testate con un **campione ridotto** prima di classificare l'intero dataset.
+Un contesto più lungo non garantisce risultati migliori. Testate con un **campione ridotto** prima di classificare l'intero dataset.
 :::
 
 ::: {.notes}
-La finestra di contesto di Gemini e' un vantaggio significativo per l'analisi del contenuto. Con 1 milione di token, possiamo caricare centinaia o migliaia di commenti in una singola sessione, insieme al codebook e agli esempi. Tuttavia, la qualita' della classificazione non scala linearmente con la quantita' di dati: contesti molto lunghi possono portare a un degradamento dell'attenzione del modello sulle istruzioni. La strategia consigliata: iniziare con un campione di 20-30 commenti, verificare la qualita', e poi scalare progressivamente.
+La finestra di contesto di Gemini è un vantaggio significativo per l'analisi del contenuto. Con 1 milione di token, possiamo caricare centinaia o migliaia di commenti in una singola sessione, insieme al codebook e agli esempi. Tuttavia, la qualità della classificazione non scala linearmente con la quantità di dati: contesti molto lunghi possono portare a un degradamento dell'attenzione del modello sulle istruzioni. La strategia consigliata: iniziare con un campione di 20-30 commenti, verificare la qualità, e poi scalare progressivamente.
 :::
 
 ## Workflow pratico con Gemini
@@ -275,7 +275,7 @@ La finestra di contesto di Gemini e' un vantaggio significativo per l'analisi de
 - Verificare che tutti i commenti siano stati classificati
 
 ::: {.notes}
-Workflow operativo passo per passo. Passo 1: la preparazione del file e' cruciale — ogni commento deve avere un ID univoco che corrisponda a quello nel foglio di calcolo. Passo 2: il prompt deve contenere il codebook completo; non fare affidamento sulla memoria della sessione precedente. Passo 3: i primi 10 risultati servono come test di qualita' — se la classificazione non e' soddisfacente, bisogna rivedere il prompt o il codebook prima di procedere. Passo 4: l'output va nella colonna "classificazione_ai" del foglio Commenti. Se Gemini non riesce a classificare tutti i commenti in un unico batch, dividere in batch da 50-100.
+Workflow operativo passo per passo. Passo 1: la preparazione del file è cruciale — ogni commento deve avere un ID univoco che corrisponda a quello nel foglio di calcolo. Passo 2: il prompt deve contenere il codebook completo; non fare affidamento sulla memoria della sessione precedente. Passo 3: i primi 10 risultati servono come test di qualità — se la classificazione non è soddisfacente, bisogna rivedere il prompt o il codebook prima di procedere. Passo 4: l'output va nella colonna "classificazione_ai" del foglio Commenti. Se Gemini non riesce a classificare tutti i commenti in un unico batch, dividere in batch da 50-100.
 :::
 
 ## Lavoro Pratico {background-color="#C5612E"}
@@ -293,13 +293,13 @@ Ogni gruppo: (1) finalizza il proprio **codebook**, (2) costruisce il **prompt**
 
 **Fasi operative:**
 
-1. **0-15 min:** finalizzare il codebook (se non gia' fatto)
+1. **0-15 min:** finalizzare il codebook (se non già fatto)
 2. **15-25 min:** scrivere e testare il prompt con 10 commenti
 3. **25-55 min:** classificare i restanti commenti
 4. **55-60 min:** verificare i risultati e annotare problemi
 
 ::: {.notes}
-Fase pratica del lab. I gruppi lavorano autonomamente. Il docente passa tra i gruppi per: (1) verificare la qualita' dei codebook, (2) suggerire miglioramenti ai prompt, (3) aiutare con problemi tecnici di Gemini. Problemi comuni: commenti troppo corti per essere classificati (emoji, singole parole), commenti in lingue diverse dall'italiano, commenti spam. Suggerire di classificare questi casi come "ALTRO" e annotarli. L'obiettivo di 50 commenti e' un minimo; gruppi con dataset piu' grandi possono classificare di piu'.
+Fase pratica del lab. I gruppi lavorano autonomamente. Il docente passa tra i gruppi per: (1) verificare la qualità dei codebook, (2) suggerire miglioramenti ai prompt, (3) aiutare con problemi tecnici di Gemini. Problemi comuni: commenti troppo corti per essere classificati (emoji, singole parole), commenti in lingue diverse dall'italiano, commenti spam. Suggerire di classificare questi casi come "ALTRO" e annotarli. L'obiettivo di 50 commenti è un minimo; gruppi con dataset più grandi possono classificare di più.
 :::
 
 ## Checklist di fine lab
@@ -310,15 +310,15 @@ Prima di uscire, ogni gruppo verifica:
 - [ ] **Prompt** testato e salvato in un documento condiviso
 - [ ] **Almeno 50 commenti** classificati da Gemini
 - [ ] **Risultati** inseriti nella colonna "classificazione_ai"
-- [ ] **Problemi** annotati (commenti difficili, ambiguita')
+- [ ] **Problemi** annotati (commenti difficili, ambiguità)
 
 ::: {.callout-note}
 ## Per domani
-Domani affronteremo la **validazione umana** delle classificazioni IA. Ogni membro del gruppo dovra' classificare manualmente un campione di commenti per calcolare l'**intercoder reliability**.
+Domani affronteremo la **validazione umana** delle classificazioni IA. Ogni membro del gruppo dovrà classificare manualmente un campione di commenti per calcolare l'**intercoder reliability**.
 :::
 
 ::: {.notes}
-Checklist di verifica. Enfatizzare che il prompt va salvato in un documento condiviso: servira' sia per la sezione Metodo del paper sia per eventuali iterazioni. I commenti classificati come "incerti" dall'IA saranno il primo target della validazione umana di domani. I problemi annotati alimenteranno la discussione sulla validazione. Transizione: domani passiamo dalla classificazione automatizzata alla verifica umana — il cuore della metodologia LLMs-in-the-loop.
+Checklist di verifica. Enfatizzare che il prompt va salvato in un documento condiviso: servirà sia per la sezione Metodo del paper sia per eventuali iterazioni. I commenti classificati come "incerti" dall'IA saranno il primo target della validazione umana di domani. I problemi annotati alimenteranno la discussione sulla validazione. Transizione: domani passiamo dalla classificazione automatizzata alla verifica umana — il cuore della metodologia LLMs-in-the-loop.
 :::
 
 ## Grazie! {background-color="#C5612E"}
@@ -330,7 +330,7 @@ Checklist di verifica. Enfatizzare che il prompt va salvato in un documento cond
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) verificare che i risultati della classificazione IA siano nel foglio condiviso, (2) domani ogni membro del gruppo dovra' classificare manualmente un campione di commenti, (3) portare il codebook stampato o su tablet per la codifica manuale. Domani e' la sessione chiave della metodologia: confronteremo le classificazioni IA con quelle umane.
+Chiusura. Ricordare: (1) verificare che i risultati della classificazione IA siano nel foglio condiviso, (2) domani ogni membro del gruppo dovrà classificare manualmente un campione di commenti, (3) portare il codebook stampato o su tablet per la codifica manuale. Domani è la sessione chiave della metodologia: confronteremo le classificazioni IA con quelle umane.
 :::
 
 ## Riferimenti

@@ -174,7 +174,7 @@ Fabio Giglietto
 <li><strong>Lavoro pratico</strong> — codifica dei commenti per gruppi</li>
 </ol>
 <aside class="notes">
-<p>Struttura del lab. Oggi passiamo dalla raccolta all’analisi. La sessione di mercoledi’ scorso ha prodotto i dataset; oggi applichiamo la prima fase della pipeline LLMs-in-the-loop per classificare i commenti. L’obiettivo e’ che ogni gruppo esca con una prima classificazione automatizzata dei propri commenti, pronta per la validazione umana di domani.</p>
+<p>Struttura del lab. Oggi passiamo dalla raccolta all’analisi. La sessione di mercoledì scorso ha prodotto i dataset; oggi applichiamo la prima fase della pipeline LLMs-in-the-loop per classificare i commenti. L’obiettivo è che ogni gruppo esca con una prima classificazione automatizzata dei propri commenti, pronta per la validazione umana di domani.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -190,7 +190,7 @@ Fabio Giglietto
 <section id="stato-dei-dataset" class="slide level2" data-background-color="#C5612E">
 <h2>Stato dei Dataset</h2>
 <aside class="notes">
-<p>Sezione 1: verifica rapida dei dati raccolti mercoledi’. Momento per risolvere problemi residui prima di procedere con l’analisi.</p>
+<p>Sezione 1: verifica rapida dei dati raccolti mercoledì. Momento per risolvere problemi residui prima di procedere con l’analisi.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -215,7 +215,7 @@ Fabio Giglietto
 <li><strong>Query documentate</strong> con parametri</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="controllo-qualita">Controllo qualita’</h3>
+<h3 id="controllo-qualità">Controllo qualità</h3>
 <ul>
 <li>Le immagini sono effettivamente AI?</li>
 <li>I commenti sono leggibili e completi?</li>
@@ -237,7 +237,7 @@ Fabio Giglietto
 </div>
 </div>
 <aside class="notes">
-<p>Verifica rapida: ogni gruppo mostra il proprio foglio di calcolo. 5 minuti per verificare che tutti siano pronti. I gruppi con dataset incompleti dedicano i primi 20 minuti a integrare. Problemi comuni emersi mercoledi’: commenti non completamente scaricati, duplicati, immagini ambigue. Per le immagini ambigue, suggerire di tenerle ma annotarle come “incerto” nella colonna tipo_immagine. Meglio avere dati in piu’ da escludere dopo che dati insufficienti.</p>
+<p>Verifica rapida: ogni gruppo mostra il proprio foglio di calcolo. 5 minuti per verificare che tutti siano pronti. I gruppi con dataset incompleti dedicano i primi 20 minuti a integrare. Problemi comuni emersi mercoledì: commenti non completamente scaricati, duplicati, immagini ambigue. Per le immagini ambigue, suggerire di tenerle ma annotarle come “incerto” nella colonna tipo_immagine. Meglio avere dati in più da escludere dopo che dati insufficienti.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -253,7 +253,7 @@ Fabio Giglietto
 <section id="costruire-il-codebook" class="slide level2" data-background-color="#C5612E">
 <h2>Costruire il Codebook</h2>
 <aside class="notes">
-<p>Sezione 2: definizione delle categorie di analisi. Il codebook e’ il documento fondamentale per la classificazione sistematica.</p>
+<p>Sezione 2: definizione delle categorie di analisi. Il codebook è il documento fondamentale per la classificazione sistematica.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -266,8 +266,8 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="cose-un-codebook" class="slide level2">
-<h2>Cos’e’ un codebook</h2>
+<section id="cosè-un-codebook" class="slide level2">
+<h2>Cos’è un codebook</h2>
 <div class="highlight-box">
 <p><strong>Codebook:</strong> documento che definisce le <strong>categorie di analisi</strong>, le <strong>regole di classificazione</strong> e gli <strong>esempi</strong> per ogni categoria. Garantisce che tutti i codificatori (umani e IA) applichino gli stessi criteri <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span>.</p>
 </div>
@@ -280,7 +280,7 @@ Fabio Giglietto
 <li><strong>Regole per i casi ambigui</strong> — come decidere nei casi limite</li>
 </ul>
 <aside class="notes">
-<p>Il codebook e’ lo strumento centrale dell’analisi del contenuto. Nella metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024), il codebook serve a due scopi: (1) guidare la classificazione umana e (2) fornire le istruzioni per il prompt che sara’ dato al LLM. La qualita’ del codebook determina la qualita’ dell’analisi. Un codebook ambiguo produce classificazioni incoerenti sia negli umani che nell’IA. Enfatizzare che le categorie devono essere mutuamente esclusive e collettivamente esaustive.</p>
+<p>Il codebook è lo strumento centrale dell’analisi del contenuto. Nella metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024), il codebook serve a due scopi: (1) guidare la classificazione umana e (2) fornire le istruzioni per il prompt che sarà dato al LLM. La qualità del codebook determina la qualità dell’analisi. Un codebook ambiguo produce classificazioni incoerenti sia negli umani che nell’IA. Enfatizzare che le categorie devono essere mutuamente esclusive e collettivamente esaustive.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -312,7 +312,7 @@ Fabio Giglietto
 <tr class="odd">
 <td><strong>Riconoscimento IA</strong></td>
 <td>L’utente identifica l’immagine come generata dall’IA</td>
-<td>“Si vede che e’ fatta con l’intelligenza artificiale”</td>
+<td>“Si vede che è fatta con l’intelligenza artificiale”</td>
 </tr>
 <tr class="even">
 <td><strong>Reazione emotiva</strong></td>
@@ -337,7 +337,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Proposta di codebook di base per l’analisi dei commenti. I gruppi possono adattare queste categorie alla loro domanda di ricerca specifica: ad esempio, un gruppo che studia il riconoscimento dell’IA potrebbe aggiungere sottocategorie (“riconoscimento esplicito”, “sospetto”, “richiesta di conferma”). Un gruppo che studia le emozioni potrebbe distinguere tra emozioni positive e negative. Ogni gruppo dovra’ definire il proprio codebook specifico entro la fine della sessione. Le categorie proposte qui sono un punto di partenza, non un vincolo.</p>
+<p>Proposta di codebook di base per l’analisi dei commenti. I gruppi possono adattare queste categorie alla loro domanda di ricerca specifica: ad esempio, un gruppo che studia il riconoscimento dell’IA potrebbe aggiungere sottocategorie (“riconoscimento esplicito”, “sospetto”, “richiesta di conferma”). Un gruppo che studia le emozioni potrebbe distinguere tra emozioni positive e negative. Ogni gruppo dovrà definire il proprio codebook specifico entro la fine della sessione. Le categorie proposte qui sono un punto di partenza, non un vincolo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -352,8 +352,8 @@ Fabio Giglietto
 </section>
 <section id="esercizio-definire-il-codebook-di-gruppo" class="slide level2">
 <h2>Esercizio: definire il codebook di gruppo</h2>
-<section id="attivita-15-minuti" class="orange-box">
-<h3>Attivita’ (15 minuti)</h3>
+<section id="attività-15-minuti" class="orange-box">
+<h3>Attività (15 minuti)</h3>
 <ol type="1">
 <li>Partendo dalle categorie di base, <strong>adattate il codebook</strong> alla vostra domanda di ricerca</li>
 <li>Aggiungete <strong>almeno 3 esempi concreti</strong> dal vostro dataset per ogni categoria</li>
@@ -375,7 +375,7 @@ Fabio Giglietto
 </div>
 </div>
 <aside class="notes">
-<p>Esercizio pratico fondamentale. Dare 15 minuti per il lavoro in gruppo. Il test di concordanza e’ molto importante: se due umani non concordano sulla classificazione di un commento, non possiamo aspettarci che lo faccia l’IA. Il codebook deve essere sufficientemente chiaro da ridurre al minimo l’ambiguita’. Passare tra i gruppi per verificare che le definizioni operative siano precise e che gli esempi siano effettivamente rappresentativi. Il documento del codebook servira’ anche come base per la sezione Metodo del paper.</p>
+<p>Esercizio pratico fondamentale. Dare 15 minuti per il lavoro in gruppo. Il test di concordanza è molto importante: se due umani non concordano sulla classificazione di un commento, non possiamo aspettarci che lo faccia l’IA. Il codebook deve essere sufficientemente chiaro da ridurre al minimo l’ambiguità. Passare tra i gruppi per verificare che le definizioni operative siano precise e che gli esempi siano effettivamente rappresentativi. Il documento del codebook servira’ anche come base per la sezione Metodo del paper.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -391,7 +391,7 @@ Fabio Giglietto
 <section id="prompt-engineering-per-la-codifica" class="slide level2" data-background-color="#C5612E">
 <h2>Prompt Engineering per la Codifica</h2>
 <aside class="notes">
-<p>Sezione 3: come tradurre il codebook in un prompt efficace per Gemini. Questa e’ la fase chiave del processo LLMs-in-the-loop.</p>
+<p>Sezione 3: come tradurre il codebook in un prompt efficace per Gemini. Questa è la fase chiave del processo LLMs-in-the-loop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -406,7 +406,7 @@ Fabio Giglietto
 </section>
 <section id="dal-codebook-al-prompt" class="slide level2">
 <h2>Dal codebook al prompt</h2>
-<p>La qualita’ della classificazione automatizzata dipende dalla qualita’ del prompt. Seguiamo la struttura di <span class="citation" data-cites="cosenza2025">Cosenza (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>:</p>
+<p>La qualità della classificazione automatizzata dipende dalla qualità del prompt. Seguiamo la struttura di <span class="citation" data-cites="cosenza2025">Cosenza (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="struttura-del-prompt">Struttura del prompt</h3>
@@ -420,14 +420,14 @@ Fabio Giglietto
 </div><div class="column" style="width:50%;">
 <h3 id="principi-chiave">Principi chiave</h3>
 <ul>
-<li><strong>Esplicitare tutto:</strong> non lasciare spazi di liberta’</li>
+<li><strong>Esplicitare tutto:</strong> non lasciare spazi di libertà</li>
 <li><strong>Dare esempi:</strong> few-shot per ogni categoria</li>
 <li><strong>Definire il formato:</strong> tabella con colonne fisse</li>
 <li><strong>Gestire l’incertezza:</strong> categoria “incerto” ammessa</li>
 </ul>
 </div></div>
 <aside class="notes">
-<p>Tradurre il codebook in un prompt e’ l’operazione chiave della metodologia LLMs-in-the-loop. Cosenza (2025) nella regola “Dirigi” sottolinea che prompt vaghi producono risultati generici. Qui applichiamo lo stesso principio alla ricerca: piu’ il prompt e’ preciso e strutturato, piu’ la classificazione sara’ coerente. I principi chiave: (1) includere il codebook completo nel prompt, (2) fornire almeno 2-3 esempi per categoria (few-shot learning), (3) definire esattamente il formato dell’output per facilitare il data entry, (4) prevedere l’incertezza con una categoria dedicata piuttosto che forzare classificazioni dubbie.</p>
+<p>Tradurre il codebook in un prompt è l’operazione chiave della metodologia LLMs-in-the-loop. Cosenza (2025) nella regola “Dirigi” sottolinea che prompt vaghi producono risultati generici. Qui applichiamo lo stesso principio alla ricerca: più il prompt è preciso e strutturato, più la classificazione sarà coerente. I principi chiave: (1) includere il codebook completo nel prompt, (2) fornire almeno 2-3 esempi per categoria (few-shot learning), (3) definire esattamente il formato dell’output per facilitare il data entry, (4) prevedere l’incertezza con una categoria dedicata piuttosto che forzare classificazioni dubbie.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -443,14 +443,14 @@ Fabio Giglietto
 <section id="esempio-di-prompt-per-la-classificazione" class="slide level2">
 <h2>Esempio di prompt per la classificazione</h2>
 <div class="highlight-box">
-<p><em>“Agisci come un analista di contenuti specializzato in social media. Il tuo compito e’ classificare i commenti degli utenti a post contenenti immagini generate dall’IA (AI slop) su Facebook.</em></p>
+<p><em>“Agisci come un analista di contenuti specializzato in social media. Il tuo compito è classificare i commenti degli utenti a post contenenti immagini generate dall’IA (AI slop) su Facebook.</em></p>
 <p><em>Classifica ogni commento in UNA delle seguenti categorie:</em></p>
 <p><em>1. RICONOSCIMENTO_IA — l’utente identifica l’immagine come generata dall’IA</em> <em>2. REAZIONE_EMOTIVA — risposta emotiva senza menzionare l’IA</em> <em>3. CRITICA — commento negativo verso il contenuto</em> <em>4. ENGAGEMENT_GENUINO — interazione come se il contenuto fosse autentico</em> <em>5. ALTRO — non classificabile</em></p>
 <p><em>Per ogni commento, fornisci: ID, CATEGORIA, LIVELLO_CERTEZZA (alto/medio/basso).</em></p>
 <p><em>Formato output: tabella CSV con colonne: id, categoria, certezza, motivazione_breve”</em></p>
 </div>
 <aside class="notes">
-<p>Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (analista di contenuti), contesto (AI slop su Facebook), istruzioni precise (le categorie con definizioni), formato output (tabella CSV con colonne specifiche). Il livello di certezza e’ importante: permette di identificare i casi su cui la validazione umana dovra’ concentrarsi. La motivazione breve aiuta a capire il ragionamento dell’IA e a verificarne la coerenza. I gruppi dovranno sostituire le categorie con quelle del loro codebook specifico.</p>
+<p>Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (analista di contenuti), contesto (AI slop su Facebook), istruzioni precise (le categorie con definizioni), formato output (tabella CSV con colonne specifiche). Il livello di certezza è importante: permette di identificare i casi su cui la validazione umana dovrà concentrarsi. La motivazione breve aiuta a capire il ragionamento dell’IA e a verificarne la coerenza. I gruppi dovranno sostituire le categorie con quelle del loro codebook specifico.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -469,9 +469,9 @@ Fabio Giglietto
 <div class="column" style="width:50%;">
 <h3 id="il-problema-della-coerenza">Il problema della coerenza</h3>
 <ul>
-<li>L’IA puo’ classificare lo <strong>stesso commento</strong> in modo diverso in sessioni diverse</li>
-<li>La <strong>lunghezza del prompt</strong> influisce sulla qualita’</li>
-<li>Il <strong>contesto accumulato</strong> puo’ creare drift</li>
+<li>L’IA può classificare lo <strong>stesso commento</strong> in modo diverso in sessioni diverse</li>
+<li>La <strong>lunghezza del prompt</strong> influisce sulla qualità</li>
+<li>Il <strong>contesto accumulato</strong> può creare drift</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="le-soluzioni">Le soluzioni</h3>
@@ -479,11 +479,11 @@ Fabio Giglietto
 <li><strong>Prompt fisso:</strong> usare sempre lo stesso testo base</li>
 <li><strong>Batch piccoli:</strong> classificare 20-30 commenti alla volta</li>
 <li><strong>Nuova sessione:</strong> aprire una chat pulita per ogni batch</li>
-<li><strong>Temperatura bassa:</strong> se disponibile, ridurre la variabilita’</li>
+<li><strong>Temperatura bassa:</strong> se disponibile, ridurre la variabilità</li>
 </ul>
 </div></div>
 <aside class="notes">
-<p>Problema cruciale: la coerenza della classificazione. A differenza di un codificatore umano che migliora con la pratica, un LLM puo’ produrre classificazioni leggermente diverse per lo stesso input in momenti diversi. Strategie pratiche: (1) usare sempre lo stesso prompt, copiandolo da un documento sorgente; (2) dividere il dataset in batch di 20-30 commenti; (3) aprire una nuova chat per ogni batch per evitare l’effetto del contesto accumulato; (4) annotare il batch e la sessione per ogni classificazione. Queste accortezze derivano dall’esperienza pratica con la metodologia LLMs-in-the-loop.</p>
+<p>Problema cruciale: la coerenza della classificazione. A differenza di un codificatore umano che migliora con la pratica, un LLM può produrre classificazioni leggermente diverse per lo stesso input in momenti diversi. Strategie pratiche: (1) usare sempre lo stesso prompt, copiandolo da un documento sorgente; (2) dividere il dataset in batch di 20-30 commenti; (3) aprire una nuova chat per ogni batch per evitare l’effetto del contesto accumulato; (4) annotare il batch e la sessione per ogni classificazione. Queste accortezze derivano dall’esperienza pratica con la metodologia LLMs-in-the-loop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -533,12 +533,12 @@ Fabio Giglietto
 <p><strong>Attenzione</strong></p>
 </div>
 <div class="callout-content">
-<p>Un contesto piu’ lungo non garantisce risultati migliori. Testate con un <strong>campione ridotto</strong> prima di classificare l’intero dataset.</p>
+<p>Un contesto più lungo non garantisce risultati migliori. Testate con un <strong>campione ridotto</strong> prima di classificare l’intero dataset.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>La finestra di contesto di Gemini e’ un vantaggio significativo per l’analisi del contenuto. Con 1 milione di token, possiamo caricare centinaia o migliaia di commenti in una singola sessione, insieme al codebook e agli esempi. Tuttavia, la qualita’ della classificazione non scala linearmente con la quantita’ di dati: contesti molto lunghi possono portare a un degradamento dell’attenzione del modello sulle istruzioni. La strategia consigliata: iniziare con un campione di 20-30 commenti, verificare la qualita’, e poi scalare progressivamente.</p>
+<p>La finestra di contesto di Gemini è un vantaggio significativo per l’analisi del contenuto. Con 1 milione di token, possiamo caricare centinaia o migliaia di commenti in una singola sessione, insieme al codebook e agli esempi. Tuttavia, la qualità della classificazione non scala linearmente con la quantità di dati: contesti molto lunghi possono portare a un degradamento dell’attenzione del modello sulle istruzioni. La strategia consigliata: iniziare con un campione di 20-30 commenti, verificare la qualità, e poi scalare progressivamente.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -575,7 +575,7 @@ Fabio Giglietto
 <li>Verificare che tutti i commenti siano stati classificati</li>
 </ul>
 <aside class="notes">
-<p>Workflow operativo passo per passo. Passo 1: la preparazione del file e’ cruciale — ogni commento deve avere un ID univoco che corrisponda a quello nel foglio di calcolo. Passo 2: il prompt deve contenere il codebook completo; non fare affidamento sulla memoria della sessione precedente. Passo 3: i primi 10 risultati servono come test di qualita’ — se la classificazione non e’ soddisfacente, bisogna rivedere il prompt o il codebook prima di procedere. Passo 4: l’output va nella colonna “classificazione_ai” del foglio Commenti. Se Gemini non riesce a classificare tutti i commenti in un unico batch, dividere in batch da 50-100.</p>
+<p>Workflow operativo passo per passo. Passo 1: la preparazione del file è cruciale — ogni commento deve avere un ID univoco che corrisponda a quello nel foglio di calcolo. Passo 2: il prompt deve contenere il codebook completo; non fare affidamento sulla memoria della sessione precedente. Passo 3: i primi 10 risultati servono come test di qualità — se la classificazione non è soddisfacente, bisogna rivedere il prompt o il codebook prima di procedere. Passo 4: l’output va nella colonna “classificazione_ai” del foglio Commenti. Se Gemini non riesce a classificare tutti i commenti in un unico batch, dividere in batch da 50-100.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -612,13 +612,13 @@ Fabio Giglietto
 </section>
 <p><strong>Fasi operative:</strong></p>
 <ol type="1">
-<li><strong>0-15 min:</strong> finalizzare il codebook (se non gia’ fatto)</li>
+<li><strong>0-15 min:</strong> finalizzare il codebook (se non già fatto)</li>
 <li><strong>15-25 min:</strong> scrivere e testare il prompt con 10 commenti</li>
 <li><strong>25-55 min:</strong> classificare i restanti commenti</li>
 <li><strong>55-60 min:</strong> verificare i risultati e annotare problemi</li>
 </ol>
 <aside class="notes">
-<p>Fase pratica del lab. I gruppi lavorano autonomamente. Il docente passa tra i gruppi per: (1) verificare la qualita’ dei codebook, (2) suggerire miglioramenti ai prompt, (3) aiutare con problemi tecnici di Gemini. Problemi comuni: commenti troppo corti per essere classificati (emoji, singole parole), commenti in lingue diverse dall’italiano, commenti spam. Suggerire di classificare questi casi come “ALTRO” e annotarli. L’obiettivo di 50 commenti e’ un minimo; gruppi con dataset piu’ grandi possono classificare di piu’.</p>
+<p>Fase pratica del lab. I gruppi lavorano autonomamente. Il docente passa tra i gruppi per: (1) verificare la qualità dei codebook, (2) suggerire miglioramenti ai prompt, (3) aiutare con problemi tecnici di Gemini. Problemi comuni: commenti troppo corti per essere classificati (emoji, singole parole), commenti in lingue diverse dall’italiano, commenti spam. Suggerire di classificare questi casi come “ALTRO” e annotarli. L’obiettivo di 50 commenti è un minimo; gruppi con dataset più grandi possono classificare di più.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -639,7 +639,7 @@ Fabio Giglietto
 <li><label><input type="checkbox"><strong>Prompt</strong> testato e salvato in un documento condiviso</label></li>
 <li><label><input type="checkbox"><strong>Almeno 50 commenti</strong> classificati da Gemini</label></li>
 <li><label><input type="checkbox"><strong>Risultati</strong> inseriti nella colonna “classificazione_ai”</label></li>
-<li><label><input type="checkbox"><strong>Problemi</strong> annotati (commenti difficili, ambiguita’)</label></li>
+<li><label><input type="checkbox"><strong>Problemi</strong> annotati (commenti difficili, ambiguità)</label></li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -650,12 +650,12 @@ Fabio Giglietto
 <p><strong>Per domani</strong></p>
 </div>
 <div class="callout-content">
-<p>Domani affronteremo la <strong>validazione umana</strong> delle classificazioni IA. Ogni membro del gruppo dovra’ classificare manualmente un campione di commenti per calcolare l’<strong>intercoder reliability</strong>.</p>
+<p>Domani affronteremo la <strong>validazione umana</strong> delle classificazioni IA. Ogni membro del gruppo dovrà classificare manualmente un campione di commenti per calcolare l’<strong>intercoder reliability</strong>.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Checklist di verifica. Enfatizzare che il prompt va salvato in un documento condiviso: servira’ sia per la sezione Metodo del paper sia per eventuali iterazioni. I commenti classificati come “incerti” dall’IA saranno il primo target della validazione umana di domani. I problemi annotati alimenteranno la discussione sulla validazione. Transizione: domani passiamo dalla classificazione automatizzata alla verifica umana — il cuore della metodologia LLMs-in-the-loop.</p>
+<p>Checklist di verifica. Enfatizzare che il prompt va salvato in un documento condiviso: servirà sia per la sezione Metodo del paper sia per eventuali iterazioni. I commenti classificati come “incerti” dall’IA saranno il primo target della validazione umana di domani. I problemi annotati alimenteranno la discussione sulla validazione. Transizione: domani passiamo dalla classificazione automatizzata alla verifica umana — il cuore della metodologia LLMs-in-the-loop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -674,7 +674,7 @@ Fabio Giglietto
 <p>📧 fabio.giglietto@uniurb.it</p>
 <p>🌐 blended.uniurb.it</p>
 <aside class="notes">
-<p>Chiusura. Ricordare: (1) verificare che i risultati della classificazione IA siano nel foglio condiviso, (2) domani ogni membro del gruppo dovra’ classificare manualmente un campione di commenti, (3) portare il codebook stampato o su tablet per la codifica manuale. Domani e’ la sessione chiave della metodologia: confronteremo le classificazioni IA con quelle umane.</p>
+<p>Chiusura. Ricordare: (1) verificare che i risultati della classificazione IA siano nel foglio condiviso, (2) domani ogni membro del gruppo dovrà classificare manualmente un campione di commenti, (3) portare il codebook stampato o su tablet per la codifica manuale. Domani è la sessione chiave della metodologia: confronteremo le classificazioni IA con quelle umane.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
