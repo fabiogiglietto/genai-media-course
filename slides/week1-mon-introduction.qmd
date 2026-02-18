@@ -85,7 +85,7 @@ Panoramica della struttura. Le prime tre settimane includono lezioni frontali, u
 |-----------|-------|
 | **1** | Fondamenti dell'IA generativa |
 | **2** | Produzione, disinformazione e regolamentazione |
-| **3** | Seminario ospite: IA e comunicazione politica |
+| **3** | Seminario ospite: IA e comunicazione politica (Bruna Paroni) |
 | **4** | Lancio progetto e raccolta dati |
 | **5** | Analisi assistita dall'IA e validazione |
 | **6** | Scrittura e sintesi del corso |
