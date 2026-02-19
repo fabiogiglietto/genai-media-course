@@ -84,7 +84,7 @@ Sezione 1: introduzione a Google Gemini. Questo è lo strumento principale del c
 - Gestisce testo, immagini, audio, video
 - Finestra di contesto fino a **1 milione di token**
 - Integrato in **Google Workspace**
-- Generazione immagini con **Imagen**
+- Generazione immagini con **Nano Banana**
 :::
 
 ::: {.column width="50%"}

@@ -216,7 +216,7 @@ Definizione chiave del corso. L'IA generativa si distingue dall'IA tradizionale 
 | **Token** | Unità minima di testo elaborata dal modello |
 
 ::: {.notes}
-Terminologia essenziale. I LLM (GPT, Gemini, Claude) predicono la parola successiva in una sequenza. I modelli di diffusione (Stable Diffusion, DALL-E, Imagen) generano immagini rimuovendo progressivamente il rumore. Il concetto di contesto (context window) è fondamentale: definisce quanta informazione il modello può "tenere a mente" durante una conversazione. Gemini 3 arriva a 1 milione di token (~750.000 parole), il che consente di analizzare interi dataset in una singola sessione — una capacità che useremo nei laboratori. Il concetto di *hallucination* è cruciale: i modelli possono generare informazioni convincenti ma completamente inventate. Questo tema tornerà in tutto il corso.
+Terminologia essenziale. I LLM (GPT, Gemini, Claude) predicono la parola successiva in una sequenza. I modelli di diffusione (Stable Diffusion, DALL-E) e i modelli nativi (Nano Banana di Google) generano immagini. Il concetto di contesto (context window) è fondamentale: definisce quanta informazione il modello può "tenere a mente" durante una conversazione. Gemini 3 arriva a 1 milione di token (~750.000 parole), il che consente di analizzare interi dataset in una singola sessione — una capacità che useremo nei laboratori. Il concetto di *hallucination* è cruciale: i modelli possono generare informazioni convincenti ma completamente inventate. Questo tema tornerà in tutto il corso.
 :::
 
 ## Come funziona un LLM (semplificato)
@@ -253,7 +253,7 @@ Spiegazione semplificata del funzionamento. Non è necessario entrare nei dettag
 ### Immagini
 - Foto realistiche, illustrazioni, arte
 - Editing e manipolazione
-- **Strumenti:** DALL-E, Midjourney, Imagen
+- **Strumenti:** DALL-E, Midjourney, Nano Banana
 
 ### Video
 - Scene generate da testo
