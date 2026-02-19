@@ -581,6 +581,11 @@ section[data-background-color="#C5612E"] .uni-header {
   max-width: 200px;
 }
 
+// Invert logo to white on dark background slides
+.reveal.has-dark-background .slide-logo {
+  filter: brightness(0) invert(1);
+}
+
 // ============================================
 // ACCESSIBILITY
 // ============================================
