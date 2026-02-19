@@ -98,9 +98,9 @@ Panoramica delle 6 settimane. Le prime 2 settimane sono teoriche con un workshop
 
 | Data | Ospite | Tema |
 |------|--------|------|
-| **3 Marzo** | **Vincenzo Cosenza** | *Intelligenza Aumentata* — 10 regole ed esercizi pratici per collaborare con l'IA in modo sistematico |
-| **9–11 Marzo** | **Bruna Paroni** | *IA Generativa e Comunicazione Politica* — Seminario di 6 ore: framework teorici, metodologia LLMs-in-the-loop, tecniche di detection |
-| **16 Marzo** | **Massimo Terenzi** | *Dall'AI Slop alla Viralità Strategica* — Immagini sintetiche e engagement bait nelle comunità Facebook italiane |
+| **3 Marzo** | **Vincenzo Cosenza** | *Intelligenza Aumentata* — Esercizi pratici per collaborare con l'IA |
+| **9–11 Marzo** | **Bruna Paroni** | *IA Generativa e Comunicazione Politica* — Seminario (6 ore) |
+| **16 Marzo** | **Massimo Terenzi** | *Dall'AI Slop alla Viralità Strategica* — Ricerca su Facebook Italia |
 
 ::: {.notes}
 Tre interventi ospiti arricchiscono il corso. Vincenzo Cosenza (martedì della settimana 2) presenterà il suo libro "Esercizi di Intelligenza Aumentata" con un approccio pratico alla collaborazione con l'IA. Bruna Paroni (intera settimana 3, 6 ore totali) terrà un seminario sulla comunicazione politica nell'era dell'IA generativa, con un caso studio brasiliano e un approfondimento sulla metodologia LLMs-in-the-loop che gli studenti useranno nel progetto di gruppo. Massimo Terenzi (lunedì della settimana 4) presenterà la sua ricerca sull'AI Slop nelle comunità Facebook italiane — tema direttamente collegato al progetto di gruppo che parte nella stessa settimana.
@@ -121,16 +121,19 @@ Spiegare il sistema di valutazione nel dettaglio. Il progetto di gruppo è il cu
 
 ## Rilevazione delle presenze
 
-1. Durante la lezione sarà mostrato un **codice di rilevamento** che lo studente dovrà inserire entro la fine della lezione nella sua App per risultare presente
-2. Verranno considerate valide solo le presenze **geolocalizzate**
+1. Aprire l'app **UniUrb Stud** (o [uniurb-pwa.app.cineca.it](https://uniurb-pwa.app.cineca.it))
+2. Cliccare su **Rilevazione Frequenze** → **Marcatura**
+3. Autorizzare la **geolocalizzazione** (la prima volta)
+4. Inserire il **codice** visualizzato nel footer di queste slide
+5. Verificare nello **Storico presenze**
 
 ::: {.callout-warning}
 ## Attenzione
-Assicuratevi di avere l'app Uniurb installata e di abilitare la geolocalizzazione.
+Il codice appare automaticamente **in basso** su queste slide durante la lezione. Si ricorda che una falsa attestazione di presenza potrà essere soggetta a provvedimenti.
 :::
 
 ::: {.notes}
-Sistema di rilevazione presenze tramite app universitaria. Lo studente deve inserire il codice mostrato durante la lezione. La geolocalizzazione è obbligatoria: non è possibile registrare la presenza da remoto. Verificare che tutti abbiano l'app installata e funzionante.
+Sistema di rilevazione presenze tramite l'app Cineca (Modulo Rileva Frequenze). L'assistente avvia la sessione di rilevamento, che genera un codice alfanumerico di 5 caratteri. Il codice viene inserito in un foglio Google condiviso e appare automaticamente nel footer di tutte le slide proiettate. La geolocalizzazione è obbligatoria: non è possibile registrare la presenza da remoto. La rilevazione termina automaticamente alla fine del periodo della lezione, oppure può essere chiusa manualmente dall'assistente.
 :::
 
 ## Policy per giustificare le assenze

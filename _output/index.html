@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Generativa e Media — A.A. 2025/2026</title>
+  <style>
+    :root {
+      --primary: #E06029;
+      --dark: #C5612E;
+      --blue: #294973;
+      --bg: #F2F2F2;
+      --light: #F2A7A0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--blue);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+    header p { opacity: 0.85; font-size: 1.1rem; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .week {
+      margin-bottom: 2rem;
+    }
+    .week-header {
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px 8px 0 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .session-list {
+      background: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .session {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.15s;
+    }
+    .session:last-child { border-bottom: none; }
+    .session:hover { background: #FFF5F0; }
+    .session-date {
+      min-width: 80px;
+      font-size: 0.85rem;
+      color: #888;
+      font-weight: 500;
+    }
+    .session-title { flex: 1; font-weight: 500; }
+    .session-type {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      background: #f0f0f0;
+      color: #666;
+      margin-left: 0.8rem;
+      white-space: nowrap;
+    }
+    .session-type.lecture { background: var(--blue); color: white; }
+    .session-type.workshop { background: var(--primary); color: white; }
+    .session-type.lab { background: #4a9; color: white; }
+    .session-type.consultation { background: #888; color: white; }
+    .session-type.closing { background: var(--dark); color: white; }
+    .arrow { color: var(--primary); margin-left: 0.5rem; font-size: 1.2rem; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #888;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--primary); }
+    .guest-note {
+      padding: 0.7rem 1.2rem;
+      color: #888;
+      font-style: italic;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>IA Generativa e Media</h1>
+    <p>Prof. Fabio Giglietto · DISCUI · Università degli Studi di Urbino Carlo Bo · A.A. 2025/2026</p>
+  </header>
+
+  <div class="container">
+
+    <div class="week">
+      <div class="week-header">Settimana 1 — Fondamenti dell'IA Generativa (23–25 Feb)</div>
+      <div class="session-list">
+        <a class="session" href="slides/week1-mon-introduction.html">
+          <span class="session-date">Lun 23</span>
+          <span class="session-title">Introduzione all'IA Generativa</span>
+          <span class="session-type lecture">Lezione</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/week1-tue-hybrid-media.html">
+          <span class="session-date">Mar 24</span>
+          <span class="session-title">Il Sistema Mediale Ibrido nell'Era dell'IA</span>
+          <span class="session-type lecture">Lezione</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/week1-wed-workshop-gemini.html">
+          <span class="session-date">Mer 25</span>
+          <span class="session-title">Workshop: Google Gemini & NotebookLM</span>
+          <span class="session-type workshop">Workshop</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Settimana 2 — Produzione, Disinformazione e Regolamentazione (2–4 Mar)</div>
+      <div class="session-list">
+        <a class="session" href="slides/week2-mon-content-production.html">
+          <span class="session-date">Lun 2</span>
+          <span class="session-title">Produzione di Contenuti con GenAI</span>
+          <span class="session-type lecture">Lezione</span>
+          <span class="arrow">→</span>
+        </a>
+        <div class="guest-note">Mar 3 — Guest: Vincenzo Cosenza, "Intelligenza Aumentata"</div>
+        <a class="session" href="slides/week2-wed-deepfakes-regulation.html">
+          <span class="session-date">Mer 4</span>
+          <span class="session-title">Deepfake, Policy e Regolamentazione</span>
+          <span class="session-type lecture">Lezione</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Settimana 3 — Seminario Ospite (9–11 Mar)</div>
+      <div class="session-list">
+        <div class="guest-note">Lun 9 – Mer 11 — Guest Seminar: Bruna Paroni, "GenAI e Comunicazione Politica"</div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Settimana 4 — Lancio Progetto e Raccolta Dati (16–18 Mar)</div>
+      <div class="session-list">
+        <div class="guest-note">Lun 16 — Guest: Massimo Terenzi, "AI Slop e Viralità Sintetica"</div>
+        <a class="session" href="slides/week4-tue-project-launch.html">
+          <span class="session-date">Mar 17</span>
+          <span class="session-title">Lancio Progetto: Analisi Ricezione AI Slop</span>
+          <span class="session-type workshop">Workshop</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/week4-wed-lab-collecting.html">
+          <span class="session-date">Mer 18</span>
+          <span class="session-title">Lab: Raccolta Post e Commenti</span>
+          <span class="session-type lab">Lab</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Settimana 5 — Analisi e Validazione (23–25 Mar)</div>
+      <div class="session-list">
+        <a class="session" href="slides/week5-mon-lab-analysis.html">
+          <span class="session-date">Lun 23</span>
+          <span class="session-title">Lab: Analisi Contenuti con IA</span>
+          <span class="session-type lab">Lab</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/week5-tue-validation.html">
+          <span class="session-date">Mar 24</span>
+          <span class="session-title">Validazione: Umano vs Macchina</span>
+          <span class="session-type workshop">Workshop</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/week5-wed-consultation.html">
+          <span class="session-date">Mer 25</span>
+          <span class="session-title">Consultazione Gruppi e Revisione</span>
+          <span class="session-type consultation">Consultazione</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Settimana 6 — Scrittura e Sintesi (30 Mar – 1 Apr)</div>
+      <div class="session-list">
+        <a class="session" href="slides/week6-mon-writing-workshop.html">
+          <span class="session-date">Lun 30</span>
+          <span class="session-title">Workshop di Scrittura</span>
+          <span class="session-type workshop">Workshop</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/week6-tue-paper-drafting.html">
+          <span class="session-date">Mar 31</span>
+          <span class="session-title">Lavoro di Gruppo: Stesura Paper</span>
+          <span class="session-type lab">Lab</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/week6-wed-synthesis.html">
+          <span class="session-date">Mer 1</span>
+          <span class="session-title">Sintesi del Corso e Consultazioni Finali</span>
+          <span class="session-type closing">Chiusura</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>📧 <a href="mailto:fabio.giglietto@uniurb.it">fabio.giglietto@uniurb.it</a> · 🌐 <a href="https://blended.uniurb.it">blended.uniurb.it</a></p>
+    <p style="margin-top: 0.5rem">Le slides sono realizzate con <a href="https://quarto.org/docs/presentations/revealjs/">Quarto reveal.js</a></p>
+  </footer>
+</body>
+</html>

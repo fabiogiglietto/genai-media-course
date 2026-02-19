@@ -568,18 +568,8 @@
     </script>
     <style>
       .attendance-code {
-        position: fixed;
-        bottom: 8px;
-        right: 16px;
-        font-size: 0.7em;
         font-weight: bold;
-        color: #C5612E;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 4px 12px;
-        border-radius: 4px;
-        z-index: 100;
         font-family: monospace;
-        display: none;
       }
       @media print {
         .attendance-code { display: none !important; }
@@ -589,14 +579,13 @@
       (function() {
         const SHEET_URL = 'https://docs.google.com/spreadsheets/d/16esB9eA2yhu4AVwvLbjZJq-DClcWVg23aUtwEyax0fA/gviz/tq?tqx=out:csv&range=A1';
         const POLL_INTERVAL = 15000;
+        const FOOTER_BASE = 'IA Generativa e Media \u00b7 A.A. 2025/2026';
 
-        var el = document.createElement('div');
-        el.className = 'attendance-code';
-        var revealEl = document.querySelector('.reveal');
-        if (revealEl) {
-          revealEl.appendChild(el);
-        } else {
-          document.body.appendChild(el);
+        var codeSpan = document.createElement('span');
+        codeSpan.className = 'attendance-code';
+
+        function getFooterEl() {
+          return document.querySelector('.footer.footer-default p');
         }
 
         var timerId = null;
@@ -606,11 +595,14 @@
             .then(function(r) { return r.text(); })
             .then(function(csv) {
               var code = csv.trim().replace(/^"|"$/g, '').trim();
+              var footerP = getFooterEl();
+              if (!footerP) return;
               if (code) {
-                el.textContent = 'Codice presenza: ' + code;
-                el.style.display = 'block';
+                codeSpan.textContent = code;
+                footerP.textContent = FOOTER_BASE + ' \u00b7 ';
+                footerP.appendChild(codeSpan);
               } else {
-                el.style.display = 'none';
+                footerP.textContent = FOOTER_BASE;
               }
             })
             .catch(function() {
