@@ -828,6 +828,83 @@ Vaccari, C., &amp; Chadwick, A. (2020). Deepfakes and Disinformation: Exploring 
         ]
       });
     </script>
+    <style>
+      .attendance-code {
+        position: fixed;
+        bottom: 8px;
+        right: 16px;
+        font-size: 0.7em;
+        font-weight: bold;
+        color: #C5612E;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 4px 12px;
+        border-radius: 4px;
+        z-index: 100;
+        font-family: monospace;
+        display: none;
+      }
+      @media print {
+        .attendance-code { display: none !important; }
+      }
+    </style>
+    <script>
+      (function() {
+        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/16esB9eA2yhu4AVwvLbjZJq-DClcWVg23aUtwEyax0fA/gviz/tq?tqx=out:csv&range=A1';
+        const POLL_INTERVAL = 15000;
+
+        var el = document.createElement('div');
+        el.className = 'attendance-code';
+        var revealEl = document.querySelector('.reveal');
+        if (revealEl) {
+          revealEl.appendChild(el);
+        } else {
+          document.body.appendChild(el);
+        }
+
+        var timerId = null;
+
+        function poll() {
+          fetch(SHEET_URL + '&_=' + Date.now())
+            .then(function(r) { return r.text(); })
+            .then(function(csv) {
+              var code = csv.trim().replace(/^"|"$/g, '').trim();
+              if (code) {
+                el.textContent = 'Codice presenza: ' + code;
+                el.style.display = 'block';
+              } else {
+                el.style.display = 'none';
+              }
+            })
+            .catch(function() {
+              // silently ignore — keep last known state
+            });
+        }
+
+        function startPolling() {
+          if (!timerId) {
+            poll();
+            timerId = setInterval(poll, POLL_INTERVAL);
+          }
+        }
+
+        function stopPolling() {
+          if (timerId) {
+            clearInterval(timerId);
+            timerId = null;
+          }
+        }
+
+        document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+            stopPolling();
+          } else {
+            startPolling();
+          }
+        });
+
+        startPolling();
+      })();
+    </script>
     
     <script>
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.

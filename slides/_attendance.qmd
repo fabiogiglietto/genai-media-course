@@ -1,0 +1,20 @@
+## Rilevazione presenze {background-color="#C5612E"}
+
+## Come registrare la presenza
+
+1. Aprire l'app **UniUrb Stud** (o [uniurb-pwa.app.cineca.it](https://uniurb-pwa.app.cineca.it))
+2. Cliccare su **Rilevazione Frequenze** → **Marcatura**
+3. Autorizzare la geolocalizzazione (la prima volta)
+4. Inserire il **codice** visualizzato in basso a destra su queste slide
+5. Verificare nello **Storico presenze**
+
+::: {.callout-warning}
+Si ricorda che una falsa attestazione di presenza potrà essere soggetta a provvedimenti.
+:::
+
+::: {.notes}
+Il codice di rilevamento viene inserito dall'assistente nel foglio Google condiviso
+e appare automaticamente in basso a destra su tutte le slide.
+La rilevazione termina in automatico alla fine del periodo della lezione,
+oppure può essere chiusa manualmente dall'assistente.
+:::

@@ -34,6 +34,7 @@ format:
     preview-links: auto
     pdf-separate-fragments: true
     pdf-max-pages-per-slide: 1
+    include-after-body: _attendance-footer.html
 
 execute:
   echo: true
