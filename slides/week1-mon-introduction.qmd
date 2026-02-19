@@ -209,9 +209,9 @@ Definizione chiave del corso. L'IA generativa si distingue dall'IA tradizionale 
 | Termine | Definizione |
 |---------|-------------|
 | **LLM** (*Large Language Model*) | Modello addestrato su miliardi di testi per generare linguaggio |
-| **Modello di diffusione** | Genera immagini partendo da rumore casuale |
+| **Diffusion model** | Genera immagini partendo da rumore casuale |
 | **Prompt** | Istruzione testuale fornita al modello |
-| **Contesto** (*Context window*) | Quantità massima di testo che il modello può considerare in una conversazione |
+| **Context window** | Quantità massima di testo che il modello può considerare in una conversazione |
 | **Hallucination** | Contenuto generato plausibile ma falso |
 | **Token** | Unità minima di testo elaborata dal modello |
 
