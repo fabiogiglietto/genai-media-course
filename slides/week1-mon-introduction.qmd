@@ -211,11 +211,12 @@ Definizione chiave del corso. L'IA generativa si distingue dall'IA tradizionale 
 | **LLM** (*Large Language Model*) | Modello addestrato su miliardi di testi per generare linguaggio |
 | **Modello di diffusione** | Genera immagini partendo da rumore casuale |
 | **Prompt** | Istruzione testuale fornita al modello |
+| **Contesto** (*Context window*) | Quantità massima di testo che il modello può considerare in una conversazione |
 | **Hallucination** | Contenuto generato plausibile ma falso |
 | **Token** | Unità minima di testo elaborata dal modello |
 
 ::: {.notes}
-Terminologia essenziale. I LLM (GPT, Gemini, Claude) predicono la parola successiva in una sequenza. I modelli di diffusione (Stable Diffusion, DALL-E, Imagen) generano immagini rimuovendo progressivamente il rumore. Il concetto di *hallucination* è cruciale: i modelli possono generare informazioni convincenti ma completamente inventate. Questo tema tornerà in tutto il corso.
+Terminologia essenziale. I LLM (GPT, Gemini, Claude) predicono la parola successiva in una sequenza. I modelli di diffusione (Stable Diffusion, DALL-E, Imagen) generano immagini rimuovendo progressivamente il rumore. Il concetto di contesto (context window) è fondamentale: definisce quanta informazione il modello può "tenere a mente" durante una conversazione. Gemini 3 arriva a 1 milione di token (~750.000 parole), il che consente di analizzare interi dataset in una singola sessione — una capacità che useremo nei laboratori. Il concetto di *hallucination* è cruciale: i modelli possono generare informazioni convincenti ma completamente inventate. Questo tema tornerà in tutto il corso.
 :::
 
 ## Come funziona un LLM (semplificato)

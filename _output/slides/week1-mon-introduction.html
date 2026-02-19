@@ -586,17 +586,21 @@ Fabio Giglietto
 <td>Istruzione testuale fornita al modello</td>
 </tr>
 <tr class="even">
+<td><strong>Contesto</strong> (<em>Context window</em>)</td>
+<td>Quantità massima di testo che il modello può considerare in una conversazione</td>
+</tr>
+<tr class="odd">
 <td><strong>Hallucination</strong></td>
 <td>Contenuto generato plausibile ma falso</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Token</strong></td>
 <td>Unità minima di testo elaborata dal modello</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Terminologia essenziale. I LLM (GPT, Gemini, Claude) predicono la parola successiva in una sequenza. I modelli di diffusione (Stable Diffusion, DALL-E, Imagen) generano immagini rimuovendo progressivamente il rumore. Il concetto di <em>hallucination</em> è cruciale: i modelli possono generare informazioni convincenti ma completamente inventate. Questo tema tornerà in tutto il corso.</p>
+<p>Terminologia essenziale. I LLM (GPT, Gemini, Claude) predicono la parola successiva in una sequenza. I modelli di diffusione (Stable Diffusion, DALL-E, Imagen) generano immagini rimuovendo progressivamente il rumore. Il concetto di contesto (context window) è fondamentale: definisce quanta informazione il modello può “tenere a mente” durante una conversazione. Gemini 3 arriva a 1 milione di token (~750.000 parole), il che consente di analizzare interi dataset in una singola sessione — una capacità che useremo nei laboratori. Il concetto di <em>hallucination</em> è cruciale: i modelli possono generare informazioni convincenti ma completamente inventate. Questo tema tornerà in tutto il corso.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
