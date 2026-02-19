@@ -562,7 +562,7 @@ Always consult `course-plan.md` for full details. Below is a concise summary of 
 **Wed Feb 25 — Workshop: Google Gemini & NotebookLM**
 - TWIAI (10 min)
 - Access via @uniurb.it account
-- Gemini: text generation, multimodal, Imagen
+- Gemini: text generation, multimodal, Nano Banana
 - NotebookLM: document analysis, audio overviews, citations
 - Exercise: create a notebook with course readings
 - Long context window (1M tokens) for datasets
