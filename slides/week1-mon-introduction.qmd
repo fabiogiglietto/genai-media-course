@@ -160,7 +160,9 @@ Policy fondamentale per il corso. Dato che il corso tratta esattamente di IA gen
 
 I materiali del corso (incluse queste slides), il forum per le giustificazioni e le esercitazioni verranno resi disponibili sullo **spazio blended del corso**.
 
-![QR code spazio blended](../assets/qrcode_blended.uniurb.it_aigenmedia.png){fig-align="center" width="30%"}
+<div style="text-align: center;">
+<img src="../assets/qrcode_blended.uniurb.it_aigenmedia.png" width="18%" alt="QR code spazio blended">
+</div>
 
 ::: {.callout-tip}
 ## Suggerimento
