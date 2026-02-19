@@ -91,7 +91,19 @@ Panoramica della struttura. Le prime tre settimane includono lezioni frontali, u
 | **6** | Scrittura e sintesi del corso |
 
 ::: {.notes}
-Panoramica delle 6 settimane. Le prime 2 settimane sono teoriche con un workshop pratico. La settimana 3 è un seminario ospite con Bruna Paroni. Le settimane 4-6 sono dedicate al progetto di gruppo. Menzionare anche i guest speaker: Vincenzo Cosenza (settimana 2) e Massimo Terenzi (settimana 4).
+Panoramica delle 6 settimane. Le prime 2 settimane sono teoriche con un workshop pratico. La settimana 3 è un seminario ospite con Bruna Paroni. Le settimane 4-6 sono dedicate al progetto di gruppo. Menzionare anche i guest speaker: Vincenzo Cosenza (settimana 2) e Massimo Terenzi (settimana 4). La slide successiva presenta nel dettaglio i tre interventi ospiti.
+:::
+
+## Ospiti e seminari
+
+| Data | Ospite | Tema |
+|------|--------|------|
+| **3 Marzo** | **Vincenzo Cosenza** | *Intelligenza Aumentata* — 10 regole ed esercizi pratici per collaborare con l'IA in modo sistematico |
+| **9–11 Marzo** | **Bruna Paroni** | *IA Generativa e Comunicazione Politica* — Seminario di 6 ore: framework teorici, metodologia LLMs-in-the-loop, tecniche di detection |
+| **16 Marzo** | **Massimo Terenzi** | *Dall'AI Slop alla Viralità Strategica* — Immagini sintetiche e engagement bait nelle comunità Facebook italiane |
+
+::: {.notes}
+Tre interventi ospiti arricchiscono il corso. Vincenzo Cosenza (martedì della settimana 2) presenterà il suo libro "Esercizi di Intelligenza Aumentata" con un approccio pratico alla collaborazione con l'IA. Bruna Paroni (intera settimana 3, 6 ore totali) terrà un seminario sulla comunicazione politica nell'era dell'IA generativa, con un caso studio brasiliano e un approfondimento sulla metodologia LLMs-in-the-loop che gli studenti useranno nel progetto di gruppo. Massimo Terenzi (lunedì della settimana 4) presenterà la sua ricerca sull'AI Slop nelle comunità Facebook italiane — tema direttamente collegato al progetto di gruppo che parte nella stessa settimana.
 :::
 
 ## Modalità di valutazione per frequentanti
