@@ -62,24 +62,20 @@ Sezione 1: come l'IA generativa trasforma i processi di produzione di contenuti.
 1. Ricerca delle fonti
 2. Organizzazione dei materiali
 3. Scrittura della bozza
-4. Revisione e editing
-5. Pubblicazione
+4. Revisione e pubblicazione
 :::
 
 ::: {.column width="50%"}
 ### Flusso con GenAI
 
 1. **IA-assistita:** ricerca e aggregazione
-2. **IA-assistita:** strutturazione e outline
-3. **Ibrido:** scrittura con suggerimenti IA
-4. **Umano:** revisione critica e fact-checking
-5. **IA-assistita:** ottimizzazione e distribuzione
+2. **Ibrido:** scrittura con suggerimenti IA
+3. **Umano:** revisione critica e fact-checking
+4. **IA-assistita:** ottimizzazione e distribuzione
 :::
 :::
 
-::: {.highlight-box}
-**Concetto chiave:** L'IA non elimina fasi del processo ma le **trasforma**. La fase critica resta quella umana: revisione, verifica, giudizio editoriale.
-:::
+L'IA non elimina fasi del processo ma le **trasforma**. La fase critica resta quella umana: revisione, verifica, giudizio editoriale.
 
 ::: {.notes}
 Confronto tra flusso tradizionale e flusso assistito dall'IA. L'IA si inserisce in ogni fase, ma con intensità diversa. Nella ricerca: può aggregare fonti e sintetizzare documenti (come abbiamo visto con NotebookLM). Nella scrittura: può generare bozze, ma la qualità dipende dal prompt e dalla supervisione. Nella revisione: l'umano resta insostituibile per il fact-checking e il giudizio editoriale. Nella distribuzione: può personalizzare e ottimizzare. Collegamento con Mattis & de Vreese (2025): l'IA pervade l'intera catena del valore giornalistica.
@@ -260,21 +256,17 @@ Dati da Gilardi et al. (2025), studio preregistrato con 599 partecipanti svizzer
 
 ## Il paradosso della disponibilità a leggere
 
-::: {.highlight-box}
-**Risultato chiave:** La qualità è equivalente, ma solo il **29%** degli svizzeri leggerebbe notizie interamente generate dall'IA [@gilardi2025].
-:::
-
 | Tipo di contenuto | Disponibilità a leggere |
 |-------------------|------------------------|
 | Senza IA | **84%** |
 | IA-assistito | **55%** |
 | Interamente IA | **29%** |
 
-La resistenza **non** dipende dalla qualità percepita, ma da preoccupazioni più profonde legate a **fiducia** e **autenticità**.
+La qualità percepita è equivalente, ma la disponibilità crolla. La resistenza **non** dipende dalla qualità, ma da preoccupazioni legate a **fiducia** e **autenticità** [@gilardi2025].
 
 ::: {.callout-note}
 ## Da discutere
-Sapendo che un articolo è stato scritto dall'IA, lo leggereste? Cosa cambierebbe nella vostra percezione?
+Sapendo che un articolo è stato scritto dall'IA, lo leggereste?
 :::
 
 ::: {.notes}

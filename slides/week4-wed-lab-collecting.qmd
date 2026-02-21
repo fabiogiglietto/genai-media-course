@@ -180,23 +180,11 @@ Due strategie complementari per la ricerca. La ricerca per parole chiave funzion
 
 ## Esempio di query di ricerca
 
-::: {.highlight-box}
-**Query 1 — Ricerca diretta:**
-Parole chiave: `"fatto con intelligenza artificiale"` OR `"generato dall'IA"`
-Filtri: lingua italiana, con immagine, ultimi 6 mesi
-:::
-
-::: {.highlight-box}
-**Query 2 — Ricerca per contesto:**
-Pagine/gruppi identificati dal seminario Terenzi [@terenzi2025]
-Filtri: con immagine, ordinamento per engagement
-:::
-
-::: {.highlight-box}
-**Query 3 — Ricerca per tema:**
-Parole chiave: `"preghiera"` OR `"angelo"` OR `"Gesù"` + immagine
-Filtri: engagement > 500 reazioni
-:::
+| Strategia | Query | Filtri |
+|-----------|-------|--------|
+| **Ricerca diretta** | `"fatto con intelligenza artificiale"` OR `"generato dall'IA"` | Italiano, con immagine, ultimi 6 mesi |
+| **Per contesto** | Pagine/gruppi da @terenzi2025 | Con immagine, per engagement |
+| **Per tema** | `"preghiera"` OR `"angelo"` OR `"Gesù"` | Engagement > 500 reazioni |
 
 ::: {.notes}
 Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto è generato dall'IA. La Query 2 parte dalle pagine e dai gruppi già identificati nella ricerca di Terenzi & Giglietto (2025). La Query 3 cerca per temi tipici dell'AI slop nelle comunità italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.
@@ -210,22 +198,11 @@ Sezione 4: il flusso di lavoro completo dalla ricerca al dataset strutturato.
 
 ## Dal post al dataset: il flusso operativo
 
-**Fase 1 — Ricerca e selezione**
-
-1. Eseguire le query su Meta Content Library
-2. Identificare i post candidati (immagini AI-generated)
-3. **Screening manuale:** verificare che l'immagine sia effettivamente generata dall'IA
-
-**Fase 2 — Raccolta dati**
-
-4. Esportare i **dati del post** (testo, metriche, metadata)
-5. Esportare i **commenti** associati a ogni post selezionato
-6. Inserire tutto nel **foglio Google Sheets** condiviso
-
-**Fase 3 — Documentazione**
-
-7. Registrare le **query usate** e i **criteri di selezione**
-8. Annotare eventuali **decisioni discrezionali**
+| Fase | Azioni |
+|------|--------|
+| **1. Ricerca e selezione** | Query su MCL, screening manuale delle immagini IA |
+| **2. Raccolta dati** | Esportare post + commenti nel foglio Google Sheets condiviso |
+| **3. Documentazione** | Registrare query, criteri di selezione, decisioni discrezionali |
 
 La trasparenza del processo è centrale nella metodologia *LLMs-in-the-loop* [@marino2024].
 
@@ -239,32 +216,17 @@ Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle 
 ::: {.column width="50%"}
 ### Foglio "Post"
 
-| Colonna | Contenuto |
-|---------|-----------|
-| A | post_id |
-| B | data_pubblicazione |
-| C | pagina_gruppo |
-| D | testo_post |
-| E | tipo_immagine |
-| F | n_reazioni |
-| G | n_commenti |
-| H | n_condivisioni |
+post_id, data, pagina_gruppo, testo_post, tipo_immagine, n_reazioni, n_commenti, n_condivisioni
 :::
 
 ::: {.column width="50%"}
 ### Foglio "Commenti"
 
-| Colonna | Contenuto |
-|---------|-----------|
-| A | comment_id |
-| B | post_id (ref) |
-| C | testo_commento |
-| D | n_reazioni_commento |
-| E | classificazione_ai |
-| F | classificazione_umana |
-| G | note |
+comment_id, post_id (ref), testo_commento, n_reazioni, classificazione_ai, classificazione_umana, note
 :::
 :::
+
+Le colonne **classificazione_ai** e **classificazione_umana** saranno compilate nella settimana 5.
 
 ::: {.notes}
 Struttura concreta del foglio di calcolo. Due fogli collegati dalla colonna post_id. Il foglio Post contiene i metadati dei post selezionati. Il foglio Commenti contiene tutti i commenti raccolti. Le colonne E e F del foglio Commenti (classificazione_ai e classificazione_umana) saranno compilate nella settimana 5 durante le fasi di analisi e validazione. Per ora restano vuote. La colonna G (note) serve per annotazioni qualitative durante la raccolta.

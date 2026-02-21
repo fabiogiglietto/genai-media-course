@@ -122,17 +122,16 @@ Sezione 2: panoramica della metodologia. Dettaglio sufficiente per orientare il 
 ## Che cos'è un approccio LLMs-in-the-loop
 
 ::: {.highlight-box}
-**LLMs-in-the-loop:** metodologia che integra l'analisi automatizzata dei LLM con la **validazione sistematica umana**, trattando l'IA come un "codificatore" le cui classificazioni vengono verificate contro il giudizio umano [@marino2024].
+**LLMs-in-the-loop:** metodologia che integra l'analisi automatizzata dei LLM con la **validazione sistematica umana**, trattando l'IA come un "codificatore" [@marino2024].
 :::
 
 Fasi della pipeline:
 
-1. **Definizione del codebook** — categorie di analisi e regole
-2. **Prompting sistematico** — istruzioni strutturate al LLM
-3. **Classificazione automatizzata** — il LLM analizza i dati
-4. **Validazione umana** — campione codificato da umani
-5. **Calcolo dell'affidabilità** — intercoder reliability IA-umano
-6. **Iterazione** — raffinamento del prompt se necessario
+1. **Codebook** — definire categorie di analisi e regole
+2. **Prompting** — istruzioni strutturate al LLM
+3. **Classificazione** — il LLM analizza i dati
+4. **Validazione** — campione codificato da umani + calcolo affidabilità
+5. **Iterazione** — raffinamento del prompt se necessario
 
 ::: {.notes}
 La metodologia LLMs-in-the-loop di Marino & Giglietto (2024) è l'approccio che useremo nel progetto. L'idea chiave: l'IA non sostituisce l'analisi umana ma la affianca. Il LLM viene trattato come un "codificatore" aggiuntivo, e la sua affidabilità viene misurata contro il giudizio umano usando metriche standard (Cohen's kappa, Krippendorff's alpha). Questo permette di analizzare grandi dataset (centinaia o migliaia di commenti) mantenendo il rigore metodologico. Il seminario di Bruna Paroni la settimana scorsa ha approfondito questa metodologia con un caso studio brasiliano. Nelle settimane 5 implementeremo ogni fase in dettaglio.

@@ -314,19 +314,14 @@ Mattis & de Vreese mappano l'impatto dell'IA su tutte e quattro le fasi della ca
 
 ## I quattro rischi per la disinformazione
 
-::: {.highlight-box}
 **Quattro rischi chiave** emergono dall'adozione dell'IA nel giornalismo [@mattis2025]:
-:::
 
-1. **Perdita di controllo editoriale** — le decisioni passano a modelli opachi
+1. **Perdita di controllo editoriale** — decisioni passano a modelli opachi
 2. **Diminuzione della qualità** — errori, bias, hallucination
 3. **Pressioni economiche aggravate** — dipendenza dalle piattaforme tech
 4. **Erosione della fiducia del pubblico** — scetticismo verso contenuti IA
 
-::: {.callout-warning}
-## Attenzione
-Questi rischi non sono indipendenti: la pressione economica spinge ad adottare l'IA in modo irresponsabile, il che riduce la qualità e la fiducia del pubblico.
-:::
+Questi rischi formano un **circolo vizioso**: la pressione economica spinge ad adottare l'IA in modo irresponsabile, riducendo qualità e fiducia.
 
 ::: {.notes}
 I quattro rischi identificati da Mattis & de Vreese formano un circolo vizioso. La pressione economica (calo delle entrate pubblicitarie, competizione con piattaforme) spinge le testate ad adottare l'IA per ridurre i costi. Ma un'adozione frettolosa compromette la qualità e il controllo editoriale. Il pubblico percepisce il calo di qualità e perde fiducia (Fletcher & Kleis-Nielsen, 2024 mostrano che le preoccupazioni del pubblico per l'IA nel giornalismo sono diffuse in più paesi). La perdita di fiducia riduce ulteriormente le entrate, aumentando la pressione economica. Collegamento con Ferrara (2026) dalla lezione di ieri: l'erosione della fiducia come "tassa epistemica".
@@ -475,11 +470,6 @@ Tre scenari possibili [Thäsler-Kordonouri & Koliska, 2025, citati in @munoriyar
 1. **Modello centrato sull'attore** — controllo umano prevalente
 2. **Modello ibrido** — collaborazione umano-IA bilanciata
 3. **Modello centrato sull'attante** — l'IA guida le decisioni
-
-::: {.callout-note}
-## Da discutere
-Quale modello pensate sia più probabile per il giornalismo italiano nei prossimi 5 anni?
-:::
 
 ::: {.notes}
 Thäsler-Kordonouri & Koliska (2025) propongono una tipologia che ricorda la teoria della strutturazione di Giddens. Il modello centrato sull'attore (umano) è quello attualmente dominante nelle dichiarazioni delle testate, ma la pratica potrebbe già spostarsi verso il modello ibrido in molti contesti. Il modello centrato sull'attante (IA) è quello temuto dai critici. La realtà sarà probabilmente diversa in contesti diversi: testate locali sotto pressione economica potrebbero avvicinarsi al modello 3, mentre testate di qualità potrebbero restare nel modello 1 o 2. L'ibridità di Chadwick suggerisce che non ci sarà un modello unico, ma una coesistenza complessa e conflittuale di modelli diversi.

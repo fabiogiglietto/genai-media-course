@@ -294,12 +294,9 @@ Confronto tra i due strumenti per chiarire quando usare quale. Gemini è più fl
 ::: {.orange-box}
 ### Esercizio guidato (20 minuti)
 1. Aprite **notebooklm.google.com** con l'account \@uniurb.it
-2. Create un nuovo notebook: **"IA Generativa e Media — Letture"**
+2. Create un notebook: **"IA Generativa e Media — Letture"**
 3. Caricate **3 PDF** delle letture della prima settimana
-4. Provate a fare domande come:
-   - *"Cos'è il sistema mediale ibrido secondo Chadwick?"*
-   - *"Quali rischi dell'IA per il giornalismo identifica Mattis?"*
-   - *"Confronta le posizioni di Chadwick e Mattis"*
+4. Fate domande: *"Cos'è il sistema mediale ibrido?"*, *"Confronta Chadwick e Mattis"*
 5. Generate un **Audio Overview** delle fonti caricate
 :::
 

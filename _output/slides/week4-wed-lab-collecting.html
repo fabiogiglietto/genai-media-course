@@ -453,15 +453,37 @@ Fabio Giglietto
 </section>
 <section id="esempio-di-query-di-ricerca" class="slide level2">
 <h2>Esempio di query di ricerca</h2>
-<div class="highlight-box">
-<p><strong>Query 1 — Ricerca diretta:</strong> Parole chiave: <code>"fatto con intelligenza artificiale"</code> OR <code>"generato dall'IA"</code> Filtri: lingua italiana, con immagine, ultimi 6 mesi</p>
-</div>
-<div class="highlight-box">
-<p><strong>Query 2 — Ricerca per contesto:</strong> Pagine/gruppi identificati dal seminario Terenzi <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span> Filtri: con immagine, ordinamento per engagement</p>
-</div>
-<div class="highlight-box">
-<p><strong>Query 3 — Ricerca per tema:</strong> Parole chiave: <code>"preghiera"</code> OR <code>"angelo"</code> OR <code>"Gesù"</code> + immagine Filtri: engagement &gt; 500 reazioni</p>
-</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 26%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Strategia</th>
+<th>Query</th>
+<th>Filtri</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ricerca diretta</strong></td>
+<td><code>"fatto con intelligenza artificiale"</code> OR <code>"generato dall'IA"</code></td>
+<td>Italiano, con immagine, ultimi 6 mesi</td>
+</tr>
+<tr class="even">
+<td><strong>Per contesto</strong></td>
+<td>Pagine/gruppi da <span class="citation" data-cites="terenzi2025">Terenzi &amp; Giglietto (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span></td>
+<td>Con immagine, per engagement</td>
+</tr>
+<tr class="odd">
+<td><strong>Per tema</strong></td>
+<td><code>"preghiera"</code> OR <code>"angelo"</code> OR <code>"Gesù"</code></td>
+<td>Engagement &gt; 500 reazioni</td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
 <p>Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto è generato dall’IA. La Query 2 parte dalle pagine e dai gruppi già identificati nella ricerca di Terenzi &amp; Giglietto (2025). La Query 3 cerca per temi tipici dell’AI slop nelle comunità italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.</p>
 <style type="text/css">
@@ -494,23 +516,32 @@ Fabio Giglietto
 </section>
 <section id="dal-post-al-dataset-il-flusso-operativo" class="slide level2">
 <h2>Dal post al dataset: il flusso operativo</h2>
-<p><strong>Fase 1 — Ricerca e selezione</strong></p>
-<ol type="1">
-<li>Eseguire le query su Meta Content Library</li>
-<li>Identificare i post candidati (immagini AI-generated)</li>
-<li><strong>Screening manuale:</strong> verificare che l’immagine sia effettivamente generata dall’IA</li>
-</ol>
-<p><strong>Fase 2 — Raccolta dati</strong></p>
-<ol start="4" type="1">
-<li>Esportare i <strong>dati del post</strong> (testo, metriche, metadata)</li>
-<li>Esportare i <strong>commenti</strong> associati a ogni post selezionato</li>
-<li>Inserire tutto nel <strong>foglio Google Sheets</strong> condiviso</li>
-</ol>
-<p><strong>Fase 3 — Documentazione</strong></p>
-<ol start="7" type="1">
-<li>Registrare le <strong>query usate</strong> e i <strong>criteri di selezione</strong></li>
-<li>Annotare eventuali <strong>decisioni discrezionali</strong></li>
-</ol>
+<table class="caption-top">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fase</th>
+<th>Azioni</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Ricerca e selezione</strong></td>
+<td>Query su MCL, screening manuale delle immagini IA</td>
+</tr>
+<tr class="even">
+<td><strong>2. Raccolta dati</strong></td>
+<td>Esportare post + commenti nel foglio Google Sheets condiviso</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Documentazione</strong></td>
+<td>Registrare query, criteri di selezione, decisioni discrezionali</td>
+</tr>
+</tbody>
+</table>
 <p>La trasparenza del processo è centrale nella metodologia <em>LLMs-in-the-loop</em> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span>.</p>
 <aside class="notes">
 <p>Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle scelte metodologiche è fondamentale per la riproducibilità e per la sezione Metodo del paper. Ogni decisione discrezionale (perché un post è stato incluso o escluso) deve essere annotata. Questo approccio riflette la metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024): la trasparenza del processo è importante quanto i risultati.</p>
@@ -531,89 +562,12 @@ Fabio Giglietto
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="foglio-post">Foglio “Post”</h3>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Colonna</th>
-<th>Contenuto</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>A</td>
-<td>post_id</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>data_pubblicazione</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>pagina_gruppo</td>
-</tr>
-<tr class="even">
-<td>D</td>
-<td>testo_post</td>
-</tr>
-<tr class="odd">
-<td>E</td>
-<td>tipo_immagine</td>
-</tr>
-<tr class="even">
-<td>F</td>
-<td>n_reazioni</td>
-</tr>
-<tr class="odd">
-<td>G</td>
-<td>n_commenti</td>
-</tr>
-<tr class="even">
-<td>H</td>
-<td>n_condivisioni</td>
-</tr>
-</tbody>
-</table>
+<p>post_id, data, pagina_gruppo, testo_post, tipo_immagine, n_reazioni, n_commenti, n_condivisioni</p>
 </div><div class="column" style="width:50%;">
 <h3 id="foglio-commenti">Foglio “Commenti”</h3>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Colonna</th>
-<th>Contenuto</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>A</td>
-<td>comment_id</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td>post_id (ref)</td>
-</tr>
-<tr class="odd">
-<td>C</td>
-<td>testo_commento</td>
-</tr>
-<tr class="even">
-<td>D</td>
-<td>n_reazioni_commento</td>
-</tr>
-<tr class="odd">
-<td>E</td>
-<td>classificazione_ai</td>
-</tr>
-<tr class="even">
-<td>F</td>
-<td>classificazione_umana</td>
-</tr>
-<tr class="odd">
-<td>G</td>
-<td>note</td>
-</tr>
-</tbody>
-</table>
+<p>comment_id, post_id (ref), testo_commento, n_reazioni, classificazione_ai, classificazione_umana, note</p>
 </div></div>
+<p>Le colonne <strong>classificazione_ai</strong> e <strong>classificazione_umana</strong> saranno compilate nella settimana 5.</p>
 <aside class="notes">
 <p>Struttura concreta del foglio di calcolo. Due fogli collegati dalla colonna post_id. Il foglio Post contiene i metadati dei post selezionati. Il foglio Commenti contiene tutti i commenti raccolti. Le colonne E e F del foglio Commenti (classificazione_ai e classificazione_umana) saranno compilate nella settimana 5 durante le fasi di analisi e validazione. Per ora restano vuote. La colonna G (note) serve per annotazioni qualitative durante la raccolta.</p>
 <style type="text/css">

@@ -174,22 +174,15 @@ Il campionamento è cruciale per la validità della validazione. Il 20-30% è un
 
 ## Organizzare la codifica umana
 
-**Preparazione:**
+| Fase | Azioni |
+|------|--------|
+| **Preparazione** | Estrarre campione in foglio separato, **rimuovere classificazione IA** (codifica cieca) |
+| **Codifica** | Ogni codificatore classifica **indipendentemente** con lo stesso codebook |
+| **Confronto** | Riunire classificazioni, confrontare con IA, calcolare metriche di **accordo** |
 
-1. Estrarre il campione in un **foglio separato**
-2. Rimuovere la colonna con la **classificazione IA** (codifica cieca)
-3. Distribuire il campione ai **codificatori umani**
-
-**Codifica:**
-
-4. Ogni codificatore classifica **indipendentemente**
-5. Usare lo **stesso codebook** usato per il prompt IA
-6. Annotare i casi **difficili** e le motivazioni
-
-**Confronto:**
-
-7. Riunire le classificazioni umane e confrontare con quelle IA
-8. Calcolare le metriche di **accordo**
+::: {.highlight-box}
+**Cruciale:** i codificatori umani non devono vedere la classificazione IA per evitare il **bias di ancoraggio**.
+:::
 
 ::: {.notes}
 Il punto chiave è la codifica cieca: i codificatori umani non devono vedere la classificazione dell'IA per evitare il bias di ancoraggio (tendenza a conformarsi alla classificazione già presente). Idealmente, almeno 2 membri del gruppo codificano indipendentemente lo stesso campione: questo permette di calcolare sia l'accordo umano-umano (baseline) che l'accordo IA-umano. Se il gruppo ha 5 membri, suggerire 2 codificatori sul campione completo e gli altri 3 su sottoinsiemi. I casi difficili e le motivazioni alimentano la fase di iterazione.
@@ -283,22 +276,9 @@ Sezione 5: esercizio di validazione. La parte centrale della sessione.
 ::: {.orange-box}
 ### Attività (45 minuti)
 
-**Fase 1 — Preparazione (10 min):**
-
-- Selezionate un campione di **50 commenti** dal vostro dataset
-- Create un foglio separato **senza** la classificazione IA
-- 2 membri del gruppo codificano indipendentemente
-
-**Fase 2 — Codifica (20 min):**
-
-- Ogni codificatore classifica i 50 commenti usando il codebook
-- Annotate i casi difficili
-
-**Fase 3 — Confronto (15 min):**
-
-- Confrontate le classificazioni umane con quelle IA
-- Costruite la matrice di confusione
-- Calcolate il kappa (manualmente o con Gemini)
+1. **Preparazione (10 min):** campione di **50 commenti**, foglio separato senza classificazione IA, 2 codificatori indipendenti
+2. **Codifica (20 min):** classificare i 50 commenti con il codebook, annotare i casi difficili
+3. **Confronto (15 min):** confrontare con classificazioni IA, costruire matrice di confusione, calcolare il kappa
 :::
 
 ::: {.notes}

@@ -420,23 +420,35 @@ Fabio Giglietto
 </section>
 <section id="organizzare-la-codifica-umana" class="slide level2">
 <h2>Organizzare la codifica umana</h2>
-<p><strong>Preparazione:</strong></p>
-<ol type="1">
-<li>Estrarre il campione in un <strong>foglio separato</strong></li>
-<li>Rimuovere la colonna con la <strong>classificazione IA</strong> (codifica cieca)</li>
-<li>Distribuire il campione ai <strong>codificatori umani</strong></li>
-</ol>
-<p><strong>Codifica:</strong></p>
-<ol start="4" type="1">
-<li>Ogni codificatore classifica <strong>indipendentemente</strong></li>
-<li>Usare lo <strong>stesso codebook</strong> usato per il prompt IA</li>
-<li>Annotare i casi <strong>difficili</strong> e le motivazioni</li>
-</ol>
-<p><strong>Confronto:</strong></p>
-<ol start="7" type="1">
-<li>Riunire le classificazioni umane e confrontare con quelle IA</li>
-<li>Calcolare le metriche di <strong>accordo</strong></li>
-</ol>
+<table class="caption-top">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fase</th>
+<th>Azioni</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Preparazione</strong></td>
+<td>Estrarre campione in foglio separato, <strong>rimuovere classificazione IA</strong> (codifica cieca)</td>
+</tr>
+<tr class="even">
+<td><strong>Codifica</strong></td>
+<td>Ogni codificatore classifica <strong>indipendentemente</strong> con lo stesso codebook</td>
+</tr>
+<tr class="odd">
+<td><strong>Confronto</strong></td>
+<td>Riunire classificazioni, confrontare con IA, calcolare metriche di <strong>accordo</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<p><strong>Cruciale:</strong> i codificatori umani non devono vedere la classificazione IA per evitare il <strong>bias di ancoraggio</strong>.</p>
+</div>
 <aside class="notes">
 <p>Il punto chiave è la codifica cieca: i codificatori umani non devono vedere la classificazione dell’IA per evitare il bias di ancoraggio (tendenza a conformarsi alla classificazione già presente). Idealmente, almeno 2 membri del gruppo codificano indipendentemente lo stesso campione: questo permette di calcolare sia l’accordo umano-umano (baseline) che l’accordo IA-umano. Se il gruppo ha 5 membri, suggerire 2 codificatori sul campione completo e gli altri 3 su sottoinsiemi. I casi difficili e le motivazioni alimentano la fase di iterazione.</p>
 <style type="text/css">
@@ -660,23 +672,11 @@ Fabio Giglietto
 <h2>Esercizio: validare un campione</h2>
 <section id="attività-45-minuti" class="orange-box">
 <h3>Attività (45 minuti)</h3>
-<p><strong>Fase 1 — Preparazione (10 min):</strong></p>
-<ul>
-<li>Selezionate un campione di <strong>50 commenti</strong> dal vostro dataset</li>
-<li>Create un foglio separato <strong>senza</strong> la classificazione IA</li>
-<li>2 membri del gruppo codificano indipendentemente</li>
-</ul>
-<p><strong>Fase 2 — Codifica (20 min):</strong></p>
-<ul>
-<li>Ogni codificatore classifica i 50 commenti usando il codebook</li>
-<li>Annotate i casi difficili</li>
-</ul>
-<p><strong>Fase 3 — Confronto (15 min):</strong></p>
-<ul>
-<li>Confrontate le classificazioni umane con quelle IA</li>
-<li>Costruite la matrice di confusione</li>
-<li>Calcolate il kappa (manualmente o con Gemini)</li>
-</ul>
+<ol type="1">
+<li><strong>Preparazione (10 min):</strong> campione di <strong>50 commenti</strong>, foglio separato senza classificazione IA, 2 codificatori indipendenti</li>
+<li><strong>Codifica (20 min):</strong> classificare i 50 commenti con il codebook, annotare i casi difficili</li>
+<li><strong>Confronto (15 min):</strong> confrontare con classificazioni IA, costruire matrice di confusione, calcolare il kappa</li>
+</ol>
 </section>
 <aside class="notes">
 <p>Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere rapida; i dati sono già nel foglio di calcolo dal lab di ieri. Creare un foglio separato con solo ID e testo del commento, senza la colonna della classificazione IA. Fase 2: la codifica individuale deve essere davvero indipendente — i codificatori non devono comunicare durante questa fase. Fase 3: il confronto è il momento più interessante — dove emergono i disaccordi e si capisce dove il codebook è ambiguo. Passare tra i gruppi durante la Fase 3 per aiutare con il calcolo del kappa e l’interpretazione dei risultati.</p>

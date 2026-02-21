@@ -55,18 +55,13 @@ Oggi è una giornata di lavoro. L'obiettivo e uscire con una bozza avanzata del 
 
 ## Cosa fare oggi
 
-::: {.highlight-box}
-**Obiettivo:** Al termine della sessione, ogni gruppo dovra avere una **bozza completa** (anche se grezza) di almeno **3 delle 4 sezioni principali** del paper.
-:::
-
-Struttura della sessione:
+**Obiettivo:** bozza completa di almeno **3 delle 4 sezioni principali** del paper.
 
 | Tempo | Attività |
 |-------|----------|
 | 14:00 – 14:15 | Introduzione e organizzazione |
-| 14:15 – 14:45 | **Blocco 1:** Scrittura individuale/gruppo |
-| 14:45 – 15:00 | **Revisione tra pari** (scambio bozze) |
-| 15:00 – 15:15 | Feedback e discussione collettiva |
+| 14:15 – 14:45 | **Blocco 1:** Scrittura |
+| 14:45 – 15:15 | **Revisione tra pari** + feedback collettivo |
 | 15:15 – 15:50 | **Blocco 2:** Scrittura con integrazioni |
 | 15:50 – 16:00 | Riepilogo e prossimi passi |
 

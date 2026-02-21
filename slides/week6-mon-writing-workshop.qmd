@@ -73,15 +73,14 @@ Il formato IMRaD è lo standard delle scienze sociali e della comunicazione. Ogn
 
 ## Struttura completa del paper
 
-1. **Titolo** — descrittivo, specifico, conciso
-2. **Abstract** — 150-250 parole (scriverlo per ultimo)
-3. **Introduzione** — contesto, gap, domanda di ricerca
-4. **Revisione della letteratura** — framework teorico
-5. **Metodo** — dati, strumenti, procedura, validazione
-6. **Risultati** — dati, tabelle, grafici
-7. **Discussione** — interpretazione, limiti, implicazioni
-8. **Conclusione** — sintesi finale
-9. **Riferimenti bibliografici**
+| Sezione | Contenuto |
+|---------|-----------|
+| **Titolo + Abstract** | Descrittivo e specifico; 150-250 parole (scriverlo per ultimo) |
+| **Introduzione** | Contesto, gap, domanda di ricerca |
+| **Letteratura** | Framework teorico di riferimento |
+| **Metodo** | Dati, strumenti, procedura, validazione |
+| **Risultati** | Dati, tabelle, grafici |
+| **Discussione + Conclusione** | Interpretazione, limiti, implicazioni, sintesi |
 
 ::: {.notes}
 Struttura completa del paper. Nota: l'abstract si scrive per ultimo, perche deve riassumere tutto il contenuto. La revisione della letteratura può essere integrata nell'introduzione o costituire una sezione separata — per questo progetto, suggeriamo una sezione separata breve che presenti i framework teorici chiave (sistema mediale ibrido, realtà sintetica, deepfake e fiducia). Il metodo deve essere sufficientemente dettagliato da permettere la replicabilita.
@@ -397,17 +396,16 @@ Fase pratica della sessione. I gruppi lavorano alla costruzione dell'outline del
 
 ::: {.orange-box}
 ### Costruite l'outline del vostro paper
-Per ogni sezione, scrivete **2-3 punti** che intendete sviluppare. Usate NotebookLM per identificare i collegamenti con la letteratura.
+Per ogni sezione, scrivete **2-3 punti** che intendete sviluppare. Usate NotebookLM per i collegamenti con la letteratura.
 :::
 
-**Struttura da completare:**
-
-1. **Titolo provvisorio:** ___
-2. **Domanda di ricerca:** ___
-3. **Introduzione:** 3 punti chiave
-4. **Metodo:** 3 elementi principali
-5. **Risultati attesi/preliminari:** 3 evidenze
-6. **Discussione:** 2 collegamenti alla teoria
+| Sezione | Da completare |
+|---------|---------------|
+| **Titolo provvisorio** | ___ |
+| **Domanda di ricerca** | ___ |
+| **Introduzione** | 3 punti chiave |
+| **Metodo** | 3 elementi principali |
+| **Risultati** | 3 evidenze attese/preliminari |
 
 ::: {.notes}
 Esercizio pratico: dare 30 minuti ai gruppi per costruire l'outline del paper. Circolare tra i gruppi per fornire feedback. L'obiettivo non e scrivere il paper, ma avere una struttura chiara. Ogni sezione deve avere 2-3 punti che indicano il contenuto previsto. Il titolo provvisorio aiuta a focalizzare l'argomento. La domanda di ricerca deve essere specifica e misurabile. I risultati possono essere preliminari — l'importante e avere un'idea di cosa presentare. Alla fine dei 30 minuti, ogni gruppo presenta brevemente il proprio outline (2 minuti).
@@ -417,14 +415,12 @@ Esercizio pratico: dare 30 minuti ai gruppi per costruire l'outline del paper. C
 
 | Criterio | Verifica |
 |----------|----------|
-| Il titolo e descrittivo e specifico? | |
-| L'introduzione parte dal problema e arriva alla domanda? | |
-| Il metodo include prompt e procedura di validazione? | |
-| I risultati presentano dati senza interpretazione? | |
-| La discussione collega i risultati alla teoria? | |
-| I limiti sono esplicitamente riconosciuti? | |
-| Tutte le citazioni sono corrette e verificate? | |
-| L'uso dell'IA e dichiarato? | |
+| Titolo descrittivo e specifico? | |
+| Introduzione: dal problema alla domanda di ricerca? | |
+| Metodo: include prompt e procedura di validazione? | |
+| Risultati: dati senza interpretazione? | |
+| Discussione: collegamento risultati-teoria + limiti? | |
+| Citazioni corrette e uso IA dichiarato? | |
 
 ::: {.notes}
 Checklist da usare come guida durante la stesura e come strumento di auto-valutazione prima della consegna. Ogni punto della checklist corrisponde a un criterio di valutazione del paper. I gruppi possono usarla anche per la revisione tra pari di domani: ogni gruppo leggera una bozza di un altro gruppo è la valutera usando questa checklist.

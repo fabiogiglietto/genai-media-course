@@ -179,19 +179,15 @@ Tradurre il codebook in un prompt è l'operazione chiave della metodologia LLMs-
 ## Esempio di prompt per la classificazione
 
 ::: {.highlight-box}
-*"Agisci come un analista di contenuti specializzato in social media. Il tuo compito è classificare i commenti degli utenti a post contenenti immagini generate dall'IA (AI slop) su Facebook.*
+*"Agisci come un analista di contenuti. Classifica ogni commento in UNA categoria:*
 
-*Classifica ogni commento in UNA delle seguenti categorie:*
-
-*1. RICONOSCIMENTO_IA — l'utente identifica l'immagine come generata dall'IA*
+*1. RICONOSCIMENTO_IA — identifica l'immagine come generata dall'IA*
 *2. REAZIONE_EMOTIVA — risposta emotiva senza menzionare l'IA*
 *3. CRITICA — commento negativo verso il contenuto*
-*4. ENGAGEMENT_GENUINO — interazione come se il contenuto fosse autentico*
+*4. ENGAGEMENT_GENUINO — interazione come se fosse autentico*
 *5. ALTRO — non classificabile*
 
-*Per ogni commento, fornisci: ID, CATEGORIA, LIVELLO_CERTEZZA (alto/medio/basso).*
-
-*Formato output: tabella CSV con colonne: id, categoria, certezza, motivazione_breve"*
+*Output: tabella CSV con colonne: id, categoria, certezza, motivazione_breve"*
 :::
 
 ::: {.notes}
@@ -253,26 +249,12 @@ La finestra di contesto di Gemini è un vantaggio significativo per l'analisi de
 
 ## Workflow pratico con Gemini
 
-**Passo 1 — Preparare il file:**
-
-- Esportare i commenti in un **file di testo** o **CSV**
-- Numerare ogni commento con un **ID univoco**
-
-**Passo 2 — Costruire il prompt:**
-
-- Inserire il **codebook** con definizioni e esempi
-- Specificare il **formato di output** (CSV/tabella)
-
-**Passo 3 — Caricare e classificare:**
-
-- Allegare il file a Gemini e incollare il prompt
-- Verificare i primi **10 risultati** per coerenza
-- Se soddisfacenti, procedere con il **dataset completo**
-
-**Passo 4 — Estrarre i risultati:**
-
-- Copiare la tabella di output nel **foglio Google Sheets**
-- Verificare che tutti i commenti siano stati classificati
+| Passo | Azione |
+|-------|--------|
+| **1. Preparare** | Esportare commenti in CSV con **ID univoco** per ognuno |
+| **2. Prompt** | Inserire il **codebook** + formato di output (CSV/tabella) |
+| **3. Classificare** | Allegare file a Gemini, verificare i primi **10 risultati** |
+| **4. Estrarre** | Copiare output nel **foglio Google Sheets** |
 
 ::: {.notes}
 Workflow operativo passo per passo. Passo 1: la preparazione del file è cruciale — ogni commento deve avere un ID univoco che corrisponda a quello nel foglio di calcolo. Passo 2: il prompt deve contenere il codebook completo; non fare affidamento sulla memoria della sessione precedente. Passo 3: i primi 10 risultati servono come test di qualità — se la classificazione non è soddisfacente, bisogna rivedere il prompt o il codebook prima di procedere. Passo 4: l'output va nella colonna "classificazione_ai" del foglio Commenti. Se Gemini non riesce a classificare tutti i commenti in un unico batch, dividere in batch da 50-100.
