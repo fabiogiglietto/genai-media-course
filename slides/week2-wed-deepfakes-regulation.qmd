@@ -85,7 +85,7 @@ Vaccari & Chadwick (2020) è il paper fondativo sugli effetti politici dei deepf
 
 ## Dall'inganno alla "vertigine epistemica"
 
-> "Seminare incertezza su cosa è vero e cosa non lo è è diventato un obiettivo strategico chiave della propaganda di stato."
+> "Sowing uncertainty about what is true and what is not has become a key strategic goal of state-sponsored propaganda."
 >
 > — @vaccari2020
 
@@ -135,31 +135,24 @@ Hameleers & van der Meer (2026) smontano l'assunto che i deepfake e le immagini 
 
 ## La minaccia low-tech
 
-> "La disinformazione visiva che richiede meno sofisticazione manipolativa ma è alta in ricchezza modale (video decontestualizzati) è più prevalente online."
+> "Visual disinformation that requires less manipulative sophistication while being high in modal richness (i.e. decontextualized video fragments) are more prevalent online."
 >
 > — @hameleers2026
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Deepfake sofisticati
-- Richiedono competenze tecniche
-- Costi di produzione elevati
+- Competenze tecniche elevate
+- Costi di produzione alti
 - Relativamente rari
-- Più facili da rilevare
 :::
 
 ::: {.column width="50%"}
 ### Video decontestualizzati
-- **Nessuna competenza tecnica** richiesta
-- Costo zero
-- **Estremamente diffusi**
+- **Nessuna competenza** richiesta
+- Costo zero, **diffusione massiva**
 - Difficili da verificare
 :::
-:::
-
-::: {.callout-note}
-## Da discutere
-Per il nostro progetto: le immagini *AI slop* su Facebook sono un esempio di disinformazione visiva "low-tech" ad alto impatto?
 :::
 
 ::: {.notes}
@@ -209,7 +202,7 @@ Schroeder et al. (2026) descrivono uno scenario in cui la manipolazione dell'inf
 
 ## Il consenso sintetico
 
-> "Gli sciami IA sono particolarmente attrezzati per ingegnerizzare un **consenso sintetico** che sembra colmare le divisioni esistenti. Questo coro erode l'indipendenza essenziale per l'intelligenza collettiva e la democrazia."
+> "AI swarms are distinctly equipped to exploit this by engineering a **synthetic consensus** that appears to bridge these divides. [...] This chorus erodes the independence essential to collective intelligence and democracy."
 >
 > — @schroeder2026
 
@@ -281,12 +274,12 @@ Sezione 5: panoramica del quadro regolamentare europeo. EU AI Act, Code of Pract
 
 | Normativa | Ambito | Stato |
 |-----------|--------|-------|
-| **EU AI Act** | Classificazione e regolamentazione sistemi IA | In vigore (attuazione graduale) |
-| **Code of Practice on Disinformation** | Autoregolamentazione piattaforme | Versione rafforzata 2022 |
-| **Digital Services Act** | Trasparenza e accountability piattaforme | In vigore |
+| **EU AI Act** | Classificazione sistemi IA per rischio | In vigore (graduale) |
+| **Code of Practice** | Autoregolamentazione piattaforme | Versione 2022 |
+| **Digital Services Act** | Trasparenza algoritmi piattaforme | In vigore |
 
 ::: {.highlight-box}
-**Nota:** Nel AI Act, il giornalismo è **esentato** a condizione che ci sia un redattore umano alla fine della catena. Ma questa esenzione potrebbe essere **insufficiente** per i rischi identificati [@mattis2025].
+**Nota:** L'AI Act **esenta** il giornalismo se c'è un redattore umano a fine catena — ma l'esenzione potrebbe essere **insufficiente** [@mattis2025].
 :::
 
 ::: {.notes}
@@ -363,19 +356,13 @@ Riepilogo dei concetti fondamentali. I temi di oggi formano il background teoric
 **Settimana 3 (9-11 Marzo):** Seminario di Bruna Paroni
 
 - IA generativa e comunicazione politica: un caso brasiliano
-- Metodologia LLMs-in-the-loop
-- Tecniche di rilevamento e fact-checking
+- Metodologia *LLMs-in-the-loop*
 
 **Settimana 4 (16-18 Marzo):** Lancio del progetto di ricerca
 
-**Letture consigliate** per preparare il progetto (settimana 4):
-
-- @ferrara2026 — Il Paradosso dell'IA Generativa (ripasso)
-- @schroeder2026 — Sciami IA e democrazia (ripasso)
-
 ::: {.callout-tip}
 ## Suggerimento
-Il seminario di Bruna Paroni è direttamente collegato alla metodologia del progetto di gruppo. Approfittatene per fare domande sulla pipeline LLMs-in-the-loop.
+Il seminario di Paroni è collegato alla metodologia del progetto di gruppo. Approfittatene per fare domande sulla pipeline *LLMs-in-the-loop*.
 :::
 
 ::: {.notes}

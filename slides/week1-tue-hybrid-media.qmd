@@ -158,15 +158,12 @@ Chadwick introduce il concetto di "political information cycle" in sostituzione 
 
 ## Gli assemblage della produzione di notizie
 
-> "Gli assemblage della produzione di notizie sono composti da molteplici individui, gruppi, siti e istanze temporali di interazione, debolmente accoppiati ma altamente interdipendenti, che si connettono e disconnettono dal processo, spesso in tempo reale."
+> "They are composed of multiple, loosely-coupled individuals, groups, sites, and temporal instances of interaction involving diverse yet highly interdependent news creators that plug and unplug themselves from the news-making process, often in real time."
 >
 > — @chadwick2011
 
-Caratteristiche principali:
-
 - **Confini permeabili** tra moduli diversi
 - Attori non-élite possono **contestare i frame** dei media tradizionali
-- I broadcaster integrano sempre più informazioni dal mondo online
 - La produzione di notizie è un processo **fluido e dinamico**
 
 ::: {.notes}
@@ -381,7 +378,7 @@ Munoriyarwa & de-Lima-Santos (2025) identificano questi tre temi come fili condu
 
 ## L'*human-in-the-loop* come principio fondante
 
-> "In quasi tutti i contesti analizzati — dal giornalismo scientifico tedesco alle redazioni svizzere, dagli ambienti africani a quelli rumeni — i giornalisti sono fermi: l'IA deve restare uno strumento sotto il controllo umano."
+> "From German science journalism to Swiss newsrooms, journalists are resolute that AI must remain a tool under human control. It can be an assistant, a colleague, or an 'intern,' but it cannot be the final arbiter of journalistic truth."
 >
 > — @munoriyarwa2025
 

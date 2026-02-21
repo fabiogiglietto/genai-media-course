@@ -374,16 +374,15 @@ Dati dal rapporto Pew Research Center (settembre 2025, N = 5.023 adulti statunit
 
 ## I rischi percepiti
 
-> "Il rischio più alto dell'IA è l'erosione delle capacità umane — come la perdita delle competenze di pensiero critico."
+> "As a school teacher, I understand how important it is for children to develop and grow their own curiosity, problem-solving skills, critical thinking skills and creativity [...]"
 >
-> — Rispondente, Pew Research Center, 2025
+> — Rispondente, @pewresearch2025
 
-I principali rischi indicati dal **57%** degli americani che considerano i rischi dell'IA "alti" [@pewresearch2025]:
+Rischi indicati dal **57%** degli americani che li considera "alti" [@pewresearch2025]:
 
 - **Erosione delle capacità umane** (pensiero critico, creatività)
 - **Perdita di posti di lavoro** e trasformazione economica
-- **Accuratezza dell'informazione** e disinformazione
-- **Sorveglianza** e perdita di privacy
+- **Disinformazione** e perdita di **privacy**
 
 ::: {.notes}
 Dalla survey Pew Research 2025. Il 57% degli americani ritiene che i rischi societali dell'IA siano alti, mentre solo il 25% ritiene alti i benefici. Il 53% ritiene che l'IA peggiorerà la capacità delle persone di pensare creativamente, e il 50% teme un impatto negativo sulle relazioni significative. La preoccupazione principale non è tecnica ma umana: la paura di perdere competenze cognitive. Il tema della disinformazione è citato tra chi percepisce alti rischi. Collegamento con Ferrara (2026): l'erosione della fiducia è già percepita a livello di opinione pubblica.
@@ -467,7 +466,6 @@ Sezione 5: breve anteprima del tema di domani. Collegare le definizioni e i dati
 ### Media tradizionali
 - Flusso **uno-a-molti**
 - Gatekeeping professionale
-- Verifica editoriale
 - Ciclo di notizie definito
 :::
 
@@ -475,12 +473,11 @@ Sezione 5: breve anteprima del tema di domani. Collegare le definizioni e i dati
 ### Sistema mediale ibrido + IA
 - Flusso **molti-a-molti** + IA
 - Gatekeeping algoritmico
-- Contenuti generati automaticamente
 - Ciclo informativo continuo
 :::
 :::
 
-> "Il sistema mediale ibrido è costruito sulle interazioni tra vecchi e nuovi media e le loro tecnologie, generi, norme, comportamenti e organizzazioni associate."
+> "This system is built upon interactions among old and new media and their associated technologies, genres, norms, behaviors, and organizations."
 >
 > — @chadwick2011
 

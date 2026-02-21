@@ -53,7 +53,7 @@ Ultima edizione del segmento This Week in AI. Il dato di Hackenburg et al. (2025
 
 ### Sciami IA e minacce alla democrazia
 
-> "Gli sciami IA sono particolarmente attrezzati per ingegnerizzare un **consenso sintetico** che sembra colmare le divisioni esistenti."
+> "AI swarms are distinctly equipped to exploit this by engineering a **synthetic consensus** that appears to bridge these divides."
 >
 > — @schroeder2026
 

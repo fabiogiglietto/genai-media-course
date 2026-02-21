@@ -181,11 +181,9 @@ Il decalogo di Cosenza è un framework pratico per l'uso sistematico dell'IA. Og
 
 ## La "frontiera frastagliata"
 
-> "Non esiste una frontiera chiara tra ciò che l'IA sa fare e ciò che non sa fare. Esiste una **frontiera frastagliata** i cui confini sono tutti da scoprire."
+> "Non esiste una frontiera chiara tra ciò che questi sistemi sanno fare e ciò che non sanno fare. Esiste, invece, quella che il prof. Ethan Mollick chiama **frontiera frastagliata** i cui confini sono tutti da scoprire."
 >
-> — @cosenza2025 (riprendendo Ethan Mollick)
-
-L'IA potrebbe risolvere un problema matematico complesso ma **sbagliare** una semplice domanda fattuale.
+> — @cosenza2025
 
 ::: {.callout-note}
 ## Da discutere
