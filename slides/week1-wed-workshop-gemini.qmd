@@ -119,7 +119,8 @@ Tabella riassuntiva delle funzionalità che useremo nel corso. La chat testuale 
 ## Primo contatto con Gemini
 
 ::: {.orange-box}
-### Esercizio guidato (5 minuti)
+**Esercizio guidato (5 minuti)**
+
 1. Aprite **gemini.google.com** con l'account \@uniurb.it
 2. Scrivete: *"Spiega in 3 punti cos'è il sistema mediale ibrido di Chadwick"*
 3. Valutate la risposta: è accurata? Manca qualcosa?
@@ -227,7 +228,8 @@ Confronto tra prompt scarno e strutturato. Il prompt strutturato contiene: (1) u
 ## Il dialogo iterativo
 
 ::: {.orange-box}
-### Esercizio guidato (10 minuti)
+**Esercizio guidato (10 minuti)**
+
 1. Chiedete a Gemini: *"Quali sono i rischi dell'IA per la disinformazione?"*
 2. Leggete la risposta e chiedete: *"Approfondisci il secondo punto con dati specifici"*
 3. Poi: *"Confuta questa tesi — quali sono i controargomenti?"*
@@ -292,7 +294,8 @@ Confronto tra i due strumenti per chiarire quando usare quale. Gemini è più fl
 ## Esercizio: creare il notebook del corso
 
 ::: {.orange-box}
-### Esercizio guidato (20 minuti)
+**Esercizio guidato (20 minuti)**
+
 1. Aprite **notebooklm.google.com** con l'account \@uniurb.it
 2. Create un notebook: **"IA Generativa e Media — Letture"**
 3. Caricate **3 PDF** delle letture della prima settimana

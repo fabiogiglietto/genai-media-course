@@ -164,7 +164,8 @@ Sezione dedicata a rivisitare il concetto centrale del corso — il Paradosso de
 ## Il Paradosso dell'IA Generativa, 6 settimane dopo
 
 ::: {.orange-box}
-### Il Paradosso
+**Il Paradosso**
+
 Man mano che i contenuti sintetici diventano onnipresenti e indistinguibili, le societa potrebbero razionalmente **scontare tutte le prove digitali**. La verifica diventa un privilegio, è la responsabilita si erode [@ferrara2026].
 :::
 
@@ -278,7 +279,8 @@ Le sfide e le risposte possibili. Lato sfide: gli agenti IA autonomi (Google ha 
 ## La pila di mitigazione
 
 ::: {.orange-box}
-### Un approccio sistemico
+**Un approccio sistemico**
+
 Il rischio della realtà sintetica non può essere "risolto" da un singolo strumento o policy. La mitigazione deve essere trattata come una **pila di interventi complementari** [@ferrara2026].
 :::
 

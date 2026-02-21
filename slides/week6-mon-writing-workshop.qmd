@@ -95,7 +95,8 @@ Sezione 2: dettaglio su ogni parte del paper. Iniziamo dall'introduzione.
 ## Scrivere l'introduzione
 
 ::: {.orange-box}
-### La struttura a imbuto
+**La struttura a imbuto**
+
 L'introduzione parte dal **generale** (il fenomeno dell'IA generativa nei media) e si restringe fino allo **specifico** (la vostra domanda di ricerca).
 :::
 
@@ -172,7 +173,8 @@ Sezione sui risultati. La regola d'oro: i risultati presentano i dati, la discus
 ## Scrivere i risultati
 
 ::: {.orange-box}
-### Regola d'oro
+**Regola d'oro**
+
 Nella sezione Risultati **presentate i dati**. Nella Discussione **interpretateli**. Non mescolate le due cose.
 :::
 
@@ -395,7 +397,8 @@ Fase pratica della sessione. I gruppi lavorano alla costruzione dell'outline del
 ## Esercizio di gruppo (30 minuti)
 
 ::: {.orange-box}
-### Costruite l'outline del vostro paper
+**Costruite l'outline del vostro paper**
+
 Per ogni sezione, scrivete **2-3 punti** che intendete sviluppare. Usate NotebookLM per i collegamenti con la letteratura.
 :::
 

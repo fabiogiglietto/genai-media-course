@@ -87,7 +87,8 @@ Sezione 1: breve ricapitolazione degli obiettivi di raccolta. Collegamento con l
 ## Obiettivi e struttura del dataset
 
 ::: {.orange-box}
-### Il dataset del progetto
+**Il dataset del progetto**
+
 Ogni gruppo costruisce un dataset di **post con immagini AI-generated** e i relativi **commenti**, raccolti da pagine e gruppi Facebook italiani.
 :::
 
@@ -241,7 +242,8 @@ Sezione 5: uso di Google Gemini per lo screening preliminare dei contenuti racco
 ## Screening con Gemini: prompt e workflow
 
 ::: {.orange-box}
-### Prompt di esempio per lo screening
+**Prompt di esempio per lo screening**
+
 *"Analizza questa immagine e rispondi: (1) Presenta caratteristiche di un'immagine generata da IA? (Si/No/Incerto) (2) Quali indizi visivi supportano la valutazione? (3) Classifica il tema: bambini / animali / religione / paesaggio / altro"*
 :::
 
@@ -265,7 +267,8 @@ Sezione 6: inizio del lavoro pratico in gruppi. La parte centrale del lab.
 ## Istruzioni per il lavoro di gruppo
 
 ::: {.orange-box}
-### Obiettivo del lab (90 minuti)
+**Obiettivo del lab (90 minuti)**
+
 Ogni gruppo raccoglie almeno **30 post** con immagini *AI slop* e i relativi **commenti** su Meta Content Library, organizzandoli nel foglio di calcolo condiviso.
 :::
 

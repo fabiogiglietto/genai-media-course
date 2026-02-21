@@ -148,7 +148,8 @@ La bassa intercoder reliability (sotto 0.6 di Cohen's kappa) indica problemi nel
 ## Problema 3: Collegamento teoria-dati
 
 ::: {.orange-box}
-### Domanda chiave
+**Domanda chiave**
+
 I vostri risultati empirici **dialogano** con i framework teorici del corso? Non basta presentare i dati: occorre interpretarli.
 :::
 

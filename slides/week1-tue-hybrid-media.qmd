@@ -122,7 +122,8 @@ Sezione 2: il cuore della lezione. Il framework di Chadwick applicato al sistema
 ## Definizione del sistema mediale ibrido
 
 ::: {.orange-box}
-### Il Sistema Mediale Ibrido
+**Il Sistema Mediale Ibrido**
+
 Il sistema mediale ibrido è costruito sulle **interazioni tra vecchi e nuovi media** e le loro tecnologie, generi, norme, comportamenti e organizzazioni associate. Gli attori sono articolati da **relazioni di potere complesse e in evoluzione** basate su adattamento e interdipendenza [@chadwick2011].
 :::
 

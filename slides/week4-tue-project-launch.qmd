@@ -56,7 +56,8 @@ Sezione 1: breve ricapitolazione del fenomeno AI slop per contestualizzare il pr
 ## Cos'è l'*AI slop*
 
 ::: {.orange-box}
-### Definizione
+**Definizione**
+
 *AI slop:* contenuti generati dall'IA — tipicamente immagini — diffusi sui social media come **engagement bait**, senza pretesa di autenticità ma con impatto degradante sull'ecosistema informativo [@terenzi2025].
 :::
 
@@ -194,7 +195,8 @@ Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. S
 ## Sviluppare la domanda di ricerca
 
 ::: {.orange-box}
-### Esercizio di gruppo (15 minuti)
+**Esercizio di gruppo (15 minuti)**
+
 1. Partendo dalla domanda generale, formulate una **domanda di ricerca specifica** per il vostro gruppo
 2. Identificate **2-3 variabili** che intendete analizzare
 3. Proponete **ipotesi preliminari** su cosa vi aspettate di trovare

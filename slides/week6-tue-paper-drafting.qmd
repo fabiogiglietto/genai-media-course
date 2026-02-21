@@ -131,7 +131,8 @@ Verifica finale della solidita metodologica del paper.
 ## Verifica del metodo
 
 ::: {.orange-box}
-### Domanda chiave
+**Domanda chiave**
+
 Se un altro ricercatore leggesse il vostro metodo, sarebbe in grado di **replicare** la vostra analisi?
 :::
 
@@ -199,7 +200,8 @@ Inizio della fase operativa. I gruppi lavorano in aula.
 ## Blocco 1: Scrittura (30 minuti)
 
 ::: {.orange-box}
-### Istruzioni
+**Istruzioni**
+
 Ogni membro del gruppo lavora sulla sezione assegnata. Il coordinatore verifica la coerenza. Usate il **Google Docs condiviso** per scrivere in simultanea.
 :::
 

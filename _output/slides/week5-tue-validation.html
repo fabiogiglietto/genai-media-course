@@ -49,7 +49,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="week5-tue-validation_files/libs/revealjs/dist/theme/quarto-2d70cd994f411e68839a45e7c9998313.css">
+  <link rel="stylesheet" href="week5-tue-validation_files/libs/revealjs/dist/theme/quarto-34e38af686394ecb9bfdf46b1e067007.css">
   <link href="week5-tue-validation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="week5-tue-validation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="week5-tue-validation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -283,10 +283,10 @@ Fabio Giglietto
 </section>
 <section id="la-pipeline-llms-in-the-loop" class="slide level2">
 <h2>La pipeline LLMs-in-the-loop</h2>
-<section id="definizione" class="orange-box">
-<h3>Definizione</h3>
+<div class="orange-box">
+<p><strong>Definizione</strong></p>
 <p>La metodologia <em>LLMs-in-the-loop</em> integra l’analisi automatizzata dei LLM con la validazione sistematica umana, trattando l’IA come un “codificatore” le cui classificazioni vengono verificate contro il giudizio umano <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span>.</p>
-</section>
+</div>
 <p>La pipeline prevede un <strong>ciclo iterativo:</strong></p>
 <ol type="1">
 <li>Definizione del codebook</li>
@@ -670,14 +670,14 @@ Fabio Giglietto
 </section>
 <section id="esercizio-validare-un-campione" class="slide level2">
 <h2>Esercizio: validare un campione</h2>
-<section id="attività-45-minuti" class="orange-box">
-<h3>Attività (45 minuti)</h3>
+<div class="orange-box">
+<p><strong>Attività (45 minuti)</strong></p>
 <ol type="1">
 <li><strong>Preparazione (10 min):</strong> campione di <strong>50 commenti</strong>, foglio separato senza classificazione IA, 2 codificatori indipendenti</li>
 <li><strong>Codifica (20 min):</strong> classificare i 50 commenti con il codebook, annotare i casi difficili</li>
 <li><strong>Confronto (15 min):</strong> confrontare con classificazioni IA, costruire matrice di confusione, calcolare il kappa</li>
 </ol>
-</section>
+</div>
 <aside class="notes">
 <p>Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere rapida; i dati sono già nel foglio di calcolo dal lab di ieri. Creare un foglio separato con solo ID e testo del commento, senza la colonna della classificazione IA. Fase 2: la codifica individuale deve essere davvero indipendente — i codificatori non devono comunicare durante questa fase. Fase 3: il confronto è il momento più interessante — dove emergono i disaccordi e si capisce dove il codebook è ambiguo. Passare tra i gruppi durante la Fase 3 per aiutare con il calcolo del kappa e l’interpretazione dei risultati.</p>
 <style type="text/css">

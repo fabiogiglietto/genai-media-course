@@ -118,7 +118,8 @@ Sezione 2: Hameleers & van der Meer (2026). Sfida la narrativa dominante sui dee
 ## Immagini IA vs. video decontestualizzati
 
 ::: {.orange-box}
-### Risultato sorprendente
+**Risultato sorprendente**
+
 La disinformazione visiva **non** supera uniformemente quella testuale in credibilità. Gli effetti dipendono dal **contesto** e dalla **salienza** dell'argomento [@hameleers2026].
 :::
 

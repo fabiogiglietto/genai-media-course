@@ -125,7 +125,8 @@ Proposta di codebook di base per l'analisi dei commenti. I gruppi possono adatta
 ## Esercizio: definire il codebook di gruppo
 
 ::: {.orange-box}
-### Attività (15 minuti)
+**Attività (15 minuti)**
+
 1. Partendo dalle categorie di base, **adattate il codebook** alla vostra domanda di ricerca
 2. Aggiungete **almeno 3 esempi concreti** dal vostro dataset per ogni categoria
 3. Definite le **regole per i casi ambigui** (es. un commento che contiene sia riconoscimento IA che emozione)
@@ -269,7 +270,8 @@ Sezione 5: lavoro pratico di classificazione. I gruppi applicano quanto discusso
 ## Istruzioni per il lavoro di gruppo
 
 ::: {.orange-box}
-### Obiettivo del lab (60 minuti)
+**Obiettivo del lab (60 minuti)**
+
 Ogni gruppo: (1) finalizza il proprio **codebook**, (2) costruisce il **prompt** di classificazione, (3) classifica **almeno 50 commenti** con Gemini, (4) annota i risultati nel foglio condiviso.
 :::
 

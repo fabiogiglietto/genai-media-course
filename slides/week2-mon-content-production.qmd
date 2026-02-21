@@ -325,8 +325,9 @@ Framework operativo per la valutazione dei contenuti IA. L'accuratezza è il cri
 ## L'accuratezza come sfida centrale
 
 ::: {.orange-box}
-### Il problema delle hallucination
-I LLM possono generare informazioni **plausibili ma false**: citazioni inesistenti, dati inventati, fatti alterati. Il **50%** delle risposte LLM sui contenuti BBC presentava problemi, con il **19%** contenente errori fattuali diretti (BBC, 2025, citato in @mattis2025).
+**Il problema delle hallucination**
+
+I LLM possono generare informazioni **plausibili ma false**: citazioni inesistenti, dati inventati, fatti alterati. Il **50%** delle risposte LLM sui contenuti BBC presentava problemi, con il **19%** di errori fattuali diretti [BBC, 2025, citato in @mattis2025].
 :::
 
 Strategie di verifica:

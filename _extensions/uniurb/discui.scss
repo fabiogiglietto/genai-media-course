@@ -452,6 +452,8 @@ $code-color: #333333;
   border-radius: 10px;
   padding: 1.2em 1.5em;
   margin: 1.5em 0 1.2em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 
   h3, h4 {
     color: white;

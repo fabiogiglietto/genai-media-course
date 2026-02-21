@@ -110,7 +110,8 @@ Sezione 2: approfondimento della metodologia. Qui espandiamo quanto introdotto n
 ## La pipeline LLMs-in-the-loop
 
 ::: {.orange-box}
-### Definizione
+**Definizione**
+
 La metodologia *LLMs-in-the-loop* integra l'analisi automatizzata dei LLM con la validazione sistematica umana, trattando l'IA come un "codificatore" le cui classificazioni vengono verificate contro il giudizio umano [@marino2024].
 :::
 
@@ -274,7 +275,7 @@ Sezione 5: esercizio di validazione. La parte centrale della sessione.
 ## Esercizio: validare un campione
 
 ::: {.orange-box}
-### Attività (45 minuti)
+**Attività (45 minuti)**
 
 1. **Preparazione (10 min):** campione di **50 commenti**, foglio separato senza classificazione IA, 2 codificatori indipendenti
 2. **Codifica (20 min):** classificare i 50 commenti con il codebook, annotare i casi difficili
