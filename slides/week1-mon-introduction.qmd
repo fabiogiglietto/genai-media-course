@@ -79,6 +79,20 @@ Dettagli logistici. Sottolineare che il corso è intensivo (6 settimane) e richi
 Panoramica della struttura. Le prime tre settimane includono lezioni frontali, un workshop pratico (Gemini e NotebookLM) e seminari ospiti (Cosenza, Paroni, Terenzi). Le settimane 4-6 sono dedicate al progetto di gruppo: raccolta dati, analisi assistita dall'IA e scrittura della relazione. Il passaggio da teoria a pratica è graduale.
 :::
 
+## Obiettivi di apprendimento
+
+Al termine del corso sarete in grado di:
+
+- **Comprendere** i principi dell'IA generativa e le sue applicazioni nei media
+- **Riconoscere** contenuti generati dall'IA analizzando indicatori tecnici e stilistici
+- **Analizzare** la circolazione di contenuti sintetici sulle piattaforme social
+- **Applicare** metodologie di ricerca digitale (*LLMs-in-the-loop*)
+- **Valutare** criticamente l'impatto etico e sociale dell'IA nella comunicazione
+
+::: {.notes}
+Gli obiettivi di apprendimento seguono i Descrittori di Dublino: conoscenza e comprensione (comprendere i principi), applicazione (riconoscere, analizzare, applicare metodologie), autonomia di giudizio (valutare criticamente). Questi obiettivi guidano l'intero corso: le settimane 1-2 costruiscono la base teorica, la settimana 3 il seminario metodologico, le settimane 4-6 l'applicazione pratica nel progetto di gruppo. Ogni sessione contribuisce a uno o più di questi obiettivi.
+:::
+
 ## Struttura delle 6 settimane
 
 | Settimana | Focus |
