@@ -648,18 +648,33 @@ section[data-background-color="#C5612E"] .uni-header {
 }
 
 // ============================================
-// LINKS ON DARK BACKGROUNDS — Specificity fix
-// .reveal a { color: $link-color } has specificity 0,1,1
-// so bare .orange-box a loses the cascade battle.
-// These selectors add enough specificity to win.
+// LINKS ON DARK BACKGROUNDS — Visibility fix
+// Default link color (#E06029) is nearly invisible
+// on orange (#C5612E) backgrounds.
+// Uses high-specificity selectors to override
+// .reveal a { color: var(--r-link-color) }.
 // ============================================
-.reveal .slides .orange-box a,
-.reveal .slides .blue-box a {
-  color: white;
+.reveal .slides section .orange-box a,
+.reveal .slides section .blue-box a,
+.reveal .slides section[data-background-color="#C5612E"] .orange-box a,
+.reveal .slides section[data-background-color="#C5612E"] a {
+  color: white !important;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+// Table header links (orange bg #E06029)
+.reveal .slides section table th a {
+  color: white !important;
   text-decoration: underline;
 
   &:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8) !important;
   }
 }
 
