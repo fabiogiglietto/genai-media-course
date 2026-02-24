@@ -138,6 +138,15 @@ $code-color: #333333;
   .quarto-title-author-name {
     color: rgba(255, 255, 255, 0.95);
   }
+
+  a {
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
 }
 
 // ============================================
@@ -212,8 +221,12 @@ $code-color: #333333;
   }
 
   a {
-    color: rgba(255,255,255,0.9);
+    color: white;
     text-decoration: underline;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
   }
 }
 
@@ -464,6 +477,15 @@ $code-color: #333333;
   strong {
     color: white;
   }
+
+  a {
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
 }
 
 // Blue box (kept for Ateneo-level content)
@@ -477,6 +499,15 @@ $code-color: #333333;
   h3, h4 {
     color: $discui-medium;
     margin-top: 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
   }
 }
 
