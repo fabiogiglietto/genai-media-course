@@ -648,6 +648,22 @@ section[data-background-color="#C5612E"] .uni-header {
 }
 
 // ============================================
+// LINKS ON DARK BACKGROUNDS — Specificity fix
+// .reveal a { color: $link-color } has specificity 0,1,1
+// so bare .orange-box a loses the cascade battle.
+// These selectors add enough specificity to win.
+// ============================================
+.reveal .slides .orange-box a,
+.reveal .slides .blue-box a {
+  color: white;
+  text-decoration: underline;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+// ============================================
 // PRINT STYLES
 // ============================================
 
