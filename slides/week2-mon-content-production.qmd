@@ -152,6 +152,8 @@ Sezione 2: approfondimento sul prompt engineering. Costruiamo sulle basi del wor
 
 ## Anatomia di un prompt efficace
 
+::: {.columns}
+::: {.column width="45%"}
 | Componente | Descrizione |
 |-----------|-------------|
 | **Ruolo** | Chi deve essere l'IA |
@@ -160,15 +162,19 @@ Sezione 2: approfondimento sul prompt engineering. Costruiamo sulle basi del wor
 | **Formato** | Come deve essere l'output |
 | **Vincoli** | Limiti e requisiti |
 | **Esempi** | Output desiderato |
+:::
 
-::: {.highlight-box}
+::: {.column width="55%"}
+### Prompt che li usa tutti
+
 *"Agisci come un **analista media**. Nel contesto del sistema mediale italiano, **analizza** i seguenti 5 articoli. Presenta i risultati in una **tabella**, max 200 parole, tono accademico."*
+:::
 :::
 
 Struttura basata sul principio "Dirigi" di @cosenza2025.
 
 ::: {.notes}
-Framework per la costruzione di prompt efficaci. Questo schema si basa sulle best practice del prompt engineering e sul principio "Dirigi" di Cosenza (2025): non lasciare spazi di libertà all'IA. Ogni componente riduce l'ambiguità e aumenta la qualità dell'output. Il ruolo orienta il tono e il livello di expertise. Il contesto fornisce informazioni che il modello potrebbe non avere. Il formato è cruciale: l'IA può produrre lo stesso contenuto come paragrafo, lista, tabella, o dialogo. I vincoli impediscono risposte troppo lunghe o off-topic. Gli esempi (few-shot prompting) sono il metodo più efficace per guidare l'output. L'highlight box mostra un prompt che incorpora tutti e 6 i componenti in un'unica richiesta strutturata.
+Framework per la costruzione di prompt efficaci. Questo schema si basa sulle best practice del prompt engineering e sul principio "Dirigi" di Cosenza (2025): non lasciare spazi di libertà all'IA. Ogni componente riduce l'ambiguità e aumenta la qualità dell'output. Il ruolo orienta il tono e il livello di expertise. Il contesto fornisce informazioni che il modello potrebbe non avere. Il formato è cruciale: l'IA può produrre lo stesso contenuto come paragrafo, lista, tabella, o dialogo. I vincoli impediscono risposte troppo lunghe o off-topic. Gli esempi (few-shot prompting) sono il metodo più efficace per guidare l'output. Il prompt nella colonna destra incorpora tutti e 6 i componenti in un'unica richiesta strutturata.
 :::
 
 ## Tecniche di prompting
