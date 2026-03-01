@@ -5,6 +5,7 @@ Slides del corso **IA Generativa e Media** (6 CFU), A.A. 2025/2026.
 **Docente:** Prof. Fabio Giglietto
 **Dipartimento:** DISCUI · Università degli Studi di Urbino Carlo Bo
 **Periodo:** 23 Febbraio – 1 Aprile 2026 (6 settimane, 18 incontri)
+**Programma:** [Scheda insegnamento](https://www.uniurb.it/insegnamenti-e-programmi/267958)
 
 ## Slides
 
