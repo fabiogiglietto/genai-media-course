@@ -152,19 +152,23 @@ Sezione 2: approfondimento sul prompt engineering. Costruiamo sulle basi del wor
 
 ## Anatomia di un prompt efficace
 
-| Componente | Descrizione | Esempio |
-|-----------|-------------|---------|
-| **Ruolo** | Chi deve essere l'IA | "Agisci come un analista media" |
-| **Contesto** | Informazioni di sfondo | "Nel contesto del sistema mediale italiano..." |
-| **Compito** | Cosa deve fare | "Analizza i seguenti 5 articoli..." |
-| **Formato** | Come deve essere l'output | "Presenta i risultati in una tabella" |
-| **Vincoli** | Limiti e requisiti | "Max 200 parole, tono accademico" |
-| **Esempi** | Output desiderato | "Segui questo modello: [esempio]" |
+| Componente | Descrizione |
+|-----------|-------------|
+| **Ruolo** | Chi deve essere l'IA |
+| **Contesto** | Informazioni di sfondo |
+| **Compito** | Cosa deve fare |
+| **Formato** | Come deve essere l'output |
+| **Vincoli** | Limiti e requisiti |
+| **Esempi** | Output desiderato |
+
+::: {.highlight-box}
+*"Agisci come un **analista media**. Nel contesto del sistema mediale italiano, **analizza** i seguenti 5 articoli. Presenta i risultati in una **tabella**, max 200 parole, tono accademico."*
+:::
 
 Struttura basata sul principio "Dirigi" di @cosenza2025.
 
 ::: {.notes}
-Framework per la costruzione di prompt efficaci. Questo schema si basa sulle best practice del prompt engineering e sul principio "Dirigi" di Cosenza (2025): non lasciare spazi di libertà all'IA. Ogni componente riduce l'ambiguità e aumenta la qualità dell'output. Il ruolo orienta il tono e il livello di expertise. Il contesto fornisce informazioni che il modello potrebbe non avere. Il formato è cruciale: l'IA può produrre lo stesso contenuto come paragrafo, lista, tabella, o dialogo. I vincoli impediscono risposte troppo lunghe o off-topic. Gli esempi (few-shot prompting) sono il metodo più efficace per guidare l'output.
+Framework per la costruzione di prompt efficaci. Questo schema si basa sulle best practice del prompt engineering e sul principio "Dirigi" di Cosenza (2025): non lasciare spazi di libertà all'IA. Ogni componente riduce l'ambiguità e aumenta la qualità dell'output. Il ruolo orienta il tono e il livello di expertise. Il contesto fornisce informazioni che il modello potrebbe non avere. Il formato è cruciale: l'IA può produrre lo stesso contenuto come paragrafo, lista, tabella, o dialogo. I vincoli impediscono risposte troppo lunghe o off-topic. Gli esempi (few-shot prompting) sono il metodo più efficace per guidare l'output. L'highlight box mostra un prompt che incorpora tutti e 6 i componenti in un'unica richiesta strutturata.
 :::
 
 ## Tecniche di prompting
