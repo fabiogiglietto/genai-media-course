@@ -36,20 +36,19 @@ csl: ../apa.csl
 
 ## [This Week in AI]{.twiai-badge}
 
-### Notizie della settimana
+### Il Pentagono contro i guardrail dell'IA
 
-<!-- PLACEHOLDER: aggiornare con le notizie IA della settimana corrente prima della lezione -->
+Il Segretario alla Difesa USA ha intimato ad Anthropic di consentire **"ogni uso lecito"** dei propri modelli IA da parte del Pentagono, minacciando l'invocazione del *Defense Production Act*.
 
-- **Notizia 1:** da aggiornare
-- **Notizia 2:** da aggiornare
+Anthropic ha posto due **linee rosse**: no a sistemi d'arma **completamente autonomi**, no alla **sorveglianza di massa** dei cittadini. Ma Google, OpenAI e xAI avrebbero già accettato le condizioni.
 
 ::: {.callout-note}
 ## Da discutere
-Avete visto notizie sull'IA questa settimana? Quale vi ha colpito di più e perché?
+Chi dovrebbe decidere i limiti d'uso dell'IA: le aziende, i governi o organismi indipendenti? L'assenza di una legislazione federale sull'IA negli USA rende "ogni uso lecito" di fatto **illimitato**?
 :::
 
 ::: {.notes}
-This Week in AI: segmento da aggiornare ogni settimana con notizie fresche. Chiedere prima agli studenti se hanno visto notizie sull'IA durante la settimana. Poi presentare 1-2 notizie selezionate dal docente. Collegare le notizie ai temi del corso: sistema mediale ibrido, catena del valore giornalistica, human-in-the-loop. Dedicare 5-10 minuti alla discussione.
+This Week in AI: la notizia della settimana è lo scontro tra il Pentagono e Anthropic. Il Segretario alla Difesa Pete Hegseth ha dato un ultimatum al CEO Dario Amodei: consentire ogni uso "lecito" di Claude da parte del Dipartimento della Difesa, oppure affrontare l'invocazione del Defense Production Act e la designazione come rischio per la catena di approvvigionamento. Anthropic ha tracciato due linee rosse: (1) no armi completamente autonome, (2) no sorveglianza di massa dei cittadini americani. Il punto cruciale, come ha sottolineato Amodei, è che l'assenza di una legislazione federale sull'IA rende "lecito" di fatto illimitato. Questa notizia anticipa i temi che affronteremo nella lezione di mercoledì prossimo (Deepfake, Policy e Regolamentazione): la tensione tra governance dell'IA e interessi statali, il ruolo dell'EU AI Act come contraltare europeo, e la riflessione di Schroeder et al. (2026) su come l'IA possa minacciare i sistemi democratici. Domanda chiave per la discussione: se un governo democratico può forzare la rimozione dei guardrail, cosa impedisce che la stessa cosa accada in contesti autoritari? Amodei stesso ha osservato che "le autocrazie attuali sono limitate dalla necessità di avere umani che eseguano i loro ordini" ma "le autocrazie potenziate dall'IA non avrebbero questo limite." Collegamento anche con la natura dual-use dell'IA: la stessa tecnologia che può essere usata per la difesa nazionale può diventare strumento di sorveglianza. Dedicare 5-10 minuti alla discussione.
 :::
 
 ## Roadmap del workshop
