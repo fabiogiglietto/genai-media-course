@@ -190,19 +190,17 @@ Sezione 3: presentazione del dataset pre-curato fornito dal docente. Gli student
 ## Un dataset pronto per l'analisi
 
 ::: {.highlight-box}
-**Novità:** il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Non dovete raccogliere dati — potete concentrarvi su classificazione e analisi.
+Il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Potete concentrarvi su classificazione e analisi.
 :::
 
 | Componente | Formato | Accesso |
 |-----------|---------|---------|
 | **Metadati post** + metriche di engagement | CSV | Google Sheet condiviso |
-| **Immagini AI-generated** (~300-400) | JPG/PNG | Cartella Google Drive |
-| **Testo dei post** | Colonna nel CSV | Google Sheet condiviso |
+| **Contenuti multimediali** (~300-400 immagini e video) | JPG/PNG/MP4 | Cartella Google Drive |
 | **Engagement:** reazioni, condivisioni, visualizzazioni | Colonne numeriche | Google Sheet condiviso |
-| **Conteggio commenti** | Colonna numerica | Google Sheet condiviso |
 
 ::: {.notes}
-Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post raccolti tramite Meta Content Library — uno strumento di Facebook per la ricerca accademica a cui gli studenti non hanno accesso diretto. Il docente ha scaricato e organizzato i dati. Le immagini sono nominate in modo da corrispondere agli identificativi dei post nel CSV. Tutti i gruppi lavorano sullo stesso sottoinsieme di immagini — questo è un punto di forza del design: consente il confronto inter-gruppo. Nota: i singoli commenti NON sono disponibili, solo il conteggio aggregato. Questo limita l'analisi ma non impedisce di studiare i pattern di engagement.
+Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post raccolti tramite Meta Content Library — uno strumento di Facebook per la ricerca accademica a cui gli studenti non hanno accesso diretto. Il docente ha scaricato e organizzato i dati. I contenuti multimediali includono sia immagini sia video e sono nominati in modo da corrispondere agli identificativi dei post nel CSV. Il CSV contiene anche il testo dei post e il conteggio dei commenti. Tutti i gruppi lavorano sullo stesso sottoinsieme — questo è un punto di forza del design: consente il confronto inter-gruppo. Nota: i singoli commenti NON sono disponibili, solo il conteggio aggregato.
 :::
 
 ## Cosa NON è disponibile
