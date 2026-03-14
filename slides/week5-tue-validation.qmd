@@ -37,20 +37,20 @@ csl: ../apa.csl
 ## Roadmap della sessione
 
 1. **Dal framework Paroni alla quantificazione** — ciò che sapete + ciò che imparerete oggi
-2. **Perché validare** — il ruolo della verifica umana
+2. **Perché validare** — il ruolo della verifica umana nella classificazione di immagini
 3. **Progettare il protocollo di validazione** — campionamento e codifica
 4. **Misurare l'accordo** — Cohen's kappa e Krippendorff's alpha (contenuto nuovo)
-5. **Esercizio pratico** — validare un campione di commenti
-6. **Iterazione e raffinamento** — migliorare la pipeline
+5. **Esercizio pratico** — validare un campione di 50 immagini
+6. **Confronto inter-gruppo e iterazione** — sfruttare il dataset condiviso
 
 ::: {.notes}
-Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato i commenti con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, ✓/⚠/✗ per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Questo è il contenuto genuinamente nuovo della sessione — il resto poggia sulle basi già acquisite. Sessione pratica al 70%.
+Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato le ~300-400 immagini con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, quattro criteri con scala a tre punti per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Il contenuto genuinamente nuovo è Cohen's kappa e Krippendorff's alpha. Un elemento in più rispetto al seminario: poiché tutti i gruppi lavorano sulle stesse immagini, è possibile un confronto inter-gruppo sulla classificazione.
 :::
 
 ## Perché Validare {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 1: motivazione della validazione. Perché non basta la classificazione automatizzata.
+Sezione 1: motivazione della validazione. Perché non basta la classificazione automatizzata, specialmente per contenuti visivi.
 :::
 
 ## L'IA non è un oracolo
@@ -59,15 +59,15 @@ Sezione 1: motivazione della validazione. Perché non basta la classificazione a
 **Principio fondamentale:** come ci ricorda @cosenza2025, l'IA ragiona per **probabilità**, non per verità. Ogni classificazione automatizzata è una **bozza** che richiede verifica.
 :::
 
-Perché la classificazione dell'IA può essere inaffidabile:
+Perché la classificazione multimodale dell'IA può essere inaffidabile:
 
 - **Sensibilità al prompt:** piccole variazioni producono risultati diversi
-- **Bias del modello:** tendenza a sovra-rappresentare alcune categorie
-- **Ambiguità linguistica:** ironia, sarcasmo, dialetto sono difficili da interpretare
-- **Mancanza di contesto:** l'IA non conosce il contesto culturale specifico
+- **Bias del modello:** tendenza a sovra-rappresentare alcune categorie visive
+- **Ambiguità visiva:** un'immagine può appartenere a più categorie
+- **Artefatti sintetici:** l'IA potrebbe non riconoscere gli stessi indicatori visivi che nota un umano
 
 ::: {.notes}
-Collegamento con la regola 4 di Cosenza (2025): "Valuta". L'IA non è stata progettata per dire la verità, ma per generare l'output più probabile. Nel contesto della classificazione dei commenti, questo significa che l'IA può classificare correttamente i casi chiari ma sbagliare sistematicamente sui casi ambigui. L'ironia è particolarmente problematica: un commento come "bellissimo, proprio come una foto vera!" potrebbe essere sarcasmo (riconoscimento IA) o genuino (engagement). Il contesto culturale italiano aggiunge complessità: espressioni dialettali, riferimenti locali, humor specifico. Per questo la validazione umana non è un optional ma un requisito metodologico.
+Collegamento con la regola 4 di Cosenza (2025): "Valuta". Nel contesto della classificazione di immagini AI-generated, la sfida è doppia: usiamo un'IA (Gemini) per classificare immagini generate da un'altra IA. Gemini potrebbe avere bias specifici: ad esempio, tendere a classificare come "bambini" immagini dove i bambini sono sullo sfondo, o non cogliere la differenza tra "nostalgia" e "paesaggio vintage". L'ambiguità visiva è il problema principale: un'immagine di un bambino con un animale potrebbe essere "bambini" o "animali" a seconda dello schema. Inoltre, le immagini AI-generated hanno artefatti specifici (mani distorte, testi illeggibili) che un umano nota immediatamente ma che Gemini potrebbe ignorare nella classificazione tematica.
 :::
 
 ## Il paradosso della fiducia nell'IA
@@ -78,10 +78,10 @@ Collegamento con la regola 4 di Cosenza (2025): "Valuta". L'IA non è stata prog
 
 Ferrara (2026) descrive un **paradosso**: più l'IA sembra affidabile, più rischiamo di fidarci ciecamente dei suoi output [@ferrara2026].
 
-Nella ricerca, questo si traduce in:
+Nella classificazione di immagini:
 
-- Accettare classificazioni senza verifica
-- Non documentare gli errori dell'IA
+- Accettare categorie senza verificare visivamente
+- Non controllare le immagini ambigue
 - Presentare risultati non validati
 :::
 
@@ -90,15 +90,15 @@ Nella ricerca, questo si traduce in:
 
 La **validazione sistematica** protegge da questo rischio:
 
-- Codifica umana indipendente
+- Codifica umana indipendente delle immagini
 - Confronto quantitativo IA-umano
-- Documentazione trasparente
-- Iterazione basata sugli errori
+- Documentazione trasparente degli errori
+- Iterazione basata sulla matrice di confusione
 :::
 :::
 
 ::: {.notes}
-Il collegamento con Ferrara (2026) è importante: il Generative AI Paradox si applica anche alla ricerca. Come i cittadini possono cadere nella "credulity" (credere a contenuti sintetici convincenti), i ricercatori possono cadere nell'accettare acriticamente classificazioni IA apparentemente plausibili. La validazione sistematica è l'antidoto: trattare l'IA come un codificatore le cui classificazioni devono essere verificate, esattamente come faremmo con un codificatore umano alle prime armi. Questo approccio è al centro della metodologia LLMs-in-the-loop.
+Il collegamento con Ferrara (2026) è importante: il Generative AI Paradox si applica anche alla ricerca. Come i cittadini possono cadere nella "credulity" (credere a contenuti sintetici convincenti), i ricercatori possono accettare acriticamente classificazioni IA apparentemente plausibili. Nel caso delle immagini, il rischio è ancora maggiore: la classificazione visiva sembra intuitiva e i risultati di Gemini appaiono ragionevoli, il che può portare a saltare la validazione. La soluzione è trattare l'IA come un codificatore le cui classificazioni devono essere verificate, esattamente come nella metodologia LLMs-in-the-loop di Marino & Giglietto (2024).
 :::
 
 ## Dalla Validazione Qualitativa a Quella Quantitativa {background-color="#C5612E"}
@@ -131,33 +131,33 @@ Nel seminario avete praticato **due livelli di validazione** [@marino2024]:
 - Copertura adeguata
 - Allineamento contestuale
 
-*Scala: ✓ buono / ⚠ parziale / ✗ inadeguato*
+*Scala: buono / parziale / inadeguato*
 :::
 :::
 
 Oggi facciamo un **salto di qualità**: dalla validazione qualitativa a quella **quantitativa** con metriche statistiche.
 
 ::: {.notes}
-Ricapitolazione rapida — non ri-spiegazione. Gli studenti hanno usato questi strumenti in prima persona nel workshop del mercoledì con Paroni. I livelli 0-3 e i 4 criteri con scala a 3 punti sono strumenti qualitativi preziosi, ma per il paper servono metriche quantitative di accordo inter-codificatore. Il passaggio chiave di oggi: trattare Gemini come un "codificatore" la cui affidabilità va misurata con le stesse metriche che si userebbero per un codificatore umano. Cohen's kappa e Krippendorff's alpha sono gli strumenti per farlo. Questo è il contenuto genuinamente nuovo di oggi.
+Ricapitolazione rapida — non ri-spiegazione. Gli studenti hanno usato questi strumenti in prima persona nel workshop del mercoledì con Paroni. I livelli 0-3 e i 4 criteri con scala a 3 punti sono strumenti qualitativi preziosi per valutare clustering e labeling. Se nel progetto qualche gruppo ha chiesto a Gemini di raggruppare le immagini in cluster emergenti (oltre alla classificazione predefinita), può applicare anche il framework Paroni a quei risultati. Per la classificazione principale, però, servono metriche quantitative: Cohen's kappa e Krippendorff's alpha. Questo è il contenuto genuinamente nuovo di oggi.
 :::
 
 ## Progettare il Protocollo di Validazione {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 3: aspetti pratici del protocollo di validazione. Come selezionare il campione e organizzare la codifica umana.
+Sezione 3: aspetti pratici del protocollo di validazione. Come selezionare il campione di immagini e organizzare la codifica umana.
 :::
 
-## Selezionare il campione
+## Il campione di validazione: 50 immagini
 
 ::: {.highlight-box}
-**Regola pratica:** validare almeno il **20-30%** del dataset totale, con un minimo di **50 unità** per l'analisi di affidabilità.
+**Protocollo:** ogni membro del gruppo classifica **indipendentemente** un campione condiviso di **50 immagini** usando il codebook del gruppo. Nessun uso di Gemini, nessuna discussione.
 :::
 
-Strategie di campionamento:
+Come selezionare le 50 immagini:
 
-- **Campione casuale:** selezione randomizzata dal dataset completo
-- **Campione stratificato:** includere commenti da tutte le categorie IA
-- **Campione mirato:** includere i casi classificati come "incerti" dall'IA
+- **Campione casuale:** selezione randomizzata dal dataset completo (~300-400 immagini)
+- **Campione stratificato:** includere immagini da tutte le categorie assegnate da Gemini
+- **Casi incerti:** includere le immagini classificate con certezza "bassa" dall'IA
 
 ::: {.callout-tip}
 ## Suggerimento
@@ -165,23 +165,23 @@ Combinate le strategie: un campione casuale (per la rappresentatività) + tutti 
 :::
 
 ::: {.notes}
-Il campionamento è cruciale per la validità della validazione. Il 20-30% è una regola pratica consolidata nell'analisi del contenuto. Con dataset di 200-300 commenti (tipico per i gruppi), questo significa 50-80 commenti da classificare manualmente. Il campione stratificato garantisce che tutte le categorie siano rappresentate — importante perché alcune categorie (es. "riconoscimento IA") potrebbero essere rare. I casi "incerti" sono particolarmente informativi: mostrano dove il codebook è ambiguo e dove il prompt va migliorato.
+Il campione di 50 immagini è il core della validazione. A differenza della classificazione testuale, la classificazione visiva richiede che ogni codificatore guardi effettivamente l'immagine — non basta leggere una riga di testo. Questo rende i 50 casi un volume realistico per una codifica manuale accurata in 20-25 minuti. Il campione stratificato è particolarmente importante: se una categoria ha poche immagini nel dataset (es. solo il 5% è "religioso"), potrebbe non comparire nel campione casuale. Includere i casi incerti rivela dove il codebook è ambiguo e dove il prompt va migliorato.
 :::
 
 ## Organizzare la codifica umana
 
 | Fase | Azioni |
 |------|--------|
-| **Preparazione** | Estrarre campione in foglio separato, **rimuovere classificazione IA** (codifica cieca) |
-| **Codifica** | Ogni codificatore classifica **indipendentemente** con lo stesso codebook |
-| **Confronto** | Riunire classificazioni, confrontare con IA, calcolare metriche di **accordo** |
+| **Preparazione** | Estrarre 50 immagini in cartella separata, **foglio senza classificazione IA** (codifica cieca) |
+| **Codifica** | Ogni membro classifica **indipendentemente** con lo stesso codebook |
+| **Confronto** | Riunire classificazioni umane, confrontare tra loro e con Gemini |
 
 ::: {.highlight-box}
-**Cruciale:** i codificatori umani non devono vedere la classificazione IA per evitare il **bias di ancoraggio**.
+**Cruciale:** i codificatori umani non devono vedere la classificazione di Gemini per evitare il **bias di ancoraggio**.
 :::
 
 ::: {.notes}
-Il punto chiave è la codifica cieca: i codificatori umani non devono vedere la classificazione dell'IA per evitare il bias di ancoraggio (tendenza a conformarsi alla classificazione già presente). Idealmente, almeno 2 membri del gruppo codificano indipendentemente lo stesso campione: questo permette di calcolare sia l'accordo umano-umano (baseline) che l'accordo IA-umano. Se il gruppo ha 5 membri, suggerire 2 codificatori sul campione completo e gli altri 3 su sottoinsiemi. I casi difficili e le motivazioni alimentano la fase di iterazione.
+Il punto chiave è la codifica cieca: i codificatori umani non devono vedere la classificazione dell'IA per evitare il bias di ancoraggio (tendenza a conformarsi alla classificazione già presente). Preparare un foglio con solo: ID immagine e colonne vuote per la classificazione di ogni membro. L'immagine va visualizzata dalla cartella condivisa. Questo protocollo permette di calcolare: (1) accordo umano-umano tra ogni coppia di membri (baseline), (2) accordo umano-IA tra ogni membro e Gemini. Se il gruppo ha 4-5 membri, si ottengono 6-10 coppie umano-umano e 4-5 coppie umano-IA — un quadro robusto della affidabilità del codebook.
 :::
 
 ## Misurare l'Accordo {background-color="#C5612E"}
@@ -241,44 +241,45 @@ Concetto statistico fondamentale per la validazione. La percentuale di accordo g
 :::
 
 ::: {.notes}
-Le due metriche principali per la validazione. Cohen's kappa è la più usata quando si confrontano 2 codificatori (nel nostro caso, IA vs. umano). Krippendorff's alpha è più flessibile: funziona con più di 2 codificatori e gestisce i dati mancanti. Per il progetto, il kappa di Cohen è sufficiente se si confronta 1 codificatore umano con l'IA; alpha di Krippendorff se si confrontano 2 codificatori umani + l'IA. L'obiettivo minimo per la ricerca è un kappa/alpha di 0.60 (accordo buono). Valori inferiori indicano che il codebook o il prompt vanno rivisti. Nella sezione Metodo del paper, bisogna riportare la metrica usata, il valore ottenuto e l'interpretazione.
+Le due metriche principali per la validazione. Cohen's kappa è la più usata quando si confrontano 2 codificatori (nel nostro caso, una coppia umano-umano o una coppia umano-IA). Krippendorff's alpha è più flessibile: funziona con più di 2 codificatori (utile per confrontare tutti i membri del gruppo + Gemini simultaneamente) e gestisce i dati mancanti. Per il progetto, il kappa di Cohen si usa per ogni coppia; alpha di Krippendorff per il confronto complessivo del gruppo. L'obiettivo minimo è un kappa di 0.60 (accordo buono). Nella sezione Metodo del paper, bisogna riportare la metrica usata, il valore ottenuto e l'interpretazione.
 :::
 
 ## Calcolare il kappa: la matrice di confusione
 
-Esempio con 3 categorie e 50 commenti:
+Esempio con 4 categorie e 50 immagini:
 
-|  | **Umano: Riconosc.** | **Umano: Emotivo** | **Umano: Critico** | **Totale IA** |
-|--|:---:|:---:|:---:|:---:|
-| **IA: Riconosc.** | **12** | 2 | 1 | 15 |
-| **IA: Emotivo** | 3 | **18** | 2 | 23 |
-| **IA: Critico** | 0 | 1 | **11** | 12 |
-| **Totale umano** | 15 | 21 | 14 | **50** |
+|  | **Umano: Bambini** | **Umano: Animali** | **Umano: Paesaggi** | **Umano: Religioso** | **Tot. IA** |
+|--|:---:|:---:|:---:|:---:|:---:|
+| **IA: Bambini** | **14** | 1 | 0 | 1 | 16 |
+| **IA: Animali** | 0 | **11** | 2 | 0 | 13 |
+| **IA: Paesaggi** | 1 | 1 | **9** | 0 | 11 |
+| **IA: Religioso** | 0 | 0 | 1 | **9** | 10 |
+| **Tot. umano** | 15 | 13 | 12 | 10 | **50** |
 
-$P_o = (12+18+11)/50 = 0.82$ --- Calcolo manuale o con Gemini [@cosenza2025].
+$P_o = (14+11+9+9)/50 = 0.86$ --- Calcolo manuale o con Gemini [@cosenza2025].
 
 ::: {.notes}
-Esempio concreto di matrice di confusione. I valori in grassetto sulla diagonale sono i casi di accordo. I valori fuori diagonale sono i disaccordi. L'accordo osservato è 0.82 (82%). L'accordo atteso per caso si calcola dai totali marginali. Due approcci per il calcolo: (1) manuale con foglio di calcolo — creare la matrice, calcolare Po e Pe, applicare la formula; (2) con Gemini — caricare le due colonne e chiedere il calcolo. Come suggerisce Cosenza (2025), usate entrambi per verificare. La matrice rivela i pattern di errore: l'IA confonde "Riconoscimento" con "Emotivo" 3 volte, guidando il raffinamento del prompt.
+Esempio concreto di matrice di confusione per la classificazione di immagini. Le categorie nell'esempio sono per soggetto visivo, ma ogni gruppo userà le proprie. I valori in grassetto sulla diagonale sono i casi di accordo. I valori fuori diagonale sono i disaccordi e rivelano i pattern di errore: qui l'IA confonde "Animali" con "Paesaggi" 2 volte (forse immagini di animali in un paesaggio naturale) e "Bambini" con "Religioso" 1 volta (forse un bambino in scena religiosa). Questi pattern guidano il raffinamento del codebook e del prompt. Come suggerisce Cosenza (2025), usate sia il calcolo manuale che Gemini per verificare.
 :::
 
 ## Esercizio Pratico {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 5: esercizio di validazione. La parte centrale della sessione.
+Sezione 5: esercizio di validazione. La parte centrale della sessione — 40 minuti di codifica e confronto.
 :::
 
-## Esercizio: validare un campione
+## Esercizio: validare 50 immagini
 
 ::: {.orange-box}
-**Attività (45 minuti)**
+**Attività (40 minuti)**
 
-1. **Preparazione (10 min):** campione di **50 commenti**, foglio separato senza classificazione IA, 2 codificatori indipendenti
-2. **Codifica (20 min):** classificare i 50 commenti con il codebook, annotare i casi difficili
-3. **Confronto (15 min):** confrontare con classificazioni IA, costruire matrice di confusione, calcolare il kappa
+1. **Preparazione (5 min):** foglio con 50 ID immagine, colonne vuote per ogni membro, accesso alla cartella immagini
+2. **Codifica individuale (20 min):** ogni membro classifica le 50 immagini con il codebook, **senza Gemini e senza discutere**
+3. **Confronto (15 min):** riunire le classificazioni umane, confrontare con Gemini, costruire la matrice di confusione, calcolare il kappa
 :::
 
 ::: {.notes}
-Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere rapida; i dati sono già nel foglio di calcolo dal lab di ieri. Creare un foglio separato con solo ID e testo del commento, senza la colonna della classificazione IA. Fase 2: la codifica individuale deve essere davvero indipendente — i codificatori non devono comunicare durante questa fase. Fase 3: il confronto è il momento più interessante — dove emergono i disaccordi e si capisce dove il codebook è ambiguo. Passare tra i gruppi durante la Fase 3 per aiutare con il calcolo del kappa e l'interpretazione dei risultati.
+Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere rapida; il foglio con gli ID è già pronto se i gruppi hanno seguito le istruzioni di ieri. Creare colonne vuote per ogni membro. Fase 2: la codifica individuale deve essere davvero indipendente — ogni membro guarda le immagini e classifica usando il codebook, senza comunicare. Per le immagini servono circa 20-25 secondi ciascuna, quindi 50 immagini richiedono circa 17-20 minuti. Fase 3: il confronto è il momento più interessante — dove emergono i disaccordi e si capisce dove il codebook è ambiguo. Passare tra i gruppi durante la Fase 3 per aiutare con il calcolo del kappa.
 :::
 
 ## Interpretare i risultati
@@ -288,91 +289,142 @@ Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere
 ### Se il kappa è alto (> 0.60)
 
 - La pipeline funziona bene
-- L'IA è un codificatore affidabile per queste categorie
-- Si può procedere con la classificazione del dataset completo
+- L'IA è un classificatore affidabile per queste categorie visive
+- Si può procedere con l'analisi di engagement
 - Documentare nel paper
 :::
 
 ::: {.column width="50%"}
 ### Se il kappa è basso (< 0.60)
 
-- Analizzare la **matrice di confusione**: dove sbaglia l'IA?
-- Rivedere il **codebook**: le categorie sono ambigue?
-- Raffinare il **prompt**: servono più esempi?
-- **Iterare:** ripetere la classificazione e la validazione
+- Analizzare la **matrice di confusione**: quali categorie confonde l'IA?
+- Rivedere il **codebook**: le categorie visive sono ambigue?
+- Raffinare il **prompt**: servono definizioni più precise?
+- **Reclassificare** le immagini e ricalcolare il kappa
 :::
 :::
 
 ::: {.notes}
-Guida all'interpretazione. Un kappa alto non significa che l'analisi è finita — significa che possiamo fidarci della classificazione IA per il dataset completo. Un kappa basso non è un fallimento — è un'opportunità di miglioramento. Le fonti di disaccordo più comuni: (1) categorie del codebook sovrapposte, (2) esempi insufficienti nel prompt, (3) commenti ambigui che richiedono contesto culturale. L'iterazione è il cuore della metodologia: si raffina il prompt, si riclassifica, si ricalcola il kappa, fino a raggiungere un livello accettabile.
+Guida all'interpretazione. Un kappa alto significa che possiamo fidarci della classificazione IA per il dataset completo e procedere con l'analisi di engagement. Un kappa basso è un'informazione preziosa: indica dove il codebook è problematico. Le fonti di disaccordo più comuni nella classificazione visiva: (1) categorie sovrapposte (un'immagine di bambini che giocano con animali — dove va?), (2) definizioni insufficienti (cosa conta come "religioso"? Solo simboli espliciti o anche scene di preghiera?), (3) sensibilità diversa agli artefatti AI (gli umani notano dettagli che Gemini ignora). L'iterazione è il cuore della metodologia: raffinare, reclassificare, rivalidare.
 :::
 
-## Iterazione e Raffinamento {background-color="#C5612E"}
+## Confronto Inter-Gruppo e Iterazione {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 6: come migliorare la pipeline basandosi sui risultati della validazione.
+Sezione 6: la dimensione unica del progetto — tutti i gruppi hanno classificato le stesse immagini. E le decisioni di iterazione.
 :::
 
-## Raffinamento e documentazione per il paper
+## Tutti sulle stesse immagini: un'opportunità unica
+
+::: {.highlight-box}
+Poiché tutti i gruppi hanno classificato le **stesse ~300-400 immagini**, il progetto consente un **confronto inter-gruppo** impossibile in un design tradizionale.
+:::
+
+Cosa si può confrontare:
+
+- Gruppi con **categorie condivise** (es. più gruppi hanno "bambini") → calcolo del **kappa inter-gruppo**
+- Gruppi con **schemi diversi** → cosa rivela una lente che l'altra non coglie?
+- **Distribuzione** delle categorie: gli schemi diversi producono distribuzioni diverse?
+
+::: {.callout-note}
+## Da discutere
+Se due gruppi classificano la stessa immagine diversamente, chi ha ragione? Nessuno dei due — le **scelte analitiche** determinano cosa si vede nei dati [@marino2024].
+:::
+
+::: {.notes}
+Questa è la dimensione metodologica più ricca del progetto, resa possibile dal design con dataset condiviso. Il confronto inter-gruppo non è una competizione ("chi classifica meglio") ma un'esplorazione di come le scelte analitiche modellano i risultati. Un gruppo che classifica per "soggetto visivo" e uno che classifica per "strategia emotiva" vedranno pattern diversi nelle stesse immagini. Questo sarà il tema centrale della sintesi finale del 1 aprile. Per le categorie condivise (es. se più gruppi hanno una categoria "bambini"), il kappa inter-gruppo misura quanto le definizioni operative convergono — un esercizio metodologico prezioso.
+:::
+
+## Decisione di iterazione
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Ciclo di raffinamento
+### Kappa ≥ 0.60
 
-- Analizzare la **matrice di confusione**: dove sbaglia l'IA?
-- Aggiungere **anti-esempi** al prompt (errori corretti)
-- **Accorpare** categorie problematiche se necessario
-- Ricalcolare il **kappa** dopo ogni iterazione
+- **Procedere** con l'analisi di engagement
+- Documentare kappa, matrice, interpretazione
+- Preparare i dati per mercoledì
 :::
 
 ::: {.column width="50%"}
-### Cosa riportare nel paper
+### Kappa < 0.60
 
-- **Codebook** con definizioni e esempi
-- **Prompt finale** completo (in appendice)
-- **Metriche**: kappa/alpha per categoria
-- **Iterazioni**: cicli e miglioramenti
-- **Modello IA**: versione e data
+- **Identificare** le categorie problematiche dalla matrice di confusione
+- **Raffinare** il codebook: definizioni più precise, regole per casi limite
+- **Aggiornare** il prompt con anti-esempi
+- **Reclassificare** (almeno le 50 immagini di validazione)
+- **Ricalcolare** il kappa
+:::
+:::
+
+::: {.callout-warning}
+## Attenzione
+Se dopo 2 iterazioni il kappa resta sotto 0.60 per alcune categorie, considerate di **accorpare** le categorie problematiche in una sola.
+:::
+
+::: {.notes}
+La decisione di iterazione è cruciale. Se il kappa è sopra 0.60, il gruppo può procedere con fiducia all'analisi di engagement. Se è sotto 0.60, serve iterazione: il ciclo è analizzare errori → raffinare codebook e prompt → reclassificare → ricalcolare kappa. Nella classificazione visiva, le categorie che più spesso causano problemi sono quelle con confini sfumati: "nostalgia" vs. "paesaggio vintage", "engagement bait" vs. "contenuto genuino". Se dopo 2 iterazioni il kappa resta basso, la soluzione pragmatica è accorpare le categorie problematiche. Meglio avere meno categorie con alta affidabilità che molte categorie inaffidabili.
+:::
+
+## Cosa riportare nel paper
+
+::: {.columns}
+::: {.column width="50%"}
+### Sezione Metodo
+
+- **Codebook** con definizioni e esempi visivi
+- **Prompt multimodale** completo (in appendice)
+- **Protocollo di validazione**: campione, codifica cieca
+- **Metriche**: kappa umano-umano e umano-IA
+:::
+
+::: {.column width="50%"}
+### Sezione Risultati
+
+- **Matrice di confusione** con pattern di errore
+- **Iterazioni**: quanti cicli, cosa è cambiato
+- **Modello IA**: versione di Gemini e data
+- **Confronto inter-gruppo** (se applicabile)
 :::
 :::
 
 ::: {.callout-note}
 ## Da ricordare
-La **trasparenza metodologica** è un valore fondamentale: documentate non solo i successi ma anche gli errori e le iterazioni. Questo rende la ricerca riproducibile e credibile.
+La **trasparenza metodologica** è un valore fondamentale: documentate non solo i successi ma anche gli errori e le iterazioni. Questo rende la ricerca riproducibile e credibile [@marino2024].
 :::
 
 ::: {.notes}
-Due aspetti complementari: il raffinamento iterativo e la documentazione. Il ciclo prevede: analizzare errori, migliorare prompt e codebook, riclassificare, ricalcolare kappa. Gli anti-esempi nel prompt sono particolarmente efficaci: si aggiungono commenti che l'IA ha classificato erroneamente con la categoria corretta. Se dopo 2-3 iterazioni il kappa resta basso per alcune categorie, ripensare le categorie stesse. Per il paper, ogni elemento della pipeline deve essere riportato: prompt completo in appendice, metriche aggregate e per categoria, numero di iterazioni. Questo approccio segue i principi della scienza aperta e le raccomandazioni di Marino & Giglietto (2024).
+Due aspetti complementari: la documentazione per il Metodo e per i Risultati. Per il Metodo: il prompt completo va in appendice, il codebook va descritto con esempi, il protocollo di validazione (50 immagini, codifica cieca, quanti codificatori) va dettagliato. Per i Risultati: la matrice di confusione rivela i pattern di errore, le iterazioni mostrano il processo di miglioramento, la versione del modello garantisce la riproducibilità. Il confronto inter-gruppo è opzionale nella sezione Risultati del singolo paper, ma sarà tema centrale della discussione collettiva nella sintesi del 1 aprile.
 :::
 
 ## Prossimi passi del progetto
 
 | Data | Attività |
 |------|----------|
-| **Mer 25 Marzo** | Consultazione gruppi — revisione metodologica |
+| **Mer 25 Marzo** | Consultazione gruppi + **analisi engagement** |
 | **Lun 30 Marzo** | Workshop di scrittura — struttura del paper |
 | **Mar 31 Marzo** | Lavoro di gruppo — stesura collaborativa |
-| **Mer 1 Aprile** | Sintesi del corso — consultazioni finali |
+| **Mer 1 Aprile** | Sintesi del corso — confronto inter-gruppo |
 | **2 sett. prima appello** | **Consegna paper finale** |
 
 ::: {.highlight-box}
-**Per domani:** preparate una breve **presentazione** (5 minuti) dei risultati della validazione per la consultazione di gruppo. Includete: kappa ottenuto, problemi emersi, strategie di miglioramento.
+**Per domani:** preparate una breve **presentazione** (5 minuti) con: classificazione completata, kappa ottenuto, matrice di confusione, e una prima esplorazione dell'engagement per categoria.
 :::
 
 ::: {.notes}
-Timeline aggiornata del progetto. Domani è la consultazione di gruppo: ogni gruppo presenta i risultati della validazione e discute i problemi metodologici. La settimana 6 è dedicata alla scrittura. Il paper va consegnato 2 settimane prima dell'appello di giugno. Enfatizzare che la validazione non deve essere perfetta per domani — l'importante è aver iniziato il processo e identificato i punti critici. La consultazione servira' per risolvere i problemi e pianificare la scrittura.
+Timeline aggiornata del progetto. Domani è la consultazione di gruppo con una novità importante: oltre alla revisione metodologica, ogni gruppo presenterà i primi risultati dell'analisi di engagement — collegando le categorie di classificazione validate alle metriche del CSV. La settimana 6 è dedicata alla scrittura. Enfatizzare l'urgenza: chi ha problemi con la validazione deve risolverli entro domani. La consultazione servirà per discutere sia i risultati della validazione sia i pattern di engagement emergenti.
 :::
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Consultazione Gruppi e Revisione (25 Marzo 2026)
+**Prossima lezione:** Consultazione Gruppi e Analisi Engagement (25 Marzo 2026)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) completare la validazione se non terminata in aula, (2) preparare la presentazione per la consultazione di domani (5 minuti, informale), (3) portare i risultati del kappa e la matrice di confusione. Domani ogni gruppo avrà un momento dedicato di consultazione con il docente per discutere problemi specifici.
+Chiusura. Ricordare: (1) completare la validazione se non terminata in aula, (2) se kappa sotto 0.60 provare almeno un ciclo di iterazione, (3) iniziare a esplorare i dati di engagement per categoria in preparazione per domani, (4) preparare la presentazione di 5 minuti per la consultazione. Domani è una sessione operativa: ogni gruppo presenterà i risultati e discuterà l'analisi di engagement con il docente.
 :::
 
 ## Riferimenti

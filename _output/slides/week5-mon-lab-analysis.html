@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Fabio Giglietto">
-  <title>Lab: Analisi Contenuti con IA</title>
+  <title>Lab: Classificazione su Scala con IA</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -147,7 +147,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab: Analisi Contenuti con IA</h1>
+  <h1 class="title">Lab: Classificazione su Scala con IA</h1>
   <p class="subtitle">IA Generativa e Media — Settimana 5</p>
 
 <div class="quarto-title-authors">
@@ -166,15 +166,15 @@ Fabio Giglietto
 <section id="roadmap-del-lab" class="slide level2">
 <h2>Roadmap del lab</h2>
 <ol type="1">
-<li><strong>Ricapitolazione</strong> — stato dei dataset raccolti</li>
-<li><strong>Costruire il codebook</strong> — categorie di analisi per i commenti</li>
-<li><strong>Prompt engineering per la codifica</strong> — istruzioni sistematiche a Gemini</li>
-<li><strong>Classificazione automatizzata</strong> — analizzare i commenti con Gemini</li>
-<li><strong>Gestione del contesto lungo</strong> — caricare dataset ampi</li>
-<li><strong>Lavoro pratico</strong> — codifica dei commenti per gruppi</li>
+<li><strong>Ricapitolazione</strong> — dal pilot alla classificazione completa</li>
+<li><strong>Batch processing</strong> — strategie per classificare ~300-400 immagini con Gemini</li>
+<li><strong>Coerenza tra batch</strong> — mantenere la consistenza della classificazione</li>
+<li><strong>Cross-referencing</strong> — collegare classificazioni e metriche di engagement</li>
+<li><strong>Pattern preliminari</strong> — prime esplorazioni descrittive</li>
+<li><strong>Lavoro pratico</strong> — classificazione per gruppi</li>
 </ol>
 <aside class="notes">
-<p>Struttura del lab. Oggi passiamo dalla raccolta all’analisi. La sessione di mercoledì scorso ha prodotto i dataset; oggi applichiamo la prima fase della pipeline LLMs-in-the-loop per classificare i commenti. L’obiettivo è che ogni gruppo esca con una prima classificazione automatizzata dei propri commenti, pronta per la validazione umana di domani.</p>
+<p>Struttura del lab. Mercoledì scorso ogni gruppo ha progettato il prompt, costruito il codebook e testato la classificazione su un pilot di 30-50 immagini. Oggi si scala: dalla prova pilota al dataset completo di ~300-400 immagini. L’obiettivo è che ogni gruppo esca con la classificazione completa nel foglio condiviso, pronta per la validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini — questo rende possibile il confronto inter-gruppo alla fine del corso.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -187,10 +187,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="stato-dei-dataset" class="slide level2" data-background-color="#C5612E">
-<h2>Stato dei Dataset</h2>
+<section id="dal-pilot-al-dataset-completo" class="slide level2" data-background-color="#C5612E">
+<h2>Dal Pilot al Dataset Completo</h2>
 <aside class="notes">
-<p>Sezione 1: verifica rapida dei dati raccolti mercoledì. Momento per risolvere problemi residui prima di procedere con l’analisi.</p>
+<p>Sezione 1: ricapitolazione del lavoro svolto mercoledì e inquadramento della sfida odierna — passare dal pilot alla scala completa.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -203,24 +203,24 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="verifica-dei-dati-raccolti" class="slide level2">
-<h2>Verifica dei dati raccolti</h2>
+<section id="punto-di-partenza-il-vostro-pilot" class="slide level2">
+<h2>Punto di partenza: il vostro pilot</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="requisiti-minimi">Requisiti minimi</h3>
+<h3 id="cosa-avete-già">Cosa avete già</h3>
 <ul>
-<li><strong>30+ post</strong> con immagini AI-generated</li>
-<li><strong>Commenti</strong> scaricati per ogni post</li>
-<li><strong>Foglio di calcolo</strong> condiviso e accessibile</li>
-<li><strong>Query documentate</strong> con parametri</li>
+<li><strong>Prompt testato</strong> e raffinato su 30-50 immagini</li>
+<li><strong>Codebook documentato</strong> con categorie, definizioni, esempi</li>
+<li><strong>Regole per i casi limite</strong> definite durante il pilot</li>
+<li><strong>Formato di output</strong> strutturato (tabella/CSV)</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="controllo-qualità">Controllo qualità</h3>
+<h3 id="cosa-serve-oggi">Cosa serve oggi</h3>
 <ul>
-<li>Le immagini sono effettivamente AI?</li>
-<li>I commenti sono leggibili e completi?</li>
-<li>I metadata (date, metriche) sono presenti?</li>
-<li>Ci sono <strong>duplicati</strong> da rimuovere?</li>
+<li>Classificare le <strong>restanti 250-350 immagini</strong></li>
+<li>Mantenere la <strong>coerenza</strong> con il pilot</li>
+<li>Collegare le classificazioni ai <strong>dati di engagement</strong></li>
+<li>Identificare <strong>pattern preliminari</strong></li>
 </ul>
 </div></div>
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -232,12 +232,12 @@ Fabio Giglietto
 <p><strong>Attenzione</strong></p>
 </div>
 <div class="callout-content">
-<p>Se il dataset ha meno di 30 post, dedicate i primi 20 minuti a integrare la raccolta. L’analisi richiede un volume minimo di dati.</p>
+<p>Verificate che il prompt e il codebook usati nel pilot siano salvati in un documento condiviso. Il prompt deve essere <strong>identico</strong> in ogni sessione di classificazione.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Verifica rapida: ogni gruppo mostra il proprio foglio di calcolo. 5 minuti per verificare che tutti siano pronti. I gruppi con dataset incompleti dedicano i primi 20 minuti a integrare. Problemi comuni emersi mercoledì: commenti non completamente scaricati, duplicati, immagini ambigue. Per le immagini ambigue, suggerire di tenerle ma annotarle come “incerto” nella colonna tipo_immagine. Meglio avere dati in più da escludere dopo che dati insufficienti.</p>
+<p>Verifica rapida: ogni gruppo mostra il proprio prompt e codebook dal pilot di mercoledì. 5 minuti per verificare che tutti siano pronti. Se qualche gruppo non ha completato il pilot, deve dedicare i primi 20 minuti a concluderlo prima di procedere. Il prompt salvato è il punto di partenza: non va modificato durante la classificazione su scala, altrimenti si perde la coerenza con il pilot. Eventuali modifiche si faranno solo dopo la validazione di domani, nella fase di iterazione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -250,271 +250,11 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="costruire-il-codebook" class="slide level2" data-background-color="#C5612E">
-<h2>Costruire il Codebook</h2>
-<aside class="notes">
-<p>Sezione 2: definizione delle categorie di analisi. Il codebook è il documento fondamentale per la classificazione sistematica.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="cosè-un-codebook" class="slide level2">
-<h2>Cos’è un codebook</h2>
+<section id="da-30-50-immagini-a-300-400-il-salto-di-scala" class="slide level2">
+<h2>Da 30-50 immagini a ~300-400: il salto di scala</h2>
+<p>Nel <strong>pilot di mercoledì</strong> avete classificato 30-50 immagini in una singola sessione Gemini. Nel dataset completo, il volume è <strong>6-10 volte più grande</strong>.</p>
 <div class="highlight-box">
-<p><strong>Codebook:</strong> documento che definisce le <strong>categorie di analisi</strong>, le <strong>regole di classificazione</strong> e gli <strong>esempi</strong> per ogni categoria. Garantisce che tutti i codificatori (umani e IA) applichino gli stessi criteri <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span>.</p>
-</div>
-<p>Elementi essenziali:</p>
-<ul>
-<li><strong>Nome della variabile</strong> — cosa si classifica</li>
-<li><strong>Categorie</strong> — le opzioni possibili (mutuamente esclusive)</li>
-<li><strong>Definizione operativa</strong> — cosa significa ogni categoria</li>
-<li><strong>Esempi</strong> — commenti concreti per ogni categoria</li>
-<li><strong>Regole per i casi ambigui</strong> — come decidere nei casi limite</li>
-</ul>
-<aside class="notes">
-<p>Il codebook è lo strumento centrale dell’analisi del contenuto. Nella metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024), il codebook serve a due scopi: (1) guidare la classificazione umana e (2) fornire le istruzioni per il prompt che sarà dato al LLM. La qualità del codebook determina la qualità dell’analisi. Un codebook ambiguo produce classificazioni incoerenti sia negli umani che nell’IA. Enfatizzare che le categorie devono essere mutuamente esclusive e collettivamente esaustive.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="categorie-per-i-commenti-ai-slop" class="slide level2">
-<h2>Categorie per i commenti <em>AI slop</em></h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 34%">
-<col style="width: 37%">
-<col style="width: 28%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Categoria</th>
-<th>Definizione</th>
-<th>Esempio</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Riconoscimento IA</strong></td>
-<td>L’utente identifica l’immagine come generata dall’IA</td>
-<td>“Si vede che è fatta con l’intelligenza artificiale”</td>
-</tr>
-<tr class="even">
-<td><strong>Reazione emotiva</strong></td>
-<td>Risposta emotiva senza riferimento all’IA</td>
-<td>“Che bello, mi commuove!”</td>
-</tr>
-<tr class="odd">
-<td><strong>Critica</strong></td>
-<td>Commento negativo verso il contenuto o la pagina</td>
-<td>“Smettetela di postare questa spazzatura”</td>
-</tr>
-<tr class="even">
-<td><strong>Engagement genuino</strong></td>
-<td>Interazione con il contenuto come se fosse autentico</td>
-<td>“Dove si trova questo posto?”</td>
-</tr>
-<tr class="odd">
-<td><strong>Altro</strong></td>
-<td>Commenti non classificabili nelle categorie precedenti</td>
-<td>Emoji senza testo, tag di amici</td>
-</tr>
-</tbody>
-</table>
-<aside class="notes">
-<p>Proposta di codebook di base per l’analisi dei commenti. I gruppi possono adattare queste categorie alla loro domanda di ricerca specifica: ad esempio, un gruppo che studia il riconoscimento dell’IA potrebbe aggiungere sottocategorie (“riconoscimento esplicito”, “sospetto”, “richiesta di conferma”). Un gruppo che studia le emozioni potrebbe distinguere tra emozioni positive e negative. Ogni gruppo dovrà definire il proprio codebook specifico entro la fine della sessione. Le categorie proposte qui sono un punto di partenza, non un vincolo.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="esercizio-definire-il-codebook-di-gruppo" class="slide level2">
-<h2>Esercizio: definire il codebook di gruppo</h2>
-<div class="orange-box">
-<p><strong>Attività (15 minuti)</strong></p>
-<ol type="1">
-<li>Partendo dalle categorie di base, <strong>adattate il codebook</strong> alla vostra domanda di ricerca</li>
-<li>Aggiungete <strong>almeno 3 esempi concreti</strong> dal vostro dataset per ogni categoria</li>
-<li>Definite le <strong>regole per i casi ambigui</strong> (es. un commento che contiene sia riconoscimento IA che emozione)</li>
-<li>Scrivete il codebook in un <strong>documento Google Docs</strong> condiviso</li>
-</ol>
-</div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Suggerimento</strong></p>
-</div>
-<div class="callout-content">
-<p>Un buon test: prendete 5 commenti e chiedete a due membri del gruppo di classificarli indipendentemente. Se non concordano, il codebook va raffinato.</p>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Esercizio pratico fondamentale. Dare 15 minuti per il lavoro in gruppo. Il test di concordanza è molto importante: se due umani non concordano sulla classificazione di un commento, non possiamo aspettarci che lo faccia l’IA. Il codebook deve essere sufficientemente chiaro da ridurre al minimo l’ambiguità. Passare tra i gruppi per verificare che le definizioni operative siano precise e che gli esempi siano effettivamente rappresentativi. Il documento del codebook servira’ anche come base per la sezione Metodo del paper.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="prompt-engineering-per-la-codifica" class="slide level2" data-background-color="#C5612E">
-<h2>Prompt Engineering per la Codifica</h2>
-<aside class="notes">
-<p>Sezione 3: dal codebook al prompt. Gli studenti hanno già esperienza con il prompting dal seminario Paroni (prompt per classificazione binaria, raffinamento quando Gemini non concordava). Qui si parte da quel livello e si aggiungono le specificità del progetto.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="dal-codebook-al-prompt-ciò-che-già-sapete-applicato-al-progetto" class="slide level2">
-<h2>Dal codebook al prompt: ciò che già sapete, applicato al progetto</h2>
-<p>Nel <strong>workshop Paroni</strong> avete sperimentato il ciclo: prompt iniziale → risultato Gemini → disaccordo → <strong>raffinamento del prompt</strong> con esempi e formato strutturato.</p>
-<p>Ora applichiamo la stessa logica al vostro codebook, con due complessità in più:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="sfide-specifiche-dellai-slop">Sfide specifiche dell’AI slop</h3>
-<ul>
-<li><strong>Ironia e sarcasmo</strong> nei commenti italiani</li>
-<li><strong>Dialetto</strong> e espressioni colloquiali</li>
-<li>Commenti <strong>brevissimi</strong> (emoji, singole parole)</li>
-<li><strong>Contesto visivo</strong> che il testo non cattura</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="strategie-avanzate">Strategie avanzate</h3>
-<ul>
-<li><strong>Includere il contesto</strong> del post nel prompt (non solo il commento isolato)</li>
-<li><strong>Anti-esempi:</strong> commenti che Gemini potrebbe sbagliare</li>
-<li><strong>Formato output</strong> strutturato (CSV) per evitare il data entry manuale</li>
-<li>Livello di <strong>certezza</strong> per ogni classificazione</li>
-</ul>
-</div></div>
-<aside class="notes">
-<p>Punto di partenza: gli studenti hanno già fatto prompt refinement nel seminario Paroni (Step 4 dell’Attività 1: quando Gemini non concordava con il gruppo, hanno ristrutturato il prompt aggiungendo esempi e formato esplicito). Non serve rispiegare cos’è un prompt. Qui ci concentriamo sulle sfide specifiche della classificazione dei commenti AI slop: l’ironia è il problema principale (un commento come “bellissimo, proprio come una foto vera!” potrebbe essere sarcasmo o genuino), il dialetto e le espressioni colloquiali sfuggono spesso ai LLM, i commenti brevissimi mancano di contesto. Le strategie avanzate vanno oltre il seminario: includere il contesto del post (il commento “che bello!” ha significato diverso sotto un’immagine chiaramente AI vs.&nbsp;una foto autentica), gli anti-esempi prevengono errori sistematici, il livello di certezza guida la validazione.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="esempio-di-prompt-per-la-classificazione" class="slide level2">
-<h2>Esempio di prompt per la classificazione</h2>
-<div class="highlight-box">
-<p><em>“Agisci come un analista di contenuti. Classifica ogni commento in UNA categoria:</em></p>
-<p><em>1. RICONOSCIMENTO_IA — identifica l’immagine come generata dall’IA</em> <em>2. REAZIONE_EMOTIVA — risposta emotiva senza menzionare l’IA</em> <em>3. CRITICA — commento negativo verso il contenuto</em> <em>4. ENGAGEMENT_GENUINO — interazione come se fosse autentico</em> <em>5. ALTRO — non classificabile</em></p>
-<p><em>Output: tabella CSV con colonne: id, categoria, certezza, motivazione_breve”</em></p>
-</div>
-<aside class="notes">
-<p>Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (analista di contenuti), contesto (AI slop su Facebook), istruzioni precise (le categorie con definizioni), formato output (tabella CSV con colonne specifiche). Il livello di certezza è importante: permette di identificare i casi su cui la validazione umana dovrà concentrarsi. La motivazione breve aiuta a capire il ragionamento dell’IA e a verificarne la coerenza. I gruppi dovranno sostituire le categorie con quelle del loro codebook specifico.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="strategie-per-prompt-coerenti" class="slide level2">
-<h2>Strategie per prompt coerenti</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="il-problema-della-coerenza">Il problema della coerenza</h3>
-<ul>
-<li>L’IA può classificare lo <strong>stesso commento</strong> in modo diverso in sessioni diverse</li>
-<li>La <strong>lunghezza del prompt</strong> influisce sulla qualità</li>
-<li>Il <strong>contesto accumulato</strong> può creare drift</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="le-soluzioni">Le soluzioni</h3>
-<ul>
-<li><strong>Prompt fisso:</strong> usare sempre lo stesso testo base</li>
-<li><strong>Batch piccoli:</strong> classificare 20-30 commenti alla volta</li>
-<li><strong>Nuova sessione:</strong> aprire una chat pulita per ogni batch</li>
-<li><strong>Temperatura bassa:</strong> se disponibile, ridurre la variabilità</li>
-</ul>
-</div></div>
-<aside class="notes">
-<p>Problema cruciale: la coerenza della classificazione. A differenza di un codificatore umano che migliora con la pratica, un LLM può produrre classificazioni leggermente diverse per lo stesso input in momenti diversi. Strategie pratiche: (1) usare sempre lo stesso prompt, copiandolo da un documento sorgente; (2) dividere il dataset in batch di 20-30 commenti; (3) aprire una nuova chat per ogni batch per evitare l’effetto del contesto accumulato; (4) annotare il batch e la sessione per ogni classificazione. Queste accortezze derivano dall’esperienza pratica con la metodologia LLMs-in-the-loop.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="scalare-dal-workshop-al-progetto" class="slide level2" data-background-color="#C5612E">
-<h2>Scalare: dal Workshop al Progetto</h2>
-<aside class="notes">
-<p>Sezione 4: il salto di scala dal workshop Paroni (20 headline) al progetto (centinaia di commenti). Nuove sfide e strategie.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="da-20-headline-a-centinaia-di-commenti" class="slide level2">
-<h2>Da 20 headline a centinaia di commenti</h2>
-<p>Nel <strong>seminario Paroni</strong> avete classificato 20 titoli in una singola sessione Gemini. Nel progetto, il dataset è <strong>10-50 volte più grande</strong>.</p>
-<div class="highlight-box">
-<p><strong>Gemini</strong> offre una finestra di contesto fino a <strong>1 milione di token</strong> (~700.000 parole) — il dataset ci sta, ma servono strategie per mantenere la <strong>coerenza</strong>.</p>
+<p><strong>Gemini</strong> offre una finestra di contesto fino a <strong>1 milione di token</strong> e capacità <strong>multimodali</strong> — le immagini si possono caricare direttamente, ma servono strategie per mantenere la <strong>coerenza</strong> <span class="citation" data-cites="cosenza2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Cosenza, 2025</a>)</span>.</p>
 </div>
 <table class="caption-top">
 <colgroup>
@@ -530,11 +270,11 @@ Fabio Giglietto
 <tbody>
 <tr class="odd">
 <td><strong>Drift del modello</strong> su batch lunghi</td>
-<td>Dividere in <strong>batch da 20-30 commenti</strong></td>
+<td>Dividere in <strong>batch da 20-30 immagini</strong></td>
 </tr>
 <tr class="even">
 <td><strong>Incoerenza tra sessioni</strong></td>
-<td>Usare sempre lo <strong>stesso prompt</strong> (da un documento sorgente)</td>
+<td>Usare sempre lo <strong>stesso prompt</strong> (da documento sorgente)</td>
 </tr>
 <tr class="odd">
 <td><strong>Contesto accumulato</strong></td>
@@ -542,12 +282,12 @@ Fabio Giglietto
 </tr>
 <tr class="even">
 <td><strong>Verifica qualità</strong></td>
-<td>Controllare i <strong>primi 10 risultati</strong> prima di procedere</td>
+<td>Controllare i <strong>primi 5 risultati</strong> di ogni batch</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Questo è il gap principale tra il workshop Paroni e il progetto: la scala. Con 20 headline, bastava una singola sessione Gemini e un controllo visivo dei risultati. Con centinaia di commenti, emergono problemi nuovi: il modello può “driftare” (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per lo stesso input, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 commenti alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch, controllo qualità sui primi risultati. Gemini ha 1M di token di contesto — il dataset ci sta tutto — ma la qualità è migliore con batch più piccoli e prompt ripetuti identici.</p>
+<p>Questo è il gap principale tra il pilot e la classificazione su scala. Con 30-50 immagini, bastava una o due sessioni Gemini e un controllo visivo dei risultati. Con 300-400 immagini, emergono problemi nuovi: il modello può “driftare” (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per la stessa immagine, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 immagini alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch. Collegamento con il seminario Paroni: lì avete visto come il prompt refinement migliorava la coerenza su 20 headline — qui applichiamo la stessa logica su scala molto più ampia.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -560,8 +300,24 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="workflow-pratico-con-gemini" class="slide level2">
-<h2>Workflow pratico con Gemini</h2>
+<section id="batch-processing-con-gemini" class="slide level2" data-background-color="#C5612E">
+<h2>Batch Processing con Gemini</h2>
+<aside class="notes">
+<p>Sezione 2: strategie operative per il batch processing multimodale. Come caricare e classificare le immagini in modo efficiente.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="workflow-operativo-per-batch" class="slide level2">
+<h2>Workflow operativo per batch</h2>
 <table class="caption-top">
 <colgroup>
 <col style="width: 46%">
@@ -576,24 +332,291 @@ Fabio Giglietto
 <tbody>
 <tr class="odd">
 <td><strong>1. Preparare</strong></td>
-<td>Esportare commenti in CSV con <strong>ID univoco</strong> per ognuno</td>
+<td>Organizzare le immagini in <strong>cartelle da 20-30</strong>, rinominare con <strong>ID univoco</strong> dal CSV</td>
 </tr>
 <tr class="even">
 <td><strong>2. Prompt</strong></td>
-<td>Inserire il <strong>codebook</strong> + formato di output (CSV/tabella)</td>
+<td>Copiare il <strong>prompt identico</strong> dal documento sorgente in una nuova chat Gemini</td>
 </tr>
 <tr class="odd">
-<td><strong>3. Classificare</strong></td>
-<td>Allegare file a Gemini, verificare i primi <strong>10 risultati</strong></td>
+<td><strong>3. Caricare</strong></td>
+<td>Allegare il batch di immagini a Gemini, verificare i primi <strong>5 risultati</strong></td>
 </tr>
 <tr class="even">
-<td><strong>4. Estrarre</strong></td>
-<td>Copiare output nel <strong>foglio Google Sheets</strong></td>
+<td><strong>4. Registrare</strong></td>
+<td>Copiare le classificazioni nel <strong>foglio Google Sheets</strong> condiviso</td>
+</tr>
+<tr class="odd">
+<td><strong>5. Ripetere</strong></td>
+<td>Nuova chat → stesso prompt → prossimo batch</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Workflow operativo passo per passo. Passo 1: la preparazione del file è cruciale — ogni commento deve avere un ID univoco che corrisponda a quello nel foglio di calcolo. Passo 2: il prompt deve contenere il codebook completo; non fare affidamento sulla memoria della sessione precedente. Passo 3: i primi 10 risultati servono come test di qualità — se la classificazione non è soddisfacente, bisogna rivedere il prompt o il codebook prima di procedere. Passo 4: l’output va nella colonna “classificazione_ai” del foglio Commenti. Se Gemini non riesce a classificare tutti i commenti in un unico batch, dividere in batch da 50-100.</p>
+<p>Workflow passo per passo. Passo 1: l’organizzazione delle immagini è cruciale — ogni immagine deve avere un nome file che corrisponda all’ID nel CSV (il docente ha già predisposto questo, ma verificare). Passo 2: il prompt va copiato letteralmente, non riscritto a memoria. Passo 3: il caricamento multimodale in Gemini permette di allegare più immagini contemporaneamente — verificare i primi 5 risultati come controllo di qualità. Passo 4: i risultati vanno nella colonna “classificazione_ai” del foglio condiviso, accanto all’ID dell’immagine. Passo 5: ogni batch richiede una nuova chat per evitare l’accumulo di contesto.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="strategie-per-la-coerenza-tra-batch" class="slide level2">
+<h2>Strategie per la coerenza tra batch</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="il-problema-della-coerenza">Il problema della coerenza</h3>
+<ul>
+<li>Gemini può classificare la <strong>stessa immagine</strong> in modo diverso in sessioni diverse</li>
+<li>Le immagini <strong>ambigue</strong> sono le più vulnerabili</li>
+<li>Il <strong>contesto visivo</strong> di un batch influenza la classificazione delle immagini successive</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="le-soluzioni">Le soluzioni</h3>
+<ul>
+<li><strong>Prompt fisso:</strong> copiare sempre dallo stesso documento sorgente</li>
+<li><strong>Immagini di calibrazione:</strong> includere 2-3 immagini già classificate nel pilot in ogni batch</li>
+<li><strong>Nuova sessione:</strong> una chat pulita per ogni batch</li>
+<li><strong>Annotare i dubbi:</strong> segnalare i casi incerti per la revisione</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>La coerenza tra batch è la sfida principale del batch processing multimodale. A differenza della classificazione testuale (come nel seminario Paroni con le headline), le immagini portano un carico informativo molto più ricco e ambiguo. Due strategie particolarmente efficaci: (1) le immagini di calibrazione — includere in ogni batch 2-3 immagini già classificate nel pilot per verificare che la classificazione sia coerente; se Gemini cambia categoria, c’è un problema di drift. (2) Annotare i casi incerti: non forzare una classificazione quando l’immagine è genuinamente ambigua, segnalarla per la revisione manuale durante la validazione di domani.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="esempio-gestire-un-batch-multimodale" class="slide level2">
+<h2>Esempio: gestire un batch multimodale</h2>
+<div class="highlight-box">
+<p><em>“Agisci come un analista di contenuti visivi. Classifica ogni immagine in UNA delle seguenti categorie:</em></p>
+<p><em>1. BAMBINI — immagini raffiguranti bambini come soggetto principale</em> <em>2. ANIMALI — animali domestici o selvatici</em> <em>3. PAESAGGI — panorami naturali o urbani</em> <em>4. RELIGIOSO — simboli o scene religiose</em> <em>…</em></p>
+<p><em>Per ogni immagine fornisci: nome_file, categoria, certezza (alta/media/bassa), motivazione_breve.</em> <em>Output in formato tabella.”</em></p>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Suggerimento</strong></p>
+</div>
+<div class="callout-content">
+<p>Questo è un esempio generico. Ogni gruppo deve usare il <strong>proprio prompt</strong> sviluppato durante il pilot di mercoledì, con le proprie categorie specifiche.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Esempio di prompt multimodale per la classificazione delle immagini. Notare gli elementi: ruolo (analista di contenuti visivi), categorie con definizioni brevi, formato di output strutturato (tabella con nome file, categoria, certezza, motivazione). L’esempio usa categorie per soggetto visivo, ma i gruppi hanno schemi diversi: per strategia emotiva, per tecnica di generazione, per intento apparente. Ogni gruppo deve usare il proprio prompt dal pilot. Il livello di certezza è particolarmente importante nel multimodale: le immagini ambigue (es. una foto che potrebbe essere sia “nostalgia” che “paesaggio”) devono essere segnalate come incerte per la validazione umana.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cross-referencing-con-il-csv" class="slide level2" data-background-color="#C5612E">
+<h2>Cross-referencing con il CSV</h2>
+<aside class="notes">
+<p>Sezione 3: collegare le classificazioni Gemini ai dati di engagement nel CSV originale. Questo passaggio è essenziale per l’analisi successiva.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="unire-classificazione-e-metriche-di-engagement" class="slide level2">
+<h2>Unire classificazione e metriche di engagement</h2>
+<p>Ogni riga del dataset deve contenere <strong>tre tipi di informazione</strong>:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 24%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Fonte</th>
+<th>Esempio colonne</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Metadata post</strong></td>
+<td>CSV originale</td>
+<td>id_post, data, testo, pagina</td>
+</tr>
+<tr class="even">
+<td><strong>Engagement</strong></td>
+<td>CSV originale</td>
+<td>reazioni, condivisioni, visualizzazioni, n_commenti</td>
+</tr>
+<tr class="odd">
+<td><strong>Classificazione IA</strong></td>
+<td>Gemini (vostro lavoro)</td>
+<td>categoria, certezza, motivazione</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<p><strong>Operazione chiave:</strong> nel foglio Google Sheets, aggiungete le colonne di classificazione <strong>accanto</strong> ai dati del CSV. L’<strong>ID del post</strong> è il collegamento tra immagine e metriche.</p>
+</div>
+<aside class="notes">
+<p>Questo è il passaggio che trasforma la classificazione in un dataset analizzabile. Il CSV originale fornito dal docente contiene i metadata dei post e le metriche di engagement; i gruppi aggiungono le colonne di classificazione. L’ID del post (che corrisponde al nome del file immagine) è la chiave di collegamento. Verificare che ogni gruppo stia usando lo stesso ID. Il risultato finale è un foglio dove ogni riga rappresenta un post con: chi l’ha pubblicato, quando, quanto engagement ha ricevuto, e come Gemini ha classificato l’immagine. Questo dataset integrato è la base per l’analisi di engagement di mercoledì.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="pattern-preliminari" class="slide level2" data-background-color="#C5612E">
+<h2>Pattern Preliminari</h2>
+<aside class="notes">
+<p>Sezione 4: prime esplorazioni descrittive. Anche durante la classificazione, i gruppi possono iniziare a osservare i pattern emergenti.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="esplorazioni-descrittive-cosa-cercare" class="slide level2">
+<h2>Esplorazioni descrittive: cosa cercare</h2>
+<p>Mentre classificate, iniziate a osservare:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="distribuzione-delle-categorie">Distribuzione delle categorie</h3>
+<ul>
+<li>Quante immagini per <strong>categoria</strong>?</li>
+<li>Ci sono categorie <strong>dominanti</strong>?</li>
+<li>Ci sono categorie con <strong>pochissime</strong> immagini?</li>
+<li>La distribuzione è <strong>bilanciata</strong> o sbilanciata?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="primi-segnali-di-engagement">Primi segnali di engagement</h3>
+<ul>
+<li>Le categorie con più immagini hanno anche <strong>più engagement</strong>?</li>
+<li>Ci sono categorie con <strong>poche immagini</strong> ma <strong>alto engagement</strong>?</li>
+<li>Quali metriche variano di più tra categorie (reazioni vs.&nbsp;condivisioni vs.&nbsp;visualizzazioni)?</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>Le esplorazioni descrittive non sono l’analisi finale, ma orientano le ipotesi. La distribuzione delle categorie rivela la composizione del dataset AI slop: se la maggior parte delle immagini è “bambini” o “animali”, questo dice qualcosa sulle strategie di engagement bait. I primi segnali di engagement sono ancora grezzi (la classificazione non è validata), ma possono guidare le domande per l’analisi di mercoledì. Esempio: se le immagini religiose sono poche ma hanno engagement molto alto, questo suggerisce un pattern interessante da esplorare. Non serve fare calcoli statistici complessi ora — basta un conteggio per categoria e uno sguardo alle metriche medie.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="esempio-tabella-riassuntiva" class="slide level2">
+<h2>Esempio: tabella riassuntiva</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 14%">
+<col style="width: 25%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Categoria</th>
+<th style="text-align: center;">N. immagini</th>
+<th style="text-align: center;">% dataset</th>
+<th style="text-align: center;">Reazioni (media)</th>
+<th style="text-align: center;">Condivisioni (media)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bambini</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">25%</td>
+<td style="text-align: center;">1.240</td>
+<td style="text-align: center;">320</td>
+</tr>
+<tr class="even">
+<td>Animali</td>
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">21%</td>
+<td style="text-align: center;">980</td>
+<td style="text-align: center;">210</td>
+</tr>
+<tr class="odd">
+<td>Paesaggi</td>
+<td style="text-align: center;">58</td>
+<td style="text-align: center;">17%</td>
+<td style="text-align: center;">650</td>
+<td style="text-align: center;">180</td>
+</tr>
+<tr class="even">
+<td>Religioso</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">13%</td>
+<td style="text-align: center;">1.890</td>
+<td style="text-align: center;">540</td>
+</tr>
+<tr class="odd">
+<td>Nostalgia</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">12%</td>
+<td style="text-align: center;">1.100</td>
+<td style="text-align: center;">380</td>
+</tr>
+<tr class="even">
+<td>Altro</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">12%</td>
+<td style="text-align: center;">420</td>
+<td style="text-align: center;">90</td>
+</tr>
+</tbody>
+</table>
+<p><em>Dati esemplificativi — ogni gruppo avrà categorie e numeri diversi.</em></p>
+<aside class="notes">
+<p>Esempio puramente illustrativo per mostrare il tipo di tabella riassuntiva che i gruppi dovrebbero produrre alla fine della sessione. I numeri sono inventati ma realistici. Notare come la tabella rivela immediatamente un pattern: le immagini religiose, pur essendo solo il 13% del dataset, hanno il più alto engagement medio — sia in reazioni che condivisioni. Questo tipo di osservazione descrittiva guiderà l’analisi più approfondita di mercoledì. Ogni gruppo avrà categorie diverse in base al proprio schema di classificazione (soggetto visivo, strategia emotiva, tecnica di generazione, intento apparente).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -609,7 +632,7 @@ Fabio Giglietto
 <section id="lavoro-pratico" class="slide level2" data-background-color="#C5612E">
 <h2>Lavoro Pratico</h2>
 <aside class="notes">
-<p>Sezione 5: lavoro pratico di classificazione. I gruppi applicano quanto discusso.</p>
+<p>Sezione 5: lavoro pratico di classificazione. I gruppi applicano quanto discusso al dataset completo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -626,17 +649,17 @@ Fabio Giglietto
 <h2>Istruzioni per il lavoro di gruppo</h2>
 <div class="orange-box">
 <p><strong>Obiettivo del lab (60 minuti)</strong></p>
-<p>Ogni gruppo: (1) finalizza il proprio <strong>codebook</strong>, (2) costruisce il <strong>prompt</strong> di classificazione, (3) classifica <strong>almeno 50 commenti</strong> con Gemini, (4) annota i risultati nel foglio condiviso.</p>
+<p>Ogni gruppo: (1) classifica le <strong>immagini restanti</strong> (~250-350) con Gemini usando il prompt del pilot, (2) registra i risultati nel foglio condiviso, (3) produce una <strong>tabella riassuntiva</strong> con conteggi per categoria.</p>
 </div>
 <p><strong>Fasi operative:</strong></p>
 <ol type="1">
-<li><strong>0-15 min:</strong> finalizzare il codebook (se non già fatto)</li>
-<li><strong>15-25 min:</strong> scrivere e testare il prompt con 10 commenti</li>
-<li><strong>25-55 min:</strong> classificare i restanti commenti</li>
-<li><strong>55-60 min:</strong> verificare i risultati e annotare problemi</li>
+<li><strong>0-10 min:</strong> verificare prompt, codebook e foglio condiviso</li>
+<li><strong>10-50 min:</strong> classificazione per batch (20-30 immagini per batch, nuova chat per ogni batch)</li>
+<li><strong>50-55 min:</strong> completare la tabella riassuntiva (conteggi per categoria)</li>
+<li><strong>55-60 min:</strong> annotare problemi e casi incerti</li>
 </ol>
 <aside class="notes">
-<p>Fase pratica del lab. I gruppi lavorano autonomamente. Il docente passa tra i gruppi per: (1) verificare la qualità dei codebook, (2) suggerire miglioramenti ai prompt, (3) aiutare con problemi tecnici di Gemini. Problemi comuni: commenti troppo corti per essere classificati (emoji, singole parole), commenti in lingue diverse dall’italiano, commenti spam. Suggerire di classificare questi casi come “ALTRO” e annotarli. L’obiettivo di 50 commenti è un minimo; gruppi con dataset più grandi possono classificare di più.</p>
+<p>Fase pratica del lab. I gruppi lavorano autonomamente. Il docente passa tra i gruppi per: (1) verificare che il prompt sia lo stesso del pilot, (2) controllare la qualità delle classificazioni nei primi batch, (3) aiutare con problemi tecnici di Gemini nel caricamento multimodale. Problemi comuni: immagini che non si caricano (formato non supportato, dimensione troppo grande), timeout di Gemini su batch troppo grandi, classificazioni incoerenti tra batch. La tabella riassuntiva è importante: permette di avere una prima fotografia del dataset classificato. L’obiettivo è completare la classificazione di tutte le immagini; se non si riesce, prioritizzare la qualità sulla quantità.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -653,11 +676,11 @@ Fabio Giglietto
 <h2>Checklist di fine lab</h2>
 <p>Prima di uscire, ogni gruppo verifica:</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Codebook</strong> finalizzato e documentato</label></li>
-<li><label><input type="checkbox"><strong>Prompt</strong> testato e salvato in un documento condiviso</label></li>
-<li><label><input type="checkbox"><strong>Almeno 50 commenti</strong> classificati da Gemini</label></li>
-<li><label><input type="checkbox"><strong>Risultati</strong> inseriti nella colonna “classificazione_ai”</label></li>
-<li><label><input type="checkbox"><strong>Problemi</strong> annotati (commenti difficili, ambiguità)</label></li>
+<li><label><input type="checkbox"><strong>Tutte le immagini</strong> classificate (o almeno l’80% del dataset)</label></li>
+<li><label><input type="checkbox"><strong>Risultati</strong> registrati nel foglio condiviso con ID corrispondenti al CSV</label></li>
+<li><label><input type="checkbox"><strong>Tabella riassuntiva</strong> con conteggi e percentuali per categoria</label></li>
+<li><label><input type="checkbox"><strong>Casi incerti</strong> annotati (certezza bassa, immagini ambigue)</label></li>
+<li><label><input type="checkbox"><strong>Prompt</strong> salvato in documento condiviso (identico a quello del pilot)</label></li>
 </ul>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -668,12 +691,12 @@ Fabio Giglietto
 <p><strong>Per domani</strong></p>
 </div>
 <div class="callout-content">
-<p>Domani affronteremo la <strong>validazione umana</strong> delle classificazioni IA. Ogni membro del gruppo dovrà classificare manualmente un campione di commenti per calcolare l’<strong>intercoder reliability</strong>.</p>
+<p>Domani affronteremo la <strong>validazione umana</strong>: ogni membro del gruppo classificherà indipendentemente un campione di <strong>50 immagini</strong> per calcolare l’<strong>intercoder reliability</strong>. Portate il codebook stampato o su tablet.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Checklist di verifica. Enfatizzare che il prompt va salvato in un documento condiviso: servirà sia per la sezione Metodo del paper sia per eventuali iterazioni. I commenti classificati come “incerti” dall’IA saranno il primo target della validazione umana di domani. I problemi annotati alimenteranno la discussione sulla validazione. Transizione: domani passiamo dalla classificazione automatizzata alla verifica umana — il cuore della metodologia LLMs-in-the-loop.</p>
+<p>Checklist di verifica. Enfatizzare che il foglio condiviso deve avere gli ID corrispondenti al CSV originale: questo è indispensabile per il cross-referencing con le metriche di engagement. I casi incerti sono particolarmente preziosi: saranno il primo target della validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini: se un gruppo finisce prima, può aiutare con problemi tecnici ma non deve condividere le proprie classificazioni (ogni gruppo deve classificare indipendentemente). Transizione: domani passiamo dalla classificazione automatizzata alla verifica umana — il cuore della metodologia LLMs-in-the-loop.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -692,7 +715,7 @@ Fabio Giglietto
 <p>📧 fabio.giglietto@uniurb.it</p>
 <p>🌐 blended.uniurb.it</p>
 <aside class="notes">
-<p>Chiusura. Ricordare: (1) verificare che i risultati della classificazione IA siano nel foglio condiviso, (2) domani ogni membro del gruppo dovrà classificare manualmente un campione di commenti, (3) portare il codebook stampato o su tablet per la codifica manuale. Domani è la sessione chiave della metodologia: confronteremo le classificazioni IA con quelle umane.</p>
+<p>Chiusura. Ricordare: (1) verificare che le classificazioni siano nel foglio condiviso con ID corretti, (2) domani ogni membro del gruppo classificherà manualmente 50 immagini — portare il codebook, (3) chi non ha completato la classificazione deve finire prima di domani. Domani è la sessione chiave della metodologia: confronteremo le classificazioni IA con quelle umane e calcoleremo le metriche di accordo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -709,8 +732,8 @@ Fabio Giglietto
 <h2>Riferimenti</h2>
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-marino2024" class="csl-entry" role="listitem">
-Marino, G., &amp; Giglietto, F. (2024). Integrating Large Language Models in Political Discourse Studies on Social Media: Challenges of Validating an <span>LLMs</span>-in-the-loop Pipeline. <em>Sociologica</em>, <em>18</em>(2), 87–107. <a href="https://doi.org/10.6092/issn.1971-8853/19524">https://doi.org/10.6092/issn.1971-8853/19524</a>
+<div id="ref-cosenza2025" class="csl-entry" role="listitem">
+Cosenza, V. (2025). <em>Esercizi di Intelligenza Aumentata: Imparare a Collaborare con le <span>I.A.</span></em>
 </div>
 </div>
 </section>

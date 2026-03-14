@@ -1,5 +1,5 @@
 ---
-title: "Lab: Raccolta Post e Commenti"
+title: "Lab: Prompt Design e Classificazione Pilota"
 subtitle: "IA Generativa e Media — Settimana 4"
 author: "Fabio Giglietto"
 institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
@@ -36,284 +36,351 @@ csl: ../apa.csl
 
 ## [This Week in AI]{.twiai-badge}
 
-### Le piattaforme aggiornano le policy sui contenuti sintetici
+### Google introduce il watermarking invisibile con SynthID
 
-Meta annuncia nuove etichette per i contenuti generati dall'IA su Facebook e Instagram, estendendo il sistema di marcatura a immagini, video e audio sintetici.
+Google DeepMind estende **SynthID** a tutte le immagini generate da Gemini: un watermark invisibile incorporato nei pixel che permette la rilevazione automatica dei contenuti sintetici.
 
 ::: {.callout-note}
 ## Da discutere
-Queste etichette possono aiutare gli utenti a riconoscere l'*AI slop*? O rischiano di creare un falso senso di sicurezza per i contenuti non etichettati?
+Se il watermarking fosse universale, cambierebbe il problema dell'*AI slop*? O le immagini generate da modelli open source resterebbero prive di marcatura?
 :::
 
 ::: {.notes}
-This Week in AI: aprire con una notizia recente sulle policy delle piattaforme rispetto ai contenuti sintetici. Il collegamento con il progetto è diretto: i gruppi stanno raccogliendo proprio contenuti AI-generated su Facebook. La domanda posta collega le policy piattaforma alla ricerca di Ferrara (2026) sullo stack della realtà sintetica. Dedicare 5-10 minuti alla discussione. Chiedere agli studenti se hanno notato etichette di questo tipo durante la loro navigazione.
+This Week in AI: il watermarking invisibile è un approccio tecnico al problema che gli studenti affronteranno oggi — riconoscere e classificare immagini AI-generated. SynthID funziona incorporando un segnale statistico nei pixel, invisibile all'occhio umano ma rilevabile da un classificatore. Il limite è che funziona solo per immagini generate dai modelli Google; i modelli open source (Stable Diffusion, ecc.) non lo implementano. Collegamento diretto con il progetto: le immagini AI slop nel dataset provengono probabilmente da modelli diversi, quindi il watermarking non risolve il problema della classificazione. Dedicare 5 minuti alla discussione.
 :::
 
 ## [This Week in AI]{.twiai-badge}
 
-### Contenuti sintetici: il volume cresce
+### Dal riconoscimento automatico alla classificazione umana
 
-- Il volume di **contenuti generati dall'IA** sui social media continua a crescere
-- Ferrara (2026) identifica il **collasso dei costi** come driver principale: produrre contenuti sintetici ha un costo marginale quasi nullo [@ferrara2026]
-- Le piattaforme faticano a distinguere contenuti autentici da quelli generati
+- I sistemi automatici di rilevazione IA hanno ancora **tassi di errore significativi**
+- La classificazione **multimodale** (immagine + contesto) è più affidabile di quella basata solo sull'immagine [@ferrara2026]
+- Il nostro approccio *LLMs-in-the-loop* combina **giudizio umano e IA** [@marino2024]
 
 ::: {.highlight-box}
-**Collegamento con il progetto:** il fenomeno che studierete oggi nasce proprio da questa dinamica di sovrapproduzione a basso costo.
+**Collegamento con il lab:** oggi progetterete i prompt per far classificare le immagini a Gemini — e poi verificherete se concorda con voi.
 :::
 
 ::: {.notes}
-Seconda slide TWIAI. Il collegamento con il progetto è diretto: Ferrara (2026) descrive come il collasso dei costi di produzione e l'elevato throughput rendano possibile inondare le piattaforme di contenuti sintetici. L'AI slop che i gruppi studiano è la manifestazione più visibile di questa dinamica nel Layer 1 (contenuto sintetico) dello stack proposto da Ferrara. Transizione: passiamo ora alla sessione pratica di raccolta dati.
+Seconda slide TWIAI. Transizione dalla notizia al lab di oggi. Il punto chiave: anche i migliori sistemi di rilevazione automatica non sono infallibili. Per questo la metodologia LLMs-in-the-loop prevede sempre la validazione umana. Ferrara (2026) sottolinea come la proliferazione di contenuti sintetici renda sempre più difficile distinguere il reale dal generato. Il nostro approccio — classificazione con Gemini seguita da validazione umana — è esattamente la risposta metodologica a questo problema. Transizione: passiamo alla roadmap del lab.
 :::
 
 ## Roadmap del lab
 
-1. **Ricapitolazione** — cosa raccogliere e perché
-2. **Meta Content Library** — panoramica dello strumento
-3. **Strategie di ricerca** — come trovare contenuti *AI slop*
-4. **Workflow di raccolta** — dal post al dataset
-5. **Screening con Gemini** — classificazione preliminare
-6. **Lavoro pratico** — raccolta dati per gruppi
+1. **Ricapitolazione** — dataset e schema di classificazione da ieri (10 min)
+2. **Prompt design** — struttura di un buon prompt multimodale (20 min)
+3. **Test pilota** — classificare 10-15 immagini con Gemini (30 min)
+4. **Raffinamento** — migliorare il prompt in base ai risultati (20 min)
+5. **Documentazione** — codebook nel foglio condiviso (10 min)
 
 ::: {.notes}
-Struttura del lab. La sessione è prevalentemente pratica: dopo una breve introduzione (20 minuti circa), i gruppi lavoreranno autonomamente alla raccolta dei dati. Il docente e i tutor saranno disponibili per assistenza tecnica e metodologica. Ogni gruppo dovrebbe uscire dal lab con un dataset iniziale di almeno 30-50 post con i relativi commenti.
+Struttura del lab. La sessione è interamente pratica dopo la breve ricapitolazione iniziale. Il flusso segue lo stesso ciclo iterativo sperimentato nel seminario Paroni: prima bozza → test → analisi degli errori → raffinamento. La differenza rispetto al seminario è che oggi lavoriamo con immagini (input multimodale) anziché con headline testuali. Ogni gruppo dovrebbe uscire dal lab con: un prompt testato e raffinato, un codebook documentato, e una classificazione pilota di 30-50 immagini.
 :::
 
-## Cosa Raccogliere e Perché {background-color="#C5612E"}
+## Ricapitolazione da Ieri {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 1: breve ricapitolazione degli obiettivi di raccolta. Collegamento con la sessione di ieri sul lancio del progetto.
+Sezione 1: breve ricapitolazione di ciò che è stato definito nella sessione di lancio del progetto. Gli studenti hanno già il dataset e uno schema di classificazione.
 :::
 
-## Obiettivi e struttura del dataset
-
-::: {.orange-box}
-**Il dataset del progetto**
-
-Ogni gruppo costruisce un dataset di **post con immagini AI-generated** e i relativi **commenti**, raccolti da pagine e gruppi Facebook italiani.
-:::
-
-| Campo | Tipo | Esempio |
-|-------|------|---------|
-| **post_id** | Identificativo | FB_12345 |
-| **page_name** | Testo | "Nostalgia Italia" |
-| **image_type** | Categoria | Bambini / Animali / Paesaggi |
-| **engagement** | Numerico | 1.200 reazioni, 350 commenti |
-| **comment_text** | Testo | "Ma questa è fatta con l'IA!" |
-| **comment_type** | Da classificare | Riconoscimento IA / Emotivo / Critico |
-
-::: {.notes}
-Ricapitolazione dalla sessione di ieri. Il dataset ha struttura gerarchica: i post con immagini AI slop sono le unità di primo livello; i commenti sono le unità di secondo livello. Ogni gruppo raccoglie almeno 30-50 post con relativi commenti. La colonna "comment_type" sarà classificata nella settimana 5 usando Gemini e validata con codifica umana. Per ora i gruppi si concentrano sulla raccolta dei campi oggettivi. I dati devono essere raccolti in un foglio Google Sheets condiviso nel gruppo.
-:::
-
-## Meta Content Library {background-color="#C5612E"}
-
-::: {.notes}
-Sezione 2: panoramica pratica di Meta Content Library. Lo strumento chiave per la raccolta dei dati del progetto.
-:::
-
-## Meta Content Library: funzionalità e limiti
+## Il dataset e il vostro schema
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Funzionalita'
+### Il dataset (fornito)
 
-- Accesso a **post pubblici** di Facebook e Instagram
-- Ricerca per **parole chiave, pagine, gruppi**
-- Filtri per **data, tipo di contenuto, lingua**
-- Download dei **commenti** associati ai post
+- **~300-400 immagini** AI-generated da Facebook
+- File CSV con **metadati e metriche di engagement**
+- Fonte: studio Terenzi & Giglietto [@terenzi2025]
+- Cartella condivisa su **Google Drive**
 :::
 
 ::: {.column width="50%"}
-### Limiti
+### Il vostro schema (da ieri)
 
-- Solo contenuti **pubblici**
-- Accesso riservato a **ricercatori verificati**
-- Rate limit sulle **query**
-- Dati **anonimizzati** per gli utenti
+- Ogni gruppo ha definito un **angolo di classificazione**
+- Categorie **operazionalizzate** con definizioni
+- Ipotesi su quali categorie generino **più engagement**
+:::
+:::
+
+::: {.callout-note}
+## Ricordate
+Tutti i gruppi classificano le **stesse immagini** — questo permetterà il confronto inter-gruppo nella sintesi finale.
+:::
+
+::: {.notes}
+Rapida ricapitolazione. Il dataset è stato fornito dal docente: immagini AI-generated scaricate da Meta Content Library nell'ambito dello studio di Terenzi & Giglietto (2025). Il CSV contiene metadati (identificativo post, testo, pagina di origine) e metriche di engagement (reazioni, commenti, condivisioni, visualizzazioni). I nomi dei file immagine corrispondono agli identificativi nel CSV. Ieri ogni gruppo ha definito il proprio schema di classificazione: per soggetto visivo, strategia emotiva, tecnica di generazione, o intento apparente. Oggi trasformiamo quello schema in un prompt funzionante per Gemini.
+:::
+
+## Prompt Design per la Classificazione {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: come progettare un prompt efficace per la classificazione multimodale di immagini con Gemini. Questa è la competenza centrale del lab.
+:::
+
+## Anatomia di un prompt di classificazione
+
+Un prompt efficace per classificare immagini con Gemini ha **quattro componenti** [@cosenza2025]:
+
+| Componente | Funzione | Esempio |
+|-----------|----------|---------|
+| **Ruolo** | Definire l'expertise dell'IA | "Sei un analista di contenuti visivi..." |
+| **Categorie** | Elencare le opzioni con definizioni | "Classifica in: A, B, C, D" |
+| **Criteri** | Specificare come decidere | "Considera il soggetto principale..." |
+| **Formato output** | Strutturare la risposta | "Rispondi in formato tabella..." |
+
+::: {.notes}
+La struttura del prompt riprende le regole di Cosenza (2025) — in particolare la regola sulla struttura Obiettivo + Istruzioni + Output. Per la classificazione multimodale aggiungiamo un elemento cruciale: le definizioni operative delle categorie, con esempi visivi descritti a parole. Questo è analogo a ciò che gli studenti hanno fatto nel seminario Paroni quando hanno dovuto definire cosa fosse "politico" per le 20 headline. Ora devono definire le proprie categorie con lo stesso rigore.
+:::
+
+## Esempio: prompt per classificazione per soggetto
+
+::: {.orange-box}
+**Prompt di esempio**
+
+*"Sei un analista di contenuti visivi specializzato nell'identificazione di immagini generate dall'IA sui social media. Ti mostrerò un'immagine da una pagina Facebook italiana. Classificala in UNA delle seguenti categorie:*
+
+*1. BAMBINI — soggetto principale: minori in scene emotive (preghiera, povertà, gioco)*
+*2. ANIMALI — soggetto principale: animali in contesti insoliti o antropomorfizzati*
+*3. PAESAGGI — scene naturali o urbane iperrealiste*
+*4. RELIGIONE — iconografia religiosa, figure sacre, scene devozionali*
+*5. ALTRO — nessuna delle precedenti (specifica)*
+
+*Rispondi con: CATEGORIA | CONFIDENZA (alta/media/bassa) | MOTIVAZIONE (max 20 parole)"*
+:::
+
+::: {.notes}
+Esempio concreto di prompt strutturato. Questo è solo un modello — ogni gruppo adatterà le categorie al proprio schema definito ieri. Elementi chiave: (1) ruolo specifico, non generico; (2) categorie con brevi definizioni operative che riducono l'ambiguità; (3) formato output strutturato che facilita la raccolta sistematica dei dati. La colonna "confidenza" è importante: permette di identificare i casi limite che richiederanno attenzione nella validazione umana. Cosenza (2025) nella regola "Valuta" ricorda che l'output dell'IA è una bozza — la confidenza aiuta a capire dove concentrare la revisione umana.
+:::
+
+## Errori comuni nel prompt design
+
+::: {.columns}
+::: {.column width="50%"}
+### Da evitare
+
+- Categorie **vaghe** senza definizioni
+- **Troppe categorie** (>7 aumenta l'errore)
+- Nessun esempio per i **casi limite**
+- Output **non strutturato** (testo libero)
+:::
+
+::: {.column width="50%"}
+### Buone pratiche
+
+- Definizioni **operative** per ogni categoria
+- Categoria **"Altro"** con obbligo di specifica
+- **Esempi** di casi ambigui nel prompt
+- Formato output **tabellare** o strutturato
 :::
 :::
 
 ::: {.callout-tip}
-## Suggerimento
-Salvate ogni query con un nome descrittivo. Annotate i parametri di ricerca per la sezione "Metodo" del paper.
+## Dal seminario Paroni
+Ricordate l'Attività 1: quando Gemini non concordava con il gruppo, avete **raffinato il prompt** aggiungendo esempi e criteri espliciti. Oggi farete lo stesso con le immagini.
 :::
 
 ::: {.notes}
-Meta Content Library è lo strumento di Meta per la ricerca accademica. L'accesso è stato configurato nelle settimane precedenti tramite il portale di ricerca. Passaggi operativi: accedere a contentlibrary.meta.com, selezionare "Posts", applicare filtri (lingua italiana, con immagine), impostare l'intervallo temporale (ultimi 6 mesi consigliati), esportare in CSV o JSON. Limiti importanti: dati solo pubblici, utenti anonimizzati, limiti sul volume di query. I gruppi dovranno pianificare le ricerche con attenzione. Mostrare l'interfaccia in tempo reale proiettando lo schermo.
+Errori tipici nel prompt design per la classificazione. Il collegamento con il seminario Paroni è diretto: nell'Attività 1, i gruppi hanno scoperto che il primo prompt generico produceva discordanze con Gemini. La soluzione era raffinare il prompt con esempi concreti, definizioni più precise, e formato di output esplicito. La stessa logica si applica qui. La differenza è che con le immagini il prompt deve descrivere a parole le caratteristiche visive che definiscono ogni categoria — non si possono inserire "esempi visivi" nel prompt testuale (anche se Gemini supporta il multimodale, per la classificazione sistematica il prompt deve essere replicabile).
 :::
 
-## Strategie di Ricerca {background-color="#C5612E"}
+## Test Pilota {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 3: come identificare in modo efficace contenuti AI slop su Facebook. Strategie di ricerca specifiche.
+Sezione 3: fase pratica del test pilota. Ogni gruppo carica 10-15 immagini su Gemini e le classifica con il proprio prompt.
 :::
 
-## Come trovare contenuti *AI slop*
+## Workflow del test pilota
 
-::: {.columns}
-::: {.column width="50%"}
-### Per parole chiave
-
-- "intelligenza artificiale" + "immagine"
-- "creato con IA"
-- Nomi di pagine note per AI slop
-- Temi tipici: "preghiera", "nostalgia", "animali"
+::: {.highlight-box}
+**Obiettivo:** testare il prompt su **10-15 immagini** per identificare problemi prima di scalare a tutto il dataset.
 :::
 
-::: {.column width="50%"}
-### Per caratteristiche visive
-
-- Immagini con **stile iperrealista lucido**
-- Soggetti ricorrenti: **bambini, anziani, animali**
-- Anomalie: **dita, testo, simmetria**
-- Engagement **insolitamente alto**
-:::
-:::
+| Passo | Azione | Tempo |
+|-------|--------|-------|
+| **1** | Selezionate **10-15 immagini** variegate dal dataset | 5 min |
+| **2** | Caricate ogni immagine su **Gemini** con il vostro prompt | 15 min |
+| **3** | Registrate i risultati nel **foglio condiviso** | 5 min |
+| **4** | Annotate i **casi problematici** | 5 min |
 
 ::: {.callout-warning}
 ## Attenzione
-Non tutti i contenuti con alto engagement sono AI slop. Usate il vostro giudizio critico per lo screening iniziale.
+Selezionate immagini **diverse tra loro** — non 15 bambini. Il test deve coprire la varietà del dataset.
 :::
 
 ::: {.notes}
-Due strategie complementari per la ricerca. La ricerca per parole chiave funziona bene quando gli utenti stessi commentano che l'immagine è generata dall'IA. La ricerca per caratteristiche visive richiede più esperienza ma permette di trovare contenuti non ancora identificati. Terenzi & Giglietto (2025) hanno identificato alcuni pattern tipici dell'AI slop nelle comunità italiane: immagini di bambini in situazioni commoventi, anziani sorridenti, animali in contesti improbabili. Lo stile è tipicamente iperrealista con una "lucentezza" caratteristica. Importante: lo screening iniziale è necessariamente soggettivo; la classificazione sistematica verrà fatta nella settimana 5.
+Il test pilota è il cuore del lab. Le 10-15 immagini devono essere selezionate strategicamente: includere esempi di ciascuna categoria prevista dallo schema del gruppo, più qualche immagine potenzialmente ambigua. L'obiettivo non è classificare in massa, ma verificare che il prompt funzioni: le categorie sono chiare per Gemini? Ci sono categorie che non si applicano mai? Ci sono immagini che non rientrano in nessuna categoria? La selezione variata è fondamentale — testare solo immagini "facili" non rivela i problemi del prompt.
 :::
 
-## Esempio di query di ricerca
+## Cosa osservare durante il test
 
-| Strategia | Query | Filtri |
-|-----------|-------|--------|
-| **Ricerca diretta** | `"fatto con intelligenza artificiale"` OR `"generato dall'IA"` | Italiano, con immagine, ultimi 6 mesi |
-| **Per contesto** | Pagine/gruppi da @terenzi2025 | Con immagine, per engagement |
-| **Per tema** | `"preghiera"` OR `"angelo"` OR `"Gesù"` | Engagement > 500 reazioni |
+Per ogni immagine classificata, annotatevi:
+
+- Gemini ha scelto la **categoria che avreste scelto voi**?
+- La **motivazione** fornita da Gemini è coerente?
+- La **confidenza** correla con la difficoltà reale del caso?
+- Ci sono **categorie mai usate** da Gemini?
+- Ci sono immagini che Gemini classifica come **"Altro"** ma che voi assegnereste a una categoria?
+
+::: {.highlight-box}
+**Il paradosso dell'esperto** [@marino2024]: Gemini potrebbe cogliere pattern che voi non notate — e viceversa. Entrambe le prospettive sono preziose.
+:::
 
 ::: {.notes}
-Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto è generato dall'IA. La Query 2 parte dalle pagine e dai gruppi già identificati nella ricerca di Terenzi & Giglietto (2025). La Query 3 cerca per temi tipici dell'AI slop nelle comunità italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.
+Questa slide guida l'osservazione durante il test. Il paradosso dell'esperto, emerso nel seminario Paroni (il caso di Amedeo Matacena identificato correttamente dal modello ma non dai ricercatori), si applica anche qui: Gemini potrebbe classificare correttamente immagini che gli studenti trovano ambigue, o viceversa. Entrambi i casi sono informativi. Le annotazioni qui sono il materiale grezzo per il raffinamento del prompt nel passo successivo. Incoraggiare gli studenti a essere onesti quando Gemini ha "ragione" e loro avrebbero sbagliato.
 :::
 
-## Il Workflow di Raccolta {background-color="#C5612E"}
+## Raffinamento del Prompt {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 4: il flusso di lavoro completo dalla ricerca al dataset strutturato.
+Sezione 4: raffinamento iterativo del prompt sulla base dei risultati del test pilota. Approccio identico a quello praticato nel seminario Paroni.
 :::
 
-## Dal post al dataset: il flusso operativo
+## L'approccio iterativo
 
-| Fase | Azioni |
-|------|--------|
-| **1. Ricerca e selezione** | Query su MCL, screening manuale delle immagini IA |
-| **2. Raccolta dati** | Esportare post + commenti nel foglio Google Sheets condiviso |
-| **3. Documentazione** | Registrare query, criteri di selezione, decisioni discrezionali |
+Il ciclo è lo stesso del seminario Paroni, applicato alle immagini:
 
-La trasparenza del processo è centrale nella metodologia *LLMs-in-the-loop* [@marino2024].
-
-::: {.notes}
-Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle scelte metodologiche è fondamentale per la riproducibilità e per la sezione Metodo del paper. Ogni decisione discrezionale (perché un post è stato incluso o escluso) deve essere annotata. Questo approccio riflette la metodologia LLMs-in-the-loop di Marino & Giglietto (2024): la trasparenza del processo è importante quanto i risultati.
-:::
-
-## Organizzare il foglio di calcolo
-
-La struttura è analoga al foglio del **workshop Paroni** — colonne per i codificatori individuali, il consenso di gruppo e la classificazione Gemini:
+```
+Prompt v1 → Test → Analisi errori → Prompt v2 → Test → ...
+```
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Foglio "Post"
+### Problemi tipici
 
-post_id, data, pagina_gruppo, testo_post, tipo_immagine, n_reazioni, n_commenti, n_condivisioni
+- Categoria troppo **ampia** (raccoglie tutto)
+- Categoria troppo **stretta** (mai usata)
+- **Sovrapposizione** tra categorie
+- Gemini interpreta diversamente una **definizione**
 :::
 
 ::: {.column width="50%"}
-### Foglio "Commenti"
+### Soluzioni
 
-comment_id, post_id (ref), testo_commento, n_reazioni, classificazione_ai, classificazione_umana, note
+- **Dividere** la categoria in sotto-categorie
+- **Fondere** con una categoria simile
+- Aggiungere **criteri discriminanti**
+- Riformulare con **esempi concreti**
 :::
 :::
-
-Le colonne **classificazione_ai** e **classificazione_umana** saranno compilate nella settimana 5.
 
 ::: {.notes}
-La struttura ricalca il foglio usato nell'Attività 1 del seminario Paroni: lì c'erano colonne per ogni codificatore, il consenso di gruppo e la classificazione Gemini. Qui abbiamo la stessa logica su scala più grande: classificazione_ai (Gemini) e classificazione_umana (codificatori del gruppo), con la colonna note per annotare i casi ambigui — esattamente come facevano con i casi limite delle 20 headline. Due fogli collegati dalla colonna post_id. Per ora le colonne di classificazione restano vuote: saranno compilate nella settimana 5 durante le fasi di analisi e validazione.
+Il raffinamento iterativo è la competenza chiave di questa sessione. Nel seminario Paroni, i gruppi hanno sperimentato come un prompt generico ("classifica queste headline come politiche o non politiche") producesse errori, e come l'aggiunta di definizioni, esempi e formato strutturato migliorasse la concordanza. Lo stesso principio vale qui: se Gemini classifica "bambino che prega" come RELIGIONE mentre il gruppo intendeva BAMBINI, la soluzione è specificare nel prompt che la categoria è determinata dal soggetto principale, non dal contesto. Ogni discordanza è un'opportunità per migliorare il prompt E il codebook.
 :::
 
-## Screening con Gemini {background-color="#C5612E"}
+## Esempio di raffinamento
+
+| Problema nel test | Modifica al prompt |
+|---|---|
+| Gemini classifica "bambino che prega" come RELIGIONE | Aggiungere: *"La categoria si basa sul soggetto principale. Un bambino in contesto religioso → BAMBINI"* |
+| Tutte le immagini finiscono in "ALTRO" | Rivedere le definizioni: troppo restrittive? Aggiungere esempi |
+| Gemini assegna confidenza "alta" a classificazioni errate | Aggiungere: *"Indica confidenza 'bassa' se l'immagine potrebbe rientrare in più categorie"* |
 
 ::: {.notes}
-Sezione 5: uso di Google Gemini per lo screening preliminare dei contenuti raccolti. Primo assaggio della pipeline LLMs-in-the-loop.
+Tre scenari concreti di raffinamento. Il primo caso illustra un problema di gerarchia tra categorie: bisogna definire un criterio di precedenza. Il secondo caso suggerisce che le definizioni sono troppo restrittive — le immagini reali nel dataset sono più varie di quanto previsto. Il terzo caso riguarda la calibrazione della confidenza: Gemini tende a essere "sicuro" anche quando non dovrebbe esserlo. In tutti e tre i casi, la soluzione è rendere il prompt più esplicito. Ricordare agli studenti che il prompt perfetto non esiste al primo tentativo — l'iterazione è parte della metodologia.
 :::
 
-## Screening con Gemini: prompt e workflow
+## Documentazione del Codebook {background-color="#C5612E"}
 
-::: {.orange-box}
-**Prompt di esempio per lo screening**
-
-*"Analizza questa immagine e rispondi: (1) Presenta caratteristiche di un'immagine generata da IA? (Si/No/Incerto) (2) Quali indizi visivi supportano la valutazione? (3) Classifica il tema: bambini / animali / religione / paesaggio / altro"*
+::: {.notes}
+Sezione 5: documentazione formale dello schema di classificazione nel codebook. Questo documento servirà sia per la classificazione con Gemini sia per la validazione umana nella settimana 5.
 :::
 
-Il prompt segue la struttura **Obiettivo + Istruzioni + Output** raccomandata da @cosenza2025.
+## Struttura del codebook
+
+Il **codebook** è il documento di riferimento per la classificazione — vale sia per Gemini che per i codificatori umani:
+
+| Elemento | Descrizione | Esempio |
+|---------|-------------|---------|
+| **Categoria** | Nome | BAMBINI |
+| **Definizione** | Cosa include ed esclude | Minori come soggetto principale, in qualsiasi contesto |
+| **Esempi tipici** | 2-3 casi chiari | Bambino che prega, gruppo di bambini sorridenti |
+| **Casi limite** | Regole per ambiguità | Se bambino + animale → soggetto in primo piano prevale |
+| **Decisione** | Come risolvere i dubbi | In caso di dubbio, scegliere la categoria del soggetto più prominente |
+
+::: {.notes}
+Il codebook è un documento metodologico fondamentale. Nel seminario Paroni, le regole di classificazione erano implicite (la definizione ampia di "politico") e questo ha generato disaccordi. Per il progetto serve un codebook esplicito che elimini l'ambiguità — o almeno la riduca. Il codebook serve a due scopi: (1) istruire Gemini con il prompt, (2) guidare la classificazione umana nella settimana 5. Se le regole sono diverse per IA e umani, il confronto non ha senso. Ogni gruppo documenta il codebook in un tab dedicato del foglio Google Sheets condiviso.
+:::
+
+## Dove documentare
+
+Nel **foglio Google Sheets** condiviso, create un tab "Codebook":
+
+- **Colonna A:** Nome categoria
+- **Colonna B:** Definizione operativa
+- **Colonna C:** Esempi tipici (descrizione testuale)
+- **Colonna D:** Casi limite e regole di decisione
+- **Colonna E:** Note dal test pilota
+
+Il **prompt finale** va copiato in un secondo tab "Prompt" — è parte integrante della metodologia e andrà nell'appendice del paper.
 
 ::: {.callout-tip}
-## Suggerimento pratico
-Usate la funzionalità multimodale di Gemini: caricate l'immagine direttamente nella chat. Lo screening è un supporto, non un sostituto del giudizio umano.
+## Suggerimento
+Documentate anche le **versioni precedenti** del prompt. La storia delle iterazioni sarà utile per la sezione Metodo del paper.
 :::
 
 ::: {.notes}
-Primo uso operativo di Gemini nel progetto. Il prompt segue la struttura raccomandata da Cosenza (2025): obiettivo chiaro, istruzioni specifiche, formato di output definito. Gemini serve come strumento di supporto allo screening, non come classificatore finale. Cosenza nella regola "Valuta" ricorda di trattare il risultato dell'IA come una bozza da sottoporre a giudizio umano. La classificazione sistematica sarà fatta nella sessione di lunedì. Gemini puo' sbagliare, specialmente con immagini di alta qualità. I risultati dello screening vanno annotati ma non presi come classificazione definitiva.
+Indicazioni operative sulla documentazione. Il foglio condiviso è il repository centrale del gruppo. Il tab Codebook deve essere compilato da tutti i membri — non solo dall'AI analyst. Il prompt finale nel tab "Prompt" serve per la riproducibilità: nella sezione Metodo del paper, i gruppi dovranno descrivere esattamente come hanno istruito Gemini. Conservare le versioni precedenti del prompt (v1, v2, ecc.) è utile per raccontare il processo iterativo. Questo riflette il principio di trasparenza della metodologia LLMs-in-the-loop: ogni decisione deve essere documentata e giustificabile.
 :::
 
 ## Lavoro Pratico {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 6: inizio del lavoro pratico in gruppi. La parte centrale del lab.
+Sezione 6: inizio del lavoro pratico in gruppi. I gruppi lavorano autonomamente seguendo il workflow completo.
 :::
 
 ## Istruzioni per il lavoro di gruppo
 
 ::: {.orange-box}
-**Obiettivo del lab (90 minuti)**
+**Workflow del lab (80 minuti)**
 
-Ogni gruppo raccoglie almeno **30 post** con immagini *AI slop* e i relativi **commenti** su Meta Content Library, organizzandoli nel foglio di calcolo condiviso.
+1. **Prompt drafting** — scrivete il prompt con le vostre categorie (20 min)
+2. **Test pilota** — classificate 10-15 immagini con Gemini (30 min)
+3. **Raffinamento** — migliorate il prompt in base agli errori (20 min)
+4. **Codebook** — documentate tutto nel foglio condiviso (10 min)
 :::
 
 **Divisione dei compiti suggerita:**
 
-1. **Ricercatore/i:** eseguono le query su Meta Content Library
-2. **Screener:** verificano che le immagini siano AI-generated (con supporto Gemini)
-3. **Data entry:** inseriscono i dati nel foglio Google Sheets
-4. **Documentatore:** annota query, criteri e decisioni
+- **AI analyst:** scrive e testa il prompt su Gemini
+- **Validatore:** classifica le stesse immagini indipendentemente (senza vedere Gemini)
+- **Data analyst:** registra risultati e discordanze nel foglio
+- **Coordinatore:** gestisce i tempi e documenta il codebook
 
 ::: {.notes}
-Fase pratica del lab. I gruppi lavorano autonomamente per circa 90 minuti. Il docente e i tutor circolano tra i gruppi per assistenza tecnica e metodologica. Problemi comuni da anticipare: (1) accesso a Meta Content Library, (2) difficoltà nell'esportazione dei commenti, (3) dubbi sulla classificazione delle immagini come AI-generated. Se un gruppo ha problemi tecnici con Meta Content Library, suggerire di iniziare con la ricerca manuale su Facebook e poi recuperare i dati strutturati in un secondo momento.
+Fase pratica del lab. I ruoli ricalcano quelli definiti ieri nel lancio del progetto. Il punto chiave è che il validatore classifica le stesse 10-15 immagini in modo indipendente, senza vedere i risultati di Gemini. Questo crea un primo mini-confronto umano-IA che anticipa la validazione formale della settimana 5. Le discordanze sono il materiale più prezioso: ogni caso in cui umano e Gemini non concordano rivela un problema nel prompt, nel codebook, o in entrambi. Il docente e i tutor circolano tra i gruppi per assistenza.
 :::
 
 ## Checklist di fine lab
 
 Prima di uscire, ogni gruppo verifica:
 
-- [ ] **Almeno 30 post** raccolti nel foglio condiviso
-- [ ] **Commenti scaricati** per ogni post selezionato
-- [ ] **Query documentate** con parametri e criteri
-- [ ] **Screening preliminare** delle immagini completato
-- [ ] **Problemi e note** annotati nel foglio
+- [ ] **Prompt testato** su almeno 10-15 immagini
+- [ ] **Prompt raffinato** sulla base dei risultati del test
+- [ ] **Codebook documentato** nel tab dedicato del foglio condiviso
+- [ ] **30-50 immagini classificate** (pilota + estensione)
+- [ ] **Prompt finale** copiato nel tab "Prompt" del foglio
 
 ::: {.callout-warning}
 ## Per lunedì
-I dati raccolti oggi saranno il materiale di lavoro per il **Lab di analisi contenuti** di lunedì 23 Marzo. Assicuratevi che il dataset sia completo e accessibile a tutti i membri del gruppo.
+Lunedì **scalerete la classificazione** a tutte le ~300-400 immagini. Il prompt deve essere pronto e testato. Se restano dubbi, raffinate tra oggi e lunedì.
 :::
 
 ::: {.notes}
-Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per controllare che tutti abbiano raggiunto il minimo di 30 post. I gruppi che hanno lavorato bene ne avranno molti di più. Quelli in difficoltà dovranno completare la raccolta tra oggi e lunedì. Sottolineare che il dataset deve essere pronto per lunedì: la sessione di analisi richiede dati su cui lavorare. Se un gruppo è molto indietro, suggerire di ridurre l'ambito della domanda di ricerca piuttosto che raccogliere dati di bassa qualità.
+Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per verificare che tutti abbiano completato almeno i primi tre punti. I gruppi più veloci avranno già classificato 30-50 immagini; quelli più lenti dovranno avere almeno il prompt testato e il codebook. Lunedì la sessione è dedicata alla classificazione su scala dell'intero dataset: serve un prompt che funzioni bene. Se un gruppo ha ancora problemi significativi (troppe discordanze, categorie poco chiare), suggerire di semplificare lo schema riducendo il numero di categorie. Meglio poche categorie ben definite che molte categorie ambigue.
 :::
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Lab — Analisi Contenuti con IA (23 Marzo 2026)
+**Prossima lezione:** Lab — Classificazione su Scala con Gemini (23 Marzo 2026)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) completare la raccolta dati se necessario prima di lunedì, (2) verificare che il foglio di calcolo sia condiviso con tutti i membri del gruppo e con il docente, (3) lunedì lavoreremo sull'analisi con Gemini — portare i laptop carichi. Il passo successivo è passare dalla raccolta all'analisi sistematica dei contenuti.
+Chiusura. Ricordare: (1) verificare che il codebook e il prompt siano documentati nel foglio condiviso, (2) se il prompt ha ancora problemi, raffinarlo tra oggi e lunedì, (3) lunedì lavoreremo alla classificazione dell'intero dataset di ~300-400 immagini con Gemini — portare i laptop carichi, (4) il prompt testato oggi è lo strumento che userete per tutta la settimana 5.
 :::
 
 ## Riferimenti

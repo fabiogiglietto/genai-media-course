@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Fabio Giglietto">
-  <title>Lab: Raccolta Post e Commenti</title>
+  <title>Lab: Prompt Design e Classificazione Pilota</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -147,7 +147,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab: Raccolta Post e Commenti</h1>
+  <h1 class="title">Lab: Prompt Design e Classificazione Pilota</h1>
   <p class="subtitle">IA Generativa e Media — Settimana 4</p>
 
 <div class="quarto-title-authors">
@@ -165,8 +165,8 @@ Fabio Giglietto
 </section>
 <section id="this-week-in-ai" class="slide level2">
 <h2><span class="twiai-badge">This Week in AI</span></h2>
-<h3 id="le-piattaforme-aggiornano-le-policy-sui-contenuti-sintetici">Le piattaforme aggiornano le policy sui contenuti sintetici</h3>
-<p>Meta annuncia nuove etichette per i contenuti generati dall’IA su Facebook e Instagram, estendendo il sistema di marcatura a immagini, video e audio sintetici.</p>
+<h3 id="google-introduce-il-watermarking-invisibile-con-synthid">Google introduce il watermarking invisibile con SynthID</h3>
+<p>Google DeepMind estende <strong>SynthID</strong> a tutte le immagini generate da Gemini: un watermark invisibile incorporato nei pixel che permette la rilevazione automatica dei contenuti sintetici.</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -176,12 +176,12 @@ Fabio Giglietto
 <p><strong>Da discutere</strong></p>
 </div>
 <div class="callout-content">
-<p>Queste etichette possono aiutare gli utenti a riconoscere l’<em>AI slop</em>? O rischiano di creare un falso senso di sicurezza per i contenuti non etichettati?</p>
+<p>Se il watermarking fosse universale, cambierebbe il problema dell’<em>AI slop</em>? O le immagini generate da modelli open source resterebbero prive di marcatura?</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>This Week in AI: aprire con una notizia recente sulle policy delle piattaforme rispetto ai contenuti sintetici. Il collegamento con il progetto è diretto: i gruppi stanno raccogliendo proprio contenuti AI-generated su Facebook. La domanda posta collega le policy piattaforma alla ricerca di Ferrara (2026) sullo stack della realtà sintetica. Dedicare 5-10 minuti alla discussione. Chiedere agli studenti se hanno notato etichette di questo tipo durante la loro navigazione.</p>
+<p>This Week in AI: il watermarking invisibile è un approccio tecnico al problema che gli studenti affronteranno oggi — riconoscere e classificare immagini AI-generated. SynthID funziona incorporando un segnale statistico nei pixel, invisibile all’occhio umano ma rilevabile da un classificatore. Il limite è che funziona solo per immagini generate dai modelli Google; i modelli open source (Stable Diffusion, ecc.) non lo implementano. Collegamento diretto con il progetto: le immagini AI slop nel dataset provengono probabilmente da modelli diversi, quindi il watermarking non risolve il problema della classificazione. Dedicare 5 minuti alla discussione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -196,17 +196,17 @@ Fabio Giglietto
 </section>
 <section id="this-week-in-ai-1" class="slide level2">
 <h2><span class="twiai-badge">This Week in AI</span></h2>
-<h3 id="contenuti-sintetici-il-volume-cresce">Contenuti sintetici: il volume cresce</h3>
+<h3 id="dal-riconoscimento-automatico-alla-classificazione-umana">Dal riconoscimento automatico alla classificazione umana</h3>
 <ul>
-<li>Il volume di <strong>contenuti generati dall’IA</strong> sui social media continua a crescere</li>
-<li>Ferrara (2026) identifica il <strong>collasso dei costi</strong> come driver principale: produrre contenuti sintetici ha un costo marginale quasi nullo <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span></li>
-<li>Le piattaforme faticano a distinguere contenuti autentici da quelli generati</li>
+<li>I sistemi automatici di rilevazione IA hanno ancora <strong>tassi di errore significativi</strong></li>
+<li>La classificazione <strong>multimodale</strong> (immagine + contesto) è più affidabile di quella basata solo sull’immagine <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span></li>
+<li>Il nostro approccio <em>LLMs-in-the-loop</em> combina <strong>giudizio umano e IA</strong> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></li>
 </ul>
 <div class="highlight-box">
-<p><strong>Collegamento con il progetto:</strong> il fenomeno che studierete oggi nasce proprio da questa dinamica di sovrapproduzione a basso costo.</p>
+<p><strong>Collegamento con il lab:</strong> oggi progetterete i prompt per far classificare le immagini a Gemini — e poi verificherete se concorda con voi.</p>
 </div>
 <aside class="notes">
-<p>Seconda slide TWIAI. Il collegamento con il progetto è diretto: Ferrara (2026) descrive come il collasso dei costi di produzione e l’elevato throughput rendano possibile inondare le piattaforme di contenuti sintetici. L’AI slop che i gruppi studiano è la manifestazione più visibile di questa dinamica nel Layer 1 (contenuto sintetico) dello stack proposto da Ferrara. Transizione: passiamo ora alla sessione pratica di raccolta dati.</p>
+<p>Seconda slide TWIAI. Transizione dalla notizia al lab di oggi. Il punto chiave: anche i migliori sistemi di rilevazione automatica non sono infallibili. Per questo la metodologia LLMs-in-the-loop prevede sempre la validazione umana. Ferrara (2026) sottolinea come la proliferazione di contenuti sintetici renda sempre più difficile distinguere il reale dal generato. Il nostro approccio — classificazione con Gemini seguita da validazione umana — è esattamente la risposta metodologica a questo problema. Transizione: passiamo alla roadmap del lab.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -222,15 +222,14 @@ Fabio Giglietto
 <section id="roadmap-del-lab" class="slide level2">
 <h2>Roadmap del lab</h2>
 <ol type="1">
-<li><strong>Ricapitolazione</strong> — cosa raccogliere e perché</li>
-<li><strong>Meta Content Library</strong> — panoramica dello strumento</li>
-<li><strong>Strategie di ricerca</strong> — come trovare contenuti <em>AI slop</em></li>
-<li><strong>Workflow di raccolta</strong> — dal post al dataset</li>
-<li><strong>Screening con Gemini</strong> — classificazione preliminare</li>
-<li><strong>Lavoro pratico</strong> — raccolta dati per gruppi</li>
+<li><strong>Ricapitolazione</strong> — dataset e schema di classificazione da ieri (10 min)</li>
+<li><strong>Prompt design</strong> — struttura di un buon prompt multimodale (20 min)</li>
+<li><strong>Test pilota</strong> — classificare 10-15 immagini con Gemini (30 min)</li>
+<li><strong>Raffinamento</strong> — migliorare il prompt in base ai risultati (20 min)</li>
+<li><strong>Documentazione</strong> — codebook nel foglio condiviso (10 min)</li>
 </ol>
 <aside class="notes">
-<p>Struttura del lab. La sessione è prevalentemente pratica: dopo una breve introduzione (20 minuti circa), i gruppi lavoreranno autonomamente alla raccolta dei dati. Il docente e i tutor saranno disponibili per assistenza tecnica e metodologica. Ogni gruppo dovrebbe uscire dal lab con un dataset iniziale di almeno 30-50 post con i relativi commenti.</p>
+<p>Struttura del lab. La sessione è interamente pratica dopo la breve ricapitolazione iniziale. Il flusso segue lo stesso ciclo iterativo sperimentato nel seminario Paroni: prima bozza → test → analisi degli errori → raffinamento. La differenza rispetto al seminario è che oggi lavoriamo con immagini (input multimodale) anziché con headline testuali. Ogni gruppo dovrebbe uscire dal lab con: un prompt testato e raffinato, un codebook documentato, e una classificazione pilota di 30-50 immagini.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -243,10 +242,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="cosa-raccogliere-e-perché" class="slide level2" data-background-color="#C5612E">
-<h2>Cosa Raccogliere e Perché</h2>
+<section id="ricapitolazione-da-ieri" class="slide level2" data-background-color="#C5612E">
+<h2>Ricapitolazione da Ieri</h2>
 <aside class="notes">
-<p>Sezione 1: breve ricapitolazione degli obiettivi di raccolta. Collegamento con la sessione di ieri sul lancio del progetto.</p>
+<p>Sezione 1: breve ricapitolazione di ciò che è stato definito nella sessione di lancio del progetto. Gli studenti hanno già il dataset e uno schema di classificazione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -259,60 +258,109 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="obiettivi-e-struttura-del-dataset" class="slide level2">
-<h2>Obiettivi e struttura del dataset</h2>
-<div class="orange-box">
-<p><strong>Il dataset del progetto</strong></p>
-<p>Ogni gruppo costruisce un dataset di <strong>post con immagini AI-generated</strong> e i relativi <strong>commenti</strong>, raccolti da pagine e gruppi Facebook italiani.</p>
+<section id="il-dataset-e-il-vostro-schema" class="slide level2">
+<h2>Il dataset e il vostro schema</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="il-dataset-fornito">Il dataset (fornito)</h3>
+<ul>
+<li><strong>~300-400 immagini</strong> AI-generated da Facebook</li>
+<li>File CSV con <strong>metadati e metriche di engagement</strong></li>
+<li>Fonte: studio Terenzi &amp; Giglietto <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span></li>
+<li>Cartella condivisa su <strong>Google Drive</strong></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="il-vostro-schema-da-ieri">Il vostro schema (da ieri)</h3>
+<ul>
+<li>Ogni gruppo ha definito un <strong>angolo di classificazione</strong></li>
+<li>Categorie <strong>operazionalizzate</strong> con definizioni</li>
+<li>Ipotesi su quali categorie generino <strong>più engagement</strong></li>
+</ul>
+</div></div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<p><strong>Ricordate</strong></p>
+</div>
+<div class="callout-content">
+<p>Tutti i gruppi classificano le <strong>stesse immagini</strong> — questo permetterà il confronto inter-gruppo nella sintesi finale.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Rapida ricapitolazione. Il dataset è stato fornito dal docente: immagini AI-generated scaricate da Meta Content Library nell’ambito dello studio di Terenzi &amp; Giglietto (2025). Il CSV contiene metadati (identificativo post, testo, pagina di origine) e metriche di engagement (reazioni, commenti, condivisioni, visualizzazioni). I nomi dei file immagine corrispondono agli identificativi nel CSV. Ieri ogni gruppo ha definito il proprio schema di classificazione: per soggetto visivo, strategia emotiva, tecnica di generazione, o intento apparente. Oggi trasformiamo quello schema in un prompt funzionante per Gemini.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="prompt-design-per-la-classificazione" class="slide level2" data-background-color="#C5612E">
+<h2>Prompt Design per la Classificazione</h2>
+<aside class="notes">
+<p>Sezione 2: come progettare un prompt efficace per la classificazione multimodale di immagini con Gemini. Questa è la competenza centrale del lab.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="anatomia-di-un-prompt-di-classificazione" class="slide level2">
+<h2>Anatomia di un prompt di classificazione</h2>
+<p>Un prompt efficace per classificare immagini con Gemini ha <strong>quattro componenti</strong> <span class="citation" data-cites="cosenza2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Cosenza, 2025</a>)</span>:</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 31%">
-<col style="width: 27%">
-<col style="width: 40%">
+<col style="width: 36%">
+<col style="width: 33%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Campo</th>
-<th>Tipo</th>
+<th>Componente</th>
+<th>Funzione</th>
 <th>Esempio</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>post_id</strong></td>
-<td>Identificativo</td>
-<td>FB_12345</td>
+<td><strong>Ruolo</strong></td>
+<td>Definire l’expertise dell’IA</td>
+<td>“Sei un analista di contenuti visivi…”</td>
 </tr>
 <tr class="even">
-<td><strong>page_name</strong></td>
-<td>Testo</td>
-<td>“Nostalgia Italia”</td>
+<td><strong>Categorie</strong></td>
+<td>Elencare le opzioni con definizioni</td>
+<td>“Classifica in: A, B, C, D”</td>
 </tr>
 <tr class="odd">
-<td><strong>image_type</strong></td>
-<td>Categoria</td>
-<td>Bambini / Animali / Paesaggi</td>
+<td><strong>Criteri</strong></td>
+<td>Specificare come decidere</td>
+<td>“Considera il soggetto principale…”</td>
 </tr>
 <tr class="even">
-<td><strong>engagement</strong></td>
-<td>Numerico</td>
-<td>1.200 reazioni, 350 commenti</td>
-</tr>
-<tr class="odd">
-<td><strong>comment_text</strong></td>
-<td>Testo</td>
-<td>“Ma questa è fatta con l’IA!”</td>
-</tr>
-<tr class="even">
-<td><strong>comment_type</strong></td>
-<td>Da classificare</td>
-<td>Riconoscimento IA / Emotivo / Critico</td>
+<td><strong>Formato output</strong></td>
+<td>Strutturare la risposta</td>
+<td>“Rispondi in formato tabella…”</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Ricapitolazione dalla sessione di ieri. Il dataset ha struttura gerarchica: i post con immagini AI slop sono le unità di primo livello; i commenti sono le unità di secondo livello. Ogni gruppo raccoglie almeno 30-50 post con relativi commenti. La colonna “comment_type” sarà classificata nella settimana 5 usando Gemini e validata con codifica umana. Per ora i gruppi si concentrano sulla raccolta dei campi oggettivi. I dati devono essere raccolti in un foglio Google Sheets condiviso nel gruppo.</p>
+<p>La struttura del prompt riprende le regole di Cosenza (2025) — in particolare la regola sulla struttura Obiettivo + Istruzioni + Output. Per la classificazione multimodale aggiungiamo un elemento cruciale: le definizioni operative delle categorie, con esempi visivi descritti a parole. Questo è analogo a ciò che gli studenti hanno fatto nel seminario Paroni quando hanno dovuto definire cosa fosse “politico” per le 20 headline. Ora devono definire le proprie categorie con lo stesso rigore.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -325,10 +373,16 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="meta-content-library" class="slide level2" data-background-color="#C5612E">
-<h2>Meta Content Library</h2>
+<section id="esempio-prompt-per-classificazione-per-soggetto" class="slide level2">
+<h2>Esempio: prompt per classificazione per soggetto</h2>
+<div class="orange-box">
+<p><strong>Prompt di esempio</strong></p>
+<p><em>“Sei un analista di contenuti visivi specializzato nell’identificazione di immagini generate dall’IA sui social media. Ti mostrerò un’immagine da una pagina Facebook italiana. Classificala in UNA delle seguenti categorie:</em></p>
+<p><em>1. BAMBINI — soggetto principale: minori in scene emotive (preghiera, povertà, gioco)</em> <em>2. ANIMALI — soggetto principale: animali in contesti insoliti o antropomorfizzati</em> <em>3. PAESAGGI — scene naturali o urbane iperrealiste</em> <em>4. RELIGIONE — iconografia religiosa, figure sacre, scene devozionali</em> <em>5. ALTRO — nessuna delle precedenti (specifica)</em></p>
+<p><em>Rispondi con: CATEGORIA | CONFIDENZA (alta/media/bassa) | MOTIVAZIONE (max 20 parole)“</em></p>
+</div>
 <aside class="notes">
-<p>Sezione 2: panoramica pratica di Meta Content Library. Lo strumento chiave per la raccolta dei dati del progetto.</p>
+<p>Esempio concreto di prompt strutturato. Questo è solo un modello — ogni gruppo adatterà le categorie al proprio schema definito ieri. Elementi chiave: (1) ruolo specifico, non generico; (2) categorie con brevi definizioni operative che riducono l’ambiguità; (3) formato output strutturato che facilita la raccolta sistematica dei dati. La colonna “confidenza” è importante: permette di identificare i casi limite che richiederanno attenzione nella validazione umana. Cosenza (2025) nella regola “Valuta” ricorda che l’output dell’IA è una bozza — la confidenza aiuta a capire dove concentrare la revisione umana.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -341,24 +395,24 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="meta-content-library-funzionalità-e-limiti" class="slide level2">
-<h2>Meta Content Library: funzionalità e limiti</h2>
+<section id="errori-comuni-nel-prompt-design" class="slide level2">
+<h2>Errori comuni nel prompt design</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="funzionalita">Funzionalita’</h3>
+<h3 id="da-evitare">Da evitare</h3>
 <ul>
-<li>Accesso a <strong>post pubblici</strong> di Facebook e Instagram</li>
-<li>Ricerca per <strong>parole chiave, pagine, gruppi</strong></li>
-<li>Filtri per <strong>data, tipo di contenuto, lingua</strong></li>
-<li>Download dei <strong>commenti</strong> associati ai post</li>
+<li>Categorie <strong>vaghe</strong> senza definizioni</li>
+<li><strong>Troppe categorie</strong> (&gt;7 aumenta l’errore)</li>
+<li>Nessun esempio per i <strong>casi limite</strong></li>
+<li>Output <strong>non strutturato</strong> (testo libero)</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="limiti">Limiti</h3>
+<h3 id="buone-pratiche">Buone pratiche</h3>
 <ul>
-<li>Solo contenuti <strong>pubblici</strong></li>
-<li>Accesso riservato a <strong>ricercatori verificati</strong></li>
-<li>Rate limit sulle <strong>query</strong></li>
-<li>Dati <strong>anonimizzati</strong> per gli utenti</li>
+<li>Definizioni <strong>operative</strong> per ogni categoria</li>
+<li>Categoria <strong>“Altro”</strong> con obbligo di specifica</li>
+<li><strong>Esempi</strong> di casi ambigui nel prompt</li>
+<li>Formato output <strong>tabellare</strong> o strutturato</li>
 </ul>
 </div></div>
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -367,15 +421,15 @@ Fabio Giglietto
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Suggerimento</strong></p>
+<p><strong>Dal seminario Paroni</strong></p>
 </div>
 <div class="callout-content">
-<p>Salvate ogni query con un nome descrittivo. Annotate i parametri di ricerca per la sezione “Metodo” del paper.</p>
+<p>Ricordate l’Attività 1: quando Gemini non concordava con il gruppo, avete <strong>raffinato il prompt</strong> aggiungendo esempi e criteri espliciti. Oggi farete lo stesso con le immagini.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Meta Content Library è lo strumento di Meta per la ricerca accademica. L’accesso è stato configurato nelle settimane precedenti tramite il portale di ricerca. Passaggi operativi: accedere a contentlibrary.meta.com, selezionare “Posts”, applicare filtri (lingua italiana, con immagine), impostare l’intervallo temporale (ultimi 6 mesi consigliati), esportare in CSV o JSON. Limiti importanti: dati solo pubblici, utenti anonimizzati, limiti sul volume di query. I gruppi dovranno pianificare le ricerche con attenzione. Mostrare l’interfaccia in tempo reale proiettando lo schermo.</p>
+<p>Errori tipici nel prompt design per la classificazione. Il collegamento con il seminario Paroni è diretto: nell’Attività 1, i gruppi hanno scoperto che il primo prompt generico produceva discordanze con Gemini. La soluzione era raffinare il prompt con esempi concreti, definizioni più precise, e formato di output esplicito. La stessa logica si applica qui. La differenza è che con le immagini il prompt deve descrivere a parole le caratteristiche visive che definiscono ogni categoria — non si possono inserire “esempi visivi” nel prompt testuale (anche se Gemini supporta il multimodale, per la classificazione sistematica il prompt deve essere replicabile).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -388,10 +442,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="strategie-di-ricerca" class="slide level2" data-background-color="#C5612E">
-<h2>Strategie di Ricerca</h2>
+<section id="test-pilota" class="slide level2" data-background-color="#C5612E">
+<h2>Test Pilota</h2>
 <aside class="notes">
-<p>Sezione 3: come identificare in modo efficace contenuti AI slop su Facebook. Strategie di ricerca specifiche.</p>
+<p>Sezione 3: fase pratica del test pilota. Ogni gruppo carica 10-15 immagini su Gemini e le classifica con il proprio prompt.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -404,26 +458,47 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="come-trovare-contenuti-ai-slop" class="slide level2">
-<h2>Come trovare contenuti <em>AI slop</em></h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="per-parole-chiave">Per parole chiave</h3>
-<ul>
-<li>“intelligenza artificiale” + “immagine”</li>
-<li>“creato con IA”</li>
-<li>Nomi di pagine note per AI slop</li>
-<li>Temi tipici: “preghiera”, “nostalgia”, “animali”</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="per-caratteristiche-visive">Per caratteristiche visive</h3>
-<ul>
-<li>Immagini con <strong>stile iperrealista lucido</strong></li>
-<li>Soggetti ricorrenti: <strong>bambini, anziani, animali</strong></li>
-<li>Anomalie: <strong>dita, testo, simmetria</strong></li>
-<li>Engagement <strong>insolitamente alto</strong></li>
-</ul>
-</div></div>
+<section id="workflow-del-test-pilota" class="slide level2">
+<h2>Workflow del test pilota</h2>
+<div class="highlight-box">
+<p><strong>Obiettivo:</strong> testare il prompt su <strong>10-15 immagini</strong> per identificare problemi prima di scalare a tutto il dataset.</p>
+</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 36%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Passo</th>
+<th>Azione</th>
+<th>Tempo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1</strong></td>
+<td>Selezionate <strong>10-15 immagini</strong> variegate dal dataset</td>
+<td>5 min</td>
+</tr>
+<tr class="even">
+<td><strong>2</strong></td>
+<td>Caricate ogni immagine su <strong>Gemini</strong> con il vostro prompt</td>
+<td>15 min</td>
+</tr>
+<tr class="odd">
+<td><strong>3</strong></td>
+<td>Registrate i risultati nel <strong>foglio condiviso</strong></td>
+<td>5 min</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>Annotate i <strong>casi problematici</strong></td>
+<td>5 min</td>
+</tr>
+</tbody>
+</table>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -433,12 +508,12 @@ Fabio Giglietto
 <p><strong>Attenzione</strong></p>
 </div>
 <div class="callout-content">
-<p>Non tutti i contenuti con alto engagement sono AI slop. Usate il vostro giudizio critico per lo screening iniziale.</p>
+<p>Selezionate immagini <strong>diverse tra loro</strong> — non 15 bambini. Il test deve coprire la varietà del dataset.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Due strategie complementari per la ricerca. La ricerca per parole chiave funziona bene quando gli utenti stessi commentano che l’immagine è generata dall’IA. La ricerca per caratteristiche visive richiede più esperienza ma permette di trovare contenuti non ancora identificati. Terenzi &amp; Giglietto (2025) hanno identificato alcuni pattern tipici dell’AI slop nelle comunità italiane: immagini di bambini in situazioni commoventi, anziani sorridenti, animali in contesti improbabili. Lo stile è tipicamente iperrealista con una “lucentezza” caratteristica. Importante: lo screening iniziale è necessariamente soggettivo; la classificazione sistematica verrà fatta nella settimana 5.</p>
+<p>Il test pilota è il cuore del lab. Le 10-15 immagini devono essere selezionate strategicamente: includere esempi di ciascuna categoria prevista dallo schema del gruppo, più qualche immagine potenzialmente ambigua. L’obiettivo non è classificare in massa, ma verificare che il prompt funzioni: le categorie sono chiare per Gemini? Ci sono categorie che non si applicano mai? Ci sono immagini che non rientrano in nessuna categoria? La selezione variata è fondamentale — testare solo immagini “facili” non rivela i problemi del prompt.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -451,41 +526,21 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="esempio-di-query-di-ricerca" class="slide level2">
-<h2>Esempio di query di ricerca</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 42%">
-<col style="width: 26%">
-<col style="width: 30%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Strategia</th>
-<th>Query</th>
-<th>Filtri</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Ricerca diretta</strong></td>
-<td><code>"fatto con intelligenza artificiale"</code> OR <code>"generato dall'IA"</code></td>
-<td>Italiano, con immagine, ultimi 6 mesi</td>
-</tr>
-<tr class="even">
-<td><strong>Per contesto</strong></td>
-<td>Pagine/gruppi da <span class="citation" data-cites="terenzi2025">Terenzi &amp; Giglietto (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span></td>
-<td>Con immagine, per engagement</td>
-</tr>
-<tr class="odd">
-<td><strong>Per tema</strong></td>
-<td><code>"preghiera"</code> OR <code>"angelo"</code> OR <code>"Gesù"</code></td>
-<td>Engagement &gt; 500 reazioni</td>
-</tr>
-</tbody>
-</table>
+<section id="cosa-osservare-durante-il-test" class="slide level2">
+<h2>Cosa osservare durante il test</h2>
+<p>Per ogni immagine classificata, annotatevi:</p>
+<ul>
+<li>Gemini ha scelto la <strong>categoria che avreste scelto voi</strong>?</li>
+<li>La <strong>motivazione</strong> fornita da Gemini è coerente?</li>
+<li>La <strong>confidenza</strong> correla con la difficoltà reale del caso?</li>
+<li>Ci sono <strong>categorie mai usate</strong> da Gemini?</li>
+<li>Ci sono immagini che Gemini classifica come <strong>“Altro”</strong> ma che voi assegnereste a una categoria?</li>
+</ul>
+<div class="highlight-box">
+<p><strong>Il paradosso dell’esperto</strong> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span>: Gemini potrebbe cogliere pattern che voi non notate — e viceversa. Entrambe le prospettive sono preziose.</p>
+</div>
 <aside class="notes">
-<p>Tre tipologie di query concrete che i gruppi possono usare come punto di partenza. La Query 1 cerca post dove gli utenti stessi o la pagina dichiarano che il contenuto è generato dall’IA. La Query 2 parte dalle pagine e dai gruppi già identificati nella ricerca di Terenzi &amp; Giglietto (2025). La Query 3 cerca per temi tipici dell’AI slop nelle comunità italiane (religione, nostalgia, emozioni). I gruppi possono combinare e adattare queste strategie in base alla loro domanda di ricerca specifica.</p>
+<p>Questa slide guida l’osservazione durante il test. Il paradosso dell’esperto, emerso nel seminario Paroni (il caso di Amedeo Matacena identificato correttamente dal modello ma non dai ricercatori), si applica anche qui: Gemini potrebbe classificare correttamente immagini che gli studenti trovano ambigue, o viceversa. Entrambi i casi sono informativi. Le annotazioni qui sono il materiale grezzo per il raffinamento del prompt nel passo successivo. Incoraggiare gli studenti a essere onesti quando Gemini ha “ragione” e loro avrebbero sbagliato.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -498,10 +553,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="il-workflow-di-raccolta" class="slide level2" data-background-color="#C5612E">
-<h2>Il Workflow di Raccolta</h2>
+<section id="raffinamento-del-prompt" class="slide level2" data-background-color="#C5612E">
+<h2>Raffinamento del Prompt</h2>
 <aside class="notes">
-<p>Sezione 4: il flusso di lavoro completo dalla ricerca al dataset strutturato.</p>
+<p>Sezione 4: raffinamento iterativo del prompt sulla base dei risultati del test pilota. Approccio identico a quello praticato nel seminario Paroni.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -514,63 +569,30 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="dal-post-al-dataset-il-flusso-operativo" class="slide level2">
-<h2>Dal post al dataset: il flusso operativo</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 42%">
-<col style="width: 57%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Fase</th>
-<th>Azioni</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>1. Ricerca e selezione</strong></td>
-<td>Query su MCL, screening manuale delle immagini IA</td>
-</tr>
-<tr class="even">
-<td><strong>2. Raccolta dati</strong></td>
-<td>Esportare post + commenti nel foglio Google Sheets condiviso</td>
-</tr>
-<tr class="odd">
-<td><strong>3. Documentazione</strong></td>
-<td>Registrare query, criteri di selezione, decisioni discrezionali</td>
-</tr>
-</tbody>
-</table>
-<p>La trasparenza del processo è centrale nella metodologia <em>LLMs-in-the-loop</em> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span>.</p>
-<aside class="notes">
-<p>Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle scelte metodologiche è fondamentale per la riproducibilità e per la sezione Metodo del paper. Ogni decisione discrezionale (perché un post è stato incluso o escluso) deve essere annotata. Questo approccio riflette la metodologia LLMs-in-the-loop di Marino &amp; Giglietto (2024): la trasparenza del processo è importante quanto i risultati.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="organizzare-il-foglio-di-calcolo" class="slide level2">
-<h2>Organizzare il foglio di calcolo</h2>
-<p>La struttura è analoga al foglio del <strong>workshop Paroni</strong> — colonne per i codificatori individuali, il consenso di gruppo e la classificazione Gemini:</p>
+<section id="lapproccio-iterativo" class="slide level2">
+<h2>L’approccio iterativo</h2>
+<p>Il ciclo è lo stesso del seminario Paroni, applicato alle immagini:</p>
+<pre><code>Prompt v1 → Test → Analisi errori → Prompt v2 → Test → ...</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="foglio-post">Foglio “Post”</h3>
-<p>post_id, data, pagina_gruppo, testo_post, tipo_immagine, n_reazioni, n_commenti, n_condivisioni</p>
+<h3 id="problemi-tipici">Problemi tipici</h3>
+<ul>
+<li>Categoria troppo <strong>ampia</strong> (raccoglie tutto)</li>
+<li>Categoria troppo <strong>stretta</strong> (mai usata)</li>
+<li><strong>Sovrapposizione</strong> tra categorie</li>
+<li>Gemini interpreta diversamente una <strong>definizione</strong></li>
+</ul>
 </div><div class="column" style="width:50%;">
-<h3 id="foglio-commenti">Foglio “Commenti”</h3>
-<p>comment_id, post_id (ref), testo_commento, n_reazioni, classificazione_ai, classificazione_umana, note</p>
+<h3 id="soluzioni">Soluzioni</h3>
+<ul>
+<li><strong>Dividere</strong> la categoria in sotto-categorie</li>
+<li><strong>Fondere</strong> con una categoria simile</li>
+<li>Aggiungere <strong>criteri discriminanti</strong></li>
+<li>Riformulare con <strong>esempi concreti</strong></li>
+</ul>
 </div></div>
-<p>Le colonne <strong>classificazione_ai</strong> e <strong>classificazione_umana</strong> saranno compilate nella settimana 5.</p>
 <aside class="notes">
-<p>La struttura ricalca il foglio usato nell’Attività 1 del seminario Paroni: lì c’erano colonne per ogni codificatore, il consenso di gruppo e la classificazione Gemini. Qui abbiamo la stessa logica su scala più grande: classificazione_ai (Gemini) e classificazione_umana (codificatori del gruppo), con la colonna note per annotare i casi ambigui — esattamente come facevano con i casi limite delle 20 headline. Due fogli collegati dalla colonna post_id. Per ora le colonne di classificazione restano vuote: saranno compilate nella settimana 5 durante le fasi di analisi e validazione.</p>
+<p>Il raffinamento iterativo è la competenza chiave di questa sessione. Nel seminario Paroni, i gruppi hanno sperimentato come un prompt generico (“classifica queste headline come politiche o non politiche”) producesse errori, e come l’aggiunta di definizioni, esempi e formato strutturato migliorasse la concordanza. Lo stesso principio vale qui: se Gemini classifica “bambino che prega” come RELIGIONE mentre il gruppo intendeva BAMBINI, la soluzione è specificare nel prompt che la categoria è determinata dal soggetto principale, non dal contesto. Ogni discordanza è un’opportunità per migliorare il prompt E il codebook.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -583,10 +605,36 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="screening-con-gemini" class="slide level2" data-background-color="#C5612E">
-<h2>Screening con Gemini</h2>
+<section id="esempio-di-raffinamento" class="slide level2">
+<h2>Esempio di raffinamento</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problema nel test</th>
+<th>Modifica al prompt</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Gemini classifica “bambino che prega” come RELIGIONE</td>
+<td>Aggiungere: <em>“La categoria si basa sul soggetto principale. Un bambino in contesto religioso → BAMBINI”</em></td>
+</tr>
+<tr class="even">
+<td>Tutte le immagini finiscono in “ALTRO”</td>
+<td>Rivedere le definizioni: troppo restrittive? Aggiungere esempi</td>
+</tr>
+<tr class="odd">
+<td>Gemini assegna confidenza “alta” a classificazioni errate</td>
+<td>Aggiungere: <em>“Indica confidenza ‘bassa’ se l’immagine potrebbe rientrare in più categorie”</em></td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
-<p>Sezione 5: uso di Google Gemini per lo screening preliminare dei contenuti raccolti. Primo assaggio della pipeline LLMs-in-the-loop.</p>
+<p>Tre scenari concreti di raffinamento. Il primo caso illustra un problema di gerarchia tra categorie: bisogna definire un criterio di precedenza. Il secondo caso suggerisce che le definizioni sono troppo restrittive — le immagini reali nel dataset sono più varie di quanto previsto. Il terzo caso riguarda la calibrazione della confidenza: Gemini tende a essere “sicuro” anche quando non dovrebbe esserlo. In tutti e tre i casi, la soluzione è rendere il prompt più esplicito. Ricordare agli studenti che il prompt perfetto non esiste al primo tentativo — l’iterazione è parte della metodologia.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -599,28 +647,106 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="screening-con-gemini-prompt-e-workflow" class="slide level2">
-<h2>Screening con Gemini: prompt e workflow</h2>
-<div class="orange-box">
-<p><strong>Prompt di esempio per lo screening</strong></p>
-<p><em>“Analizza questa immagine e rispondi: (1) Presenta caratteristiche di un’immagine generata da IA? (Si/No/Incerto) (2) Quali indizi visivi supportano la valutazione? (3) Classifica il tema: bambini / animali / religione / paesaggio / altro”</em></p>
-</div>
-<p>Il prompt segue la struttura <strong>Obiettivo + Istruzioni + Output</strong> raccomandata da <span class="citation" data-cites="cosenza2025">Cosenza (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>.</p>
+<section id="documentazione-del-codebook" class="slide level2" data-background-color="#C5612E">
+<h2>Documentazione del Codebook</h2>
+<aside class="notes">
+<p>Sezione 5: documentazione formale dello schema di classificazione nel codebook. Questo documento servirà sia per la classificazione con Gemini sia per la validazione umana nella settimana 5.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="struttura-del-codebook" class="slide level2">
+<h2>Struttura del codebook</h2>
+<p>Il <strong>codebook</strong> è il documento di riferimento per la classificazione — vale sia per Gemini che per i codificatori umani:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 41%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elemento</th>
+<th>Descrizione</th>
+<th>Esempio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Categoria</strong></td>
+<td>Nome</td>
+<td>BAMBINI</td>
+</tr>
+<tr class="even">
+<td><strong>Definizione</strong></td>
+<td>Cosa include ed esclude</td>
+<td>Minori come soggetto principale, in qualsiasi contesto</td>
+</tr>
+<tr class="odd">
+<td><strong>Esempi tipici</strong></td>
+<td>2-3 casi chiari</td>
+<td>Bambino che prega, gruppo di bambini sorridenti</td>
+</tr>
+<tr class="even">
+<td><strong>Casi limite</strong></td>
+<td>Regole per ambiguità</td>
+<td>Se bambino + animale → soggetto in primo piano prevale</td>
+</tr>
+<tr class="odd">
+<td><strong>Decisione</strong></td>
+<td>Come risolvere i dubbi</td>
+<td>In caso di dubbio, scegliere la categoria del soggetto più prominente</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Il codebook è un documento metodologico fondamentale. Nel seminario Paroni, le regole di classificazione erano implicite (la definizione ampia di “politico”) e questo ha generato disaccordi. Per il progetto serve un codebook esplicito che elimini l’ambiguità — o almeno la riduca. Il codebook serve a due scopi: (1) istruire Gemini con il prompt, (2) guidare la classificazione umana nella settimana 5. Se le regole sono diverse per IA e umani, il confronto non ha senso. Ogni gruppo documenta il codebook in un tab dedicato del foglio Google Sheets condiviso.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dove-documentare" class="slide level2">
+<h2>Dove documentare</h2>
+<p>Nel <strong>foglio Google Sheets</strong> condiviso, create un tab “Codebook”:</p>
+<ul>
+<li><strong>Colonna A:</strong> Nome categoria</li>
+<li><strong>Colonna B:</strong> Definizione operativa</li>
+<li><strong>Colonna C:</strong> Esempi tipici (descrizione testuale)</li>
+<li><strong>Colonna D:</strong> Casi limite e regole di decisione</li>
+<li><strong>Colonna E:</strong> Note dal test pilota</li>
+</ul>
+<p>Il <strong>prompt finale</strong> va copiato in un secondo tab “Prompt” — è parte integrante della metodologia e andrà nell’appendice del paper.</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Suggerimento pratico</strong></p>
+<p><strong>Suggerimento</strong></p>
 </div>
 <div class="callout-content">
-<p>Usate la funzionalità multimodale di Gemini: caricate l’immagine direttamente nella chat. Lo screening è un supporto, non un sostituto del giudizio umano.</p>
+<p>Documentate anche le <strong>versioni precedenti</strong> del prompt. La storia delle iterazioni sarà utile per la sezione Metodo del paper.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Primo uso operativo di Gemini nel progetto. Il prompt segue la struttura raccomandata da Cosenza (2025): obiettivo chiaro, istruzioni specifiche, formato di output definito. Gemini serve come strumento di supporto allo screening, non come classificatore finale. Cosenza nella regola “Valuta” ricorda di trattare il risultato dell’IA come una bozza da sottoporre a giudizio umano. La classificazione sistematica sarà fatta nella sessione di lunedì. Gemini puo’ sbagliare, specialmente con immagini di alta qualità. I risultati dello screening vanno annotati ma non presi come classificazione definitiva.</p>
+<p>Indicazioni operative sulla documentazione. Il foglio condiviso è il repository centrale del gruppo. Il tab Codebook deve essere compilato da tutti i membri — non solo dall’AI analyst. Il prompt finale nel tab “Prompt” serve per la riproducibilità: nella sezione Metodo del paper, i gruppi dovranno descrivere esattamente come hanno istruito Gemini. Conservare le versioni precedenti del prompt (v1, v2, ecc.) è utile per raccontare il processo iterativo. Questo riflette il principio di trasparenza della metodologia LLMs-in-the-loop: ogni decisione deve essere documentata e giustificabile.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -636,7 +762,7 @@ Fabio Giglietto
 <section id="lavoro-pratico" class="slide level2" data-background-color="#C5612E">
 <h2>Lavoro Pratico</h2>
 <aside class="notes">
-<p>Sezione 6: inizio del lavoro pratico in gruppi. La parte centrale del lab.</p>
+<p>Sezione 6: inizio del lavoro pratico in gruppi. I gruppi lavorano autonomamente seguendo il workflow completo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -652,18 +778,23 @@ Fabio Giglietto
 <section id="istruzioni-per-il-lavoro-di-gruppo" class="slide level2">
 <h2>Istruzioni per il lavoro di gruppo</h2>
 <div class="orange-box">
-<p><strong>Obiettivo del lab (90 minuti)</strong></p>
-<p>Ogni gruppo raccoglie almeno <strong>30 post</strong> con immagini <em>AI slop</em> e i relativi <strong>commenti</strong> su Meta Content Library, organizzandoli nel foglio di calcolo condiviso.</p>
+<p><strong>Workflow del lab (80 minuti)</strong></p>
+<ol type="1">
+<li><strong>Prompt drafting</strong> — scrivete il prompt con le vostre categorie (20 min)</li>
+<li><strong>Test pilota</strong> — classificate 10-15 immagini con Gemini (30 min)</li>
+<li><strong>Raffinamento</strong> — migliorate il prompt in base agli errori (20 min)</li>
+<li><strong>Codebook</strong> — documentate tutto nel foglio condiviso (10 min)</li>
+</ol>
 </div>
 <p><strong>Divisione dei compiti suggerita:</strong></p>
-<ol type="1">
-<li><strong>Ricercatore/i:</strong> eseguono le query su Meta Content Library</li>
-<li><strong>Screener:</strong> verificano che le immagini siano AI-generated (con supporto Gemini)</li>
-<li><strong>Data entry:</strong> inseriscono i dati nel foglio Google Sheets</li>
-<li><strong>Documentatore:</strong> annota query, criteri e decisioni</li>
-</ol>
+<ul>
+<li><strong>AI analyst:</strong> scrive e testa il prompt su Gemini</li>
+<li><strong>Validatore:</strong> classifica le stesse immagini indipendentemente (senza vedere Gemini)</li>
+<li><strong>Data analyst:</strong> registra risultati e discordanze nel foglio</li>
+<li><strong>Coordinatore:</strong> gestisce i tempi e documenta il codebook</li>
+</ul>
 <aside class="notes">
-<p>Fase pratica del lab. I gruppi lavorano autonomamente per circa 90 minuti. Il docente e i tutor circolano tra i gruppi per assistenza tecnica e metodologica. Problemi comuni da anticipare: (1) accesso a Meta Content Library, (2) difficoltà nell’esportazione dei commenti, (3) dubbi sulla classificazione delle immagini come AI-generated. Se un gruppo ha problemi tecnici con Meta Content Library, suggerire di iniziare con la ricerca manuale su Facebook e poi recuperare i dati strutturati in un secondo momento.</p>
+<p>Fase pratica del lab. I ruoli ricalcano quelli definiti ieri nel lancio del progetto. Il punto chiave è che il validatore classifica le stesse 10-15 immagini in modo indipendente, senza vedere i risultati di Gemini. Questo crea un primo mini-confronto umano-IA che anticipa la validazione formale della settimana 5. Le discordanze sono il materiale più prezioso: ogni caso in cui umano e Gemini non concordano rivela un problema nel prompt, nel codebook, o in entrambi. Il docente e i tutor circolano tra i gruppi per assistenza.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -680,11 +811,11 @@ Fabio Giglietto
 <h2>Checklist di fine lab</h2>
 <p>Prima di uscire, ogni gruppo verifica:</p>
 <ul class="task-list">
-<li><label><input type="checkbox"><strong>Almeno 30 post</strong> raccolti nel foglio condiviso</label></li>
-<li><label><input type="checkbox"><strong>Commenti scaricati</strong> per ogni post selezionato</label></li>
-<li><label><input type="checkbox"><strong>Query documentate</strong> con parametri e criteri</label></li>
-<li><label><input type="checkbox"><strong>Screening preliminare</strong> delle immagini completato</label></li>
-<li><label><input type="checkbox"><strong>Problemi e note</strong> annotati nel foglio</label></li>
+<li><label><input type="checkbox"><strong>Prompt testato</strong> su almeno 10-15 immagini</label></li>
+<li><label><input type="checkbox"><strong>Prompt raffinato</strong> sulla base dei risultati del test</label></li>
+<li><label><input type="checkbox"><strong>Codebook documentato</strong> nel tab dedicato del foglio condiviso</label></li>
+<li><label><input type="checkbox"><strong>30-50 immagini classificate</strong> (pilota + estensione)</label></li>
+<li><label><input type="checkbox"><strong>Prompt finale</strong> copiato nel tab “Prompt” del foglio</label></li>
 </ul>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -695,12 +826,12 @@ Fabio Giglietto
 <p><strong>Per lunedì</strong></p>
 </div>
 <div class="callout-content">
-<p>I dati raccolti oggi saranno il materiale di lavoro per il <strong>Lab di analisi contenuti</strong> di lunedì 23 Marzo. Assicuratevi che il dataset sia completo e accessibile a tutti i membri del gruppo.</p>
+<p>Lunedì <strong>scalerete la classificazione</strong> a tutte le ~300-400 immagini. Il prompt deve essere pronto e testato. Se restano dubbi, raffinate tra oggi e lunedì.</p>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per controllare che tutti abbiano raggiunto il minimo di 30 post. I gruppi che hanno lavorato bene ne avranno molti di più. Quelli in difficoltà dovranno completare la raccolta tra oggi e lunedì. Sottolineare che il dataset deve essere pronto per lunedì: la sessione di analisi richiede dati su cui lavorare. Se un gruppo è molto indietro, suggerire di ridurre l’ambito della domanda di ricerca piuttosto che raccogliere dati di bassa qualità.</p>
+<p>Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per verificare che tutti abbiano completato almeno i primi tre punti. I gruppi più veloci avranno già classificato 30-50 immagini; quelli più lenti dovranno avere almeno il prompt testato e il codebook. Lunedì la sessione è dedicata alla classificazione su scala dell’intero dataset: serve un prompt che funzioni bene. Se un gruppo ha ancora problemi significativi (troppe discordanze, categorie poco chiare), suggerire di semplificare lo schema riducendo il numero di categorie. Meglio poche categorie ben definite che molte categorie ambigue.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -715,11 +846,11 @@ Fabio Giglietto
 </section>
 <section id="grazie" class="slide level2" data-background-color="#C5612E">
 <h2>Grazie!</h2>
-<p><strong>Prossima lezione:</strong> Lab — Analisi Contenuti con IA (23 Marzo 2026)</p>
+<p><strong>Prossima lezione:</strong> Lab — Classificazione su Scala con Gemini (23 Marzo 2026)</p>
 <p>📧 fabio.giglietto@uniurb.it</p>
 <p>🌐 blended.uniurb.it</p>
 <aside class="notes">
-<p>Chiusura. Ricordare: (1) completare la raccolta dati se necessario prima di lunedì, (2) verificare che il foglio di calcolo sia condiviso con tutti i membri del gruppo e con il docente, (3) lunedì lavoreremo sull’analisi con Gemini — portare i laptop carichi. Il passo successivo è passare dalla raccolta all’analisi sistematica dei contenuti.</p>
+<p>Chiusura. Ricordare: (1) verificare che il codebook e il prompt siano documentati nel foglio condiviso, (2) se il prompt ha ancora problemi, raffinarlo tra oggi e lunedì, (3) lunedì lavoreremo alla classificazione dell’intero dataset di ~300-400 immagini con Gemini — portare i laptop carichi, (4) il prompt testato oggi è lo strumento che userete per tutta la settimana 5.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

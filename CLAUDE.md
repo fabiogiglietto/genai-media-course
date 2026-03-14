@@ -138,11 +138,11 @@ Guest and seminar sessions (week 3 + guest lectures in weeks 2 and 4) do NOT req
 | 3 | `week1-wed-workshop-gemini.qmd` | Workshop: Google Gemini & NotebookLM | Wed Feb 25 | Workshop + TWIAI |
 | 4 | `week2-mon-content-production.qmd` | Produzione di Contenuti con GenAI | Mon Mar 2 | Lecture |
 | 5 | `week2-wed-deepfakes-regulation.qmd` | Deepfake, Policy e Regolamentazione | Wed Mar 4 | Lecture + TWIAI |
-| 6 | `week4-tue-project-launch.qmd` | Lancio Progetto: Analisi Ricezione AI Slop | Tue Mar 17 | Workshop |
-| 7 | `week4-wed-lab-collecting.qmd` | Lab: Raccolta Post e Commenti | Wed Mar 18 | Lab + TWIAI |
-| 8 | `week5-mon-lab-analysis.qmd` | Lab: Analisi Contenuti con IA | Mon Mar 23 | Lab |
+| 6 | `week4-tue-project-launch.qmd` | Lancio Progetto: Classificazione AI Slop e Pattern di Engagement | Tue Mar 17 | Workshop |
+| 7 | `week4-wed-lab-collecting.qmd` | Lab: Prompt Design e Classificazione Pilota | Wed Mar 18 | Lab + TWIAI |
+| 8 | `week5-mon-lab-analysis.qmd` | Lab: Classificazione su Scala con IA | Mon Mar 23 | Lab |
 | 9 | `week5-tue-validation.qmd` | Validazione: Umano vs Macchina | Tue Mar 24 | Workshop |
-| 10 | `week5-wed-consultation.qmd` | Consultazione Gruppi e Revisione | Wed Mar 25 | Consultation + TWIAI |
+| 10 | `week5-wed-consultation.qmd` | Consultazione Gruppi e Analisi Engagement | Wed Mar 25 | Consultation + TWIAI |
 | 11 | `week6-mon-writing-workshop.qmd` | Workshop di Scrittura | Mon Mar 30 | Workshop |
 | 12 | `week6-tue-paper-drafting.qmd` | Lavoro di Gruppo: Stesura Paper | Tue Mar 31 | Lab |
 | 13 | `week6-wed-synthesis.qmd` | Sintesi del Corso e Consultazioni Finali | Wed Apr 1 | Closing + TWIAI |
@@ -599,42 +599,54 @@ Students completed a 3-session seminar with hands-on LLMs-in-the-loop practice. 
 
 **IMPORTANT for slide generation:** Weeks 4–5 slides should reference the Paroni seminar as shared experience. Do NOT re-explain the 4-step pipeline, validation levels, or chatbot-vs-API distinction from scratch — instead, recall them briefly and build on them. Use phrases like "Come avete praticato nel seminario Paroni..." or "Applicando il framework di validazione che conoscete...".
 
-### Week 4: Project Launch & Data Collection
+### Week 4: AI Slop Seminar & Project Launch
 
-**Tue Mar 17 — Project Launch**
-- Briefing: analyzing AI-generated content and comment reception
-- Group formation (4–6 students)
-- Meta Content Library and NotebookLM for organizing sources
-- Research question development
+**Tue Mar 17 — Project Launch: Classifying AI Slop & Engagement Patterns**
+- Instructor presents pre-curated dataset from Terenzi & Giglietto (2025): CSV with post metadata + engagement metrics (reactions, comments count, shares, views) + ~300–400 AI-generated images in a shared Google Drive folder
+- Students do NOT have access to Meta Content Library — all data is provided
+- All groups work on the **same image subset** (enables inter-group reliability comparison)
+- Dataset exploration: CSV structure, engagement columns, image folder browsing
+- Group formation (max 6 students). Roles: coordinator, AI analyst, validator, data analyst, writer (flexible)
+- Research question development: each group develops a specific *classification angle* (by visual subject, emotional appeal, generation technique, apparent intent, etc.)
 - Bridge from Paroni pipeline (political news classification) to project pipeline (AI Slop classification)
+- Group presentations: RQ, classification scheme, preliminary engagement hypotheses
 - References: terenzi2025, marino2024
 
-**Wed Mar 18 — Lab: Collecting Posts & Comments**
-- Hands-on data collection: AI-generated posts AND user comments/reactions
-- Gemini for initial screening and classification
-- Building analysis datasets
+**Wed Mar 18 — Lab: Prompt Design & Pilot Classification**
+- TWIAI (10 min)
+- Hands-on prompt design and testing — NO data collection (dataset already provided)
+- Prompt drafting (20 min): role assignment, category definitions with examples, output format (structured table/JSON)
+- Pilot test (30 min): upload 10–15 images to Gemini, run classification prompt, identify ambiguous cases and missing/too-broad categories
+- Prompt refinement (20 min): iterative approach practiced in Paroni workshop — add examples, clarify boundaries, specify output format
+- Codebook documentation (10 min): category names, definitions, examples, decision rules in shared Google Sheet
+- By end of session: tested prompt + documented codebook + pilot classification of ~30–50 images
 
-### Week 5: Analysis & Validation
+### Week 5: AI-Assisted Classification & Validation
 
-**Mon Mar 23 — Lab: AI-Assisted Content Analysis**
-- Gemini for analyzing datasets of posts and images
-- Automated visual content classification
-- Prompt strategies for consistent coding
-- Long context management in Gemini
-- Students apply the same classification → clustering → labeling flow practiced in Paroni workshop, now with real project data
+**Mon Mar 23 — Lab: Scaling Up AI-Assisted Classification**
+- TWIAI (10 min)
+- Groups apply refined prompts to classify the full image set (~300–400 images)
+- Batch classification with Gemini: long context window, multimodal capabilities, consistency strategies across batches
+- Cross-referencing with CSV data: joining Gemini classifications to engagement metrics (each row = post metadata + engagement stats + AI-assigned category)
+- Preliminary patterns: category distribution, highest/lowest mean engagement by category, outliers
+- Students apply the classification flow practiced in Paroni workshop, now at scale with real project data
 
 **Tue Mar 24 — Validation: Human vs Machine**
 - LLMs-in-the-loop methodology (Marino & Giglietto, 2024)
-- Designing human validation protocols
-- Inter-coder reliability with AI
-- Comparing AI classifications with human judgment
-- Students apply the Paroni validation framework (coherence levels 0–3, label fit criteria) to their own project clusters
+- Human coding: each group member independently classifies a shared **50-image validation sample** using the group's codebook (no Gemini, no discussion)
+- Reliability calculation: Cohen's kappa for **human-to-human** agreement (between each pair of coders) AND **human-to-AI** agreement (each coder vs. Gemini)
+- Confusion matrix analysis: where do humans and AI disagree? Which categories are most problematic?
+- Iteration decision: if kappa is low, refine codebook/prompt and reclassify; if acceptable, proceed to engagement analysis
+- Students apply the Paroni validation framework (coherence levels 0–3, label fit criteria) to any clustering/labeling performed with Gemini
+- Inter-group reliability: since all groups classified the same images, cross-group comparison is possible for shared dimensions
 
-**Wed Mar 25 — Group Consultation**
+**Wed Mar 25 — Group Consultation & Engagement Analysis**
 - TWIAI (10 min)
-- Individual group consultations
-- Methodological and theoretical review
-- Troubleshooting and refining approaches
+- Individual group consultations: validated classification results (kappa values, confusion matrix)
+- Engagement analysis: using validated content categories (independent variable) to explain variation in engagement metrics (dependent variable) from the CSV
+- Example questions: Do images depicting children receive more reactions than landscapes? Does nostalgia-based content get shared more than humor? Relationship between generation quality and engagement?
+- Comments are NOT available as text — only aggregate comment counts in the CSV
+- Groups consolidate results and prepare for writing
 
 ### Week 6: Writing & Synthesis
 
@@ -662,23 +674,49 @@ Students completed a 3-session seminar with hands-on LLMs-in-the-loop practice. 
 
 The group project is central in weeks 4–6. Slides must guide students through:
 
+### Project Overview
+Students work in groups of **max 6** to produce a research paper analyzing AI-generated content ("AI Slop") from Italian Facebook pages. The project uses a **pre-curated dataset** provided by the instructor, drawn from the Terenzi & Giglietto (2025) study. All groups work on the **same subset of ~300–400 images** with corresponding engagement metrics. Each group develops a distinct classification scheme, applies the LLMs-in-the-loop methodology using Google Gemini, validates results through systematic human coding, and analyzes whether content categories predict engagement patterns.
+
+### Data Available to Students
+- **CSV with post metadata + engagement metrics** (reactions, comments count, shares, views) — shared Google Sheet
+- **~300–400 AI-generated images** (JPG/PNG) — shared Google Drive folder
+- **Post text** — included in CSV
+- **Comments count** — included in CSV (aggregate count only)
+- **Individual comment text — NOT available**
+- **Original post context on Facebook — NOT available** (MCL internal URLs)
+- Students do NOT have access to Meta Content Library or TikTok Research API
+
+### Research Focus
+- Developing and operationalizing a classification scheme for AI-generated visual content
+- Applying Gemini's multimodal capabilities for systematic image classification
+- Validating AI classifications through parallel human coding (inter-coder reliability)
+- Analyzing whether content categories predict different engagement patterns (reactions, shares, views)
+- Comparing classification approaches across groups (same images, different schemes)
+
 ### Assessment
 - **Group project:** 75% (max 23.25 points)
 - **Participation:** 10% (max 3.1 points)
 - **Oral exam:** 15% (max 4.65 points)
 
 ### Timeline
-- Week 4: Terenzi seminar → group formation → data collection
-- Week 5: Analysis with Gemini → human validation → consultations
+- Week 4: Terenzi seminar → group formation → prompt design & pilot classification
+- Week 5: Full AI classification → human validation (50-image sample, kappa) → engagement analysis
 - Week 6: Writing → peer review → submission (2 weeks before June exam)
 
 ### LLMs-in-the-loop Methodology
 This is the central methodological framework. Slides must explain:
 1. Definition of an LLMs-in-the-loop pipeline
-2. Systematic prompting for content analysis
-3. Validation through parallel human coding
-4. Computing inter-coder reliability (AI as "coder")
-5. Iteration and pipeline refinement
+2. Systematic prompting for multimodal content classification
+3. Validation through parallel human coding (50-image sample)
+4. Computing inter-coder reliability: human-to-human AND human-to-AI kappa
+5. Confusion matrix analysis and iteration decisions
+6. Engagement analysis: content categories (IV) vs. engagement metrics (DV)
+
+### Inter-Group Reliability Design
+Since all groups classify the **same ~300–400 images**, cross-group comparison is possible. Different classification schemes applied to identical images reveal complementary patterns. The Apr 1 synthesis session compares what each lens reveals about the AI Slop ecosystem.
+
+### Paper Template
+A paper template is available at: <https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true>
 
 ---
 

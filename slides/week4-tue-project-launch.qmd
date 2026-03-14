@@ -37,14 +37,14 @@ csl: ../apa.csl
 ## Roadmap della sessione
 
 1. **Il fenomeno AI slop** — ricapitolazione dal seminario di ieri
-2. **Briefing del progetto** — obiettivi, domanda di ricerca, deliverable
+2. **Briefing del progetto** — obiettivi, domanda di ricerca, dataset
 3. **Dai seminari al progetto** — la pipeline e il fenomeno che già conoscete
-4. **Formazione dei gruppi** — composizione e ruoli
-5. **Strumenti e risorse** — Meta Content Library, Gemini, NotebookLM
-6. **Prossimi passi** — raccolta dati domani
+4. **Esplorazione del dataset** — struttura CSV, immagini, metriche di engagement
+5. **Formazione dei gruppi** — composizione, ruoli e procedura
+6. **Prossimi passi** — prompt design e classificazione pilota domani
 
 ::: {.notes}
-Oggi lanciamo il progetto di gruppo che occuperà le prossime 3 settimane. Ieri il seminario di Massimo Terenzi ha introdotto il fenomeno dell'AI slop e la ricerca sulla viralità sintetica nelle comunità Facebook italiane. Oggi definiamo obiettivi, metodologia e organizzazione. Domani iniziamo la raccolta dati. Il tono della sessione è operativo: meno teoria, più pianificazione. Punto fondamentale: gli studenti hanno già praticato la pipeline LLMs-in-the-loop nel seminario Paroni — non serve rispiegare la metodologia da zero, basta mappare ciò che conoscono sul nuovo dominio.
+Oggi lanciamo il progetto di gruppo che occuperà le prossime 3 settimane. Ieri il seminario di Massimo Terenzi ha introdotto il fenomeno dell'AI slop e la ricerca sulla viralità sintetica nelle comunità Facebook italiane. Oggi definiamo obiettivi, metodologia e organizzazione. Domani iniziamo a progettare i prompt e la classificazione pilota. Il tono della sessione è operativo: meno teoria, più pianificazione. Punto fondamentale: gli studenti hanno già praticato la pipeline LLMs-in-the-loop nel seminario Paroni — non serve rispiegare la metodologia da zero, basta mappare ciò che conoscono sul nuovo dominio. Cambiamento importante rispetto alla versione iniziale del corso: il dataset è pre-curato dal docente, non devono raccogliere dati autonomamente.
 :::
 
 ## Il fenomeno AI Slop {background-color="#C5612E"}
@@ -77,18 +77,18 @@ Ripresa dal seminario di Terenzi. L'AI slop è diverso dal deepfake: non intende
 | Settimane 1-2 (teoria) | Settimane 4-6 (progetto) |
 |------------------------|--------------------------|
 | Sistema mediale ibrido [@chadwick2011] | L'AI slop come fenomeno ibrido |
-| Catena del valore giornalistica [@mattis2025] | Analisi della **ricezione** dei contenuti IA |
-| Deepfake e incertezza [@vaccari2020] | Reazioni degli utenti: riconoscimento o engagement? |
-| Paradosso dell'IA generativa [@ferrara2026] | I commenti riflettono fiducia o sfiducia? |
+| Catena del valore giornalistica [@mattis2025] | **Classificazione** dei contenuti IA generati |
+| Deepfake e incertezza [@vaccari2020] | Quali categorie di immagini generano più engagement? |
+| Paradosso dell'IA generativa [@ferrara2026] | Come l'engagement varia per tipo di contenuto? |
 
 ::: {.notes}
-Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli studenti devono capire che il progetto non è un esercizio isolato ma l'applicazione empirica dei framework studiati. Il sistema mediale ibrido spiega perché l'AI slop si diffonde (interazione tra piattaforme, algoritmi, utenti). I rischi di Mattis spiegano il contesto (degradamento della qualità informativa). Vaccari spiega il meccanismo (incertezza più che inganno). Ferrara spiega l'implicazione macro (erosione della fiducia). Il progetto testa queste teorie sui dati reali.
+Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli studenti devono capire che il progetto non è un esercizio isolato ma l'applicazione empirica dei framework studiati. Il sistema mediale ibrido spiega perché l'AI slop si diffonde (interazione tra piattaforme, algoritmi, utenti). I rischi di Mattis spiegano il contesto (degradamento della qualità informativa). Vaccari spiega il meccanismo (incertezza più che inganno). Ferrara spiega l'implicazione macro (erosione della fiducia). Il progetto testa queste teorie analizzando sistematicamente le immagini e i pattern di engagement.
 :::
 
-## Perché studiare la ricezione
+## Il focus della ricerca
 
 ::: {.highlight-box}
-**Domanda di ricerca del progetto:** Come reagiscono gli utenti ai contenuti *AI slop* nelle comunità Facebook italiane? Quali pattern emergono dai commenti e dalle reazioni?
+**Domanda di ricerca del progetto:** Quali categorie di contenuti *AI slop* esistono nelle comunità Facebook italiane? Come si distribuisce l'engagement (reazioni, condivisioni, visualizzazioni) tra le diverse categorie?
 :::
 
 ::: {.columns}
@@ -98,20 +98,21 @@ Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli st
 - L'AI slop è diffuso [@terenzi2025]
 - Gli algoritmi lo amplificano
 - Genera engagement elevato
+- Esistono **pattern visivi** ricorrenti
 :::
 
 ::: {.column width="50%"}
 ### Cosa non sappiamo
 
-- **Come** reagiscono gli utenti
-- Se riconoscono l'IA
-- Quali **emozioni** prevalgono
-- Che **strategie retoriche** usano
+- **Quali categorie** di immagini esistono
+- Se le categorie **predicono** l'engagement
+- Quali **leve emotive** funzionano meglio
+- Come la **tecnica generativa** influenza le interazioni
 :::
 :::
 
 ::: {.notes}
-Il progetto si concentra sulla ricezione — il lato meno studiato del fenomeno AI slop. La ricerca di Terenzi & Giglietto (2025) ha mappato la produzione e diffusione; il nostro contributo sarà analizzare i commenti e le reazioni degli utenti. Domande specifiche che i gruppi potranno esplorare: gli utenti riconoscono che le immagini sono generate dall'IA? Come esprimono questa consapevolezza? Prevalgono reazioni critiche o emotive? Ci sono differenze tra temi diversi (es. immagini con bambini vs. immagini con animali)?
+Il progetto si concentra sulla classificazione delle immagini AI-generated e sull'analisi dei pattern di engagement — il lato meno studiato del fenomeno AI slop. La ricerca di Terenzi & Giglietto (2025) ha mappato la produzione e diffusione; il nostro contributo sarà classificare sistematicamente le immagini e analizzare come le diverse categorie si associano a livelli diversi di engagement. Nota importante: non abbiamo accesso ai singoli commenti (solo ai conteggi aggregati), quindi il focus è sulle metriche quantitative di engagement, non sull'analisi testuale dei commenti.
 :::
 
 ## Dai Seminari al Progetto {background-color="#C5612E"}
@@ -127,12 +128,12 @@ Il progetto unisce la **metodologia** del seminario Paroni e il **dominio** del 
 | Seminario Paroni (metodologia) | Seminario Terenzi (dominio) | **Il vostro progetto** |
 |---|---|---|
 | Pipeline *LLMs-in-the-loop* [@marino2024] | AI slop nelle comunità Facebook italiane [@terenzi2025] | Pipeline applicata all'**AI slop** |
-| Classificazione binaria (politico / non politico) | Identificazione di immagini sintetiche | Classificazione: **AI-generated / non AI-generated** |
-| Clustering tematico con Gemini | Tattiche di manipolazione affettiva | Analisi tematica dei **commenti** |
-| Validazione (4 criteri, ✓/⚠/✗) | Amplificazione algoritmica | Validazione con **intercoder reliability** |
+| Classificazione binaria (politico / non politico) | Identificazione di immagini sintetiche | Classificazione **multi-categoria** per schema del gruppo |
+| Clustering tematico con Gemini | Tattiche di manipolazione affettiva | **Classificazione visiva** delle immagini |
+| Validazione (4 criteri, ✓/⚠/✗) | Amplificazione algoritmica | Validazione con **intercoder reliability** + analisi engagement |
 
 ::: {.notes}
-Slide chiave: il progetto non nasce dal nulla, ma dalla convergenza di due seminari. Paroni ha dato la cassetta degli attrezzi metodologica — gli studenti hanno praticato classificazione binaria, clustering, labeling e validazione con 20 headline. Terenzi ha dato il fenomeno di ricerca — AI slop come engagement bait nelle comunità Facebook italiane, con le sue specificità: immagini sintetiche, leve emotive, amplificazione algoritmica. Il progetto combina i due: applica la pipeline LLMs-in-the-loop al dominio dell'AI slop, aggiungendo l'analisi della ricezione (commenti e reazioni) che né Paroni né Terenzi hanno affrontato direttamente.
+Slide chiave: il progetto non nasce dal nulla, ma dalla convergenza di due seminari. Paroni ha dato la cassetta degli attrezzi metodologica — gli studenti hanno praticato classificazione binaria, clustering, labeling e validazione con 20 headline. Terenzi ha dato il fenomeno di ricerca — AI slop come engagement bait nelle comunità Facebook italiane, con le sue specificità: immagini sintetiche, leve emotive, amplificazione algoritmica. Il progetto combina i due: applica la pipeline LLMs-in-the-loop al dominio dell'AI slop. La differenza chiave: ora la classificazione è multi-categoria e multimodale (immagini, non solo testo), e c'è un passo analitico aggiuntivo — collegare le categorie alle metriche di engagement.
 :::
 
 ## Cosa sapete già dai seminari
@@ -160,48 +161,147 @@ Slide chiave: il progetto non nasce dal nulla, ma dalla convergenza di due semin
 :::
 
 ::: {.notes}
-La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: gli studenti sanno usare la pipeline. La colonna destra riconosce le conoscenze di dominio dal seminario Terenzi: gli studenti conoscono il fenomeno che studieranno. Questo è motivante e permette di non ripetere contenuti. Il progetto aggiunge ciò che manca da entrambi i seminari: l'analisi della ricezione.
+La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: gli studenti sanno usare la pipeline. La colonna destra riconosce le conoscenze di dominio dal seminario Terenzi: gli studenti conoscono il fenomeno che studieranno. Questo è motivante e permette di non ripetere contenuti. Il progetto aggiunge ciò che manca da entrambi i seminari: la classificazione sistematica delle immagini e l'analisi dei pattern di engagement.
 :::
 
 ## Da imparare nel progetto
 
 ::: {.highlight-box}
-**Il contributo originale del vostro progetto:** analizzare come gli utenti **reagiscono** all'AI slop — il lato che né Paroni né Terenzi hanno affrontato.
+**Il contributo originale del vostro progetto:** classificare sistematicamente le immagini AI slop e analizzare come le diverse categorie predicono l'engagement — un'analisi che né Paroni né Terenzi hanno affrontato.
 :::
 
-- Analizzare la **ricezione** (commenti e reazioni degli utenti)
-- Lavorare su **scala maggiore** (centinaia di unità, non 20 headline)
+- Sviluppare uno **schema di classificazione** per contenuti visivi
+- Lavorare su **scala maggiore** (300-400 immagini, non 20 headline)
+- Usare Gemini in modalità **multimodale** (analisi immagini)
 - Calcolare l'**intercoder reliability** (Cohen's kappa)
+- Collegare categorie di contenuto a **metriche di engagement**
 - Scrivere un **paper di ricerca** (struttura IMRaD)
-- Collegare dati empirici a **framework teorici**
 
 ::: {.notes}
-Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La ricezione — come gli utenti commentano e reagiscono ai contenuti AI slop — è l'oggetto di studio originale. Terenzi ha mappato la produzione e diffusione; Paroni ha insegnato come analizzare sistematicamente contenuti con i LLM. Il progetto chiude il cerchio: usa gli strumenti di Paroni per studiare il fenomeno di Terenzi dal punto di vista degli utenti. La scala è maggiore (da 20 headline a centinaia di commenti), le metriche sono quantitative (kappa invece di ✓/⚠/✗), e il prodotto finale è un paper accademico.
+Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La classificazione multi-categoria di immagini è l'oggetto principale. Il passaggio da 20 headline a 300-400 immagini richiede strategie diverse: batch processing, gestione della consistenza, documentazione del codebook. L'uso multimodale di Gemini è una novità: finora hanno classificato testo, ora classificheranno immagini. L'analisi dell'engagement aggiunge un passo quantitativo: le categorie validate diventano la variabile indipendente per spiegare la variazione nelle metriche di engagement (reazioni, condivisioni, visualizzazioni).
+:::
+
+## Il Dataset {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 3: presentazione del dataset pre-curato fornito dal docente. Gli studenti non raccolgono dati — li ricevono pronti.
+:::
+
+## Un dataset pronto per l'analisi
+
+::: {.highlight-box}
+**Novità:** il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Non dovete raccogliere dati — potete concentrarvi su classificazione e analisi.
+:::
+
+| Componente | Formato | Accesso |
+|-----------|---------|---------|
+| **Metadati post** + metriche di engagement | CSV | Google Sheet condiviso |
+| **Immagini AI-generated** (~300-400) | JPG/PNG | Cartella Google Drive |
+| **Testo dei post** | Colonna nel CSV | Google Sheet condiviso |
+| **Engagement:** reazioni, condivisioni, visualizzazioni | Colonne numeriche | Google Sheet condiviso |
+| **Conteggio commenti** | Colonna numerica | Google Sheet condiviso |
+
+::: {.notes}
+Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post raccolti tramite Meta Content Library — uno strumento di Facebook per la ricerca accademica a cui gli studenti non hanno accesso diretto. Il docente ha scaricato e organizzato i dati. Le immagini sono nominate in modo da corrispondere agli identificativi dei post nel CSV. Tutti i gruppi lavorano sullo stesso sottoinsieme di immagini — questo è un punto di forza del design: consente il confronto inter-gruppo. Nota: i singoli commenti NON sono disponibili, solo il conteggio aggregato. Questo limita l'analisi ma non impedisce di studiare i pattern di engagement.
+:::
+
+## Cosa NON è disponibile
+
+::: {.callout-warning}
+## Limitazioni del dataset
+- **Testo dei singoli commenti:** disponibile solo il conteggio aggregato
+- **Contesto originale su Facebook:** gli URL interni di Meta Content Library non sono accessibili
+- **Accesso diretto a Meta Content Library:** richiede un account ricercatore verificato
+:::
+
+Queste limitazioni vanno **discusse nel paper** (sezione Discussione/Limitazioni).
+
+::: {.notes}
+È importante essere trasparenti sulle limitazioni fin dall'inizio. Gli studenti non possono analizzare il contenuto testuale dei commenti — solo quanti ce ne sono. Non possono vedere il post nel suo contesto originale su Facebook. Queste limitazioni devono essere riportate nel paper finale: sono limitazioni del metodo, non errori. Nella sezione Discussione del paper, i gruppi discuteranno come queste limitazioni influenzano l'interpretazione dei risultati. Ad esempio: un alto numero di commenti potrebbe indicare sia apprezzamento sia critica, senza poter distinguere.
+:::
+
+## Tutti sulle stesse immagini
+
+::: {.orange-box}
+### Design inter-gruppo
+Tutti i gruppi classificano le **stesse ~300-400 immagini**, ma ciascuno sviluppa il **proprio schema di classificazione**. Questo consente il confronto tra approcci diversi nella sintesi finale.
+:::
+
+Vantaggi:
+
+- **Confronto inter-gruppo** su dati identici
+- Schemi diversi rivelano **pattern complementari**
+- La sintesi finale (1 Aprile) diventa una **meta-analisi**
+
+::: {.notes}
+Questo è un aspetto chiave del design del progetto. Nella ricerca tradizionale, ogni gruppo raccoglierebbe dati diversi e il confronto sarebbe impossibile. Qui tutti analizzano le stesse immagini: un gruppo potrebbe classificare per soggetto visivo (bambini, animali, paesaggi), un altro per strategia emotiva (nostalgia, tenerezza, paura), un altro per tecnica generativa (fotorealistico, stilizzato, ibrido). La sessione del 1 aprile confronterà cosa ciascuna lente analitica rivela — e cosa nasconde. Questo è un esercizio epistemologico potente: le scelte analitiche determinano cosa si può vedere nei dati.
+:::
+
+## Angoli di classificazione possibili
+
+Ogni gruppo sviluppa il proprio **schema di classificazione**. Esempi:
+
+::: {.columns}
+::: {.column width="50%"}
+### Per soggetto visivo
+
+- Bambini, anziani, famiglie
+- Animali
+- Paesaggi, natura
+- Contenuto religioso, patriottico
+
+### Per tecnica generativa
+
+- Fotorealistico
+- Stilizzato / pittorico
+- Ibrido foto-IA
+- Artefatti evidenti
+:::
+
+::: {.column width="50%"}
+### Per strategia emotiva
+
+- Nostalgia, tenerezza
+- Meraviglia, stupore
+- Paura, allarme
+- Umorismo
+
+### Per intento apparente
+
+- *Engagement bait*
+- Promozione commerciale
+- Messaggio politico
+- Costruzione di comunità
+:::
+:::
+
+::: {.notes}
+Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inventarne di nuove. L'aspetto cruciale è l'operazionalizzazione: come con le 20 headline nel seminario Paroni, devono definire con precisione cosa significa ogni categoria. Ad esempio, "nostalgia" è un concetto ampio: va specificato (immagini che rappresentano un passato idealizzato? scene familiari? oggetti vintage?). Ogni categoria del codebook deve avere: nome, definizione, esempi positivi, esempi negativi, regole per i casi ambigui. Questo è esattamente il processo praticato nel workshop Paroni, ora applicato alle immagini.
 :::
 
 ## Il progetto in sintesi
 
 | Componente | Dettaglio |
 |-----------|----------|
-| **Tema** | Ricezione dell'AI slop nelle comunità Facebook italiane |
-| **Dati** | Post con immagini IA + commenti degli utenti |
-| **Strumenti** | Meta Content Library, Google Gemini, NotebookLM |
-| **Metodologia** | LLMs-in-the-loop [@marino2024] |
+| **Tema** | Classificazione di immagini AI slop e pattern di engagement |
+| **Dati** | ~300-400 immagini + CSV con metriche (dataset fornito dal docente) |
+| **Strumenti** | Google Gemini (classificazione multimodale), NotebookLM, fogli di calcolo |
+| **Metodologia** | LLMs-in-the-loop [@marino2024] adattata al contenuto visivo |
 | **Output** | Paper di ricerca (struttura IMRaD) |
 | **Peso** | 75% del voto finale (max 23,25 punti) |
 | **Scadenza** | 2 settimane prima dell'appello di giugno |
 
 ::: {.notes}
-Panoramica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione) — la struttura standard della ricerca scientifica. Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo specifico della domanda di ricerca (es. un tipo specifico di AI slop, un gruppo di utenti, una reazione particolare). Le prossime 3 settimane sono dedicate al progetto: raccolta dati (questa settimana), analisi (settimana 5), scrittura (settimana 6).
+Panoramica sintetica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione). Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo di classificazione specifico e analizzerà se le categorie validate predicono livelli diversi di engagement. Le prossime 3 settimane sono dedicate al progetto: classificazione pilota (domani), classificazione completa e validazione (settimana 5), scrittura (settimana 6). Nota: gli strumenti sono Google Gemini per la classificazione multimodale delle immagini, NotebookLM per la letteratura, e Google Sheets per il dataset.
 :::
 
 ## Formazione dei Gruppi {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 3: operativa. Formazione dei gruppi e assegnazione delle aree tematiche.
+Sezione 4: operativa. Formazione dei gruppi, ruoli e procedura di registrazione.
 :::
 
-## Composizione e procedura
+## Composizione e ruoli
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -209,68 +309,60 @@ Sezione 3: operativa. Formazione dei gruppi e assegnazione delle aree tematiche.
 
 - Massimo **6 studenti** per gruppo
 - Mix di competenze consigliato
-- Ogni gruppo avrà un **identificativo numerico**
+- Ogni gruppo riceve un **identificativo numerico**
 - Indicare un **responsabile** del gruppo
 :::
 
 ::: {.column width="50%"}
-### Procedura
+### Ruoli suggeriti
 
-1. Formate il gruppo e scegliete il **responsabile**
-2. Postate i nomi dei membri nel **forum** su Blended, indicando il responsabile
-3. Il responsabile copia il **modello di relazione** e lo condivide:
-   - con i membri del gruppo in modalità **modifica**
-   - con fabio.giglietto@uniurb.it e bruna.almeidaparoni@uniurb.it in modalità **commento**
+| Ruolo | Responsabilità |
+|-------|---------------|
+| **Coordinatore** | Timeline, distribuzione compiti |
+| **Analista IA** | Prompt design, interazione con Gemini |
+| **Validatore** | Codifica umana, calcolo kappa |
+| **Analista dati** | Gestione CSV, analisi engagement |
+| **Redattore** | Struttura paper, scrittura |
 :::
 :::
+
+I ruoli sono **flessibili** — tutti partecipano a tutte le fasi.
+
+::: {.notes}
+I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di coordinare ciascuna fase del progetto. L'analista IA si occupa della progettazione dei prompt per Gemini e della classificazione automatizzata. Il validatore coordina la codifica umana e il calcolo dell'intercoder reliability. L'analista dati gestisce il CSV e analizza i pattern di engagement. Il redattore coordina la scrittura del paper. Ma tutti contribuiscono a tutto: nella fase di validazione, ad esempio, ogni membro del gruppo codifica indipendentemente un campione di 50 immagini.
+:::
+
+## Procedura di registrazione
 
 ::: {.callout-warning}
 ## Da fare oggi
-Pubblicate i nomi nel forum rispondendo al post dedicato. Il responsabile configura il documento condiviso **entro la fine della giornata**.
+
+1. Formate il gruppo e scegliete il **responsabile**
+2. Il responsabile posta nel **forum su Blended** i nomi dei membri, indicando chi è il responsabile
+3. I gruppi ricevono un **identificativo numerico**
+4. Il responsabile copia il [**modello di relazione**](https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true) e lo condivide:
+   - con i **membri del gruppo** in modalità **modifica**
+   - con **fabio.giglietto@uniurb.it** e **bruna.almeidaparoni@uniurb.it** in modalità **commento**
 :::
 
 ::: {.notes}
-Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha due compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile, (2) copiare il modello di relazione (Google Docs) e condividerlo con i membri in modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Ad ogni gruppo sarà assegnato un identificativo numerico dopo la registrazione nel forum.
+Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha tre compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile — il docente assegnerà poi un identificativo numerico, (2) copiare il modello di relazione disponibile come Google Doc, (3) condividere la copia con i membri in modalità modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Il documento condiviso sarà usato per la stesura progressiva del paper nelle settimane successive.
 :::
 
 ## Sviluppare la domanda di ricerca
 
 ::: {.orange-box}
-**Esercizio di gruppo (15 minuti)**
+**Esercizio di gruppo (30 minuti)**
 
-1. Formulate una **domanda di ricerca specifica** per il vostro gruppo
-2. Identificate **2-3 variabili** e pensate a come le **operazionalizzereste** (ricordate il processo con le 20 headline)
-3. Proponete **ipotesi preliminari** e quale **fase della pipeline** vorreste personalizzare
-4. Presentate brevemente alla classe (2 minuti per gruppo)
+1. Esplorate il dataset: sfogliate le **immagini** e il **CSV** con le metriche
+2. Scegliete un **angolo di classificazione** (soggetto, emozione, tecnica, intento)
+3. Definite **3-5 categorie** e provate a operazionalizzarle (ricordate le 20 headline!)
+4. Formulate **ipotesi preliminari:** quali categorie generano più engagement?
+5. Presentate brevemente alla classe (2 minuti per gruppo)
 :::
 
-Esempi di angoli specifici:
-
-- Differenze di ricezione per **tipo di immagine** (bambini, animali, paesaggi)
-- Pattern nei commenti: **riconoscimento IA** vs. reazioni emotive
-- Confronto tra **pagine/gruppi** con diverso orientamento
-
 ::: {.notes}
-Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già praticato la pipeline nel seminario Paroni, possono pensare non solo a COSA studiare ma a COME personalizzare la pipeline: quale classificazione binaria definire (non solo "politico/non politico" ma ad esempio "consapevole IA/non consapevole"), che tipo di clustering applicare ai commenti, quali criteri di validazione adottare. L'esperienza con le 20 headline li ha preparati a operazionalizzare concetti ambigui (ricordare la discussione su cosa sia "politico" — ora devono decidere cosa sia "riconoscimento IA" in un commento). Dare 15 minuti, poi presentazione rapida di ogni gruppo.
-:::
-
-## Strumenti e Risorse {background-color="#C5612E"}
-
-::: {.notes}
-Sezione 4: panoramica degli strumenti che useremo. Dettagli operativi per la raccolta dati di domani.
-:::
-
-## Gli strumenti del progetto
-
-| Strumento | Uso | Fase |
-|----------|-----|------|
-| **Meta Content Library** | Raccolta post e commenti da Facebook/Instagram | Raccolta (settimana 4) |
-| **Google Gemini** | Classificazione contenuti, analisi immagini e testo | Analisi (settimana 5) |
-| **NotebookLM** | Organizzazione letteratura, sintesi fonti | Scrittura (settimana 6) |
-| **Foglio di calcolo** | Dataset strutturato, codifica, calcoli | Tutte le fasi |
-
-::: {.notes}
-Panoramica degli strumenti. Meta Content Library è lo strumento di Facebook per la ricerca accademica: permette di cercare e scaricare post pubblici con relativi commenti e metriche di engagement. L'accesso avviene tramite il portale di ricerca di Meta. Gemini sarà usato per la classificazione automatizzata nella settimana 5: caricheremo i commenti e chiederemo al modello di classificarli secondo il nostro codebook. NotebookLM per la parte di scrittura: organizzare la letteratura, generare bozze della sezione teorica. Il foglio di calcolo (Google Sheets) è lo strumento di base per il dataset.
+Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già praticato la pipeline nel seminario Paroni, possono pensare non solo a COSA classificare ma a COME operazionalizzare le categorie. L'esperienza con le 20 headline li ha preparati a operazionalizzare concetti ambigui (ricordare la discussione su cosa sia "politico" — ora devono decidere cosa sia "contenuto nostalgico" o "fotorealistico" in un'immagine). Dare 30 minuti totali: 15 per esplorare il dataset e discutere, 15 per definire lo schema. Poi presentazione rapida di ogni gruppo (2 minuti ciascuno). L'esplorazione iniziale delle immagini è cruciale: devono vedere cosa c'è prima di decidere come classificarlo.
 :::
 
 ## Timeline del progetto
@@ -278,62 +370,81 @@ Panoramica degli strumenti. Meta Content Library è lo strumento di Facebook per
 | Settimana | Data | Attività |
 |-----------|------|----------|
 | **4** | Mar 17 | Formazione gruppi, domanda di ricerca |
-| **4** | Mer 18 | **Lab:** raccolta post e commenti |
-| **5** | Lun 23 | **Lab:** analisi contenuti con Gemini |
+| **4** | Mer 18 | **Lab:** prompt design e classificazione pilota |
+| **5** | Lun 23 | **Lab:** classificazione completa (~300-400 immagini) |
 | **5** | Mar 24 | **Workshop:** validazione umana vs IA |
-| **5** | Mer 25 | Consultazione gruppi |
+| **5** | Mer 25 | Consultazione gruppi + analisi engagement |
 | **6** | Lun 30 | **Workshop:** scrittura del paper |
 | **6** | Mar 31 | Lavoro di gruppo in aula |
-| **6** | Mer 1 Apr | Sintesi e consultazioni finali |
+| **6** | Mer 1 Apr | Sintesi inter-gruppo e consultazioni finali |
 | — | 2 sett. prima appello | **Consegna paper** |
 
 ::: {.notes}
-Timeline completa del progetto. Le settimane 4-5 sono le più intensive: raccolta dati, analisi automatizzata, validazione. La settimana 6 è dedicata alla scrittura. Il paper va consegnato 2 settimane prima dell'appello di giugno. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere in parallelo tra le sessioni. I gruppi che restano indietro nella raccolta dati avranno difficoltà a recuperare.
+Timeline completa del progetto. Domani è la sessione più importante per la preparazione: i gruppi progettano e testano i loro prompt di classificazione, creano il codebook e classificano un campione pilota di 30-50 immagini. Lunedì prossimo si scala: classificazione completa delle 300-400 immagini con Gemini. Martedì la validazione umana con calcolo del kappa. Mercoledì la consultazione con il docente e l'analisi dei pattern di engagement. La settimana 6 è dedicata alla scrittura. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere tra le sessioni.
 :::
 
-## Per domani: preparazione alla raccolta dati
+## La pipeline nel progetto {background-color="#C5612E"}
 
-**Mercoledì 18 Marzo:** Lab — Raccolta Post e Commenti
+::: {.notes}
+Sezione riassuntiva: come si mappa la pipeline LLMs-in-the-loop dal seminario Paroni al progetto attuale.
+:::
+
+## Dalla pipeline Paroni al progetto
+
+| Fase pipeline | Seminario Paroni (sett. 3) | Progetto (sett. 4-6) |
+|---|---|---|
+| **1. Dati** | 20 headline (fornite) | ~300-400 immagini + CSV (forniti dal docente) |
+| **2. Classificazione** | Binaria: politico / non politico | Multi-categoria: schema del gruppo |
+| **3. Prompt** | Prompt strutturato con ruolo + esempi | Prompt **multimodale**: ruolo + definizioni + immagine |
+| **4. Codifica IA** | Gemini classifica headline | Gemini classifica **immagini** |
+| **5. Codifica umana** | Individuale → consenso di gruppo | Ogni membro codifica **50 immagini** indipendentemente |
+| **6. Confronto** | Gruppo vs. Gemini | **Cohen's kappa**: umano-umano e umano-IA |
+| **7. Iterazione** | Raffinamento prompt | Raffinamento codebook + prompt (matrice di confusione) |
+| **8. Analisi** | — | Metriche engagement (VD) per categoria (VI) |
+
+::: {.notes}
+Questa tabella è il riferimento metodologico centrale del progetto. Mappando passo per passo dal seminario Paroni al progetto, gli studenti vedono la continuità: hanno già fatto i passi 1-7 con le headline, ora li ripetono con le immagini a scala maggiore. Il passo 8 è la novità: l'analisi dell'engagement. Una volta validate le categorie (passo 7), le usano come variabile indipendente per spiegare la variazione nelle metriche di engagement dal CSV (reazioni, condivisioni, visualizzazioni, conteggio commenti). Questo trasforma una classificazione in un'analisi empirica con implicazioni teoriche. Riferimento: la pipeline è basata su Marino & Giglietto (2024).
+:::
+
+## Per domani: preparazione al lab
+
+**Mercoledì 18 Marzo:** Lab — Prompt Design e Classificazione Pilota
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Cosa preparare
 
-- Account **Meta Content Library** configurato
-- Laptop con browser aggiornato
-- Foglio di calcolo condiviso nel gruppo
-- Criteri di selezione dei post definiti
+- Lo **schema di classificazione** definito oggi
+- **Definizioni provvisorie** delle categorie
+- Account **Google Gemini** funzionante
+- Foglio di calcolo **condiviso** nel gruppo
 :::
 
 ::: {.column width="50%"}
-### Cosa faremo
+### Cosa faremo domani
 
-- Ricerca di post con immagini AI slop
-- Download di post e commenti
-- Costruzione del dataset iniziale
-- Screening preliminare con Gemini
+- Scrivere il **prompt di classificazione**
+- Testare su **10-15 immagini** pilota
+- **Raffinare** prompt e categorie
+- Documentare il **codebook** nel foglio condiviso
+- Obiettivo: classificazione pilota di **30-50 immagini**
 :::
-:::
-
-::: {.callout-warning}
-## Attenzione
-L'accesso a Meta Content Library richiede un account verificato. Se non lo avete ancora configurato, fatelo **oggi stesso**: la procedura può richiedere alcune ore.
 :::
 
 ::: {.notes}
-Istruzioni operative per domani. I gruppi dovrebbero arrivare con un'idea chiara di quali tipi di post cercare e con gli strumenti tecnici configurati. Meta Content Library richiede un account verificato — verificare che tutti abbiano completato la procedura. Il foglio di calcolo condiviso (Google Sheets) sarà il repository centrale del dataset. Domani è una sessione di lavoro pratico: il docente e i tutor saranno disponibili per assistenza tecnica.
+Istruzioni operative per domani. I gruppi dovrebbero arrivare con lo schema di classificazione definito oggi e le prime definizioni delle categorie. Domani è una sessione interamente pratica: si progettano i prompt, si testano su un campione di immagini, si raffina iterativamente (come nel seminario Paroni), e si documenta tutto nel codebook. Alla fine della sessione domani, ogni gruppo deve avere: un prompt testato e raffinato, un codebook documentato nel foglio condiviso, e una classificazione pilota di almeno 30-50 immagini. Il docente e i tutor saranno disponibili per assistenza durante tutto il lab.
 :::
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Lab — Raccolta Post e Commenti (18 Marzo 2026)
+**Prossima lezione:** Lab — Prompt Design e Classificazione Pilota (18 Marzo 2026)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) postare i nomi del gruppo nel forum su Blended indicando il responsabile, (2) il responsabile copia il modello di relazione e lo condivide (membri in modifica, docente e Paroni in commento), (3) configurare Meta Content Library, (4) preparare il foglio di calcolo condiviso. A domani per il lab di raccolta dati!
+Chiusura. Ricordare: (1) postare i nomi del gruppo nel forum su Blended indicando il responsabile, (2) il responsabile copia il modello di relazione e lo condivide (membri in modifica, docente e Paroni in commento), (3) esplorare il dataset (immagini e CSV) per prepararsi a domani, (4) iniziare a pensare allo schema di classificazione. A domani per il lab di prompt design e classificazione pilota!
 :::
 
 ## Riferimenti

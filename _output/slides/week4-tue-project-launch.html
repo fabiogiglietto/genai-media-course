@@ -167,14 +167,14 @@ Fabio Giglietto
 <h2>Roadmap della sessione</h2>
 <ol type="1">
 <li><strong>Il fenomeno AI slop</strong> — ricapitolazione dal seminario di ieri</li>
-<li><strong>Briefing del progetto</strong> — obiettivi, domanda di ricerca, deliverable</li>
+<li><strong>Briefing del progetto</strong> — obiettivi, domanda di ricerca, dataset</li>
 <li><strong>Dai seminari al progetto</strong> — la pipeline e il fenomeno che già conoscete</li>
-<li><strong>Formazione dei gruppi</strong> — composizione e ruoli</li>
-<li><strong>Strumenti e risorse</strong> — Meta Content Library, Gemini, NotebookLM</li>
-<li><strong>Prossimi passi</strong> — raccolta dati domani</li>
+<li><strong>Esplorazione del dataset</strong> — struttura CSV, immagini, metriche di engagement</li>
+<li><strong>Formazione dei gruppi</strong> — composizione, ruoli e procedura</li>
+<li><strong>Prossimi passi</strong> — prompt design e classificazione pilota domani</li>
 </ol>
 <aside class="notes">
-<p>Oggi lanciamo il progetto di gruppo che occuperà le prossime 3 settimane. Ieri il seminario di Massimo Terenzi ha introdotto il fenomeno dell’AI slop e la ricerca sulla viralità sintetica nelle comunità Facebook italiane. Oggi definiamo obiettivi, metodologia e organizzazione. Domani iniziamo la raccolta dati. Il tono della sessione è operativo: meno teoria, più pianificazione. Punto fondamentale: gli studenti hanno già praticato la pipeline LLMs-in-the-loop nel seminario Paroni — non serve rispiegare la metodologia da zero, basta mappare ciò che conoscono sul nuovo dominio.</p>
+<p>Oggi lanciamo il progetto di gruppo che occuperà le prossime 3 settimane. Ieri il seminario di Massimo Terenzi ha introdotto il fenomeno dell’AI slop e la ricerca sulla viralità sintetica nelle comunità Facebook italiane. Oggi definiamo obiettivi, metodologia e organizzazione. Domani iniziamo a progettare i prompt e la classificazione pilota. Il tono della sessione è operativo: meno teoria, più pianificazione. Punto fondamentale: gli studenti hanno già praticato la pipeline LLMs-in-the-loop nel seminario Paroni — non serve rispiegare la metodologia da zero, basta mappare ciò che conoscono sul nuovo dominio. Cambiamento importante rispetto alla versione iniziale del corso: il dataset è pre-curato dal docente, non devono raccogliere dati autonomamente.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -250,20 +250,20 @@ Fabio Giglietto
 </tr>
 <tr class="even">
 <td>Catena del valore giornalistica <span class="citation" data-cites="mattis2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Mattis &amp; Vreese, 2025</a>)</span></td>
-<td>Analisi della <strong>ricezione</strong> dei contenuti IA</td>
+<td><strong>Classificazione</strong> dei contenuti IA generati</td>
 </tr>
 <tr class="odd">
 <td>Deepfake e incertezza <span class="citation" data-cites="vaccari2020">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Vaccari &amp; Chadwick, 2020</a>)</span></td>
-<td>Reazioni degli utenti: riconoscimento o engagement?</td>
+<td>Quali categorie di immagini generano più engagement?</td>
 </tr>
 <tr class="even">
 <td>Paradosso dell’IA generativa <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span></td>
-<td>I commenti riflettono fiducia o sfiducia?</td>
+<td>Come l’engagement varia per tipo di contenuto?</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli studenti devono capire che il progetto non è un esercizio isolato ma l’applicazione empirica dei framework studiati. Il sistema mediale ibrido spiega perché l’AI slop si diffonde (interazione tra piattaforme, algoritmi, utenti). I rischi di Mattis spiegano il contesto (degradamento della qualità informativa). Vaccari spiega il meccanismo (incertezza più che inganno). Ferrara spiega l’implicazione macro (erosione della fiducia). Il progetto testa queste teorie sui dati reali.</p>
+<p>Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli studenti devono capire che il progetto non è un esercizio isolato ma l’applicazione empirica dei framework studiati. Il sistema mediale ibrido spiega perché l’AI slop si diffonde (interazione tra piattaforme, algoritmi, utenti). I rischi di Mattis spiegano il contesto (degradamento della qualità informativa). Vaccari spiega il meccanismo (incertezza più che inganno). Ferrara spiega l’implicazione macro (erosione della fiducia). Il progetto testa queste teorie analizzando sistematicamente le immagini e i pattern di engagement.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -276,10 +276,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="perché-studiare-la-ricezione" class="slide level2">
-<h2>Perché studiare la ricezione</h2>
+<section id="il-focus-della-ricerca" class="slide level2">
+<h2>Il focus della ricerca</h2>
 <div class="highlight-box">
-<p><strong>Domanda di ricerca del progetto:</strong> Come reagiscono gli utenti ai contenuti <em>AI slop</em> nelle comunità Facebook italiane? Quali pattern emergono dai commenti e dalle reazioni?</p>
+<p><strong>Domanda di ricerca del progetto:</strong> Quali categorie di contenuti <em>AI slop</em> esistono nelle comunità Facebook italiane? Come si distribuisce l’engagement (reazioni, condivisioni, visualizzazioni) tra le diverse categorie?</p>
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -288,18 +288,19 @@ Fabio Giglietto
 <li>L’AI slop è diffuso <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span></li>
 <li>Gli algoritmi lo amplificano</li>
 <li>Genera engagement elevato</li>
+<li>Esistono <strong>pattern visivi</strong> ricorrenti</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="cosa-non-sappiamo">Cosa non sappiamo</h3>
 <ul>
-<li><strong>Come</strong> reagiscono gli utenti</li>
-<li>Se riconoscono l’IA</li>
-<li>Quali <strong>emozioni</strong> prevalgono</li>
-<li>Che <strong>strategie retoriche</strong> usano</li>
+<li><strong>Quali categorie</strong> di immagini esistono</li>
+<li>Se le categorie <strong>predicono</strong> l’engagement</li>
+<li>Quali <strong>leve emotive</strong> funzionano meglio</li>
+<li>Come la <strong>tecnica generativa</strong> influenza le interazioni</li>
 </ul>
 </div></div>
 <aside class="notes">
-<p>Il progetto si concentra sulla ricezione — il lato meno studiato del fenomeno AI slop. La ricerca di Terenzi &amp; Giglietto (2025) ha mappato la produzione e diffusione; il nostro contributo sarà analizzare i commenti e le reazioni degli utenti. Domande specifiche che i gruppi potranno esplorare: gli utenti riconoscono che le immagini sono generate dall’IA? Come esprimono questa consapevolezza? Prevalgono reazioni critiche o emotive? Ci sono differenze tra temi diversi (es. immagini con bambini vs.&nbsp;immagini con animali)?</p>
+<p>Il progetto si concentra sulla classificazione delle immagini AI-generated e sull’analisi dei pattern di engagement — il lato meno studiato del fenomeno AI slop. La ricerca di Terenzi &amp; Giglietto (2025) ha mappato la produzione e diffusione; il nostro contributo sarà classificare sistematicamente le immagini e analizzare come le diverse categorie si associano a livelli diversi di engagement. Nota importante: non abbiamo accesso ai singoli commenti (solo ai conteggi aggregati), quindi il focus è sulle metriche quantitative di engagement, non sull’analisi testuale dei commenti.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -353,22 +354,22 @@ Fabio Giglietto
 <tr class="even">
 <td>Classificazione binaria (politico / non politico)</td>
 <td>Identificazione di immagini sintetiche</td>
-<td>Classificazione: <strong>AI-generated / non AI-generated</strong></td>
+<td>Classificazione <strong>multi-categoria</strong> per schema del gruppo</td>
 </tr>
 <tr class="odd">
 <td>Clustering tematico con Gemini</td>
 <td>Tattiche di manipolazione affettiva</td>
-<td>Analisi tematica dei <strong>commenti</strong></td>
+<td><strong>Classificazione visiva</strong> delle immagini</td>
 </tr>
 <tr class="even">
 <td>Validazione (4 criteri, ✓/⚠/✗)</td>
 <td>Amplificazione algoritmica</td>
-<td>Validazione con <strong>intercoder reliability</strong></td>
+<td>Validazione con <strong>intercoder reliability</strong> + analisi engagement</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Slide chiave: il progetto non nasce dal nulla, ma dalla convergenza di due seminari. Paroni ha dato la cassetta degli attrezzi metodologica — gli studenti hanno praticato classificazione binaria, clustering, labeling e validazione con 20 headline. Terenzi ha dato il fenomeno di ricerca — AI slop come engagement bait nelle comunità Facebook italiane, con le sue specificità: immagini sintetiche, leve emotive, amplificazione algoritmica. Il progetto combina i due: applica la pipeline LLMs-in-the-loop al dominio dell’AI slop, aggiungendo l’analisi della ricezione (commenti e reazioni) che né Paroni né Terenzi hanno affrontato direttamente.</p>
+<p>Slide chiave: il progetto non nasce dal nulla, ma dalla convergenza di due seminari. Paroni ha dato la cassetta degli attrezzi metodologica — gli studenti hanno praticato classificazione binaria, clustering, labeling e validazione con 20 headline. Terenzi ha dato il fenomeno di ricerca — AI slop come engagement bait nelle comunità Facebook italiane, con le sue specificità: immagini sintetiche, leve emotive, amplificazione algoritmica. Il progetto combina i due: applica la pipeline LLMs-in-the-loop al dominio dell’AI slop. La differenza chiave: ora la classificazione è multi-categoria e multimodale (immagini, non solo testo), e c’è un passo analitico aggiuntivo — collegare le categorie alle metriche di engagement.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -404,7 +405,7 @@ Fabio Giglietto
 </ul>
 </div></div>
 <aside class="notes">
-<p>La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: gli studenti sanno usare la pipeline. La colonna destra riconosce le conoscenze di dominio dal seminario Terenzi: gli studenti conoscono il fenomeno che studieranno. Questo è motivante e permette di non ripetere contenuti. Il progetto aggiunge ciò che manca da entrambi i seminari: l’analisi della ricezione.</p>
+<p>La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: gli studenti sanno usare la pipeline. La colonna destra riconosce le conoscenze di dominio dal seminario Terenzi: gli studenti conoscono il fenomeno che studieranno. Questo è motivante e permette di non ripetere contenuti. Il progetto aggiunge ciò che manca da entrambi i seminari: la classificazione sistematica delle immagini e l’analisi dei pattern di engagement.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -420,17 +421,203 @@ Fabio Giglietto
 <section id="da-imparare-nel-progetto" class="slide level2">
 <h2>Da imparare nel progetto</h2>
 <div class="highlight-box">
-<p><strong>Il contributo originale del vostro progetto:</strong> analizzare come gli utenti <strong>reagiscono</strong> all’AI slop — il lato che né Paroni né Terenzi hanno affrontato.</p>
+<p><strong>Il contributo originale del vostro progetto:</strong> classificare sistematicamente le immagini AI slop e analizzare come le diverse categorie predicono l’engagement — un’analisi che né Paroni né Terenzi hanno affrontato.</p>
 </div>
 <ul>
-<li>Analizzare la <strong>ricezione</strong> (commenti e reazioni degli utenti)</li>
-<li>Lavorare su <strong>scala maggiore</strong> (centinaia di unità, non 20 headline)</li>
+<li>Sviluppare uno <strong>schema di classificazione</strong> per contenuti visivi</li>
+<li>Lavorare su <strong>scala maggiore</strong> (300-400 immagini, non 20 headline)</li>
+<li>Usare Gemini in modalità <strong>multimodale</strong> (analisi immagini)</li>
 <li>Calcolare l’<strong>intercoder reliability</strong> (Cohen’s kappa)</li>
+<li>Collegare categorie di contenuto a <strong>metriche di engagement</strong></li>
 <li>Scrivere un <strong>paper di ricerca</strong> (struttura IMRaD)</li>
-<li>Collegare dati empirici a <strong>framework teorici</strong></li>
 </ul>
 <aside class="notes">
-<p>Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La ricezione — come gli utenti commentano e reagiscono ai contenuti AI slop — è l’oggetto di studio originale. Terenzi ha mappato la produzione e diffusione; Paroni ha insegnato come analizzare sistematicamente contenuti con i LLM. Il progetto chiude il cerchio: usa gli strumenti di Paroni per studiare il fenomeno di Terenzi dal punto di vista degli utenti. La scala è maggiore (da 20 headline a centinaia di commenti), le metriche sono quantitative (kappa invece di ✓/⚠/✗), e il prodotto finale è un paper accademico.</p>
+<p>Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La classificazione multi-categoria di immagini è l’oggetto principale. Il passaggio da 20 headline a 300-400 immagini richiede strategie diverse: batch processing, gestione della consistenza, documentazione del codebook. L’uso multimodale di Gemini è una novità: finora hanno classificato testo, ora classificheranno immagini. L’analisi dell’engagement aggiunge un passo quantitativo: le categorie validate diventano la variabile indipendente per spiegare la variazione nelle metriche di engagement (reazioni, condivisioni, visualizzazioni).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="il-dataset" class="slide level2" data-background-color="#C5612E">
+<h2>Il Dataset</h2>
+<aside class="notes">
+<p>Sezione 3: presentazione del dataset pre-curato fornito dal docente. Gli studenti non raccolgono dati — li ricevono pronti.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="un-dataset-pronto-per-lanalisi" class="slide level2">
+<h2>Un dataset pronto per l’analisi</h2>
+<div class="highlight-box">
+<p><strong>Novità:</strong> il docente fornisce un <strong>dataset pre-curato</strong> tratto dalla ricerca Terenzi &amp; Giglietto <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>. Non dovete raccogliere dati — potete concentrarvi su classificazione e analisi.</p>
+</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 37%">
+<col style="width: 31%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th>Formato</th>
+<th>Accesso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Metadati post</strong> + metriche di engagement</td>
+<td>CSV</td>
+<td>Google Sheet condiviso</td>
+</tr>
+<tr class="even">
+<td><strong>Immagini AI-generated</strong> (~300-400)</td>
+<td>JPG/PNG</td>
+<td>Cartella Google Drive</td>
+</tr>
+<tr class="odd">
+<td><strong>Testo dei post</strong></td>
+<td>Colonna nel CSV</td>
+<td>Google Sheet condiviso</td>
+</tr>
+<tr class="even">
+<td><strong>Engagement:</strong> reazioni, condivisioni, visualizzazioni</td>
+<td>Colonne numeriche</td>
+<td>Google Sheet condiviso</td>
+</tr>
+<tr class="odd">
+<td><strong>Conteggio commenti</strong></td>
+<td>Colonna numerica</td>
+<td>Google Sheet condiviso</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Il dataset proviene dalla ricerca di Terenzi &amp; Giglietto (2025) e include post raccolti tramite Meta Content Library — uno strumento di Facebook per la ricerca accademica a cui gli studenti non hanno accesso diretto. Il docente ha scaricato e organizzato i dati. Le immagini sono nominate in modo da corrispondere agli identificativi dei post nel CSV. Tutti i gruppi lavorano sullo stesso sottoinsieme di immagini — questo è un punto di forza del design: consente il confronto inter-gruppo. Nota: i singoli commenti NON sono disponibili, solo il conteggio aggregato. Questo limita l’analisi ma non impedisce di studiare i pattern di engagement.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cosa-non-è-disponibile" class="slide level2">
+<h2>Cosa NON è disponibile</h2>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Limitazioni del dataset</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><strong>Testo dei singoli commenti:</strong> disponibile solo il conteggio aggregato</li>
+<li><strong>Contesto originale su Facebook:</strong> gli URL interni di Meta Content Library non sono accessibili</li>
+<li><strong>Accesso diretto a Meta Content Library:</strong> richiede un account ricercatore verificato</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Queste limitazioni vanno <strong>discusse nel paper</strong> (sezione Discussione/Limitazioni).</p>
+<aside class="notes">
+<p>È importante essere trasparenti sulle limitazioni fin dall’inizio. Gli studenti non possono analizzare il contenuto testuale dei commenti — solo quanti ce ne sono. Non possono vedere il post nel suo contesto originale su Facebook. Queste limitazioni devono essere riportate nel paper finale: sono limitazioni del metodo, non errori. Nella sezione Discussione del paper, i gruppi discuteranno come queste limitazioni influenzano l’interpretazione dei risultati. Ad esempio: un alto numero di commenti potrebbe indicare sia apprezzamento sia critica, senza poter distinguere.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tutti-sulle-stesse-immagini" class="slide level2">
+<h2>Tutti sulle stesse immagini</h2>
+<section id="design-inter-gruppo" class="orange-box">
+<h3>Design inter-gruppo</h3>
+<p>Tutti i gruppi classificano le <strong>stesse ~300-400 immagini</strong>, ma ciascuno sviluppa il <strong>proprio schema di classificazione</strong>. Questo consente il confronto tra approcci diversi nella sintesi finale.</p>
+</section>
+<p>Vantaggi:</p>
+<ul>
+<li><strong>Confronto inter-gruppo</strong> su dati identici</li>
+<li>Schemi diversi rivelano <strong>pattern complementari</strong></li>
+<li>La sintesi finale (1 Aprile) diventa una <strong>meta-analisi</strong></li>
+</ul>
+<aside class="notes">
+<p>Questo è un aspetto chiave del design del progetto. Nella ricerca tradizionale, ogni gruppo raccoglierebbe dati diversi e il confronto sarebbe impossibile. Qui tutti analizzano le stesse immagini: un gruppo potrebbe classificare per soggetto visivo (bambini, animali, paesaggi), un altro per strategia emotiva (nostalgia, tenerezza, paura), un altro per tecnica generativa (fotorealistico, stilizzato, ibrido). La sessione del 1 aprile confronterà cosa ciascuna lente analitica rivela — e cosa nasconde. Questo è un esercizio epistemologico potente: le scelte analitiche determinano cosa si può vedere nei dati.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="angoli-di-classificazione-possibili" class="slide level2">
+<h2>Angoli di classificazione possibili</h2>
+<p>Ogni gruppo sviluppa il proprio <strong>schema di classificazione</strong>. Esempi:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="per-soggetto-visivo">Per soggetto visivo</h3>
+<ul>
+<li>Bambini, anziani, famiglie</li>
+<li>Animali</li>
+<li>Paesaggi, natura</li>
+<li>Contenuto religioso, patriottico</li>
+</ul>
+<h3 id="per-tecnica-generativa">Per tecnica generativa</h3>
+<ul>
+<li>Fotorealistico</li>
+<li>Stilizzato / pittorico</li>
+<li>Ibrido foto-IA</li>
+<li>Artefatti evidenti</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="per-strategia-emotiva">Per strategia emotiva</h3>
+<ul>
+<li>Nostalgia, tenerezza</li>
+<li>Meraviglia, stupore</li>
+<li>Paura, allarme</li>
+<li>Umorismo</li>
+</ul>
+<h3 id="per-intento-apparente">Per intento apparente</h3>
+<ul>
+<li><em>Engagement bait</em></li>
+<li>Promozione commerciale</li>
+<li>Messaggio politico</li>
+<li>Costruzione di comunità</li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inventarne di nuove. L’aspetto cruciale è l’operazionalizzazione: come con le 20 headline nel seminario Paroni, devono definire con precisione cosa significa ogni categoria. Ad esempio, “nostalgia” è un concetto ampio: va specificato (immagini che rappresentano un passato idealizzato? scene familiari? oggetti vintage?). Ogni categoria del codebook deve avere: nome, definizione, esempi positivi, esempi negativi, regole per i casi ambigui. Questo è esattamente il processo praticato nel workshop Paroni, ora applicato alle immagini.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -446,6 +633,10 @@ Fabio Giglietto
 <section id="il-progetto-in-sintesi" class="slide level2">
 <h2>Il progetto in sintesi</h2>
 <table class="caption-top">
+<colgroup>
+<col style="width: 52%">
+<col style="width: 47%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Componente</th>
@@ -455,19 +646,19 @@ Fabio Giglietto
 <tbody>
 <tr class="odd">
 <td><strong>Tema</strong></td>
-<td>Ricezione dell’AI slop nelle comunità Facebook italiane</td>
+<td>Classificazione di immagini AI slop e pattern di engagement</td>
 </tr>
 <tr class="even">
 <td><strong>Dati</strong></td>
-<td>Post con immagini IA + commenti degli utenti</td>
+<td>~300-400 immagini + CSV con metriche (dataset fornito dal docente)</td>
 </tr>
 <tr class="odd">
 <td><strong>Strumenti</strong></td>
-<td>Meta Content Library, Google Gemini, NotebookLM</td>
+<td>Google Gemini (classificazione multimodale), NotebookLM, fogli di calcolo</td>
 </tr>
 <tr class="even">
 <td><strong>Metodologia</strong></td>
-<td>LLMs-in-the-loop <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></td>
+<td>LLMs-in-the-loop <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span> adattata al contenuto visivo</td>
 </tr>
 <tr class="odd">
 <td><strong>Output</strong></td>
@@ -484,7 +675,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Panoramica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione) — la struttura standard della ricerca scientifica. Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo specifico della domanda di ricerca (es. un tipo specifico di AI slop, un gruppo di utenti, una reazione particolare). Le prossime 3 settimane sono dedicate al progetto: raccolta dati (questa settimana), analisi (settimana 5), scrittura (settimana 6).</p>
+<p>Panoramica sintetica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione). Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo di classificazione specifico e analizzerà se le categorie validate predicono livelli diversi di engagement. Le prossime 3 settimane sono dedicate al progetto: classificazione pilota (domani), classificazione completa e validazione (settimana 5), scrittura (settimana 6). Nota: gli strumenti sono Google Gemini per la classificazione multimodale delle immagini, NotebookLM per la letteratura, e Google Sheets per il dataset.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -500,7 +691,7 @@ Fabio Giglietto
 <section id="formazione-dei-gruppi" class="slide level2" data-background-color="#C5612E">
 <h2>Formazione dei Gruppi</h2>
 <aside class="notes">
-<p>Sezione 3: operativa. Formazione dei gruppi e assegnazione delle aree tematiche.</p>
+<p>Sezione 4: operativa. Formazione dei gruppi, ruoli e procedura di registrazione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -513,29 +704,67 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="composizione-e-procedura" class="slide level2">
-<h2>Composizione e procedura</h2>
+<section id="composizione-e-ruoli" class="slide level2">
+<h2>Composizione e ruoli</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="composizione">Composizione</h3>
 <ul>
 <li>Massimo <strong>6 studenti</strong> per gruppo</li>
 <li>Mix di competenze consigliato</li>
-<li>Ogni gruppo avrà un <strong>identificativo numerico</strong></li>
+<li>Ogni gruppo riceve un <strong>identificativo numerico</strong></li>
 <li>Indicare un <strong>responsabile</strong> del gruppo</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="procedura">Procedura</h3>
-<ol type="1">
-<li>Formate il gruppo e scegliete il <strong>responsabile</strong></li>
-<li>Postate i nomi dei membri nel <strong>forum</strong> su Blended, indicando il responsabile</li>
-<li>Il responsabile copia il <strong>modello di relazione</strong> e lo condivide:
-<ul>
-<li>con i membri del gruppo in modalità <strong>modifica</strong></li>
-<li>con fabio.giglietto@uniurb.it e bruna.almeidaparoni@uniurb.it in modalità <strong>commento</strong></li>
-</ul></li>
-</ol>
+<h3 id="ruoli-suggeriti">Ruoli suggeriti</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Ruolo</th>
+<th>Responsabilità</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Coordinatore</strong></td>
+<td>Timeline, distribuzione compiti</td>
+</tr>
+<tr class="even">
+<td><strong>Analista IA</strong></td>
+<td>Prompt design, interazione con Gemini</td>
+</tr>
+<tr class="odd">
+<td><strong>Validatore</strong></td>
+<td>Codifica umana, calcolo kappa</td>
+</tr>
+<tr class="even">
+<td><strong>Analista dati</strong></td>
+<td>Gestione CSV, analisi engagement</td>
+</tr>
+<tr class="odd">
+<td><strong>Redattore</strong></td>
+<td>Struttura paper, scrittura</td>
+</tr>
+</tbody>
+</table>
 </div></div>
+<p>I ruoli sono <strong>flessibili</strong> — tutti partecipano a tutte le fasi.</p>
+<aside class="notes">
+<p>I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di coordinare ciascuna fase del progetto. L’analista IA si occupa della progettazione dei prompt per Gemini e della classificazione automatizzata. Il validatore coordina la codifica umana e il calcolo dell’intercoder reliability. L’analista dati gestisce il CSV e analizza i pattern di engagement. Il redattore coordina la scrittura del paper. Ma tutti contribuiscono a tutto: nella fase di validazione, ad esempio, ogni membro del gruppo codifica indipendentemente un campione di 50 immagini.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="procedura-di-registrazione" class="slide level2">
+<h2>Procedura di registrazione</h2>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -545,12 +774,21 @@ Fabio Giglietto
 <p><strong>Da fare oggi</strong></p>
 </div>
 <div class="callout-content">
-<p>Pubblicate i nomi nel forum rispondendo al post dedicato. Il responsabile configura il documento condiviso <strong>entro la fine della giornata</strong>.</p>
+<ol type="1">
+<li>Formate il gruppo e scegliete il <strong>responsabile</strong></li>
+<li>Il responsabile posta nel <strong>forum su Blended</strong> i nomi dei membri, indicando chi è il responsabile</li>
+<li>I gruppi ricevono un <strong>identificativo numerico</strong></li>
+<li>Il responsabile copia il <a href="https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&amp;ouid=106569793733516182660&amp;rtpof=true&amp;sd=true"><strong>modello di relazione</strong></a> e lo condivide:
+<ul>
+<li>con i <strong>membri del gruppo</strong> in modalità <strong>modifica</strong></li>
+<li>con <strong>fabio.giglietto@uniurb.it</strong> e <strong>bruna.almeidaparoni@uniurb.it</strong> in modalità <strong>commento</strong></li>
+</ul></li>
+</ol>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l’autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha due compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile, (2) copiare il modello di relazione (Google Docs) e condividerlo con i membri in modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Ad ogni gruppo sarà assegnato un identificativo numerico dopo la registrazione nel forum.</p>
+<p>Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l’autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha tre compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile — il docente assegnerà poi un identificativo numerico, (2) copiare il modello di relazione disponibile come Google Doc, (3) condividere la copia con i membri in modalità modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Il documento condiviso sarà usato per la stesura progressiva del paper nelle settimane successive.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -566,90 +804,17 @@ Fabio Giglietto
 <section id="sviluppare-la-domanda-di-ricerca" class="slide level2">
 <h2>Sviluppare la domanda di ricerca</h2>
 <div class="orange-box">
-<p><strong>Esercizio di gruppo (15 minuti)</strong></p>
+<p><strong>Esercizio di gruppo (30 minuti)</strong></p>
 <ol type="1">
-<li>Formulate una <strong>domanda di ricerca specifica</strong> per il vostro gruppo</li>
-<li>Identificate <strong>2-3 variabili</strong> e pensate a come le <strong>operazionalizzereste</strong> (ricordate il processo con le 20 headline)</li>
-<li>Proponete <strong>ipotesi preliminari</strong> e quale <strong>fase della pipeline</strong> vorreste personalizzare</li>
+<li>Esplorate il dataset: sfogliate le <strong>immagini</strong> e il <strong>CSV</strong> con le metriche</li>
+<li>Scegliete un <strong>angolo di classificazione</strong> (soggetto, emozione, tecnica, intento)</li>
+<li>Definite <strong>3-5 categorie</strong> e provate a operazionalizzarle (ricordate le 20 headline!)</li>
+<li>Formulate <strong>ipotesi preliminari:</strong> quali categorie generano più engagement?</li>
 <li>Presentate brevemente alla classe (2 minuti per gruppo)</li>
 </ol>
 </div>
-<p>Esempi di angoli specifici:</p>
-<ul>
-<li>Differenze di ricezione per <strong>tipo di immagine</strong> (bambini, animali, paesaggi)</li>
-<li>Pattern nei commenti: <strong>riconoscimento IA</strong> vs.&nbsp;reazioni emotive</li>
-<li>Confronto tra <strong>pagine/gruppi</strong> con diverso orientamento</li>
-</ul>
 <aside class="notes">
-<p>Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già praticato la pipeline nel seminario Paroni, possono pensare non solo a COSA studiare ma a COME personalizzare la pipeline: quale classificazione binaria definire (non solo “politico/non politico” ma ad esempio “consapevole IA/non consapevole”), che tipo di clustering applicare ai commenti, quali criteri di validazione adottare. L’esperienza con le 20 headline li ha preparati a operazionalizzare concetti ambigui (ricordare la discussione su cosa sia “politico” — ora devono decidere cosa sia “riconoscimento IA” in un commento). Dare 15 minuti, poi presentazione rapida di ogni gruppo.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="strumenti-e-risorse" class="slide level2" data-background-color="#C5612E">
-<h2>Strumenti e Risorse</h2>
-<aside class="notes">
-<p>Sezione 4: panoramica degli strumenti che useremo. Dettagli operativi per la raccolta dati di domani.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="gli-strumenti-del-progetto" class="slide level2">
-<h2>Gli strumenti del progetto</h2>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 47%">
-<col style="width: 23%">
-<col style="width: 28%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Strumento</th>
-<th>Uso</th>
-<th>Fase</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Meta Content Library</strong></td>
-<td>Raccolta post e commenti da Facebook/Instagram</td>
-<td>Raccolta (settimana 4)</td>
-</tr>
-<tr class="even">
-<td><strong>Google Gemini</strong></td>
-<td>Classificazione contenuti, analisi immagini e testo</td>
-<td>Analisi (settimana 5)</td>
-</tr>
-<tr class="odd">
-<td><strong>NotebookLM</strong></td>
-<td>Organizzazione letteratura, sintesi fonti</td>
-<td>Scrittura (settimana 6)</td>
-</tr>
-<tr class="even">
-<td><strong>Foglio di calcolo</strong></td>
-<td>Dataset strutturato, codifica, calcoli</td>
-<td>Tutte le fasi</td>
-</tr>
-</tbody>
-</table>
-<aside class="notes">
-<p>Panoramica degli strumenti. Meta Content Library è lo strumento di Facebook per la ricerca accademica: permette di cercare e scaricare post pubblici con relativi commenti e metriche di engagement. L’accesso avviene tramite il portale di ricerca di Meta. Gemini sarà usato per la classificazione automatizzata nella settimana 5: caricheremo i commenti e chiederemo al modello di classificarli secondo il nostro codebook. NotebookLM per la parte di scrittura: organizzare la letteratura, generare bozze della sezione teorica. Il foglio di calcolo (Google Sheets) è lo strumento di base per il dataset.</p>
+<p>Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già praticato la pipeline nel seminario Paroni, possono pensare non solo a COSA classificare ma a COME operazionalizzare le categorie. L’esperienza con le 20 headline li ha preparati a operazionalizzare concetti ambigui (ricordare la discussione su cosa sia “politico” — ora devono decidere cosa sia “contenuto nostalgico” o “fotorealistico” in un’immagine). Dare 30 minuti totali: 15 per esplorare il dataset e discutere, 15 per definire lo schema. Poi presentazione rapida di ogni gruppo (2 minuti ciascuno). L’esplorazione iniziale delle immagini è cruciale: devono vedere cosa c’è prima di decidere come classificarlo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -664,7 +829,12 @@ Fabio Giglietto
 </section>
 <section id="timeline-del-progetto" class="slide level2">
 <h2>Timeline del progetto</h2>
-<table class="caption-top">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 22%">
+<col style="width: 37%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Settimana</th>
@@ -681,12 +851,12 @@ Fabio Giglietto
 <tr class="even">
 <td><strong>4</strong></td>
 <td>Mer 18</td>
-<td><strong>Lab:</strong> raccolta post e commenti</td>
+<td><strong>Lab:</strong> prompt design e classificazione pilota</td>
 </tr>
 <tr class="odd">
 <td><strong>5</strong></td>
 <td>Lun 23</td>
-<td><strong>Lab:</strong> analisi contenuti con Gemini</td>
+<td><strong>Lab:</strong> classificazione completa (~300-400 immagini)</td>
 </tr>
 <tr class="even">
 <td><strong>5</strong></td>
@@ -696,7 +866,7 @@ Fabio Giglietto
 <tr class="odd">
 <td><strong>5</strong></td>
 <td>Mer 25</td>
-<td>Consultazione gruppi</td>
+<td>Consultazione gruppi + analisi engagement</td>
 </tr>
 <tr class="even">
 <td><strong>6</strong></td>
@@ -711,7 +881,7 @@ Fabio Giglietto
 <tr class="even">
 <td><strong>6</strong></td>
 <td>Mer 1 Apr</td>
-<td>Sintesi e consultazioni finali</td>
+<td>Sintesi inter-gruppo e consultazioni finali</td>
 </tr>
 <tr class="odd">
 <td>—</td>
@@ -721,7 +891,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Timeline completa del progetto. Le settimane 4-5 sono le più intensive: raccolta dati, analisi automatizzata, validazione. La settimana 6 è dedicata alla scrittura. Il paper va consegnato 2 settimane prima dell’appello di giugno. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere in parallelo tra le sessioni. I gruppi che restano indietro nella raccolta dati avranno difficoltà a recuperare.</p>
+<p>Timeline completa del progetto. Domani è la sessione più importante per la preparazione: i gruppi progettano e testano i loro prompt di classificazione, creano il codebook e classificano un campione pilota di 30-50 immagini. Lunedì prossimo si scala: classificazione completa delle 300-400 immagini con Gemini. Martedì la validazione umana con calcolo del kappa. Mercoledì la consultazione con il docente e l’analisi dei pattern di engagement. La settimana 6 è dedicata alla scrittura. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere tra le sessioni.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -734,42 +904,118 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="per-domani-preparazione-alla-raccolta-dati" class="slide level2">
-<h2>Per domani: preparazione alla raccolta dati</h2>
-<p><strong>Mercoledì 18 Marzo:</strong> Lab — Raccolta Post e Commenti</p>
+<section id="la-pipeline-nel-progetto" class="slide level2" data-background-color="#C5612E">
+<h2>La pipeline nel progetto</h2>
+<aside class="notes">
+<p>Sezione riassuntiva: come si mappa la pipeline LLMs-in-the-loop dal seminario Paroni al progetto attuale.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dalla-pipeline-paroni-al-progetto" class="slide level2">
+<h2>Dalla pipeline Paroni al progetto</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fase pipeline</th>
+<th>Seminario Paroni (sett. 3)</th>
+<th>Progetto (sett. 4-6)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1. Dati</strong></td>
+<td>20 headline (fornite)</td>
+<td>~300-400 immagini + CSV (forniti dal docente)</td>
+</tr>
+<tr class="even">
+<td><strong>2. Classificazione</strong></td>
+<td>Binaria: politico / non politico</td>
+<td>Multi-categoria: schema del gruppo</td>
+</tr>
+<tr class="odd">
+<td><strong>3. Prompt</strong></td>
+<td>Prompt strutturato con ruolo + esempi</td>
+<td>Prompt <strong>multimodale</strong>: ruolo + definizioni + immagine</td>
+</tr>
+<tr class="even">
+<td><strong>4. Codifica IA</strong></td>
+<td>Gemini classifica headline</td>
+<td>Gemini classifica <strong>immagini</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>5. Codifica umana</strong></td>
+<td>Individuale → consenso di gruppo</td>
+<td>Ogni membro codifica <strong>50 immagini</strong> indipendentemente</td>
+</tr>
+<tr class="even">
+<td><strong>6. Confronto</strong></td>
+<td>Gruppo vs.&nbsp;Gemini</td>
+<td><strong>Cohen’s kappa</strong>: umano-umano e umano-IA</td>
+</tr>
+<tr class="odd">
+<td><strong>7. Iterazione</strong></td>
+<td>Raffinamento prompt</td>
+<td>Raffinamento codebook + prompt (matrice di confusione)</td>
+</tr>
+<tr class="even">
+<td><strong>8. Analisi</strong></td>
+<td>—</td>
+<td>Metriche engagement (VD) per categoria (VI)</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Questa tabella è il riferimento metodologico centrale del progetto. Mappando passo per passo dal seminario Paroni al progetto, gli studenti vedono la continuità: hanno già fatto i passi 1-7 con le headline, ora li ripetono con le immagini a scala maggiore. Il passo 8 è la novità: l’analisi dell’engagement. Una volta validate le categorie (passo 7), le usano come variabile indipendente per spiegare la variazione nelle metriche di engagement dal CSV (reazioni, condivisioni, visualizzazioni, conteggio commenti). Questo trasforma una classificazione in un’analisi empirica con implicazioni teoriche. Riferimento: la pipeline è basata su Marino &amp; Giglietto (2024).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="per-domani-preparazione-al-lab" class="slide level2">
+<h2>Per domani: preparazione al lab</h2>
+<p><strong>Mercoledì 18 Marzo:</strong> Lab — Prompt Design e Classificazione Pilota</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="cosa-preparare">Cosa preparare</h3>
 <ul>
-<li>Account <strong>Meta Content Library</strong> configurato</li>
-<li>Laptop con browser aggiornato</li>
-<li>Foglio di calcolo condiviso nel gruppo</li>
-<li>Criteri di selezione dei post definiti</li>
+<li>Lo <strong>schema di classificazione</strong> definito oggi</li>
+<li><strong>Definizioni provvisorie</strong> delle categorie</li>
+<li>Account <strong>Google Gemini</strong> funzionante</li>
+<li>Foglio di calcolo <strong>condiviso</strong> nel gruppo</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="cosa-faremo">Cosa faremo</h3>
+<h3 id="cosa-faremo-domani">Cosa faremo domani</h3>
 <ul>
-<li>Ricerca di post con immagini AI slop</li>
-<li>Download di post e commenti</li>
-<li>Costruzione del dataset iniziale</li>
-<li>Screening preliminare con Gemini</li>
+<li>Scrivere il <strong>prompt di classificazione</strong></li>
+<li>Testare su <strong>10-15 immagini</strong> pilota</li>
+<li><strong>Raffinare</strong> prompt e categorie</li>
+<li>Documentare il <strong>codebook</strong> nel foglio condiviso</li>
+<li>Obiettivo: classificazione pilota di <strong>30-50 immagini</strong></li>
 </ul>
 </div></div>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Attenzione</strong></p>
-</div>
-<div class="callout-content">
-<p>L’accesso a Meta Content Library richiede un account verificato. Se non lo avete ancora configurato, fatelo <strong>oggi stesso</strong>: la procedura può richiedere alcune ore.</p>
-</div>
-</div>
-</div>
 <aside class="notes">
-<p>Istruzioni operative per domani. I gruppi dovrebbero arrivare con un’idea chiara di quali tipi di post cercare e con gli strumenti tecnici configurati. Meta Content Library richiede un account verificato — verificare che tutti abbiano completato la procedura. Il foglio di calcolo condiviso (Google Sheets) sarà il repository centrale del dataset. Domani è una sessione di lavoro pratico: il docente e i tutor saranno disponibili per assistenza tecnica.</p>
+<p>Istruzioni operative per domani. I gruppi dovrebbero arrivare con lo schema di classificazione definito oggi e le prime definizioni delle categorie. Domani è una sessione interamente pratica: si progettano i prompt, si testano su un campione di immagini, si raffina iterativamente (come nel seminario Paroni), e si documenta tutto nel codebook. Alla fine della sessione domani, ogni gruppo deve avere: un prompt testato e raffinato, un codebook documentato nel foglio condiviso, e una classificazione pilota di almeno 30-50 immagini. Il docente e i tutor saranno disponibili per assistenza durante tutto il lab.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -784,11 +1030,11 @@ Fabio Giglietto
 </section>
 <section id="grazie" class="slide level2" data-background-color="#C5612E">
 <h2>Grazie!</h2>
-<p><strong>Prossima lezione:</strong> Lab — Raccolta Post e Commenti (18 Marzo 2026)</p>
+<p><strong>Prossima lezione:</strong> Lab — Prompt Design e Classificazione Pilota (18 Marzo 2026)</p>
 <p>📧 fabio.giglietto@uniurb.it</p>
 <p>🌐 blended.uniurb.it</p>
 <aside class="notes">
-<p>Chiusura. Ricordare: (1) postare i nomi del gruppo nel forum su Blended indicando il responsabile, (2) il responsabile copia il modello di relazione e lo condivide (membri in modifica, docente e Paroni in commento), (3) configurare Meta Content Library, (4) preparare il foglio di calcolo condiviso. A domani per il lab di raccolta dati!</p>
+<p>Chiusura. Ricordare: (1) postare i nomi del gruppo nel forum su Blended indicando il responsabile, (2) il responsabile copia il modello di relazione e lo condivide (membri in modifica, docente e Paroni in commento), (3) esplorare il dataset (immagini e CSV) per prepararsi a domani, (4) iniziare a pensare allo schema di classificazione. A domani per il lab di prompt design e classificazione pilota!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
