@@ -205,13 +205,11 @@ Fabio Giglietto
 </section>
 <section id="cosè-lai-slop" class="slide level2">
 <h2>Cos’è l’<em>AI slop</em></h2>
-<div class="orange-box">
-<p><strong>Definizione</strong></p>
-<p><em>AI slop:</em> contenuti generati dall’IA — tipicamente immagini — diffusi sui social media come <strong>engagement bait</strong>, senza pretesa di autenticità ma con impatto degradante sull’ecosistema informativo <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span>.</p>
+<div class="highlight-box">
+<p><em>AI slop:</em> contenuti generati dall’IA diffusi sui social media come <strong>engagement bait</strong>, senza pretesa di autenticità ma con impatto degradante sull’ecosistema informativo <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span>.</p>
 </div>
-<p>Caratteristiche principali:</p>
 <ul>
-<li>Immagini sintetiche con <strong>stile riconoscibile</strong> (iperrealismo lucido, dita imprecise)</li>
+<li>Immagini e video sintetici con <strong>stile riconoscibile</strong> (iperrealismo lucido, dita imprecise)</li>
 <li>Distribuite in <strong>pagine e gruppi Facebook</strong> per massimizzare le interazioni</li>
 <li>Sfruttano <strong>leve emotive</strong> (nostalgia, compassione, indignazione)</li>
 <li>Spesso <strong>amplificate dagli algoritmi</strong> di raccomandazione</li>
@@ -421,15 +419,14 @@ Fabio Giglietto
 <section id="da-imparare-nel-progetto" class="slide level2">
 <h2>Da imparare nel progetto</h2>
 <div class="highlight-box">
-<p><strong>Il contributo originale del vostro progetto:</strong> classificare sistematicamente le immagini AI slop e analizzare come le diverse categorie predicono l’engagement — un’analisi che né Paroni né Terenzi hanno affrontato.</p>
+<p><strong>Il contributo originale:</strong> classificare sistematicamente i contenuti AI slop e analizzare come le categorie predicono l’engagement.</p>
 </div>
 <ul>
 <li>Sviluppare uno <strong>schema di classificazione</strong> per contenuti visivi</li>
-<li>Lavorare su <strong>scala maggiore</strong> (300-400 immagini, non 20 headline)</li>
-<li>Usare Gemini in modalità <strong>multimodale</strong> (analisi immagini)</li>
+<li>Lavorare su <strong>scala maggiore</strong> (300-400 contenuti, non 20 headline)</li>
+<li>Usare Gemini in modalità <strong>multimodale</strong> (analisi immagini e video)</li>
 <li>Calcolare l’<strong>intercoder reliability</strong> (Cohen’s kappa)</li>
-<li>Collegare categorie di contenuto a <strong>metriche di engagement</strong></li>
-<li>Scrivere un <strong>paper di ricerca</strong> (struttura IMRaD)</li>
+<li>Collegare categorie a <strong>metriche di engagement</strong> e scrivere un <strong>paper</strong> (IMRaD)</li>
 </ul>
 <aside class="notes">
 <p>Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La classificazione multi-categoria di immagini è l’oggetto principale. Il passaggio da 20 headline a 300-400 immagini richiede strategie diverse: batch processing, gestione della consistenza, documentazione del codebook. L’uso multimodale di Gemini è una novità: finora hanno classificato testo, ora classificheranno immagini. L’analisi dell’engagement aggiunge un passo quantitativo: le categorie validate diventano la variabile indipendente per spiegare la variazione nelle metriche di engagement (reazioni, condivisioni, visualizzazioni).</p>
@@ -513,23 +510,11 @@ Fabio Giglietto
 </section>
 <section id="cosa-non-è-disponibile" class="slide level2">
 <h2>Cosa NON è disponibile</h2>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Limitazioni del dataset</strong></p>
-</div>
-<div class="callout-content">
 <ul>
 <li><strong>Testo dei singoli commenti:</strong> disponibile solo il conteggio aggregato</li>
-<li><strong>Contesto originale su Facebook:</strong> gli URL interni di Meta Content Library non sono accessibili</li>
+<li><strong>Contesto originale su Facebook:</strong> gli URL interni di MCL non sono accessibili</li>
 <li><strong>Accesso diretto a Meta Content Library:</strong> richiede un account ricercatore verificato</li>
 </ul>
-</div>
-</div>
-</div>
 <p>Queste limitazioni vanno <strong>discusse nel paper</strong> (sezione Discussione/Limitazioni).</p>
 <aside class="notes">
 <p>È importante essere trasparenti sulle limitazioni fin dall’inizio. Gli studenti non possono analizzare il contenuto testuale dei commenti — solo quanti ce ne sono. Non possono vedere il post nel suo contesto originale su Facebook. Queste limitazioni devono essere riportate nel paper finale: sono limitazioni del metodo, non errori. Nella sezione Discussione del paper, i gruppi discuteranno come queste limitazioni influenzano l’interpretazione dei risultati. Ad esempio: un alto numero di commenti potrebbe indicare sia apprezzamento sia critica, senza poter distinguere.</p>
@@ -574,38 +559,36 @@ Fabio Giglietto
 <section id="angoli-di-classificazione-possibili" class="slide level2">
 <h2>Angoli di classificazione possibili</h2>
 <p>Ogni gruppo sviluppa il proprio <strong>schema di classificazione</strong>. Esempi:</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="per-soggetto-visivo">Per soggetto visivo</h3>
-<ul>
-<li>Bambini, anziani, famiglie</li>
-<li>Animali</li>
-<li>Paesaggi, natura</li>
-<li>Contenuto religioso, patriottico</li>
-</ul>
-<h3 id="per-tecnica-generativa">Per tecnica generativa</h3>
-<ul>
-<li>Fotorealistico</li>
-<li>Stilizzato / pittorico</li>
-<li>Ibrido foto-IA</li>
-<li>Artefatti evidenti</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<h3 id="per-strategia-emotiva">Per strategia emotiva</h3>
-<ul>
-<li>Nostalgia, tenerezza</li>
-<li>Meraviglia, stupore</li>
-<li>Paura, allarme</li>
-<li>Umorismo</li>
-</ul>
-<h3 id="per-intento-apparente">Per intento apparente</h3>
-<ul>
-<li><em>Engagement bait</em></li>
-<li>Promozione commerciale</li>
-<li>Messaggio politico</li>
-<li>Costruzione di comunità</li>
-</ul>
-</div></div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Angolo</th>
+<th>Categorie possibili</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Per soggetto visivo</strong></td>
+<td>Bambini, animali, paesaggi, religioso, patriottico</td>
+</tr>
+<tr class="even">
+<td><strong>Per strategia emotiva</strong></td>
+<td>Nostalgia, tenerezza, meraviglia, paura, umorismo</td>
+</tr>
+<tr class="odd">
+<td><strong>Per tecnica generativa</strong></td>
+<td>Fotorealistico, stilizzato, ibrido foto-IA, artefatti evidenti</td>
+</tr>
+<tr class="even">
+<td><strong>Per intento apparente</strong></td>
+<td><em>Engagement bait</em>, promozione, messaggio politico, comunità</td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
 <p>Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inventarne di nuove. L’aspetto cruciale è l’operazionalizzazione: come con le 20 headline nel seminario Paroni, devono definire con precisione cosa significa ogni categoria. Ad esempio, “nostalgia” è un concetto ampio: va specificato (immagini che rappresentano un passato idealizzato? scene familiari? oggetti vintage?). Ogni categoria del codebook deve avere: nome, definizione, esempi positivi, esempi negativi, regole per i casi ambigui. Questo è esattamente il processo praticato nel workshop Paroni, ora applicato alle immagini.</p>
 <style type="text/css">
@@ -636,31 +619,23 @@ Fabio Giglietto
 <tbody>
 <tr class="odd">
 <td><strong>Tema</strong></td>
-<td>Classificazione di immagini AI slop e pattern di engagement</td>
+<td>Classificazione di contenuti AI slop e pattern di engagement</td>
 </tr>
 <tr class="even">
 <td><strong>Dati</strong></td>
-<td>~300-400 immagini + CSV con metriche (dataset fornito dal docente)</td>
+<td>~300-400 contenuti multimediali + CSV con metriche (forniti dal docente)</td>
 </tr>
 <tr class="odd">
 <td><strong>Strumenti</strong></td>
-<td>Google Gemini (classificazione multimodale), NotebookLM, fogli di calcolo</td>
+<td>Google Gemini (multimodale), NotebookLM, fogli di calcolo</td>
 </tr>
 <tr class="even">
 <td><strong>Metodologia</strong></td>
-<td>LLMs-in-the-loop <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span> adattata al contenuto visivo</td>
+<td>LLMs-in-the-loop <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></td>
 </tr>
 <tr class="odd">
 <td><strong>Output</strong></td>
-<td>Paper di ricerca (struttura IMRaD)</td>
-</tr>
-<tr class="even">
-<td><strong>Peso</strong></td>
-<td>75% del voto finale (max 23,25 punti)</td>
-</tr>
-<tr class="odd">
-<td><strong>Scadenza</strong></td>
-<td>2 settimane prima dell’appello di giugno</td>
+<td>Paper di ricerca (IMRaD) — 75% del voto, consegna 2 sett. prima dell’appello</td>
 </tr>
 </tbody>
 </table>
@@ -696,22 +671,16 @@ Fabio Giglietto
 </section>
 <section id="composizione-e-ruoli" class="slide level2">
 <h2>Composizione e ruoli</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="composizione">Composizione</h3>
 <ul>
-<li>Massimo <strong>6 studenti</strong> per gruppo</li>
-<li>Mix di competenze consigliato</li>
+<li>Massimo <strong>6 studenti</strong> per gruppo — indicare un <strong>responsabile</strong></li>
 <li>Ogni gruppo riceve un <strong>identificativo numerico</strong></li>
-<li>Indicare un <strong>responsabile</strong> del gruppo</li>
+<li>I ruoli sono <strong>flessibili</strong> — tutti partecipano a tutte le fasi</li>
 </ul>
-</div><div class="column" style="width:50%;">
-<h3 id="ruoli-suggeriti">Ruoli suggeriti</h3>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Ruolo</th>
-<th>Responsabilità</th>
+<th>Responsabilità principale</th>
 </tr>
 </thead>
 <tbody>
@@ -737,8 +706,6 @@ Fabio Giglietto
 </tr>
 </tbody>
 </table>
-</div></div>
-<p>I ruoli sono <strong>flessibili</strong> — tutti partecipano a tutte le fasi.</p>
 <aside class="notes">
 <p>I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di coordinare ciascuna fase del progetto. L’analista IA si occupa della progettazione dei prompt per Gemini e della classificazione automatizzata. Il validatore coordina la codifica umana e il calcolo dell’intercoder reliability. L’analista dati gestisce il CSV e analizza i pattern di engagement. Il redattore coordina la scrittura del paper. Ma tutti contribuiscono a tutto: nella fase di validazione, ad esempio, ogni membro del gruppo codifica indipendentemente un campione di 50 immagini.</p>
 <style type="text/css">
@@ -753,30 +720,18 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="procedura-di-registrazione" class="slide level2">
+<section id="procedura-di-registrazione" class="slide level2 smaller">
 <h2>Procedura di registrazione</h2>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Da fare oggi</strong></p>
-</div>
-<div class="callout-content">
+<p><strong>Da fare oggi:</strong></p>
 <ol type="1">
 <li>Formate il gruppo e scegliete il <strong>responsabile</strong></li>
-<li>Il responsabile posta nel <strong>forum su Blended</strong> i nomi dei membri, indicando chi è il responsabile</li>
-<li>I gruppi ricevono un <strong>identificativo numerico</strong></li>
+<li>Il responsabile posta nel <strong>forum su Blended</strong> i nomi dei membri, indicando il responsabile</li>
 <li>Il responsabile copia il <a href="https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&amp;ouid=106569793733516182660&amp;rtpof=true&amp;sd=true"><strong>modello di relazione</strong></a> e lo condivide:
 <ul>
 <li>con i <strong>membri del gruppo</strong> in modalità <strong>modifica</strong></li>
 <li>con <strong>fabio.giglietto@uniurb.it</strong> e <strong>bruna.almeidaparoni@uniurb.it</strong> in modalità <strong>commento</strong></li>
 </ul></li>
 </ol>
-</div>
-</div>
-</div>
 <aside class="notes">
 <p>Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l’autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha tre compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile — il docente assegnerà poi un identificativo numerico, (2) copiare il modello di relazione disponibile come Google Doc, (3) condividere la copia con i membri in modalità modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Il documento condiviso sarà usato per la stesura progressiva del paper nelle settimane successive.</p>
 <style type="text/css">
@@ -796,9 +751,8 @@ Fabio Giglietto
 <div class="orange-box">
 <p><strong>Esercizio di gruppo (30 minuti)</strong></p>
 <ol type="1">
-<li>Esplorate il dataset: sfogliate le <strong>immagini</strong> e il <strong>CSV</strong> con le metriche</li>
-<li>Scegliete un <strong>angolo di classificazione</strong> (soggetto, emozione, tecnica, intento)</li>
-<li>Definite <strong>3-5 categorie</strong> e provate a operazionalizzarle (ricordate le 20 headline!)</li>
+<li>Esplorate il dataset: sfogliate i <strong>contenuti</strong> e il <strong>CSV</strong> con le metriche</li>
+<li>Scegliete un <strong>angolo di classificazione</strong> e definite <strong>3-5 categorie</strong></li>
 <li>Formulate <strong>ipotesi preliminari:</strong> quali categorie generano più engagement?</li>
 <li>Presentate brevemente alla classe (2 minuti per gruppo)</li>
 </ol>
@@ -910,7 +864,7 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="dalla-pipeline-paroni-al-progetto" class="slide level2">
+<section id="dalla-pipeline-paroni-al-progetto" class="slide level2 smaller">
 <h2>Dalla pipeline Paroni al progetto</h2>
 <table class="caption-top">
 <colgroup>
@@ -920,16 +874,16 @@ Fabio Giglietto
 </colgroup>
 <thead>
 <tr class="header">
-<th>Fase pipeline</th>
-<th>Seminario Paroni (sett. 3)</th>
-<th>Progetto (sett. 4-6)</th>
+<th>Fase</th>
+<th>Seminario Paroni</th>
+<th>Progetto</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>1. Dati</strong></td>
-<td>20 headline (fornite)</td>
-<td>~300-400 immagini + CSV (forniti dal docente)</td>
+<td>20 headline</td>
+<td>~300-400 contenuti + CSV</td>
 </tr>
 <tr class="even">
 <td><strong>2. Classificazione</strong></td>
@@ -938,18 +892,18 @@ Fabio Giglietto
 </tr>
 <tr class="odd">
 <td><strong>3. Prompt</strong></td>
-<td>Prompt strutturato con ruolo + esempi</td>
-<td>Prompt <strong>multimodale</strong>: ruolo + definizioni + immagine</td>
+<td>Strutturato con ruolo + esempi</td>
+<td><strong>Multimodale</strong>: ruolo + definizioni + contenuto</td>
 </tr>
 <tr class="even">
 <td><strong>4. Codifica IA</strong></td>
 <td>Gemini classifica headline</td>
-<td>Gemini classifica <strong>immagini</strong></td>
+<td>Gemini classifica <strong>contenuti visivi</strong></td>
 </tr>
 <tr class="odd">
 <td><strong>5. Codifica umana</strong></td>
-<td>Individuale → consenso di gruppo</td>
-<td>Ogni membro codifica <strong>50 immagini</strong> indipendentemente</td>
+<td>Individuale → consenso</td>
+<td>Ogni membro codifica <strong>50 contenuti</strong></td>
 </tr>
 <tr class="even">
 <td><strong>6. Confronto</strong></td>
@@ -959,12 +913,12 @@ Fabio Giglietto
 <tr class="odd">
 <td><strong>7. Iterazione</strong></td>
 <td>Raffinamento prompt</td>
-<td>Raffinamento codebook + prompt (matrice di confusione)</td>
+<td>Raffinamento codebook + prompt</td>
 </tr>
 <tr class="even">
 <td><strong>8. Analisi</strong></td>
 <td>—</td>
-<td>Metriche engagement (VD) per categoria (VI)</td>
+<td>Engagement (VD) per categoria (VI)</td>
 </tr>
 </tbody>
 </table>

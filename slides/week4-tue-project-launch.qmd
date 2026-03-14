@@ -55,15 +55,11 @@ Sezione 1: breve ricapitolazione del fenomeno AI slop per contestualizzare il pr
 
 ## Cos'è l'*AI slop*
 
-::: {.orange-box}
-**Definizione**
-
-*AI slop:* contenuti generati dall'IA — tipicamente immagini — diffusi sui social media come **engagement bait**, senza pretesa di autenticità ma con impatto degradante sull'ecosistema informativo [@terenzi2025].
+::: {.highlight-box}
+*AI slop:* contenuti generati dall'IA diffusi sui social media come **engagement bait**, senza pretesa di autenticità ma con impatto degradante sull'ecosistema informativo [@terenzi2025].
 :::
 
-Caratteristiche principali:
-
-- Immagini sintetiche con **stile riconoscibile** (iperrealismo lucido, dita imprecise)
+- Immagini e video sintetici con **stile riconoscibile** (iperrealismo lucido, dita imprecise)
 - Distribuite in **pagine e gruppi Facebook** per massimizzare le interazioni
 - Sfruttano **leve emotive** (nostalgia, compassione, indignazione)
 - Spesso **amplificate dagli algoritmi** di raccomandazione
@@ -167,15 +163,14 @@ La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: 
 ## Da imparare nel progetto
 
 ::: {.highlight-box}
-**Il contributo originale del vostro progetto:** classificare sistematicamente le immagini AI slop e analizzare come le diverse categorie predicono l'engagement — un'analisi che né Paroni né Terenzi hanno affrontato.
+**Il contributo originale:** classificare sistematicamente i contenuti AI slop e analizzare come le categorie predicono l'engagement.
 :::
 
 - Sviluppare uno **schema di classificazione** per contenuti visivi
-- Lavorare su **scala maggiore** (300-400 immagini, non 20 headline)
-- Usare Gemini in modalità **multimodale** (analisi immagini)
+- Lavorare su **scala maggiore** (300-400 contenuti, non 20 headline)
+- Usare Gemini in modalità **multimodale** (analisi immagini e video)
 - Calcolare l'**intercoder reliability** (Cohen's kappa)
-- Collegare categorie di contenuto a **metriche di engagement**
-- Scrivere un **paper di ricerca** (struttura IMRaD)
+- Collegare categorie a **metriche di engagement** e scrivere un **paper** (IMRaD)
 
 ::: {.notes}
 Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La classificazione multi-categoria di immagini è l'oggetto principale. Il passaggio da 20 headline a 300-400 immagini richiede strategie diverse: batch processing, gestione della consistenza, documentazione del codebook. L'uso multimodale di Gemini è una novità: finora hanno classificato testo, ora classificheranno immagini. L'analisi dell'engagement aggiunge un passo quantitativo: le categorie validate diventano la variabile indipendente per spiegare la variazione nelle metriche di engagement (reazioni, condivisioni, visualizzazioni).
@@ -205,12 +200,9 @@ Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post r
 
 ## Cosa NON è disponibile
 
-::: {.callout-warning}
-## Limitazioni del dataset
 - **Testo dei singoli commenti:** disponibile solo il conteggio aggregato
-- **Contesto originale su Facebook:** gli URL interni di Meta Content Library non sono accessibili
+- **Contesto originale su Facebook:** gli URL interni di MCL non sono accessibili
 - **Accesso diretto a Meta Content Library:** richiede un account ricercatore verificato
-:::
 
 Queste limitazioni vanno **discusse nel paper** (sezione Discussione/Limitazioni).
 
@@ -239,39 +231,12 @@ Questo è un aspetto chiave del design del progetto. Nella ricerca tradizionale,
 
 Ogni gruppo sviluppa il proprio **schema di classificazione**. Esempi:
 
-::: {.columns}
-::: {.column width="50%"}
-### Per soggetto visivo
-
-- Bambini, anziani, famiglie
-- Animali
-- Paesaggi, natura
-- Contenuto religioso, patriottico
-
-### Per tecnica generativa
-
-- Fotorealistico
-- Stilizzato / pittorico
-- Ibrido foto-IA
-- Artefatti evidenti
-:::
-
-::: {.column width="50%"}
-### Per strategia emotiva
-
-- Nostalgia, tenerezza
-- Meraviglia, stupore
-- Paura, allarme
-- Umorismo
-
-### Per intento apparente
-
-- *Engagement bait*
-- Promozione commerciale
-- Messaggio politico
-- Costruzione di comunità
-:::
-:::
+| Angolo | Categorie possibili |
+|--------|-------------------|
+| **Per soggetto visivo** | Bambini, animali, paesaggi, religioso, patriottico |
+| **Per strategia emotiva** | Nostalgia, tenerezza, meraviglia, paura, umorismo |
+| **Per tecnica generativa** | Fotorealistico, stilizzato, ibrido foto-IA, artefatti evidenti |
+| **Per intento apparente** | *Engagement bait*, promozione, messaggio politico, comunità |
 
 ::: {.notes}
 Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inventarne di nuove. L'aspetto cruciale è l'operazionalizzazione: come con le 20 headline nel seminario Paroni, devono definire con precisione cosa significa ogni categoria. Ad esempio, "nostalgia" è un concetto ampio: va specificato (immagini che rappresentano un passato idealizzato? scene familiari? oggetti vintage?). Ogni categoria del codebook deve avere: nome, definizione, esempi positivi, esempi negativi, regole per i casi ambigui. Questo è esattamente il processo praticato nel workshop Paroni, ora applicato alle immagini.
@@ -281,13 +246,11 @@ Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inven
 
 | Componente | Dettaglio |
 |-----------|----------|
-| **Tema** | Classificazione di immagini AI slop e pattern di engagement |
-| **Dati** | ~300-400 immagini + CSV con metriche (dataset fornito dal docente) |
-| **Strumenti** | Google Gemini (classificazione multimodale), NotebookLM, fogli di calcolo |
-| **Metodologia** | LLMs-in-the-loop [@marino2024] adattata al contenuto visivo |
-| **Output** | Paper di ricerca (struttura IMRaD) |
-| **Peso** | 75% del voto finale (max 23,25 punti) |
-| **Scadenza** | 2 settimane prima dell'appello di giugno |
+| **Tema** | Classificazione di contenuti AI slop e pattern di engagement |
+| **Dati** | ~300-400 contenuti multimediali + CSV con metriche (forniti dal docente) |
+| **Strumenti** | Google Gemini (multimodale), NotebookLM, fogli di calcolo |
+| **Metodologia** | LLMs-in-the-loop [@marino2024] |
+| **Output** | Paper di ricerca (IMRaD) — 75% del voto, consegna 2 sett. prima dell'appello |
 
 ::: {.notes}
 Panoramica sintetica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione). Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo di classificazione specifico e analizzerà se le categorie validate predicono livelli diversi di engagement. Le prossime 3 settimane sono dedicate al progetto: classificazione pilota (domani), classificazione completa e validazione (settimana 5), scrittura (settimana 6). Nota: gli strumenti sono Google Gemini per la classificazione multimodale delle immagini, NotebookLM per la letteratura, e Google Sheets per il dataset.
@@ -301,47 +264,31 @@ Sezione 4: operativa. Formazione dei gruppi, ruoli e procedura di registrazione.
 
 ## Composizione e ruoli
 
-::: {.columns}
-::: {.column width="50%"}
-### Composizione
-
-- Massimo **6 studenti** per gruppo
-- Mix di competenze consigliato
+- Massimo **6 studenti** per gruppo — indicare un **responsabile**
 - Ogni gruppo riceve un **identificativo numerico**
-- Indicare un **responsabile** del gruppo
-:::
+- I ruoli sono **flessibili** — tutti partecipano a tutte le fasi
 
-::: {.column width="50%"}
-### Ruoli suggeriti
-
-| Ruolo | Responsabilità |
-|-------|---------------|
+| Ruolo | Responsabilità principale |
+|-------|--------------------------|
 | **Coordinatore** | Timeline, distribuzione compiti |
 | **Analista IA** | Prompt design, interazione con Gemini |
 | **Validatore** | Codifica umana, calcolo kappa |
 | **Analista dati** | Gestione CSV, analisi engagement |
 | **Redattore** | Struttura paper, scrittura |
-:::
-:::
-
-I ruoli sono **flessibili** — tutti partecipano a tutte le fasi.
 
 ::: {.notes}
 I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di coordinare ciascuna fase del progetto. L'analista IA si occupa della progettazione dei prompt per Gemini e della classificazione automatizzata. Il validatore coordina la codifica umana e il calcolo dell'intercoder reliability. L'analista dati gestisce il CSV e analizza i pattern di engagement. Il redattore coordina la scrittura del paper. Ma tutti contribuiscono a tutto: nella fase di validazione, ad esempio, ogni membro del gruppo codifica indipendentemente un campione di 50 immagini.
 :::
 
-## Procedura di registrazione
+## Procedura di registrazione {.smaller}
 
-::: {.callout-warning}
-## Da fare oggi
+**Da fare oggi:**
 
 1. Formate il gruppo e scegliete il **responsabile**
-2. Il responsabile posta nel **forum su Blended** i nomi dei membri, indicando chi è il responsabile
-3. I gruppi ricevono un **identificativo numerico**
-4. Il responsabile copia il [**modello di relazione**](https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true) e lo condivide:
+2. Il responsabile posta nel **forum su Blended** i nomi dei membri, indicando il responsabile
+3. Il responsabile copia il [**modello di relazione**](https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true) e lo condivide:
    - con i **membri del gruppo** in modalità **modifica**
    - con **fabio.giglietto@uniurb.it** e **bruna.almeidaparoni@uniurb.it** in modalità **commento**
-:::
 
 ::: {.notes}
 Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha tre compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile — il docente assegnerà poi un identificativo numerico, (2) copiare il modello di relazione disponibile come Google Doc, (3) condividere la copia con i membri in modalità modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Il documento condiviso sarà usato per la stesura progressiva del paper nelle settimane successive.
@@ -352,11 +299,10 @@ Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. S
 ::: {.orange-box}
 **Esercizio di gruppo (30 minuti)**
 
-1. Esplorate il dataset: sfogliate le **immagini** e il **CSV** con le metriche
-2. Scegliete un **angolo di classificazione** (soggetto, emozione, tecnica, intento)
-3. Definite **3-5 categorie** e provate a operazionalizzarle (ricordate le 20 headline!)
-4. Formulate **ipotesi preliminari:** quali categorie generano più engagement?
-5. Presentate brevemente alla classe (2 minuti per gruppo)
+1. Esplorate il dataset: sfogliate i **contenuti** e il **CSV** con le metriche
+2. Scegliete un **angolo di classificazione** e definite **3-5 categorie**
+3. Formulate **ipotesi preliminari:** quali categorie generano più engagement?
+4. Presentate brevemente alla classe (2 minuti per gruppo)
 :::
 
 ::: {.notes}
@@ -387,18 +333,18 @@ Timeline completa del progetto. Domani è la sessione più importante per la pre
 Sezione riassuntiva: come si mappa la pipeline LLMs-in-the-loop dal seminario Paroni al progetto attuale.
 :::
 
-## Dalla pipeline Paroni al progetto
+## Dalla pipeline Paroni al progetto {.smaller}
 
-| Fase pipeline | Seminario Paroni (sett. 3) | Progetto (sett. 4-6) |
+| Fase | Seminario Paroni | Progetto |
 |---|---|---|
-| **1. Dati** | 20 headline (fornite) | ~300-400 immagini + CSV (forniti dal docente) |
+| **1. Dati** | 20 headline | ~300-400 contenuti + CSV |
 | **2. Classificazione** | Binaria: politico / non politico | Multi-categoria: schema del gruppo |
-| **3. Prompt** | Prompt strutturato con ruolo + esempi | Prompt **multimodale**: ruolo + definizioni + immagine |
-| **4. Codifica IA** | Gemini classifica headline | Gemini classifica **immagini** |
-| **5. Codifica umana** | Individuale → consenso di gruppo | Ogni membro codifica **50 immagini** indipendentemente |
+| **3. Prompt** | Strutturato con ruolo + esempi | **Multimodale**: ruolo + definizioni + contenuto |
+| **4. Codifica IA** | Gemini classifica headline | Gemini classifica **contenuti visivi** |
+| **5. Codifica umana** | Individuale → consenso | Ogni membro codifica **50 contenuti** |
 | **6. Confronto** | Gruppo vs. Gemini | **Cohen's kappa**: umano-umano e umano-IA |
-| **7. Iterazione** | Raffinamento prompt | Raffinamento codebook + prompt (matrice di confusione) |
-| **8. Analisi** | — | Metriche engagement (VD) per categoria (VI) |
+| **7. Iterazione** | Raffinamento prompt | Raffinamento codebook + prompt |
+| **8. Analisi** | — | Engagement (VD) per categoria (VI) |
 
 ::: {.notes}
 Questa tabella è il riferimento metodologico centrale del progetto. Mappando passo per passo dal seminario Paroni al progetto, gli studenti vedono la continuità: hanno già fatto i passi 1-7 con le headline, ora li ripetono con le immagini a scala maggiore. Il passo 8 è la novità: l'analisi dell'engagement. Una volta validate le categorie (passo 7), le usano come variabile indipendente per spiegare la variazione nelle metriche di engagement dal CSV (reazioni, condivisioni, visualizzazioni, conteggio commenti). Questo trasforma una classificazione in un'analisi empirica con implicazioni teoriche. Riferimento: la pipeline è basata su Marino & Giglietto (2024).
