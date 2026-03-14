@@ -294,6 +294,23 @@ I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di co
 Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha tre compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile — il docente assegnerà poi un identificativo numerico, (2) copiare il modello di relazione disponibile come Google Doc, (3) condividere la copia con i membri in modalità modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Il documento condiviso sarà usato per la stesura progressiva del paper nelle settimane successive.
 :::
 
+## Il modello di relazione
+
+Il [**modello di relazione**](https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true) fornisce la **struttura completa** del paper:
+
+| Sezione | Contenuto |
+|---------|-----------|
+| **Introduzione** | Dal fenomeno AI slop alla vostra domanda di ricerca |
+| **Analisi della letteratura** | Contenuti AI, piattaforme, LLMs-in-the-loop |
+| **Metodologia** | Dataset, schema di classificazione, prompt, validazione, analisi engagement |
+| **Risultati** | Distribuzione categorie, kappa, matrice di confusione, pattern di engagement |
+| **Discussione** | Interpretazione, confronto IA vs. umano, limiti, implicazioni |
+| **Appendice** | Prompt completo per Gemini, codebook |
+
+::: {.notes}
+Presentare il modello di relazione. Il documento Google Docs contiene istruzioni dettagliate per ogni sezione, con suggerimenti specifici (indicati da frecce ➤) su cosa includere e come strutturare il contenuto. Include anche una dichiarazione obbligatoria sull'uso dell'IA. Gli studenti dovrebbero leggerlo per intero prima di iniziare a lavorare — non è un template da riempire meccanicamente, ma una guida ragionata alla struttura IMRaD adattata al progetto. La sezione Metodologia è la più importante: deve essere sufficientemente dettagliata da permettere la replicabilità. Il prompt completo va in Appendice A, il codebook completo in Appendice B.
+:::
+
 ## Sviluppare la domanda di ricerca
 
 ::: {.orange-box}
