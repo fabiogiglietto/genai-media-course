@@ -277,7 +277,7 @@ Fabio Giglietto
 <section id="il-focus-della-ricerca" class="slide level2">
 <h2>Il focus della ricerca</h2>
 <div class="highlight-box">
-<p><strong>Domanda di ricerca del progetto:</strong> Quali categorie di contenuti <em>AI slop</em> esistono nelle comunità Facebook italiane? Come si distribuisce l’engagement (reazioni, condivisioni, visualizzazioni) tra le diverse categorie?</p>
+<p><strong>Domande di ricerca:</strong> Quali contenuti sono <em>AI slop</em> e quali no? Quali sotto-categorie esistono? Come si distribuisce l’engagement tra le categorie?</p>
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -286,15 +286,13 @@ Fabio Giglietto
 <li>L’AI slop è diffuso <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span></li>
 <li>Gli algoritmi lo amplificano</li>
 <li>Genera engagement elevato</li>
-<li>Esistono <strong>pattern visivi</strong> ricorrenti</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="cosa-non-sappiamo">Cosa non sappiamo</h3>
 <ul>
-<li><strong>Quali categorie</strong> di immagini esistono</li>
+<li>Quale <strong>proporzione</strong> dei post è AI slop</li>
+<li><strong>Quali categorie</strong> di AI slop esistono</li>
 <li>Se le categorie <strong>predicono</strong> l’engagement</li>
-<li>Quali <strong>leve emotive</strong> funzionano meglio</li>
-<li>Come la <strong>tecnica generativa</strong> influenza le interazioni</li>
 </ul>
 </div></div>
 <aside class="notes">
@@ -351,13 +349,13 @@ Fabio Giglietto
 </tr>
 <tr class="even">
 <td>Classificazione binaria (politico / non politico)</td>
-<td>Identificazione di immagini sintetiche</td>
-<td>Classificazione <strong>multi-categoria</strong> per schema del gruppo</td>
+<td>Identificazione di contenuti sintetici</td>
+<td><strong>Step 1:</strong> classificazione binaria <strong>AI slop / non AI slop</strong></td>
 </tr>
 <tr class="odd">
 <td>Clustering tematico con Gemini</td>
 <td>Tattiche di manipolazione affettiva</td>
-<td><strong>Classificazione visiva</strong> delle immagini</td>
+<td><strong>Step 2:</strong> classificazione <strong>multi-categoria</strong> (solo AI slop)</td>
 </tr>
 <tr class="even">
 <td>Validazione (4 criteri, ✓/⚠/✗)</td>
@@ -419,11 +417,11 @@ Fabio Giglietto
 <section id="da-imparare-nel-progetto" class="slide level2">
 <h2>Da imparare nel progetto</h2>
 <div class="highlight-box">
-<p><strong>Il contributo originale:</strong> classificare sistematicamente i contenuti AI slop e analizzare come le categorie predicono l’engagement.</p>
+<p><strong>Il contributo originale:</strong> identificare i contenuti AI slop, classificarli in categorie e analizzare come queste predicono l’engagement.</p>
 </div>
 <ul>
-<li>Sviluppare uno <strong>schema di classificazione</strong> per contenuti visivi</li>
-<li>Lavorare su <strong>scala maggiore</strong> (300-400 contenuti, non 20 headline)</li>
+<li><strong>Classificazione binaria</strong> AI slop / non AI slop (come politico / non politico nel seminario Paroni)</li>
+<li>Sviluppare uno <strong>schema di classificazione tematica</strong> per i contenuti AI slop</li>
 <li>Usare Gemini in modalità <strong>multimodale</strong> (analisi immagini e video)</li>
 <li>Calcolare l’<strong>intercoder reliability</strong> (Cohen’s kappa)</li>
 <li>Collegare categorie a <strong>metriche di engagement</strong> e scrivere un <strong>paper</strong> (IMRaD)</li>
@@ -461,7 +459,7 @@ Fabio Giglietto
 <section id="un-dataset-pronto-per-lanalisi" class="slide level2">
 <h2>Un dataset pronto per l’analisi</h2>
 <div class="highlight-box">
-<p>Il docente fornisce un <strong>dataset pre-curato</strong> tratto dalla ricerca Terenzi &amp; Giglietto <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>. Potete concentrarvi su classificazione e analisi.</p>
+<p>Il docente fornisce un <strong>dataset pre-curato</strong> tratto dalla ricerca Terenzi &amp; Giglietto <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>. Il dataset contiene post da pagine note per pubblicare AI slop, ma <strong>non tutti i post sono AI slop</strong>.</p>
 </div>
 <table class="caption-top">
 <colgroup>
@@ -495,7 +493,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Il dataset proviene dalla ricerca di Terenzi &amp; Giglietto (2025) e include post raccolti tramite Meta Content Library — uno strumento di Facebook per la ricerca accademica a cui gli studenti non hanno accesso diretto. Il docente ha scaricato e organizzato i dati. I contenuti multimediali includono sia immagini sia video e sono nominati in modo da corrispondere agli identificativi dei post nel CSV. Il CSV contiene anche il testo dei post e il conteggio dei commenti. Tutti i gruppi lavorano sullo stesso sottoinsieme — questo è un punto di forza del design: consente il confronto inter-gruppo. Nota: i singoli commenti NON sono disponibili, solo il conteggio aggregato.</p>
+<p>Il dataset proviene dalla ricerca di Terenzi &amp; Giglietto (2025) e include post raccolti tramite Meta Content Library da pagine note per pubblicare AI slop. Punto cruciale: non tutti i post nel dataset sono AI slop — alcune pagine pubblicano anche contenuti autentici, meme non-IA, o contenuti ambigui. Il primo compito degli studenti sarà quindi una classificazione binaria (AI slop / non AI slop), analoga alla classificazione politico/non politico del seminario Paroni. Solo dopo questa prima classificazione si procede alla categorizzazione tematica dei contenuti identificati come AI slop. I contenuti multimediali includono sia immagini sia video. Tutti i gruppi lavorano sullo stesso sottoinsieme. I singoli commenti NON sono disponibili, solo il conteggio aggregato.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -556,9 +554,9 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="angoli-di-classificazione-possibili" class="slide level2">
-<h2>Angoli di classificazione possibili</h2>
-<p>Ogni gruppo sviluppa il proprio <strong>schema di classificazione</strong>. Esempi:</p>
+<section id="angoli-di-classificazione-tematica-step-2" class="slide level2">
+<h2>Angoli di classificazione tematica (Step 2)</h2>
+<p>Dopo aver identificato i contenuti AI slop (Step 1), ogni gruppo sviluppa il proprio <strong>schema tematico</strong>:</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 29%">
@@ -619,7 +617,7 @@ Fabio Giglietto
 <tbody>
 <tr class="odd">
 <td><strong>Tema</strong></td>
-<td>Classificazione di contenuti AI slop e pattern di engagement</td>
+<td>Identificazione e classificazione di AI slop + pattern di engagement</td>
 </tr>
 <tr class="even">
 <td><strong>Dati</strong></td>
@@ -941,36 +939,41 @@ Fabio Giglietto
 <td>~300-400 contenuti + CSV</td>
 </tr>
 <tr class="even">
-<td><strong>2. Classificazione</strong></td>
-<td>Binaria: politico / non politico</td>
-<td>Multi-categoria: schema del gruppo</td>
+<td><strong>2a. Classif. binaria</strong></td>
+<td>Politico / non politico</td>
+<td><strong>AI slop / non AI slop</strong></td>
 </tr>
 <tr class="odd">
+<td><strong>2b. Classif. tematica</strong></td>
+<td>—</td>
+<td>Multi-categoria (solo AI slop)</td>
+</tr>
+<tr class="even">
 <td><strong>3. Prompt</strong></td>
 <td>Strutturato con ruolo + esempi</td>
 <td><strong>Multimodale</strong>: ruolo + definizioni + contenuto</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>4. Codifica IA</strong></td>
 <td>Gemini classifica headline</td>
-<td>Gemini classifica <strong>contenuti visivi</strong></td>
+<td>Gemini classifica <strong>contenuti</strong></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>5. Codifica umana</strong></td>
 <td>Individuale → consenso</td>
 <td>Ogni membro codifica <strong>50 contenuti</strong></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>6. Confronto</strong></td>
 <td>Gruppo vs.&nbsp;Gemini</td>
 <td><strong>Cohen’s kappa</strong>: umano-umano e umano-IA</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>7. Iterazione</strong></td>
 <td>Raffinamento prompt</td>
 <td>Raffinamento codebook + prompt</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>8. Analisi</strong></td>
 <td>—</td>
 <td>Engagement (VD) per categoria (VI)</td>
@@ -978,7 +981,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Questa tabella è il riferimento metodologico centrale del progetto. Mappando passo per passo dal seminario Paroni al progetto, gli studenti vedono la continuità: hanno già fatto i passi 1-7 con le headline, ora li ripetono con le immagini a scala maggiore. Il passo 8 è la novità: l’analisi dell’engagement. Una volta validate le categorie (passo 7), le usano come variabile indipendente per spiegare la variazione nelle metriche di engagement dal CSV (reazioni, condivisioni, visualizzazioni, conteggio commenti). Questo trasforma una classificazione in un’analisi empirica con implicazioni teoriche. Riferimento: la pipeline è basata su Marino &amp; Giglietto (2024).</p>
+<p>Questa tabella è il riferimento metodologico centrale del progetto. Il passo 2 è ora esplicitamente diviso in due: (2a) classificazione binaria AI slop / non AI slop — identica nella logica alla classificazione politico / non politico del seminario Paroni — e (2b) classificazione multi-categoria dei soli contenuti identificati come AI slop. I passi 3-7 si applicano a entrambe le fasi di classificazione. Il passo 8 è la novità: l’analisi dell’engagement. Una volta validate le categorie, le usano come variabile indipendente per spiegare la variazione nelle metriche di engagement dal CSV. Riferimento: la pipeline è basata su Marino &amp; Giglietto (2024).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

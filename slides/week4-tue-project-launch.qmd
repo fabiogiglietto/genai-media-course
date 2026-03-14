@@ -84,7 +84,7 @@ Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli st
 ## Il focus della ricerca
 
 ::: {.highlight-box}
-**Domanda di ricerca del progetto:** Quali categorie di contenuti *AI slop* esistono nelle comunità Facebook italiane? Come si distribuisce l'engagement (reazioni, condivisioni, visualizzazioni) tra le diverse categorie?
+**Domande di ricerca:** Quali contenuti sono *AI slop* e quali no? Quali sotto-categorie esistono? Come si distribuisce l'engagement tra le categorie?
 :::
 
 ::: {.columns}
@@ -94,16 +94,14 @@ Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli st
 - L'AI slop è diffuso [@terenzi2025]
 - Gli algoritmi lo amplificano
 - Genera engagement elevato
-- Esistono **pattern visivi** ricorrenti
 :::
 
 ::: {.column width="50%"}
 ### Cosa non sappiamo
 
-- **Quali categorie** di immagini esistono
+- Quale **proporzione** dei post è AI slop
+- **Quali categorie** di AI slop esistono
 - Se le categorie **predicono** l'engagement
-- Quali **leve emotive** funzionano meglio
-- Come la **tecnica generativa** influenza le interazioni
 :::
 :::
 
@@ -124,8 +122,8 @@ Il progetto unisce la **metodologia** del seminario Paroni e il **dominio** del 
 | Seminario Paroni (metodologia) | Seminario Terenzi (dominio) | **Il vostro progetto** |
 |---|---|---|
 | Pipeline *LLMs-in-the-loop* [@marino2024] | AI slop nelle comunità Facebook italiane [@terenzi2025] | Pipeline applicata all'**AI slop** |
-| Classificazione binaria (politico / non politico) | Identificazione di immagini sintetiche | Classificazione **multi-categoria** per schema del gruppo |
-| Clustering tematico con Gemini | Tattiche di manipolazione affettiva | **Classificazione visiva** delle immagini |
+| Classificazione binaria (politico / non politico) | Identificazione di contenuti sintetici | **Step 1:** classificazione binaria **AI slop / non AI slop** |
+| Clustering tematico con Gemini | Tattiche di manipolazione affettiva | **Step 2:** classificazione **multi-categoria** (solo AI slop) |
 | Validazione (4 criteri, ✓/⚠/✗) | Amplificazione algoritmica | Validazione con **intercoder reliability** + analisi engagement |
 
 ::: {.notes}
@@ -163,11 +161,11 @@ La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: 
 ## Da imparare nel progetto
 
 ::: {.highlight-box}
-**Il contributo originale:** classificare sistematicamente i contenuti AI slop e analizzare come le categorie predicono l'engagement.
+**Il contributo originale:** identificare i contenuti AI slop, classificarli in categorie e analizzare come queste predicono l'engagement.
 :::
 
-- Sviluppare uno **schema di classificazione** per contenuti visivi
-- Lavorare su **scala maggiore** (300-400 contenuti, non 20 headline)
+- **Classificazione binaria** AI slop / non AI slop (come politico / non politico nel seminario Paroni)
+- Sviluppare uno **schema di classificazione tematica** per i contenuti AI slop
 - Usare Gemini in modalità **multimodale** (analisi immagini e video)
 - Calcolare l'**intercoder reliability** (Cohen's kappa)
 - Collegare categorie a **metriche di engagement** e scrivere un **paper** (IMRaD)
@@ -185,7 +183,7 @@ Sezione 3: presentazione del dataset pre-curato fornito dal docente. Gli student
 ## Un dataset pronto per l'analisi
 
 ::: {.highlight-box}
-Il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Potete concentrarvi su classificazione e analisi.
+Il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Il dataset contiene post da pagine note per pubblicare AI slop, ma **non tutti i post sono AI slop**.
 :::
 
 | Componente | Formato | Accesso |
@@ -195,7 +193,7 @@ Il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Gig
 | **Engagement:** reazioni, condivisioni, visualizzazioni | Colonne numeriche | Google Sheet condiviso |
 
 ::: {.notes}
-Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post raccolti tramite Meta Content Library — uno strumento di Facebook per la ricerca accademica a cui gli studenti non hanno accesso diretto. Il docente ha scaricato e organizzato i dati. I contenuti multimediali includono sia immagini sia video e sono nominati in modo da corrispondere agli identificativi dei post nel CSV. Il CSV contiene anche il testo dei post e il conteggio dei commenti. Tutti i gruppi lavorano sullo stesso sottoinsieme — questo è un punto di forza del design: consente il confronto inter-gruppo. Nota: i singoli commenti NON sono disponibili, solo il conteggio aggregato.
+Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post raccolti tramite Meta Content Library da pagine note per pubblicare AI slop. Punto cruciale: non tutti i post nel dataset sono AI slop — alcune pagine pubblicano anche contenuti autentici, meme non-IA, o contenuti ambigui. Il primo compito degli studenti sarà quindi una classificazione binaria (AI slop / non AI slop), analoga alla classificazione politico/non politico del seminario Paroni. Solo dopo questa prima classificazione si procede alla categorizzazione tematica dei contenuti identificati come AI slop. I contenuti multimediali includono sia immagini sia video. Tutti i gruppi lavorano sullo stesso sottoinsieme. I singoli commenti NON sono disponibili, solo il conteggio aggregato.
 :::
 
 ## Cosa NON è disponibile
@@ -227,9 +225,9 @@ Vantaggi:
 Questo è un aspetto chiave del design del progetto. Nella ricerca tradizionale, ogni gruppo raccoglierebbe dati diversi e il confronto sarebbe impossibile. Qui tutti analizzano le stesse immagini: un gruppo potrebbe classificare per soggetto visivo (bambini, animali, paesaggi), un altro per strategia emotiva (nostalgia, tenerezza, paura), un altro per tecnica generativa (fotorealistico, stilizzato, ibrido). La sessione del 1 aprile confronterà cosa ciascuna lente analitica rivela — e cosa nasconde. Questo è un esercizio epistemologico potente: le scelte analitiche determinano cosa si può vedere nei dati.
 :::
 
-## Angoli di classificazione possibili
+## Angoli di classificazione tematica (Step 2)
 
-Ogni gruppo sviluppa il proprio **schema di classificazione**. Esempi:
+Dopo aver identificato i contenuti AI slop (Step 1), ogni gruppo sviluppa il proprio **schema tematico**:
 
 | Angolo | Categorie possibili |
 |--------|-------------------|
@@ -246,7 +244,7 @@ Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inven
 
 | Componente | Dettaglio |
 |-----------|----------|
-| **Tema** | Classificazione di contenuti AI slop e pattern di engagement |
+| **Tema** | Identificazione e classificazione di AI slop + pattern di engagement |
 | **Dati** | ~300-400 contenuti multimediali + CSV con metriche (forniti dal docente) |
 | **Strumenti** | Google Gemini (multimodale), NotebookLM, fogli di calcolo |
 | **Metodologia** | LLMs-in-the-loop [@marino2024] |
@@ -355,16 +353,17 @@ Sezione riassuntiva: come si mappa la pipeline LLMs-in-the-loop dal seminario Pa
 | Fase | Seminario Paroni | Progetto |
 |---|---|---|
 | **1. Dati** | 20 headline | ~300-400 contenuti + CSV |
-| **2. Classificazione** | Binaria: politico / non politico | Multi-categoria: schema del gruppo |
+| **2a. Classif. binaria** | Politico / non politico | **AI slop / non AI slop** |
+| **2b. Classif. tematica** | — | Multi-categoria (solo AI slop) |
 | **3. Prompt** | Strutturato con ruolo + esempi | **Multimodale**: ruolo + definizioni + contenuto |
-| **4. Codifica IA** | Gemini classifica headline | Gemini classifica **contenuti visivi** |
+| **4. Codifica IA** | Gemini classifica headline | Gemini classifica **contenuti** |
 | **5. Codifica umana** | Individuale → consenso | Ogni membro codifica **50 contenuti** |
 | **6. Confronto** | Gruppo vs. Gemini | **Cohen's kappa**: umano-umano e umano-IA |
 | **7. Iterazione** | Raffinamento prompt | Raffinamento codebook + prompt |
 | **8. Analisi** | — | Engagement (VD) per categoria (VI) |
 
 ::: {.notes}
-Questa tabella è il riferimento metodologico centrale del progetto. Mappando passo per passo dal seminario Paroni al progetto, gli studenti vedono la continuità: hanno già fatto i passi 1-7 con le headline, ora li ripetono con le immagini a scala maggiore. Il passo 8 è la novità: l'analisi dell'engagement. Una volta validate le categorie (passo 7), le usano come variabile indipendente per spiegare la variazione nelle metriche di engagement dal CSV (reazioni, condivisioni, visualizzazioni, conteggio commenti). Questo trasforma una classificazione in un'analisi empirica con implicazioni teoriche. Riferimento: la pipeline è basata su Marino & Giglietto (2024).
+Questa tabella è il riferimento metodologico centrale del progetto. Il passo 2 è ora esplicitamente diviso in due: (2a) classificazione binaria AI slop / non AI slop — identica nella logica alla classificazione politico / non politico del seminario Paroni — e (2b) classificazione multi-categoria dei soli contenuti identificati come AI slop. I passi 3-7 si applicano a entrambe le fasi di classificazione. Il passo 8 è la novità: l'analisi dell'engagement. Una volta validate le categorie, le usano come variabile indipendente per spiegare la variazione nelle metriche di engagement dal CSV. Riferimento: la pipeline è basata su Marino & Giglietto (2024).
 :::
 
 ## Per domani: preparazione al lab
