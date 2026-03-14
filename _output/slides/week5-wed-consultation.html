@@ -254,56 +254,62 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="checklist-del-progetto" class="slide level2">
-<h2>Checklist del progetto</h2>
+<section id="il-vostro-pipeline-a-che-punto-siete" class="slide level2">
+<h2>Il vostro pipeline: a che punto siete?</h2>
+<p>Usando il <strong>vocabolario della pipeline LLMs-in-the-loop</strong> che conoscete dal seminario Paroni:</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 19%">
-<col style="width: 41%">
-<col style="width: 38%">
+<col style="width: 45%">
+<col style="width: 28%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Fase</th>
+<th>Fase della pipeline</th>
 <th>Stato atteso</th>
 <th>Verificare</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Raccolta dati</strong></td>
+<td><strong>1. Raccolta dati</strong></td>
 <td>Completata</td>
-<td>Dataset con post e commenti</td>
+<td>Dataset con post e commenti (≥30 post)</td>
 </tr>
 <tr class="even">
-<td><strong>Classificazione IA</strong></td>
+<td><strong>2. Classificazione binaria</strong></td>
 <td>Completata</td>
-<td>Risultati della classificazione Gemini</td>
+<td>Screening AI-generated / non AI-generated</td>
 </tr>
 <tr class="odd">
-<td><strong>Codebook</strong></td>
+<td><strong>3. Classificazione commenti (Gemini)</strong></td>
+<td>Completata</td>
+<td>Risultati nel foglio, ≥50 commenti codificati</td>
+</tr>
+<tr class="even">
+<td><strong>4. Codebook</strong></td>
 <td>Definito</td>
-<td>Categorie e regole chiare</td>
-</tr>
-<tr class="even">
-<td><strong>Validazione umana</strong></td>
-<td>In corso / completata</td>
-<td>Campione codificato da umani</td>
+<td>Categorie con esempi e regole per casi limite</td>
 </tr>
 <tr class="odd">
-<td><strong>Intercoder reliability</strong></td>
+<td><strong>5. Validazione</strong> (livelli 0–3 + kappa)</td>
 <td>In corso</td>
-<td>Confronto IA-umano calcolato</td>
+<td>Campione codificato da umani, matrice di confusione</td>
 </tr>
 <tr class="even">
-<td><strong>Bozza struttura paper</strong></td>
+<td><strong>6. Iterazione</strong></td>
+<td>Da valutare</td>
+<td>Prompt raffinato se kappa &lt; 0.60</td>
+</tr>
+<tr class="odd">
+<td><strong>Bozza paper</strong></td>
 <td>Da iniziare</td>
 <td>Outline IMRaD</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Questa checklist copre tutte le fasi del progetto fino a questo punto. A questo stadio, i gruppi dovrebbero aver completato la raccolta dati (settimana 4) e l’analisi con Gemini (lunedi). La validazione umana (martedi) dovrebbe essere in corso o completata. L’intercoder reliability potrebbe essere ancora in fase di calcolo. La struttura del paper dovrebbe essere iniziata dalla prossima settimana. Usare questa checklist come base per ogni consultazione individuale.</p>
+<p>Checklist aggiornata che usa il vocabolario condiviso della pipeline LLMs-in-the-loop, familiare agli studenti dal seminario Paroni. I nomi delle fasi rispecchiano quelli usati da Paroni (raccolta → classificazione binaria → clustering → labeling → validazione → iterazione), adattati al progetto. La fase di validazione combina gli strumenti qualitativi del seminario (livelli 0-3) con le metriche quantitative apprese martedì (Cohen’s kappa). La fase di iterazione è cruciale: se il kappa è sotto 0.60, il prompt va raffinato prima di procedere alla scrittura. Usare questa checklist come base per ogni consultazione individuale.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

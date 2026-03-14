@@ -38,13 +38,13 @@ csl: ../apa.csl
 
 1. **Il fenomeno AI slop** — ricapitolazione dal seminario di ieri
 2. **Briefing del progetto** — obiettivi, domanda di ricerca, deliverable
-3. **Metodologia LLMs-in-the-loop** — panoramica della pipeline
+3. **Dal seminario Paroni al progetto** — la pipeline che già conoscete, applicata all'AI slop
 4. **Formazione dei gruppi** — composizione e ruoli
 5. **Strumenti e risorse** — Meta Content Library, Gemini, NotebookLM
 6. **Prossimi passi** — raccolta dati domani
 
 ::: {.notes}
-Oggi lanciamo il progetto di gruppo che occuperà le prossime 3 settimane. Ieri il seminario di Massimo Terenzi ha introdotto il fenomeno dell'AI slop e la ricerca sulla viralità sintetica nelle comunità Facebook italiane. Oggi definiamo obiettivi, metodologia e organizzazione. Domani iniziamo la raccolta dati. Il tono della sessione è operativo: meno teoria, più pianificazione.
+Oggi lanciamo il progetto di gruppo che occuperà le prossime 3 settimane. Ieri il seminario di Massimo Terenzi ha introdotto il fenomeno dell'AI slop e la ricerca sulla viralità sintetica nelle comunità Facebook italiane. Oggi definiamo obiettivi, metodologia e organizzazione. Domani iniziamo la raccolta dati. Il tono della sessione è operativo: meno teoria, più pianificazione. Punto fondamentale: gli studenti hanno già praticato la pipeline LLMs-in-the-loop nel seminario Paroni — non serve rispiegare la metodologia da zero, basta mappare ciò che conoscono sul nuovo dominio.
 :::
 
 ## Il fenomeno AI Slop {background-color="#C5612E"}
@@ -114,28 +114,54 @@ Slide di collegamento tra la parte teorica (settimane 1-2) e il progetto. Gli st
 Il progetto si concentra sulla ricezione — il lato meno studiato del fenomeno AI slop. La ricerca di Terenzi & Giglietto (2025) ha mappato la produzione e diffusione; il nostro contributo sarà analizzare i commenti e le reazioni degli utenti. Domande specifiche che i gruppi potranno esplorare: gli utenti riconoscono che le immagini sono generate dall'IA? Come esprimono questa consapevolezza? Prevalgono reazioni critiche o emotive? Ci sono differenze tra temi diversi (es. immagini con bambini vs. immagini con animali)?
 :::
 
-## La Pipeline LLMs-in-the-loop {background-color="#C5612E"}
+## Dal Seminario Paroni al Progetto {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 2: panoramica della metodologia. Dettaglio sufficiente per orientare il lavoro, senza entrare nella tecnica che verrà approfondita nella settimana 5.
+Sezione 2: collegamento diretto con l'esperienza pratica del seminario Paroni. Gli studenti hanno già praticato la pipeline — qui la mappiamo sul nuovo dominio senza rispiegarla da zero.
 :::
 
-## Che cos'è un approccio LLMs-in-the-loop
+## La pipeline che conoscete, applicata all'AI slop
 
-::: {.highlight-box}
-**LLMs-in-the-loop:** metodologia che integra l'analisi automatizzata dei LLM con la **validazione sistematica umana**, trattando l'IA come un "codificatore" [@marino2024].
-:::
+Come avete praticato nel **seminario Paroni**, la pipeline *LLMs-in-the-loop* [@marino2024] prevede: raccolta → classificazione → clustering → etichettatura → validazione.
 
-Fasi della pipeline:
-
-1. **Codebook** — definire categorie di analisi e regole
-2. **Prompting** — istruzioni strutturate al LLM
-3. **Classificazione** — il LLM analizza i dati
-4. **Validazione** — campione codificato da umani + calcolo affidabilità
-5. **Iterazione** — raffinamento del prompt se necessario
+| Seminario Paroni | Progetto AI Slop |
+|------------------|------------------|
+| Titoli di notizie brasiliane | **Post e commenti** da Facebook italiano |
+| Classificazione: politico / non politico | Classificazione: **AI-generated / non AI-generated** |
+| Definizione ampia di "politico" | Definizione ampia di **"AI slop"** |
+| Clustering tematico con Gemini | Analisi tematica dei **commenti** con Gemini |
+| Validazione label (4 criteri, ✓/⚠/✗) | Validazione con **intercoder reliability** (kappa) |
 
 ::: {.notes}
-La metodologia LLMs-in-the-loop di Marino & Giglietto (2024) è l'approccio che useremo nel progetto. L'idea chiave: l'IA non sostituisce l'analisi umana ma la affianca. Il LLM viene trattato come un "codificatore" aggiuntivo, e la sua affidabilità viene misurata contro il giudizio umano usando metriche standard (Cohen's kappa, Krippendorff's alpha). Questo permette di analizzare grandi dataset (centinaia o migliaia di commenti) mantenendo il rigore metodologico. Il seminario di Bruna Paroni la settimana scorsa ha approfondito questa metodologia con un caso studio brasiliano. Nelle settimane 5 implementeremo ogni fase in dettaglio.
+Slide chiave: mappa esplicita tra ciò che gli studenti hanno fatto nel seminario Paroni e ciò che faranno nel progetto. La struttura è la stessa; cambia il dominio e la scala. Nel seminario avevano 20 titoli; nel progetto avranno centinaia di post e commenti. La classificazione binaria è analoga: "politico/non politico" diventa "AI-generated/non AI-generated". La validazione si arricchisce di metriche quantitative (Cohen's kappa) rispetto alla scala qualitativa usata nel seminario. L'esperienza delle 20 headline li ha preparati: sanno già cosa significa operazionalizzare una definizione ambigua e affrontare i casi limite.
+:::
+
+## Cosa cambia rispetto al seminario
+
+::: {.columns}
+::: {.column width="50%"}
+### Già sapete
+
+- Come costruire una **classificazione binaria**
+- Come **raffinare un prompt** quando Gemini non concorda
+- Come **validare le etichette** (4 criteri)
+- La differenza **chatbot vs. API**
+- Il **paradosso dell'esperto** [@marino2024]
+:::
+
+::: {.column width="50%"}
+### Da imparare nel progetto
+
+- Analizzare la **ricezione** (commenti e reazioni)
+- Lavorare su **scala maggiore** (centinaia di unità)
+- Calcolare l'**intercoder reliability** (Cohen's kappa)
+- Scrivere un **paper di ricerca** (IMRaD)
+- Collegare dati empirici a **framework teorici**
+:::
+:::
+
+::: {.notes}
+Questa slide rende esplicito il punto di partenza e gli obiettivi di apprendimento residui. La colonna sinistra riconosce le competenze acquisite nel seminario Paroni — questo è motivante per gli studenti e permette di non ripetere contenuti. La colonna destra identifica cosa è nuovo: la ricezione come oggetto di studio (i commenti, non solo i post), la scala (da 20 titoli a centinaia di commenti), le metriche quantitative di affidabilità, la scrittura accademica. Il progetto è più ambizioso del workshop Paroni, ma poggia su basi solide. Nella settimana 5 approfondiremo le metriche di intercoder reliability come contenuto metodologico genuinamente nuovo.
 :::
 
 ## Il progetto in sintesi
@@ -197,9 +223,9 @@ Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. S
 ::: {.orange-box}
 **Esercizio di gruppo (15 minuti)**
 
-1. Partendo dalla domanda generale, formulate una **domanda di ricerca specifica** per il vostro gruppo
-2. Identificate **2-3 variabili** che intendete analizzare
-3. Proponete **ipotesi preliminari** su cosa vi aspettate di trovare
+1. Formulate una **domanda di ricerca specifica** per il vostro gruppo
+2. Identificate **2-3 variabili** e pensate a come le **operazionalizzereste** (ricordate il processo con le 20 headline)
+3. Proponete **ipotesi preliminari** e quale **fase della pipeline** vorreste personalizzare
 4. Presentate brevemente alla classe (2 minuti per gruppo)
 :::
 
@@ -210,7 +236,7 @@ Esempi di angoli specifici:
 - Confronto tra **pagine/gruppi** con diverso orientamento
 
 ::: {.notes}
-Esercizio fondamentale per avviare il progetto. Ogni gruppo deve restringere la domanda di ricerca generale a un angolo specifico e gestibile. Le variabili tipiche: tipo di contenuto AI slop (categoria dell'immagine), tipo di reazione (commento critico, emotivo, neutro), caratteristiche del contesto (tipo di pagina/gruppo). Le ipotesi preliminari servono a orientare la raccolta dati e l'analisi, non sono vincolanti. Dare 15 minuti, poi presentazione rapida di ogni gruppo.
+Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già praticato la pipeline nel seminario Paroni, possono pensare non solo a COSA studiare ma a COME personalizzare la pipeline: quale classificazione binaria definire (non solo "politico/non politico" ma ad esempio "consapevole IA/non consapevole"), che tipo di clustering applicare ai commenti, quali criteri di validazione adottare. L'esperienza con le 20 headline li ha preparati a operazionalizzare concetti ambigui (ricordare la discussione su cosa sia "politico" — ora devono decidere cosa sia "riconoscimento IA" in un commento). Dare 15 minuti, poi presentazione rapida di ogni gruppo.
 :::
 
 ## Strumenti e Risorse {background-color="#C5612E"}

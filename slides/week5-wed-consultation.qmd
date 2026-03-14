@@ -81,19 +81,22 @@ Sessione leggera e operativa. L'obiettivo principale è incontrare ogni gruppo i
 Sezione di verifica dello stato di avanzamento. Prima di iniziare le consultazioni individuali, verificare collettivamente a che punto sono i gruppi.
 :::
 
-## Checklist del progetto
+## Il vostro pipeline: a che punto siete?
 
-| Fase | Stato atteso | Verificare |
-|------|-------------|------------|
-| **Raccolta dati** | Completata | Dataset con post e commenti |
-| **Classificazione IA** | Completata | Risultati della classificazione Gemini |
-| **Codebook** | Definito | Categorie e regole chiare |
-| **Validazione umana** | In corso / completata | Campione codificato da umani |
-| **Intercoder reliability** | In corso | Confronto IA-umano calcolato |
-| **Bozza struttura paper** | Da iniziare | Outline IMRaD |
+Usando il **vocabolario della pipeline LLMs-in-the-loop** che conoscete dal seminario Paroni:
+
+| Fase della pipeline | Stato atteso | Verificare |
+|---------------------|-------------|------------|
+| **1. Raccolta dati** | Completata | Dataset con post e commenti (≥30 post) |
+| **2. Classificazione binaria** | Completata | Screening AI-generated / non AI-generated |
+| **3. Classificazione commenti (Gemini)** | Completata | Risultati nel foglio, ≥50 commenti codificati |
+| **4. Codebook** | Definito | Categorie con esempi e regole per casi limite |
+| **5. Validazione** (livelli 0–3 + kappa) | In corso | Campione codificato da umani, matrice di confusione |
+| **6. Iterazione** | Da valutare | Prompt raffinato se kappa < 0.60 |
+| **Bozza paper** | Da iniziare | Outline IMRaD |
 
 ::: {.notes}
-Questa checklist copre tutte le fasi del progetto fino a questo punto. A questo stadio, i gruppi dovrebbero aver completato la raccolta dati (settimana 4) e l'analisi con Gemini (lunedi). La validazione umana (martedi) dovrebbe essere in corso o completata. L'intercoder reliability potrebbe essere ancora in fase di calcolo. La struttura del paper dovrebbe essere iniziata dalla prossima settimana. Usare questa checklist come base per ogni consultazione individuale.
+Checklist aggiornata che usa il vocabolario condiviso della pipeline LLMs-in-the-loop, familiare agli studenti dal seminario Paroni. I nomi delle fasi rispecchiano quelli usati da Paroni (raccolta → classificazione binaria → clustering → labeling → validazione → iterazione), adattati al progetto. La fase di validazione combina gli strumenti qualitativi del seminario (livelli 0-3) con le metriche quantitative apprese martedì (Cohen's kappa). La fase di iterazione è cruciale: se il kappa è sotto 0.60, il prompt va raffinato prima di procedere alla scrittura. Usare questa checklist come base per ogni consultazione individuale.
 :::
 
 ## Problemi Metodologici Comuni {background-color="#C5612E"}

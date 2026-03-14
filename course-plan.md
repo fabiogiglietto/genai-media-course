@@ -104,15 +104,15 @@ Deepfake technologies and synthetic media. Vaccari & Chadwick (2020) on politica
 
 **Mon Mar 9 | Guest Seminar Part 1 + This Week in AI**
 
-THIS WEEK IN AI (10 min). Bruna Paroni: Theoretical frameworks for studying GenAI in political communication. Research design and methodology for Brazilian case study.
+THIS WEEK IN AI (10 min). Bruna Paroni: Course pre-survey results (AI usage patterns, sentiment, risk/benefit perceptions, CPO vs CoDIC cohort differences). Research framing: 80,000+ news links from Brazilian elections (2018/2022), integrating LLMs into academic research.
 
 **Tue Mar 10 | Guest Seminar Part 2: LLMs-in-the-loop Methodology**
 
-Bruna Paroni: Deep dive into Marino & Giglietto (2024) methodology. Validating LLM analysis pipelines using Google Gemini. Hands-on demonstration.
+Bruna Paroni: Deep dive into Marino & Giglietto (2024) methodology. The 4-step pipeline: data collection → binary classification (supervised, fine-tuned model) → embedding-based clustering → GPT-4-turbo labeling. Key distinctions: chatbot vs API (scale, reproducibility, traceability). Validation at two levels: cluster coherence (levels 0–3) and label fit (4 criteria × 3-point scale). The expertise paradox.
 
-**Wed Mar 11 | Guest Seminar Part 3: Detection & Fact-Checking**
+**Wed Mar 11 | Guest Seminar Part 3: In-Class Workshop**
 
-Bruna Paroni: AI-generated content discovery tools. Fact-checking methodologies in the AI era. Platforms and countermeasure initiatives.
+Bruna Paroni: Students replicated a simplified LLMs-in-the-loop pipeline in groups using Google Gemini. Activity 1: Binary classification of 20 Italian news headlines (individual → group consensus → Gemini → prompt refinement → comparison). Activity 2: Clustering + labeling + validation of political headlines using the 4-criteria validation framework. See `docs/week3-seminar-recap.md` for full details, dataset, and prompts used.
 
 ### Week 4: AI Slop Seminar & Project Launch (Mar 16–18)
 

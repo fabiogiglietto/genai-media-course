@@ -391,7 +391,7 @@ Fabio Giglietto
 <section id="prompt-engineering-per-la-codifica" class="slide level2" data-background-color="#C5612E">
 <h2>Prompt Engineering per la Codifica</h2>
 <aside class="notes">
-<p>Sezione 3: come tradurre il codebook in un prompt efficace per Gemini. Questa è la fase chiave del processo LLMs-in-the-loop.</p>
+<p>Sezione 3: dal codebook al prompt. Gli studenti hanno già esperienza con il prompting dal seminario Paroni (prompt per classificazione binaria, raffinamento quando Gemini non concordava). Qui si parte da quel livello e si aggiungono le specificità del progetto.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -404,30 +404,30 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="dal-codebook-al-prompt" class="slide level2">
-<h2>Dal codebook al prompt</h2>
-<p>La qualità della classificazione automatizzata dipende dalla qualità del prompt. Seguiamo la struttura di <span class="citation" data-cites="cosenza2025">Cosenza (<a href="#/riferimenti" role="doc-biblioref" onclick="">2025</a>)</span>:</p>
+<section id="dal-codebook-al-prompt-ciò-che-già-sapete-applicato-al-progetto" class="slide level2">
+<h2>Dal codebook al prompt: ciò che già sapete, applicato al progetto</h2>
+<p>Nel <strong>workshop Paroni</strong> avete sperimentato il ciclo: prompt iniziale → risultato Gemini → disaccordo → <strong>raffinamento del prompt</strong> con esempi e formato strutturato.</p>
+<p>Ora applichiamo la stessa logica al vostro codebook, con due complessità in più:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="struttura-del-prompt">Struttura del prompt</h3>
-<ol type="1">
-<li><strong>Ruolo:</strong> analista di contenuti</li>
-<li><strong>Obiettivo:</strong> classificare commenti</li>
-<li><strong>Istruzioni:</strong> il codebook completo</li>
-<li><strong>Contesto:</strong> informazioni sull’AI slop</li>
-<li><strong>Output:</strong> formato tabellare strutturato</li>
-</ol>
-</div><div class="column" style="width:50%;">
-<h3 id="principi-chiave">Principi chiave</h3>
+<h3 id="sfide-specifiche-dellai-slop">Sfide specifiche dell’AI slop</h3>
 <ul>
-<li><strong>Esplicitare tutto:</strong> non lasciare spazi di libertà</li>
-<li><strong>Dare esempi:</strong> few-shot per ogni categoria</li>
-<li><strong>Definire il formato:</strong> tabella con colonne fisse</li>
-<li><strong>Gestire l’incertezza:</strong> categoria “incerto” ammessa</li>
+<li><strong>Ironia e sarcasmo</strong> nei commenti italiani</li>
+<li><strong>Dialetto</strong> e espressioni colloquiali</li>
+<li>Commenti <strong>brevissimi</strong> (emoji, singole parole)</li>
+<li><strong>Contesto visivo</strong> che il testo non cattura</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="strategie-avanzate">Strategie avanzate</h3>
+<ul>
+<li><strong>Includere il contesto</strong> del post nel prompt (non solo il commento isolato)</li>
+<li><strong>Anti-esempi:</strong> commenti che Gemini potrebbe sbagliare</li>
+<li><strong>Formato output</strong> strutturato (CSV) per evitare il data entry manuale</li>
+<li>Livello di <strong>certezza</strong> per ogni classificazione</li>
 </ul>
 </div></div>
 <aside class="notes">
-<p>Tradurre il codebook in un prompt è l’operazione chiave della metodologia LLMs-in-the-loop. Cosenza (2025) nella regola “Dirigi” sottolinea che prompt vaghi producono risultati generici. Qui applichiamo lo stesso principio alla ricerca: più il prompt è preciso e strutturato, più la classificazione sarà coerente. I principi chiave: (1) includere il codebook completo nel prompt, (2) fornire almeno 2-3 esempi per categoria (few-shot learning), (3) definire esattamente il formato dell’output per facilitare il data entry, (4) prevedere l’incertezza con una categoria dedicata piuttosto che forzare classificazioni dubbie.</p>
+<p>Punto di partenza: gli studenti hanno già fatto prompt refinement nel seminario Paroni (Step 4 dell’Attività 1: quando Gemini non concordava con il gruppo, hanno ristrutturato il prompt aggiungendo esempi e formato esplicito). Non serve rispiegare cos’è un prompt. Qui ci concentriamo sulle sfide specifiche della classificazione dei commenti AI slop: l’ironia è il problema principale (un commento come “bellissimo, proprio come una foto vera!” potrebbe essere sarcasmo o genuino), il dialetto e le espressioni colloquiali sfuggono spesso ai LLM, i commenti brevissimi mancano di contesto. Le strategie avanzate vanno oltre il seminario: includere il contesto del post (il commento “che bello!” ha significato diverso sotto un’immagine chiaramente AI vs.&nbsp;una foto autentica), gli anti-esempi prevengono errori sistematici, il livello di certezza guida la validazione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -494,10 +494,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="gestione-del-contesto-lungo" class="slide level2" data-background-color="#C5612E">
-<h2>Gestione del Contesto Lungo</h2>
+<section id="scalare-dal-workshop-al-progetto" class="slide level2" data-background-color="#C5612E">
+<h2>Scalare: dal Workshop al Progetto</h2>
 <aside class="notes">
-<p>Sezione 4: come sfruttare la finestra di contesto di 1 milione di token di Gemini per analizzare dataset ampi.</p>
+<p>Sezione 4: il salto di scala dal workshop Paroni (20 headline) al progetto (centinaia di commenti). Nuove sfide e strategie.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -510,33 +510,44 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="il-vantaggio-del-contesto-lungo-in-gemini" class="slide level2">
-<h2>Il vantaggio del contesto lungo in Gemini</h2>
+<section id="da-20-headline-a-centinaia-di-commenti" class="slide level2">
+<h2>Da 20 headline a centinaia di commenti</h2>
+<p>Nel <strong>seminario Paroni</strong> avete classificato 20 titoli in una singola sessione Gemini. Nel progetto, il dataset è <strong>10-50 volte più grande</strong>.</p>
 <div class="highlight-box">
-<p><strong>Gemini</strong> offre una finestra di contesto fino a <strong>1 milione di token</strong> — equivalente a circa <strong>700.000 parole</strong> o centinaia di pagine di testo.</p>
+<p><strong>Gemini</strong> offre una finestra di contesto fino a <strong>1 milione di token</strong> (~700.000 parole) — il dataset ci sta, ma servono strategie per mantenere la <strong>coerenza</strong>.</p>
 </div>
-<p>Cosa significa per il progetto:</p>
-<ul>
-<li>Caricare l’<strong>intero dataset</strong> di commenti in una singola sessione</li>
-<li>Fornire il <strong>codebook completo</strong> con molti esempi</li>
-<li>Mantenere il <strong>contesto</strong> durante la classificazione</li>
-<li>Chiedere <strong>statistiche aggregate</strong> dopo la classificazione</li>
-</ul>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Attenzione</strong></p>
-</div>
-<div class="callout-content">
-<p>Un contesto più lungo non garantisce risultati migliori. Testate con un <strong>campione ridotto</strong> prima di classificare l’intero dataset.</p>
-</div>
-</div>
-</div>
+<table class="caption-top">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sfida</th>
+<th>Strategia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Drift del modello</strong> su batch lunghi</td>
+<td>Dividere in <strong>batch da 20-30 commenti</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Incoerenza tra sessioni</strong></td>
+<td>Usare sempre lo <strong>stesso prompt</strong> (da un documento sorgente)</td>
+</tr>
+<tr class="odd">
+<td><strong>Contesto accumulato</strong></td>
+<td>Aprire una <strong>nuova chat</strong> per ogni batch</td>
+</tr>
+<tr class="even">
+<td><strong>Verifica qualità</strong></td>
+<td>Controllare i <strong>primi 10 risultati</strong> prima di procedere</td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
-<p>La finestra di contesto di Gemini è un vantaggio significativo per l’analisi del contenuto. Con 1 milione di token, possiamo caricare centinaia o migliaia di commenti in una singola sessione, insieme al codebook e agli esempi. Tuttavia, la qualità della classificazione non scala linearmente con la quantità di dati: contesti molto lunghi possono portare a un degradamento dell’attenzione del modello sulle istruzioni. La strategia consigliata: iniziare con un campione di 20-30 commenti, verificare la qualità, e poi scalare progressivamente.</p>
+<p>Questo è il gap principale tra il workshop Paroni e il progetto: la scala. Con 20 headline, bastava una singola sessione Gemini e un controllo visivo dei risultati. Con centinaia di commenti, emergono problemi nuovi: il modello può “driftare” (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per lo stesso input, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 commenti alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch, controllo qualità sui primi risultati. Gemini ha 1M di token di contesto — il dataset ci sta tutto — ma la qualità è migliore con batch più piccoli e prompt ripetuti identici.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -698,9 +709,6 @@ Fabio Giglietto
 <h2>Riferimenti</h2>
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-cosenza2025" class="csl-entry" role="listitem">
-Cosenza, V. (2025). <em>Esercizi di Intelligenza Aumentata: Imparare a Collaborare con le <span>I.A.</span></em>
-</div>
 <div id="ref-marino2024" class="csl-entry" role="listitem">
 Marino, G., &amp; Giglietto, F. (2024). Integrating Large Language Models in Political Discourse Studies on Social Media: Challenges of Validating an <span>LLMs</span>-in-the-loop Pipeline. <em>Sociologica</em>, <em>18</em>(2), 87–107. <a href="https://doi.org/10.6092/issn.1971-8853/19524">https://doi.org/10.6092/issn.1971-8853/19524</a>
 </div>

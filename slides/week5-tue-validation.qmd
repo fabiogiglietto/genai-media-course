@@ -36,15 +36,15 @@ csl: ../apa.csl
 
 ## Roadmap della sessione
 
-1. **Perché validare** — il ruolo della verifica umana
-2. **La metodologia LLMs-in-the-loop** — pipeline e principi
+1. **Dal framework Paroni alla quantificazione** — ciò che sapete + ciò che imparerete oggi
+2. **Perché validare** — il ruolo della verifica umana
 3. **Progettare il protocollo di validazione** — campionamento e codifica
-4. **Misurare l'accordo** — Cohen's kappa e Krippendorff's alpha
+4. **Misurare l'accordo** — Cohen's kappa e Krippendorff's alpha (contenuto nuovo)
 5. **Esercizio pratico** — validare un campione di commenti
 6. **Iterazione e raffinamento** — migliorare la pipeline
 
 ::: {.notes}
-Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato i commenti con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. L'obiettivo è duplice: (1) verificare quanto l'IA è affidabile e (2) apprendere la metodologia di validazione che sarà documentata nel paper. Questa sessione alterna teoria (30%) e pratica (70%).
+Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato i commenti con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, ✓/⚠/✗ per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Questo è il contenuto genuinamente nuovo della sessione — il resto poggia sulle basi già acquisite. Sessione pratica al 70%.
 :::
 
 ## Perché Validare {background-color="#C5612E"}
@@ -101,49 +101,44 @@ La **validazione sistematica** protegge da questo rischio:
 Il collegamento con Ferrara (2026) è importante: il Generative AI Paradox si applica anche alla ricerca. Come i cittadini possono cadere nella "credulity" (credere a contenuti sintetici convincenti), i ricercatori possono cadere nell'accettare acriticamente classificazioni IA apparentemente plausibili. La validazione sistematica è l'antidoto: trattare l'IA come un codificatore le cui classificazioni devono essere verificate, esattamente come faremmo con un codificatore umano alle prime armi. Questo approccio è al centro della metodologia LLMs-in-the-loop.
 :::
 
-## La Metodologia LLMs-in-the-loop {background-color="#C5612E"}
+## Dalla Validazione Qualitativa a Quella Quantitativa {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 2: approfondimento della metodologia. Qui espandiamo quanto introdotto nel lancio del progetto.
+Sezione di ponte: dagli strumenti qualitativi già appresi nel seminario Paroni alle metriche quantitative. Breve ricapitolazione, non ri-spiegazione.
 :::
 
-## La pipeline LLMs-in-the-loop
+## Ricordate il framework Paroni?
 
-::: {.orange-box}
-**Definizione**
+Nel seminario avete praticato **due livelli di validazione** [@marino2024]:
 
-La metodologia *LLMs-in-the-loop* integra l'analisi automatizzata dei LLM con la validazione sistematica umana, trattando l'IA come un "codificatore" le cui classificazioni vengono verificate contro il giudizio umano [@marino2024].
+::: {.columns}
+::: {.column width="50%"}
+### Validazione cluster (livelli 0–3)
+
+- **0** — Nessuna relazione
+- **1** — Coerenza tematica ampia
+- **2** — Stessi attori, storie diverse
+- **3** — Stessa storia giornalistica
+
+*Se molte coppie sono 2–3: sovra-frammentazione*
 :::
 
-La pipeline prevede un **ciclo iterativo:**
+::: {.column width="50%"}
+### Validazione label (4 criteri)
 
-1. Definizione del codebook
-2. Prompting sistematico al LLM
-3. Classificazione automatizzata
-4. **Validazione umana** (focus di oggi)
-5. Calcolo dell'affidabilità inter-codificatore
-6. Iterazione e raffinamento
+- Allineamento tematico
+- Implicazioni coerenti
+- Copertura adeguata
+- Allineamento contestuale
+
+*Scala: ✓ buono / ⚠ parziale / ✗ inadeguato*
+:::
+:::
+
+Oggi facciamo un **salto di qualità**: dalla validazione qualitativa a quella **quantitativa** con metriche statistiche.
 
 ::: {.notes}
-Ripresa più approfondita della metodologia LLMs-in-the-loop di Marino & Giglietto (2024). Il punto chiave è il ciclo iterativo: non si tratta di far classificare all'IA e poi verificare una volta. Si tratta di un processo in cui la validazione umana alimenta il raffinamento del prompt e del codebook, migliorando progressivamente la qualità della classificazione. Oggi ci concentriamo sulle fasi 4 e 5; nella parte finale della sessione affronteremo la fase 6. Il seminario di Bruna Paroni nella settimana 3 ha illustrato questa metodologia con un caso studio brasiliano.
-:::
-
-## L'IA come "codificatore"
-
-Nella ricerca tradizionale sull'analisi del contenuto, si usano **codificatori umani** multipli per garantire affidabilità.
-
-Con la pipeline LLMs-in-the-loop, l'IA diventa un **codificatore aggiuntivo**:
-
-| Aspetto | Codificatore umano | Codificatore IA |
-|---------|-------------------|-----------------|
-| **Scala** | Centinaia di unità | Migliaia di unità |
-| **Coerenza** | Fatica, distrazione | Dipende dal prompt |
-| **Contesto** | Comprensione profonda | Comprensione superficiale |
-| **Costo** | Alto (tempo, risorse) | Basso (computazionale) |
-| **Verifica** | Intercoder reliability | IA vs. umano reliability |
-
-::: {.notes}
-Tabella comparativa che illustra i punti di forza e debolezza di codificatori umani e IA. L'IA eccelle nella scala (può classificare migliaia di commenti in pochi minuti) e nel costo (quasi nullo). L'umano eccelle nella comprensione del contesto e nella capacità di cogliere sfumature. L'approccio LLMs-in-the-loop sfrutta entrambi: l'IA per la scala, l'umano per la qualità e la validazione. La metrica di affidabilità standard (intercoder reliability) viene applicata al confronto IA-umano esattamente come si applicherebbe al confronto tra due codificatori umani.
+Ricapitolazione rapida — non ri-spiegazione. Gli studenti hanno usato questi strumenti in prima persona nel workshop del mercoledì con Paroni. I livelli 0-3 e i 4 criteri con scala a 3 punti sono strumenti qualitativi preziosi, ma per il paper servono metriche quantitative di accordo inter-codificatore. Il passaggio chiave di oggi: trattare Gemini come un "codificatore" la cui affidabilità va misurata con le stesse metriche che si userebbero per un codificatore umano. Cohen's kappa e Krippendorff's alpha sono gli strumenti per farlo. Questo è il contenuto genuinamente nuovo di oggi.
 :::
 
 ## Progettare il Protocollo di Validazione {background-color="#C5612E"}

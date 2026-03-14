@@ -213,6 +213,8 @@ Il flusso di lavoro in tre fasi. Enfatizzare la Fase 3: la documentazione delle 
 
 ## Organizzare il foglio di calcolo
 
+La struttura è analoga al foglio del **workshop Paroni** — colonne per i codificatori individuali, il consenso di gruppo e la classificazione Gemini:
+
 ::: {.columns}
 ::: {.column width="50%"}
 ### Foglio "Post"
@@ -230,7 +232,7 @@ comment_id, post_id (ref), testo_commento, n_reazioni, classificazione_ai, class
 Le colonne **classificazione_ai** e **classificazione_umana** saranno compilate nella settimana 5.
 
 ::: {.notes}
-Struttura concreta del foglio di calcolo. Due fogli collegati dalla colonna post_id. Il foglio Post contiene i metadati dei post selezionati. Il foglio Commenti contiene tutti i commenti raccolti. Le colonne E e F del foglio Commenti (classificazione_ai e classificazione_umana) saranno compilate nella settimana 5 durante le fasi di analisi e validazione. Per ora restano vuote. La colonna G (note) serve per annotazioni qualitative durante la raccolta.
+La struttura ricalca il foglio usato nell'Attività 1 del seminario Paroni: lì c'erano colonne per ogni codificatore, il consenso di gruppo e la classificazione Gemini. Qui abbiamo la stessa logica su scala più grande: classificazione_ai (Gemini) e classificazione_umana (codificatori del gruppo), con la colonna note per annotare i casi ambigui — esattamente come facevano con i casi limite delle 20 headline. Due fogli collegati dalla colonna post_id. Per ora le colonne di classificazione restano vuote: saranno compilate nella settimana 5 durante le fasi di analisi e validazione.
 :::
 
 ## Screening con Gemini {background-color="#C5612E"}

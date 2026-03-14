@@ -145,36 +145,37 @@ Esercizio pratico fondamentale. Dare 15 minuti per il lavoro in gruppo. Il test 
 ## Prompt Engineering per la Codifica {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 3: come tradurre il codebook in un prompt efficace per Gemini. Questa è la fase chiave del processo LLMs-in-the-loop.
+Sezione 3: dal codebook al prompt. Gli studenti hanno già esperienza con il prompting dal seminario Paroni (prompt per classificazione binaria, raffinamento quando Gemini non concordava). Qui si parte da quel livello e si aggiungono le specificità del progetto.
 :::
 
-## Dal codebook al prompt
+## Dal codebook al prompt: ciò che già sapete, applicato al progetto
 
-La qualità della classificazione automatizzata dipende dalla qualità del prompt. Seguiamo la struttura di @cosenza2025:
+Nel **workshop Paroni** avete sperimentato il ciclo: prompt iniziale → risultato Gemini → disaccordo → **raffinamento del prompt** con esempi e formato strutturato.
+
+Ora applichiamo la stessa logica al vostro codebook, con due complessità in più:
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Struttura del prompt
+### Sfide specifiche dell'AI slop
 
-1. **Ruolo:** analista di contenuti
-2. **Obiettivo:** classificare commenti
-3. **Istruzioni:** il codebook completo
-4. **Contesto:** informazioni sull'AI slop
-5. **Output:** formato tabellare strutturato
+- **Ironia e sarcasmo** nei commenti italiani
+- **Dialetto** e espressioni colloquiali
+- Commenti **brevissimi** (emoji, singole parole)
+- **Contesto visivo** che il testo non cattura
 :::
 
 ::: {.column width="50%"}
-### Principi chiave
+### Strategie avanzate
 
-- **Esplicitare tutto:** non lasciare spazi di libertà
-- **Dare esempi:** few-shot per ogni categoria
-- **Definire il formato:** tabella con colonne fisse
-- **Gestire l'incertezza:** categoria "incerto" ammessa
+- **Includere il contesto** del post nel prompt (non solo il commento isolato)
+- **Anti-esempi:** commenti che Gemini potrebbe sbagliare
+- **Formato output** strutturato (CSV) per evitare il data entry manuale
+- Livello di **certezza** per ogni classificazione
 :::
 :::
 
 ::: {.notes}
-Tradurre il codebook in un prompt è l'operazione chiave della metodologia LLMs-in-the-loop. Cosenza (2025) nella regola "Dirigi" sottolinea che prompt vaghi producono risultati generici. Qui applichiamo lo stesso principio alla ricerca: più il prompt è preciso e strutturato, più la classificazione sarà coerente. I principi chiave: (1) includere il codebook completo nel prompt, (2) fornire almeno 2-3 esempi per categoria (few-shot learning), (3) definire esattamente il formato dell'output per facilitare il data entry, (4) prevedere l'incertezza con una categoria dedicata piuttosto che forzare classificazioni dubbie.
+Punto di partenza: gli studenti hanno già fatto prompt refinement nel seminario Paroni (Step 4 dell'Attività 1: quando Gemini non concordava con il gruppo, hanno ristrutturato il prompt aggiungendo esempi e formato esplicito). Non serve rispiegare cos'è un prompt. Qui ci concentriamo sulle sfide specifiche della classificazione dei commenti AI slop: l'ironia è il problema principale (un commento come "bellissimo, proprio come una foto vera!" potrebbe essere sarcasmo o genuino), il dialetto e le espressioni colloquiali sfuggono spesso ai LLM, i commenti brevissimi mancano di contesto. Le strategie avanzate vanno oltre il seminario: includere il contesto del post (il commento "che bello!" ha significato diverso sotto un'immagine chiaramente AI vs. una foto autentica), gli anti-esempi prevengono errori sistematici, il livello di certezza guida la validazione.
 :::
 
 ## Esempio di prompt per la classificazione
@@ -220,32 +221,29 @@ Prompt di esempio che i gruppi possono adattare. Notare gli elementi: ruolo (ana
 Problema cruciale: la coerenza della classificazione. A differenza di un codificatore umano che migliora con la pratica, un LLM può produrre classificazioni leggermente diverse per lo stesso input in momenti diversi. Strategie pratiche: (1) usare sempre lo stesso prompt, copiandolo da un documento sorgente; (2) dividere il dataset in batch di 20-30 commenti; (3) aprire una nuova chat per ogni batch per evitare l'effetto del contesto accumulato; (4) annotare il batch e la sessione per ogni classificazione. Queste accortezze derivano dall'esperienza pratica con la metodologia LLMs-in-the-loop.
 :::
 
-## Gestione del Contesto Lungo {background-color="#C5612E"}
+## Scalare: dal Workshop al Progetto {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 4: come sfruttare la finestra di contesto di 1 milione di token di Gemini per analizzare dataset ampi.
+Sezione 4: il salto di scala dal workshop Paroni (20 headline) al progetto (centinaia di commenti). Nuove sfide e strategie.
 :::
 
-## Il vantaggio del contesto lungo in Gemini
+## Da 20 headline a centinaia di commenti
+
+Nel **seminario Paroni** avete classificato 20 titoli in una singola sessione Gemini. Nel progetto, il dataset è **10-50 volte più grande**.
 
 ::: {.highlight-box}
-**Gemini** offre una finestra di contesto fino a **1 milione di token** — equivalente a circa **700.000 parole** o centinaia di pagine di testo.
+**Gemini** offre una finestra di contesto fino a **1 milione di token** (~700.000 parole) — il dataset ci sta, ma servono strategie per mantenere la **coerenza**.
 :::
 
-Cosa significa per il progetto:
-
-- Caricare l'**intero dataset** di commenti in una singola sessione
-- Fornire il **codebook completo** con molti esempi
-- Mantenere il **contesto** durante la classificazione
-- Chiedere **statistiche aggregate** dopo la classificazione
-
-::: {.callout-warning}
-## Attenzione
-Un contesto più lungo non garantisce risultati migliori. Testate con un **campione ridotto** prima di classificare l'intero dataset.
-:::
+| Sfida | Strategia |
+|-------|-----------|
+| **Drift del modello** su batch lunghi | Dividere in **batch da 20-30 commenti** |
+| **Incoerenza tra sessioni** | Usare sempre lo **stesso prompt** (da un documento sorgente) |
+| **Contesto accumulato** | Aprire una **nuova chat** per ogni batch |
+| **Verifica qualità** | Controllare i **primi 10 risultati** prima di procedere |
 
 ::: {.notes}
-La finestra di contesto di Gemini è un vantaggio significativo per l'analisi del contenuto. Con 1 milione di token, possiamo caricare centinaia o migliaia di commenti in una singola sessione, insieme al codebook e agli esempi. Tuttavia, la qualità della classificazione non scala linearmente con la quantità di dati: contesti molto lunghi possono portare a un degradamento dell'attenzione del modello sulle istruzioni. La strategia consigliata: iniziare con un campione di 20-30 commenti, verificare la qualità, e poi scalare progressivamente.
+Questo è il gap principale tra il workshop Paroni e il progetto: la scala. Con 20 headline, bastava una singola sessione Gemini e un controllo visivo dei risultati. Con centinaia di commenti, emergono problemi nuovi: il modello può "driftare" (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per lo stesso input, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 commenti alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch, controllo qualità sui primi risultati. Gemini ha 1M di token di contesto — il dataset ci sta tutto — ma la qualità è migliore con batch più piccoli e prompt ripetuti identici.
 :::
 
 ## Workflow pratico con Gemini

@@ -585,6 +585,20 @@ Always consult `course-plan.md` for full details. Below is a concise summary of 
 - Platform policies: Meta, TikTok on synthetic media
 - References: vaccari2020, hameleers2026 (visual disinformation effects), schroeder2026 (AI swarms threat), hackenburg2025 (AI persuasion mechanisms), czarnek2025 (LLM persuasion on climate beliefs)
 
+### Week 3: Paroni Guest Seminar (Completed — No Slides Needed)
+
+Students completed a 3-session seminar with hands-on LLMs-in-the-loop practice. See `docs/week3-seminar-recap.md` for full details. **Key skills students now have:**
+
+- **Binary classification:** Individual coding → group consensus → Gemini classification → prompt refinement → comparison (practiced with 20 Italian headlines)
+- **Clustering & labeling:** Gemini-assisted thematic grouping + descriptive labels (max 5 words)
+- **Validation framework:** Cluster coherence levels 0–3 (no relationship → same story); label fit on 4 criteria (thematic alignment, implications, coverage, contextual alignment) with ✓/⚠/✗ scale
+- **Chatbot vs. API distinction:** Students understand that API enables scale, reproducibility, and traceability
+- **Embeddings concept:** Text → numerical vectors capturing semantic meaning
+- **The expertise paradox:** AI can catch patterns humans miss, and vice versa
+- **Prompt refinement:** Students experienced iterating prompts when Gemini disagreed with group consensus
+
+**IMPORTANT for slide generation:** Weeks 4–5 slides should reference the Paroni seminar as shared experience. Do NOT re-explain the 4-step pipeline, validation levels, or chatbot-vs-API distinction from scratch — instead, recall them briefly and build on them. Use phrases like "Come avete praticato nel seminario Paroni..." or "Applicando il framework di validazione che conoscete...".
+
 ### Week 4: Project Launch & Data Collection
 
 **Tue Mar 17 — Project Launch**
@@ -592,6 +606,7 @@ Always consult `course-plan.md` for full details. Below is a concise summary of 
 - Group formation (4–6 students)
 - Meta Content Library and NotebookLM for organizing sources
 - Research question development
+- Bridge from Paroni pipeline (political news classification) to project pipeline (AI Slop classification)
 - References: terenzi2025, marino2024
 
 **Wed Mar 18 — Lab: Collecting Posts & Comments**
@@ -606,12 +621,14 @@ Always consult `course-plan.md` for full details. Below is a concise summary of 
 - Automated visual content classification
 - Prompt strategies for consistent coding
 - Long context management in Gemini
+- Students apply the same classification → clustering → labeling flow practiced in Paroni workshop, now with real project data
 
 **Tue Mar 24 — Validation: Human vs Machine**
 - LLMs-in-the-loop methodology (Marino & Giglietto, 2024)
 - Designing human validation protocols
 - Inter-coder reliability with AI
 - Comparing AI classifications with human judgment
+- Students apply the Paroni validation framework (coherence levels 0–3, label fit criteria) to their own project clusters
 
 **Wed Mar 25 — Group Consultation**
 - TWIAI (10 min)
