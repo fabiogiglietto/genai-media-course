@@ -192,7 +192,7 @@ Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò 
 | **Scadenza** | 2 settimane prima dell'appello di giugno |
 
 ::: {.notes}
-Panoramica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione) — la struttura standard della ricerca scientifica. Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 5 studenti. Ogni gruppo sceglierà un angolo specifico della domanda di ricerca (es. un tipo specifico di AI slop, un gruppo di utenti, una reazione particolare). Le prossime 3 settimane sono dedicate al progetto: raccolta dati (questa settimana), analisi (settimana 5), scrittura (settimana 6).
+Panoramica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione) — la struttura standard della ricerca scientifica. Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo specifico della domanda di ricerca (es. un tipo specifico di AI slop, un gruppo di utenti, una reazione particolare). Le prossime 3 settimane sono dedicate al progetto: raccolta dati (questa settimana), analisi (settimana 5), scrittura (settimana 6).
 :::
 
 ## Formazione dei Gruppi {background-color="#C5612E"}
@@ -207,7 +207,7 @@ Sezione 3: operativa. Formazione dei gruppi e assegnazione delle aree tematiche.
 ::: {.column width="50%"}
 ### Composizione
 
-- Massimo **5 studenti** per gruppo
+- Massimo **6 studenti** per gruppo
 - Mix di competenze consigliato
 - Ogni gruppo avrà un **identificativo numerico**
 - Indicare un **responsabile** del gruppo
@@ -230,7 +230,7 @@ Pubblicate i nomi nel forum rispondendo al post dedicato. Il responsabile config
 :::
 
 ::: {.notes}
-Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 5 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha due compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile, (2) copiare il modello di relazione (Google Docs) e condividerlo con i membri in modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Ad ogni gruppo sarà assegnato un identificativo numerico dopo la registrazione nel forum.
+Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha due compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile, (2) copiare il modello di relazione (Google Docs) e condividerlo con i membri in modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Ad ogni gruppo sarà assegnato un identificativo numerico dopo la registrazione nel forum.
 :::
 
 ## Sviluppare la domanda di ricerca
