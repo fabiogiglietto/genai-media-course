@@ -168,7 +168,7 @@ Fabio Giglietto
 <ol type="1">
 <li><strong>Il fenomeno AI slop</strong> — ricapitolazione dal seminario di ieri</li>
 <li><strong>Briefing del progetto</strong> — obiettivi, domanda di ricerca, deliverable</li>
-<li><strong>Dal seminario Paroni al progetto</strong> — la pipeline che già conoscete, applicata all’AI slop</li>
+<li><strong>Dai seminari al progetto</strong> — la pipeline e il fenomeno che già conoscete</li>
 <li><strong>Formazione dei gruppi</strong> — composizione e ruoli</li>
 <li><strong>Strumenti e risorse</strong> — Meta Content Library, Gemini, NotebookLM</li>
 <li><strong>Prossimi passi</strong> — raccolta dati domani</li>
@@ -312,10 +312,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="dal-seminario-paroni-al-progetto" class="slide level2" data-background-color="#C5612E">
-<h2>Dal Seminario Paroni al Progetto</h2>
+<section id="dai-seminari-al-progetto" class="slide level2" data-background-color="#C5612E">
+<h2>Dai Seminari al Progetto</h2>
 <aside class="notes">
-<p>Sezione 2: collegamento diretto con l’esperienza pratica del seminario Paroni. Gli studenti hanno già praticato la pipeline — qui la mappiamo sul nuovo dominio senza rispiegarla da zero.</p>
+<p>Sezione 2: collegamento diretto con le due esperienze chiave delle settimane precedenti. Il seminario Paroni ha fornito la metodologia (pipeline LLMs-in-the-loop); il seminario Terenzi ha fornito il dominio di ricerca (AI slop e viralità sintetica). Qui mappiamo entrambi sul progetto.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -328,45 +328,47 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="la-pipeline-che-conoscete-applicata-allai-slop" class="slide level2">
-<h2>La pipeline che conoscete, applicata all’AI slop</h2>
-<p>Come avete praticato nel <strong>seminario Paroni</strong>, la pipeline <em>LLMs-in-the-loop</em> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span> prevede: raccolta → classificazione → clustering → etichettatura → validazione.</p>
+<section id="due-seminari-un-progetto" class="slide level2">
+<h2>Due seminari, un progetto</h2>
+<p>Il progetto unisce la <strong>metodologia</strong> del seminario Paroni e il <strong>dominio</strong> del seminario Terenzi:</p>
 <table class="caption-top">
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Seminario Paroni</th>
-<th>Progetto AI Slop</th>
+<th>Seminario Paroni (metodologia)</th>
+<th>Seminario Terenzi (dominio)</th>
+<th><strong>Il vostro progetto</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Titoli di notizie brasiliane</td>
-<td><strong>Post e commenti</strong> da Facebook italiano</td>
+<td>Pipeline <em>LLMs-in-the-loop</em> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></td>
+<td>AI slop nelle comunità Facebook italiane <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span></td>
+<td>Pipeline applicata all’<strong>AI slop</strong></td>
 </tr>
 <tr class="even">
-<td>Classificazione: politico / non politico</td>
+<td>Classificazione binaria (politico / non politico)</td>
+<td>Identificazione di immagini sintetiche</td>
 <td>Classificazione: <strong>AI-generated / non AI-generated</strong></td>
 </tr>
 <tr class="odd">
-<td>Definizione ampia di “politico”</td>
-<td>Definizione ampia di <strong>“AI slop”</strong></td>
+<td>Clustering tematico con Gemini</td>
+<td>Tattiche di manipolazione affettiva</td>
+<td>Analisi tematica dei <strong>commenti</strong></td>
 </tr>
 <tr class="even">
-<td>Clustering tematico con Gemini</td>
-<td>Analisi tematica dei <strong>commenti</strong> con Gemini</td>
-</tr>
-<tr class="odd">
-<td>Validazione label (4 criteri, ✓/⚠/✗)</td>
-<td>Validazione con <strong>intercoder reliability</strong> (kappa)</td>
+<td>Validazione (4 criteri, ✓/⚠/✗)</td>
+<td>Amplificazione algoritmica</td>
+<td>Validazione con <strong>intercoder reliability</strong></td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Slide chiave: mappa esplicita tra ciò che gli studenti hanno fatto nel seminario Paroni e ciò che faranno nel progetto. La struttura è la stessa; cambia il dominio e la scala. Nel seminario avevano 20 titoli; nel progetto avranno centinaia di post e commenti. La classificazione binaria è analoga: “politico/non politico” diventa “AI-generated/non AI-generated”. La validazione si arricchisce di metriche quantitative (Cohen’s kappa) rispetto alla scala qualitativa usata nel seminario. L’esperienza delle 20 headline li ha preparati: sanno già cosa significa operazionalizzare una definizione ambigua e affrontare i casi limite.</p>
+<p>Slide chiave: il progetto non nasce dal nulla, ma dalla convergenza di due seminari. Paroni ha dato la cassetta degli attrezzi metodologica — gli studenti hanno praticato classificazione binaria, clustering, labeling e validazione con 20 headline. Terenzi ha dato il fenomeno di ricerca — AI slop come engagement bait nelle comunità Facebook italiane, con le sue specificità: immagini sintetiche, leve emotive, amplificazione algoritmica. Il progetto combina i due: applica la pipeline LLMs-in-the-loop al dominio dell’AI slop, aggiungendo l’analisi della ricezione (commenti e reazioni) che né Paroni né Terenzi hanno affrontato direttamente.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -379,30 +381,56 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="cosa-cambia-rispetto-al-seminario" class="slide level2">
-<h2>Cosa cambia rispetto al seminario</h2>
+<section id="cosa-sapete-già-dai-seminari" class="slide level2">
+<h2>Cosa sapete già dai seminari</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<h3 id="già-sapete">Già sapete</h3>
+<h3 id="dal-seminario-paroni">Dal seminario Paroni</h3>
 <ul>
-<li>Come costruire una <strong>classificazione binaria</strong></li>
-<li>Come <strong>raffinare un prompt</strong> quando Gemini non concorda</li>
-<li>Come <strong>validare le etichette</strong> (4 criteri)</li>
-<li>La differenza <strong>chatbot vs.&nbsp;API</strong></li>
+<li>Costruire una <strong>classificazione binaria</strong></li>
+<li><strong>Raffinare un prompt</strong> quando Gemini non concorda</li>
+<li><strong>Validare le etichette</strong> (4 criteri)</li>
+<li>Differenza <strong>chatbot vs.&nbsp;API</strong></li>
 <li>Il <strong>paradosso dell’esperto</strong> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h3 id="da-imparare-nel-progetto">Da imparare nel progetto</h3>
+<h3 id="dal-seminario-terenzi">Dal seminario Terenzi</h3>
 <ul>
-<li>Analizzare la <strong>ricezione</strong> (commenti e reazioni)</li>
-<li>Lavorare su <strong>scala maggiore</strong> (centinaia di unità)</li>
-<li>Calcolare l’<strong>intercoder reliability</strong> (Cohen’s kappa)</li>
-<li>Scrivere un <strong>paper di ricerca</strong> (IMRaD)</li>
-<li>Collegare dati empirici a <strong>framework teorici</strong></li>
+<li>Cos’è l’<strong>AI slop</strong> e come si riconosce <span class="citation" data-cites="terenzi2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Terenzi &amp; Giglietto, 2025</a>)</span></li>
+<li>Tattiche di <strong>manipolazione affettiva</strong></li>
+<li>Ruolo dell’<strong>amplificazione algoritmica</strong></li>
+<li>Viralità sintetica nelle <strong>comunità italiane</strong></li>
+<li>Dall’<em>AI slop</em> alla <strong>viralità strategica</strong></li>
 </ul>
 </div></div>
 <aside class="notes">
-<p>Questa slide rende esplicito il punto di partenza e gli obiettivi di apprendimento residui. La colonna sinistra riconosce le competenze acquisite nel seminario Paroni — questo è motivante per gli studenti e permette di non ripetere contenuti. La colonna destra identifica cosa è nuovo: la ricezione come oggetto di studio (i commenti, non solo i post), la scala (da 20 titoli a centinaia di commenti), le metriche quantitative di affidabilità, la scrittura accademica. Il progetto è più ambizioso del workshop Paroni, ma poggia su basi solide. Nella settimana 5 approfondiremo le metriche di intercoder reliability come contenuto metodologico genuinamente nuovo.</p>
+<p>La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: gli studenti sanno usare la pipeline. La colonna destra riconosce le conoscenze di dominio dal seminario Terenzi: gli studenti conoscono il fenomeno che studieranno. Questo è motivante e permette di non ripetere contenuti. Il progetto aggiunge ciò che manca da entrambi i seminari: l’analisi della ricezione.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="da-imparare-nel-progetto" class="slide level2">
+<h2>Da imparare nel progetto</h2>
+<div class="highlight-box">
+<p><strong>Il contributo originale del vostro progetto:</strong> analizzare come gli utenti <strong>reagiscono</strong> all’AI slop — il lato che né Paroni né Terenzi hanno affrontato.</p>
+</div>
+<ul>
+<li>Analizzare la <strong>ricezione</strong> (commenti e reazioni degli utenti)</li>
+<li>Lavorare su <strong>scala maggiore</strong> (centinaia di unità, non 20 headline)</li>
+<li>Calcolare l’<strong>intercoder reliability</strong> (Cohen’s kappa)</li>
+<li>Scrivere un <strong>paper di ricerca</strong> (struttura IMRaD)</li>
+<li>Collegare dati empirici a <strong>framework teorici</strong></li>
+</ul>
+<aside class="notes">
+<p>Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La ricezione — come gli utenti commentano e reagiscono ai contenuti AI slop — è l’oggetto di studio originale. Terenzi ha mappato la produzione e diffusione; Paroni ha insegnato come analizzare sistematicamente contenuti con i LLM. Il progetto chiude il cerchio: usa gli strumenti di Paroni per studiare il fenomeno di Terenzi dal punto di vista degli utenti. La scala è maggiore (da 20 headline a centinaia di commenti), le metriche sono quantitative (kappa invece di ✓/⚠/✗), e il prodotto finale è un paper accademico.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
