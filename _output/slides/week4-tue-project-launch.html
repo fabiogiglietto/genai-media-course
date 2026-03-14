@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="Fabio Giglietto">
-  <title>Lancio Progetto: Analisi Ricezione AI Slop</title>
+  <title>Lancio Progetto: Classificazione AI Slop e Pattern di Engagement</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -147,7 +147,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lancio Progetto: Analisi Ricezione AI Slop</h1>
+  <h1 class="title">Lancio Progetto: Classificazione AI Slop e Pattern di Engagement</h1>
   <p class="subtitle">IA Generativa e Media — Settimana 4</p>
 
 <div class="quarto-title-authors">
@@ -463,37 +463,36 @@ Fabio Giglietto
 </div>
 <table class="caption-top">
 <colgroup>
-<col style="width: 37%">
-<col style="width: 31%">
-<col style="width: 31%">
+<col style="width: 52%">
+<col style="width: 47%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Componente</th>
-<th>Formato</th>
-<th>Accesso</th>
+<th>Dettaglio</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Metadati post</strong> + metriche di engagement</td>
-<td>CSV</td>
-<td>Google Sheet condiviso</td>
+<td><strong>Post</strong></td>
+<td><strong>420</strong> da 92 pagine Facebook italiane</td>
 </tr>
 <tr class="even">
-<td><strong>Contenuti multimediali</strong> (~300-400 immagini e video)</td>
-<td>JPG/PNG/MP4</td>
-<td>Cartella Google Drive</td>
+<td><strong>Contenuti multimediali</strong></td>
+<td><strong>428 file</strong> (421 immagini + 7 video)</td>
 </tr>
 <tr class="odd">
-<td><strong>Engagement:</strong> reazioni, condivisioni, visualizzazioni</td>
-<td>Colonne numeriche</td>
-<td>Google Sheet condiviso</td>
+<td><strong>Metriche di engagement</strong></td>
+<td>Reazioni, condivisioni, visualizzazioni, n.&nbsp;commenti</td>
+</tr>
+<tr class="even">
+<td><strong>File naming</strong></td>
+<td><code>NNN_postid_0.jpg</code> — NNN corrisponde alla riga nel CSV</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Il dataset proviene dalla ricerca di Terenzi &amp; Giglietto (2025) e include post raccolti tramite Meta Content Library da pagine note per pubblicare AI slop. Punto cruciale: non tutti i post nel dataset sono AI slop — alcune pagine pubblicano anche contenuti autentici, meme non-IA, o contenuti ambigui. Il primo compito degli studenti sarà quindi una classificazione binaria (AI slop / non AI slop), analoga alla classificazione politico/non politico del seminario Paroni. Solo dopo questa prima classificazione si procede alla categorizzazione tematica dei contenuti identificati come AI slop. I contenuti multimediali includono sia immagini sia video. Tutti i gruppi lavorano sullo stesso sottoinsieme. I singoli commenti NON sono disponibili, solo il conteggio aggregato.</p>
+<p>Il dataset proviene dalla ricerca di Terenzi &amp; Giglietto (2025) e include post raccolti tramite Meta Content Library da 92 pagine Facebook italiane note per pubblicare AI slop. Il dataset contiene 420 post con 428 file multimediali (421 immagini JPG e 7 video MP4). Punto cruciale: non tutti i post sono AI slop — alcune pagine pubblicano anche contenuti autentici, meme non-IA, o contenuti ambigui. Il primo compito sarà una classificazione binaria (AI slop / non AI slop), analoga alla classificazione politico/non politico del seminario Paroni. I file multimediali sono nominati con un numero progressivo che corrisponde alla riga nel CSV (es. 001_postid_0.jpg → riga 1), facilitando il collegamento tra foglio e immagine. Tutti i gruppi lavorano sullo stesso dataset. Engagement mediano: 206 reazioni, 86 commenti, 4 condivisioni, 12.391 visualizzazioni.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -532,7 +531,7 @@ Fabio Giglietto
 <h2>Tutti sulle stesse immagini</h2>
 <section id="design-inter-gruppo" class="orange-box">
 <h3>Design inter-gruppo</h3>
-<p>Tutti i gruppi classificano le <strong>stesse ~300-400 immagini</strong>, ma ciascuno sviluppa il <strong>proprio schema di classificazione</strong>. Questo consente il confronto tra approcci diversi nella sintesi finale.</p>
+<p>Tutti i gruppi classificano gli <strong>stessi 420 post</strong>, ma ciascuno sviluppa il <strong>proprio schema di classificazione</strong>. Questo consente il confronto tra approcci diversi nella sintesi finale.</p>
 </section>
 <p>Vantaggi:</p>
 <ul>
@@ -621,7 +620,7 @@ Fabio Giglietto
 </tr>
 <tr class="even">
 <td><strong>Dati</strong></td>
-<td>~300-400 contenuti multimediali + CSV con metriche (forniti dal docente)</td>
+<td>420 post (428 file multimediali) + CSV con metriche (forniti dal docente)</td>
 </tr>
 <tr class="odd">
 <td><strong>Strumenti</strong></td>
@@ -826,12 +825,7 @@ Fabio Giglietto
 </section>
 <section id="timeline-del-progetto" class="slide level2">
 <h2>Timeline del progetto</h2>
-<table class="caption-top" style="width:100%;">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 22%">
-<col style="width: 37%">
-</colgroup>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Settimana</th>
@@ -853,7 +847,7 @@ Fabio Giglietto
 <tr class="odd">
 <td><strong>5</strong></td>
 <td>Lun 23</td>
-<td><strong>Lab:</strong> classificazione completa (~300-400 immagini)</td>
+<td><strong>Lab:</strong> classificazione completa (420 post)</td>
 </tr>
 <tr class="even">
 <td><strong>5</strong></td>
@@ -936,7 +930,7 @@ Fabio Giglietto
 <tr class="odd">
 <td><strong>1. Dati</strong></td>
 <td>20 headline</td>
-<td>~300-400 contenuti + CSV</td>
+<td>420 post + 428 file multimediali + CSV</td>
 </tr>
 <tr class="even">
 <td><strong>2a. Classif. binaria</strong></td>

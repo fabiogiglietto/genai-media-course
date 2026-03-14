@@ -37,14 +37,14 @@ csl: ../apa.csl
 ## Roadmap del lab
 
 1. **Ricapitolazione** — dal pilot alla classificazione completa
-2. **Batch processing** — strategie per classificare ~300-400 immagini con Gemini
+2. **Batch processing** — strategie per classificare 420 post con Gemini
 3. **Coerenza tra batch** — mantenere la consistenza della classificazione
 4. **Cross-referencing** — collegare classificazioni e metriche di engagement
 5. **Pattern preliminari** — prime esplorazioni descrittive
 6. **Lavoro pratico** — classificazione per gruppi
 
 ::: {.notes}
-Struttura del lab. Mercoledì scorso ogni gruppo ha progettato il prompt, costruito il codebook e testato la classificazione su un pilot di 30-50 immagini. Oggi si scala: dalla prova pilota al dataset completo di ~300-400 immagini. L'obiettivo è che ogni gruppo esca con la classificazione completa nel foglio condiviso, pronta per la validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini — questo rende possibile il confronto inter-gruppo alla fine del corso.
+Struttura del lab. Mercoledì scorso ogni gruppo ha progettato il prompt, costruito il codebook e testato la classificazione su un pilot di 30-50 immagini. Oggi si scala: dalla prova pilota al dataset completo di 420 post. L'obiettivo è che ogni gruppo esca con la classificazione completa nel foglio condiviso, pronta per la validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini — questo rende possibile il confronto inter-gruppo alla fine del corso.
 :::
 
 ## Dal Pilot al Dataset Completo {background-color="#C5612E"}
@@ -68,7 +68,7 @@ Sezione 1: ricapitolazione del lavoro svolto mercoledì e inquadramento della sf
 ::: {.column width="50%"}
 ### Cosa serve oggi
 
-- Classificare le **restanti 250-350 immagini**
+- Classificare i **restanti ~370 post**
 - Mantenere la **coerenza** con il pilot
 - Collegare le classificazioni ai **dati di engagement**
 - Identificare **pattern preliminari**
@@ -84,9 +84,9 @@ Verificate che il prompt e il codebook usati nel pilot siano salvati in un docum
 Verifica rapida: ogni gruppo mostra il proprio prompt e codebook dal pilot di mercoledì. 5 minuti per verificare che tutti siano pronti. Se qualche gruppo non ha completato il pilot, deve dedicare i primi 20 minuti a concluderlo prima di procedere. Il prompt salvato è il punto di partenza: non va modificato durante la classificazione su scala, altrimenti si perde la coerenza con il pilot. Eventuali modifiche si faranno solo dopo la validazione di domani, nella fase di iterazione.
 :::
 
-## Da 30-50 immagini a ~300-400: il salto di scala
+## Da 30-50 immagini a 420 post: il salto di scala
 
-Nel **pilot di mercoledì** avete classificato 30-50 immagini in una singola sessione Gemini. Nel dataset completo, il volume è **6-10 volte più grande**.
+Nel **pilot di mercoledì** avete classificato 30-50 immagini in una singola sessione Gemini. Nel dataset completo, il volume è **circa 10 volte più grande**.
 
 ::: {.highlight-box}
 **Gemini** offre una finestra di contesto fino a **1 milione di token** e capacità **multimodali** — le immagini si possono caricare direttamente, ma servono strategie per mantenere la **coerenza** [@cosenza2025].
@@ -100,7 +100,7 @@ Nel **pilot di mercoledì** avete classificato 30-50 immagini in una singola ses
 | **Verifica qualità** | Controllare i **primi 5 risultati** di ogni batch |
 
 ::: {.notes}
-Questo è il gap principale tra il pilot e la classificazione su scala. Con 30-50 immagini, bastava una o due sessioni Gemini e un controllo visivo dei risultati. Con 300-400 immagini, emergono problemi nuovi: il modello può "driftare" (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per la stessa immagine, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 immagini alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch. Collegamento con il seminario Paroni: lì avete visto come il prompt refinement migliorava la coerenza su 20 headline — qui applichiamo la stessa logica su scala molto più ampia.
+Questo è il gap principale tra il pilot e la classificazione su scala. Con 30-50 immagini, bastava una o due sessioni Gemini e un controllo visivo dei risultati. Con 420 post, emergono problemi nuovi: il modello può "driftare" (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per la stessa immagine, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 immagini alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch. Collegamento con il seminario Paroni: lì avete visto come il prompt refinement migliorava la coerenza su 20 headline — qui applichiamo la stessa logica su scala molto più ampia.
 :::
 
 ## Batch Processing con Gemini {background-color="#C5612E"}
@@ -257,7 +257,7 @@ Sezione 5: lavoro pratico di classificazione. I gruppi applicano quanto discusso
 ::: {.orange-box}
 **Obiettivo del lab (60 minuti)**
 
-Ogni gruppo: (1) classifica le **immagini restanti** (~250-350) con Gemini usando il prompt del pilot, (2) registra i risultati nel foglio condiviso, (3) produce una **tabella riassuntiva** con conteggi per categoria.
+Ogni gruppo: (1) classifica i **post restanti** (~370) con Gemini usando il prompt del pilot, (2) registra i risultati nel foglio condiviso, (3) produce una **tabella riassuntiva** con conteggi per categoria.
 :::
 
 **Fasi operative:**

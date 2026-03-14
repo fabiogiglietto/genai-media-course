@@ -1,5 +1,5 @@
 ---
-title: "Lancio Progetto: Analisi Ricezione AI Slop"
+title: "Lancio Progetto: Classificazione AI Slop e Pattern di Engagement"
 subtitle: "IA Generativa e Media — Settimana 4"
 author: "Fabio Giglietto"
 institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
@@ -186,14 +186,15 @@ Sezione 3: presentazione del dataset pre-curato fornito dal docente. Gli student
 Il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Il dataset contiene post da pagine note per pubblicare AI slop, ma **non tutti i post sono AI slop**.
 :::
 
-| Componente | Formato | Accesso |
-|-----------|---------|---------|
-| **Metadati post** + metriche di engagement | CSV | Google Sheet condiviso |
-| **Contenuti multimediali** (~300-400 immagini e video) | JPG/PNG/MP4 | Cartella Google Drive |
-| **Engagement:** reazioni, condivisioni, visualizzazioni | Colonne numeriche | Google Sheet condiviso |
+| Componente | Dettaglio |
+|-----------|----------|
+| **Post** | **420** da 92 pagine Facebook italiane |
+| **Contenuti multimediali** | **428 file** (421 immagini + 7 video) |
+| **Metriche di engagement** | Reazioni, condivisioni, visualizzazioni, n. commenti |
+| **File naming** | `NNN_postid_0.jpg` — NNN corrisponde alla riga nel CSV |
 
 ::: {.notes}
-Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post raccolti tramite Meta Content Library da pagine note per pubblicare AI slop. Punto cruciale: non tutti i post nel dataset sono AI slop — alcune pagine pubblicano anche contenuti autentici, meme non-IA, o contenuti ambigui. Il primo compito degli studenti sarà quindi una classificazione binaria (AI slop / non AI slop), analoga alla classificazione politico/non politico del seminario Paroni. Solo dopo questa prima classificazione si procede alla categorizzazione tematica dei contenuti identificati come AI slop. I contenuti multimediali includono sia immagini sia video. Tutti i gruppi lavorano sullo stesso sottoinsieme. I singoli commenti NON sono disponibili, solo il conteggio aggregato.
+Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post raccolti tramite Meta Content Library da 92 pagine Facebook italiane note per pubblicare AI slop. Il dataset contiene 420 post con 428 file multimediali (421 immagini JPG e 7 video MP4). Punto cruciale: non tutti i post sono AI slop — alcune pagine pubblicano anche contenuti autentici, meme non-IA, o contenuti ambigui. Il primo compito sarà una classificazione binaria (AI slop / non AI slop), analoga alla classificazione politico/non politico del seminario Paroni. I file multimediali sono nominati con un numero progressivo che corrisponde alla riga nel CSV (es. 001_postid_0.jpg → riga 1), facilitando il collegamento tra foglio e immagine. Tutti i gruppi lavorano sullo stesso dataset. Engagement mediano: 206 reazioni, 86 commenti, 4 condivisioni, 12.391 visualizzazioni.
 :::
 
 ## Cosa NON è disponibile
@@ -212,7 +213,7 @@ Queste limitazioni vanno **discusse nel paper** (sezione Discussione/Limitazioni
 
 ::: {.orange-box}
 ### Design inter-gruppo
-Tutti i gruppi classificano le **stesse ~300-400 immagini**, ma ciascuno sviluppa il **proprio schema di classificazione**. Questo consente il confronto tra approcci diversi nella sintesi finale.
+Tutti i gruppi classificano gli **stessi 420 post**, ma ciascuno sviluppa il **proprio schema di classificazione**. Questo consente il confronto tra approcci diversi nella sintesi finale.
 :::
 
 Vantaggi:
@@ -245,7 +246,7 @@ Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inven
 | Componente | Dettaglio |
 |-----------|----------|
 | **Tema** | Identificazione e classificazione di AI slop + pattern di engagement |
-| **Dati** | ~300-400 contenuti multimediali + CSV con metriche (forniti dal docente) |
+| **Dati** | 420 post (428 file multimediali) + CSV con metriche (forniti dal docente) |
 | **Strumenti** | Google Gemini (multimodale), NotebookLM, fogli di calcolo |
 | **Metodologia** | LLMs-in-the-loop [@marino2024] |
 | **Output** | Paper di ricerca (IMRaD) — 75% del voto, consegna 2 sett. prima dell'appello |
@@ -330,7 +331,7 @@ Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già 
 |-----------|------|----------|
 | **4** | Mar 17 | Formazione gruppi, domanda di ricerca |
 | **4** | Mer 18 | **Lab:** prompt design e classificazione pilota |
-| **5** | Lun 23 | **Lab:** classificazione completa (~300-400 immagini) |
+| **5** | Lun 23 | **Lab:** classificazione completa (420 post) |
 | **5** | Mar 24 | **Workshop:** validazione umana vs IA |
 | **5** | Mer 25 | Consultazione gruppi + analisi engagement |
 | **6** | Lun 30 | **Workshop:** scrittura del paper |
@@ -352,7 +353,7 @@ Sezione riassuntiva: come si mappa la pipeline LLMs-in-the-loop dal seminario Pa
 
 | Fase | Seminario Paroni | Progetto |
 |---|---|---|
-| **1. Dati** | 20 headline | ~300-400 contenuti + CSV |
+| **1. Dati** | 20 headline | 420 post + 428 file multimediali + CSV |
 | **2a. Classif. binaria** | Politico / non politico | **AI slop / non AI slop** |
 | **2b. Classif. tematica** | — | Multi-categoria (solo AI slop) |
 | **3. Prompt** | Strutturato con ruolo + esempi | **Multimodale**: ruolo + definizioni + contenuto |

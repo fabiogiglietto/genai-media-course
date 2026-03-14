@@ -89,7 +89,7 @@ Sezione 1: breve ricapitolazione di ciò che è stato definito nella sessione di
 ::: {.column width="50%"}
 ### Il dataset (fornito)
 
-- **~300-400 immagini** AI-generated da Facebook
+- **420 post** AI-generated da Facebook
 - File CSV con **metadati e metriche di engagement**
 - Fonte: studio Terenzi & Giglietto [@terenzi2025]
 - Cartella condivisa su **Google Drive**
@@ -364,7 +364,7 @@ Prima di uscire, ogni gruppo verifica:
 
 ::: {.callout-warning}
 ## Per lunedì
-Lunedì **scalerete la classificazione** a tutte le ~300-400 immagini. Il prompt deve essere pronto e testato. Se restano dubbi, raffinate tra oggi e lunedì.
+Lunedì **scalerete la classificazione** a tutte le 420 post. Il prompt deve essere pronto e testato. Se restano dubbi, raffinate tra oggi e lunedì.
 :::
 
 ::: {.notes}
@@ -380,7 +380,7 @@ Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per verificar
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) verificare che il codebook e il prompt siano documentati nel foglio condiviso, (2) se il prompt ha ancora problemi, raffinarlo tra oggi e lunedì, (3) lunedì lavoreremo alla classificazione dell'intero dataset di ~300-400 immagini con Gemini — portare i laptop carichi, (4) il prompt testato oggi è lo strumento che userete per tutta la settimana 5.
+Chiusura. Ricordare: (1) verificare che il codebook e il prompt siano documentati nel foglio condiviso, (2) se il prompt ha ancora problemi, raffinarlo tra oggi e lunedì, (3) lunedì lavoreremo alla classificazione dell'intero dataset di 420 post con Gemini — portare i laptop carichi, (4) il prompt testato oggi è lo strumento che userete per tutta la settimana 5.
 :::
 
 ## Riferimenti

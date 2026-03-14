@@ -88,7 +88,7 @@ Usando il **vocabolario della pipeline LLMs-in-the-loop** che conoscete dal semi
 
 | Fase della pipeline | Stato atteso | Verificare |
 |---------------------|-------------|------------|
-| **1. Classificazione IA** | Completata | ~300-400 immagini classificate con Gemini |
+| **1. Classificazione IA** | Completata | 420 post classificate con Gemini |
 | **2. Codebook** | Definito | Categorie, definizioni, esempi, regole per casi limite |
 | **3. Validazione umana** | Completata | 50 immagini codificate indipendentemente da ogni membro |
 | **4. Metriche di accordo** | Calcolate | Kappa umano-umano e umano-IA (≥ 0.60) |

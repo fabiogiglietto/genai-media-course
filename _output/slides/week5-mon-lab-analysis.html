@@ -167,14 +167,14 @@ Fabio Giglietto
 <h2>Roadmap del lab</h2>
 <ol type="1">
 <li><strong>Ricapitolazione</strong> — dal pilot alla classificazione completa</li>
-<li><strong>Batch processing</strong> — strategie per classificare ~300-400 immagini con Gemini</li>
+<li><strong>Batch processing</strong> — strategie per classificare 420 post con Gemini</li>
 <li><strong>Coerenza tra batch</strong> — mantenere la consistenza della classificazione</li>
 <li><strong>Cross-referencing</strong> — collegare classificazioni e metriche di engagement</li>
 <li><strong>Pattern preliminari</strong> — prime esplorazioni descrittive</li>
 <li><strong>Lavoro pratico</strong> — classificazione per gruppi</li>
 </ol>
 <aside class="notes">
-<p>Struttura del lab. Mercoledì scorso ogni gruppo ha progettato il prompt, costruito il codebook e testato la classificazione su un pilot di 30-50 immagini. Oggi si scala: dalla prova pilota al dataset completo di ~300-400 immagini. L’obiettivo è che ogni gruppo esca con la classificazione completa nel foglio condiviso, pronta per la validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini — questo rende possibile il confronto inter-gruppo alla fine del corso.</p>
+<p>Struttura del lab. Mercoledì scorso ogni gruppo ha progettato il prompt, costruito il codebook e testato la classificazione su un pilot di 30-50 immagini. Oggi si scala: dalla prova pilota al dataset completo di 420 post. L’obiettivo è che ogni gruppo esca con la classificazione completa nel foglio condiviso, pronta per la validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini — questo rende possibile il confronto inter-gruppo alla fine del corso.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -217,7 +217,7 @@ Fabio Giglietto
 </div><div class="column" style="width:50%;">
 <h3 id="cosa-serve-oggi">Cosa serve oggi</h3>
 <ul>
-<li>Classificare le <strong>restanti 250-350 immagini</strong></li>
+<li>Classificare i <strong>restanti ~370 post</strong></li>
 <li>Mantenere la <strong>coerenza</strong> con il pilot</li>
 <li>Collegare le classificazioni ai <strong>dati di engagement</strong></li>
 <li>Identificare <strong>pattern preliminari</strong></li>
@@ -250,9 +250,9 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="da-30-50-immagini-a-300-400-il-salto-di-scala" class="slide level2">
-<h2>Da 30-50 immagini a ~300-400: il salto di scala</h2>
-<p>Nel <strong>pilot di mercoledì</strong> avete classificato 30-50 immagini in una singola sessione Gemini. Nel dataset completo, il volume è <strong>6-10 volte più grande</strong>.</p>
+<section id="da-30-50-immagini-a-420-post-il-salto-di-scala" class="slide level2">
+<h2>Da 30-50 immagini a 420 post: il salto di scala</h2>
+<p>Nel <strong>pilot di mercoledì</strong> avete classificato 30-50 immagini in una singola sessione Gemini. Nel dataset completo, il volume è <strong>circa 10 volte più grande</strong>.</p>
 <div class="highlight-box">
 <p><strong>Gemini</strong> offre una finestra di contesto fino a <strong>1 milione di token</strong> e capacità <strong>multimodali</strong> — le immagini si possono caricare direttamente, ma servono strategie per mantenere la <strong>coerenza</strong> <span class="citation" data-cites="cosenza2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Cosenza, 2025</a>)</span>.</p>
 </div>
@@ -287,7 +287,7 @@ Fabio Giglietto
 </tbody>
 </table>
 <aside class="notes">
-<p>Questo è il gap principale tra il pilot e la classificazione su scala. Con 30-50 immagini, bastava una o due sessioni Gemini e un controllo visivo dei risultati. Con 300-400 immagini, emergono problemi nuovi: il modello può “driftare” (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per la stessa immagine, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 immagini alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch. Collegamento con il seminario Paroni: lì avete visto come il prompt refinement migliorava la coerenza su 20 headline — qui applichiamo la stessa logica su scala molto più ampia.</p>
+<p>Questo è il gap principale tra il pilot e la classificazione su scala. Con 30-50 immagini, bastava una o due sessioni Gemini e un controllo visivo dei risultati. Con 420 post, emergono problemi nuovi: il modello può “driftare” (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per la stessa immagine, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 immagini alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch. Collegamento con il seminario Paroni: lì avete visto come il prompt refinement migliorava la coerenza su 20 headline — qui applichiamo la stessa logica su scala molto più ampia.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -649,7 +649,7 @@ Fabio Giglietto
 <h2>Istruzioni per il lavoro di gruppo</h2>
 <div class="orange-box">
 <p><strong>Obiettivo del lab (60 minuti)</strong></p>
-<p>Ogni gruppo: (1) classifica le <strong>immagini restanti</strong> (~250-350) con Gemini usando il prompt del pilot, (2) registra i risultati nel foglio condiviso, (3) produce una <strong>tabella riassuntiva</strong> con conteggi per categoria.</p>
+<p>Ogni gruppo: (1) classifica i <strong>post restanti</strong> (~370) con Gemini usando il prompt del pilot, (2) registra i risultati nel foglio condiviso, (3) produce una <strong>tabella riassuntiva</strong> con conteggi per categoria.</p>
 </div>
 <p><strong>Fasi operative:</strong></p>
 <ol type="1">

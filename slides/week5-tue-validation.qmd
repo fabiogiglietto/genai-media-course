@@ -44,7 +44,7 @@ csl: ../apa.csl
 6. **Confronto inter-gruppo e iterazione** — sfruttare il dataset condiviso
 
 ::: {.notes}
-Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato le ~300-400 immagini con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, quattro criteri con scala a tre punti per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Il contenuto genuinamente nuovo è Cohen's kappa e Krippendorff's alpha. Un elemento in più rispetto al seminario: poiché tutti i gruppi lavorano sulle stesse immagini, è possibile un confronto inter-gruppo sulla classificazione.
+Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato le 420 post con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, quattro criteri con scala a tre punti per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Il contenuto genuinamente nuovo è Cohen's kappa e Krippendorff's alpha. Un elemento in più rispetto al seminario: poiché tutti i gruppi lavorano sulle stesse immagini, è possibile un confronto inter-gruppo sulla classificazione.
 :::
 
 ## Perché Validare {background-color="#C5612E"}
@@ -155,7 +155,7 @@ Sezione 3: aspetti pratici del protocollo di validazione. Come selezionare il ca
 
 Come selezionare le 50 immagini:
 
-- **Campione casuale:** selezione randomizzata dal dataset completo (~300-400 immagini)
+- **Campione casuale:** selezione randomizzata dal dataset completo (420 post)
 - **Campione stratificato:** includere immagini da tutte le categorie assegnate da Gemini
 - **Casi incerti:** includere le immagini classificate con certezza "bassa" dall'IA
 
@@ -317,7 +317,7 @@ Sezione 6: la dimensione unica del progetto — tutti i gruppi hanno classificat
 ## Tutti sulle stesse immagini: un'opportunità unica
 
 ::: {.highlight-box}
-Poiché tutti i gruppi hanno classificato le **stesse ~300-400 immagini**, il progetto consente un **confronto inter-gruppo** impossibile in un design tradizionale.
+Poiché tutti i gruppi hanno classificato le **stesse 420 post**, il progetto consente un **confronto inter-gruppo** impossibile in un design tradizionale.
 :::
 
 Cosa si può confrontare:
