@@ -14,3 +14,7 @@ Thumbs.db
 .RData
 .Ruserdata
 
+# Dataset and student project data (large files, copyrighted content)
+data/
+download_*.csv
+
