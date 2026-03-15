@@ -3,7 +3,7 @@ title: "Workshop di Scrittura"
 subtitle: "IA Generativa e Media — Settimana 6"
 author: "Fabio Giglietto"
 institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
-date: "30 Marzo 2026"
+date: "31 Marzo 2026"
 date-format: "D MMMM YYYY"
 format:
   revealjs:
@@ -462,7 +462,7 @@ Checklist da usare come guida durante la stesura e come strumento di auto-valuta
 
 ## Per la prossima sessione
 
-**Domani (Martedi 31 Marzo):** Lavoro di Gruppo — Stesura Relazione
+**Domani (Mercoledi 1 Aprile):** Lavoro di Gruppo — Stesura Relazione
 
 ::: {.highlight-box}
 **Obiettivo della sessione di domani:** Lavorare in aula alla prima bozza del relazione. Portate laptop, dati, e l'outline costruito oggi.
@@ -492,7 +492,7 @@ Istruzioni per domani. La sessione di domani è dedicata al lavoro di gruppo in 
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Lavoro di Gruppo — Stesura Relazione (31 Marzo 2026)
+**Prossima lezione:** Lavoro di Gruppo — Stesura Relazione (1 Aprile 2026)
 
 📧 fabio.giglietto@uniurb.it
 

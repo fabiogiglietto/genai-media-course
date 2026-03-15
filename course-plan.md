@@ -2,12 +2,12 @@
 
 *IA Generativa e Media*
 
-**Course Plan — A.Y. 2025/2026 (Revised v2 — March 2026)**
+**Course Plan — A.Y. 2025/2026 (Revised v3 — March 2026)**
 
 | | |
 |---|---|
 | **Lecturer:** Prof. Fabio Giglietto | **Credits:** 6 CFU |
-| **Duration:** Feb 23 – Apr 1, 2026 (6 weeks) | **Total Hours:** 36 (18 sessions × 2 hours) |
+| **Duration:** Feb 23 – Apr 13, 2026 (7 weeks + Easter break) | **Total Hours:** 34 (17 sessions × 2 hours) |
 | **Room:** Aula B1 | **Language:** Italian/English |
 | **AI Platform:** Google Gemini + NotebookLM (via UniUrb Google Workspace) | **Access:** @uniurb.it account required |
 
@@ -19,9 +19,11 @@
 
 ---
 
-## Revision Notes (v2 — March 2026)
+## Revision Notes
 
-> **Key changes from v1:** The group project has been revised for feasibility. Students do not have direct access to Meta Content Library or TikTok Research API. The instructor provides a pre-curated dataset (CSV + images) drawn from the Terenzi & Giglietto (2025) study. All groups work on the **same subset of ~300–400 images**, enabling inter-group reliability comparison. The research focus has shifted from comment reception analysis (comments are unavailable) to **AI-generated content classification and engagement pattern analysis**. The data collection session (Week 4 Wed) has been repurposed as a prompt design and pilot classification lab.
+> **Key changes in v2:** The group project has been revised for feasibility. Students do not have direct access to Meta Content Library or TikTok Research API. The instructor provides a pre-curated dataset (CSV + images) drawn from the Terenzi & Giglietto (2025) study. All groups work on the **same subset of ~300–400 images**, enabling inter-group reliability comparison. The research focus has shifted from comment reception analysis (comments are unavailable) to **AI-generated content classification and engagement pattern analysis**. The data collection session (Week 4 Wed) has been repurposed as a prompt design and pilot classification lab.
+
+> **Key changes in v3:** Mon Mar 23 session cancelled. Sessions 8–13 shifted forward by one slot. Week 5 now has 2 sessions (Tue–Wed), Week 6 has 3 sessions (Mon–Tue–Wed). Easter holidays Apr 6–10. Final synthesis session moved to Mon Apr 13 (Week 7). Course now spans 17 sessions over 7 weeks (+ Easter break).
 
 ---
 
@@ -45,7 +47,7 @@ Topic: "GenAI and Political Communication: A Brazilian Case Study" — Covering 
 
 ### Weekly Feature: This Week in AI
 
-Each Monday session begins with a 10-minute segment covering recent developments in generative AI relevant to media and communication. Students are encouraged to share news items they have encountered during the week.
+Each session marked with "This Week in AI" begins with a 10-minute segment covering recent developments in generative AI relevant to media and communication. Students are encouraged to share news items they have encountered during the week.
 
 ---
 
@@ -67,12 +69,13 @@ Each Monday session begins with a 10-minute segment covering recent developments
 | 4 | Mon | Mar 16 | 11:00–13:00 | 🟧 **GUEST: Massimo Terenzi — AI Slop & Synthetic Virality** | Guest |
 | 4 | Tue | Mar 17 | 11:00–13:00 | 🟦 Project Launch: Classifying AI Slop & Engagement Patterns | Workshop |
 | 4 | Wed | Mar 18 | 14:00–16:00 | 🟦 Lab: Prompt Design & Pilot Classification | Lab |
-| 5 | Mon | Mar 23 | 11:00–13:00 | 🟦 Lab: Scaling Up AI-Assisted Classification + This Week in AI | Lab |
-| 5 | Tue | Mar 24 | 11:00–13:00 | 🟦 Validating AI Analysis: Human vs Machine | Workshop |
-| 5 | Wed | Mar 25 | 14:00–16:00 | 🟩 Group Consultation & Engagement Analysis | Consultation |
-| 6 | Mon | Mar 30 | 11:00–13:00 | 🟦 Writing Workshop + This Week in AI | Workshop |
-| 6 | Tue | Mar 31 | 11:00–13:00 | 🟩 Group Work: Paper Drafting | Lab |
-| 6 | Wed | Apr 1 | 14:00–16:00 | Course Synthesis & Final Consultations | Closing |
+| 5 | Tue | Mar 24 | 11:00–13:00 | 🟦 Lab: Scaling Up AI-Assisted Classification | Lab |
+| 5 | Wed | Mar 25 | 14:00–16:00 | 🟦 Validating AI Analysis: Human vs Machine + This Week in AI | Workshop |
+| 6 | Mon | Mar 30 | 11:00–13:00 | 🟩 Group Consultation & Engagement Analysis | Consultation |
+| 6 | Tue | Mar 31 | 11:00–13:00 | 🟦 Writing Workshop | Workshop |
+| 6 | Wed | Apr 1 | 14:00–16:00 | 🟩 Group Work: Paper Drafting + This Week in AI | Lab |
+| — | — | Apr 6–10 | — | *Easter holidays* | — |
+| 7 | Mon | Apr 13 | 11:00–13:00 | Course Synthesis & Final Consultations | Closing |
 
 ---
 
@@ -150,19 +153,19 @@ Hands-on lab where groups design and test their classification prompts with Gemi
 
 By end of session, each group should have: a tested and refined prompt, a documented codebook, and a pilot classification of ~30–50 images.
 
-### Week 5: AI-Assisted Analysis & Validation (Mar 23–25)
+### Week 5: AI-Assisted Analysis & Validation (Mar 24–25)
 
-**Mon Mar 23 | Lab: Scaling Up AI-Assisted Classification + This Week in AI** *(revised)*
+**Tue Mar 24 | Lab: Scaling Up AI-Assisted Classification** *(revised)*
 
-THIS WEEK IN AI (10 min). Groups apply their refined prompts to classify the full image set (~300–400 images). Session covers:
+Groups apply their refined prompts to classify the full image set (~300–400 images). Session covers:
 
 1. **Batch classification with Gemini** — Using Gemini's long context window and multimodal capabilities to process images in batches. Strategies for maintaining consistency across batches. Students record Gemini's classification for each image in their shared Google Sheet.
 2. **Cross-referencing with CSV data** — Joining Gemini's image classifications back to the engagement metrics in the original CSV. Each row now has: post metadata + engagement stats + AI-assigned content category.
 3. **Preliminary patterns** — Quick descriptive exploration: how many images per category? Which categories have the highest/lowest mean engagement? Any obvious outliers?
 
-**Tue Mar 24 | Validating AI Analysis: Human vs Machine** *(revised)*
+**Wed Mar 25 | Validating AI Analysis: Human vs Machine + This Week in AI** *(revised)*
 
-LLMs-in-the-loop validation following Marino & Giglietto (2024). This session has two parts:
+THIS WEEK IN AI (10 min). LLMs-in-the-loop validation following Marino & Giglietto (2024). This session has two parts:
 
 1. **Human coding** (40 min) — Each group member independently classifies a shared validation sample of **50 images** using the group's codebook (no Gemini, no discussion). Results recorded in individual columns of the shared sheet.
 2. **Reliability calculation** (30 min) — Students compute:
@@ -175,7 +178,9 @@ Additionally, if groups have performed clustering or labeling with Gemini (e.g.,
 
 **Inter-group reliability dimension:** Since all groups classified the **same images**, a cross-group comparison is possible. Groups that used different classification schemes will naturally produce different categories — but for any shared dimension (e.g., multiple groups classified "children" content), inter-group agreement can be assessed. This becomes a discussion point for the final synthesis.
 
-**Wed Mar 25 | Group Consultation & Engagement Analysis** *(revised)*
+### Week 6: Consultation, Writing & Drafting (Mar 30 – Apr 1)
+
+**Mon Mar 30 | Group Consultation & Engagement Analysis** *(revised)*
 
 Individual group consultations with the instructor. Each group presents:
 - Their validated classification results (kappa values, confusion matrix)
@@ -184,11 +189,9 @@ Individual group consultations with the instructor. Each group presents:
 
 Groups consolidate results and prepare for writing. The engagement analysis is the core analytical step: using the validated content categories (independent variable) to explain variation in engagement metrics (dependent variable) from the CSV. Groups may explore questions such as: Do images depicting children receive more reactions than landscapes? Does nostalgia-based content get shared more than humor? Is there a relationship between apparent generation quality and engagement?
 
-### Week 6: Writing & Synthesis (Mar 30 – Apr 1)
+**Tue Mar 31 | Writing Workshop**
 
-**Mon Mar 30 | Writing Workshop + This Week in AI**
-
-THIS WEEK IN AI (10 min). Structuring the final research paper. Using NotebookLM to synthesize findings and literature. Academic writing with AI assistance. The revised paper structure:
+Structuring the final research paper. Using NotebookLM to synthesize findings and literature. Academic writing with AI assistance. The revised paper structure:
 
 1. **Introduction** — From AI Slop as a phenomenon to the specific research question. Why does understanding AI-generated content classification and its engagement patterns matter?
 2. **Literature review** — AI-generated content on social media, platform dynamics, LLMs-in-the-loop methodology.
@@ -197,11 +200,13 @@ THIS WEEK IN AI (10 min). Structuring the final research paper. Using NotebookLM
 5. **Discussion** — Interpretation of findings, connection to Terenzi & Giglietto's framework, methodological reflections (what the AI caught vs. missed, the expertise paradox), limitations (no comments, no original context, single platform), implications for platform policy.
 6. **Appendix** — Full Gemini prompts, complete codebook, supplementary tables.
 
-**Tue Mar 31 | Group Work: Paper Drafting**
+**Wed Apr 1 | Group Work: Paper Drafting + This Week in AI**
 
-In-class collaborative writing session. Peer review and feedback. Final methodology and theory review.
+THIS WEEK IN AI (10 min). In-class collaborative writing session. Peer review and feedback. Final methodology and theory review.
 
-**Wed Apr 1 | Course Synthesis & Final Consultations**
+### Week 7: Synthesis (Apr 13, after Easter break)
+
+**Mon Apr 13 | Course Synthesis & Final Consultations**
 
 Collective discussion on main findings. **Cross-group comparison:** since all groups classified the same images, the final synthesis explores how different classification schemes reveal different patterns in the same data. What does a "visual subject" lens show that an "emotional appeal" lens misses, and vice versa? Methodological reflections. Future perspectives for GenAI in media. Final project guidance.
 
@@ -245,7 +250,7 @@ Students work in groups of 4–6 to produce a research paper analyzing AI-genera
 
 The pipeline adapts the Marino & Giglietto (2024) framework and the Paroni workshop experience to multimodal content:
 
-| Pipeline step | Paroni workshop (Week 3) | Project application (Weeks 4–6) |
+| Pipeline step | Paroni workshop (Week 3) | Project application (Weeks 4–7) |
 |---|---|---|
 | **1. Data** | 20 Italian news headlines (provided) | ~300–400 AI-generated images + CSV (provided by instructor) |
 | **2. Classification** | Binary: political / non-political | Multi-category: per group's classification scheme |
@@ -261,7 +266,7 @@ The pipeline adapts the Marino & Giglietto (2024) framework and the Paroni works
 Since all groups classify the **same ~300–400 images**, the project design enables a unique cross-group analysis dimension:
 
 - **Within-group reliability:** Each group computes human–human and human–AI kappa for their own classification scheme. This validates whether the scheme is operationalized clearly enough.
-- **Cross-group comparison (final synthesis):** Different classification schemes applied to identical images reveal complementary patterns. The Apr 1 synthesis session compares what each lens reveals about the AI Slop ecosystem. This is not about "which group is right" — it's about how analytical choices shape findings.
+- **Cross-group comparison (final synthesis):** Different classification schemes applied to identical images reveal complementary patterns. The Apr 13 synthesis session compares what each lens reveals about the AI Slop ecosystem. This is not about "which group is right" — it's about how analytical choices shape findings.
 
 ### Suggested Group Roles
 
@@ -270,8 +275,8 @@ Since all groups classify the **same ~300–400 images**, the project design ena
 | **Coordinator** | Timeline, task distribution, Moodle registration | All phases |
 | **AI analyst** | Prompt design, Gemini interaction, batch classification | Weeks 4–5 |
 | **Validator** | Human coding protocol, kappa calculation, confusion matrix | Week 5 |
-| **Data analyst** | CSV management, engagement analysis, descriptive statistics | Week 5 |
-| **Writer** | Paper structure, drafting, bibliography, peer review integration | Week 6 |
+| **Data analyst** | CSV management, engagement analysis, descriptive statistics | Weeks 5–6 |
+| **Writer** | Paper structure, drafting, bibliography, peer review integration | Weeks 6–7 |
 
 Roles are flexible — all members participate in all phases. The roles identify who takes primary responsibility for coordinating each phase.
 
@@ -282,12 +287,13 @@ Roles are flexible — all members participate in all phases. The roles identify
 | Week 4 | Mon Mar 16 | Terenzi seminar — context for the dataset | — |
 | Week 4 | Tue Mar 17 | Group formation, RQ development, classification scheme | Group registered on Moodle; RQ + scheme documented |
 | Week 4 | Wed Mar 18 | Prompt design & pilot classification | Tested prompt + codebook + 30–50 pilot classifications |
-| Week 5 | Mon Mar 23 | Full AI classification of ~300–400 images | Complete Gemini classification in shared sheet |
-| Week 5 | Tue Mar 24 | Human validation: 50-image sample, kappa calculation | Kappa values + confusion matrix |
-| Week 5 | Wed Mar 25 | Engagement analysis + group consultation | Preliminary findings (categories → engagement) |
-| Week 6 | Mon Mar 30 | Paper outline + writing workshop | Paper outline with 2–3 points per section |
-| Week 6 | Tue Mar 31 | Paper drafting + peer review | First draft (≥3 of 4 main sections) |
-| Week 6 | Wed Apr 1 | Cross-group synthesis + final consultations | — |
+| Week 5 | Tue Mar 24 | Full AI classification of ~300–400 images | Complete Gemini classification in shared sheet |
+| Week 5 | Wed Mar 25 | Human validation: 50-image sample, kappa calculation | Kappa values + confusion matrix |
+| Week 6 | Mon Mar 30 | Engagement analysis + group consultation | Preliminary findings (categories → engagement) |
+| Week 6 | Tue Mar 31 | Paper outline + writing workshop | Paper outline with 2–3 points per section |
+| Week 6 | Wed Apr 1 | Paper drafting + peer review | First draft (≥3 of 4 main sections) |
+| — | Apr 6–10 | *Easter holidays* | — |
+| Week 7 | Mon Apr 13 | Cross-group synthesis + final consultations | — |
 | Post-course | 2 weeks before June exam | **Final paper submission on Moodle** | PDF, one file per group |
 
 ### Assessment
@@ -379,7 +385,7 @@ AI-powered research assistant for document analysis and synthesis.
 
 ## Important Notes
 
-- **Attendance requirement:** minimum 13 out of 18 sessions (¾ of classes)
+- **Attendance requirement:** minimum 13 out of 17 sessions (¾ of classes)
 - **Moodle enrollment** required within first week of course
 - **Google AI tools:** verify your @uniurb.it account works with Gemini and NotebookLM before Week 1
 - Guest seminar is open to all students and integrated into regular course hours
@@ -387,4 +393,4 @@ AI-powered research assistant for document analysis and synthesis.
 
 ---
 
-*Last updated: March 14, 2026 (v2 — revised project for feasibility: instructor-provided dataset, same-subset inter-group design, classification + engagement focus)*
+*Last updated: March 15, 2026 (v3 — Mon Mar 23 cancelled; sessions 8–13 shifted forward; Easter break Apr 6–10; final session moved to Mon Apr 13)*

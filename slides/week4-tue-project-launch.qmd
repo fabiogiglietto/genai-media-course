@@ -183,7 +183,7 @@ Sezione 3: presentazione del dataset pre-curato fornito dal docente. Gli student
 ## Un dataset pronto per l'analisi
 
 ::: {.highlight-box}
-Il docente fornisce un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Il dataset contiene post da pagine note per pubblicare AI slop, ma **non tutti i post sono AI slop**.
+Riceverete un **dataset pre-curato** tratto dalla ricerca Terenzi & Giglietto [-@terenzi2025]. Il dataset contiene post da pagine note per pubblicare AI slop, ma **non tutti i post sono AI slop**.
 :::
 
 | Componente | Dettaglio |
@@ -213,17 +213,17 @@ Queste limitazioni vanno **discusse nel relazione** (sezione Discussione/Limitaz
 
 ::: {.orange-box}
 ### Design inter-gruppo
-Tutti i gruppi classificano gli **stessi 420 post**, ma ciascuno sviluppa il **proprio schema di classificazione**. Questo consente il confronto tra approcci diversi nella sintesi finale.
+Tutti i gruppi classificano gli **stessi 420 post**, ma ciascuno sviluppa il **proprio schema di classificazione**.
 :::
 
 Vantaggi:
 
 - **Confronto inter-gruppo** su dati identici
 - Schemi diversi rivelano **pattern complementari**
-- La sintesi finale (1 Aprile) diventa una **meta-analisi**
+- La sintesi finale (13 Aprile) diventa una **meta-analisi**
 
 ::: {.notes}
-Questo è un aspetto chiave del design del progetto. Nella ricerca tradizionale, ogni gruppo raccoglierebbe dati diversi e il confronto sarebbe impossibile. Qui tutti analizzano le stesse immagini: un gruppo potrebbe classificare per soggetto visivo (bambini, animali, paesaggi), un altro per strategia emotiva (nostalgia, tenerezza, paura), un altro per tecnica generativa (fotorealistico, stilizzato, ibrido). La sessione del 1 aprile confronterà cosa ciascuna lente analitica rivela — e cosa nasconde. Questo è un esercizio epistemologico potente: le scelte analitiche determinano cosa si può vedere nei dati.
+Questo è un aspetto chiave del design del progetto. Nella ricerca tradizionale, ogni gruppo raccoglierebbe dati diversi e il confronto sarebbe impossibile. Qui tutti analizzano le stesse immagini: un gruppo potrebbe classificare per soggetto visivo (bambini, animali, paesaggi), un altro per strategia emotiva (nostalgia, tenerezza, paura), un altro per tecnica generativa (fotorealistico, stilizzato, ibrido). La sessione del 13 aprile confronterà cosa ciascuna lente analitica rivela — e cosa nasconde. Questo è un esercizio epistemologico potente: le scelte analitiche determinano cosa si può vedere nei dati.
 :::
 
 ## Angoli di classificazione tematica (Step 2)

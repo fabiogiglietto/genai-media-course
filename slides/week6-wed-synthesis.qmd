@@ -1,9 +1,9 @@
 ---
 title: "Sintesi del Corso e Consultazioni Finali"
-subtitle: "IA Generativa e Media — Settimana 6"
+subtitle: "IA Generativa e Media — Settimana 7"
 author: "Fabio Giglietto"
 institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
-date: "1 Aprile 2026"
+date: "13 Aprile 2026"
 date-format: "D MMMM YYYY"
 format:
   revealjs:
@@ -34,58 +34,14 @@ bibliography: ../references.bib
 csl: ../apa.csl
 ---
 
-## [This Week in AI]{.twiai-badge} — Edizione Finale
-
-### Il futuro della persuasione automatizzata
-
-L'IA conversazionale può essere fino al **52% più persuasiva** di un messaggio statico, con effetti misurabili anche **dopo un mese**. Ma i modelli più persuasivi producono il **30% di affermazioni inaccurate** [@hackenburg2025].
-
-::: {.callout-note}
-## Da discutere
-In un mondo dove l'IA e sempre più persuasiva e sempre meno accurata, quale ruolo spetta alla ricerca come quella che avete condotto?
-:::
-
-::: {.notes}
-Ultima edizione del segmento This Week in AI. Il dato di Hackenburg et al. (2025, Science) è particolarmente significativo come chiusura del corso: sintetizza il trade-off fondamentale dell'IA generativa — più potente ma meno affidabile. Studio con 76.977 risposte, 42.357 persone, 19 LLM su 707 questioni politiche. Il trade-off persuasione-accuratezza è confermato empiricamente: ottimizzare per la persuasione porta a sacrificare l'accuratezza. Le strategie basate su densità informativa sono le più efficaci, ma anche le più prone a imprecisioni. Collegamento con il progetto degli studenti: la ricerca empirica sulla ricezione dei contenuti IA è parte della risposta a questa sfida.
-:::
-
-## [This Week in AI]{.twiai-badge} — Edizione Finale
-
-### Sciami IA e minacce alla democrazia
-
-> "AI swarms are distinctly equipped to exploit this by engineering a **synthetic consensus** that appears to bridge these divides."
->
-> — @schroeder2026
-
-Le reti "Pravda" creano siti con articoli fabbricati, progettati per essere **ingeriti dai LLM** durante il riaddestramento. Le narrative false si **cristallizzano nei pesi del modello** [@schroeder2026].
-
-::: {.notes}
-Secondo segmento TWIAI finale. Schroeder et al. (2026, Science) descrivono lo scenario degli sciami IA: reti coordinate di agenti autonomi che usano LLM e architetture multi-agente per manipolare il discorso pubblico. L'avvelenamento dei dati (data poisoning) è particolarmente insidioso: le reti "Pravda" pro-Cremlino creano centinaia di siti con contenuti duplicati, ottimizzati non per i lettori umani ma per i web crawler. Quando i LLM vengono riaddestrati su questi dati contaminati, le narrative false si incorporano nei pesi del modello. Questo è il livello più profondo della manipolazione: non singoli contenuti falsi, ma la corruzione dell'infrastruttura epistemica stessa.
-:::
-
-## [This Week in AI]{.twiai-badge} — Edizione Finale
-
-### La sicurezza dell'IA come problema sociotecnico
-
-::: {.highlight-box}
-**Lezione chiave:** Il *red-teaming* dell'IA non e solo un problema tecnico ma un **problema sociotecnico** che coinvolge valori, lavoro e danni psicologici [@gillespie2026].
-:::
-
-Come per la moderazione dei contenuti, rischiamo di scoprire **troppo tardi** i costi umani delle pratiche di sicurezza dell'IA.
-
-::: {.notes}
-Terzo e ultimo segmento TWIAI. Gillespie et al. (2026) analizzano il red-teaming dell'IA — la pratica di testare i modelli IA cercando di farli produrre contenuti dannosi — come un problema sociotecnico. Tre dimensioni critiche: (1) i valori e i pregiudizi dietro la definizione di "danno" — chi decide cosa e pericoloso?; (2) le condizioni di lavoro dei red-teamer, spesso precarie e con poche tutele; (3) l'impatto psicologico su chi deve immaginare e provocare scenari dannosi quotidianamente. Il parallelo con la moderazione dei contenuti sui social media e illuminante: ci sono voluti anni per riconoscere che i moderatori subivano danni psicologici significativi (PTSD documentato). Rischiamo di ripetere lo stesso errore con i red-teamer dell'IA. Questo inquadra la sicurezza dell'IA come una questione sociale, non solo tecnica.
-:::
-
 ## Roadmap della sessione
 
-1. **This Week in AI** — edizione finale
-2. **Il filo del corso** — dai fondamenti al progetto
-3. **Il Paradosso dell'IA Generativa** — revisitato
-4. **Riflessioni metodologiche** — cosa abbiamo imparato
-5. **Prospettive future** — verso dove andiamo
-6. **Consultazioni finali** — ultime domande sul paper
-7. **Chiusura del corso**
+1. **Il filo del corso** — dai fondamenti al progetto
+2. **Il Paradosso dell'IA Generativa** — revisitato
+3. **Riflessioni metodologiche** — cosa abbiamo imparato
+4. **Prospettive future** — verso dove andiamo
+5. **Consultazioni finali** — ultime domande sul paper
+6. **Chiusura del corso**
 
 ::: {.notes}
 Struttura dell'ultima sessione. Oggi chiudiamo il cerchio: partiamo dai temi delle prime settimane e vediamo come il percorso del corso — dalla teoria alla pratica — ha costruito le competenze per analizzare criticamente l'IA generativa nel sistema mediale. Le consultazioni finali occuperanno l'ultima parte della sessione. Il tono e riflessivo: non solo cosa abbiamo imparato, ma come possiamo continuare ad imparare in un campo che evolve cosi rapidamente.

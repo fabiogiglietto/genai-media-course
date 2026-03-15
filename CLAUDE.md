@@ -140,12 +140,12 @@ Guest and seminar sessions (week 3 + guest lectures in weeks 2 and 4) do NOT req
 | 5 | `week2-wed-deepfakes-regulation.qmd` | Deepfake, Policy e Regolamentazione | Wed Mar 4 | Lecture + TWIAI |
 | 6 | `week4-tue-project-launch.qmd` | Lancio Progetto: Classificazione AI Slop e Pattern di Engagement | Tue Mar 17 | Workshop |
 | 7 | `week4-wed-lab-collecting.qmd` | Lab: Prompt Design e Classificazione Pilota | Wed Mar 18 | Lab + TWIAI |
-| 8 | `week5-mon-lab-analysis.qmd` | Lab: Classificazione su Scala con IA | Mon Mar 23 | Lab |
-| 9 | `week5-tue-validation.qmd` | Validazione: Umano vs Macchina | Tue Mar 24 | Workshop |
-| 10 | `week5-wed-consultation.qmd` | Consultazione Gruppi e Analisi Engagement | Wed Mar 25 | Consultation + TWIAI |
-| 11 | `week6-mon-writing-workshop.qmd` | Workshop di Scrittura | Mon Mar 30 | Workshop |
-| 12 | `week6-tue-paper-drafting.qmd` | Lavoro di Gruppo: Stesura Paper | Tue Mar 31 | Lab |
-| 13 | `week6-wed-synthesis.qmd` | Sintesi del Corso e Consultazioni Finali | Wed Apr 1 | Closing + TWIAI |
+| 8 | `week5-mon-lab-analysis.qmd` | Lab: Classificazione su Scala con IA | Tue Mar 24 | Lab |
+| 9 | `week5-tue-validation.qmd` | Validazione: Umano vs Macchina | Wed Mar 25 | Workshop + TWIAI |
+| 10 | `week5-wed-consultation.qmd` | Consultazione Gruppi e Analisi Engagement | Mon Mar 30 | Consultation |
+| 11 | `week6-mon-writing-workshop.qmd` | Workshop di Scrittura | Tue Mar 31 | Workshop |
+| 12 | `week6-tue-paper-drafting.qmd` | Lavoro di Gruppo: Stesura Paper | Wed Apr 1 | Lab + TWIAI |
+| 13 | `week6-wed-synthesis.qmd` | Sintesi del Corso e Consultazioni Finali | Mon Apr 13 | Closing |
 
 ---
 
@@ -417,7 +417,7 @@ The first session (`week1-mon-introduction.qmd`) includes an expanded administra
 
 1. **Il corso in sintesi** — basic info table (name, instructor, dates, times, platform)
 2. **Panoramica del corso** — meetings per week, total hours, Part I / Part II structure
-3. **Struttura delle 6 settimane** — weekly focus overview table
+3. **Struttura delle 7 settimane** — weekly focus overview table
 4. **Modalità di valutazione per frequentanti** — numbered list: enrollment deadline, ¾ attendance threshold, group project 75%, participation 10%, oral exam 15%, non-attending students policy
 5. **Rilevazione delle presenze** — attendance code + geolocation requirement
 6. **Policy per giustificare le assenze** — each session's point value, justified absences policy, 2-day posting deadline on blended forum
@@ -519,9 +519,9 @@ Come dimostrato da @vaccari2020, i deepfake...
 | Week 2 Mon — Content Production | gilardi2025, mattis2025, munoriyarwa2025, morosoli2025* |
 | Week 2 Wed — Deepfakes & Regulation | vaccari2020, hameleers2026, schroeder2026, hackenburg2025, czarnek2025, EU AI Act, EU Code of Practice |
 | Week 4 Tue — Project Launch | terenzi2025*, marino2024* |
-| Week 5 Mon — Analysis Lab | marino2024* (methodology), cosenza2025 (practical prompt strategies) |
-| Week 5 Tue — Validation | marino2024* (validation) |
-| Week 6 Wed — Synthesis | ferrara2026, gillespie2026, schroeder2026, hackenburg2025 |
+| Week 5 Tue — Analysis Lab | marino2024* (methodology), cosenza2025 (practical prompt strategies) |
+| Week 5 Wed — Validation | marino2024* (validation) |
+| Week 7 Mon — Synthesis | ferrara2026, gillespie2026, schroeder2026, hackenburg2025 |
 
 *\* PDF not yet in `readings/` — BibTeX entry exists in `references.bib` but content cannot be used for slide generation until the PDF is added.*
 
@@ -621,17 +621,17 @@ Students completed a 3-session seminar with hands-on LLMs-in-the-loop practice. 
 - Codebook documentation (10 min): category names, definitions, examples, decision rules in shared Google Sheet
 - By end of session: tested prompt + documented codebook + pilot classification of ~30–50 images
 
-### Week 5: AI-Assisted Classification & Validation
+### Week 5: AI-Assisted Classification & Validation (Mon Mar 23 cancelled)
 
-**Mon Mar 23 — Lab: Scaling Up AI-Assisted Classification**
-- TWIAI (10 min)
+**Tue Mar 24 — Lab: Scaling Up AI-Assisted Classification**
 - Groups apply refined prompts to classify the full image set (~300–400 images)
 - Batch classification with Gemini: long context window, multimodal capabilities, consistency strategies across batches
 - Cross-referencing with CSV data: joining Gemini classifications to engagement metrics (each row = post metadata + engagement stats + AI-assigned category)
 - Preliminary patterns: category distribution, highest/lowest mean engagement by category, outliers
 - Students apply the classification flow practiced in Paroni workshop, now at scale with real project data
 
-**Tue Mar 24 — Validation: Human vs Machine**
+**Wed Mar 25 — Validation: Human vs Machine**
+- TWIAI (10 min)
 - LLMs-in-the-loop methodology (Marino & Giglietto, 2024)
 - Human coding: each group member independently classifies a shared **50-image validation sample** using the group's codebook (no Gemini, no discussion)
 - Reliability calculation: Cohen's kappa for **human-to-human** agreement (between each pair of coders) AND **human-to-AI** agreement (each coder vs. Gemini)
@@ -640,28 +640,29 @@ Students completed a 3-session seminar with hands-on LLMs-in-the-loop practice. 
 - Students apply the Paroni validation framework (coherence levels 0–3, label fit criteria) to any clustering/labeling performed with Gemini
 - Inter-group reliability: since all groups classified the same images, cross-group comparison is possible for shared dimensions
 
-**Wed Mar 25 — Group Consultation & Engagement Analysis**
-- TWIAI (10 min)
+### Week 6: Consultation, Writing & Drafting
+
+**Mon Mar 30 — Group Consultation & Engagement Analysis**
 - Individual group consultations: validated classification results (kappa values, confusion matrix)
 - Engagement analysis: using validated content categories (independent variable) to explain variation in engagement metrics (dependent variable) from the CSV
 - Example questions: Do images depicting children receive more reactions than landscapes? Does nostalgia-based content get shared more than humor? Relationship between generation quality and engagement?
 - Comments are NOT available as text — only aggregate comment counts in the CSV
 - Groups consolidate results and prepare for writing
 
-### Week 6: Writing & Synthesis
-
-**Mon Mar 30 — Writing Workshop**
+**Tue Mar 31 — Writing Workshop**
 - Structuring the final research paper
 - NotebookLM for synthesizing findings and literature
 - Academic writing with AI assistance
 
-**Tue Mar 31 — Group Work: Paper Drafting**
+**Wed Apr 1 — Group Work: Paper Drafting**
+- TWIAI (10 min)
 - In-class collaborative writing session
 - Peer review and feedback
 - Final methodology and theory review
 
-**Wed Apr 1 — Course Synthesis & Final Consultations**
-- TWIAI (10 min)
+### Week 7: Synthesis (after Easter break Apr 6–10)
+
+**Mon Apr 13 — Course Synthesis & Final Consultations**
 - Collective discussion on main findings
 - Methodological reflections
 - Future perspectives for GenAI in media
@@ -672,7 +673,7 @@ Students completed a 3-session seminar with hands-on LLMs-in-the-loop practice. 
 
 ## Group Project: Details for Slides
 
-The group project is central in weeks 4–6. Slides must guide students through:
+The group project is central in weeks 4–7. Slides must guide students through:
 
 ### Project Overview
 Students work in groups of **max 6** to produce a research paper analyzing AI-generated content ("AI Slop") from Italian Facebook pages. The project uses a **pre-curated dataset** provided by the instructor, drawn from the Terenzi & Giglietto (2025) study. All groups work on the **same subset of ~300–400 images** with corresponding engagement metrics. Each group develops a distinct classification scheme, applies the LLMs-in-the-loop methodology using Google Gemini, validates results through systematic human coding, and analyzes whether content categories predict engagement patterns.
@@ -700,8 +701,9 @@ Students work in groups of **max 6** to produce a research paper analyzing AI-ge
 
 ### Timeline
 - Week 4: Terenzi seminar → group formation → prompt design & pilot classification
-- Week 5: Full AI classification → human validation (50-image sample, kappa) → engagement analysis
-- Week 6: Writing → peer review → submission (2 weeks before June exam)
+- Week 5: Full AI classification → human validation (50-image sample, kappa) *(Mon Mar 23 cancelled)*
+- Week 6: Engagement analysis → writing workshop → paper drafting
+- Week 7: Course synthesis & final consultations (Mon Apr 13, after Easter) → submission (2 weeks before June exam)
 
 ### LLMs-in-the-loop Methodology
 This is the central methodological framework. Slides must explain:
@@ -713,7 +715,7 @@ This is the central methodological framework. Slides must explain:
 6. Engagement analysis: content categories (IV) vs. engagement metrics (DV)
 
 ### Inter-Group Reliability Design
-Since all groups classify the **same ~300–400 images**, cross-group comparison is possible. Different classification schemes applied to identical images reveal complementary patterns. The Apr 1 synthesis session compares what each lens reveals about the AI Slop ecosystem.
+Since all groups classify the **same ~300–400 images**, cross-group comparison is possible. Different classification schemes applied to identical images reveal complementary patterns. The Apr 13 synthesis session compares what each lens reveals about the AI Slop ecosystem.
 
 ### Paper Template
 A paper template is available at: <https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true>

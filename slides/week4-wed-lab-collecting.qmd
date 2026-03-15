@@ -363,8 +363,8 @@ Prima di uscire, ogni gruppo verifica:
 - [ ] **Prompt finale** copiato nel tab "Prompt" del foglio
 
 ::: {.callout-warning}
-## Per lunedì
-Lunedì **scalerete la classificazione** a tutte le 420 post. Il prompt deve essere pronto e testato. Se restano dubbi, raffinate tra oggi e lunedì.
+## Per martedì
+Martedì **scalerete la classificazione** a tutte le 420 post. Il prompt deve essere pronto e testato. Se restano dubbi, raffinate tra oggi e martedì.
 :::
 
 ::: {.notes}
@@ -373,14 +373,14 @@ Checklist di verifica. Passare tra i gruppi negli ultimi 10 minuti per verificar
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Lab — Classificazione su Scala con Gemini (23 Marzo 2026)
+**Prossima lezione:** Lab — Classificazione su Scala con Gemini (24 Marzo 2026)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) verificare che il codebook e il prompt siano documentati nel foglio condiviso, (2) se il prompt ha ancora problemi, raffinarlo tra oggi e lunedì, (3) lunedì lavoreremo alla classificazione dell'intero dataset di 420 post con Gemini — portare i laptop carichi, (4) il prompt testato oggi è lo strumento che userete per tutta la settimana 5.
+Chiusura. Ricordare: (1) verificare che il codebook e il prompt siano documentati nel foglio condiviso, (2) se il prompt ha ancora problemi, raffinarlo tra oggi e martedì, (3) martedì lavoreremo alla classificazione dell'intero dataset di 420 post con Gemini — portare i laptop carichi, (4) il prompt testato oggi è lo strumento che userete per tutta la settimana 5.
 :::
 
 ## Riferimenti

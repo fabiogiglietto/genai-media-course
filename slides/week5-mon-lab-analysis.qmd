@@ -3,7 +3,7 @@ title: "Lab: Classificazione su Scala con IA"
 subtitle: "IA Generativa e Media — Settimana 5"
 author: "Fabio Giglietto"
 institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
-date: "23 Marzo 2026"
+date: "24 Marzo 2026"
 date-format: "D MMMM YYYY"
 format:
   revealjs:
@@ -193,7 +193,7 @@ Ogni riga del dataset deve contenere **tre tipi di informazione**:
 :::
 
 ::: {.notes}
-Questo è il passaggio che trasforma la classificazione in un dataset analizzabile. Il CSV originale fornito dal docente contiene i metadata dei post e le metriche di engagement; i gruppi aggiungono le colonne di classificazione. L'ID del post (che corrisponde al nome del file immagine) è la chiave di collegamento. Verificare che ogni gruppo stia usando lo stesso ID. Il risultato finale è un foglio dove ogni riga rappresenta un post con: chi l'ha pubblicato, quando, quanto engagement ha ricevuto, e come Gemini ha classificato l'immagine. Questo dataset integrato è la base per l'analisi di engagement di mercoledì.
+Questo è il passaggio che trasforma la classificazione in un dataset analizzabile. Il CSV originale fornito dal docente contiene i metadata dei post e le metriche di engagement; i gruppi aggiungono le colonne di classificazione. L'ID del post (che corrisponde al nome del file immagine) è la chiave di collegamento. Verificare che ogni gruppo stia usando lo stesso ID. Il risultato finale è un foglio dove ogni riga rappresenta un post con: chi l'ha pubblicato, quando, quanto engagement ha ricevuto, e come Gemini ha classificato l'immagine. Questo dataset integrato è la base per l'analisi di engagement della sessione di consultazione.
 :::
 
 ## Pattern Preliminari {background-color="#C5612E"}
@@ -226,7 +226,7 @@ Mentre classificate, iniziate a osservare:
 :::
 
 ::: {.notes}
-Le esplorazioni descrittive non sono l'analisi finale, ma orientano le ipotesi. La distribuzione delle categorie rivela la composizione del dataset AI slop: se la maggior parte delle immagini è "bambini" o "animali", questo dice qualcosa sulle strategie di engagement bait. I primi segnali di engagement sono ancora grezzi (la classificazione non è validata), ma possono guidare le domande per l'analisi di mercoledì. Esempio: se le immagini religiose sono poche ma hanno engagement molto alto, questo suggerisce un pattern interessante da esplorare. Non serve fare calcoli statistici complessi ora — basta un conteggio per categoria e uno sguardo alle metriche medie.
+Le esplorazioni descrittive non sono l'analisi finale, ma orientano le ipotesi. La distribuzione delle categorie rivela la composizione del dataset AI slop: se la maggior parte delle immagini è "bambini" o "animali", questo dice qualcosa sulle strategie di engagement bait. I primi segnali di engagement sono ancora grezzi (la classificazione non è validata), ma possono guidare le domande per l'analisi di engagement successiva. Esempio: se le immagini religiose sono poche ma hanno engagement molto alto, questo suggerisce un pattern interessante da esplorare. Non serve fare calcoli statistici complessi ora — basta un conteggio per categoria e uno sguardo alle metriche medie.
 :::
 
 ## Esempio: tabella riassuntiva
@@ -243,7 +243,7 @@ Le esplorazioni descrittive non sono l'analisi finale, ma orientano le ipotesi. 
 *Dati esemplificativi — ogni gruppo avrà categorie e numeri diversi.*
 
 ::: {.notes}
-Esempio puramente illustrativo per mostrare il tipo di tabella riassuntiva che i gruppi dovrebbero produrre alla fine della sessione. I numeri sono inventati ma realistici. Notare come la tabella rivela immediatamente un pattern: le immagini religiose, pur essendo solo il 13% del dataset, hanno il più alto engagement medio — sia in reazioni che condivisioni. Questo tipo di osservazione descrittiva guiderà l'analisi più approfondita di mercoledì. Ogni gruppo avrà categorie diverse in base al proprio schema di classificazione (soggetto visivo, strategia emotiva, tecnica di generazione, intento apparente).
+Esempio puramente illustrativo per mostrare il tipo di tabella riassuntiva che i gruppi dovrebbero produrre alla fine della sessione. I numeri sono inventati ma realistici. Notare come la tabella rivela immediatamente un pattern: le immagini religiose, pur essendo solo il 13% del dataset, hanno il più alto engagement medio — sia in reazioni che condivisioni. Questo tipo di osservazione descrittiva guiderà l'analisi più approfondita nella sessione di consultazione. Ogni gruppo avrà categorie diverse in base al proprio schema di classificazione (soggetto visivo, strategia emotiva, tecnica di generazione, intento apparente).
 :::
 
 ## Lavoro Pratico {background-color="#C5612E"}
@@ -292,7 +292,7 @@ Checklist di verifica. Enfatizzare che il foglio condiviso deve avere gli ID cor
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Validazione — Umano vs Macchina (24 Marzo 2026)
+**Prossima lezione:** Validazione — Umano vs Macchina (25 Marzo 2026)
 
 📧 fabio.giglietto@uniurb.it
 

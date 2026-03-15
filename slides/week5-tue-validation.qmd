@@ -3,7 +3,7 @@ title: "Validazione: Umano vs Macchina"
 subtitle: "IA Generativa e Media — Settimana 5"
 author: "Fabio Giglietto"
 institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
-date: "24 Marzo 2026"
+date: "25 Marzo 2026"
 date-format: "D MMMM YYYY"
 format:
   revealjs:
@@ -34,17 +34,47 @@ bibliography: ../references.bib
 csl: ../apa.csl
 ---
 
-## Roadmap della sessione
+## [This Week in AI]{.twiai-badge}
 
-1. **Dal framework Paroni alla quantificazione** — ciò che sapete + ciò che imparerete oggi
-2. **Perché validare** — il ruolo della verifica umana nella classificazione di immagini
-3. **Progettare il protocollo di validazione** — campionamento e codifica
-4. **Misurare l'accordo** — Cohen's kappa e Krippendorff's alpha (contenuto nuovo)
-5. **Esercizio pratico** — validare un campione di 50 immagini
-6. **Confronto inter-gruppo e iterazione** — sfruttare il dataset condiviso
+### IA e sicurezza epistemica: nuovi scenari
+
+La ricerca recente evidenzia come l'IA generativa stia trasformando non solo i singoli contenuti, ma l'intero **substrato epistemico** su cui si basano le istituzioni democratiche [@ferrara2026].
+
+::: {.callout-note}
+## Da discutere
+Nel vostro progetto, le **categorie di immagini** che avete classificato mostrano strategie diverse di manipolazione emotiva? Quali categorie sembrano progettate per massimizzare l'engagement?
+:::
 
 ::: {.notes}
-Struttura della sessione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato le 420 post con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, quattro criteri con scala a tre punti per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Il contenuto genuinamente nuovo è Cohen's kappa e Krippendorff's alpha. Un elemento in più rispetto al seminario: poiché tutti i gruppi lavorano sulle stesse immagini, è possibile un confronto inter-gruppo sulla classificazione.
+This Week in AI: collegare le notizie recenti sull'IA al concetto di sicurezza epistemica di Ferrara (2026). Il tema è particolarmente rilevante perché gli studenti stanno classificando immagini AI-generated e analizzando i loro pattern di engagement — un fenomeno che si colloca al livello 1 (contenuto sintetico) della realtà sintetica. Chiedere agli studenti se dalla classificazione emergono categorie con strategie emotive particolarmente efficaci. Questo collegamento tra teoria e pratica rafforza il valore del progetto.
+:::
+
+## [This Week in AI]{.twiai-badge}
+
+### Verso una regolamentazione degli sciami IA
+
+Gli **sciami IA malevoli** possono fabbricare un consenso sintetico che appare colmare le divisioni sociali, minacciando l'indipendenza essenziale per l'intelligenza collettiva [@schroeder2026].
+
+::: {.highlight-box}
+**Implicazione per il progetto:** Le immagini AI-generated che analizzate — prodotte in serie per massimizzare l'engagement — potrebbero essere il livello base di operazioni di manipolazione molto più ampie.
+:::
+
+::: {.notes}
+Secondo segmento TWIAI: collegare la notizia della settimana al quadro teorico di Schroeder et al. (2026) sugli sciami IA. L'AI slop che gli studenti analizzano nel progetto — immagini sintetiche distribuite come engagement bait — potrebbe sembrare innocuo rispetto ai deepfake politici, ma rappresenta lo stesso meccanismo di base: contenuti sintetici prodotti in serie che inquinano l'ecosistema informativo e sfruttano le dinamiche algoritmiche. Gli sciami IA potrebbero amplificare questo tipo di contenuti su scala industriale. Transizione verso la sessione di consultazione e analisi engagement.
+:::
+
+## Roadmap della sessione
+
+1. **This Week in AI** — scenari emergenti
+2. **Dal framework Paroni alla quantificazione** — ciò che sapete + ciò che imparerete oggi
+3. **Perché validare** — il ruolo della verifica umana nella classificazione di immagini
+4. **Progettare il protocollo di validazione** — campionamento e codifica
+5. **Misurare l'accordo** — Cohen's kappa e Krippendorff's alpha (contenuto nuovo)
+6. **Esercizio pratico** — validare un campione di 50 immagini
+7. **Confronto inter-gruppo e iterazione** — sfruttare il dataset condiviso
+
+::: {.notes}
+Struttura della sessione. Apriamo con il segmento This Week in AI, poi passiamo al tema centrale: la validazione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato le 420 post con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, quattro criteri con scala a tre punti per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Il contenuto genuinamente nuovo è Cohen's kappa e Krippendorff's alpha. Un elemento in più rispetto al seminario: poiché tutti i gruppi lavorano sulle stesse immagini, è possibile un confronto inter-gruppo sulla classificazione.
 :::
 
 ## Perché Validare {background-color="#C5612E"}
@@ -332,7 +362,7 @@ Se due gruppi classificano la stessa immagine diversamente, chi ha ragione? Ness
 :::
 
 ::: {.notes}
-Questa è la dimensione metodologica più ricca del progetto, resa possibile dal design con dataset condiviso. Il confronto inter-gruppo non è una competizione ("chi classifica meglio") ma un'esplorazione di come le scelte analitiche modellano i risultati. Un gruppo che classifica per "soggetto visivo" e uno che classifica per "strategia emotiva" vedranno pattern diversi nelle stesse immagini. Questo sarà il tema centrale della sintesi finale del 1 aprile. Per le categorie condivise (es. se più gruppi hanno una categoria "bambini"), il kappa inter-gruppo misura quanto le definizioni operative convergono — un esercizio metodologico prezioso.
+Questa è la dimensione metodologica più ricca del progetto, resa possibile dal design con dataset condiviso. Il confronto inter-gruppo non è una competizione ("chi classifica meglio") ma un'esplorazione di come le scelte analitiche modellano i risultati. Un gruppo che classifica per "soggetto visivo" e uno che classifica per "strategia emotiva" vedranno pattern diversi nelle stesse immagini. Questo sarà il tema centrale della sintesi finale del 13 aprile. Per le categorie condivise (es. se più gruppi hanno una categoria "bambini"), il kappa inter-gruppo misura quanto le definizioni operative convergono — un esercizio metodologico prezioso.
 :::
 
 ## Decisione di iterazione
@@ -343,7 +373,7 @@ Questa è la dimensione metodologica più ricca del progetto, resa possibile dal
 
 - **Procedere** con l'analisi di engagement
 - Documentare kappa, matrice, interpretazione
-- Preparare i dati per mercoledì
+- Preparare i dati per lunedì
 :::
 
 ::: {.column width="50%"}
@@ -394,37 +424,37 @@ La **trasparenza metodologica** è un valore fondamentale: documentate non solo 
 :::
 
 ::: {.notes}
-Due aspetti complementari: la documentazione per il Metodo e per i Risultati. Per il Metodo: il prompt completo va in appendice, il codebook va descritto con esempi, il protocollo di validazione (50 immagini, codifica cieca, quanti codificatori) va dettagliato. Per i Risultati: la matrice di confusione rivela i pattern di errore, le iterazioni mostrano il processo di miglioramento, la versione del modello garantisce la riproducibilità. Il confronto inter-gruppo è opzionale nella sezione Risultati del singolo relazione, ma sarà tema centrale della discussione collettiva nella sintesi del 1 aprile.
+Due aspetti complementari: la documentazione per il Metodo e per i Risultati. Per il Metodo: il prompt completo va in appendice, il codebook va descritto con esempi, il protocollo di validazione (50 immagini, codifica cieca, quanti codificatori) va dettagliato. Per i Risultati: la matrice di confusione rivela i pattern di errore, le iterazioni mostrano il processo di miglioramento, la versione del modello garantisce la riproducibilità. Il confronto inter-gruppo è opzionale nella sezione Risultati del singolo relazione, ma sarà tema centrale della discussione collettiva nella sintesi del 13 aprile.
 :::
 
 ## Prossimi passi del progetto
 
 | Data | Attività |
 |------|----------|
-| **Mer 25 Marzo** | Consultazione gruppi + **analisi engagement** |
-| **Lun 30 Marzo** | Workshop di scrittura — struttura del relazione |
-| **Mar 31 Marzo** | Lavoro di gruppo — stesura collaborativa |
-| **Mer 1 Aprile** | Sintesi del corso — confronto inter-gruppo |
+| **Lun 30 Marzo** | Consultazione gruppi + **analisi engagement** |
+| **Mar 31 Marzo** | Workshop di scrittura — struttura del relazione |
+| **Mer 1 Aprile** | Lavoro di gruppo — stesura collaborativa |
+| **Lun 13 Aprile** | Sintesi del corso — confronto inter-gruppo |
 | **2 sett. prima appello** | **Consegna relazione finale** |
 
 ::: {.highlight-box}
-**Per domani:** preparate una breve **presentazione** (5 minuti) con: classificazione completata, kappa ottenuto, matrice di confusione, e una prima esplorazione dell'engagement per categoria.
+**Per lunedì:** preparate una breve **presentazione** (5 minuti) con: classificazione completata, kappa ottenuto, matrice di confusione, e una prima esplorazione dell'engagement per categoria.
 :::
 
 ::: {.notes}
-Timeline aggiornata del progetto. Domani è la consultazione di gruppo con una novità importante: oltre alla revisione metodologica, ogni gruppo presenterà i primi risultati dell'analisi di engagement — collegando le categorie di classificazione validate alle metriche del CSV. La settimana 6 è dedicata alla scrittura. Enfatizzare l'urgenza: chi ha problemi con la validazione deve risolverli entro domani. La consultazione servirà per discutere sia i risultati della validazione sia i pattern di engagement emergenti.
+Timeline aggiornata del progetto. Lunedì è la consultazione di gruppo con una novità importante: oltre alla revisione metodologica, ogni gruppo presenterà i primi risultati dell'analisi di engagement — collegando le categorie di classificazione validate alle metriche del CSV. Le sessioni successive sono dedicate alla scrittura. Enfatizzare l'urgenza: chi ha problemi con la validazione deve risolverli entro lunedì. La consultazione servirà per discutere sia i risultati della validazione sia i pattern di engagement emergenti.
 :::
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Consultazione Gruppi e Analisi Engagement (25 Marzo 2026)
+**Prossima lezione:** Consultazione Gruppi e Analisi Engagement (30 Marzo 2026)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) completare la validazione se non terminata in aula, (2) se kappa sotto 0.60 provare almeno un ciclo di iterazione, (3) iniziare a esplorare i dati di engagement per categoria in preparazione per domani, (4) preparare la presentazione di 5 minuti per la consultazione. Domani è una sessione operativa: ogni gruppo presenterà i risultati e discuterà l'analisi di engagement con il docente.
+Chiusura. Ricordare: (1) completare la validazione se non terminata in aula, (2) se kappa sotto 0.60 provare almeno un ciclo di iterazione, (3) iniziare a esplorare i dati di engagement per categoria in preparazione per lunedì, (4) preparare la presentazione di 5 minuti per la consultazione. Lunedì è una sessione operativa: ogni gruppo presenterà i risultati e discuterà l'analisi di engagement con il docente.
 :::
 
 ## Riferimenti

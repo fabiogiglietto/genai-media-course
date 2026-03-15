@@ -3,7 +3,7 @@ title: "Lavoro di Gruppo: Stesura Paper"
 subtitle: "IA Generativa e Media — Settimana 6"
 author: "Fabio Giglietto"
 institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
-date: "31 Marzo 2026"
+date: "1 Aprile 2026"
 date-format: "D MMMM YYYY"
 format:
   revealjs:
@@ -34,17 +34,61 @@ bibliography: ../references.bib
 csl: ../apa.csl
 ---
 
-## Roadmap della sessione
+## [This Week in AI]{.twiai-badge}
 
-1. **Obiettivi della giornata** — struttura del lavoro in aula
-2. **Revisione tra pari** — come dare e ricevere feedback
-3. **Checklist metodologica e teorica** — verifica finale
-4. **Indicatori di qualita** — criteri di valutazione
-5. **Blocchi di lavoro** — sessioni strutturate di scrittura
-6. **Scadenze** — timeline verso la consegna
+### Il futuro della persuasione automatizzata
+
+L'IA conversazionale può essere fino al **52% più persuasiva** di un messaggio statico, con effetti misurabili anche **dopo un mese**. Ma i modelli più persuasivi producono il **30% di affermazioni inaccurate** [@hackenburg2025].
+
+::: {.callout-note}
+## Da discutere
+In un mondo dove l'IA e sempre più persuasiva e sempre meno accurata, quale ruolo spetta alla ricerca come quella che avete condotto?
+:::
 
 ::: {.notes}
-Sessione prevalentemente operativa: la maggior parte del tempo sarà dedicata alla scrittura in aula. Le slide iniziali forniscono la cornice, poi i gruppi lavorano con il supporto del docente. La revisione tra pari è un momento importante: ogni gruppo leggerà e commentera il lavoro di un altro gruppo. Circolare tra i gruppi per monitorare lo stato di avanzamento e rispondere a domande specifiche.
+Segmento This Week in AI. Il dato di Hackenburg et al. (2025, Science) è particolarmente significativo: sintetizza il trade-off fondamentale dell'IA generativa — più potente ma meno affidabile. Studio con 76.977 risposte, 42.357 persone, 19 LLM su 707 questioni politiche. Il trade-off persuasione-accuratezza è confermato empiricamente: ottimizzare per la persuasione porta a sacrificare l'accuratezza. Le strategie basate su densità informativa sono le più efficaci, ma anche le più prone a imprecisioni. Collegamento con il progetto degli studenti: la ricerca empirica sulla ricezione dei contenuti IA è parte della risposta a questa sfida.
+:::
+
+## [This Week in AI]{.twiai-badge}
+
+### Sciami IA e minacce alla democrazia
+
+> "AI swarms are distinctly equipped to exploit this by engineering a **synthetic consensus** that appears to bridge these divides."
+>
+> — @schroeder2026
+
+Le reti "Pravda" creano siti con articoli fabbricati, progettati per essere **ingeriti dai LLM** durante il riaddestramento. Le narrative false si **cristallizzano nei pesi del modello** [@schroeder2026].
+
+::: {.notes}
+Secondo segmento TWIAI. Schroeder et al. (2026, Science) descrivono lo scenario degli sciami IA: reti coordinate di agenti autonomi che usano LLM e architetture multi-agente per manipolare il discorso pubblico. L'avvelenamento dei dati (data poisoning) è particolarmente insidioso: le reti "Pravda" pro-Cremlino creano centinaia di siti con contenuti duplicati, ottimizzati non per i lettori umani ma per i web crawler. Quando i LLM vengono riaddestrati su questi dati contaminati, le narrative false si incorporano nei pesi del modello. Questo è il livello più profondo della manipolazione: non singoli contenuti falsi, ma la corruzione dell'infrastruttura epistemica stessa.
+:::
+
+## [This Week in AI]{.twiai-badge}
+
+### La sicurezza dell'IA come problema sociotecnico
+
+::: {.highlight-box}
+**Lezione chiave:** Il *red-teaming* dell'IA non e solo un problema tecnico ma un **problema sociotecnico** che coinvolge valori, lavoro e danni psicologici [@gillespie2026].
+:::
+
+Come per la moderazione dei contenuti, rischiamo di scoprire **troppo tardi** i costi umani delle pratiche di sicurezza dell'IA.
+
+::: {.notes}
+Terzo segmento TWIAI. Gillespie et al. (2026) analizzano il red-teaming dell'IA — la pratica di testare i modelli IA cercando di farli produrre contenuti dannosi — come un problema sociotecnico. Tre dimensioni critiche: (1) i valori e i pregiudizi dietro la definizione di "danno" — chi decide cosa e pericoloso?; (2) le condizioni di lavoro dei red-teamer, spesso precarie e con poche tutele; (3) l'impatto psicologico su chi deve immaginare e provocare scenari dannosi quotidianamente. Il parallelo con la moderazione dei contenuti sui social media e illuminante: ci sono voluti anni per riconoscere che i moderatori subivano danni psicologici significativi (PTSD documentato). Rischiamo di ripetere lo stesso errore con i red-teamer dell'IA. Questo inquadra la sicurezza dell'IA come una questione sociale, non solo tecnica.
+:::
+
+## Roadmap della sessione
+
+1. **This Week in AI** — IA e governance
+2. **Obiettivi della giornata** — struttura del lavoro in aula
+3. **Revisione tra pari** — come dare e ricevere feedback
+4. **Checklist metodologica e teorica** — verifica finale
+5. **Indicatori di qualita** — criteri di valutazione
+6. **Blocchi di lavoro** — sessioni strutturate di scrittura
+7. **Scadenze** — timeline verso la consegna
+
+::: {.notes}
+Sessione prevalentemente operativa: la maggior parte del tempo sarà dedicata alla scrittura in aula. Apriamo con il segmento This Week in AI dedicato a persuasione automatizzata, sciami IA e sicurezza dell'IA come problema sociotecnico. Le slide iniziali forniscono la cornice, poi i gruppi lavorano con il supporto del docente. La revisione tra pari è un momento importante: ogni gruppo leggerà e commentera il lavoro di un altro gruppo. Circolare tra i gruppi per monitorare lo stato di avanzamento e rispondere a domande specifiche.
 :::
 
 ## Obiettivi della Sessione {background-color="#C5612E"}
@@ -260,8 +304,8 @@ Riepilogo delle scadenze finali.
 
 | Data | Attività |
 |------|----------|
-| **Oggi (31 Mar)** | Prima bozza completa |
-| **Domani (1 Apr)** | Ultima sessione: sintesi e consultazioni |
+| **Oggi (1 Apr)** | Prima bozza completa |
+| **Lun 13 Apr** | Ultima sessione: sintesi e consultazioni |
 | Dopo il corso | Revisione finale e rifinitura |
 | **2 sett. prima appello** | **Consegna paper su Moodle** |
 
@@ -270,18 +314,17 @@ Riepilogo delle scadenze finali.
 :::
 
 ::: {.notes}
-Riepilogo delle scadenze. La bozza di oggi non è la versione finale: i gruppi avranno tempo dopo la fine del corso per rifinire il paper. La scadenza di consegna e 2 settimane prima dell'appello di giugno — la data esatta verra comunicata su Moodle. Il formato e PDF, caricato sullo spazio blended. Un solo membro del gruppo carica il file, con i nomi di tutti i membri chiaramente indicati sulla prima pagina. Domani e l'ultima sessione: sintesi del corso e ultime consultazioni.
+Riepilogo delle scadenze. La bozza di oggi non è la versione finale: i gruppi avranno tempo dopo la fine del corso per rifinire il paper. La scadenza di consegna e 2 settimane prima dell'appello di giugno — la data esatta verra comunicata su Moodle. Il formato e PDF, caricato sullo spazio blended. Un solo membro del gruppo carica il file, con i nomi di tutti i membri chiaramente indicati sulla prima pagina. Lunedi 13 aprile e l'ultima sessione: sintesi del corso e ultime consultazioni.
 :::
 
-## Per domani
+## Per la prossima sessione
 
-**Mercoledi 1 Aprile:** Sintesi del Corso e Consultazioni Finali
+**Lunedi 13 Aprile:** Sintesi del Corso e Consultazioni Finali
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Cosa aspettarsi
 
-- This Week in AI — edizione finale
 - Ricapitolazione dei temi del corso
 - Riflessioni metodologiche
 - Prospettive future
@@ -298,19 +341,19 @@ Riepilogo delle scadenze. La bozza di oggi non è la versione finale: i gruppi a
 :::
 
 ::: {.notes}
-Domani e l'ultima sessione del corso. Sara un momento di sintesi che collega tutti i temi affrontati nelle 6 settimane. Ci sarà anche spazio per le ultime consultazioni sui paper. Invitare gli studenti a portare domande aperte e dubbi metodologici. Sara anche un momento di riflessione sul percorso del corso: cosa hanno imparato, come vedono l'IA generativa dopo queste 6 settimane.
+Il 13 aprile e l'ultima sessione del corso, dopo la pausa pasquale. Sara un momento di sintesi che collega tutti i temi affrontati nelle settimane precedenti. Ci sarà anche spazio per le ultime consultazioni sui paper. Invitare gli studenti a portare domande aperte e dubbi metodologici. Sara anche un momento di riflessione sul percorso del corso: cosa hanno imparato, come vedono l'IA generativa dopo queste settimane.
 :::
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Sintesi del Corso e Consultazioni Finali (1 Aprile 2026)
+**Prossima lezione:** Sintesi del Corso e Consultazioni Finali (13 Aprile 2026)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) continuare a lavorare sulla bozza stasera, (2) portare domande aperte domani, (3) domani e l'ultima sessione — non mancate! A domani.
+Chiusura. Ricordare: (1) continuare a lavorare sulla bozza durante la pausa pasquale, (2) portare domande aperte il 13 aprile, (3) lunedi 13 aprile e l'ultima sessione — non mancate!
 :::
 
 ## Riferimenti
