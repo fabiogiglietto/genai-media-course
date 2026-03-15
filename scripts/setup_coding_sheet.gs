@@ -118,28 +118,30 @@ function setupCodingSheet() {
 function createStep1Sheet(ss, dataSheet, numPosts) {
   const sheet = ss.insertSheet('STEP 1 — AI Slop o No?');
 
-  // Column layout:
+  // Column layout (HUMANS FIRST to avoid anchoring bias):
   // A: riga, B: id, C: media_files, D: text
-  // E: (separator GEMINI)
-  // F: gemini_slop, G: gemini_certezza, H: gemini_motivazione
-  // I: (separator CODIFICA UMANA)
-  // J-O: coder_1..coder_6
+  // E: (separator CODIFICA UMANA)
+  // F-K: coder_1..coder_6
+  // L: (separator GEMINI)
+  // M: gemini_slop, N: gemini_certezza, O: gemini_motivazione
   // P: (separator DECISIONE FINALE)
   // Q: decisione_slop, R: note
 
   const headers = [
     'riga', 'id', 'media_files', 'testo',
-    '',  // separator E
-    'gemini_slop', 'gemini_certezza', 'gemini_motivazione',
-    '',  // separator I
+    '',  // separator E — UMANI
   ];
 
-  // Add coder columns
+  // Add coder columns first
   for (let i = 1; i <= MAX_CODERS; i++) {
     headers.push('coder_' + i);
   }
 
-  headers.push('');  // separator
+  headers.push('');  // separator — GEMINI
+  headers.push('gemini_slop');
+  headers.push('gemini_certezza');
+  headers.push('gemini_motivazione');
+  headers.push('');  // separator — FINALE
   headers.push('decisione_finale');
   headers.push('note');
 
@@ -152,25 +154,12 @@ function createStep1Sheet(ss, dataSheet, numPosts) {
   headerRange.setBackground(COLORS.headerBg);
   headerRange.setHorizontalAlignment('center');
 
-  // Section labels in separator columns (row 1)
-  const sepGemini = 5;    // Column E
-  const sepHuman = 9;     // Column I
-  const sepFinal = 9 + MAX_CODERS + 1;  // After coders + 1
+  // Section labels in separator columns
+  const sepHuman = 5;    // Column E
+  const sepGemini = 5 + MAX_CODERS + 1;  // After coders + 1
+  const sepFinal = sepGemini + 4;  // After Gemini's 3 columns + 1
 
-  // Gemini separator
-  sheet.getRange(1, sepGemini).setValue('GEMINI')
-    .setBackground(COLORS.discuiPrimary)
-    .setFontColor(COLORS.white)
-    .setFontWeight('bold');
-  sheet.setColumnWidth(sepGemini, 30);
-  colorColumnRange(sheet, sepGemini, 2, numPosts, COLORS.lightOrange);
-
-  // Gemini columns background
-  for (let c = sepGemini + 1; c <= sepGemini + 3; c++) {
-    sheet.getRange(1, c).setBackground(COLORS.discuiPrimary).setFontColor(COLORS.white);
-  }
-
-  // Human separator
+  // Human separator (FIRST)
   sheet.getRange(1, sepHuman).setValue('UMANI')
     .setBackground(COLORS.uniurbBlue)
     .setFontColor(COLORS.white)
@@ -183,7 +172,20 @@ function createStep1Sheet(ss, dataSheet, numPosts) {
     sheet.getRange(1, c).setBackground(COLORS.uniurbBlue).setFontColor(COLORS.white);
   }
 
-  // Final decision separator
+  // Gemini separator (SECOND)
+  sheet.getRange(1, sepGemini).setValue('GEMINI')
+    .setBackground(COLORS.discuiPrimary)
+    .setFontColor(COLORS.white)
+    .setFontWeight('bold');
+  sheet.setColumnWidth(sepGemini, 30);
+  colorColumnRange(sheet, sepGemini, 2, numPosts, COLORS.lightOrange);
+
+  // Gemini columns background
+  for (let c = sepGemini + 1; c <= sepGemini + 3; c++) {
+    sheet.getRange(1, c).setBackground(COLORS.discuiPrimary).setFontColor(COLORS.white);
+  }
+
+  // Final decision separator (THIRD)
   sheet.getRange(1, sepFinal).setValue('FINALE')
     .setBackground(COLORS.green)
     .setFontColor(COLORS.white)
@@ -232,16 +234,16 @@ function createStep1Sheet(ss, dataSheet, numPosts) {
     .setAllowInvalid(false)
     .build();
 
-  // Apply dropdowns (gemini_slop = col F = 6)
-  sheet.getRange(2, sepGemini + 1, numPosts, 1).setDataValidation(binaryRule);
-  sheet.getRange(2, sepGemini + 2, numPosts, 1).setDataValidation(certaintyRule);
-
-  // Human coders (columns after sepHuman)
+  // Human coders dropdowns (FIRST)
   for (let i = 1; i <= MAX_CODERS; i++) {
     sheet.getRange(2, sepHuman + i, numPosts, 1).setDataValidation(binaryRule);
   }
 
-  // Final decision
+  // Gemini dropdowns (SECOND)
+  sheet.getRange(2, sepGemini + 1, numPosts, 1).setDataValidation(binaryRule);
+  sheet.getRange(2, sepGemini + 2, numPosts, 1).setDataValidation(certaintyRule);
+
+  // Final decision dropdown
   sheet.getRange(2, sepFinal + 1, numPosts, 1).setDataValidation(binaryFinalRule);
 
   // Column widths
@@ -249,9 +251,9 @@ function createStep1Sheet(ss, dataSheet, numPosts) {
   sheet.setColumnWidth(2, 140);  // id
   sheet.setColumnWidth(3, 200);  // media_files
   sheet.setColumnWidth(4, 350);  // text
+  for (let i = 1; i <= MAX_CODERS; i++) sheet.setColumnWidth(sepHuman + i, 120);
   for (let c = sepGemini + 1; c <= sepGemini + 2; c++) sheet.setColumnWidth(c, 120);
   sheet.setColumnWidth(sepGemini + 3, 250);  // motivazione
-  for (let i = 1; i <= MAX_CODERS; i++) sheet.setColumnWidth(sepHuman + i, 120);
   sheet.setColumnWidth(sepFinal + 1, 140);  // decisione
   sheet.setColumnWidth(sepFinal + 2, 250);  // note
 
@@ -272,19 +274,21 @@ function createStep1Sheet(ss, dataSheet, numPosts) {
 function createStep2Sheet(ss, numPosts) {
   const sheet = ss.insertSheet('STEP 2 — Classif. Tematica');
 
-  // Same structure as Step 1 but with thematic categories
+  // Same layout as Step 1: HUMANS FIRST, then Gemini, then Final
   const headers = [
     'riga', 'id', 'media_files', 'testo',
-    '',  // separator GEMINI
-    'gemini_categoria', 'gemini_certezza', 'gemini_motivazione',
-    '',  // separator UMANI (campione 50)
+    '',  // separator UMANI
   ];
 
   for (let i = 1; i <= MAX_CODERS; i++) {
     headers.push('coder_' + i);
   }
 
-  headers.push('');
+  headers.push('');  // separator GEMINI
+  headers.push('gemini_categoria');
+  headers.push('gemini_certezza');
+  headers.push('gemini_motivazione');
+  headers.push('');  // separator FINALE
   headers.push('decisione_finale');
   headers.push('note');
 
@@ -297,22 +301,11 @@ function createStep2Sheet(ss, numPosts) {
   headerRange.setBackground(COLORS.headerBg);
   headerRange.setHorizontalAlignment('center');
 
-  const sepGemini = 5;
-  const sepHuman = 9;
-  const sepFinal = 9 + MAX_CODERS + 1;
+  const sepHuman = 5;
+  const sepGemini = 5 + MAX_CODERS + 1;
+  const sepFinal = sepGemini + 4;
 
-  // Gemini separator
-  sheet.getRange(1, sepGemini).setValue('GEMINI')
-    .setBackground(COLORS.discuiPrimary)
-    .setFontColor(COLORS.white)
-    .setFontWeight('bold');
-  sheet.setColumnWidth(sepGemini, 30);
-
-  for (let c = sepGemini + 1; c <= sepGemini + 3; c++) {
-    sheet.getRange(1, c).setBackground(COLORS.discuiPrimary).setFontColor(COLORS.white);
-  }
-
-  // Human separator — note: only for validation sample
+  // Human separator (FIRST)
   sheet.getRange(1, sepHuman).setValue('UMANI\n(50)')
     .setBackground(COLORS.uniurbBlue)
     .setFontColor(COLORS.white)
@@ -324,7 +317,18 @@ function createStep2Sheet(ss, numPosts) {
     sheet.getRange(1, c).setBackground(COLORS.uniurbBlue).setFontColor(COLORS.white);
   }
 
-  // Final decision separator
+  // Gemini separator (SECOND)
+  sheet.getRange(1, sepGemini).setValue('GEMINI')
+    .setBackground(COLORS.discuiPrimary)
+    .setFontColor(COLORS.white)
+    .setFontWeight('bold');
+  sheet.setColumnWidth(sepGemini, 30);
+
+  for (let c = sepGemini + 1; c <= sepGemini + 3; c++) {
+    sheet.getRange(1, c).setBackground(COLORS.discuiPrimary).setFontColor(COLORS.white);
+  }
+
+  // Final decision separator (THIRD)
   sheet.getRange(1, sepFinal).setValue('FINALE')
     .setBackground(COLORS.green)
     .setFontColor(COLORS.white)
@@ -353,12 +357,17 @@ function createStep2Sheet(ss, numPosts) {
 
   // Apply to 500 rows (more than enough) starting from row 3
   const maxRows = 500;
-  sheet.getRange(3, sepGemini + 1, maxRows, 1).setDataValidation(thematicRule);
-  sheet.getRange(3, sepGemini + 2, maxRows, 1).setDataValidation(certaintyRule);
 
+  // Human coders (FIRST)
   for (let i = 1; i <= MAX_CODERS; i++) {
     sheet.getRange(3, sepHuman + i, maxRows, 1).setDataValidation(thematicRule);
   }
+
+  // Gemini (SECOND)
+  sheet.getRange(3, sepGemini + 1, maxRows, 1).setDataValidation(thematicRule);
+  sheet.getRange(3, sepGemini + 2, maxRows, 1).setDataValidation(certaintyRule);
+
+  // Final decision
   sheet.getRange(3, sepFinal + 1, maxRows, 1).setDataValidation(thematicRule);
 
   // Column widths
@@ -366,9 +375,9 @@ function createStep2Sheet(ss, numPosts) {
   sheet.setColumnWidth(2, 140);
   sheet.setColumnWidth(3, 200);
   sheet.setColumnWidth(4, 350);
+  for (let i = 1; i <= MAX_CODERS; i++) sheet.setColumnWidth(sepHuman + i, 140);
   for (let c = sepGemini + 1; c <= sepGemini + 2; c++) sheet.setColumnWidth(c, 140);
   sheet.setColumnWidth(sepGemini + 3, 250);
-  for (let i = 1; i <= MAX_CODERS; i++) sheet.setColumnWidth(sepHuman + i, 140);
   sheet.setColumnWidth(sepFinal + 1, 140);
   sheet.setColumnWidth(sepFinal + 2, 250);
 
@@ -530,16 +539,16 @@ function createInstructionsSheet(ss) {
     ['', ''],
     ['3. TAB "STEP 1"', 'Classificazione BINARIA di tutti i 420 post: AI slop oppure no?'],
     ['', 'Le colonne A-D (riga, id, file, testo) sono gia precompilate dal tab DATI.'],
-    ['', '(a) GEMINI (colonne arancioni): classificate tutti i 420 post con Gemini usando il vostro prompt.'],
-    ['', '(b) UMANI (colonne blu): ogni membro classifica indipendentemente un CAMPIONE DI 50 POST, senza guardare Gemini e senza discutere.'],
-    ['', '(c) FINALE (colonne verdi): dopo aver confrontato i risultati e calcolato il kappa, registrate la decisione finale.'],
+    ['', '(a) UMANI PRIMA (colonne blu): ogni membro classifica indipendentemente un CAMPIONE DI 50 POST. Niente Gemini, niente discussione. Questo DEVE avvenire prima di vedere i risultati di Gemini.'],
+    ['', '(b) GEMINI DOPO (colonne arancioni): classificate tutti i 420 post con Gemini usando il vostro prompt.'],
+    ['', '(c) FINALE (colonne verdi): confrontate umani vs Gemini, calcolate il kappa, registrate la decisione finale.'],
     ['', ''],
     ['4. TAB "STEP 2"', 'Classificazione TEMATICA: solo per i post classificati come "AI slop" nello Step 1.'],
     ['', 'Copiate qui SOLO le righe classificate come "AI slop" nello Step 1 (colonne A-D).'],
     ['', 'PRIMA di iniziare: aggiornate i menu a tendina con le VOSTRE categorie (Dati > Convalida dati).'],
-    ['', '(a) GEMINI: classificate tutti i post AI slop con il vostro prompt tematico.'],
-    ['', '(b) UMANI: ogni membro classifica indipendentemente un CAMPIONE DI 50 POST AI slop.'],
-    ['', '(c) FINALE: decisione finale dopo il confronto e il calcolo del kappa.'],
+    ['', '(a) UMANI PRIMA: ogni membro classifica indipendentemente un CAMPIONE DI 50 POST AI slop. Senza Gemini.'],
+    ['', '(b) GEMINI DOPO: classificate tutti i post AI slop con il vostro prompt tematico.'],
+    ['', '(c) FINALE: confronto, kappa, decisione finale.'],
     ['', ''],
     ['5. TAB "CODEBOOK"', 'Documentate il vostro schema di classificazione con definizioni, esempi e regole.'],
     ['', 'Compilate ENTRAMBE le sezioni: Step 1 (definizione di AI slop) e Step 2 (le vostre categorie tematiche).'],
@@ -552,17 +561,18 @@ function createInstructionsSheet(ss) {
     ['', ''],
     ['Sett. 4 Mar 17', 'Lancio progetto: esplorazione dataset, formazione gruppi, scelta angolo di classificazione per Step 2.'],
     ['Sett. 4 Mer 18', 'Lab — Prompt design + pilot: scrivete e testate i prompt (Step 1 e Step 2) su 10-15 post. Raffinate. Documentate nel CODEBOOK e PROMPT. Obiettivo: 30-50 post classificati.'],
-    ['Sett. 5 Lun 23', 'Lab — Classificazione completa con Gemini: (1) Step 1 su tutti i 420 post, (2) Step 2 solo sui post AI slop. Tutto con Gemini, colonne arancioni.'],
-    ['Sett. 5 Mar 24', 'Validazione umana: ogni membro classifica INDIPENDENTEMENTE 50 post per Step 1 + 50 post per Step 2 (colonne blu). Poi: confronto, matrice di confusione, calcolo Cohen\'s kappa. Se kappa < 0.60: raffinare e ripetere.'],
+    ['Sett. 5 Lun 23', 'Lab — Codifica umana PRIMA: ogni membro classifica indipendentemente 50 post (Step 1) senza Gemini. Poi classificazione Gemini di tutti i 420 post (Step 1). Infine Step 2 (Gemini) solo sui post AI slop.'],
+    ['Sett. 5 Mar 24', 'Validazione: codifica umana di 50 post per Step 2 (senza Gemini). Poi confronto umani vs Gemini per Step 1 e Step 2: matrice di confusione, Cohen\'s kappa. Se kappa < 0.60: raffinare e ripetere.'],
     ['Sett. 5 Mer 25', 'Consultazione + analisi engagement: collegate le categorie validate (Step 2) alle metriche di engagement nel tab DATI. Quali categorie generano piu reazioni, condivisioni, visualizzazioni?'],
     ['Sett. 6 Lun 30', 'Workshop di scrittura: struttura della relazione, distribuzione del lavoro nel gruppo.'],
     ['Sett. 6 Mar 31', 'Lavoro di gruppo in aula: stesura collaborativa della relazione.'],
     ['Sett. 6 Mer 1 Apr', 'Sintesi del corso: confronto inter-gruppo (stessi dati, schemi diversi) + consultazioni finali.'],
     ['', ''],
     ['REGOLE D\'ORO', ''],
-    ['', '1. Durante la codifica umana (colonne blu): ogni membro lavora SENZA consultare Gemini e SENZA discutere con gli altri.'],
-    ['', '2. Il codebook e il prompt devono essere IDENTICI per Gemini e per gli umani — altrimenti il confronto non ha senso.'],
-    ['', '3. Documentate TUTTO: ogni versione del prompt, ogni decisione sul codebook, ogni caso ambiguo. Servira per la relazione.'],
+    ['', '1. UMANI PRIMA, GEMINI DOPO: la codifica umana (colonne blu) deve avvenire PRIMA di quella con Gemini (colonne arancioni). Altrimenti i codificatori umani saranno influenzati (bias di ancoraggio).'],
+    ['', '2. Durante la codifica umana: ogni membro lavora SENZA consultare Gemini e SENZA discutere con gli altri.'],
+    ['', '3. Il codebook e il prompt devono essere IDENTICI per Gemini e per gli umani — altrimenti il confronto non ha senso.'],
+    ['', '4. Documentate TUTTO: ogni versione del prompt, ogni decisione sul codebook, ogni caso ambiguo. Servira per la relazione.'],
   ];
 
   sheet.getRange(1, 1, instructions.length, 2).setValues(instructions);
