@@ -94,10 +94,10 @@ Usando il **vocabolario della pipeline LLMs-in-the-loop** che conoscete dal semi
 | **4. Metriche di accordo** | Calcolate | Kappa umano-umano e umano-IA (≥ 0.60) |
 | **5. Iterazione** | Se necessaria | Prompt raffinato se kappa < 0.60 |
 | **6. Analisi engagement** | **Da iniziare oggi** | Categorie (VI) → metriche engagement (VD) |
-| **Bozza paper** | Da iniziare | Outline IMRaD |
+| **Bozza relazione** | Da iniziare | Outline IMRaD |
 
 ::: {.notes}
-Checklist aggiornata. Le fasi 1-5 dovrebbero essere completate: classificazione IA su tutte le immagini, codebook documentato, validazione su campione di 50 immagini, kappa calcolato, eventuale iterazione. La fase 6 — analisi di engagement — è la novità di oggi. I gruppi che non hanno ancora completato la validazione devono farlo con priorità. Per i gruppi pronti, la consultazione si focalizzerà sull'analisi di engagement e sulla preparazione del paper. Per i gruppi in ritardo, la consultazione serve per risolvere i problemi e pianificare il recupero.
+Checklist aggiornata. Le fasi 1-5 dovrebbero essere completate: classificazione IA su tutte le immagini, codebook documentato, validazione su campione di 50 immagini, kappa calcolato, eventuale iterazione. La fase 6 — analisi di engagement — è la novità di oggi. I gruppi che non hanno ancora completato la validazione devono farlo con priorità. Per i gruppi pronti, la consultazione si focalizzerà sull'analisi di engagement e sulla preparazione del relazione. Per i gruppi in ritardo, la consultazione serve per risolvere i problemi e pianificare il recupero.
 :::
 
 ## Analisi di Engagement {background-color="#C5612E"}
@@ -123,7 +123,7 @@ Il dataset integrato contiene per ogni immagine:
 - **N. commenti:** conteggio dei commenti (non il testo)
 
 ::: {.notes}
-Questa è la struttura analitica del progetto. Le categorie di classificazione — validate attraverso il protocollo umano-IA di ieri — diventano la variabile indipendente. Le metriche di engagement dal CSV diventano le variabili dipendenti. La domanda è semplice ma potente: diversi tipi di immagini AI-generated generano livelli diversi di engagement? Questo si collega direttamente al framework di Terenzi e Giglietto (2025) sull'AI slop come engagement bait strategico. Nota importante: abbiamo i conteggi dei commenti ma non il testo dei singoli commenti — questo è una limitazione da riportare nel paper.
+Questa è la struttura analitica del progetto. Le categorie di classificazione — validate attraverso il protocollo umano-IA di ieri — diventano la variabile indipendente. Le metriche di engagement dal CSV diventano le variabili dipendenti. La domanda è semplice ma potente: diversi tipi di immagini AI-generated generano livelli diversi di engagement? Questo si collega direttamente al framework di Terenzi e Giglietto (2025) sull'AI slop come engagement bait strategico. Nota importante: abbiamo i conteggi dei commenti ma non il testo dei singoli commenti — questo è una limitazione da riportare nel relazione.
 :::
 
 ## Statistiche descrittive: cosa calcolare
@@ -171,12 +171,12 @@ Perché le immagini religiose potrebbero avere engagement più alto? Quali **din
 :::
 
 ::: {.notes}
-Esempio puramente illustrativo. Notare come la tabella rivela immediatamente un pattern: le immagini religiose hanno engagement mediano molto superiore — quasi il triplo dei paesaggi per condivisioni. Questo tipo di risultato richiede interpretazione nella Discussione del paper: perché? Le ipotesi possibili includono: (1) contenuto religioso attiva risposte emotive più forti (identità, valori), (2) le community religiose su Facebook sono molto attive nella condivisione, (3) gli algoritmi di Meta amplificano contenuti con alto engagement iniziale. Collegare a Ferrara (2026): l'AI slop religioso sfrutta la "credulity" degli utenti e la "epistemic insecurity" per massimizzare l'engagement.
+Esempio puramente illustrativo. Notare come la tabella rivela immediatamente un pattern: le immagini religiose hanno engagement mediano molto superiore — quasi il triplo dei paesaggi per condivisioni. Questo tipo di risultato richiede interpretazione nella Discussione del relazione: perché? Le ipotesi possibili includono: (1) contenuto religioso attiva risposte emotive più forti (identità, valori), (2) le community religiose su Facebook sono molto attive nella condivisione, (3) gli algoritmi di Meta amplificano contenuti con alto engagement iniziale. Collegare a Ferrara (2026): l'AI slop religioso sfrutta la "credulity" degli utenti e la "epistemic insecurity" per massimizzare l'engagement.
 :::
 
 ## Visualizzare i pattern
 
-Rappresentazioni utili per il paper:
+Rappresentazioni utili per il relazione:
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -202,7 +202,7 @@ Ordinate le categorie per **engagement decrescente** nel grafico — rende il pa
 :::
 
 ::: {.notes}
-Suggerimenti pratici per la visualizzazione. Il bar chart con mediane è il formato più chiaro per il paper: un grafico per ogni metrica di engagement (reazioni, condivisioni, views), con le categorie ordinate per valore decrescente. Il box plot è più informativo ma potrebbe essere troppo complesso per alcuni gruppi. Google Sheets permette di creare grafici a barre rapidamente; per il paper, volendo, si possono raffinare con ggplot2 usando il tema DISCUI. Gemini può aiutare a interpretare i pattern e suggerire visualizzazioni alternative. L'importante è che i grafici siano chiari, leggibili e ordinati.
+Suggerimenti pratici per la visualizzazione. Il bar chart con mediane è il formato più chiaro per il relazione: un grafico per ogni metrica di engagement (reazioni, condivisioni, views), con le categorie ordinate per valore decrescente. Il box plot è più informativo ma potrebbe essere troppo complesso per alcuni gruppi. Google Sheets permette di creare grafici a barre rapidamente; per il relazione, volendo, si possono raffinare con ggplot2 usando il tema DISCUI. Gemini può aiutare a interpretare i pattern e suggerire visualizzazioni alternative. L'importante è che i grafici siano chiari, leggibili e ordinati.
 :::
 
 ## Consultazioni Individuali {background-color="#C5612E"}
@@ -231,7 +231,7 @@ Per ogni gruppo, discuteremo:
 - Pattern di engagement per categoria
 - Risultati attesi vs. risultati osservati
 - Collegamento con i framework teorici
-- Limitazioni da riportare nel paper
+- Limitazioni da riportare nel relazione
 :::
 :::
 
@@ -259,7 +259,7 @@ Framework teorici da collegare ai risultati:
 - **Incertezza epistemica** [@vaccari2020] — l'engagement riflette consapevolezza o credulità?
 
 ::: {.notes}
-Problema tipico degli studenti: raccolgono dati e li presentano, ma non li collegano alla teoria. Nel paper, la sezione Discussione deve collegare esplicitamente i risultati ai framework teorici studiati nel corso. Esempio: se le immagini con bambini hanno engagement altissimo, collegare a Ferrara (2026) sulla manipolazione emotiva e alla credulity nell'era delle realtà sintetiche. Se le condivisioni variano più delle reazioni, collegare a Chadwick (2011) sui meccanismi di circolazione nel sistema mediale ibrido. Se le immagini con artefatti visivi evidenti hanno meno engagement, collegare a Vaccari & Chadwick (2020) sulla capacità degli utenti di riconoscere contenuti sintetici.
+Problema tipico degli studenti: raccolgono dati e li presentano, ma non li collegano alla teoria. Nel relazione, la sezione Discussione deve collegare esplicitamente i risultati ai framework teorici studiati nel corso. Esempio: se le immagini con bambini hanno engagement altissimo, collegare a Ferrara (2026) sulla manipolazione emotiva e alla credulity nell'era delle realtà sintetiche. Se le condivisioni variano più delle reazioni, collegare a Chadwick (2011) sui meccanismi di circolazione nel sistema mediale ibrido. Se le immagini con artefatti visivi evidenti hanno meno engagement, collegare a Vaccari & Chadwick (2020) sulla capacità degli utenti di riconoscere contenuti sintetici.
 :::
 
 ## Preparazione per la Prossima Settimana {background-color="#C5612E"}
@@ -276,20 +276,20 @@ Sezione finale: preparazione per la settimana di scrittura.
 | ~~Mar 24 Mar~~ | Validazione umana vs IA | Fatto |
 | **Mer 25 Mar** | **Consultazione + analisi engagement (oggi)** | **In corso** |
 | Lun 30 Mar | **Workshop di scrittura** | Prossima |
-| Mar 31 Mar | Lavoro di gruppo: stesura paper | Settimana 6 |
+| Mar 31 Mar | Lavoro di gruppo: stesura relazione | Settimana 6 |
 | Mer 1 Apr | Sintesi del corso — confronto inter-gruppo | Ultima sessione |
-| 2 sett. prima appello | **Consegna paper** | Scadenza |
+| 2 sett. prima appello | **Consegna relazione** | Scadenza |
 
 ::: {.highlight-box}
 **Da portare al workshop di lunedì:**
 
 - Risultati consolidati: classificazione validata + analisi engagement
-- Una bozza di **outline del paper** (titolo, domanda di ricerca, sezioni principali)
+- Una bozza di **outline del relazione** (titolo, domanda di ricerca, sezioni principali)
 - Le letture del corso più rilevanti per la vostra domanda di ricerca
 :::
 
 ::: {.notes}
-Riepilogo della timeline. Da lunedì prossimo si scrive. Il workshop di scrittura fornirà la struttura del paper (formato IMRaD revisionato per il progetto) e strategie per usare NotebookLM nella fase di redazione. I gruppi devono arrivare con i risultati dell'analisi consolidati e una bozza di outline. Chi non ha completato l'analisi di engagement deve farlo entro il weekend. La settimana prossima è dedicata esclusivamente alla scrittura: non ci sarà tempo per tornare sui dati. La sessione del 1 aprile includerà il confronto inter-gruppo: come schemi di classificazione diversi rivelano pattern diversi nelle stesse immagini.
+Riepilogo della timeline. Da lunedì prossimo si scrive. Il workshop di scrittura fornirà la struttura del relazione (formato IMRaD revisionato per il progetto) e strategie per usare NotebookLM nella fase di redazione. I gruppi devono arrivare con i risultati dell'analisi consolidati e una bozza di outline. Chi non ha completato l'analisi di engagement deve farlo entro il weekend. La settimana prossima è dedicata esclusivamente alla scrittura: non ci sarà tempo per tornare sui dati. La sessione del 1 aprile includerà il confronto inter-gruppo: come schemi di classificazione diversi rivelano pattern diversi nelle stesse immagini.
 :::
 
 ## Grazie! {background-color="#C5612E"}
@@ -301,7 +301,7 @@ Riepilogo della timeline. Da lunedì prossimo si scrive. Il workshop di scrittur
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) completare l'analisi di engagement se non ancora fatta, (2) preparare l'outline del paper per lunedì (titolo, domanda di ricerca, 2-3 punti per ogni sezione IMRaD), (3) rileggere le letture del corso rilevanti per la propria domanda di ricerca — in particolare Ferrara (2026) per la Discussione. A lunedì per il workshop di scrittura!
+Chiusura. Ricordare: (1) completare l'analisi di engagement se non ancora fatta, (2) preparare l'outline del relazione per lunedì (titolo, domanda di ricerca, 2-3 punti per ogni sezione IMRaD), (3) rileggere le letture del corso rilevanti per la propria domanda di ricerca — in particolare Ferrara (2026) per la Discussione. A lunedì per il workshop di scrittura!
 :::
 
 ## Riferimenti

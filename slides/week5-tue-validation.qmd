@@ -187,7 +187,7 @@ Il punto chiave è la codifica cieca: i codificatori umani non devono vedere la 
 ## Misurare l'Accordo {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 4: le metriche statistiche per misurare l'accordo tra codificatori. Concetti tecnici necessari per il paper.
+Sezione 4: le metriche statistiche per misurare l'accordo tra codificatori. Concetti tecnici necessari per il relazione.
 :::
 
 ## Perché non basta la percentuale di accordo
@@ -241,7 +241,7 @@ Concetto statistico fondamentale per la validazione. La percentuale di accordo g
 :::
 
 ::: {.notes}
-Le due metriche principali per la validazione. Cohen's kappa è la più usata quando si confrontano 2 codificatori (nel nostro caso, una coppia umano-umano o una coppia umano-IA). Krippendorff's alpha è più flessibile: funziona con più di 2 codificatori (utile per confrontare tutti i membri del gruppo + Gemini simultaneamente) e gestisce i dati mancanti. Per il progetto, il kappa di Cohen si usa per ogni coppia; alpha di Krippendorff per il confronto complessivo del gruppo. L'obiettivo minimo è un kappa di 0.60 (accordo buono). Nella sezione Metodo del paper, bisogna riportare la metrica usata, il valore ottenuto e l'interpretazione.
+Le due metriche principali per la validazione. Cohen's kappa è la più usata quando si confrontano 2 codificatori (nel nostro caso, una coppia umano-umano o una coppia umano-IA). Krippendorff's alpha è più flessibile: funziona con più di 2 codificatori (utile per confrontare tutti i membri del gruppo + Gemini simultaneamente) e gestisce i dati mancanti. Per il progetto, il kappa di Cohen si usa per ogni coppia; alpha di Krippendorff per il confronto complessivo del gruppo. L'obiettivo minimo è un kappa di 0.60 (accordo buono). Nella sezione Metodo del relazione, bisogna riportare la metrica usata, il valore ottenuto e l'interpretazione.
 :::
 
 ## Calcolare il kappa: la matrice di confusione
@@ -291,7 +291,7 @@ Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere
 - La pipeline funziona bene
 - L'IA è un classificatore affidabile per queste categorie visive
 - Si può procedere con l'analisi di engagement
-- Documentare nel paper
+- Documentare nel relazione
 :::
 
 ::: {.column width="50%"}
@@ -366,7 +366,7 @@ Se dopo 2 iterazioni il kappa resta sotto 0.60 per alcune categorie, considerate
 La decisione di iterazione è cruciale. Se il kappa è sopra 0.60, il gruppo può procedere con fiducia all'analisi di engagement. Se è sotto 0.60, serve iterazione: il ciclo è analizzare errori → raffinare codebook e prompt → reclassificare → ricalcolare kappa. Nella classificazione visiva, le categorie che più spesso causano problemi sono quelle con confini sfumati: "nostalgia" vs. "paesaggio vintage", "engagement bait" vs. "contenuto genuino". Se dopo 2 iterazioni il kappa resta basso, la soluzione pragmatica è accorpare le categorie problematiche. Meglio avere meno categorie con alta affidabilità che molte categorie inaffidabili.
 :::
 
-## Cosa riportare nel paper
+## Cosa riportare nel relazione
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -394,7 +394,7 @@ La **trasparenza metodologica** è un valore fondamentale: documentate non solo 
 :::
 
 ::: {.notes}
-Due aspetti complementari: la documentazione per il Metodo e per i Risultati. Per il Metodo: il prompt completo va in appendice, il codebook va descritto con esempi, il protocollo di validazione (50 immagini, codifica cieca, quanti codificatori) va dettagliato. Per i Risultati: la matrice di confusione rivela i pattern di errore, le iterazioni mostrano il processo di miglioramento, la versione del modello garantisce la riproducibilità. Il confronto inter-gruppo è opzionale nella sezione Risultati del singolo paper, ma sarà tema centrale della discussione collettiva nella sintesi del 1 aprile.
+Due aspetti complementari: la documentazione per il Metodo e per i Risultati. Per il Metodo: il prompt completo va in appendice, il codebook va descritto con esempi, il protocollo di validazione (50 immagini, codifica cieca, quanti codificatori) va dettagliato. Per i Risultati: la matrice di confusione rivela i pattern di errore, le iterazioni mostrano il processo di miglioramento, la versione del modello garantisce la riproducibilità. Il confronto inter-gruppo è opzionale nella sezione Risultati del singolo relazione, ma sarà tema centrale della discussione collettiva nella sintesi del 1 aprile.
 :::
 
 ## Prossimi passi del progetto
@@ -402,10 +402,10 @@ Due aspetti complementari: la documentazione per il Metodo e per i Risultati. Pe
 | Data | Attività |
 |------|----------|
 | **Mer 25 Marzo** | Consultazione gruppi + **analisi engagement** |
-| **Lun 30 Marzo** | Workshop di scrittura — struttura del paper |
+| **Lun 30 Marzo** | Workshop di scrittura — struttura del relazione |
 | **Mar 31 Marzo** | Lavoro di gruppo — stesura collaborativa |
 | **Mer 1 Aprile** | Sintesi del corso — confronto inter-gruppo |
-| **2 sett. prima appello** | **Consegna paper finale** |
+| **2 sett. prima appello** | **Consegna relazione finale** |
 
 ::: {.highlight-box}
 **Per domani:** preparate una breve **presentazione** (5 minuti) con: classificazione completata, kappa ottenuto, matrice di confusione, e una prima esplorazione dell'engagement per categoria.

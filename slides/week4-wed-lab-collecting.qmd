@@ -313,15 +313,15 @@ Nel **foglio Google Sheets** condiviso, create un tab "Codebook":
 - **Colonna D:** Casi limite e regole di decisione
 - **Colonna E:** Note dal test pilota
 
-Il **prompt finale** va copiato in un secondo tab "Prompt" — è parte integrante della metodologia e andrà nell'appendice del paper.
+Il **prompt finale** va copiato in un secondo tab "Prompt" — è parte integrante della metodologia e andrà nell'appendice del relazione.
 
 ::: {.callout-tip}
 ## Suggerimento
-Documentate anche le **versioni precedenti** del prompt. La storia delle iterazioni sarà utile per la sezione Metodo del paper.
+Documentate anche le **versioni precedenti** del prompt. La storia delle iterazioni sarà utile per la sezione Metodo del relazione.
 :::
 
 ::: {.notes}
-Indicazioni operative sulla documentazione. Il foglio condiviso è il repository centrale del gruppo. Il tab Codebook deve essere compilato da tutti i membri — non solo dall'AI analyst. Il prompt finale nel tab "Prompt" serve per la riproducibilità: nella sezione Metodo del paper, i gruppi dovranno descrivere esattamente come hanno istruito Gemini. Conservare le versioni precedenti del prompt (v1, v2, ecc.) è utile per raccontare il processo iterativo. Questo riflette il principio di trasparenza della metodologia LLMs-in-the-loop: ogni decisione deve essere documentata e giustificabile.
+Indicazioni operative sulla documentazione. Il foglio condiviso è il repository centrale del gruppo. Il tab Codebook deve essere compilato da tutti i membri — non solo dall'AI analyst. Il prompt finale nel tab "Prompt" serve per la riproducibilità: nella sezione Metodo del relazione, i gruppi dovranno descrivere esattamente come hanno istruito Gemini. Conservare le versioni precedenti del prompt (v1, v2, ecc.) è utile per raccontare il processo iterativo. Questo riflette il principio di trasparenza della metodologia LLMs-in-the-loop: ogni decisione deve essere documentata e giustificabile.
 :::
 
 ## Lavoro Pratico {background-color="#C5612E"}

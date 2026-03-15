@@ -168,7 +168,7 @@ La colonna sinistra riconosce le competenze metodologiche dal seminario Paroni: 
 - Sviluppare uno **schema di classificazione tematica** per i contenuti AI slop
 - Usare Gemini in modalità **multimodale** (analisi immagini e video)
 - Calcolare l'**intercoder reliability** (Cohen's kappa)
-- Collegare categorie a **metriche di engagement** e scrivere un **paper** (IMRaD)
+- Collegare categorie a **metriche di engagement** e scrivere un **relazione** (IMRaD)
 
 ::: {.notes}
 Questa slide identifica cosa è genuinamente nuovo nel progetto rispetto a ciò che gli studenti hanno già fatto. La classificazione multi-categoria di immagini è l'oggetto principale. Il passaggio da 20 headline a 300-400 immagini richiede strategie diverse: batch processing, gestione della consistenza, documentazione del codebook. L'uso multimodale di Gemini è una novità: finora hanno classificato testo, ora classificheranno immagini. L'analisi dell'engagement aggiunge un passo quantitativo: le categorie validate diventano la variabile indipendente per spiegare la variazione nelle metriche di engagement (reazioni, condivisioni, visualizzazioni).
@@ -203,10 +203,10 @@ Il dataset proviene dalla ricerca di Terenzi & Giglietto (2025) e include post r
 - **Contesto originale su Facebook:** gli URL interni di MCL non sono accessibili
 - **Accesso diretto a Meta Content Library:** richiede un account ricercatore verificato
 
-Queste limitazioni vanno **discusse nel paper** (sezione Discussione/Limitazioni).
+Queste limitazioni vanno **discusse nel relazione** (sezione Discussione/Limitazioni).
 
 ::: {.notes}
-È importante essere trasparenti sulle limitazioni fin dall'inizio. Gli studenti non possono analizzare il contenuto testuale dei commenti — solo quanti ce ne sono. Non possono vedere il post nel suo contesto originale su Facebook. Queste limitazioni devono essere riportate nel paper finale: sono limitazioni del metodo, non errori. Nella sezione Discussione del paper, i gruppi discuteranno come queste limitazioni influenzano l'interpretazione dei risultati. Ad esempio: un alto numero di commenti potrebbe indicare sia apprezzamento sia critica, senza poter distinguere.
+È importante essere trasparenti sulle limitazioni fin dall'inizio. Gli studenti non possono analizzare il contenuto testuale dei commenti — solo quanti ce ne sono. Non possono vedere il post nel suo contesto originale su Facebook. Queste limitazioni devono essere riportate nel relazione finale: sono limitazioni del metodo, non errori. Nella sezione Discussione del relazione, i gruppi discuteranno come queste limitazioni influenzano l'interpretazione dei risultati. Ad esempio: un alto numero di commenti potrebbe indicare sia apprezzamento sia critica, senza poter distinguere.
 :::
 
 ## Tutti sulle stesse immagini
@@ -249,10 +249,10 @@ Questi sono solo esempi — i gruppi sono liberi di combinare dimensioni o inven
 | **Dati** | 420 post (428 file multimediali) + CSV con metriche (forniti dal docente) |
 | **Strumenti** | Google Gemini (multimodale), NotebookLM, fogli di calcolo |
 | **Metodologia** | LLMs-in-the-loop [@marino2024] |
-| **Output** | Paper di ricerca (IMRaD) — 75% del voto, consegna 2 sett. prima dell'appello |
+| **Output** | Relazione di ricerca (IMRaD) — 75% del voto, consegna 2 sett. prima dell'appello |
 
 ::: {.notes}
-Panoramica sintetica del progetto. Il paper finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione). Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo di classificazione specifico e analizzerà se le categorie validate predicono livelli diversi di engagement. Le prossime 3 settimane sono dedicate al progetto: classificazione pilota (domani), classificazione completa e validazione (settimana 5), scrittura (settimana 6). Nota: gli strumenti sono Google Gemini per la classificazione multimodale delle immagini, NotebookLM per la letteratura, e Google Sheets per il dataset.
+Panoramica sintetica del progetto. Il relazione finale avrà struttura IMRaD (Introduzione, Metodo, Risultati e Discussione). Il peso è significativo: 75% della valutazione. I gruppi saranno composti da massimo 6 studenti. Ogni gruppo sceglierà un angolo di classificazione specifico e analizzerà se le categorie validate predicono livelli diversi di engagement. Le prossime 3 settimane sono dedicate al progetto: classificazione pilota (domani), classificazione completa e validazione (settimana 5), scrittura (settimana 6). Nota: gli strumenti sono Google Gemini per la classificazione multimodale delle immagini, NotebookLM per la letteratura, e Google Sheets per il dataset.
 :::
 
 ## Formazione dei Gruppi {background-color="#C5612E"}
@@ -273,10 +273,10 @@ Sezione 4: operativa. Formazione dei gruppi, ruoli e procedura di registrazione.
 | **Analista IA** | Prompt design, interazione con Gemini |
 | **Validatore** | Codifica umana, calcolo kappa |
 | **Analista dati** | Gestione CSV, analisi engagement |
-| **Redattore** | Struttura paper, scrittura |
+| **Redattore** | Struttura relazione, scrittura |
 
 ::: {.notes}
-I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di coordinare ciascuna fase del progetto. L'analista IA si occupa della progettazione dei prompt per Gemini e della classificazione automatizzata. Il validatore coordina la codifica umana e il calcolo dell'intercoder reliability. L'analista dati gestisce il CSV e analizza i pattern di engagement. Il redattore coordina la scrittura del paper. Ma tutti contribuiscono a tutto: nella fase di validazione, ad esempio, ogni membro del gruppo codifica indipendentemente un campione di 50 immagini.
+I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di coordinare ciascuna fase del progetto. L'analista IA si occupa della progettazione dei prompt per Gemini e della classificazione automatizzata. Il validatore coordina la codifica umana e il calcolo dell'intercoder reliability. L'analista dati gestisce il CSV e analizza i pattern di engagement. Il redattore coordina la scrittura del relazione. Ma tutti contribuiscono a tutto: nella fase di validazione, ad esempio, ogni membro del gruppo codifica indipendentemente un campione di 50 immagini.
 :::
 
 ## Procedura di registrazione {.smaller}
@@ -290,12 +290,12 @@ I ruoli non sono rigidi ma identificano chi ha la responsabilità primaria di co
    - con **fabio.giglietto@uniurb.it** e **bruna.almeidaparoni@uniurb.it** in modalità **commento**
 
 ::: {.notes}
-Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha tre compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile — il docente assegnerà poi un identificativo numerico, (2) copiare il modello di relazione disponibile come Google Doc, (3) condividere la copia con i membri in modalità modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Il documento condiviso sarà usato per la stesura progressiva del paper nelle settimane successive.
+Fase operativa: formazione dei gruppi. Dare 10-15 minuti per l'autoformazione. Se necessario, il docente interviene per bilanciare i gruppi. I gruppi hanno massimo 6 studenti. Ogni gruppo indica un responsabile che sarà il punto di contatto organizzativo. Il responsabile ha tre compiti immediati: (1) postare nel forum su Blended i nomi dei membri indicando chi è il responsabile — il docente assegnerà poi un identificativo numerico, (2) copiare il modello di relazione disponibile come Google Doc, (3) condividere la copia con i membri in modalità modifica e con il docente (fabio.giglietto@uniurb.it) e Bruna Paroni (bruna.almeidaparoni@uniurb.it) in modalità commento. Il documento condiviso sarà usato per la stesura progressiva del relazione nelle settimane successive.
 :::
 
 ## Il modello di relazione
 
-Il [**modello di relazione**](https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true) fornisce la **struttura completa** del paper:
+Il [**modello di relazione**](https://docs.google.com/document/d/1-H-KxAKvPLOIKj7yXvITAriQf7sLlafA/edit?usp=sharing&ouid=106569793733516182660&rtpof=true&sd=true) fornisce la **struttura completa** del relazione:
 
 | Sezione | Contenuto |
 |---------|-----------|
@@ -334,10 +334,10 @@ Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già 
 | **5** | Lun 23 | **Lab:** classificazione completa (420 post) |
 | **5** | Mar 24 | **Workshop:** validazione umana vs IA |
 | **5** | Mer 25 | Consultazione gruppi + analisi engagement |
-| **6** | Lun 30 | **Workshop:** scrittura del paper |
+| **6** | Lun 30 | **Workshop:** scrittura del relazione |
 | **6** | Mar 31 | Lavoro di gruppo in aula |
 | **6** | Mer 1 Apr | Sintesi inter-gruppo e consultazioni finali |
-| — | 2 sett. prima appello | **Consegna paper** |
+| — | 2 sett. prima appello | **Consegna relazione** |
 
 ::: {.notes}
 Timeline completa del progetto. Domani è la sessione più importante per la preparazione: i gruppi progettano e testano i loro prompt di classificazione, creano il codebook e classificano un campione pilota di 30-50 immagini. Lunedì prossimo si scala: classificazione completa delle 300-400 immagini con Gemini. Martedì la validazione umana con calcolo del kappa. Mercoledì la consultazione con il docente e l'analisi dei pattern di engagement. La settimana 6 è dedicata alla scrittura. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere tra le sessioni.
