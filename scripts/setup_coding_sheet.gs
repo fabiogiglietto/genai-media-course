@@ -523,36 +523,46 @@ function createInstructionsSheet(ss) {
     ['COME USARE QUESTO FOGLIO', ''],
     ['', ''],
     ['1. PREPARAZIONE', 'Il responsabile del gruppo copia questo foglio e lo condivide con i membri del gruppo (modalita MODIFICA) e con fabio.giglietto@uniurb.it e bruna.almeidaparoni@uniurb.it (modalita COMMENTO).'],
-    ['', 'Rinominate le colonne "coder_1"..."coder_6" con i nomi dei membri del gruppo.'],
+    ['', 'Rinominate le colonne "coder_1"..."coder_6" con i nomi dei membri del gruppo in TUTTI i tab.'],
     ['', ''],
     ['2. TAB "DATI"', 'Contiene i metadati dei 420 post e le metriche di engagement. NON MODIFICARE.'],
-    ['', 'Usatelo come riferimento per esplorare il dataset.'],
+    ['', 'Usatelo come riferimento per esplorare il dataset e le metriche di engagement.'],
     ['', ''],
-    ['3. TAB "STEP 1"', 'Classificazione BINARIA: ogni post e AI slop oppure no?'],
-    ['', 'Prima: classificate con Gemini (colonne arancioni). Caricate le immagini e usate il vostro prompt.'],
-    ['', 'Poi: ogni membro classifica INDIPENDENTEMENTE (colonne blu) SENZA guardare Gemini.'],
-    ['', 'Infine: decisione finale del gruppo (colonne verdi).'],
-    ['', 'Usate i menu a tendina: "AI slop" / "Non AI slop" / "Incerto".'],
+    ['3. TAB "STEP 1"', 'Classificazione BINARIA di tutti i 420 post: AI slop oppure no?'],
+    ['', 'Le colonne A-D (riga, id, file, testo) sono gia precompilate dal tab DATI.'],
+    ['', '(a) GEMINI (colonne arancioni): classificate tutti i 420 post con Gemini usando il vostro prompt.'],
+    ['', '(b) UMANI (colonne blu): ogni membro classifica indipendentemente un CAMPIONE DI 50 POST, senza guardare Gemini e senza discutere.'],
+    ['', '(c) FINALE (colonne verdi): dopo aver confrontato i risultati e calcolato il kappa, registrate la decisione finale.'],
     ['', ''],
     ['4. TAB "STEP 2"', 'Classificazione TEMATICA: solo per i post classificati come "AI slop" nello Step 1.'],
-    ['', 'Copiate qui le righe AI slop dallo Step 1 (colonne A-D).'],
-    ['', 'PRIMA: aggiornate i menu a tendina con le VOSTRE categorie (Dati > Convalida dati).'],
-    ['', 'La codifica umana e solo per il CAMPIONE DI VALIDAZIONE (50 post).'],
+    ['', 'Copiate qui SOLO le righe classificate come "AI slop" nello Step 1 (colonne A-D).'],
+    ['', 'PRIMA di iniziare: aggiornate i menu a tendina con le VOSTRE categorie (Dati > Convalida dati).'],
+    ['', '(a) GEMINI: classificate tutti i post AI slop con il vostro prompt tematico.'],
+    ['', '(b) UMANI: ogni membro classifica indipendentemente un CAMPIONE DI 50 POST AI slop.'],
+    ['', '(c) FINALE: decisione finale dopo il confronto e il calcolo del kappa.'],
     ['', ''],
     ['5. TAB "CODEBOOK"', 'Documentate il vostro schema di classificazione con definizioni, esempi e regole.'],
-    ['', 'Compilate sia la parte Step 1 (definizione di AI slop) sia Step 2 (le vostre categorie).'],
+    ['', 'Compilate ENTRAMBE le sezioni: Step 1 (definizione di AI slop) e Step 2 (le vostre categorie tematiche).'],
+    ['', 'Il codebook deve essere identico per Gemini e per i codificatori umani.'],
     ['', ''],
-    ['6. TAB "PROMPT"', 'Salvate TUTTE le versioni dei prompt usati con Gemini (Step 1 e Step 2).'],
-    ['', 'Le versioni precedenti servono per la sezione Metodo della relazione.'],
+    ['6. TAB "PROMPT"', 'Salvate TUTTE le versioni dei prompt usati con Gemini, sia per Step 1 sia per Step 2.'],
+    ['', 'Le versioni precedenti servono per la sezione Metodo della relazione: documentate cosa avete cambiato e perche.'],
     ['', ''],
     ['FASI DI LAVORO', ''],
     ['', ''],
-    ['Settimana 4 Mer 18', 'Prompt design + pilot: testate il prompt su 10-15 post, raffinate, documentate nel CODEBOOK e PROMPT.'],
-    ['Settimana 5 Lun 23', 'Classificazione completa: Step 1 (tutti i 420 post con Gemini) + Step 2 (solo AI slop con Gemini).'],
-    ['Settimana 5 Mar 24', 'Validazione: ogni membro classifica 50 post indipendentemente (colonne blu). Calcolo Cohen\'s kappa.'],
-    ['Settimana 5 Mer 25', 'Analisi engagement: collegate le categorie validate alle metriche nel tab DATI.'],
+    ['Sett. 4 Mar 17', 'Lancio progetto: esplorazione dataset, formazione gruppi, scelta angolo di classificazione per Step 2.'],
+    ['Sett. 4 Mer 18', 'Lab — Prompt design + pilot: scrivete e testate i prompt (Step 1 e Step 2) su 10-15 post. Raffinate. Documentate nel CODEBOOK e PROMPT. Obiettivo: 30-50 post classificati.'],
+    ['Sett. 5 Lun 23', 'Lab — Classificazione completa con Gemini: (1) Step 1 su tutti i 420 post, (2) Step 2 solo sui post AI slop. Tutto con Gemini, colonne arancioni.'],
+    ['Sett. 5 Mar 24', 'Validazione umana: ogni membro classifica INDIPENDENTEMENTE 50 post per Step 1 + 50 post per Step 2 (colonne blu). Poi: confronto, matrice di confusione, calcolo Cohen\'s kappa. Se kappa < 0.60: raffinare e ripetere.'],
+    ['Sett. 5 Mer 25', 'Consultazione + analisi engagement: collegate le categorie validate (Step 2) alle metriche di engagement nel tab DATI. Quali categorie generano piu reazioni, condivisioni, visualizzazioni?'],
+    ['Sett. 6 Lun 30', 'Workshop di scrittura: struttura della relazione, distribuzione del lavoro nel gruppo.'],
+    ['Sett. 6 Mar 31', 'Lavoro di gruppo in aula: stesura collaborativa della relazione.'],
+    ['Sett. 6 Mer 1 Apr', 'Sintesi del corso: confronto inter-gruppo (stessi dati, schemi diversi) + consultazioni finali.'],
     ['', ''],
-    ['REGOLA D\'ORO', 'Durante la codifica umana (colonne blu), ogni membro lavora SENZA consultare Gemini e SENZA discutere con gli altri.'],
+    ['REGOLE D\'ORO', ''],
+    ['', '1. Durante la codifica umana (colonne blu): ogni membro lavora SENZA consultare Gemini e SENZA discutere con gli altri.'],
+    ['', '2. Il codebook e il prompt devono essere IDENTICI per Gemini e per gli umani — altrimenti il confronto non ha senso.'],
+    ['', '3. Documentate TUTTO: ogni versione del prompt, ogni decisione sul codebook, ogni caso ambiguo. Servira per la relazione.'],
   ];
 
   sheet.getRange(1, 1, instructions.length, 2).setValues(instructions);
@@ -567,7 +577,7 @@ function createInstructionsSheet(ss) {
   sheet.getRange(3, 1, 2, 2).setFontStyle('italic').setFontColor('#666666');
 
   // Format section headers
-  const sectionRows = [6, 31, 38];
+  const sectionRows = [6, 35, 47];
   sectionRows.forEach(row => {
     sheet.getRange(row, 1, 1, 2).mergeAcross()
       .setFontWeight('bold')
@@ -575,20 +585,19 @@ function createInstructionsSheet(ss) {
       .setBackground(COLORS.headerBg);
   });
 
-  // Format step labels
-  const stepRows = [8, 11, 14, 20, 25, 28];
+  // Format step labels (1. PREPARAZIONE, 2. TAB DATI, etc.)
+  const stepRows = [8, 11, 14, 21, 28, 32];
   stepRows.forEach(row => {
     sheet.getRange(row, 1).setFontWeight('bold');
   });
 
-  // Format timeline
-  for (let r = 33; r <= 36; r++) {
+  // Format timeline dates
+  for (let r = 37; r <= 44; r++) {
     sheet.getRange(r, 1).setFontWeight('bold');
   }
 
-  // Golden rule
-  sheet.getRange(38, 1).setFontWeight('bold').setFontColor(COLORS.discuiPrimary);
-  sheet.getRange(38, 2).setFontWeight('bold');
+  // Golden rules
+  sheet.getRange(47, 1).setFontWeight('bold').setFontColor(COLORS.discuiPrimary);
 
   // Column widths
   sheet.setColumnWidth(1, 250);
