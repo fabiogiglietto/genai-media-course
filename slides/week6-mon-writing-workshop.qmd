@@ -68,7 +68,7 @@ Sezione 1: panoramica della struttura IMRaD. Questa struttura e usata nella gran
 | **Discussione** | Cosa significa? | 20-25% |
 
 ::: {.notes}
-Il formato IMRaD è lo standard delle scienze sociali e della comunicazione. Ogni sezione risponde a una domanda specifica. Le percentuali sono indicative: un relazione di circa 5.000-6.000 parole dovrebbe bilanciare le sezioni. L'errore più comune degli studenti e scrivere un'introduzione troppo lunga è una discussione troppo corta. La discussione è la sezione più importante: e dove dimostrate di aver compreso il significato dei vostri risultati.
+Il formato IMRaD è lo standard delle scienze sociali e della comunicazione. Ogni sezione risponde a una domanda specifica. Le percentuali sono indicative: un relazione di circa 4.000-6.000 parole dovrebbe bilanciare le sezioni. L'errore più comune degli studenti e scrivere un'introduzione troppo lunga è una discussione troppo corta. La discussione è la sezione più importante: e dove dimostrate di aver compreso il significato dei vostri risultati.
 :::
 
 ## Struttura completa del relazione
