@@ -331,16 +331,16 @@ Esercizio fondamentale per avviare il progetto. Poiché gli studenti hanno già 
 |-----------|------|----------|
 | **4** | Mar 17 | Formazione gruppi, domanda di ricerca |
 | **4** | Mer 18 | **Lab:** prompt design e classificazione pilota |
-| **5** | Lun 23 | **Lab:** classificazione completa (420 post) |
-| **5** | Mar 24 | **Workshop:** validazione umana vs IA |
-| **5** | Mer 25 | Consultazione gruppi + analisi engagement |
-| **6** | Lun 30 | **Workshop:** scrittura del relazione |
-| **6** | Mar 31 | Lavoro di gruppo in aula |
-| **6** | Mer 1 Apr | Sintesi inter-gruppo e consultazioni finali |
+| **5** | Mar 24 | **Lab:** classificazione completa (420 post) |
+| **5** | Mer 25 | **Workshop:** validazione umana vs IA |
+| **6** | Lun 30 | Consultazione gruppi + analisi engagement |
+| **6** | Mar 31 | **Workshop:** scrittura della relazione |
+| **6** | Mer 1 Apr | Lavoro di gruppo in aula |
+| **7** | Lun 13 Apr | Sintesi inter-gruppo e consultazioni finali |
 | — | 2 sett. prima appello | **Consegna relazione** |
 
 ::: {.notes}
-Timeline completa del progetto. Domani è la sessione più importante per la preparazione: i gruppi progettano e testano i loro prompt di classificazione, creano il codebook e classificano un campione pilota di 30-50 immagini. Lunedì prossimo si scala: classificazione completa delle 300-400 immagini con Gemini. Martedì la validazione umana con calcolo del kappa. Mercoledì la consultazione con il docente e l'analisi dei pattern di engagement. La settimana 6 è dedicata alla scrittura. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere tra le sessioni.
+Timeline completa del progetto. Domani è la sessione più importante per la preparazione: i gruppi progettano e testano i loro prompt di classificazione, creano il codebook e classificano un campione pilota di 30-50 immagini. Martedì prossimo si scala: classificazione completa delle 300-400 immagini con Gemini. Mercoledì la validazione umana con calcolo del kappa. Lunedì 30 la consultazione con il docente e l'analisi dei pattern di engagement. La settimana 6 è dedicata alla scrittura. Dopo la pausa pasquale, lunedì 13 aprile la sintesi finale. Sottolineare che il ritmo è serrato: ogni sessione ha un obiettivo specifico e il lavoro deve procedere tra le sessioni.
 :::
 
 ## La pipeline nel progetto {background-color="#C5612E"}
