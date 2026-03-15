@@ -172,31 +172,25 @@ Sezione sui risultati. La regola d'oro: i risultati presentano i dati, la discus
 
 ## Scrivere i risultati
 
-::: {.orange-box}
-**Regola d'oro**
-
-Nella sezione Risultati **presentate i dati**. Nella Discussione **interpretateli**. Non mescolate le due cose.
+::: {.highlight-box}
+**Regola d'oro:** Nei Risultati **presentate i dati**. Nella Discussione **interpretateli**.
 :::
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Da includere
 
-- Statistiche descrittive del dataset
 - Distribuzione delle categorie
-- Risultati dell'intercoder reliability
-- Tabelle e grafici
-- Pattern principali nei dati
+- Intercoder reliability (kappa)
+- Tabelle e grafici commentati
 :::
 
 ::: {.column width="50%"}
 ### Da evitare
 
 - Interpretazioni teoriche
-- Giudizi di valore
 - Speculazioni sulle cause
 - Confronti con la letteratura
-- Opinioni personali
 :::
 :::
 
