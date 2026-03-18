@@ -486,6 +486,25 @@ $code-color: #333333;
       color: rgba(255, 255, 255, 0.8);
     }
   }
+
+  table td {
+    background-color: transparent !important;
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+  }
+
+  table th {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    color: white;
+  }
+
+  table tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+  }
+
+  table tr:hover td {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+  }
 }
 
 // Blue box (kept for Ateneo-level content)
