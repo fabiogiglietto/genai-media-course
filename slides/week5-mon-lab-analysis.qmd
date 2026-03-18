@@ -53,20 +53,33 @@ Struttura del lab. Oggi affrontiamo lo Step 1 della pipeline completa: la classi
 Sezione 1: visione d'insieme della pipeline di classificazione. Questa ricapitolazione collega il lavoro del pilot di mercoledì con il percorso completo che affronteremo nelle prossime sessioni.
 :::
 
-## Il foglio di codifica: post_metadata
+## Il foglio di codifica: post_metadata {.smaller}
 
-Ogni gruppo lavora sul proprio foglio Google Sheets ([post_metadata](https://docs.google.com/spreadsheets/d/1bI-m4SRjVRh5tlYwVO0LIYwZwni1c6HuQwMJy6ZHniQ/edit)), organizzato in **8 tab**:
+[post_metadata](https://docs.google.com/spreadsheets/d/1bI-m4SRjVRh5tlYwVO0LIYwZwni1c6HuQwMJy6ZHniQ/edit) — **8 tab**, 4 operativi + 4 di supporto:
 
-| Tab | Colore | Contenuto |
-|-----|:------:|-----------|
-| **ISTRUZIONI** | — | Guida operativa |
-| **DATI** | — | 420 post: metadata + engagement (sola lettura) |
-| **STEP 1 — Codifica Umana (50)** | 🔵 | Codifica binaria indipendente (50 post) |
-| **STEP 1 — Gemini + Decisione** | 🟠 | Classificazione Gemini + decisione finale (420 post) |
-| **STEP 2 — Codifica Umana (50)** | 🔵 | Codifica tematica indipendente (50 post AI slop) |
-| **STEP 2 — Gemini + Decisione** | 🟠 | Classificazione tematica Gemini (solo AI slop) |
-| **CODEBOOK** | — | Definizioni, criteri, esempi |
-| **PROMPT** | — | Tutte le versioni dei prompt |
+::: {.columns}
+::: {.column width="55%"}
+### Tab operativi (oggi usiamo questi)
+
+| Tab | Colore |
+|-----|:------:|
+| **STEP 1 — Codifica Umana (50)** | 🔵 |
+| **STEP 1 — Gemini + Decisione** | 🟠 |
+| **CODEBOOK** | — |
+| **PROMPT** | — |
+:::
+
+::: {.column width="45%"}
+### Tab di supporto / Step 2
+
+| Tab | Colore |
+|-----|:------:|
+| **ISTRUZIONI** | — |
+| **DATI** (sola lettura) | — |
+| **STEP 2 — Codifica Umana (50)** | 🔵 |
+| **STEP 2 — Gemini + Decisione** | 🟠 |
+:::
+:::
 
 ::: {.notes}
 Mostrare il foglio proiettato. La separazione fisica tra tab blu (codifica umana) e tab arancione (Gemini) è intenzionale: impedisce che gli studenti vedano le classificazioni dell'IA prima di completare la propria codifica indipendente. I 50 post nei tab di codifica umana sono pre-selezionati con seed 42, identici per tutti i gruppi — questo permetterà il confronto inter-gruppo. Il tab DATI è in sola lettura e contiene le metriche di engagement dal CSV originale. Il tab CODEBOOK e il tab PROMPT servono per documentare il processo — andranno nella sezione Metodi del paper finale.

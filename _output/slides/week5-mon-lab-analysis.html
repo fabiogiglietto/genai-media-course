@@ -203,65 +203,67 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="il-foglio-di-codifica-post_metadata" class="slide level2">
+<section id="il-foglio-di-codifica-post_metadata" class="slide level2 smaller">
 <h2>Il foglio di codifica: post_metadata</h2>
-<p>Ogni gruppo lavora sul proprio foglio Google Sheets (<a href="https://docs.google.com/spreadsheets/d/1bI-m4SRjVRh5tlYwVO0LIYwZwni1c6HuQwMJy6ZHniQ/edit">post_metadata</a>), organizzato in <strong>8 tab</strong>:</p>
+<p><a href="https://docs.google.com/spreadsheets/d/1bI-m4SRjVRh5tlYwVO0LIYwZwni1c6HuQwMJy6ZHniQ/edit">post_metadata</a> — <strong>8 tab</strong>, 4 operativi + 4 di supporto:</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<h3 id="tab-operativi-oggi-usiamo-questi">Tab operativi (oggi usiamo questi)</h3>
 <table class="caption-top">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 33%">
-<col style="width: 45%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Tab</th>
 <th style="text-align: center;">Colore</th>
-<th>Contenuto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>STEP 1 — Codifica Umana (50)</strong></td>
+<td style="text-align: center;">🔵</td>
+</tr>
+<tr class="even">
+<td><strong>STEP 1 — Gemini + Decisione</strong></td>
+<td style="text-align: center;">🟠</td>
+</tr>
+<tr class="odd">
+<td><strong>CODEBOOK</strong></td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr class="even">
+<td><strong>PROMPT</strong></td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:45%;">
+<h3 id="tab-di-supporto-step-2">Tab di supporto / Step 2</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Tab</th>
+<th style="text-align: center;">Colore</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>ISTRUZIONI</strong></td>
 <td style="text-align: center;">—</td>
-<td>Guida operativa</td>
 </tr>
 <tr class="even">
-<td><strong>DATI</strong></td>
+<td><strong>DATI</strong> (sola lettura)</td>
 <td style="text-align: center;">—</td>
-<td>420 post: metadata + engagement (sola lettura)</td>
-</tr>
-<tr class="odd">
-<td><strong>STEP 1 — Codifica Umana (50)</strong></td>
-<td style="text-align: center;">🔵</td>
-<td>Codifica binaria indipendente (50 post)</td>
-</tr>
-<tr class="even">
-<td><strong>STEP 1 — Gemini + Decisione</strong></td>
-<td style="text-align: center;">🟠</td>
-<td>Classificazione Gemini + decisione finale (420 post)</td>
 </tr>
 <tr class="odd">
 <td><strong>STEP 2 — Codifica Umana (50)</strong></td>
 <td style="text-align: center;">🔵</td>
-<td>Codifica tematica indipendente (50 post AI slop)</td>
 </tr>
 <tr class="even">
 <td><strong>STEP 2 — Gemini + Decisione</strong></td>
 <td style="text-align: center;">🟠</td>
-<td>Classificazione tematica Gemini (solo AI slop)</td>
-</tr>
-<tr class="odd">
-<td><strong>CODEBOOK</strong></td>
-<td style="text-align: center;">—</td>
-<td>Definizioni, criteri, esempi</td>
-</tr>
-<tr class="even">
-<td><strong>PROMPT</strong></td>
-<td style="text-align: center;">—</td>
-<td>Tutte le versioni dei prompt</td>
 </tr>
 </tbody>
 </table>
+</div></div>
 <aside class="notes">
 <p>Mostrare il foglio proiettato. La separazione fisica tra tab blu (codifica umana) e tab arancione (Gemini) è intenzionale: impedisce che gli studenti vedano le classificazioni dell’IA prima di completare la propria codifica indipendente. I 50 post nei tab di codifica umana sono pre-selezionati con seed 42, identici per tutti i gruppi — questo permetterà il confronto inter-gruppo. Il tab DATI è in sola lettura e contiene le metriche di engagement dal CSV originale. Il tab CODEBOOK e il tab PROMPT servono per documentare il processo — andranno nella sezione Metodi del paper finale.</p>
 <style type="text/css">
