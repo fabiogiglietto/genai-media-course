@@ -52,22 +52,22 @@ Sessione con due anime: una parte collettiva (analisi engagement, statistiche de
 Sezione di verifica dello stato di avanzamento. Prima di iniziare le consultazioni individuali, verificare collettivamente a che punto sono i gruppi.
 :::
 
-## Il vostro pipeline: a che punto siete?
+## Il vostro pipeline: a che punto siete? {.smaller}
 
 Usando il **vocabolario della pipeline LLMs-in-the-loop** che conoscete dal seminario Paroni:
 
-| Fase della pipeline | Stato atteso | Verificare |
-|---------------------|-------------|------------|
-| **1. Classificazione IA** | Completata | 420 post classificate con Gemini |
-| **2. Codebook** | Definito | Categorie, definizioni, esempi, regole per casi limite |
-| **3. Validazione umana** | Completata | 50 immagini codificate indipendentemente da ogni membro |
-| **4. Metriche di accordo** | Calcolate | Kappa umano-umano e umano-IA (≥ 0.60) |
-| **5. Iterazione** | Se necessaria | Prompt raffinato se kappa < 0.60 |
-| **6. Analisi engagement** | **Da iniziare oggi** | Categorie (VI) → metriche engagement (VD) |
+| Fase | Stato atteso | Verificare |
+|------|-------------|------------|
+| **Step 1 — Classificazione binaria** | Completata | 420 post: AI slop / Non AI slop |
+| **Step 1 — Validazione** | Completata | Kappa ≥ 0.60 sulla codifica binaria |
+| **Step 2 — Classificazione tematica** | Completata | Tutti gli AI slop classificati con le vostre categorie |
+| **Step 2 — Validazione** | Completata | Kappa ≥ 0.60 sulle categorie tematiche |
+| **Codebook + Prompt** | Documentati | Definizioni Step 1 + Step 2, prompt con one-shot |
+| **Analisi engagement** | **Da iniziare oggi** | Categorie tematiche (VI) → metriche engagement (VD) |
 | **Bozza relazione** | Da iniziare | Outline IMRaD |
 
 ::: {.notes}
-Checklist aggiornata. Le fasi 1-5 dovrebbero essere completate: classificazione IA su tutte le immagini, codebook documentato, validazione su campione di 50 immagini, kappa calcolato, eventuale iterazione. La fase 6 — analisi di engagement — è la novità di oggi. I gruppi che non hanno ancora completato la validazione devono farlo con priorità. Per i gruppi pronti, la consultazione si focalizzerà sull'analisi di engagement e sulla preparazione del relazione. Per i gruppi in ritardo, la consultazione serve per risolvere i problemi e pianificare il recupero.
+Checklist aggiornata per la pipeline a due step. Lo Step 1 (binario: AI slop / non AI slop) e lo Step 2 (tematico: le categorie di ogni gruppo) dovrebbero essere entrambi completati e validati. Il codebook dovrebbe contenere le definizioni per entrambi gli step, il tab PROMPT le versioni dei prompt usati. L'analisi di engagement è la novità di oggi: si usano le categorie tematiche validate come variabile indipendente e le metriche di engagement dal CSV come variabile dipendente. I gruppi che non hanno completato la validazione devono farlo con priorità.
 :::
 
 ## Analisi di Engagement {background-color="#C5612E"}
@@ -79,21 +79,21 @@ Sezione centrale: come analizzare i pattern di engagement per categoria di conte
 ## La domanda di ricerca centrale
 
 ::: {.highlight-box}
-**Le categorie di contenuto AI-generated predicono livelli diversi di engagement?**
+**Le categorie tematiche di AI slop predicono livelli diversi di engagement?**
 
-Le categorie validate (variabile indipendente) → metriche di engagement dal CSV (variabile dipendente).
+Le categorie validate dallo Step 2 (variabile indipendente) → metriche di engagement dal CSV (variabile dipendente).
 :::
 
-Il dataset integrato contiene per ogni immagine:
+Il dataset integrato contiene per ogni post AI slop:
 
-- **Classificazione:** la categoria assegnata (e validata) dal gruppo
+- **Classificazione tematica:** la categoria assegnata (e validata) dallo Step 2
 - **Reazioni:** numero di reaction al post
 - **Condivisioni:** numero di share
 - **Visualizzazioni:** numero di views
 - **N. commenti:** conteggio dei commenti (non il testo)
 
 ::: {.notes}
-Questa è la struttura analitica del progetto. Le categorie di classificazione — validate attraverso il protocollo umano-IA di ieri — diventano la variabile indipendente. Le metriche di engagement dal CSV diventano le variabili dipendenti. La domanda è semplice ma potente: diversi tipi di immagini AI-generated generano livelli diversi di engagement? Questo si collega direttamente al framework di Terenzi e Giglietto (2025) sull'AI slop come engagement bait strategico. Nota importante: abbiamo i conteggi dei commenti ma non il testo dei singoli commenti — questo è una limitazione da riportare nel relazione.
+Questa è la struttura analitica del progetto. Le categorie tematiche dello Step 2 — validate attraverso il protocollo umano-IA — diventano la variabile indipendente. Le metriche di engagement dal CSV diventano le variabili dipendenti. La domanda è semplice ma potente: diversi tipi di immagini AI-generated generano livelli diversi di engagement? Questo si collega direttamente al framework di Terenzi e Giglietto (2025) sull'AI slop come engagement bait strategico. Nota importante: abbiamo i conteggi dei commenti ma non il testo dei singoli commenti — questo è una limitazione da riportare nel relazione.
 :::
 
 ## Statistiche descrittive: cosa calcolare
@@ -189,10 +189,10 @@ Per ogni gruppo, discuteremo:
 ::: {.column width="50%"}
 ### Dati e validazione
 
-- Classificazione completata? Quante immagini?
-- Kappa umano-umano e umano-IA
-- Matrice di confusione: dove sbaglia l'IA?
-- Iterazione effettuata (se necessaria)?
+- **Step 1:** proporzione AI slop, kappa binario
+- **Step 2:** distribuzione categorie, kappa tematico
+- Matrici di confusione: dove sbaglia l'IA?
+- Iterazioni effettuate?
 :::
 
 ::: {.column width="50%"}
@@ -242,8 +242,8 @@ Sezione finale: preparazione per la settimana di scrittura.
 
 | Data | Attività | Stato |
 |------|----------|-------|
-| ~~Mar 24 Mar~~ | Classificazione su scala con Gemini | Fatto |
-| ~~Mer 25 Mar~~ | Validazione umana vs IA | Fatto |
+| ~~Mar 24 Mar~~ | Step 1: codifica binaria + Gemini | Fatto |
+| ~~Mer 25 Mar~~ | Validazione Step 1 + Step 2 tematico | Fatto |
 | **Lun 30 Mar** | **Consultazione + analisi engagement (oggi)** | **In corso** |
 | Mar 31 Mar | **Workshop di scrittura** | Prossima |
 | Mer 1 Apr | Lavoro di gruppo: stesura relazione | Settimana 6 |

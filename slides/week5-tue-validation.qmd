@@ -60,21 +60,45 @@ Gli **sciami IA malevoli** possono fabbricare un consenso sintetico che appare c
 :::
 
 ::: {.notes}
-Secondo segmento TWIAI: collegare la notizia della settimana al quadro teorico di Schroeder et al. (2026) sugli sciami IA. L'AI slop che gli studenti analizzano nel progetto — immagini sintetiche distribuite come engagement bait — potrebbe sembrare innocuo rispetto ai deepfake politici, ma rappresenta lo stesso meccanismo di base: contenuti sintetici prodotti in serie che inquinano l'ecosistema informativo e sfruttano le dinamiche algoritmiche. Gli sciami IA potrebbero amplificare questo tipo di contenuti su scala industriale. Transizione verso la sessione di consultazione e analisi engagement.
+Secondo segmento TWIAI: collegare la notizia della settimana al quadro teorico di Schroeder et al. (2026) sugli sciami IA. L'AI slop che gli studenti analizzano nel progetto — immagini sintetiche distribuite come engagement bait — potrebbe sembrare innocuo rispetto ai deepfake politici, ma rappresenta lo stesso meccanismo di base: contenuti sintetici prodotti in serie che inquinano l'ecosistema informativo e sfruttano le dinamiche algoritmiche. Gli sciami IA potrebbero amplificare questo tipo di contenuti su scala industriale. Transizione verso la sessione di validazione.
 :::
 
 ## Roadmap della sessione
 
 1. **This Week in AI** — scenari emergenti
-2. **Dal framework Paroni alla quantificazione** — ciò che sapete + ciò che imparerete oggi
-3. **Perché validare** — il ruolo della verifica umana nella classificazione di immagini
-4. **Progettare il protocollo di validazione** — campionamento e codifica
-5. **Misurare l'accordo** — Cohen's kappa e Krippendorff's alpha (contenuto nuovo)
-6. **Esercizio pratico** — validare un campione di 50 immagini
-7. **Confronto inter-gruppo e iterazione** — sfruttare il dataset condiviso
+2. **Validazione Step 1** — calcolo del kappa sulla codifica binaria di ieri
+3. **Perché validare** — metriche di accordo (Cohen's kappa, Krippendorff's alpha)
+4. **Dal Step 1 al Step 2** — filtrare il sottoinsieme AI slop
+5. **Step 2: classificazione tematica** — codifica umana + consenso + Gemini
+6. **Validazione Step 2** — kappa sulle categorie tematiche
 
 ::: {.notes}
-Struttura della sessione. Apriamo con il segmento This Week in AI, poi passiamo al tema centrale: la validazione. Oggi è il giorno chiave per la qualità metodologica del progetto. Ieri i gruppi hanno classificato le 420 post con Gemini; oggi confrontiamo quelle classificazioni con il giudizio umano. Differenza rispetto al seminario Paroni: lì la validazione era qualitativa (livelli 0-3 per i cluster, quattro criteri con scala a tre punti per le label). Oggi aggiungiamo la dimensione quantitativa: metriche statistiche di accordo inter-codificatore. Il contenuto genuinamente nuovo è Cohen's kappa e Krippendorff's alpha. Un elemento in più rispetto al seminario: poiché tutti i gruppi lavorano sulle stesse immagini, è possibile un confronto inter-gruppo sulla classificazione.
+Struttura della sessione. Oggi è una sessione densa con due obiettivi: validare la classificazione binaria fatta ieri (Step 1) e completare la classificazione tematica (Step 2). Ieri i gruppi hanno completato l'intero ciclo dello Step 1: codifica umana indipendente di 50 post, consenso sui disaccordi, classificazione binaria di tutti i 420 post con Gemini. Oggi partiamo calcolando il kappa su quei dati. Il contenuto genuinamente nuovo è la spiegazione delle metriche di accordo (kappa, alpha). Poi filtriamo il sottoinsieme AI slop e applichiamo lo stesso workflow per lo Step 2 tematico.
+:::
+
+## Ieri: cosa avete completato {background-color="#C5612E"}
+
+::: {.notes}
+Breve ricapitolazione dello Step 1 completato ieri, per collegare con la validazione di oggi.
+:::
+
+## Step 1: il punto di partenza
+
+Ieri avete completato l'intero ciclo dello **Step 1 — Classificazione binaria**:
+
+| Fase | Tab nel foglio | Stato |
+|------|----------------|:-----:|
+| Codifica umana (50 post) | **STEP 1 — Codifica Umana (50)** | Fatto |
+| Consenso + definizione raffinata | **CODEBOOK** | Fatto |
+| Prompt con one-shot examples | **PROMPT** | Fatto |
+| Gemini: 420 post classificati | **STEP 1 — Gemini + Decisione** | Fatto |
+
+::: {.highlight-box}
+**Oggi:** confrontiamo le codifiche umane con quelle di Gemini e **misuriamo l'accordo** con metriche statistiche.
+:::
+
+::: {.notes}
+Verifica rapida: ogni gruppo conferma di avere completato tutte e 4 le fasi. Se qualche gruppo non ha completato la classificazione Gemini, deve farlo adesso (10 minuti). I dati necessari per la validazione sono nel tab blu "STEP 1 — Codifica Umana (50)" (codifiche individuali dei membri) e nel tab arancione "STEP 1 — Gemini + Decisione" (classificazioni Gemini). I 50 post sono gli stessi per tutti i gruppi (seed 42), quindi il confronto inter-gruppo è possibile.
 :::
 
 ## Perché Validare {background-color="#C5612E"}
@@ -89,15 +113,15 @@ Sezione 1: motivazione della validazione. Perché non basta la classificazione a
 **Principio fondamentale:** come ci ricorda @cosenza2025, l'IA ragiona per **probabilità**, non per verità. Ogni classificazione automatizzata è una **bozza** che richiede verifica.
 :::
 
-Perché la classificazione multimodale dell'IA può essere inaffidabile:
+Perché la classificazione dell'IA può essere inaffidabile:
 
 - **Sensibilità al prompt:** piccole variazioni producono risultati diversi
-- **Bias del modello:** tendenza a sovra-rappresentare alcune categorie visive
+- **Bias del modello:** tendenza a sovra-rappresentare alcune categorie
 - **Ambiguità visiva:** un'immagine può appartenere a più categorie
-- **Artefatti sintetici:** l'IA potrebbe non riconoscere gli stessi indicatori visivi che nota un umano
+- **Artefatti sintetici:** l'IA potrebbe non riconoscere gli stessi indicatori che nota un umano
 
 ::: {.notes}
-Collegamento con la regola 4 di Cosenza (2025): "Valuta". Nel contesto della classificazione di immagini AI-generated, la sfida è doppia: usiamo un'IA (Gemini) per classificare immagini generate da un'altra IA. Gemini potrebbe avere bias specifici: ad esempio, tendere a classificare come "bambini" immagini dove i bambini sono sullo sfondo, o non cogliere la differenza tra "nostalgia" e "paesaggio vintage". L'ambiguità visiva è il problema principale: un'immagine di un bambino con un animale potrebbe essere "bambini" o "animali" a seconda dello schema. Inoltre, le immagini AI-generated hanno artefatti specifici (mani distorte, testi illeggibili) che un umano nota immediatamente ma che Gemini potrebbe ignorare nella classificazione tematica.
+Collegamento con la regola 4 di Cosenza (2025): "Valuta". Nel contesto della classificazione di immagini AI-generated, la sfida è doppia: usiamo un'IA (Gemini) per classificare immagini generate da un'altra IA. Gemini potrebbe avere bias specifici: ad esempio, non cogliere la differenza tra "nostalgia" e "paesaggio vintage". L'ambiguità visiva è il problema principale: un'immagine di un bambino con un animale potrebbe essere "bambini" o "animali" a seconda dello schema. Le immagini AI-generated hanno artefatti specifici (mani distorte, testi illeggibili) che un umano nota immediatamente ma che Gemini potrebbe ignorare.
 :::
 
 ## Il paradosso della fiducia nell'IA
@@ -108,9 +132,7 @@ Collegamento con la regola 4 di Cosenza (2025): "Valuta". Nel contesto della cla
 
 Ferrara (2026) descrive un **paradosso**: più l'IA sembra affidabile, più rischiamo di fidarci ciecamente dei suoi output [@ferrara2026].
 
-Nella classificazione di immagini:
-
-- Accettare categorie senza verificare visivamente
+- Accettare categorie senza verificare
 - Non controllare le immagini ambigue
 - Presentare risultati non validati
 :::
@@ -120,104 +142,21 @@ Nella classificazione di immagini:
 
 La **validazione sistematica** protegge da questo rischio:
 
-- Codifica umana indipendente delle immagini
+- Codifica umana indipendente
 - Confronto quantitativo IA-umano
 - Documentazione trasparente degli errori
-- Iterazione basata sulla matrice di confusione
+- Iterazione basata sui disaccordi
 :::
 :::
 
 ::: {.notes}
-Il collegamento con Ferrara (2026) è importante: il Generative AI Paradox si applica anche alla ricerca. Come i cittadini possono cadere nella "credulity" (credere a contenuti sintetici convincenti), i ricercatori possono accettare acriticamente classificazioni IA apparentemente plausibili. Nel caso delle immagini, il rischio è ancora maggiore: la classificazione visiva sembra intuitiva e i risultati di Gemini appaiono ragionevoli, il che può portare a saltare la validazione. La soluzione è trattare l'IA come un codificatore le cui classificazioni devono essere verificate, esattamente come nella metodologia LLMs-in-the-loop di Marino & Giglietto (2024).
-:::
-
-## Dalla Validazione Qualitativa a Quella Quantitativa {background-color="#C5612E"}
-
-::: {.notes}
-Sezione di ponte: dagli strumenti qualitativi già appresi nel seminario Paroni alle metriche quantitative. Breve ricapitolazione, non ri-spiegazione.
-:::
-
-## Ricordate il framework Paroni?
-
-Nel seminario avete praticato **due livelli di validazione** [@marino2024]:
-
-::: {.columns}
-::: {.column width="50%"}
-### Validazione cluster (livelli 0–3)
-
-- **0** — Nessuna relazione
-- **1** — Coerenza tematica ampia
-- **2** — Stessi attori, storie diverse
-- **3** — Stessa storia giornalistica
-
-*Se molte coppie sono 2–3: sovra-frammentazione*
-:::
-
-::: {.column width="50%"}
-### Validazione label (4 criteri)
-
-- Allineamento tematico
-- Implicazioni coerenti
-- Copertura adeguata
-- Allineamento contestuale
-
-*Scala: buono / parziale / inadeguato*
-:::
-:::
-
-Oggi facciamo un **salto di qualità**: dalla validazione qualitativa a quella **quantitativa** con metriche statistiche.
-
-::: {.notes}
-Ricapitolazione rapida — non ri-spiegazione. Gli studenti hanno usato questi strumenti in prima persona nel workshop del mercoledì con Paroni. I livelli 0-3 e i 4 criteri con scala a 3 punti sono strumenti qualitativi preziosi per valutare clustering e labeling. Se nel progetto qualche gruppo ha chiesto a Gemini di raggruppare le immagini in cluster emergenti (oltre alla classificazione predefinita), può applicare anche il framework Paroni a quei risultati. Per la classificazione principale, però, servono metriche quantitative: Cohen's kappa e Krippendorff's alpha. Questo è il contenuto genuinamente nuovo di oggi.
-:::
-
-## Progettare il Protocollo di Validazione {background-color="#C5612E"}
-
-::: {.notes}
-Sezione 3: aspetti pratici del protocollo di validazione. Come selezionare il campione di immagini e organizzare la codifica umana.
-:::
-
-## Il campione di validazione: 50 immagini
-
-::: {.highlight-box}
-**Protocollo:** ogni membro del gruppo classifica **indipendentemente** un campione condiviso di **50 immagini** usando il codebook del gruppo. Nessun uso di Gemini, nessuna discussione.
-:::
-
-Come selezionare le 50 immagini:
-
-- **Campione casuale:** selezione randomizzata dal dataset completo (420 post)
-- **Campione stratificato:** includere immagini da tutte le categorie assegnate da Gemini
-- **Casi incerti:** includere le immagini classificate con certezza "bassa" dall'IA
-
-::: {.callout-tip}
-## Suggerimento
-Combinate le strategie: un campione casuale (per la rappresentatività) + tutti i casi "incerti" dell'IA (per capire dove l'IA fatica di più).
-:::
-
-::: {.notes}
-Il campione di 50 immagini è il core della validazione. A differenza della classificazione testuale, la classificazione visiva richiede che ogni codificatore guardi effettivamente l'immagine — non basta leggere una riga di testo. Questo rende i 50 casi un volume realistico per una codifica manuale accurata in 20-25 minuti. Il campione stratificato è particolarmente importante: se una categoria ha poche immagini nel dataset (es. solo il 5% è "religioso"), potrebbe non comparire nel campione casuale. Includere i casi incerti rivela dove il codebook è ambiguo e dove il prompt va migliorato.
-:::
-
-## Organizzare la codifica umana
-
-| Fase | Azioni |
-|------|--------|
-| **Preparazione** | Estrarre 50 immagini in cartella separata, **foglio senza classificazione IA** (codifica cieca) |
-| **Codifica** | Ogni membro classifica **indipendentemente** con lo stesso codebook |
-| **Confronto** | Riunire classificazioni umane, confrontare tra loro e con Gemini |
-
-::: {.highlight-box}
-**Cruciale:** i codificatori umani non devono vedere la classificazione di Gemini per evitare il **bias di ancoraggio**.
-:::
-
-::: {.notes}
-Il punto chiave è la codifica cieca: i codificatori umani non devono vedere la classificazione dell'IA per evitare il bias di ancoraggio (tendenza a conformarsi alla classificazione già presente). Preparare un foglio con solo: ID immagine e colonne vuote per la classificazione di ogni membro. L'immagine va visualizzata dalla cartella condivisa. Questo protocollo permette di calcolare: (1) accordo umano-umano tra ogni coppia di membri (baseline), (2) accordo umano-IA tra ogni membro e Gemini. Se il gruppo ha 4-5 membri, si ottengono 6-10 coppie umano-umano e 4-5 coppie umano-IA — un quadro robusto della affidabilità del codebook.
+Il collegamento con Ferrara (2026) è importante: il Generative AI Paradox si applica anche alla ricerca. Come i cittadini possono cadere nella "credulity", i ricercatori possono accettare acriticamente classificazioni IA apparentemente plausibili. La soluzione è trattare l'IA come un codificatore le cui classificazioni devono essere verificate, esattamente come nella metodologia LLMs-in-the-loop di Marino & Giglietto (2024).
 :::
 
 ## Misurare l'Accordo {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 4: le metriche statistiche per misurare l'accordo tra codificatori. Concetti tecnici necessari per il relazione.
+Sezione 2: le metriche statistiche per misurare l'accordo tra codificatori. Concetti tecnici necessari per il paper.
 :::
 
 ## Perché non basta la percentuale di accordo
@@ -248,17 +187,16 @@ Dove:
 :::
 
 ::: {.notes}
-Concetto statistico fondamentale per la validazione. La percentuale di accordo grezzo (quante volte i codificatori concordano sul totale) è una metrica ingannevole perché non considera l'accordo casuale. Se abbiamo 5 categorie, l'accordo casuale atteso è circa il 20%. Un accordo del 60% sembra buono ma dopo la correzione potrebbe essere modesto. Le metriche kappa e alpha correggono questo problema sottraendo l'accordo atteso per caso dal denominatore.
+Concetto statistico fondamentale per la validazione. La percentuale di accordo grezzo è una metrica ingannevole perché non considera l'accordo casuale. Se abbiamo 2 categorie (AI slop / non AI slop), l'accordo casuale è circa il 50%. Un accordo dell'80% sembra buono ma dopo la correzione potrebbe essere moderato. Per lo Step 2 con 5 categorie, l'accordo casuale è circa il 20%. Le metriche kappa e alpha correggono questo problema.
 :::
 
-## Cohen's kappa e Krippendorff's alpha
+## Cohen's kappa e Krippendorff's alpha {.smaller}
 
 | Metrica | Uso | Caratteristiche |
 |---------|-----|-----------------|
 | **Cohen's kappa** ($\kappa$) | 2 codificatori | Semplice, ampiamente usato |
 | **Krippendorff's alpha** ($\alpha$) | 2+ codificatori | Flessibile, gestisce dati mancanti |
 
-::: {.highlight-box}
 **Scale interpretative standard:**
 
 | Valore | Interpretazione |
@@ -268,181 +206,315 @@ Concetto statistico fondamentale per la validazione. La percentuale di accordo g
 | 0.41 - 0.60 | Accordo moderato |
 | 0.61 - 0.80 | Accordo buono |
 | 0.81 - 1.00 | Accordo eccellente |
-:::
 
 ::: {.notes}
-Le due metriche principali per la validazione. Cohen's kappa è la più usata quando si confrontano 2 codificatori (nel nostro caso, una coppia umano-umano o una coppia umano-IA). Krippendorff's alpha è più flessibile: funziona con più di 2 codificatori (utile per confrontare tutti i membri del gruppo + Gemini simultaneamente) e gestisce i dati mancanti. Per il progetto, il kappa di Cohen si usa per ogni coppia; alpha di Krippendorff per il confronto complessivo del gruppo. L'obiettivo minimo è un kappa di 0.60 (accordo buono). Nella sezione Metodo del relazione, bisogna riportare la metrica usata, il valore ottenuto e l'interpretazione.
+Le due metriche principali. Cohen's kappa per confronti a coppie (umano-umano o umano-IA). Krippendorff's alpha per confronti con più di 2 codificatori. Per il progetto: kappa per ogni coppia, alpha per il confronto complessivo. L'obiettivo minimo è un kappa di 0.60 (accordo buono). Nella sezione Metodo del paper, bisogna riportare la metrica usata, il valore e l'interpretazione.
 :::
 
-## Calcolare il kappa: la matrice di confusione
-
-Esempio con 4 categorie e 50 immagini:
-
-|  | **Umano: Bambini** | **Umano: Animali** | **Umano: Paesaggi** | **Umano: Religioso** | **Tot. IA** |
-|--|:---:|:---:|:---:|:---:|:---:|
-| **IA: Bambini** | **14** | 1 | 0 | 1 | 16 |
-| **IA: Animali** | 0 | **11** | 2 | 0 | 13 |
-| **IA: Paesaggi** | 1 | 1 | **9** | 0 | 11 |
-| **IA: Religioso** | 0 | 0 | 1 | **9** | 10 |
-| **Tot. umano** | 15 | 13 | 12 | 10 | **50** |
-
-$P_o = (14+11+9+9)/50 = 0.86$ --- Calcolo manuale o con Gemini [@cosenza2025].
+## Validazione Step 1 {background-color="#C5612E"}
 
 ::: {.notes}
-Esempio concreto di matrice di confusione per la classificazione di immagini. Le categorie nell'esempio sono per soggetto visivo, ma ogni gruppo userà le proprie. I valori in grassetto sulla diagonale sono i casi di accordo. I valori fuori diagonale sono i disaccordi e rivelano i pattern di errore: qui l'IA confonde "Animali" con "Paesaggi" 2 volte (forse immagini di animali in un paesaggio naturale) e "Bambini" con "Religioso" 1 volta (forse un bambino in scena religiosa). Questi pattern guidano il raffinamento del codebook e del prompt. Come suggerisce Cosenza (2025), usate sia il calcolo manuale che Gemini per verificare.
+Sezione 3: esercizio pratico di validazione sullo Step 1 binario. I dati esistono già — si tratta di calcolare le metriche.
 :::
 
-## Esercizio Pratico {background-color="#C5612E"}
+## Step 1: calcolare il kappa
 
-::: {.notes}
-Sezione 5: esercizio di validazione. La parte centrale della sessione — 40 minuti di codifica e confronto.
-:::
-
-## Esercizio: validare 50 immagini
-
-::: {.orange-box}
-**Attività (40 minuti)**
-
-1. **Preparazione (5 min):** foglio con 50 ID immagine, colonne vuote per ogni membro, accesso alla cartella immagini
-2. **Codifica individuale (20 min):** ogni membro classifica le 50 immagini con il codebook, **senza Gemini e senza discutere**
-3. **Confronto (15 min):** riunire le classificazioni umane, confrontare con Gemini, costruire la matrice di confusione, calcolare il kappa
-:::
-
-::: {.notes}
-Esercizio pratico principale della sessione. Fase 1: la preparazione deve essere rapida; il foglio con gli ID è già pronto se i gruppi hanno seguito le istruzioni di ieri. Creare colonne vuote per ogni membro. Fase 2: la codifica individuale deve essere davvero indipendente — ogni membro guarda le immagini e classifica usando il codebook, senza comunicare. Per le immagini servono circa 20-25 secondi ciascuna, quindi 50 immagini richiedono circa 17-20 minuti. Fase 3: il confronto è il momento più interessante — dove emergono i disaccordi e si capisce dove il codebook è ambiguo. Passare tra i gruppi durante la Fase 3 per aiutare con il calcolo del kappa.
-:::
-
-## Interpretare i risultati
+I dati per la validazione **esistono già** nel vostro foglio:
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Se il kappa è alto (> 0.60)
+### Confronti da fare
 
-- La pipeline funziona bene
-- L'IA è un classificatore affidabile per queste categorie visive
-- Si può procedere con l'analisi di engagement
-- Documentare nel relazione
+- **Umano-umano:** ogni coppia di membri del gruppo sui 50 post
+- **Umano-IA:** ogni membro vs. Gemini sui 50 post
 :::
 
 ::: {.column width="50%"}
-### Se il kappa è basso (< 0.60)
+### Dove trovare i dati
 
-- Analizzare la **matrice di confusione**: quali categorie confonde l'IA?
-- Rivedere il **codebook**: le categorie visive sono ambigue?
-- Raffinare il **prompt**: servono definizioni più precise?
-- **Reclassificare** le immagini e ricalcolare il kappa
+- Codifiche umane → **STEP 1 — Codifica Umana (50)**
+- Codifiche Gemini → **STEP 1 — Gemini + Decisione** (filtrare i 50 post)
 :::
 :::
-
-::: {.notes}
-Guida all'interpretazione. Un kappa alto significa che possiamo fidarci della classificazione IA per il dataset completo e procedere con l'analisi di engagement. Un kappa basso è un'informazione preziosa: indica dove il codebook è problematico. Le fonti di disaccordo più comuni nella classificazione visiva: (1) categorie sovrapposte (un'immagine di bambini che giocano con animali — dove va?), (2) definizioni insufficienti (cosa conta come "religioso"? Solo simboli espliciti o anche scene di preghiera?), (3) sensibilità diversa agli artefatti AI (gli umani notano dettagli che Gemini ignora). L'iterazione è il cuore della metodologia: raffinare, reclassificare, rivalidare.
-:::
-
-## Confronto Inter-Gruppo e Iterazione {background-color="#C5612E"}
-
-::: {.notes}
-Sezione 6: la dimensione unica del progetto — tutti i gruppi hanno classificato le stesse immagini. E le decisioni di iterazione.
-:::
-
-## Tutti sulle stesse immagini: un'opportunità unica
 
 ::: {.highlight-box}
-Poiché tutti i gruppi hanno classificato le **stesse 420 post**, il progetto consente un **confronto inter-gruppo** impossibile in un design tradizionale.
-:::
-
-Cosa si può confrontare:
-
-- Gruppi con **categorie condivise** (es. più gruppi hanno "bambini") → calcolo del **kappa inter-gruppo**
-- Gruppi con **schemi diversi** → cosa rivela una lente che l'altra non coglie?
-- **Distribuzione** delle categorie: gli schemi diversi producono distribuzioni diverse?
-
-::: {.callout-note}
-## Da discutere
-Se due gruppi classificano la stessa immagine diversamente, chi ha ragione? Nessuno dei due — le **scelte analitiche** determinano cosa si vede nei dati [@marino2024].
+**Per lo Step 1 binario**, la matrice di confusione è 2×2: AI slop vs. Non AI slop. Calcolate $P_o$ e $P_e$ manualmente o con Gemini [@cosenza2025].
 :::
 
 ::: {.notes}
-Questa è la dimensione metodologica più ricca del progetto, resa possibile dal design con dataset condiviso. Il confronto inter-gruppo non è una competizione ("chi classifica meglio") ma un'esplorazione di come le scelte analitiche modellano i risultati. Un gruppo che classifica per "soggetto visivo" e uno che classifica per "strategia emotiva" vedranno pattern diversi nelle stesse immagini. Questo sarà il tema centrale della sintesi finale del 13 aprile. Per le categorie condivise (es. se più gruppi hanno una categoria "bambini"), il kappa inter-gruppo misura quanto le definizioni operative convergono — un esercizio metodologico prezioso.
+Punto chiave: non serve rifare la codifica umana — i dati sono già nel tab blu dallo Step 1 di ieri. Ogni membro ha già classificato 50 post come AI slop o non AI slop. Ora si confrontano: (1) le codifiche tra i membri del gruppo (umano-umano), (2) le codifiche di ogni membro con quelle di Gemini (umano-IA). Per il binario, la matrice è semplice: 2×2. Se il gruppo ha 4 membri, ci sono 6 coppie umano-umano e 4 coppie umano-IA. Suggerire di usare Gemini stesso per il calcolo del kappa caricando il foglio.
 :::
 
-## Decisione di iterazione
+## Esempio: matrice 2×2 per Step 1
+
+|  | **Umano: AI slop** | **Umano: Non AI slop** | **Tot. IA** |
+|--|:---:|:---:|:---:|
+| **IA: AI slop** | **32** | 3 | 35 |
+| **IA: Non AI slop** | 2 | **13** | 15 |
+| **Tot. umano** | 34 | 16 | **50** |
+
+$P_o = (32+13)/50 = 0.90$ — $P_e = (35 \times 34 + 15 \times 16) / 50^2 = 0.572$
+
+$\kappa = (0.90 - 0.572) / (1 - 0.572) = 0.77$ → **Accordo buono**
+
+::: {.notes}
+Esempio concreto con matrice 2×2 per la classificazione binaria. I numeri sono fittizi ma realistici. La diagonale (32 + 13 = 45 accordi su 50) dà un accordo grezzo del 90%, che dopo la correzione per il caso diventa kappa 0.77 — accordo buono. I 5 disaccordi sono informativi: 3 casi in cui Gemini dice AI slop ma l'umano dice non slop (falsi positivi dell'IA), 2 casi in cui Gemini dice non slop ma l'umano dice AI slop (falsi negativi). Questi pattern guidano il raffinamento: Gemini è troppo aggressivo nel classificare come slop? O troppo conservativo?
+:::
+
+## Esercizio: validare Step 1 (20 min)
+
+::: {.orange-box}
+1. **Raccogliere** le codifiche umane dal tab **STEP 1 — Codifica Umana (50)** e le codifiche Gemini corrispondenti dal tab **STEP 1 — Gemini + Decisione**
+2. **Costruire** la matrice di confusione 2×2 per ogni coppia (umano-umano e umano-IA)
+3. **Calcolare** il kappa (manualmente o con Gemini)
+4. **Interpretare:** kappa ≥ 0.60 → procedere; kappa < 0.60 → discutere i disaccordi
+:::
+
+::: {.notes}
+Esercizio pratico: 20 minuti. Non serve rifare la codifica — i dati esistono già. I gruppi devono solo confrontare e calcolare. Passare tra i gruppi per aiutare con il calcolo. Problemi comuni: confondere righe e colonne nella matrice, errori nel calcolo di Pe. Suggerire di verificare con Gemini: caricare le due colonne di classificazione e chiedere di calcolare il kappa. Per i gruppi con kappa alto (≥ 0.60), procedere direttamente al filtraggio. Per i gruppi con kappa basso, dedicare 10 minuti alla discussione dei disaccordi prima di procedere.
+:::
+
+## Decisione Step 1
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Kappa ≥ 0.60
 
-- **Procedere** con l'analisi di engagement
-- Documentare kappa, matrice, interpretazione
-- Preparare i dati per lunedì
+- **Procedere** con il filtraggio
+- Documentare kappa e matrice
+- Isolare il sottoinsieme AI slop
 :::
 
 ::: {.column width="50%"}
 ### Kappa < 0.60
 
-- **Identificare** le categorie problematiche dalla matrice di confusione
-- **Raffinare** il codebook: definizioni più precise, regole per casi limite
-- **Aggiornare** il prompt con anti-esempi
-- **Reclassificare** (almeno le 50 immagini di validazione)
+- **Analizzare** i disaccordi: dove e perché?
+- **Raffinare** la definizione nel CODEBOOK
+- **Reclassificare** con Gemini (prompt aggiornato)
 - **Ricalcolare** il kappa
+:::
+:::
+
+::: {.notes}
+La decisione è binaria: se il kappa dello Step 1 è accettabile, si procede. Se no, serve un ciclo rapido di iterazione. Per lo Step 1 binario ci aspettiamo kappa abbastanza alti: la distinzione AI slop / non AI slop è relativamente chiara rispetto alla classificazione tematica. Se il kappa è comunque basso, i disaccordi sono probabilmente su casi limite: immagini AI usate in modo ambiguo, post con testo ironico o dichiarativo. Raffinare la definizione nel CODEBOOK e aggiornare il prompt. Non dedicare più di 15 minuti all'iterazione dello Step 1.
+:::
+
+## Dal Step 1 al Step 2 {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: il filtro. Isolare il sottoinsieme di AI slop per la classificazione tematica.
+:::
+
+## Filtrare il sottoinsieme AI slop
+
+Con lo Step 1 validato, **filtrate** il dataset:
+
+- Nel tab **STEP 1 — Gemini + Decisione**, identificate tutti i post classificati come **AI slop**
+- Copiate i riferimenti (ID post) nel tab **STEP 2 — Codifica Umana (50)**
+- Il campione di 50 post per lo Step 2 sarà selezionato **solo tra gli AI slop**
+
+::: {.highlight-box}
+**Quanti post AI slop avete?** Questa proporzione è già un primo risultato: indica quanto del dataset è effettivamente AI slop secondo i vostri criteri.
+:::
+
+::: {.notes}
+Il filtraggio è il passaggio che collega i due step. Solo i post classificati come AI slop nello Step 1 passano allo Step 2. Il numero di post AI slop varia per gruppo perché le definizioni raffinate sono diverse. Se un gruppo ha pochissimi AI slop (sotto il 30%), potrebbe indicare una definizione troppo restrittiva — da discutere. Se quasi tutti sono AI slop (sopra il 90%), la classificazione binaria aggiunge poco. La proporzione va riportata nella sezione Risultati del paper.
+:::
+
+## Step 2: Classificazione Tematica {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 5: lo Step 2. Stesso workflow dello Step 1 (umani prima, poi Gemini), ma con le categorie tematiche del pilot di mercoledì scorso.
+:::
+
+## Step 2: lo stesso workflow, categorie diverse
+
+Lo Step 2 segue lo **stesso pattern** dello Step 1 — applicato solo ai post **AI slop**:
+
+| Fase | Azione | Tab |
+|------|--------|-----|
+| **1. Codifica umana** | Ogni membro classifica 50 post AI slop con le **vostre categorie** | STEP 2 — Codifica Umana (50) |
+| **2. Consenso** | Discutete i disaccordi → raffinate le categorie | CODEBOOK |
+| **3. Prompt Gemini** | Definizioni + one-shot → classificate **tutti** gli AI slop | STEP 2 — Gemini + Decisione |
+
+::: {.callout-tip}
+## Ricordate
+Le categorie tematiche vengono dal **pilot di mercoledì scorso**. Usate il codebook che avete già — raffinerete dopo il consenso.
+:::
+
+::: {.notes}
+Stesso workflow umani-prima dello Step 1, ma con le categorie tematiche sviluppate durante il pilot di mercoledì (week4-wed). Ogni gruppo ha il proprio schema di classificazione: per soggetto visivo, strategia emotiva, tecnica di generazione, intento apparente, ecc. La codifica umana dei 50 post AI slop serve per: (1) verificare che le categorie funzionino su un campione più ampio, (2) identificare categorie mancanti o troppo ampie, (3) produrre dati per il calcolo del kappa. Dopo il consenso, il prompt Gemini usa le definizioni raffinate + one-shot examples dai casi concordati.
+:::
+
+## Codifica tematica: istruzioni
+
+::: {.orange-box}
+Ogni membro classifica **50 post AI slop** in modo **indipendente** nel tab **STEP 2 — Codifica Umana (50)**, usando le categorie del vostro codebook.
+:::
+
+- Per ogni post: guardate **testo + immagine** insieme
+- Assegnate **una sola categoria** per post
+- Se nessuna categoria è adatta, annotate il caso
+- **Nessuna discussione** — la codifica è cieca
+
+::: {.notes}
+Le stesse regole dello Step 1, ma con più categorie. La codifica tematica è più complessa della binaria: i membri devono scegliere tra 4-6 categorie (o più). I casi ambigui saranno più frequenti — un'immagine di un bambino che prega potrebbe essere "bambini" o "religioso". Questi casi sono preziosi per il consenso. Ricordare che il tab "STEP 2 — Codifica Umana (50)" è separato dal tab "STEP 2 — Gemini + Decisione" per evitare anchoring bias.
+:::
+
+## Consenso e Gemini per Step 2
+
+Dopo la codifica individuale:
+
+1. **Confrontate** le classificazioni nel tab STEP 2 — Codifica Umana (50)
+2. **Discutete** i disaccordi → raffinate le **definizioni delle categorie**
+3. Aggiornate il **CODEBOOK** con le nuove regole
+4. Costruite il **prompt** con definizioni + one-shot examples → salvate nel tab **PROMPT**
+5. Gemini classifica **tutti gli AI slop** → tab **STEP 2 — Gemini + Decisione**
+
+::: {.notes}
+Fasi identiche allo Step 1. La differenza principale è che la classificazione tematica produce più disaccordi perché le categorie sono più numerose e i confini meno netti. Il consenso è ancora più importante qui: le decisioni su casi ambigui (bambino + animale → quale categoria?) definiscono le regole operative che andranno nel prompt e nel codebook. Gli one-shot examples per lo Step 2 vengono dai casi concordati durante questa fase. Dopo il consenso, Gemini classifica tutti i post AI slop (non solo i 50) usando il prompt con le definizioni raffinate.
+:::
+
+## Validazione Step 2 {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 6: calcolo del kappa sullo Step 2 tematico.
+:::
+
+## Step 2: calcolare il kappa tematico
+
+La matrice di confusione per lo Step 2 è **più grande** (tante righe/colonne quante le vostre categorie):
+
+|  | **Umano: Cat. A** | **Umano: Cat. B** | **Umano: Cat. C** | **...** |
+|--|:---:|:---:|:---:|:---:|
+| **IA: Cat. A** | **n** | ... | ... | |
+| **IA: Cat. B** | ... | **n** | ... | |
+| **IA: Cat. C** | ... | ... | **n** | |
+
+::: {.highlight-box}
+Con più categorie, il kappa tende ad essere **più basso**. Un kappa di 0.60 per 5-6 categorie è un risultato solido.
+:::
+
+::: {.notes}
+La matrice di confusione per lo Step 2 è N×N dove N è il numero di categorie del gruppo. Con più categorie l'accordo casuale è più basso (es. 1/5 = 20% per 5 categorie), quindi il kappa tende a essere più basso rispetto allo Step 1 binario. Un kappa di 0.60 per la classificazione tematica è un buon risultato. Se il kappa è basso, analizzare la matrice: quali coppie di categorie generano più confusione? Queste coppie sono candidate per l'accorpamento. Se dopo 2 iterazioni il kappa resta sotto 0.60, accorpare le categorie problematiche.
+:::
+
+## Se il kappa Step 2 è basso
+
+::: {.columns}
+::: {.column width="50%"}
+### Analizzare
+
+- Quali **coppie di categorie** confonde l'IA?
+- Le definizioni sono **sufficientemente precise**?
+- Servono **sotto-criteri** o **anti-esempi**?
+:::
+
+::: {.column width="50%"}
+### Soluzioni
+
+- **Raffinare** definizioni nel CODEBOOK
+- **Aggiungere** anti-esempi nel prompt
+- **Accorpare** categorie troppo simili
+- **Reclassificare** e ricalcolare
 :::
 :::
 
 ::: {.callout-warning}
 ## Attenzione
-Se dopo 2 iterazioni il kappa resta sotto 0.60 per alcune categorie, considerate di **accorpare** le categorie problematiche in una sola.
+Se dopo 2 iterazioni il kappa resta sotto 0.60, **accorpate** le categorie problematiche. Meglio meno categorie affidabili che molte inaffidabili.
 :::
 
 ::: {.notes}
-La decisione di iterazione è cruciale. Se il kappa è sopra 0.60, il gruppo può procedere con fiducia all'analisi di engagement. Se è sotto 0.60, serve iterazione: il ciclo è analizzare errori → raffinare codebook e prompt → reclassificare → ricalcolare kappa. Nella classificazione visiva, le categorie che più spesso causano problemi sono quelle con confini sfumati: "nostalgia" vs. "paesaggio vintage", "engagement bait" vs. "contenuto genuino". Se dopo 2 iterazioni il kappa resta basso, la soluzione pragmatica è accorpare le categorie problematiche. Meglio avere meno categorie con alta affidabilità che molte categorie inaffidabili.
+L'iterazione per lo Step 2 segue la stessa logica dello Step 1 ma con più possibilità di intervento: si possono raffinare le definizioni, aggiungere anti-esempi, o accorpare categorie. L'accorpamento è la soluzione più efficace quando due categorie sono sistematicamente confuse (es. "nostalgia" e "paesaggio vintage"). Nel paper, documentare le iterazioni effettuate: il percorso di raffinamento è metodologicamente interessante.
 :::
 
-## Cosa riportare nel relazione
+## Confronto Inter-Gruppo {background-color="#C5612E"}
+
+::: {.notes}
+La dimensione unica del progetto — tutti i gruppi hanno classificato le stesse immagini.
+:::
+
+## Tutti sulle stesse immagini: un'opportunità unica
+
+::: {.highlight-box}
+Tutti i gruppi hanno classificato le **stesse immagini**. Il progetto consente un **confronto inter-gruppo** impossibile in un design tradizionale.
+:::
+
+Cosa confrontare:
+
+- Gruppi con **categorie condivise** (es. più gruppi hanno "bambini") → **kappa inter-gruppo**
+- Gruppi con **schemi diversi** → cosa rivela una lente che l'altra non coglie?
+- **Proporzione AI slop** nello Step 1: le definizioni diverse producono proporzioni diverse?
+
+::: {.notes}
+Il confronto inter-gruppo non è una competizione ma un'esplorazione di come le scelte analitiche modellano i risultati. Un gruppo che classifica per "soggetto visivo" e uno per "strategia emotiva" vedranno pattern diversi. Per lo Step 1: le diverse definizioni di AI slop producono proporzioni diverse? Questo sarà il tema centrale della sintesi finale del 13 aprile [@marino2024].
+:::
+
+## Cosa riportare nel paper
 
 ::: {.columns}
 ::: {.column width="50%"}
 ### Sezione Metodo
 
-- **Codebook** con definizioni e esempi visivi
-- **Prompt multimodale** completo (in appendice)
-- **Protocollo di validazione**: campione, codifica cieca
-- **Metriche**: kappa umano-umano e umano-IA
+- **Codebook** con definizioni (Step 1 + Step 2)
+- **Prompt** completi (in appendice)
+- **Protocollo**: codifica cieca, 50 post, seed 42
+- **Metriche**: kappa per entrambi gli step
 :::
 
 ::: {.column width="50%"}
 ### Sezione Risultati
 
-- **Matrice di confusione** con pattern di errore
+- **Matrice di confusione** (Step 1 + Step 2)
 - **Iterazioni**: quanti cicli, cosa è cambiato
-- **Modello IA**: versione di Gemini e data
-- **Confronto inter-gruppo** (se applicabile)
+- **Proporzione AI slop** (risultato Step 1)
+- **Distribuzione categorie** (risultato Step 2)
 :::
 :::
 
-::: {.callout-note}
-## Da ricordare
-La **trasparenza metodologica** è un valore fondamentale: documentate non solo i successi ma anche gli errori e le iterazioni. Questo rende la ricerca riproducibile e credibile [@marino2024].
+::: {.highlight-box}
+La **trasparenza metodologica** è un valore fondamentale: documentate non solo i successi ma anche gli errori e le iterazioni [@marino2024].
 :::
 
 ::: {.notes}
-Due aspetti complementari: la documentazione per il Metodo e per i Risultati. Per il Metodo: il prompt completo va in appendice, il codebook va descritto con esempi, il protocollo di validazione (50 immagini, codifica cieca, quanti codificatori) va dettagliato. Per i Risultati: la matrice di confusione rivela i pattern di errore, le iterazioni mostrano il processo di miglioramento, la versione del modello garantisce la riproducibilità. Il confronto inter-gruppo è opzionale nella sezione Risultati del singolo relazione, ma sarà tema centrale della discussione collettiva nella sintesi del 13 aprile.
+La documentazione deve coprire entrambi gli step. Per il Metodo: il codebook va descritto per entrambi gli step (definizione di AI slop per Step 1, categorie tematiche per Step 2), i prompt completi vanno in appendice, il protocollo di validazione (50 post pre-selezionati, codifica cieca, seed 42) va dettagliato. Per i Risultati: le matrici di confusione rivelano i pattern di errore per ogni step, le iterazioni mostrano il processo di miglioramento, la proporzione di AI slop è un risultato dello Step 1, la distribuzione delle categorie è un risultato dello Step 2.
 :::
 
-## Prossimi passi del progetto
+## Lavoro Pratico {background-color="#C5612E"}
+
+::: {.notes}
+Timeline complessiva della sessione.
+:::
+
+## Timeline della sessione {.smaller}
+
+| Fase | Tempo | Attività |
+|------|:-----:|----------|
+| **Step 1: kappa** | 20 min | Calcolare kappa su codifiche esistenti, matrice 2×2 |
+| **Filtraggio** | 5 min | Identificare sottoinsieme AI slop |
+| **Step 2: codifica umana** | 20 min | Ogni membro classifica 50 post AI slop (tematico) |
+| **Step 2: consenso** | 15 min | Discussione disaccordi, raffinare categorie |
+| **Step 2: Gemini** | 20 min | Prompt + classificazione di tutti gli AI slop |
+| **Step 2: kappa** | 10 min | Matrice N×N, calcolo kappa tematico |
+
+::: {.notes}
+Tempistica serrata ma fattibile. Lo Step 1 kappa è veloce perché i dati esistono già. Il filtraggio è rapido (filtro nel foglio). Lo Step 2 segue lo stesso ciclo dello Step 1 ma con classificazione tematica. Se i gruppi non riescono a completare il kappa Step 2 in aula, possono farlo prima di lunedì. La priorità è: (1) validare Step 1, (2) completare Step 2 codifica umana + consenso in aula, (3) Gemini e kappa Step 2 possono essere finiti a casa se necessario.
+:::
+
+## Prossimi passi
 
 | Data | Attività |
 |------|----------|
 | **Lun 30 Marzo** | Consultazione gruppi + **analisi engagement** |
-| **Mar 31 Marzo** | Workshop di scrittura — struttura del relazione |
+| **Mar 31 Marzo** | Workshop di scrittura — struttura del paper |
 | **Mer 1 Aprile** | Lavoro di gruppo — stesura collaborativa |
 | **Lun 13 Aprile** | Sintesi del corso — confronto inter-gruppo |
-| **2 sett. prima appello** | **Consegna relazione finale** |
 
-::: {.highlight-box}
-**Per lunedì:** preparate una breve **presentazione** (5 minuti) con: classificazione completata, kappa ottenuto, matrice di confusione, e una prima esplorazione dell'engagement per categoria.
-:::
+**Per lunedì:** preparate una presentazione (5 min) con: kappa Step 1 e Step 2, proporzione AI slop, distribuzione categorie, e una prima esplorazione dell'engagement per categoria.
 
 ::: {.notes}
-Timeline aggiornata del progetto. Lunedì è la consultazione di gruppo con una novità importante: oltre alla revisione metodologica, ogni gruppo presenterà i primi risultati dell'analisi di engagement — collegando le categorie di classificazione validate alle metriche del CSV. Le sessioni successive sono dedicate alla scrittura. Enfatizzare l'urgenza: chi ha problemi con la validazione deve risolverli entro lunedì. La consultazione servirà per discutere sia i risultati della validazione sia i pattern di engagement emergenti.
+Timeline aggiornata. Lunedì è la consultazione di gruppo dove ogni gruppo presenterà i risultati della validazione (entrambi gli step) e i primi pattern di engagement. Le sessioni successive sono dedicate alla scrittura. Enfatizzare: chi ha problemi con la validazione deve risolverli entro lunedì. La consultazione servirà per discutere sia la validazione sia l'analisi di engagement.
 :::
 
 ## Grazie! {background-color="#C5612E"}
@@ -454,7 +526,7 @@ Timeline aggiornata del progetto. Lunedì è la consultazione di gruppo con una 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) completare la validazione se non terminata in aula, (2) se kappa sotto 0.60 provare almeno un ciclo di iterazione, (3) iniziare a esplorare i dati di engagement per categoria in preparazione per lunedì, (4) preparare la presentazione di 5 minuti per la consultazione. Lunedì è una sessione operativa: ogni gruppo presenterà i risultati e discuterà l'analisi di engagement con il docente.
+Chiusura. Ricordare: (1) completare la classificazione Gemini Step 2 se non terminata in aula, (2) calcolare il kappa Step 2 prima di lunedì, (3) iniziare a esplorare i dati di engagement per categoria, (4) preparare la presentazione di 5 minuti. Lunedì è una sessione operativa: ogni gruppo presenterà i risultati di entrambi gli step.
 :::
 
 ## Riferimenti
