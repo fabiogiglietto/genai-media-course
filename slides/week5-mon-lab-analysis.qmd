@@ -383,13 +383,19 @@ Sezione 6: istruzioni operative per il lavoro di gruppo. Tempi serrati per compl
 Completare lo Step 1: codifica umana → consenso → prompt Gemini → classificazione binaria di tutti i 420 post.
 :::
 
-| Fase | Tempo | Attività |
-|------|:-----:|----------|
-| **1. Codifica umana** | 25 min | Ogni membro codifica 50 post in **STEP 1 — Codifica Umana** (indipendente) |
-| **2. Consenso** | 20 min | Confronto, discussione disaccordi, definizione in **CODEBOOK** |
-| **3. Prompt + pilot** | 10 min | Costruire il prompt con one-shot in **PROMPT**, testare su 5-10 post |
-| **4. Classificazione** | 30 min | Batch con Gemini, tutti i 420 post in **STEP 1 — Gemini + Decisione** |
-| **5. Pattern** | 5 min | Conteggio AI slop / non AI slop, tabella esplorativa |
+::: {.notes}
+Obiettivo chiaro: alla fine della sessione ogni gruppo deve avere completato l'intero ciclo dello Step 1. La tempistica è ambiziosa ma fattibile perché la codifica binaria (sì/no) è più veloce della categorizzazione tematica.
+:::
+
+## Timeline della sessione {.smaller}
+
+| Fase | Tempo | Attività | Tab |
+|------|:-----:|----------|-----|
+| **1. Codifica umana** | 25 min | Ogni membro codifica 50 post (indipendente) | STEP 1 — Codifica Umana |
+| **2. Consenso** | 20 min | Confronto, discussione disaccordi, definizione raffinata | CODEBOOK |
+| **3. Prompt + pilot** | 10 min | Costruire il prompt con one-shot, testare su 5-10 post | PROMPT |
+| **4. Classificazione** | 30 min | Batch con Gemini, tutti i 420 post | STEP 1 — Gemini + Decisione |
+| **5. Pattern** | 5 min | Conteggio AI slop / non AI slop | — |
 
 ::: {.notes}
 Tempistica ambiziosa ma fattibile. La codifica umana di 50 post binari dovrebbe essere relativamente veloce — è una scelta sì/no, non una categorizzazione multipla. Il consenso è la fase dove non si deve avere fretta: le decisioni prese qui determinano la qualità del prompt e quindi della classificazione automatica. Il prompt si costruisce direttamente dai risultati del consenso: definizione + one-shot examples. La classificazione con Gemini su batch di 20-30 post è il passaggio più meccanico. Se un gruppo finisce la codifica umana prima degli altri, non deve iniziare la classificazione Gemini prima del consenso — l'ordine è vincolante. Il docente passa tra i gruppi durante tutte le fasi.
