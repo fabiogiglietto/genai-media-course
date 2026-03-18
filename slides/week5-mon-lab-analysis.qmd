@@ -103,7 +103,7 @@ La pipeline ha due step distinti. Lo Step 1 è un filtro binario: separa i post 
 ## AI slop vs. immagine AI
 
 ::: {.highlight-box}
-**Un'immagine AI può non essere slop. Ma l'AI slop è sempre generato dall'IA.**
+**Un'immagine AI può non essere slop. Ma l'AI slop è sempre generato dall'IA.** Valutate sempre testo e immagine **insieme**.
 :::
 
 ::: {.columns}
@@ -122,11 +122,6 @@ La pipeline ha due step distinti. Lo Step 1 è un filtro binario: separa i post 
 - Contenuto virale non dichiarato come AI
 - Immagini emotive progettate per reazioni
 :::
-:::
-
-::: {.callout-note}
-## Da ricordare
-Valutate sempre **testo e immagine insieme** — lo stesso post, non l'immagine isolata.
 :::
 
 ::: {.notes}
@@ -183,12 +178,9 @@ Sezione 2: la fase di codifica umana indipendente. Ogni membro del gruppo classi
 ## Codifica individuale: le regole
 
 ::: {.orange-box}
-### Istruzioni
-
-Ogni membro del gruppo codifica **50 post pre-selezionati** in modo **indipendente**.
+Ogni membro codifica **50 post pre-selezionati** in modo **indipendente** nel tab **STEP 1 — Codifica Umana (50)**.
 :::
 
-- Usate il tab **STEP 1 — Codifica Umana (50)** del foglio post_metadata
 - Per ogni post: guardate **testo + immagine** insieme
 - Scelta **binaria**: AI slop oppure Non AI slop
 - **Nessuna discussione** con gli altri membri del gruppo
@@ -292,9 +284,7 @@ Sezione 4: dalla definizione raffinata alla classificazione automatica con Gemin
 Il prompt per lo Step 1 è binario: due sole categorie. La definizione nel prompt è quella emersa dalla fase di consenso, non una definizione generica. Gli one-shot examples sono post reali su cui il gruppo ha raggiunto accordo — questo è il collegamento diretto tra la fase umana e quella automatica. Il formato di output strutturato facilita la registrazione nel tab "STEP 1 — Gemini + Decisione". La colonna "certezza" è importante: i post classificati con certezza bassa saranno il primo target di revisione. Salvare il prompt nel tab PROMPT del foglio post_metadata con la data e la versione.
 :::
 
-## Classificare i post rimanenti
-
-**Strategia per batch** — come nel pilot, ma su scala completa:
+## Classificare i post rimanenti {.smaller}
 
 | Passo | Azione |
 |-------|--------|
@@ -302,10 +292,9 @@ Il prompt per lo Step 1 è binario: due sole categorie. La definizione nel promp
 | **2. Caricare** | Allegare un batch di **20-30 post** (testo + immagini) |
 | **3. Verificare** | Controllare i **primi 5 risultati** — coerenti con il consenso? |
 | **4. Registrare** | Copiare i risultati nel tab **STEP 1 — Gemini + Decisione** |
-| **5. Ripetere** | Nuova chat → stesso prompt → prossimo batch |
+| **5. Ripetere** | **Nuova chat** → stesso prompt → prossimo batch |
 
-::: {.callout-warning}
-## Attenzione
+::: {.highlight-box}
 **Nuova chat per ogni batch.** Il contesto accumulato può far driftare il modello [@cosenza2025].
 :::
 
@@ -348,18 +337,16 @@ Sezione 5: prime osservazioni sulla distribuzione binaria. Anche se la validazio
 
 ## Distribuzione binaria e engagement
 
-Con la classificazione binaria completa, potete già esplorare:
+I post AI slop hanno **engagement diverso** dai non AI slop? Compilate:
 
-| Metrica | AI slop (media) | Non AI slop (media) | Differenza? |
-|---------|:----------------:|:-------------------:|:-----------:|
-| Reazioni | ? | ? | |
-| Condivisioni | ? | ? | |
-| Visualizzazioni | ? | ? | |
-| N. commenti | ? | ? | |
+| Metrica | AI slop (media) | Non AI slop (media) |
+|---------|:----------------:|:-------------------:|
+| Reazioni | ? | ? |
+| Condivisioni | ? | ? |
+| Visualizzazioni | ? | ? |
+| N. commenti | ? | ? |
 
-::: {.highlight-box}
-**Domanda esplorativa:** i post AI slop hanno engagement diverso dai non AI slop? Questa prima analisi sarà approfondita nello Step 2 con le categorie tematiche.
-:::
+Questa prima analisi sarà approfondita nello **Step 2** con le categorie tematiche.
 
 ::: {.notes}
 Tabella esplorativa che i gruppi possono compilare alla fine della sessione. Non è l'analisi finale — la classificazione non è ancora validata — ma orienta le ipotesi. Se i post AI slop hanno engagement significativamente più alto, questo conferma la logica dell'engagement bait. Se non c'è differenza, potrebbe significare che il contenuto AI non è premiato dagli algoritmi, oppure che la definizione di slop va raffinata. Lo Step 2 (categorie tematiche) permetterà di disaggregare ulteriormente: non tutti gli AI slop sono uguali, e il tipo di contenuto potrebbe predire l'engagement meglio della semplice distinzione binaria.
@@ -397,7 +384,7 @@ Obiettivo chiaro: alla fine della sessione ogni gruppo deve avere completato l'i
 Tempistica ambiziosa ma fattibile. La codifica umana di 50 post binari dovrebbe essere relativamente veloce — è una scelta sì/no, non una categorizzazione multipla. Il consenso è la fase dove non si deve avere fretta: le decisioni prese qui determinano la qualità del prompt e quindi della classificazione automatica. Il prompt si costruisce direttamente dai risultati del consenso: definizione + one-shot examples. La classificazione con Gemini su batch di 20-30 post è il passaggio più meccanico. Se un gruppo finisce la codifica umana prima degli altri, non deve iniziare la classificazione Gemini prima del consenso — l'ordine è vincolante. Il docente passa tra i gruppi durante tutte le fasi.
 :::
 
-## Checklist di fine lab
+## Checklist di fine lab {.smaller}
 
 Prima di uscire, ogni gruppo verifica:
 
@@ -408,10 +395,7 @@ Prima di uscire, ogni gruppo verifica:
 - [ ] **420 post** classificati da Gemini in **STEP 1 — Gemini + Decisione**
 - [ ] **Conteggio** AI slop / Non AI slop annotato
 
-::: {.callout-note}
-## Per domani
-Domani calcoleremo il **kappa** (umano-umano e umano-IA) per validare lo Step 1. Se il kappa è accettabile, filtreremo i post AI slop e inizieremo lo **Step 2** con le vostre categorie tematiche. Portate il codebook.
-:::
+**Per domani:** calcoleremo il **kappa** (umano-umano e umano-IA) per validare lo Step 1. Se accettabile, filtreremo i post AI slop e inizieremo lo **Step 2**.
 
 ::: {.notes}
 Checklist di verifica. Enfatizzare che tutti e sei i punti devono essere completati. Se un gruppo non riesce a finire la classificazione Gemini di tutti i 420 post, deve completarla prima di domani — ma la codifica umana e il consenso DEVONO essere fatti in classe, sotto supervisione. Il tab PROMPT deve contenere il prompt esatto usato, con versione e data. Domani la validazione confronterà le codifiche umane (tab "STEP 1 — Codifica Umana (50)") con quelle Gemini (tab "STEP 1 — Gemini + Decisione") sui 50 post condivisi. Se il kappa è basso (sotto 0.60), dovremo raffinare la definizione e ripetere — ma questo lo valuteremo domani.

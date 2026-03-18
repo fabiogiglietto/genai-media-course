@@ -334,7 +334,7 @@ Fabio Giglietto
 <section id="ai-slop-vs.-immagine-ai" class="slide level2">
 <h2>AI slop vs.&nbsp;immagine AI</h2>
 <div class="highlight-box">
-<p><strong>Un’immagine AI può non essere slop. Ma l’AI slop è sempre generato dall’IA.</strong></p>
+<p><strong>Un’immagine AI può non essere slop. Ma l’AI slop è sempre generato dall’IA.</strong> Valutate sempre testo e immagine <strong>insieme</strong>.</p>
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -352,19 +352,6 @@ Fabio Giglietto
 <li>Immagini emotive progettate per reazioni</li>
 </ul>
 </div></div>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Da ricordare</strong></p>
-</div>
-<div class="callout-content">
-<p>Valutate sempre <strong>testo e immagine insieme</strong> — lo stesso post, non l’immagine isolata.</p>
-</div>
-</div>
-</div>
 <aside class="notes">
 <p>Distinzione fondamentale per lo Step 1. Non tutte le immagini generate dall’IA sono AI slop. Il termine “slop” implica contenuto di bassa qualità prodotto in massa per generare engagement, spesso senza dichiarare la natura sintetica. Un’immagine AI usata come foto profilo o come illustrazione dichiarata non è slop. La valutazione deve sempre considerare testo e immagine insieme: il testo fornisce contesto sull’intento del post. Per esempio, un’immagine AI di un paesaggio accompagnata da “Guardate cosa ha creato l’IA!” non è slop; la stessa immagine con “Il tramonto più bello che abbia mai visto” potrebbe esserlo. Riferimento al dataset di Terenzi &amp; Giglietto (2025): i post sono stati pre-selezionati come probabili contenuti AI, ma non tutti necessariamente sono slop.</p>
 <style type="text/css">
@@ -462,12 +449,10 @@ Fabio Giglietto
 </section>
 <section id="codifica-individuale-le-regole" class="slide level2">
 <h2>Codifica individuale: le regole</h2>
-<section id="istruzioni" class="orange-box">
-<h3>Istruzioni</h3>
-<p>Ogni membro del gruppo codifica <strong>50 post pre-selezionati</strong> in modo <strong>indipendente</strong>.</p>
-</section>
+<div class="orange-box">
+<p>Ogni membro codifica <strong>50 post pre-selezionati</strong> in modo <strong>indipendente</strong> nel tab <strong>STEP 1 — Codifica Umana (50)</strong>.</p>
+</div>
 <ul>
-<li>Usate il tab <strong>STEP 1 — Codifica Umana (50)</strong> del foglio post_metadata</li>
 <li>Per ogni post: guardate <strong>testo + immagine</strong> insieme</li>
 <li>Scelta <strong>binaria</strong>: AI slop oppure Non AI slop</li>
 <li><strong>Nessuna discussione</strong> con gli altri membri del gruppo</li>
@@ -693,9 +678,8 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="classificare-i-post-rimanenti" class="slide level2">
+<section id="classificare-i-post-rimanenti" class="slide level2 smaller">
 <h2>Classificare i post rimanenti</h2>
-<p><strong>Strategia per batch</strong> — come nel pilot, ma su scala completa:</p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 46%">
@@ -726,22 +710,12 @@ Fabio Giglietto
 </tr>
 <tr class="odd">
 <td><strong>5. Ripetere</strong></td>
-<td>Nuova chat → stesso prompt → prossimo batch</td>
+<td><strong>Nuova chat</strong> → stesso prompt → prossimo batch</td>
 </tr>
 </tbody>
 </table>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Attenzione</strong></p>
-</div>
-<div class="callout-content">
+<div class="highlight-box">
 <p><strong>Nuova chat per ogni batch.</strong> Il contesto accumulato può far driftare il modello <span class="citation" data-cites="cosenza2025">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Cosenza, 2025</a>)</span>.</p>
-</div>
-</div>
 </div>
 <aside class="notes">
 <p>Il workflow operativo per la classificazione binaria con Gemini. Ogni batch usa una nuova chat per evitare il drift del modello — lo stesso principio visto nel pilot, ma ancora più importante su scala. I primi 5 risultati di ogni batch servono come controllo di qualità: se Gemini classifica come AI slop un post che nel consenso il gruppo ha classificato come non slop, c’è un problema nel prompt. Il tab “STEP 1 — Gemini + Decisione” è separato dal tab “STEP 1 — Codifica Umana (50)”: questa separazione fisica è intenzionale, per la validazione di domani. Dopo aver classificato tutti i 420 post, il tab arancione conterrà la classificazione binaria completa.</p>
@@ -809,14 +783,13 @@ Fabio Giglietto
 </section>
 <section id="distribuzione-binaria-e-engagement" class="slide level2">
 <h2>Distribuzione binaria e engagement</h2>
-<p>Con la classificazione binaria completa, potete già esplorare:</p>
+<p>I post AI slop hanno <strong>engagement diverso</strong> dai non AI slop? Compilate:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th>Metrica</th>
 <th style="text-align: center;">AI slop (media)</th>
 <th style="text-align: center;">Non AI slop (media)</th>
-<th style="text-align: center;">Differenza?</th>
 </tr>
 </thead>
 <tbody>
@@ -824,31 +797,25 @@ Fabio Giglietto
 <td>Reazioni</td>
 <td style="text-align: center;">?</td>
 <td style="text-align: center;">?</td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td>Condivisioni</td>
 <td style="text-align: center;">?</td>
 <td style="text-align: center;">?</td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
 <td>Visualizzazioni</td>
 <td style="text-align: center;">?</td>
 <td style="text-align: center;">?</td>
-<td style="text-align: center;"></td>
 </tr>
 <tr class="even">
 <td>N. commenti</td>
 <td style="text-align: center;">?</td>
 <td style="text-align: center;">?</td>
-<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-<div class="highlight-box">
-<p><strong>Domanda esplorativa:</strong> i post AI slop hanno engagement diverso dai non AI slop? Questa prima analisi sarà approfondita nello Step 2 con le categorie tematiche.</p>
-</div>
+<p>Questa prima analisi sarà approfondita nello <strong>Step 2</strong> con le categorie tematiche.</p>
 <aside class="notes">
 <p>Tabella esplorativa che i gruppi possono compilare alla fine della sessione. Non è l’analisi finale — la classificazione non è ancora validata — ma orienta le ipotesi. Se i post AI slop hanno engagement significativamente più alto, questo conferma la logica dell’engagement bait. Se non c’è differenza, potrebbe significare che il contenuto AI non è premiato dagli algoritmi, oppure che la definizione di slop va raffinata. Lo Step 2 (categorie tematiche) permetterà di disaggregare ulteriormente: non tutti gli AI slop sono uguali, e il tipo di contenuto potrebbe predire l’engagement meglio della semplice distinzione binaria.</p>
 <style type="text/css">
@@ -963,7 +930,7 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="checklist-di-fine-lab" class="slide level2">
+<section id="checklist-di-fine-lab" class="slide level2 smaller">
 <h2>Checklist di fine lab</h2>
 <p>Prima di uscire, ogni gruppo verifica:</p>
 <ul class="task-list">
@@ -974,19 +941,7 @@ Fabio Giglietto
 <li><label><input type="checkbox"><strong>420 post</strong> classificati da Gemini in <strong>STEP 1 — Gemini + Decisione</strong></label></li>
 <li><label><input type="checkbox"><strong>Conteggio</strong> AI slop / Non AI slop annotato</label></li>
 </ul>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Per domani</strong></p>
-</div>
-<div class="callout-content">
-<p>Domani calcoleremo il <strong>kappa</strong> (umano-umano e umano-IA) per validare lo Step 1. Se il kappa è accettabile, filtreremo i post AI slop e inizieremo lo <strong>Step 2</strong> con le vostre categorie tematiche. Portate il codebook.</p>
-</div>
-</div>
-</div>
+<p><strong>Per domani:</strong> calcoleremo il <strong>kappa</strong> (umano-umano e umano-IA) per validare lo Step 1. Se accettabile, filtreremo i post AI slop e inizieremo lo <strong>Step 2</strong>.</p>
 <aside class="notes">
 <p>Checklist di verifica. Enfatizzare che tutti e sei i punti devono essere completati. Se un gruppo non riesce a finire la classificazione Gemini di tutti i 420 post, deve completarla prima di domani — ma la codifica umana e il consenso DEVONO essere fatti in classe, sotto supervisione. Il tab PROMPT deve contenere il prompt esatto usato, con versione e data. Domani la validazione confronterà le codifiche umane (tab “STEP 1 — Codifica Umana (50)”) con quelle Gemini (tab “STEP 1 — Gemini + Decisione”) sui 50 post condivisi. Se il kappa è basso (sotto 0.60), dovremo raffinare la definizione e ripetere — ma questo lo valuteremo domani.</p>
 <style type="text/css">
