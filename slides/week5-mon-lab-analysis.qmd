@@ -272,24 +272,20 @@ La documentazione è essenziale per due motivi: (1) serve per costruire il promp
 Sezione 4: dalla definizione raffinata alla classificazione automatica con Gemini. Il prompt usa la definizione emersa dal consenso e include one-shot examples dai casi concordati.
 :::
 
-## Dal consenso al prompt
+## Dal consenso al prompt {.smaller}
 
 ::: {.orange-box}
 ### Struttura del prompt per Step 1
 
-**Ruolo:** Analista di contenuti social media
-
-**Definizione:** [la vostra definizione raffinata di AI slop dal CODEBOOK]
-
-**Criteri:** [criteri di inclusione/esclusione dal consenso]
-
-**Esempio AI slop:** [post concordato — testo + descrizione immagine]
-
-**Esempio Non AI slop:** [post concordato — testo + descrizione immagine]
-
-**Compito:** Per ogni post (testo + immagine), classifica come AI_SLOP o NON_AI_SLOP.
-
-**Output:** Tabella con colonne: id_post, classificazione, certezza (alta/media/bassa), motivazione_breve.
+| Sezione | Contenuto |
+|---------|-----------|
+| **Ruolo** | Analista di contenuti social media |
+| **Definizione** | [definizione raffinata di AI slop dal CODEBOOK] |
+| **Criteri** | [criteri di inclusione/esclusione dal consenso] |
+| **Esempio AI slop** | [post concordato — testo + descrizione immagine] |
+| **Esempio Non AI slop** | [post concordato — testo + descrizione immagine] |
+| **Compito** | Per ogni post (testo + immagine), classifica come AI_SLOP o NON_AI_SLOP |
+| **Output** | Tabella: id_post, classificazione, certezza, motivazione_breve |
 :::
 
 ::: {.notes}

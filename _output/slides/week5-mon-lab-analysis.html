@@ -632,17 +632,52 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="dal-consenso-al-prompt" class="slide level2">
+<section id="dal-consenso-al-prompt" class="slide level2 smaller">
 <h2>Dal consenso al prompt</h2>
 <section id="struttura-del-prompt-per-step-1" class="orange-box">
 <h3>Struttura del prompt per Step 1</h3>
-<p><strong>Ruolo:</strong> Analista di contenuti social media</p>
-<p><strong>Definizione:</strong> [la vostra definizione raffinata di AI slop dal CODEBOOK]</p>
-<p><strong>Criteri:</strong> [criteri di inclusione/esclusione dal consenso]</p>
-<p><strong>Esempio AI slop:</strong> [post concordato — testo + descrizione immagine]</p>
-<p><strong>Esempio Non AI slop:</strong> [post concordato — testo + descrizione immagine]</p>
-<p><strong>Compito:</strong> Per ogni post (testo + immagine), classifica come AI_SLOP o NON_AI_SLOP.</p>
-<p><strong>Output:</strong> Tabella con colonne: id_post, classificazione, certezza (alta/media/bassa), motivazione_breve.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 55%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sezione</th>
+<th>Contenuto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Ruolo</strong></td>
+<td>Analista di contenuti social media</td>
+</tr>
+<tr class="even">
+<td><strong>Definizione</strong></td>
+<td>[definizione raffinata di AI slop dal CODEBOOK]</td>
+</tr>
+<tr class="odd">
+<td><strong>Criteri</strong></td>
+<td>[criteri di inclusione/esclusione dal consenso]</td>
+</tr>
+<tr class="even">
+<td><strong>Esempio AI slop</strong></td>
+<td>[post concordato — testo + descrizione immagine]</td>
+</tr>
+<tr class="odd">
+<td><strong>Esempio Non AI slop</strong></td>
+<td>[post concordato — testo + descrizione immagine]</td>
+</tr>
+<tr class="even">
+<td><strong>Compito</strong></td>
+<td>Per ogni post (testo + immagine), classifica come AI_SLOP o NON_AI_SLOP</td>
+</tr>
+<tr class="odd">
+<td><strong>Output</strong></td>
+<td>Tabella: id_post, classificazione, certezza, motivazione_breve</td>
+</tr>
+</tbody>
+</table>
 </section>
 <aside class="notes">
 <p>Il prompt per lo Step 1 è binario: due sole categorie. La definizione nel prompt è quella emersa dalla fase di consenso, non una definizione generica. Gli one-shot examples sono post reali su cui il gruppo ha raggiunto accordo — questo è il collegamento diretto tra la fase umana e quella automatica. Il formato di output strutturato facilita la registrazione nel tab “STEP 1 — Gemini + Decisione”. La colonna “certezza” è importante: i post classificati con certezza bassa saranno il primo target di revisione. Salvare il prompt nel tab PROMPT del foglio post_metadata con la data e la versione.</p>
