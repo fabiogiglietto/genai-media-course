@@ -193,9 +193,7 @@ Sezione 3: fase pratica del test pilota. Ogni gruppo carica 10-15 immagini su Ge
 
 ## Workflow del test pilota
 
-::: {.highlight-box}
-**Obiettivo:** testare il prompt su **10-15 immagini** per identificare problemi prima di scalare a tutto il dataset.
-:::
+**Obiettivo:** testare il prompt su **10-15 immagini diverse** prima di scalare a tutto il dataset.
 
 | Passo | Azione | Tempo |
 |-------|--------|-------|
@@ -204,10 +202,7 @@ Sezione 3: fase pratica del test pilota. Ogni gruppo carica 10-15 immagini su Ge
 | **3** | Registrate i risultati nel **foglio condiviso** | 5 min |
 | **4** | Annotate i **casi problematici** | 5 min |
 
-::: {.callout-warning}
-## Attenzione
-Selezionate immagini **diverse tra loro** — non 15 bambini. Il test deve coprire la varietà del dataset.
-:::
+**Importante:** scegliete immagini **diverse tra loro** — il test deve coprire la varietà del dataset.
 
 ::: {.notes}
 Il test pilota è il cuore del lab. Le 10-15 immagini devono essere selezionate strategicamente: includere esempi di ciascuna categoria prevista dallo schema del gruppo, più qualche immagine potenzialmente ambigua. L'obiettivo non è classificare in massa, ma verificare che il prompt funzioni: le categorie sono chiare per Gemini? Ci sono categorie che non si applicano mai? Ci sono immagini che non rientrano in nessuna categoria? La selezione variata è fondamentale — testare solo immagini "facili" non rivela i problemi del prompt.

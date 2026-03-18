@@ -36,258 +36,370 @@ csl: ../apa.csl
 
 ## Roadmap del lab
 
-1. **Ricapitolazione** — dal pilot alla classificazione completa
-2. **Batch processing** — strategie per classificare 420 post con Gemini
-3. **Coerenza tra batch** — mantenere la consistenza della classificazione
-4. **Cross-referencing** — collegare classificazioni e metriche di engagement
-5. **Pattern preliminari** — prime esplorazioni descrittive
-6. **Lavoro pratico** — classificazione per gruppi
+1. **Pipeline completa** — i due step della classificazione
+2. **Step 1: codifica umana** — 50 post, giudizio indipendente
+3. **Step 1: consenso** — discussione sui disaccordi e definizione raffinata
+4. **Step 1: Gemini** — dal consenso al prompt, classificazione automatica
+5. **Primi pattern** — proporzione di AI slop nel dataset
+6. **Lavoro pratico** — codifica, consenso e classificazione per gruppi
 
 ::: {.notes}
-Struttura del lab. Mercoledì scorso ogni gruppo ha progettato il prompt, costruito il codebook e testato la classificazione su un pilot di 30-50 immagini. Oggi si scala: dalla prova pilota al dataset completo di 420 post. L'obiettivo è che ogni gruppo esca con la classificazione completa nel foglio condiviso, pronta per la validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini — questo rende possibile il confronto inter-gruppo alla fine del corso.
+Struttura del lab. Oggi affrontiamo lo Step 1 della pipeline completa: la classificazione binaria AI slop / non AI slop. Il workflow segue il pattern che avete praticato nel seminario Paroni: prima la codifica umana indipendente, poi il consenso sui disaccordi, infine la classificazione con Gemini usando la definizione raffinata. L'obiettivo è che ogni gruppo esca con la classificazione binaria completa di tutti i 420 post.
 :::
 
-## Dal Pilot al Dataset Completo {background-color="#C5612E"}
+## La Pipeline Completa {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 1: ricapitolazione del lavoro svolto mercoledì e inquadramento della sfida odierna — passare dal pilot alla scala completa.
+Sezione 1: visione d'insieme della pipeline di classificazione. Questa ricapitolazione collega il lavoro del pilot di mercoledì con il percorso completo che affronteremo nelle prossime sessioni.
 :::
 
-## Punto di partenza: il vostro pilot
+## Il foglio di codifica: post_metadata
+
+Ogni gruppo lavora sul proprio foglio Google Sheets ([post_metadata](https://docs.google.com/spreadsheets/d/1bI-m4SRjVRh5tlYwVO0LIYwZwni1c6HuQwMJy6ZHniQ/edit)), organizzato in **8 tab**:
+
+| Tab | Colore | Contenuto |
+|-----|:------:|-----------|
+| **ISTRUZIONI** | — | Guida operativa |
+| **DATI** | — | 420 post: metadata + engagement (sola lettura) |
+| **STEP 1 — Codifica Umana (50)** | 🔵 | Codifica binaria indipendente (50 post) |
+| **STEP 1 — Gemini + Decisione** | 🟠 | Classificazione Gemini + decisione finale (420 post) |
+| **STEP 2 — Codifica Umana (50)** | 🔵 | Codifica tematica indipendente (50 post AI slop) |
+| **STEP 2 — Gemini + Decisione** | 🟠 | Classificazione tematica Gemini (solo AI slop) |
+| **CODEBOOK** | — | Definizioni, criteri, esempi |
+| **PROMPT** | — | Tutte le versioni dei prompt |
+
+::: {.notes}
+Mostrare il foglio proiettato. La separazione fisica tra tab blu (codifica umana) e tab arancione (Gemini) è intenzionale: impedisce che gli studenti vedano le classificazioni dell'IA prima di completare la propria codifica indipendente. I 50 post nei tab di codifica umana sono pre-selezionati con seed 42, identici per tutti i gruppi — questo permetterà il confronto inter-gruppo. Il tab DATI è in sola lettura e contiene le metriche di engagement dal CSV originale. Il tab CODEBOOK e il tab PROMPT servono per documentare il processo — andranno nella sezione Metodi del paper finale.
+:::
+
+## Due step, un obiettivo
+
+La classificazione procede in **due step sequenziali**:
+
+| | **Step 1 — Binario** | **Step 2 — Tematico** |
+|---|---|---|
+| **Domanda** | È *AI slop*? | Che **tipo** di AI slop? |
+| **Categorie** | AI slop / Non AI slop | Le vostre categorie (da mercoledì) |
+| **Applicato a** | Tutti i **420 post** | Solo i post classificati come **AI slop** |
+| **Validazione** | Kappa umano-umano + umano-IA | Kappa umano-umano + umano-IA |
+
+::: {.notes}
+La pipeline ha due step distinti. Lo Step 1 è un filtro binario: separa i post AI slop da quelli non AI slop. Lo Step 2 si applica solo al sottoinsieme di AI slop e usa le categorie tematiche che ogni gruppo ha definito mercoledì durante il pilot. Entrambi gli step seguono lo stesso workflow: codifica umana → consenso → Gemini → validazione. Oggi ci concentriamo sullo Step 1 completo (codifica umana + consenso + Gemini). Domani valideremo lo Step 1 (kappa) e inizieremo lo Step 2. I tab del foglio riflettono questa struttura: i tab blu sono per la codifica umana, i tab arancione per Gemini.
+:::
+
+## AI slop vs. immagine AI
+
+::: {.highlight-box}
+**Un'immagine AI può non essere slop. Ma l'AI slop è sempre generato dall'IA.**
+:::
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Cosa avete già
+### Immagine AI, non slop
 
-- **Prompt testato** e raffinato su 30-50 immagini
-- **Codebook documentato** con categorie, definizioni, esempi
-- **Regole per i casi limite** definite durante il pilot
-- **Formato di output** strutturato (tabella/CSV)
+- Foto profilo generata con IA
+- Illustrazione editoriale dichiarata
+- Contenuto artistico esplicitamente AI
 :::
 
 ::: {.column width="50%"}
-### Cosa serve oggi
+### AI slop
 
-- Classificare i **restanti ~370 post**
-- Mantenere la **coerenza** con il pilot
-- Collegare le classificazioni ai **dati di engagement**
-- Identificare **pattern preliminari**
+- *Engagement bait* con immagini generate
+- Contenuto virale non dichiarato come AI
+- Immagini emotive progettate per reazioni
 :::
 :::
 
-::: {.callout-warning}
-## Attenzione
-Verificate che il prompt e il codebook usati nel pilot siano salvati in un documento condiviso. Il prompt deve essere **identico** in ogni sessione di classificazione.
+::: {.callout-note}
+## Da ricordare
+Valutate sempre **testo e immagine insieme** — lo stesso post, non l'immagine isolata.
 :::
 
 ::: {.notes}
-Verifica rapida: ogni gruppo mostra il proprio prompt e codebook dal pilot di mercoledì. 5 minuti per verificare che tutti siano pronti. Se qualche gruppo non ha completato il pilot, deve dedicare i primi 20 minuti a concluderlo prima di procedere. Il prompt salvato è il punto di partenza: non va modificato durante la classificazione su scala, altrimenti si perde la coerenza con il pilot. Eventuali modifiche si faranno solo dopo la validazione di domani, nella fase di iterazione.
+Distinzione fondamentale per lo Step 1. Non tutte le immagini generate dall'IA sono AI slop. Il termine "slop" implica contenuto di bassa qualità prodotto in massa per generare engagement, spesso senza dichiarare la natura sintetica. Un'immagine AI usata come foto profilo o come illustrazione dichiarata non è slop. La valutazione deve sempre considerare testo e immagine insieme: il testo fornisce contesto sull'intento del post. Per esempio, un'immagine AI di un paesaggio accompagnata da "Guardate cosa ha creato l'IA!" non è slop; la stessa immagine con "Il tramonto più bello che abbia mai visto" potrebbe esserlo. Riferimento al dataset di Terenzi & Giglietto (2025): i post sono stati pre-selezionati come probabili contenuti AI, ma non tutti necessariamente sono slop.
 :::
 
-## Da 30-50 immagini a 420 post: il salto di scala
+## Il workflow per ogni step
 
-Nel **pilot di mercoledì** avete classificato 30-50 immagini in una singola sessione Gemini. Nel dataset completo, il volume è **circa 10 volte più grande**.
+Ogni step segue lo **stesso pattern** — prima gli umani, poi Gemini:
+
+**Codifica umana** (50 post) → **Consenso** sui disaccordi → **Definizione raffinata** → **Prompt Gemini** (con one-shot) → **Classificazione automatica**
+
+::: {.callout-tip}
+## Collegamento con il seminario Paroni
+Come avete praticato con le 20 headline: codifica individuale → confronto → raffinamento del prompt → classificazione Gemini. Lo stesso principio, su scala più ampia e con dati multimodali [@marino2024].
+:::
+
+::: {.notes}
+Il workflow è identico per entrambi gli step e rispecchia la logica del seminario Paroni. La differenza chiave rispetto a un approccio "Gemini-first" è che gli umani codificano per primi, senza vedere le classificazioni dell'IA. Questo evita l'anchoring bias: se vedeste prima cosa dice Gemini, sareste influenzati. Il consenso sui disaccordi produce una definizione più precisa, che diventa la base del prompt. I casi su cui il gruppo ha raggiunto consenso diventano gli one-shot examples nel prompt. Questo è il cuore della metodologia LLMs-in-the-loop: l'intelligenza umana guida quella artificiale, non viceversa.
+:::
+
+## Oggi: Step 1 {background-color="#C5612E"}
+
+::: {.columns}
+::: {.column width="50%"}
+### Oggi facciamo
+
+- Codifica umana: **50 post** (individuale)
+- Discussione **disaccordi** → definizione raffinata
+- Prompt Gemini con **one-shot examples**
+- Classificazione binaria di **tutti i 420 post**
+:::
+
+::: {.column width="50%"}
+### Domani faremo
+
+- **Validazione** Step 1 (kappa)
+- Matrice di confusione
+- Filtrare → sottoinsieme **AI slop**
+- Iniziare **Step 2** (tematico)
+:::
+:::
+
+::: {.notes}
+Mappa di navigazione per gli studenti. Oggi completiamo l'intero ciclo dello Step 1: dalla codifica umana alla classificazione automatica. È un lab intenso. La validazione (calcolo del kappa) la faremo domani con calma, perché richiede confronto sistematico tra le codifiche. Domani, dopo aver validato lo Step 1, filtreremo il dataset per isolare solo i post AI slop e inizieremo lo Step 2 con le categorie tematiche di ogni gruppo. Nota: se il kappa dello Step 1 è basso, potremmo dover raffinare la definizione e ripetere — ma questo lo valuteremo domani.
+:::
+
+## Step 1: Codifica Umana {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 2: la fase di codifica umana indipendente. Ogni membro del gruppo classifica individualmente 50 post pre-selezionati come AI slop o non AI slop, senza consultarsi.
+:::
+
+## Codifica individuale: le regole
+
+::: {.orange-box}
+### Istruzioni
+
+Ogni membro del gruppo codifica **50 post pre-selezionati** in modo **indipendente**.
+:::
+
+- Usate il tab **STEP 1 — Codifica Umana (50)** del foglio post_metadata
+- Per ogni post: guardate **testo + immagine** insieme
+- Scelta **binaria**: AI slop oppure Non AI slop
+- **Nessuna discussione** con gli altri membri del gruppo
+- **Non guardate** le risposte degli altri
+- Se siete incerti, scegliete comunque e annotate il dubbio
+
+::: {.notes}
+Le regole della codifica cieca. I 50 post sono pre-selezionati con seed 42 — identici per tutti i gruppi, il che permetterà il confronto inter-gruppo. Il tab "STEP 1 — Codifica Umana (50)" è fisicamente separato dal tab "STEP 1 — Gemini + Decisione": gli studenti non possono vedere classificazioni automatiche. Ogni membro deve aprire il post (testo visibile nel tab DATI + immagine nella cartella Drive), valutare se è AI slop e registrare la propria decisione nel tab blu. La colonna "note" serve per annotare i dubbi — questi diventeranno il punto di partenza della discussione di consenso. Ricordare che la codifica indipendente è essenziale per calcolare l'intercoder reliability: se discutete prima, il kappa perde significato.
+:::
+
+## Cosa rende un post AI slop?
+
+::: {.columns}
+::: {.column width="50%"}
+### Indicatori visivi
+
+- **Artefatti** tipici dell'IA generativa (dita, testo, texture)
+- **Iperrealismo** innaturale, illuminazione impossibile
+- **Stile ricorrente** di generazione (es. modelli diffusivi)
+:::
+
+::: {.column width="50%"}
+### Indicatori contestuali
+
+- **Testo del post** emotivo o generico ("Amen", "Chi ricorda?")
+- **Nessuna attribuzione** della fonte dell'immagine
+- **Pattern di engagement bait** (inviti a condividere, commentare)
+:::
+:::
 
 ::: {.highlight-box}
-**Gemini** offre una finestra di contesto fino a **1 milione di token** e capacità **multimodali** — le immagini si possono caricare direttamente, ma servono strategie per mantenere la **coerenza** [@cosenza2025].
+**Attenzione:** questi criteri sono un punto di partenza. La vostra definizione si **raffinerà** durante la fase di consenso.
 :::
-
-| Sfida | Strategia |
-|-------|-----------|
-| **Drift del modello** su batch lunghi | Dividere in **batch da 20-30 immagini** |
-| **Incoerenza tra sessioni** | Usare sempre lo **stesso prompt** (da documento sorgente) |
-| **Contesto accumulato** | Aprire una **nuova chat** per ogni batch |
-| **Verifica qualità** | Controllare i **primi 5 risultati** di ogni batch |
 
 ::: {.notes}
-Questo è il gap principale tra il pilot e la classificazione su scala. Con 30-50 immagini, bastava una o due sessioni Gemini e un controllo visivo dei risultati. Con 420 post, emergono problemi nuovi: il modello può "driftare" (cambiare comportamento nel corso di una sessione lunga), sessioni diverse possono produrre classificazioni diverse per la stessa immagine, il contesto accumulato nella chat influenza le risposte successive. La strategia dei batch è cruciale: 20-30 immagini alla volta, prompt copiato identico da un documento sorgente, nuova chat per ogni batch. Collegamento con il seminario Paroni: lì avete visto come il prompt refinement migliorava la coerenza su 20 headline — qui applichiamo la stessa logica su scala molto più ampia.
+Criteri iniziali per guidare la codifica, non una definizione definitiva. Il punto è proprio che la definizione emergerà dal processo di codifica e discussione. Gli indicatori visivi sono quelli più evidenti: artefatti generativi, iperrealismo, stili ricorrenti. Ma gli indicatori contestuali sono altrettanto importanti: il testo del post, l'assenza di attribuzione, i pattern di engagement bait. Esempio: un'immagine AI di un bambino che prega con il testo "Scrivi Amen se ci credi" è chiaramente slop. Un'immagine AI in un post che dice "Ho generato questa immagine con Midjourney per un progetto artistico" non è slop. I casi ambigui sono i più preziosi: è lì che la discussione di consenso produrrà le distinzioni più utili.
 :::
 
-## Batch Processing con Gemini {background-color="#C5612E"}
+## Consenso sui disaccordi {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 2: strategie operative per il batch processing multimodale. Come caricare e classificare le immagini in modo efficiente.
+Sezione 3: dopo la codifica individuale, i gruppi confrontano le risposte e discutono i casi di disaccordo. Questa fase produce la definizione raffinata di AI slop.
 :::
 
-## Workflow operativo per batch
+## Dalla codifica al consenso
+
+Dopo che tutti hanno codificato i 50 post:
+
+1. **Confrontate** le vostre classificazioni nel tab **STEP 1 — Codifica Umana (50)**
+2. Identificate i post su cui **non siete d'accordo**
+3. Per ogni disaccordo, discutete: **perché** avete classificato diversamente?
+4. Raggiungete un **consenso** — la classificazione condivisa
+
+::: {.highlight-box}
+**Il prodotto del consenso non è solo una lista di risposte corrette, ma una definizione più precisa di AI slop** — con criteri espliciti e casi limite risolti.
+:::
+
+::: {.notes}
+Questa è la fase più importante dal punto di vista metodologico. Come avete sperimentato nel seminario Paroni, i disaccordi sono informativi: rivelano ambiguità nella definizione che devono essere risolte. Esempio: un membro classifica un post come "non slop" perché l'immagine sembra una foto reale, un altro lo classifica come "slop" perché il testo è chiaramente engagement bait. La discussione porta a chiarire: valutiamo l'immagine, il testo, o entrambi? (Risposta: entrambi.) Se l'immagine sembra reale ma il contesto è da slop, come classifichiamo? Queste decisioni vanno documentate nel CODEBOOK.
+:::
+
+## Documentare la definizione raffinata
+
+Nel tab **CODEBOOK** del foglio post_metadata, registrate:
+
+| Elemento | Cosa scrivere |
+|----------|---------------|
+| **Definizione** di AI slop | Criteri espliciti emersi dal consenso |
+| **Criteri di inclusione** | Cosa rende un post AI slop (lista) |
+| **Criteri di esclusione** | Cosa NON è AI slop, anche se ha immagini AI |
+| **Casi limite** | Decisioni prese sui post ambigui, con motivazione |
+| **Esempi** | 2-3 post concordati come AI slop, 2-3 come non AI slop |
+
+::: {.notes}
+La documentazione è essenziale per due motivi: (1) serve per costruire il prompt Gemini — i criteri e gli esempi diventeranno parte del prompt; (2) va nella sezione Metodi del paper finale. Il CODEBOOK deve essere sufficientemente esplicito da permettere a qualcuno esterno al gruppo di applicare la stessa classificazione. I casi limite documentati sono particolarmente preziosi: mostrano il ragionamento del gruppo e le decisioni prese. Gli esempi concordati diventeranno gli one-shot examples nel prompt.
+:::
+
+## Step 1: Classificazione con Gemini {background-color="#C5612E"}
+
+::: {.notes}
+Sezione 4: dalla definizione raffinata alla classificazione automatica con Gemini. Il prompt usa la definizione emersa dal consenso e include one-shot examples dai casi concordati.
+:::
+
+## Dal consenso al prompt
+
+::: {.orange-box}
+### Struttura del prompt per Step 1
+
+**Ruolo:** Analista di contenuti social media
+
+**Definizione:** [la vostra definizione raffinata di AI slop dal CODEBOOK]
+
+**Criteri:** [criteri di inclusione/esclusione dal consenso]
+
+**Esempio AI slop:** [post concordato — testo + descrizione immagine]
+
+**Esempio Non AI slop:** [post concordato — testo + descrizione immagine]
+
+**Compito:** Per ogni post (testo + immagine), classifica come AI_SLOP o NON_AI_SLOP.
+
+**Output:** Tabella con colonne: id_post, classificazione, certezza (alta/media/bassa), motivazione_breve.
+:::
+
+::: {.notes}
+Il prompt per lo Step 1 è binario: due sole categorie. La definizione nel prompt è quella emersa dalla fase di consenso, non una definizione generica. Gli one-shot examples sono post reali su cui il gruppo ha raggiunto accordo — questo è il collegamento diretto tra la fase umana e quella automatica. Il formato di output strutturato facilita la registrazione nel tab "STEP 1 — Gemini + Decisione". La colonna "certezza" è importante: i post classificati con certezza bassa saranno il primo target di revisione. Salvare il prompt nel tab PROMPT del foglio post_metadata con la data e la versione.
+:::
+
+## Classificare i post rimanenti
+
+**Strategia per batch** — come nel pilot, ma su scala completa:
 
 | Passo | Azione |
 |-------|--------|
-| **1. Preparare** | Organizzare le immagini in **cartelle da 20-30**, rinominare con **ID univoco** dal CSV |
-| **2. Prompt** | Copiare il **prompt identico** dal documento sorgente in una nuova chat Gemini |
-| **3. Caricare** | Allegare il batch di immagini a Gemini, verificare i primi **5 risultati** |
-| **4. Registrare** | Copiare le classificazioni nel **foglio Google Sheets** condiviso |
+| **1. Prompt** | Copiare il prompt dal tab **PROMPT** in una **nuova chat** Gemini |
+| **2. Caricare** | Allegare un batch di **20-30 post** (testo + immagini) |
+| **3. Verificare** | Controllare i **primi 5 risultati** — coerenti con il consenso? |
+| **4. Registrare** | Copiare i risultati nel tab **STEP 1 — Gemini + Decisione** |
 | **5. Ripetere** | Nuova chat → stesso prompt → prossimo batch |
 
-::: {.notes}
-Workflow passo per passo. Passo 1: l'organizzazione delle immagini è cruciale — ogni immagine deve avere un nome file che corrisponda all'ID nel CSV (il docente ha già predisposto questo, ma verificare). Passo 2: il prompt va copiato letteralmente, non riscritto a memoria. Passo 3: il caricamento multimodale in Gemini permette di allegare più immagini contemporaneamente — verificare i primi 5 risultati come controllo di qualità. Passo 4: i risultati vanno nella colonna "classificazione_ai" del foglio condiviso, accanto all'ID dell'immagine. Passo 5: ogni batch richiede una nuova chat per evitare l'accumulo di contesto.
+::: {.callout-warning}
+## Attenzione
+**Nuova chat per ogni batch.** Il contesto accumulato può far driftare il modello [@cosenza2025].
 :::
 
-## Strategie per la coerenza tra batch
+::: {.notes}
+Il workflow operativo per la classificazione binaria con Gemini. Ogni batch usa una nuova chat per evitare il drift del modello — lo stesso principio visto nel pilot, ma ancora più importante su scala. I primi 5 risultati di ogni batch servono come controllo di qualità: se Gemini classifica come AI slop un post che nel consenso il gruppo ha classificato come non slop, c'è un problema nel prompt. Il tab "STEP 1 — Gemini + Decisione" è separato dal tab "STEP 1 — Codifica Umana (50)": questa separazione fisica è intenzionale, per la validazione di domani. Dopo aver classificato tutti i 420 post, il tab arancione conterrà la classificazione binaria completa.
+:::
+
+## Dopo la classificazione: il filtro
+
+Una volta classificati tutti i 420 post:
 
 ::: {.columns}
 ::: {.column width="50%"}
-### Il problema della coerenza
+### Cosa osservare
 
-- Gemini può classificare la **stessa immagine** in modo diverso in sessioni diverse
-- Le immagini **ambigue** sono le più vulnerabili
-- Il **contesto visivo** di un batch influenza la classificazione delle immagini successive
+- Quanti post sono **AI slop**? Quanti **non AI slop**?
+- La proporzione è **plausibile**?
+- I post con **certezza bassa** — sono concentrati in una zona specifica?
 :::
 
 ::: {.column width="50%"}
-### Le soluzioni
+### Il prossimo passo
 
-- **Prompt fisso:** copiare sempre dallo stesso documento sorgente
-- **Immagini di calibrazione:** includere 2-3 immagini già classificate nel pilot in ogni batch
-- **Nuova sessione:** una chat pulita per ogni batch
-- **Annotare i dubbi:** segnalare i casi incerti per la revisione
+- Domani: **validazione** con kappa
+- Se il kappa è accettabile → **filtrare**
+- Solo i post AI slop passano allo **Step 2**
+- Lo Step 2 userà le **categorie tematiche** del vostro pilot
 :::
 :::
 
 ::: {.notes}
-La coerenza tra batch è la sfida principale del batch processing multimodale. A differenza della classificazione testuale (come nel seminario Paroni con le headline), le immagini portano un carico informativo molto più ricco e ambiguo. Due strategie particolarmente efficaci: (1) le immagini di calibrazione — includere in ogni batch 2-3 immagini già classificate nel pilot per verificare che la classificazione sia coerente; se Gemini cambia categoria, c'è un problema di drift. (2) Annotare i casi incerti: non forzare una classificazione quando l'immagine è genuinamente ambigua, segnalarla per la revisione manuale durante la validazione di domani.
-:::
-
-## Esempio: gestire un batch multimodale
-
-::: {.highlight-box}
-*"Agisci come un analista di contenuti visivi. Classifica ogni immagine in UNA delle seguenti categorie:*
-
-*1. BAMBINI — immagini raffiguranti bambini come soggetto principale*
-*2. ANIMALI — animali domestici o selvatici*
-*3. PAESAGGI — panorami naturali o urbani*
-*4. RELIGIOSO — simboli o scene religiose*
-*...*
-
-*Per ogni immagine fornisci: nome_file, categoria, certezza (alta/media/bassa), motivazione_breve.*
-*Output in formato tabella."*
-:::
-
-::: {.callout-tip}
-## Suggerimento
-Questo è un esempio generico. Ogni gruppo deve usare il **proprio prompt** sviluppato durante il pilot di mercoledì, con le proprie categorie specifiche.
-:::
-
-::: {.notes}
-Esempio di prompt multimodale per la classificazione delle immagini. Notare gli elementi: ruolo (analista di contenuti visivi), categorie con definizioni brevi, formato di output strutturato (tabella con nome file, categoria, certezza, motivazione). L'esempio usa categorie per soggetto visivo, ma i gruppi hanno schemi diversi: per strategia emotiva, per tecnica di generazione, per intento apparente. Ogni gruppo deve usare il proprio prompt dal pilot. Il livello di certezza è particolarmente importante nel multimodale: le immagini ambigue (es. una foto che potrebbe essere sia "nostalgia" che "paesaggio") devono essere segnalate come incerte per la validazione umana.
-:::
-
-## Cross-referencing con il CSV {background-color="#C5612E"}
-
-::: {.notes}
-Sezione 3: collegare le classificazioni Gemini ai dati di engagement nel CSV originale. Questo passaggio è essenziale per l'analisi successiva.
-:::
-
-## Unire classificazione e metriche di engagement
-
-Ogni riga del dataset deve contenere **tre tipi di informazione**:
-
-| Tipo | Fonte | Esempio colonne |
-|------|-------|----------------|
-| **Metadata post** | CSV originale | id_post, data, testo, pagina |
-| **Engagement** | CSV originale | reazioni, condivisioni, visualizzazioni, n_commenti |
-| **Classificazione IA** | Gemini (vostro lavoro) | categoria, certezza, motivazione |
-
-::: {.highlight-box}
-**Operazione chiave:** nel foglio Google Sheets, aggiungete le colonne di classificazione **accanto** ai dati del CSV. L'**ID del post** è il collegamento tra immagine e metriche.
-:::
-
-::: {.notes}
-Questo è il passaggio che trasforma la classificazione in un dataset analizzabile. Il CSV originale fornito dal docente contiene i metadata dei post e le metriche di engagement; i gruppi aggiungono le colonne di classificazione. L'ID del post (che corrisponde al nome del file immagine) è la chiave di collegamento. Verificare che ogni gruppo stia usando lo stesso ID. Il risultato finale è un foglio dove ogni riga rappresenta un post con: chi l'ha pubblicato, quando, quanto engagement ha ricevuto, e come Gemini ha classificato l'immagine. Questo dataset integrato è la base per l'analisi di engagement della sessione di consultazione.
+La proporzione di AI slop nel dataset è un primo risultato interessante. Se il dataset è stato pre-selezionato come "probabile contenuto AI", ci aspettiamo una proporzione alta di AI slop, ma non necessariamente il 100% — alcuni post potrebbero usare immagini AI in modo legittimo o essere stati inclusi erroneamente. Se la proporzione è molto bassa (es. sotto il 30%), potrebbe indicare un problema nella definizione o nel prompt. Se è molto alta (es. sopra il 90%), la classificazione binaria aggiunge poco valore. La validazione di domani confermerà se la classificazione è affidabile.
 :::
 
 ## Pattern Preliminari {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 4: prime esplorazioni descrittive. Anche durante la classificazione, i gruppi possono iniziare a osservare i pattern emergenti.
+Sezione 5: prime osservazioni sulla distribuzione binaria. Anche se la validazione formale è domani, osservare i pattern emergenti orienta le ipotesi.
 :::
 
-## Esplorazioni descrittive: cosa cercare
+## Distribuzione binaria e engagement
 
-Mentre classificate, iniziate a osservare:
+Con la classificazione binaria completa, potete già esplorare:
 
-::: {.columns}
-::: {.column width="50%"}
-### Distribuzione delle categorie
+| Metrica | AI slop (media) | Non AI slop (media) | Differenza? |
+|---------|:----------------:|:-------------------:|:-----------:|
+| Reazioni | ? | ? | |
+| Condivisioni | ? | ? | |
+| Visualizzazioni | ? | ? | |
+| N. commenti | ? | ? | |
 
-- Quante immagini per **categoria**?
-- Ci sono categorie **dominanti**?
-- Ci sono categorie con **pochissime** immagini?
-- La distribuzione è **bilanciata** o sbilanciata?
-:::
-
-::: {.column width="50%"}
-### Primi segnali di engagement
-
-- Le categorie con più immagini hanno anche **più engagement**?
-- Ci sono categorie con **poche immagini** ma **alto engagement**?
-- Quali metriche variano di più tra categorie (reazioni vs. condivisioni vs. visualizzazioni)?
-:::
+::: {.highlight-box}
+**Domanda esplorativa:** i post AI slop hanno engagement diverso dai non AI slop? Questa prima analisi sarà approfondita nello Step 2 con le categorie tematiche.
 :::
 
 ::: {.notes}
-Le esplorazioni descrittive non sono l'analisi finale, ma orientano le ipotesi. La distribuzione delle categorie rivela la composizione del dataset AI slop: se la maggior parte delle immagini è "bambini" o "animali", questo dice qualcosa sulle strategie di engagement bait. I primi segnali di engagement sono ancora grezzi (la classificazione non è validata), ma possono guidare le domande per l'analisi di engagement successiva. Esempio: se le immagini religiose sono poche ma hanno engagement molto alto, questo suggerisce un pattern interessante da esplorare. Non serve fare calcoli statistici complessi ora — basta un conteggio per categoria e uno sguardo alle metriche medie.
-:::
-
-## Esempio: tabella riassuntiva
-
-| Categoria | N. immagini | % dataset | Reazioni (media) | Condivisioni (media) |
-|-----------|:-----------:|:---------:|:-----------------:|:-------------------:|
-| Bambini | 85 | 25% | 1.240 | 320 |
-| Animali | 72 | 21% | 980 | 210 |
-| Paesaggi | 58 | 17% | 650 | 180 |
-| Religioso | 45 | 13% | 1.890 | 540 |
-| Nostalgia | 40 | 12% | 1.100 | 380 |
-| Altro | 40 | 12% | 420 | 90 |
-
-*Dati esemplificativi — ogni gruppo avrà categorie e numeri diversi.*
-
-::: {.notes}
-Esempio puramente illustrativo per mostrare il tipo di tabella riassuntiva che i gruppi dovrebbero produrre alla fine della sessione. I numeri sono inventati ma realistici. Notare come la tabella rivela immediatamente un pattern: le immagini religiose, pur essendo solo il 13% del dataset, hanno il più alto engagement medio — sia in reazioni che condivisioni. Questo tipo di osservazione descrittiva guiderà l'analisi più approfondita nella sessione di consultazione. Ogni gruppo avrà categorie diverse in base al proprio schema di classificazione (soggetto visivo, strategia emotiva, tecnica di generazione, intento apparente).
+Tabella esplorativa che i gruppi possono compilare alla fine della sessione. Non è l'analisi finale — la classificazione non è ancora validata — ma orienta le ipotesi. Se i post AI slop hanno engagement significativamente più alto, questo conferma la logica dell'engagement bait. Se non c'è differenza, potrebbe significare che il contenuto AI non è premiato dagli algoritmi, oppure che la definizione di slop va raffinata. Lo Step 2 (categorie tematiche) permetterà di disaggregare ulteriormente: non tutti gli AI slop sono uguali, e il tipo di contenuto potrebbe predire l'engagement meglio della semplice distinzione binaria.
 :::
 
 ## Lavoro Pratico {background-color="#C5612E"}
 
 ::: {.notes}
-Sezione 5: lavoro pratico di classificazione. I gruppi applicano quanto discusso al dataset completo.
+Sezione 6: istruzioni operative per il lavoro di gruppo. Tempi serrati per completare l'intero ciclo dello Step 1 in una sessione.
 :::
 
 ## Istruzioni per il lavoro di gruppo
 
 ::: {.orange-box}
-**Obiettivo del lab (60 minuti)**
+**Obiettivo del lab (90 minuti)**
 
-Ogni gruppo: (1) classifica i **post restanti** (~370) con Gemini usando il prompt del pilot, (2) registra i risultati nel foglio condiviso, (3) produce una **tabella riassuntiva** con conteggi per categoria.
+Completare lo Step 1: codifica umana → consenso → prompt Gemini → classificazione binaria di tutti i 420 post.
 :::
 
-**Fasi operative:**
-
-1. **0-10 min:** verificare prompt, codebook e foglio condiviso
-2. **10-50 min:** classificazione per batch (20-30 immagini per batch, nuova chat per ogni batch)
-3. **50-55 min:** completare la tabella riassuntiva (conteggi per categoria)
-4. **55-60 min:** annotare problemi e casi incerti
+| Fase | Tempo | Attività |
+|------|:-----:|----------|
+| **1. Codifica umana** | 25 min | Ogni membro codifica 50 post in **STEP 1 — Codifica Umana** (indipendente) |
+| **2. Consenso** | 20 min | Confronto, discussione disaccordi, definizione in **CODEBOOK** |
+| **3. Prompt + pilot** | 10 min | Costruire il prompt con one-shot in **PROMPT**, testare su 5-10 post |
+| **4. Classificazione** | 30 min | Batch con Gemini, tutti i 420 post in **STEP 1 — Gemini + Decisione** |
+| **5. Pattern** | 5 min | Conteggio AI slop / non AI slop, tabella esplorativa |
 
 ::: {.notes}
-Fase pratica del lab. I gruppi lavorano autonomamente. Il docente passa tra i gruppi per: (1) verificare che il prompt sia lo stesso del pilot, (2) controllare la qualità delle classificazioni nei primi batch, (3) aiutare con problemi tecnici di Gemini nel caricamento multimodale. Problemi comuni: immagini che non si caricano (formato non supportato, dimensione troppo grande), timeout di Gemini su batch troppo grandi, classificazioni incoerenti tra batch. La tabella riassuntiva è importante: permette di avere una prima fotografia del dataset classificato. L'obiettivo è completare la classificazione di tutte le immagini; se non si riesce, prioritizzare la qualità sulla quantità.
+Tempistica ambiziosa ma fattibile. La codifica umana di 50 post binari dovrebbe essere relativamente veloce — è una scelta sì/no, non una categorizzazione multipla. Il consenso è la fase dove non si deve avere fretta: le decisioni prese qui determinano la qualità del prompt e quindi della classificazione automatica. Il prompt si costruisce direttamente dai risultati del consenso: definizione + one-shot examples. La classificazione con Gemini su batch di 20-30 post è il passaggio più meccanico. Se un gruppo finisce la codifica umana prima degli altri, non deve iniziare la classificazione Gemini prima del consenso — l'ordine è vincolante. Il docente passa tra i gruppi durante tutte le fasi.
 :::
 
 ## Checklist di fine lab
 
 Prima di uscire, ogni gruppo verifica:
 
-- [ ] **Tutte le immagini** classificate (o almeno l'80% del dataset)
-- [ ] **Risultati** registrati nel foglio condiviso con ID corrispondenti al CSV
-- [ ] **Tabella riassuntiva** con conteggi e percentuali per categoria
-- [ ] **Casi incerti** annotati (certezza bassa, immagini ambigue)
-- [ ] **Prompt** salvato in documento condiviso (identico a quello del pilot)
+- [ ] **50 post** codificati da ogni membro in **STEP 1 — Codifica Umana (50)**
+- [ ] **Disaccordi** discussi e risolti — consenso raggiunto
+- [ ] **Definizione raffinata** documentata in **CODEBOOK**
+- [ ] **Prompt** salvato in **PROMPT** (con one-shot examples)
+- [ ] **420 post** classificati da Gemini in **STEP 1 — Gemini + Decisione**
+- [ ] **Conteggio** AI slop / Non AI slop annotato
 
 ::: {.callout-note}
 ## Per domani
-Domani affronteremo la **validazione umana**: ogni membro del gruppo classificherà indipendentemente un campione di **50 immagini** per calcolare l'**intercoder reliability**. Portate il codebook stampato o su tablet.
+Domani calcoleremo il **kappa** (umano-umano e umano-IA) per validare lo Step 1. Se il kappa è accettabile, filtreremo i post AI slop e inizieremo lo **Step 2** con le vostre categorie tematiche. Portate il codebook.
 :::
 
 ::: {.notes}
-Checklist di verifica. Enfatizzare che il foglio condiviso deve avere gli ID corrispondenti al CSV originale: questo è indispensabile per il cross-referencing con le metriche di engagement. I casi incerti sono particolarmente preziosi: saranno il primo target della validazione umana di domani. Ricordare che tutti i gruppi lavorano sulle stesse immagini: se un gruppo finisce prima, può aiutare con problemi tecnici ma non deve condividere le proprie classificazioni (ogni gruppo deve classificare indipendentemente). Transizione: domani passiamo dalla classificazione automatizzata alla verifica umana — il cuore della metodologia LLMs-in-the-loop.
+Checklist di verifica. Enfatizzare che tutti e sei i punti devono essere completati. Se un gruppo non riesce a finire la classificazione Gemini di tutti i 420 post, deve completarla prima di domani — ma la codifica umana e il consenso DEVONO essere fatti in classe, sotto supervisione. Il tab PROMPT deve contenere il prompt esatto usato, con versione e data. Domani la validazione confronterà le codifiche umane (tab "STEP 1 — Codifica Umana (50)") con quelle Gemini (tab "STEP 1 — Gemini + Decisione") sui 50 post condivisi. Se il kappa è basso (sotto 0.60), dovremo raffinare la definizione e ripetere — ma questo lo valuteremo domani.
 :::
 
 ## Grazie! {background-color="#C5612E"}
@@ -299,7 +411,7 @@ Checklist di verifica. Enfatizzare che il foglio condiviso deve avere gli ID cor
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Chiusura. Ricordare: (1) verificare che le classificazioni siano nel foglio condiviso con ID corretti, (2) domani ogni membro del gruppo classificherà manualmente 50 immagini — portare il codebook, (3) chi non ha completato la classificazione deve finire prima di domani. Domani è la sessione chiave della metodologia: confronteremo le classificazioni IA con quelle umane e calcoleremo le metriche di accordo.
+Chiusura. Ricordare: (1) chi non ha completato la classificazione Gemini di tutti i 420 post deve finire prima di domani, (2) la codifica umana e il consenso dovevano essere fatti oggi in classe — non si possono fare a casa, (3) domani porteremo il codebook per la fase di validazione. Domani è la sessione chiave: confronteremo umani e macchina e decideremo se la classificazione è affidabile per procedere allo Step 2.
 :::
 
 ## Riferimenti
