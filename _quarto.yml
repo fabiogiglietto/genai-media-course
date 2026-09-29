@@ -1,14 +1,20 @@
 project:
   type: default
   output-dir: _output
+  # Only the current academic year is rendered. Past years are frozen:
+  # their rendered HTML lives in _output/<year>/ and must not be re-rendered.
+  render:
+    - "2026-27/**/*.qmd"
+    - "!2026-27/**/_*.qmd"
   resources:
     - index.html
+    - 2026-27/index.html
 
 format:
   revealjs:
     theme: [default, _extensions/uniurb/discui.scss]
     logo: assets/logo-nh-uniurb.svg
-    footer: "IA Generativa e Media · A.A. 2025/2026"
+    footer: "IA Generativa e Media"
     slide-number: c/t
     transition: fade
     background-transition: fade
@@ -36,7 +42,7 @@ format:
     preview-links: auto
     pdf-separate-fragments: true
     pdf-max-pages-per-slide: 1
-    include-after-body: _attendance-footer.html
+    include-after-body: shared/_attendance-footer.html
 
 execute:
   echo: true

@@ -1,0 +1,8 @@
+# Shared settings for all 2026/27 decks (merged with ../../_quarto.yml).
+author: "Fabio Giglietto"
+institute: "DISCUI · Università degli Studi di Urbino Carlo Bo"
+date-format: "D MMMM YYYY"
+lang: it
+format:
+  revealjs:
+    footer: "IA Generativa e Media · A.A. 2026/2027"

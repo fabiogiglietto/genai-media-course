@@ -11,7 +11,7 @@
   (function() {
     const SHEET_URL = 'https://docs.google.com/spreadsheets/d/16esB9eA2yhu4AVwvLbjZJq-DClcWVg23aUtwEyax0fA/gviz/tq?tqx=out:csv&range=A1';
     const POLL_INTERVAL = 15000;
-    const FOOTER_BASE = 'IA Generativa e Media \u00b7 A.A. 2025/2026';
+    var FOOTER_BASE = null; // read from the deck's own footer on first poll (year-agnostic)
 
     var codeSpan = document.createElement('span');
     codeSpan.className = 'attendance-code';
@@ -29,6 +29,7 @@
           var code = csv.trim().replace(/^"|"$/g, '').trim();
           var footerP = getFooterEl();
           if (!footerP) return;
+          if (FOOTER_BASE === null) FOOTER_BASE = footerP.textContent.trim();
           if (code) {
             codeSpan.textContent = code;
             footerP.textContent = FOOTER_BASE + ' \u00b7 ';

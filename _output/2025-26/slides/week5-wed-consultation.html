@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<script src="week5-wed-consultation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="week5-wed-consultation_files/libs/quarto-html/tabby.min.js"></script>
+<script src="week5-wed-consultation_files/libs/quarto-html/popper.min.js"></script>
+<script src="week5-wed-consultation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="week5-wed-consultation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="week5-wed-consultation_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="week5-wed-consultation_files/libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <meta name="author" content="Fabio Giglietto">
+  <title>Consultazione Gruppi e Analisi Engagement</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="week5-wed-consultation_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="week5-wed-consultation_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="week5-wed-consultation_files/libs/revealjs/dist/theme/quarto-4568a255f1dd4dcb4198d602e8e59c3d.css">
+  <link href="week5-wed-consultation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="week5-wed-consultation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="week5-wed-consultation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="week5-wed-consultation_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Consultazione Gruppi e Analisi Engagement</h1>
+  <p class="subtitle">IA Generativa e Media — Settimana 6</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Fabio Giglietto 
+</div>
+        <p class="quarto-title-affiliation">
+            DISCUI · Università degli Studi di Urbino Carlo Bo
+          </p>
+    </div>
+</div>
+
+  <p class="date">30 marzo 2026</p>
+</section>
+<section id="roadmap-della-sessione" class="slide level2">
+<h2>Roadmap della sessione</h2>
+<ol type="1">
+<li><strong>Stato di avanzamento</strong> — checklist aggiornata</li>
+<li><strong>Analisi di engagement</strong> — categorie come variabile indipendente</li>
+<li><strong>Statistiche descrittive e visualizzazione</strong> — cosa calcolare e come rappresentarlo</li>
+<li><strong>Consultazioni individuali</strong> — ogni gruppo presenta risultati e analisi</li>
+<li><strong>Preparazione per la scrittura</strong> — verso il workshop di domani</li>
+</ol>
+<aside class="notes">
+<p>Sessione con due anime: una parte collettiva (analisi engagement, statistiche descrittive) e una parte individuale (consultazioni per gruppo). L’analisi di engagement è il nuovo contenuto di oggi: i gruppi hanno le classificazioni validate e ora devono collegarle alle metriche del CSV. Le consultazioni servono per verificare lo stato di avanzamento, discutere i risultati preliminari e preparare la transizione alla fase di scrittura. Circa 10-15 minuti per gruppo nelle consultazioni.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="stato-di-avanzamento" class="slide level2" data-background-color="#C5612E">
+<h2>Stato di Avanzamento</h2>
+<aside class="notes">
+<p>Sezione di verifica dello stato di avanzamento. Prima di iniziare le consultazioni individuali, verificare collettivamente a che punto sono i gruppi.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="il-vostro-pipeline-a-che-punto-siete" class="slide level2 smaller">
+<h2>Il vostro pipeline: a che punto siete?</h2>
+<p>Usando il <strong>vocabolario della pipeline LLMs-in-the-loop</strong> che conoscete dal seminario Paroni:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 41%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fase</th>
+<th>Stato atteso</th>
+<th>Verificare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Step 1 — Classificazione binaria</strong></td>
+<td>Completata</td>
+<td>420 post: AI slop / Non AI slop</td>
+</tr>
+<tr class="even">
+<td><strong>Step 1 — Validazione</strong></td>
+<td>Completata</td>
+<td>Kappa ≥ 0.60 sulla codifica binaria</td>
+</tr>
+<tr class="odd">
+<td><strong>Step 2 — Classificazione tematica</strong></td>
+<td>Completata</td>
+<td>Tutti gli AI slop classificati con le vostre categorie</td>
+</tr>
+<tr class="even">
+<td><strong>Step 2 — Validazione</strong></td>
+<td>Completata</td>
+<td>Kappa ≥ 0.60 sulle categorie tematiche</td>
+</tr>
+<tr class="odd">
+<td><strong>Codebook + Prompt</strong></td>
+<td>Documentati</td>
+<td>Definizioni Step 1 + Step 2, prompt con one-shot</td>
+</tr>
+<tr class="even">
+<td><strong>Analisi engagement</strong></td>
+<td><strong>Da iniziare oggi</strong></td>
+<td>Categorie tematiche (VI) → metriche engagement (VD)</td>
+</tr>
+<tr class="odd">
+<td><strong>Bozza relazione</strong></td>
+<td>Da iniziare</td>
+<td>Outline IMRaD</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Checklist aggiornata per la pipeline a due step. Lo Step 1 (binario: AI slop / non AI slop) e lo Step 2 (tematico: le categorie di ogni gruppo) dovrebbero essere entrambi completati e validati. Il codebook dovrebbe contenere le definizioni per entrambi gli step, il tab PROMPT le versioni dei prompt usati. L’analisi di engagement è la novità di oggi: si usano le categorie tematiche validate come variabile indipendente e le metriche di engagement dal CSV come variabile dipendente. I gruppi che non hanno completato la validazione devono farlo con priorità.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="analisi-di-engagement" class="slide level2" data-background-color="#C5612E">
+<h2>Analisi di Engagement</h2>
+<aside class="notes">
+<p>Sezione centrale: come analizzare i pattern di engagement per categoria di contenuto. Questo è il passaggio analitico chiave del progetto — trasformare la classificazione in risultati interpretabili.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-domanda-di-ricerca-centrale" class="slide level2">
+<h2>La domanda di ricerca centrale</h2>
+<div class="highlight-box">
+<p><strong>Le categorie tematiche di AI slop predicono livelli diversi di engagement?</strong></p>
+<p>Le categorie validate dallo Step 2 (variabile indipendente) → metriche di engagement dal CSV (variabile dipendente).</p>
+</div>
+<p>Il dataset integrato contiene per ogni post AI slop:</p>
+<ul>
+<li><strong>Classificazione tematica:</strong> la categoria assegnata (e validata) dallo Step 2</li>
+<li><strong>Reazioni:</strong> numero di reaction al post</li>
+<li><strong>Condivisioni:</strong> numero di share</li>
+<li><strong>Visualizzazioni:</strong> numero di views</li>
+<li><strong>N. commenti:</strong> conteggio dei commenti (non il testo)</li>
+</ul>
+<aside class="notes">
+<p>Questa è la struttura analitica del progetto. Le categorie tematiche dello Step 2 — validate attraverso il protocollo umano-IA — diventano la variabile indipendente. Le metriche di engagement dal CSV diventano le variabili dipendenti. La domanda è semplice ma potente: diversi tipi di immagini AI-generated generano livelli diversi di engagement? Questo si collega direttamente al framework di Terenzi e Giglietto (2025) sull’AI slop come engagement bait strategico. Nota importante: abbiamo i conteggi dei commenti ma non il testo dei singoli commenti — questo è una limitazione da riportare nel relazione.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="statistiche-descrittive-cosa-calcolare" class="slide level2">
+<h2>Statistiche descrittive: cosa calcolare</h2>
+<p>Per ogni <strong>categoria</strong> del vostro schema di classificazione:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Statistica</th>
+<th>Cosa misura</th>
+<th>Come calcolarla</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>N (frequenza)</strong></td>
+<td>Quante immagini in questa categoria</td>
+<td>Conteggio</td>
+</tr>
+<tr class="even">
+<td><strong>Media</strong></td>
+<td>Engagement medio</td>
+<td>MEDIA() in Sheets</td>
+</tr>
+<tr class="odd">
+<td><strong>Mediana</strong></td>
+<td>Valore centrale (robusta agli outlier)</td>
+<td>MEDIANA() in Sheets</td>
+</tr>
+<tr class="even">
+<td><strong>Dev. standard</strong></td>
+<td>Variabilità dell’engagement</td>
+<td>DEV.ST() in Sheets</td>
+</tr>
+<tr class="odd">
+<td><strong>Min / Max</strong></td>
+<td>Intervallo dei valori</td>
+<td>MIN() / MAX() in Sheets</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Suggerimento</strong></p>
+</div>
+<div class="callout-content">
+<p>Usate la <strong>mediana</strong> piuttosto che la media per i confronti tra categorie: l’engagement sui social media ha distribuzioni molto <strong>asimmetriche</strong> con pochi post virali che distorcono la media.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Istruzioni pratiche per le statistiche descrittive. Gli studenti possono calcolare tutto in Google Sheets senza bisogno di strumenti statistici avanzati. La mediana è raccomandata perché l’engagement sui social media segue tipicamente una distribuzione a coda lunga: pochi post ricevono moltissimo engagement e la maggior parte ne riceve poco. In questi casi la media è distorta dai valori estremi. La deviazione standard indica quanto è variabile l’engagement nella categoria — una alta variabilità potrebbe indicare che la categoria contiene immagini molto eterogenee. I gruppi possono anche usare Gemini per calcolare e interpretare queste statistiche caricando il foglio.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="esempio-tabella-riassuntiva-per-categoria" class="slide level2" data-background-color="#C5612E">
+<h2>Esempio: tabella riassuntiva per categoria</h2>
+<aside class="notes">
+<p>Esempio concreto di come presentare i risultati dell’analisi di engagement. Tabella illustrativa con dati fittizi.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="engagement-per-categoria-un-esempio" class="slide level2">
+<h2>Engagement per categoria: un esempio</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 4%">
+<col style="width: 27%">
+<col style="width: 31%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Categoria</th>
+<th style="text-align: center;">N</th>
+<th style="text-align: center;">Reazioni (mediana)</th>
+<th style="text-align: center;">Condivisioni (mediana)</th>
+<th style="text-align: center;">Views (mediana)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Bambini</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">890</td>
+<td style="text-align: center;">245</td>
+<td style="text-align: center;">12.400</td>
+</tr>
+<tr class="even">
+<td>Animali</td>
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">720</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">9.800</td>
+</tr>
+<tr class="odd">
+<td>Religioso</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">1.450</td>
+<td style="text-align: center;">520</td>
+<td style="text-align: center;">18.600</td>
+</tr>
+<tr class="even">
+<td>Nostalgia</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">980</td>
+<td style="text-align: center;">380</td>
+<td style="text-align: center;">14.200</td>
+</tr>
+<tr class="odd">
+<td>Paesaggi</td>
+<td style="text-align: center;">58</td>
+<td style="text-align: center;">540</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">6.500</td>
+</tr>
+</tbody>
+</table>
+<p><em>Dati esemplificativi — ogni gruppo avrà categorie e valori diversi.</em></p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Da discutere</strong></p>
+</div>
+<div class="callout-content">
+<p>Perché le immagini religiose potrebbero avere engagement più alto? Quali <strong>dinamiche di piattaforma</strong> e quali <strong>strategie emotive</strong> sono in gioco <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span>?</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Esempio puramente illustrativo. Notare come la tabella rivela immediatamente un pattern: le immagini religiose hanno engagement mediano molto superiore — quasi il triplo dei paesaggi per condivisioni. Questo tipo di risultato richiede interpretazione nella Discussione del relazione: perché? Le ipotesi possibili includono: (1) contenuto religioso attiva risposte emotive più forti (identità, valori), (2) le community religiose su Facebook sono molto attive nella condivisione, (3) gli algoritmi di Meta amplificano contenuti con alto engagement iniziale. Collegare a Ferrara (2026): l’AI slop religioso sfrutta la “credulity” degli utenti e la “epistemic insecurity” per massimizzare l’engagement.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="visualizzare-i-pattern" class="slide level2">
+<h2>Visualizzare i pattern</h2>
+<p>Rappresentazioni utili per il relazione:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="grafici-consigliati">Grafici consigliati</h3>
+<ul>
+<li><strong>Bar chart</strong> con mediane per categoria (il più chiaro)</li>
+<li><strong>Box plot</strong> per mostrare la distribuzione completa</li>
+<li>Separare le <strong>diverse metriche</strong> (reazioni, condivisioni, views)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="come-crearli">Come crearli</h3>
+<ul>
+<li><strong>Google Sheets:</strong> grafici a barre e box plot nativi</li>
+<li><strong>Gemini:</strong> descrivete i dati e chiedete suggerimenti di visualizzazione</li>
+<li><strong>R (opzionale):</strong> <code>ggplot2</code> con <code>theme_uniurb()</code> per grafici più raffinati</li>
+</ul>
+</div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Suggerimento</strong></p>
+</div>
+<div class="callout-content">
+<p>Ordinate le categorie per <strong>engagement decrescente</strong> nel grafico — rende il pattern immediatamente leggibile.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Suggerimenti pratici per la visualizzazione. Il bar chart con mediane è il formato più chiaro per il relazione: un grafico per ogni metrica di engagement (reazioni, condivisioni, views), con le categorie ordinate per valore decrescente. Il box plot è più informativo ma potrebbe essere troppo complesso per alcuni gruppi. Google Sheets permette di creare grafici a barre rapidamente; per il relazione, volendo, si possono raffinare con ggplot2 usando il tema DISCUI. Gemini può aiutare a interpretare i pattern e suggerire visualizzazioni alternative. L’importante è che i grafici siano chiari, leggibili e ordinati.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="consultazioni-individuali" class="slide level2" data-background-color="#C5612E">
+<h2>Consultazioni Individuali</h2>
+<aside class="notes">
+<p>Fase centrale della sessione. Incontrare ogni gruppo individualmente per 10-15 minuti. Ogni gruppo presenta: classificazione validata, kappa, pattern di engagement preliminari, domande aperte.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="guida-alla-consultazione" class="slide level2">
+<h2>Guida alla consultazione</h2>
+<p>Per ogni gruppo, discuteremo:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="dati-e-validazione">Dati e validazione</h3>
+<ul>
+<li><strong>Step 1:</strong> proporzione AI slop, kappa binario</li>
+<li><strong>Step 2:</strong> distribuzione categorie, kappa tematico</li>
+<li>Matrici di confusione: dove sbaglia l’IA?</li>
+<li>Iterazioni effettuate?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="engagement-e-interpretazione">Engagement e interpretazione</h3>
+<ul>
+<li>Pattern di engagement per categoria</li>
+<li>Risultati attesi vs.&nbsp;risultati osservati</li>
+<li>Collegamento con i framework teorici</li>
+<li>Limitazioni da riportare nel relazione</li>
+</ul>
+</div></div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Suggerimento</strong></p>
+</div>
+<div class="callout-content">
+<p>Preparate la vostra presentazione in <strong>5 minuti</strong>: kappa, categorie principali, un pattern di engagement interessante, una domanda per il docente.</p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Istruzioni operative per le consultazioni. Ogni gruppo ha circa 10-15 minuti. La novità rispetto alle consultazioni tradizionali è che oggi si discutono anche i risultati dell’analisi di engagement. Domande chiave per ogni gruppo: (1) la classificazione è affidabile (kappa ≥ 0.60)? (2) i pattern di engagement sono interpretabili? (3) c’è un collegamento chiaro tra le categorie e le dinamiche di piattaforma descritte da Terenzi &amp; Giglietto? (4) quali limitazioni vanno discusse (assenza dei commenti testuali, singola piattaforma, dataset pre-curato)?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="collegamento-teoria-dati" class="slide level2">
+<h2>Collegamento teoria-dati</h2>
+<div class="orange-box">
+<p><strong>Domanda chiave</strong></p>
+<p>I vostri risultati empirici <strong>dialogano</strong> con i framework teorici del corso? Non basta presentare i dati: occorre interpretarli.</p>
+</div>
+<p>Framework teorici da collegare ai risultati:</p>
+<ul>
+<li><strong>Realtà sintetica</strong> a strati <span class="citation" data-cites="ferrara2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Ferrara, 2026</a>)</span> — l’AI slop come livello base della manipolazione</li>
+<li><strong>Sistema mediale ibrido</strong> <span class="citation" data-cites="chadwick2011">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Chadwick, 2011</a>)</span> — come si inserisce nel ciclo informativo?</li>
+<li><strong>Incertezza epistemica</strong> <span class="citation" data-cites="vaccari2020">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Vaccari &amp; Chadwick, 2020</a>)</span> — l’engagement riflette consapevolezza o credulità?</li>
+</ul>
+<aside class="notes">
+<p>Problema tipico degli studenti: raccolgono dati e li presentano, ma non li collegano alla teoria. Nel relazione, la sezione Discussione deve collegare esplicitamente i risultati ai framework teorici studiati nel corso. Esempio: se le immagini con bambini hanno engagement altissimo, collegare a Ferrara (2026) sulla manipolazione emotiva e alla credulity nell’era delle realtà sintetiche. Se le condivisioni variano più delle reazioni, collegare a Chadwick (2011) sui meccanismi di circolazione nel sistema mediale ibrido. Se le immagini con artefatti visivi evidenti hanno meno engagement, collegare a Vaccari &amp; Chadwick (2020) sulla capacità degli utenti di riconoscere contenuti sintetici.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="preparazione-per-la-prossima-settimana" class="slide level2" data-background-color="#C5612E">
+<h2>Preparazione per la Prossima Settimana</h2>
+<aside class="notes">
+<p>Sezione finale: preparazione per la settimana di scrittura.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="timeline-una-settimana-alla-scrittura" class="slide level2">
+<h2>Timeline: una settimana alla scrittura</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 43%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>Attività</th>
+<th>Stato</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><del>Mar 24 Mar</del></td>
+<td>Step 1: codifica binaria + Gemini</td>
+<td>Fatto</td>
+</tr>
+<tr class="even">
+<td><del>Mer 25 Mar</del></td>
+<td>Validazione Step 1 + Step 2 tematico</td>
+<td>Fatto</td>
+</tr>
+<tr class="odd">
+<td><strong>Lun 30 Mar</strong></td>
+<td><strong>Consultazione + analisi engagement (oggi)</strong></td>
+<td><strong>In corso</strong></td>
+</tr>
+<tr class="even">
+<td>Mar 31 Mar</td>
+<td><strong>Workshop di scrittura</strong></td>
+<td>Prossima</td>
+</tr>
+<tr class="odd">
+<td>Mer 1 Apr</td>
+<td>Lavoro di gruppo: stesura relazione</td>
+<td>Settimana 6</td>
+</tr>
+<tr class="even">
+<td>Lun 13 Apr</td>
+<td>Sintesi del corso — confronto inter-gruppo</td>
+<td>Ultima sessione</td>
+</tr>
+<tr class="odd">
+<td>2 sett. prima appello</td>
+<td><strong>Consegna relazione</strong></td>
+<td>Scadenza</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<p><strong>Da portare al workshop di domani:</strong></p>
+<ul>
+<li>Risultati consolidati: classificazione validata + analisi engagement</li>
+<li>Una bozza di <strong>outline del relazione</strong> (titolo, domanda di ricerca, sezioni principali)</li>
+<li>Le letture del corso più rilevanti per la vostra domanda di ricerca</li>
+</ul>
+</div>
+<aside class="notes">
+<p>Riepilogo della timeline. Da domani si scrive. Il workshop di scrittura fornirà la struttura del relazione (formato IMRaD revisionato per il progetto) e strategie per usare NotebookLM nella fase di redazione. I gruppi devono arrivare con i risultati dell’analisi consolidati e una bozza di outline. Chi non ha completato l’analisi di engagement deve farlo stasera. I prossimi giorni sono dedicati alla scrittura: non ci sarà tempo per tornare sui dati. La sessione del 13 aprile includerà il confronto inter-gruppo: come schemi di classificazione diversi rivelano pattern diversi nelle stesse immagini.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="grazie" class="slide level2" data-background-color="#C5612E">
+<h2>Grazie!</h2>
+<p><strong>Prossima lezione:</strong> Workshop di Scrittura (31 Marzo 2026)</p>
+<p>📧 fabio.giglietto@uniurb.it</p>
+<p>🌐 blended.uniurb.it</p>
+<aside class="notes">
+<p>Chiusura. Ricordare: (1) completare l’analisi di engagement se non ancora fatta, (2) preparare l’outline del relazione per domani (titolo, domanda di ricerca, 2-3 punti per ogni sezione IMRaD), (3) rileggere le letture del corso rilevanti per la propria domanda di ricerca — in particolare Ferrara (2026) per la Discussione. A domani per il workshop di scrittura!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="riferimenti" class="slide level2 smaller scrollable">
+<h2>Riferimenti</h2>
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-chadwick2011" class="csl-entry" role="listitem">
+Chadwick, A. (2011). <em>The Hybrid Media System</em> [Manoscritto].
+</div>
+<div id="ref-ferrara2026" class="csl-entry" role="listitem">
+Ferrara, E. (2026). <em>The Generative <span>AI</span> Paradox: <span>GenAI</span> and the Erosion of Trust, the Corrosion of Information Verification, and the Demise of Truth</em> [Manoscritto].
+</div>
+<div id="ref-vaccari2020" class="csl-entry" role="listitem">
+Vaccari, C., &amp; Chadwick, A. (2020). Deepfakes and Disinformation: Exploring the Impact of Synthetic Political Video on Deception, Uncertainty, and Trust in News. <em>Social Media + Society</em>, <em>6</em>(1), 1–13. <a href="https://doi.org/10.1177/2056305120903408">https://doi.org/10.1177/2056305120903408</a>
+</div>
+</div>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../assets/logo-nh-uniurb.svg" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>IA Generativa e Media · A.A. 2025/2026</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="week5-wed-consultation_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="week5-wed-consultation_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': true,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'pdfMaxPagesPerSlide': 1,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: false,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: false,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 8.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <style>
+      .attendance-code {
+        font-weight: bold;
+        font-family: monospace;
+      }
+      @media print {
+        .attendance-code { display: none !important; }
+      }
+    </style>
+    <script>
+      (function() {
+        const SHEET_URL = 'https://docs.google.com/spreadsheets/d/16esB9eA2yhu4AVwvLbjZJq-DClcWVg23aUtwEyax0fA/gviz/tq?tqx=out:csv&range=A1';
+        const POLL_INTERVAL = 15000;
+        const FOOTER_BASE = 'IA Generativa e Media \u00b7 A.A. 2025/2026';
+
+        var codeSpan = document.createElement('span');
+        codeSpan.className = 'attendance-code';
+
+        function getFooterEl() {
+          return document.querySelector('.footer.footer-default p');
+        }
+
+        var timerId = null;
+
+        function poll() {
+          fetch(SHEET_URL + '&_=' + Date.now())
+            .then(function(r) { return r.text(); })
+            .then(function(csv) {
+              var code = csv.trim().replace(/^"|"$/g, '').trim();
+              var footerP = getFooterEl();
+              if (!footerP) return;
+              if (code) {
+                codeSpan.textContent = code;
+                footerP.textContent = FOOTER_BASE + ' \u00b7 ';
+                footerP.appendChild(codeSpan);
+              } else {
+                footerP.textContent = FOOTER_BASE;
+              }
+            })
+            .catch(function() {
+              // silently ignore — keep last known state
+            });
+        }
+
+        function startPolling() {
+          if (!timerId) {
+            poll();
+            timerId = setInterval(poll, POLL_INTERVAL);
+          }
+        }
+
+        function stopPolling() {
+          if (timerId) {
+            clearInterval(timerId);
+            timerId = null;
+          }
+        }
+
+        document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+            stopPolling();
+          } else {
+            startPolling();
+          }
+        });
+
+        startPolling();
+      })();
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiato!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiato!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

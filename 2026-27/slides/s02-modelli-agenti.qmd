@@ -1,0 +1,380 @@
+---
+title: "Dai modelli agli agenti"
+subtitle: "IA Generativa e Media — Incontro 2 · Modulo 1"
+date: "2026-10-08"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap della lezione
+
+1. **Come funziona un LLM** — in breve, quanto basta
+2. **Interlocutori, non intelligenze** — la lettura di Esposito
+3. **Che cos'è un agente** — obiettivi, strumenti, cicli, autonomia
+4. **Doppio uso** — gli stessi agenti al servizio dell'inganno
+5. **Che cosa delegare** — e che cosa controllare a mano
+
+::: {.notes}
+Ieri: la realtà sintetica come ambiente in cui contenuti, identità e interazioni sono fabbricati insieme. Oggi guardiamo lo strumento che rende possibile lo strato dell'interazione: i modelli linguistici e gli agenti costruiti sopra di essi. Domani li usiamo nel workshop.
+:::
+
+## Come funziona un LLM {background-color="#C5612E"}
+
+::: {.notes}
+Niente formule: ci serve un modello mentale sufficiente per capire perché gli output divergono dalle nostre intenzioni.
+:::
+
+## Tre fasi
+
+1. **Pre-addestramento** — il modello impara a prevedere la parola (il *token*) successiva su enormi quantità di testo
+2. **Messa a punto** (*fine-tuning*) — impara a seguire istruzioni e a dialogare
+3. **Allineamento con feedback umano** (*RLHF*) — le risposte preferite dalle persone vengono premiate
+
+::: {.highlight-box}
+Il risultato non "sa" che cosa è vero: produce la **continuazione più plausibile** dato il contesto.
+:::
+
+::: {.notes}
+Schema semplificato. Ogni fase coinvolge esseri umani diversi: chi ha scritto i testi di addestramento, chi ha scritto gli esempi di istruzioni, chi ha valutato le risposte. È il punto da cui parte Esposito: il comportamento del modello è il prodotto di più fonti umane che nessuno coordina.
+
+Domanda alla classe: se il modello produce la continuazione più plausibile, in quali casi plausibile e vero divergono?
+:::
+
+## Il contesto è tutto
+
+::: {.columns}
+::: {.column width="50%"}
+### Che cosa entra nel contesto
+- Il vostro **prompt**
+- La conversazione precedente
+- I **documenti** caricati
+- I risultati di una **ricerca**
+:::
+
+::: {.column width="50%"}
+### Perché conta
+- Il modello risponde a **ciò che vede**
+- Fonti migliori nel contesto → risposte **più ancorate**
+- Ma anche fonti scelte male vengono **usate con sicurezza**
+:::
+:::
+
+::: {.notes}
+La *context window* è la "memoria di lavoro" del modello. Tutti gli strumenti che vedremo domani (NotebookLM, Deep Research) funzionano mettendo nel contesto delle fonti: documenti vostri o pagine trovate sul web. È la tecnica chiamata RAG (*retrieval-augmented generation*), di cui parla anche Esposito.
+:::
+
+## Le allucinazioni non sono un guasto
+
+::: {.orange-box}
+Allucinazioni e disallineamento si possono **controllare**, ma sono **in principio ineliminabili**: non sono malfunzionamenti, sono conseguenze coerenti del modo in cui questi sistemi operano come **interlocutori** [@esposito2026].
+:::
+
+::: {.notes}
+Parafrasi dalle Conclusioni di Esposito ("why misalignment is inevitable and how to deal with it"). È un cambio di prospettiva importante: non aspettiamo il modello che non sbaglia mai, organizziamo il lavoro sapendo che sbaglierà. È la logica del protocollo di validazione che useremo nel progetto (modulo 3).
+:::
+
+## Interlocutori, non intelligenze {background-color="#C5612E"}
+
+::: {.notes}
+Lettura: Esposito (2026), Communication Theory 36(2), pp. 86–94. Parti assegnate: Introduzione, "LLMs as communication partners", Conclusioni. Articolo ad accesso aperto (CC BY).
+:::
+
+## Dall'intelligenza alla comunicazione
+
+- La domanda "è intelligente?" ci porta **fuori strada**
+- Più utile chiedersi: **con chi stiamo comunicando**, e a quali condizioni?
+- Scrittura, stampa, archivi, motori di ricerca: ci mettevano in contatto con **autori umani** lontani
+- Con gli LLM, l'**interlocutore è il sistema stesso**
+
+Adattato da @esposito2026
+
+::: {.notes}
+Esposito, sociologa di scuola luhmanniana, propone una lettura mediologica: gli LLM vanno capiti come una nuova forma di comunicazione, non come una nuova forma di intelligenza. Nella storia dei media, ogni tecnologia ha ampliato la cerchia dei nostri interlocutori (più persone, più lontane nel tempo e nello spazio), ma dall'altra parte c'era sempre un autore umano. Con gli LLM il partner della comunicazione è direttamente il sistema.
+
+Domanda: quando usate un chatbot, pensate di parlare con qualcuno o di interrogare qualcosa?
+:::
+
+## *Answer engines*
+
+::: {.columns}
+::: {.column width="50%"}
+### Motore di ricerca
+- Corrispondenza di **parole chiave**
+- Molti **link**
+- Il lettore sceglie e valuta le fonti
+:::
+
+::: {.column width="50%"}
+### *Answer engine*
+- Nessun elenco di link
+- **Una sola risposta** costruita su misura
+- La scelta delle fonti è **dentro il sistema**
+:::
+:::
+
+Adattato da @esposito2026
+
+::: {.notes}
+Esposito: gli LLM non sono motori di ricerca ma "answer engines", che non producono molti link ma una risposta singola e precisamente adattata (sezione "LLMs as communication partners").
+
+Implicazione per i media: il ruolo di intermediario si sposta. Prima la piattaforma ordinava fonti che restavano visibili; ora la risposta arriva già sintetizzata. Nel modulo 2 torniamo sul tema della fiducia verso i risultati generati (lettura consigliata: Sbaraini Fontes & Splendore, 2026).
+:::
+
+## Tre fonti di disallineamento
+
+::: {.highlight-box}
+Il comportamento del sistema è il risultato combinato di **tre fonti umane distinte**: i **dati di addestramento**, i **prompt degli utenti**, la **messa a punto** [@esposito2026].
+:::
+
+- Nessuno le coordina in anticipo
+- Per questo l'output può divergere dall'intenzione di **ciascuna** di esse
+
+::: {.notes}
+Dalle Conclusioni di Esposito. Esempio da discutere: chiedo al modello di classificare un commento come "credulo" o "incredulo". I dati di addestramento portano certe associazioni, il mio prompt (il codebook) ne porta altre, la messa a punto spinge verso risposte prudenti o compiacenti. Il risultato può non corrispondere a nessuna delle tre intenzioni.
+
+Questo è esattamente il motivo per cui nel progetto non ci fidiamo del codificatore automatico: lo validiamo con una codifica umana e con il kappa di Cohen.
+:::
+
+## Scegliere l'interlocutore
+
+> "As in human communication, choosing an interlocutor whom we trust does not rule out deception or misunderstanding"
+>
+> — @esposito2026
+
+- Sistemi che rispondono da **fonti selezionate** (RAG) rendono gli errori **meno probabili**
+- In alcuni casi conta **chi** ha detto qualcosa e **come**, non solo **che cosa**
+
+::: {.notes}
+Esposito prosegue: scegliere un interlocutore fidato non esclude l'inganno, ma lo rende meno probabile. Il suo esempio contrappone fonti specialistiche (una banca dati medica) e fonti generiche (un forum). Domani con NotebookLM scegliamo noi le fonti del notebook.
+
+Il secondo punto (sezione sui modelli RAG): in comunicazioni personali, scientifiche o artistiche conta anche chi parla e come. Lo useremo nel progetto: nei commenti, il pubblico tratta l'autore come rilevante o irrilevante? ("se condivido un avatar IA, che cosa cambia?")
+:::
+
+## Una tensione da tenere aperta {background-color="#C5612E"}
+
+Il rimedio di Esposito presuppone che sappiamo di parlare con un **sistema artificiale**.
+
+I personaggi del nostro caso sono sistemi artificiali presentati come **autori umani**.
+
+::: {.notes}
+Questa è un'estensione nostra, non una tesi di Esposito: il suo articolo non tratta personaggi ingannevoli. Ma il contrasto con Ferrara è utile. Esposito dice: scegli il tuo interlocutore. Ferrara dice: nella realtà sintetica, l'identità dell'interlocutore è essa stessa fabbricata (strato 2). Se non so chi è il mio interlocutore, non posso sceglierlo.
+
+Domanda per la discussione: quali segnali usate, di solito, per decidere se un profilo è una persona reale?
+:::
+
+## Che cos'è un agente {background-color="#C5612E"}
+
+::: {.notes}
+Il tema nuovo di quest'anno. Costruiamo una definizione operativa, sufficiente per decidere che cosa delegare.
+:::
+
+## Dal chatbot all'agente
+
+| | Chatbot | Agente |
+|---|---|---|
+| **Input** | una domanda | un **obiettivo** |
+| **Che cosa fa** | risponde | **pianifica** e compie una serie di passi |
+| **Strumenti** | nessuno o pochi | ricerca web, browser, file, codice, app |
+| **Ciclo** | domanda → risposta | agisci → osserva → correggi → ripeti |
+| **Chi controlla** | voi, a ogni turno | voi, **all'inizio e alla fine** (se va bene) |
+
+::: {.notes}
+Definizione di lavoro per il corso: un agente è un modello linguistico con un obiettivo, degli strumenti e un ciclo di pianificazione che gli permette di agire in più passi con una certa autonomia.
+
+L'ultima riga è la più importante: con un agente il controllo umano si sposta. Non verificate ogni passo, verificate il risultato. Ecco perché la policy del corso chiede un registro di che cosa ha fatto l'agente.
+:::
+
+## Livelli di autonomia
+
+1. **Assistente** — risponde, voi decidete e agite
+2. **Assistente con strumenti** — cerca e legge per voi, poi risponde
+3. **Agente supervisionato** — esegue un compito in più passi, voi approvate le azioni importanti
+4. **Agente autonomo** — agisce senza approvazione, anche su sistemi esterni
+5. **Più agenti coordinati** — si dividono i compiti e interagiscono tra loro
+
+::: {.notes}
+Una scala didattica, non una classificazione standard. Serve a porre la domanda giusta: a quale livello sono disposto a far lavorare un sistema per questo compito?
+
+Domani lavoriamo ai livelli 2 e 3 (Deep Research in Gemini, NotebookLM). Nel progetto il codificatore automatico lavora al livello 2: legge un commento, applica il codebook, risponde. Le decisioni restano a voi.
+:::
+
+## Esempio: agenti che replicano la ricerca
+
+::: {.highlight-box}
+Due agenti di programmazione hanno provato a **riprodurre studi di scienze sociali** partendo dai materiali di replicazione: **93,4%** contro **62,1%** di compiti riusciti [@alizadeh2026].
+:::
+
+- La differenza non stava nel **ragionamento analitico**
+- Stava nella capacità di **riparare l'ambiente** quando qualcosa non funzionava
+
+::: {.notes}
+Alizadeh et al. (2026), working paper non ancora sottoposto a revisione. Confronto tra Claude Code e Codex. A livello di articolo intero, 78,0% contro 35,8%. Dato ripreso dalla sintesi della nota nel mio archivio di letture: da verificare sul testo completo prima di approfondire.
+
+Perché ci interessa: mostra che cosa rende utile un agente. Non tanto "pensare meglio", quanto accorgersi che un passo è fallito e riprovare in un altro modo. È anche il punto in cui l'agente fa cose che non vedete.
+:::
+
+## Esempio: la ricerca approfondita
+
+- Voi date una **domanda di ricerca**
+- L'agente scrive un **piano**, cerca, apre e legge decine di pagine
+- Restituisce un **rapporto** con fonti citate
+
+::: {.callout-warning}
+## Attenzione
+Un rapporto ben scritto con molte citazioni **sembra** affidabile. È fiducia nell'**artefatto**: le fonti vanno aperte e controllate.
+:::
+
+::: {.notes}
+Funzioni di questo tipo esistono in Gemini (Deep Research) e in altri assistenti. Domani ne proviamo una.
+
+Collegamento con Ferrara (lezione di ieri): fiducia basata sull'artefatto contro fiducia basata sul processo. Il rapporto è l'artefatto; il processo è il registro di che cosa ha letto l'agente e il vostro controllo delle fonti.
+:::
+
+## Doppio uso {background-color="#C5612E"}
+
+::: {.notes}
+Gli stessi strumenti che usiamo per studiare servono anche a chi costruisce operazioni ingannevoli. È il ponte verso il nostro caso.
+:::
+
+## L'ingegneria sociale diventa automatica
+
+::: {.orange-box}
+Gli agenti conversazionali possono creare un rapporto, sondare l'incertezza, adattare il tono e guidare una persona attraverso una frode in più passi: l'inganno passa da **problema di contenuto** a **problema di processo interattivo** [@ferrara2026, §3.5].
+:::
+
+::: {.notes}
+Ferrara §3.5: l'ingegneria sociale classica richiede molto lavoro umano; con l'IA generativa l'interazione stessa si automatizza. Le relazioni manipolative possono durare nel tempo, mescolando sostegno emotivo, prove selezionate e un impegno crescente.
+
+Pensate ai personaggi del caso: un volto che risponde ai commenti, che dà consigli di vita ogni giorno, che costruisce una relazione. Il negozio arriva dopo.
+:::
+
+## Sciami di agenti
+
+::: {.columns}
+::: {.column width="50%"}
+### Sciami malevoli
+Più agenti coordinati possono sostenere operazioni di influenza **persistenti e adattive**, su più piattaforme, e fabbricare un **consenso sintetico** [@schroeder2026]
+:::
+
+::: {.column width="50%"}
+### In simulazione
+Agenti LLM in rete riproducono **da soli** meccanismi di coordinamento tipici delle operazioni informative reali [@orlando2025]
+:::
+:::
+
+::: {.notes}
+Schroeder et al. (2026): il salto qualitativo rispetto alle botnet è la combinazione di ragionamento dei modelli e sistemi multi-agente. Il rischio per la democrazia è il consenso sintetico, che mina l'indipendenza di giudizio su cui si basa la "saggezza della folla".
+
+Orlando et al. (2025), working paper: in un ambiente simulato, agenti con più consapevolezza operativa rafforzano coesione della rete, convergenza narrativa, amplificazione sincronizzata. Nessuno ha detto loro come coordinarsi.
+
+Collegamento con lo strato 3 di Ferrara (interazione) e con la riprova sociale: nei commenti del nostro caso cercheremo anche commenti probabilmente sintetici.
+:::
+
+## Che cosa delegare {background-color="#C5612E"}
+
+::: {.notes}
+Chiudiamo con una domanda pratica, che riprendiamo domani nel workshop con una matrice di delega.
+:::
+
+## Quattro domande prima di delegare
+
+1. **Posso verificare** il risultato? Quanto mi costa farlo?
+2. L'azione è **reversibile**?
+3. Che cosa succede **se sbaglia**, e a chi?
+4. L'agente deve **agire su account o persone** reali?
+
+::: {.highlight-box}
+Più le risposte sono "no", "no", "molto grave", "sì", più il controllo deve restare **umano**.
+:::
+
+::: {.notes}
+Queste quattro domande sono la base della matrice di delega di domani. Esempi da discutere con la classe:
+- riassumere un articolo che ho davanti: verificabile, reversibile, basso rischio → delegabile;
+- trovare fonti su un tema: verificabile ma costoso → delegabile con controllo delle fonti;
+- scrivere e pubblicare un commento su un account studiato: non reversibile, agisce su persone reali → vietato nel corso.
+
+Riprendere le risposte degli studenti alla domanda del questionario su che cosa delegherebbero a un agente.
+:::
+
+## La nostra regola: *LLMs-in-the-loop*
+
+::: {.columns}
+::: {.column width="50%"}
+### L'LLM fa
+- Applica il codebook a **tanti** commenti e post
+- Descrive immagini
+- Aiuta a cercare e organizzare
+:::
+
+::: {.column width="50%"}
+### Le persone fanno
+- Scrivono e rivedono il **codebook**
+- Codificano **in cieco** un campione
+- Misurano l'accordo (**kappa**) e decidono
+:::
+:::
+
+Protocollo: @marino2024
+
+::: {.notes}
+Anteprima del metodo del progetto (lo vediamo per intero nel modulo 3). L'LLM è nel ciclo, non al posto delle persone. Le tre fonti di disallineamento di Esposito spiegano perché serve la validazione: il modello può divergere dal codebook anche se il prompt è scritto bene.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Riepilogo e preparazione del workshop.
+:::
+
+## Concetti chiave di oggi
+
+- Un LLM produce la **continuazione più plausibile**, non la più vera
+- Gli LLM sono **interlocutori**; il disallineamento viene da **tre fonti umane** [@esposito2026]
+- Un **agente** ha un obiettivo, strumenti e un ciclo; il controllo si sposta **alla fine**
+- **Doppio uso**: gli stessi agenti automatizzano l'inganno [@ferrara2026; @schroeder2026]
+- Delegare dipende da **verificabilità**, **reversibilità**, **rischio**, **azione su persone**
+
+::: {.notes}
+Riepilogo. Domani trasformiamo le quattro domande in pratica.
+:::
+
+## Per la prossima lezione
+
+**Domani, venerdì 9 ottobre, ore 9:00:** Workshop con Gemini e NotebookLM
+
+- Portate un **portatile** (il telefono basta a fatica)
+- Verificate l'accesso con l'account `@uniurb.it`
+- Scaricate i PDF di @ferrara2026 ed @esposito2026 (link nella pagina Letture su Moodle)
+- Ultimo giorno per l'**iscrizione a Moodle**
+
+::: {.notes}
+Attenzione all'orario: il venerdì si comincia alle 9. I PDF servono per costruire il notebook del corso in NotebookLM.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Workshop: lavorare con gli agenti (9 ottobre 2026, ore 9:00)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

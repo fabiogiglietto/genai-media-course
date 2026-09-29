@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Generativa e Media — A.A. 2026/2027</title>
+  <style>
+    :root {
+      --primary: #E06029;
+      --dark: #C5612E;
+      --blue: #294973;
+      --bg: #F2F2F2;
+      --light: #F2A7A0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: var(--blue);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+    header p { opacity: 0.85; font-size: 1.1rem; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .week {
+      margin-bottom: 2rem;
+    }
+    .week-header {
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px 8px 0 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .session-list {
+      background: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+    .session {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.15s;
+    }
+    .session:last-child { border-bottom: none; }
+    .session:hover { background: #FFF5F0; }
+    .session-date {
+      min-width: 80px;
+      font-size: 0.85rem;
+      color: #888;
+      font-weight: 500;
+    }
+    .session-title { flex: 1; font-weight: 500; }
+    .session-type {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      background: #f0f0f0;
+      color: #666;
+      margin-left: 0.8rem;
+      white-space: nowrap;
+    }
+    .session-type.lecture { background: var(--blue); color: white; }
+    .session-type.workshop { background: var(--primary); color: white; }
+    .session-type.lab { background: #4a9; color: white; }
+    .session-type.consultation { background: #888; color: white; }
+    .session-type.closing { background: var(--dark); color: white; }
+    .arrow { color: var(--primary); margin-left: 0.5rem; font-size: 1.2rem; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #888;
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--primary); }
+    .guest-note {
+      padding: 0.7rem 1.2rem;
+      color: #888;
+      font-style: italic;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+    }
+      .muted { color:#999; }
+    .session.pending { cursor: default; }
+    .session.pending:hover { background: white; }
+    .year-card { display:block; background:white; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); padding:1.4rem 1.6rem; margin-bottom:1.2rem; text-decoration:none; color:#333; border-left:6px solid var(--primary); }
+    .year-card:hover { background:#FFF5F0; }
+    .year-card h2 { color: var(--primary); font-size:1.3rem; margin-bottom:0.3rem; }
+    .year-card.past { border-left-color: #bbb; }
+    .year-card.past h2 { color:#666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>IA Generativa e Media</h1>
+    <p>Prof. Fabio Giglietto · DISCUI · Università degli Studi di Urbino Carlo Bo · A.A. 2026/2027</p>
+  </header>
+  <div class="container">
+
+    <div class="week">
+      <div class="week-header">Modulo 1 — Dall'IA generativa agli agenti (7–9 ottobre)</div>
+      <div class="session-list">
+        <a class="session" href="slides/s01-introduzione.html">
+          <span class="session-date">Mer 7</span>
+          <span class="session-title">Introduzione: la realtà sintetica</span>
+          <span class="session-type lecture">Lezione</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/s02-modelli-agenti.html">
+          <span class="session-date">Gio 8</span>
+          <span class="session-title">Dai modelli agli agenti</span>
+          <span class="session-type lecture">Lezione</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="session" href="slides/s03-workshop-agenti.html">
+          <span class="session-date">Ven 9</span>
+          <span class="session-title">Workshop: lavorare con gli agenti</span>
+          <span class="session-type workshop">Workshop</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Modulo 2 — Identità, persuasione e regole (21–28 ottobre)</div>
+      <div class="session-list">
+        <div class="session pending">
+          <span class="session-date">Mer 21</span>
+          <span class="session-title muted">Personaggi sintetici e media parasociali · in preparazione</span>
+          <span class="session-type lecture">Lezione</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Ven 23</span>
+          <span class="session-title muted">Driver di persuasione e trasferimento di fiducia · in preparazione</span>
+          <span class="session-type lecture">Lezione</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Mer 28</span>
+          <span class="session-title muted">Trasparenza e regole · in preparazione</span>
+          <span class="session-type lecture">Lezione</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Modulo 3 — Il caso e il metodo (29 ottobre – 4 novembre)</div>
+      <div class="session-list">
+        <div class="guest-note">Gio 29 — Seminario ospite: Massimo Terenzi</div>
+        <div class="session pending">
+          <span class="session-date">Ven 30</span>
+          <span class="session-title muted">Operazioni informative ingannevoli · in preparazione</span>
+          <span class="session-type lecture">Lezione</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Mer 4</span>
+          <span class="session-title muted">Il protocollo di validazione · in preparazione</span>
+          <span class="session-type workshop">Workshop</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Modulo 4 — Avvio del progetto (5–11 novembre)</div>
+      <div class="session-list">
+        <div class="session pending">
+          <span class="session-date">Gio 5</span>
+          <span class="session-title muted">Lancio del progetto · in preparazione</span>
+          <span class="session-type workshop">Workshop</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Ven 6</span>
+          <span class="session-title muted">Codifica dei personaggi · in preparazione</span>
+          <span class="session-type lab">Lab</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Mer 11</span>
+          <span class="session-title muted">Codebook e codifica pilota · in preparazione</span>
+          <span class="session-type lab">Lab</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Modulo 5 — Codifica e validazione (12–18 novembre)</div>
+      <div class="session-list">
+        <div class="session pending">
+          <span class="session-date">Gio 12</span>
+          <span class="session-title muted">Codifica umana in cieco · in preparazione</span>
+          <span class="session-type lab">Lab</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Ven 13</span>
+          <span class="session-title muted">Codifica con Gemini e kappa · in preparazione</span>
+          <span class="session-type lab">Lab</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Mer 18</span>
+          <span class="session-title muted">Il pubblico nei commenti · in preparazione</span>
+          <span class="session-type lab">Lab</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="week-header">Modulo 6 — Analisi e sintesi (19–25 novembre)</div>
+      <div class="session-list">
+        <div class="session pending">
+          <span class="session-date">Gio 19</span>
+          <span class="session-title muted">Danni e responsabilità · in preparazione</span>
+          <span class="session-type workshop">Workshop</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Ven 20</span>
+          <span class="session-title muted">Laboratorio di scrittura · in preparazione</span>
+          <span class="session-type workshop">Workshop</span>
+        </div>
+        <div class="session pending">
+          <span class="session-date">Mer 25</span>
+          <span class="session-title muted">Confronto tra gruppi e chiusura · in preparazione</span>
+          <span class="session-type closing">Chiusura</span>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center"><a href="../index.html" style="color:#E06029">← Tutti gli anni accademici</a></p>
+  </div>
+  <footer>
+    <p>📧 <a href="mailto:fabio.giglietto@uniurb.it">fabio.giglietto@uniurb.it</a> · 🌐 <a href="https://blended.uniurb.it">blended.uniurb.it</a></p>
+    <p style="margin-top: 0.5rem">Le slides sono realizzate con <a href="https://quarto.org/docs/presentations/revealjs/">Quarto reveal.js</a> · Licenza CC BY-NC-SA 4.0</p>
+  </footer>
+</body>
+</html>

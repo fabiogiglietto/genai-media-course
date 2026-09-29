@@ -1,29 +1,31 @@
 # IA Generativa e Media
 
-Slides del corso **IA Generativa e Media** (6 CFU), A.A. 2025/2026.
+Slide del corso **IA Generativa e Media** (6 CFU, 36 ore), Prof. Fabio Giglietto, DISCUI · Università degli Studi di Urbino Carlo Bo.
 
-**Docente:** Prof. Fabio Giglietto
-**Dipartimento:** DISCUI · Università degli Studi di Urbino Carlo Bo
-**Periodo:** 23 Febbraio – 1 Aprile 2026 (6 settimane, 18 incontri)
-**Programma:** [Scheda insegnamento](https://www.uniurb.it/insegnamenti-e-programmi/267958)
+Le slide sono online: **[fabiogiglietto.github.io/genai-media-course](https://fabiogiglietto.github.io/genai-media-course/)**
 
-## Slides
+## Anni accademici
 
-Le slides sono disponibili online: **[fabiogiglietto.github.io/genai-media-course](https://fabiogiglietto.github.io/genai-media-course/)**
+| A.A. | Periodo | Slide | Scheda |
+|------|---------|-------|--------|
+| **2026/2027** (in corso) | 7 ottobre – 25 novembre 2026 | [2026-27](https://fabiogiglietto.github.io/genai-media-course/2026-27/) | [Scheda insegnamento](https://www.uniurb.it/syllabi/270147) |
+| 2025/2026 | 23 febbraio – 1 aprile 2026 | [2025-26](https://fabiogiglietto.github.io/genai-media-course/2025-26/) | [Scheda insegnamento](https://www.uniurb.it/insegnamenti-e-programmi/267958) |
+
+## Struttura del repository
+
+- `2026-27/`, `2025-26/`: sorgenti e istruzioni di ciascun anno (`<anno>/CLAUDE.md`)
+- `_extensions/uniurb/`, `assets/`, `R/`, `references.bib`, `apa.csl`, `shared/`: risorse comuni a tutti gli anni
+- `_output/`: sito generato, pubblicato su GitHub Pages
+- `_output/slides/`: reindirizzamenti dai vecchi indirizzi 2025/26 (da non cancellare)
+
+Si genera solo l'anno in corso; gli anni passati restano congelati. Le regole complete sono in [`CLAUDE.md`](CLAUDE.md).
+
+```bash
+quarto render   # genera l'anno in corso in _output/<anno>/
+```
 
 Realizzate con [Quarto](https://quarto.org/) reveal.js e tema DISCUI.
 
-## Struttura del corso
-
-| Settimana | Focus |
-|-----------|-------|
-| 1 | Fondamenti dell'IA generativa |
-| 2 | Produzione, disinformazione e regolamentazione |
-| 3 | Seminario ospite: IA e comunicazione politica |
-| 4 | Lancio progetto e raccolta dati |
-| 5 | Analisi assistita dall'IA e validazione |
-| 6 | Scrittura e sintesi del corso |
-
 ## Licenza
 
-I contenuti delle slides sono rilasciati sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+I contenuti delle slide sono rilasciati sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).

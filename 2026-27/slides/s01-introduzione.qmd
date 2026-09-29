@@ -1,0 +1,490 @@
+---
+title: "Introduzione: la realtà sintetica"
+subtitle: "IA Generativa e Media — Incontro 1 · Modulo 1"
+date: "2026-10-07"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap della lezione
+
+1. **Il corso** — struttura, regole, valutazione
+2. **Da dove partiamo** — questionario e test di riconoscimento
+3. **Che cos'è l'IA generativa** — e perché quest'anno parliamo di **agenti**
+4. **La realtà sintetica** — contenuti, identità, interazioni, istituzioni
+5. **Il caso del corso** — autorità fabbricate su Instagram e TikTok
+
+::: {.notes}
+Oggi la prima parte è organizzativa (circa 35 minuti), poi facciamo il questionario e il test di riconoscimento (circa 15 minuti). Il resto della lezione introduce il concetto che ci accompagna per i primi due moduli: la realtà sintetica di Ferrara. Chiudiamo con un'anteprima del caso su cui lavoreranno i gruppi.
+
+Oggi niente "This Week in AI": riprende venerdì.
+:::
+
+## Il corso {background-color="#C5612E"}
+
+::: {.notes}
+Sezione organizzativa. Tutte le informazioni sono anche nella scheda ufficiale del corso e nello spazio Moodle.
+:::
+
+## Il corso in sintesi
+
+| | |
+|---|---|
+| **Insegnamento** | IA Generativa e Media (6 CFU, 36 ore) |
+| **Docente** | Prof. Fabio Giglietto |
+| **Periodo** | 7 ottobre – 25 novembre 2026 |
+| **Orari** | Mer e Gio 11:00–13:00, Ven 9:00–11:00 |
+| **Strumenti IA** | Google Gemini e NotebookLM (account `@uniurb.it`) |
+| **Spazio del corso** | Moodle (blended.uniurb.it) |
+
+::: {.notes}
+Il corso è condiviso tra LM-59 (Comunicazione e Pubblicità per le Organizzazioni) e LM-92 (CoDiC). Siete al primo anno della magistrale: non do per scontata nessuna conoscenza tecnica.
+
+Niente lezioni dal 14 al 16 ottobre. Giovedì 22 ottobre è il Career Day. Nella settimana 2–7 novembre (prove intermedie) le lezioni continuano regolarmente.
+
+Verificate oggi stesso l'accesso a Gemini e NotebookLM con l'account istituzionale: venerdì ci serve.
+:::
+
+## Panoramica del corso
+
+- **18 incontri** × 2 ore = **36 ore**, tre incontri a settimana
+- **Moduli 1–3** (9 incontri): concetti, strumenti, il caso e il metodo
+- **Moduli 4–6** (9 incontri): progetto di gruppo, dalla codifica alla relazione
+- Un **seminario ospite**: Massimo Terenzi (LUISS), giovedì 29 ottobre
+- Ogni settimana (quando c'è spazio): **This Week in AI**
+
+::: {.notes}
+La prima metà costruisce gli strumenti concettuali e metodologici, la seconda li applica a un caso reale. Il seminario di Massimo Terenzi è il ponte tra le due parti: ci presenta il caso su cui lavoreremo.
+
+"This Week in AI" apre il primo incontro di ogni settimana: 10 minuti su una novità, con una domanda per la discussione.
+:::
+
+## I sei moduli
+
+| Modulo | Tema | Date |
+|--------|------|------|
+| **1** | Dall'IA generativa agli agenti | 7–9 ottobre |
+| **2** | Identità, persuasione e regole | 21–28 ottobre |
+| **3** | Il caso e il metodo | 29 ottobre – 4 novembre |
+| **4** | Avvio del progetto | 5–11 novembre |
+| **5** | Codifica e validazione | 12–18 novembre |
+| **6** | Analisi e sintesi | 19–25 novembre |
+
+::: {.notes}
+I moduli 1 e 2 seguono gli strati della realtà sintetica di Ferrara, che vediamo oggi: contenuti e interazioni (modulo 1), identità e istituzioni (modulo 2). Il modulo 3 introduce il caso e il protocollo di validazione LLMs-in-the-loop. I moduli 4–6 sono il progetto di gruppo.
+:::
+
+## Che cosa saprete fare
+
+- **Distinguere** modelli generativi e **agenti**, e capire perché i loro output divergono dalle nostre intenzioni
+- **Riconoscere** contenuti e personaggi probabilmente sintetici, e ricostruire il percorso **profilo → negozio**
+- **Costruire** un codebook e validare una codifica con un LLM (**kappa di Cohen**)
+- **Valutare** danni, responsabilità e regole di trasparenza
+- **Distinguere** l'evidenza dal sospetto, e la vostra sicurezza dalla vostra accuratezza
+
+::: {.notes}
+Sono i risultati di apprendimento della scheda ufficiale, riassunti (descrittori di Dublino: conoscenza, applicazione, autonomia di giudizio, comunicazione, capacità di apprendere).
+
+L'ultimo punto è nuovo e lo misuriamo davvero: oggi fate un test di riconoscimento con una valutazione della vostra sicurezza, e lo ripetete l'ultimo giorno.
+:::
+
+## Valutazione per frequentanti
+
+1. Frequentante è chi si iscrive allo spazio Moodle **entro venerdì 9 ottobre** e partecipa ad almeno **13 incontri su 18** e al lavoro di gruppo
+2. **Progetto di gruppo:** 75% (max 23,25)
+3. **Partecipazione:** 10% (max 3,1), circa 0,17 punti per incontro
+4. **Colloquio orale:** 15% (max 4,65), discussione del progetto
+
+::: {.notes}
+Il voto del progetto è collettivo per il gruppo. Il colloquio orale è individuale e verte sul progetto: ognuno deve saper spiegare scelte, metodo e limiti del lavoro del gruppo.
+
+Calcolo della partecipazione: 3,1 punti / 18 incontri ≈ 0,17 punti a incontro.
+:::
+
+## Non frequentanti
+
+- Esame **orale** (100%) su **cinque letture** indicate nella scheda ufficiale del corso
+- Sono **preprint** o articoli **open access**: si scaricano gratuitamente
+- Tutto quello che serve è nella **scheda del corso**
+- Chi non frequenta **non usa lo spazio Moodle**
+
+::: {.notes}
+Lo spazio Moodle è pensato per le attività in classe: chi non frequenta rischia di confondersi. Le cinque letture sono Ferrara, boyd, Marino et al. (Zombie Internet), Marino & Giglietto (2024) e Wack & Prochaska: tutte scaricabili liberamente, i link sono nella scheda.
+:::
+
+{{< include _attendance.qmd >}}
+
+## Giustificare le assenze
+
+1. La partecipazione è **parte della valutazione**
+2. Le assenze per validi motivi, giustificate, contano come **incontri frequentati**
+3. Per giustificarvi: scrivete nel **Forum per le giustificazioni** di Moodle **entro 2 giorni** dall'assenza, indicando il motivo
+
+::: {.notes}
+Motivi validi: malattia, esami, impegni istituzionali documentabili. Oltre i 2 giorni la giustificazione non viene accettata.
+:::
+
+## Policy sull'IA generativa (e sugli agenti)
+
+::: {.columns}
+::: {.column width="50%"}
+### Consentito
+- **Brainstorming** e **critica** di un vostro testo
+- **Agenti** per ricerca e analisi, con un **registro**: che cosa ha fatto l'agente, che cosa avete controllato a mano
+- Uso sempre **dichiarato** nella relazione
+:::
+
+::: {.column width="50%"}
+### Vietato
+- Uso **sostitutivo** ("scrivi un paragrafo su…")
+- Delegare ad agenti **azioni sugli account studiati**
+- Codificare contenuti in **lingue** che il gruppo non sa validare
+:::
+:::
+
+::: {.notes}
+Rispetto all'anno scorso la policy si estende agli agenti: strumenti che non si limitano a rispondere ma agiscono (cercano, navigano, eseguono). Sono ammessi, ma serve un registro di che cosa ha fatto l'agente e che cosa avete verificato voi. Lo esercitiamo venerdì nel workshop.
+
+Due divieti specifici del progetto: nessuna interazione con gli account che studiamo (niente follow, commenti, messaggi, carrelli o acquisti, né da parte vostra né di un agente) e nessuna codifica in lingue diverse da italiano e inglese.
+:::
+
+## Spazio Moodle
+
+Slide, letture, forum per le giustificazioni, questionari e consegne del progetto sono sullo **spazio Moodle del corso**.
+
+<!-- QR code del nuovo spazio Moodle (corso 29666): da aggiungere a cura del docente. Il QR dell'A.A. 2025/26 in assets/ punta al vecchio spazio. -->
+
+::: {.callout-tip}
+## Suggerimento
+Iscrivetevi **entro venerdì 9 ottobre** per risultare frequentanti.
+:::
+
+::: {.notes}
+Indirizzo: blended.uniurb.it, corso "IA Generativa e Media" A.A. 2026/27. Nella sezione "Informazioni generali" trovate la pagina delle letture con i link ai testi completi e le istruzioni per la rilevazione delle presenze.
+:::
+
+## Da dove partiamo {background-color="#C5612E"}
+
+::: {.notes}
+Due attività: il questionario del primo giorno (come l'anno scorso, con due domande nuove sugli agenti) e un breve test di riconoscimento con valutazione della sicurezza.
+:::
+
+## Questionario del primo giorno
+
+Compilate il **Questionario primo giorno** nello spazio Moodle (circa 5 minuti).
+
+- Quali strumenti di IA usate, e per che cosa
+- Quanto vi fidate della vostra capacità di **riconoscere** contenuti generati
+- **Novità:** usate già agenti? Che cosa sareste disposti a **delegare**?
+
+<!-- Link diretto al questionario: da aggiungere a cura del docente -->
+
+::: {.notes}
+Le risposte servono a calibrare il ritmo delle lezioni e a formare gruppi equilibrati per il progetto. Le due domande nuove (uso di agenti, compiti che delegherebbero) le riprendiamo domani quando parliamo di agenti e venerdì nel workshop.
+:::
+
+## Test di riconoscimento
+
+Per ogni elemento rispondete a due domande:
+
+1. È stato **generato con l'IA** o prodotto da una persona?
+2. Quanto siete **sicuri** della risposta (da 1 a 5)?
+
+::: {.highlight-box}
+Lo ripetiamo **l'ultimo giorno**. Non conta solo quante risposte giuste date, ma quanto la vostra **sicurezza** corrisponde alla vostra **accuratezza**.
+:::
+
+<!-- Link al test e stimoli: da aggiungere a cura del docente -->
+
+::: {.notes}
+Il test misura la calibrazione: chi è molto sicuro e sbaglia spesso è sovra-sicuro. È uno dei giudizi che il corso vuole allenare (descrittore "autonomia di giudizio"). Risultati aggregati e anonimi: li vediamo insieme a fine corso, confrontando pre e post.
+:::
+
+## Che cosa rispondeva la classe dell'anno scorso
+
+| Questionario primo giorno, A.A. 2025/26 (n = 54) | % |
+|---|---|
+| Abbastanza o molto sicuri di riconoscere contenuti generati | **70** |
+| Ritengono importante saper distinguere | **89** |
+| Vedono rischi alti per la società | **81** |
+| Pensano che l'IA peggiorerà la creatività | **67** |
+
+::: {.notes}
+Dati del questionario conoscitivo dell'anno scorso (54 rispondenti). Colpisce il 70% di sicurezza: gli studi sul riconoscimento mostrano di solito prestazioni molto più basse della fiducia dichiarata. Domanda alla classe: pensate che quest'anno i numeri saranno diversi? Più o meno sicuri?
+
+Li confronteremo con i vostri appena chiuso il questionario, se c'è tempo, altrimenti nel prossimo incontro.
+:::
+
+## Che cos'è l'IA generativa {background-color="#C5612E"}
+
+::: {.notes}
+Vocabolario minimo condiviso. Domani entriamo nel funzionamento dei modelli e negli agenti.
+:::
+
+## Definizione
+
+::: {.highlight-box}
+**IA generativa:** sistemi che **producono contenuti nuovi** (testo, immagini, audio, video) a partire da modelli addestrati su grandi quantità di dati.
+:::
+
+- L'IA **analitica** classifica o prevede
+- L'IA **generativa** produce artefatti
+- Un **agente** usa un modello per **perseguire un obiettivo**: pianifica, usa strumenti, agisce
+
+::: {.notes}
+Il terzo punto è la novità di quest'anno. Un chatbot risponde a una domanda; un agente riceve un obiettivo ("trovami gli studi recenti su…") e compie una serie di passi per raggiungerlo: cerca, apre pagine, legge, scrive, a volte esegue codice. Domani lo vediamo in dettaglio.
+
+Domanda alla classe: quanti di voi hanno già usato una funzione tipo "Deep Research" o un agente che naviga?
+:::
+
+## Concetti chiave
+
+| Termine | In breve |
+|---------|----------|
+| **LLM** (*Large Language Model*) | Modello che genera testo prevedendo la parola successiva |
+| **Diffusion model** | Genera immagini partendo da rumore |
+| **Prompt** | L'istruzione che diamo al modello |
+| **Context window** | Quanto testo il modello può considerare insieme |
+| **Hallucination** | Output plausibile ma falso |
+| **Agente** | Modello + obiettivo + strumenti + ciclo di pianificazione |
+
+::: {.notes}
+Termini che useremo per tutto il corso. Insistere su *hallucination*: non è un guasto occasionale ma una conseguenza del modo in cui i modelli funzionano (domani con Esposito). Agente: la definizione operativa la costruiamo domani.
+:::
+
+## Quattro modalità
+
+::: {.columns}
+::: {.column width="50%"}
+### Testo
+Articoli, post, commenti, conversazioni
+
+### Audio
+Voci sintetiche, cloni vocali
+:::
+
+::: {.column width="50%"}
+### Immagini
+Foto realistiche, ritratti, illustrazioni
+
+### Video
+Scene generate da testo, volti e avatar parlanti
+:::
+:::
+
+::: {.notes}
+Il nostro caso usa soprattutto immagini e video brevi (volti e avatar) accompagnati da testo, su Instagram e TikTok. I commenti del pubblico sono testo: li codificheremo con un LLM.
+:::
+
+## La realtà sintetica {background-color="#C5612E"}
+
+::: {.notes}
+Il concetto organizzatore dei moduli 1 e 2. Lettura: Ferrara (2026), in particolare §1.2, §2 con la Figura 2, §3, §4.2, §5.3–5.4 e §7. È un preprint arXiv non ancora sottoposto a revisione: leggetelo con questo in mente.
+:::
+
+## Non solo *deepfake*
+
+::: {.orange-box}
+Il rischio più grave non è il singolo contenuto falso, ma ambienti informativi **coerenti e interattivi** in cui contenuti, identità e interazioni sono **fabbricati insieme** e si **rafforzano a vicenda** [@ferrara2026].
+:::
+
+::: {.notes}
+Ferrara critica la cornice del "deepfake" come unità di analisi: guarda il singolo artefatto e perde di vista l'ambiente. La sua definizione di realtà sintetica (§2, p. 4): un ambiente coerente in cui artefatti, identità e interazioni sono in parte generati dalla macchina e si rafforzano a vicenda.
+
+Domanda: vi viene in mente un esempio in cui un contenuto falso è credibile proprio perché è inserito in un contesto (un profilo, una comunità, una conversazione)?
+:::
+
+## Un modello a quattro strati
+
+| Strato | Livello | Che cosa viene fabbricato |
+|--------|---------|---------------------------|
+| **1. Contenuto** | artefatto | testi, immagini, audio, video |
+| **2. Identità** | agentivo | persone credibili nel tempo e tra piattaforme |
+| **3. Interazione** | relazionale | dialogo, riprova sociale, relazioni che durano |
+| **4. Istituzioni** | sistemico | processi di verifica, prove, fiducia pubblica |
+
+Adattato da @ferrara2026 (Fig. 2)
+
+::: {.notes}
+Figura 2 del paper. Ogni strato si appoggia al precedente. Lo strato 2 è quello che ci interessa di più per il progetto: Ferrara parla di fabbricazione di "testimoni credibili" (§2.2), identità coerenti nel tempo. I nostri personaggi (rabbini, suore, nonne, medici) sono esattamente questo.
+
+Modulo 1: strati 1 e 3 (contenuti, interazione con agenti). Modulo 2: strati 2 e 4 (personaggi, regole e trasparenza).
+:::
+
+## Perché è diverso dalla disinformazione di prima
+
+Sette meccanismi [@ferrara2026, §3]:
+
+- **Crollo dei costi** e **scala**
+- **Personalizzazione** e **micro-segmentazione**
+- **Interazione sintetica**: l'ingegneria sociale diventa automatica
+- **Limiti del riconoscimento** e *provenance gap*
+- **Erosione della fiducia** e **negazione plausibile**
+
+::: {.notes}
+I sette meccanismi in §3.1–3.7: crollo dei costi e commodificazione; scala e throughput; personalizzazione per usi malevoli; persuasione iper-mirata e micro-segmentazione; interazione sintetica e automazione dell'ingegneria sociale; limiti del riconoscimento, fragilità del watermarking e provenance gap; erosione della fiducia e negazione plausibile.
+
+L'argomento chiave: frode e propaganda esistevano già. Cambia l'economia della produzione: quando fabbricare costa quasi zero, l'equilibrio tra fiducia e verifica si sposta.
+:::
+
+## Due modi di fallire
+
+::: {.columns}
+::: {.column width="50%"}
+### Credulità
+Credere a fabbricazioni convincenti
+:::
+
+::: {.column width="50%"}
+### Cinismo
+Non credere più a nulla, **nemmeno alle prove vere**
+:::
+:::
+
+::: {.highlight-box}
+Entrambi indeboliscono la responsabilità e favoriscono chi sfrutta la confusione [@ferrara2026, §1.2].
+:::
+
+::: {.notes}
+Questa coppia ci servirà nel progetto: quando codifichiamo i commenti del pubblico, credulità e incredulità sono i due estremi. In mezzo ci sono posizioni che aggiungeremo noi (incertezza, chi sa che è IA e lo accetta comunque).
+
+Collegamento con il test di prima: essere troppo sicuri (credulità) e scartare tutto come falso (cinismo) sono entrambi errori di calibrazione.
+:::
+
+## Il paradosso dell'IA generativa {background-color="#C5612E"}
+
+Se i contenuti sintetici diventano ovunque indistinguibili, la società può **razionalmente** smettere di fidarsi delle prove digitali.
+
+La verità diventa **più costosa**: una **tassa epistemica** su vita quotidiana, istituzioni e mercati [@ferrara2026].
+
+::: {.notes}
+È la conclusione del paper (§7). La "tassa epistemica" (§1.2, §3.7) è il costo crescente in tempo, strumenti e fatica per stabilire che cosa è successo e chi ha detto che cosa.
+
+Nota critica per la discussione: il tono del paper è allarmato, e le previsioni sull'erosione della fiducia non sono misurate. Il caso bank (§4) si basa su resoconti di stampa, che l'autore stesso definisce "illustrative lower bounds". Domanda: è una descrizione o uno scenario?
+:::
+
+## Dalla fiducia negli artefatti alla fiducia nei processi
+
+::: {.columns}
+::: {.column width="50%"}
+### Fiducia negli artefatti
+Credo a ciò che **sembra autentico**: un volto, una voce, un documento
+:::
+
+::: {.column width="50%"}
+### Fiducia nei processi
+Credo a ciò che passa per **procedure verificabili**: canali autenticati, provenienza, catena di custodia
+:::
+:::
+
+Adattato da @ferrara2026 (§5.3)
+
+::: {.notes}
+Ferrara propone questo spostamento per le istituzioni (§5.3): verifiche su un canale diverso per i pagamenti, approvazioni che non si basano su volto e voce. Esempio del paper (caso A): la frode di Hong Kong in cui un dipendente autorizza bonifici dopo una videochiamata con colleghi falsi.
+
+Per noi: un personaggio che vende un prodotto chiede fiducia basata sull'artefatto (un volto rassicurante, un abito religioso). Nel progetto ci chiederemo dove, lungo il percorso profilo → negozio, manca qualsiasi verifica di processo.
+:::
+
+## Il caso del corso {background-color="#C5612E"}
+
+::: {.notes}
+Anteprima del caso del progetto di gruppo. Lo presenta in dettaglio Massimo Terenzi il 29 ottobre.
+:::
+
+## Autorità fabbricate
+
+::: {.callout-warning}
+## Nota sui contenuti
+Il caso tocca **stereotipi antisemiti** e l'uso commerciale di figure religiose. Li analizziamo, non li riproduciamo.
+:::
+
+- Personaggi **generati con l'IA**: rabbini, un monaco, suore, nonne, medici
+- Su **Instagram e TikTok**, con molti follower
+- Consigli di vita, saggezza, valori tradizionali… e un **link a un negozio**
+- Alcuni personaggi "rabbini" vendono ricchezza e "conoscenza segreta" [@pilo2026]
+
+::: {.notes}
+Il caso nasce da un'inchiesta giornalistica di Facta (Pilo, 2026) sui finti rabbini generati con l'IA e dalla ricerca di Massimo Terenzi. Da leggere prima del seminario del 29 ottobre.
+
+Content note: alcuni personaggi rovesciano in chiave "positiva" stereotipi antisemiti (ricchezza, segreti). Li nominiamo solo quanto serve ad analizzarli.
+
+Perché è un buon caso: tocca tutti gli strati di Ferrara. Contenuto (volti e video generati), identità (un'autorità inventata, coerente nel tempo), interazione (commenti, risposte), istituzioni (regole di trasparenza, piattaforme, tutela dei consumatori).
+:::
+
+## Tre domande per il progetto
+
+| | Domanda | Dimensione |
+|---|---|---|
+| **RQ1** | Come si costruisce un'autorità e come diventa una vendita? | identità e infrastrutture |
+| **RQ2** | Quali leve e valori trasferiscono la fiducia dal personaggio all'offerta? | contenuto |
+| **RQ3** | Come reagisce il pubblico nei commenti? | partecipazione |
+
+::: {.notes}
+Le tre domande seguono le tre dimensioni delle operazioni informative ingannevoli (Marino et al., 2026), che vediamo nel modulo 3. I gruppi saranno organizzati in una matrice 3 × 3: domanda di ricerca × famiglia di personaggi (religiosi; anziani; medici e benessere).
+
+Regola etica fin da ora: osserviamo e archiviamo soltanto. Nessun follow, commento, messaggio, carrello o acquisto sugli account studiati.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura e compiti per domani.
+:::
+
+## Concetti chiave di oggi
+
+- L'IA **generativa** produce artefatti; un **agente** persegue obiettivi con strumenti
+- La **realtà sintetica**: contenuti, identità, interazioni e istituzioni fabbricati insieme [@ferrara2026]
+- Due modi di fallire: **credulità** e **cinismo**
+- Dalla fiducia negli **artefatti** alla fiducia nei **processi**
+- Il caso: **autorità fabbricate** che vendono su Instagram e TikTok
+
+::: {.notes}
+Riepilogo. Il filo per le prossime due lezioni: domani guardiamo dentro i modelli e gli agenti (strato dell'interazione), venerdì li usiamo.
+:::
+
+## Per la prossima lezione
+
+**Domani, giovedì 8 ottobre:** Dai modelli agli agenti
+
+- Lettura: @esposito2026 (Introduzione, "LLMs as communication partners", Conclusioni)
+- Ripassate @ferrara2026, §2–3
+
+**Venerdì 9 ottobre:** Workshop con Gemini e NotebookLM
+
+::: {.callout-warning}
+## Attenzione
+Verificate **oggi** l'accesso a Gemini e NotebookLM con l'account `@uniurb.it` e iscrivetevi a Moodle **entro venerdì**.
+:::
+
+::: {.notes}
+Esposito è un testo teorico più impegnativo: leggete le parti indicate, la storia dei motori di ricerca e le sottosezioni sui modelli RAG sono facoltative. Entrambe le letture sono ad accesso libero, i link sono nella pagina Letture su Moodle.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Dai modelli agli agenti (8 ottobre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Promemoria: questionario, iscrizione a Moodle, accesso a Gemini, lettura di Esposito.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

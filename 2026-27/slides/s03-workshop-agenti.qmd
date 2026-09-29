@@ -1,0 +1,266 @@
+---
+title: "Workshop: lavorare con gli agenti"
+subtitle: "IA Generativa e Media — Incontro 3 · Modulo 1"
+date: "2026-10-09"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+<!--
+TWIAI: da compilare a cura del docente con una notizia reale della settimana (5–9 ottobre 2026).
+Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
+Preferire una notizia su agenti, personaggi sintetici o trasparenza.
+-->
+
+::: {.callout-note}
+## Da discutere
+Che cosa cambia per il sistema dei media?
+:::
+
+::: {.notes}
+Dieci minuti al massimo. Notizia da scegliere a ridosso della lezione. Collegarla, se possibile, agli strati di Ferrara (contenuto, identità, interazione, istituzioni) o alla differenza chatbot/agente vista ieri.
+:::
+
+## Roadmap del workshop
+
+1. **Un agente di ricerca** — Deep Research in Gemini
+2. **Il registro dell'agente** — che cosa ha fatto, che cosa ho controllato
+3. **NotebookLM** — un assistente che lavora sulle fonti che scegliete voi
+4. **La matrice di delega** — che cosa affidare agli agenti nel progetto
+
+::: {.callout-tip}
+## Suggerimento
+Lavorate **a coppie**, con un portatile per coppia e l'account `@uniurb.it`.
+:::
+
+::: {.notes}
+Workshop pratico: poche slide, molto lavoro. Tempi indicativi: 10 minuti TWIAI, 35 minuti Deep Research e registro, 30 minuti NotebookLM, 25 minuti matrice di delega, 10 minuti chiusura.
+
+Oggi è anche l'ultimo giorno per iscriversi a Moodle.
+:::
+
+## Un agente di ricerca {background-color="#C5612E"}
+
+::: {.notes}
+Ieri: un agente riceve un obiettivo, pianifica, usa strumenti, restituisce un risultato. Il controllo umano si sposta alla fine. Oggi lo proviamo.
+:::
+
+## Esercizio 1: Deep Research
+
+**Domanda per l'agente** (uguale per tutte le coppie):
+
+> Che cosa dice la ricerca sugli influencer virtuali e sui personaggi generati con l'IA, e quali obblighi di trasparenza prevede l'AI Act?
+
+1. Aprite **Gemini** e attivate **Deep Research**
+2. Leggete il **piano** che propone l'agente, **prima** di avviarlo
+3. Avviatelo e osservate **quali siti** consulta
+
+::: {.notes}
+La domanda è volutamente generale: riguarda la letteratura e le regole, non account specifici. Regola del corso: nessuna ricerca o interazione sugli account che studieremo, né da parte vostra né da parte di un agente.
+
+Il piano è il primo punto di controllo: potete modificarlo. Chiedere alle coppie di annotare se lo hanno cambiato e perché.
+
+Mentre l'agente lavora (alcuni minuti), passiamo alla slide successiva.
+:::
+
+## Il registro dell'agente
+
+| Passo | Che cosa ha fatto l'agente | Che cosa ho controllato io | Esito |
+|---|---|---|---|
+| Piano | ha proposto 5 sotto-domande | ne ho tolta una fuori tema | modificato |
+| Fonti | ha consultato N siti | tipo di fonti (ricerca, stampa, blog) | … |
+| Rapporto | ha scritto un testo con citazioni | 3 citazioni aperte e lette | … |
+
+::: {.notes}
+Questo è il formato del registro richiesto dalla policy del corso per l'uso di agenti. Le righe sono un esempio da completare. Lo riuserete nel progetto: ogni volta che un agente lavora per il gruppo, il registro dice che cosa ha fatto e che cosa avete verificato voi.
+
+Collegamento con Ferrara: il registro trasforma la fiducia nell'artefatto (il rapporto ben scritto) in fiducia nel processo.
+:::
+
+## Esercizio 2: controllate tre citazioni
+
+Scegliete **tre affermazioni** del rapporto con la loro fonte. Per ciascuna:
+
+| Classe | Significato |
+|---|---|
+| **Supportata** | la fonte esiste e dice proprio questo |
+| **Parziale** | la fonte esiste ma dice qualcosa di diverso o di più sfumato |
+| **Non supportata** | la fonte esiste ma non contiene l'affermazione |
+| **Inesistente** | il link non funziona o la fonte non si trova |
+
+::: {.notes}
+Scegliere affermazioni con numeri, date o nomi di norme: sono le più facili da verificare e le più rischiose. Per l'AI Act, controllare che l'articolo citato sia quello giusto (nel modulo 2 lavoriamo sull'articolo 50).
+
+Raccogliere a voce i risultati delle coppie: quante supportate, quante no? È un piccolo esperimento di calibrazione, come il test di mercoledì.
+:::
+
+## Che cosa avete notato?
+
+::: {.columns}
+::: {.column width="50%"}
+### Sul processo
+- Quante fonti ha letto? Di che tipo?
+- Il piano rispecchiava la domanda?
+- Dove avreste voluto intervenire?
+:::
+
+::: {.column width="50%"}
+### Sul risultato
+- Quante citazioni reggevano?
+- Il tono era più sicuro delle fonti?
+- Lo usereste in una relazione? Come?
+:::
+:::
+
+::: {.notes}
+Discussione di 5–10 minuti. Punti da far emergere: la selezione delle fonti è dentro il sistema (gli "answer engines" di Esposito); un rapporto fluido e con molte citazioni comunica una sicurezza che le fonti non sempre giustificano; il valore dell'agente sta nel lavoro di ricerca, il valore vostro nel controllo.
+:::
+
+## NotebookLM {background-color="#C5612E"}
+
+::: {.notes}
+Seconda parte: un assistente che risponde solo a partire dalle fonti che caricate voi. È la scelta dell'interlocutore di cui parla Esposito.
+:::
+
+## Deep Research e NotebookLM
+
+| | Deep Research | NotebookLM |
+|---|---|---|
+| **Fonti** | le sceglie l'**agente** sul web | le scegliete **voi** |
+| **Livello di autonomia** | agente supervisionato | assistente con strumenti |
+| **Punto di controllo** | piano e rapporto finale | ogni risposta, con rimandi ai passi |
+| **Rischio principale** | fonti deboli, citazioni sbagliate | risposte oltre le fonti, sintesi forzate |
+
+::: {.notes}
+I livelli di autonomia sono quelli della scala di ieri. NotebookLM mostra per ogni affermazione il passo della fonte da cui la ricava: è un controllo più facile, ma va fatto.
+
+Esposito: scegliere un interlocutore fidato non esclude l'errore, lo rende meno probabile [@esposito2026].
+:::
+
+## Esercizio 3: il notebook del corso
+
+1. Create un notebook e caricate i PDF di @ferrara2026 ed @esposito2026
+2. Chiedete: *In che modo gli strati della realtà sintetica si collegano alle tre fonti di disallineamento?*
+3. Aprite **ogni rimando** della risposta: il passo dice davvero questo?
+4. Segnate nel registro dove la risposta **va oltre** le fonti
+
+::: {.notes}
+La domanda chiede un collegamento che nessuno dei due testi fa: è un buon test. Un buon assistente dovrebbe dire che il collegamento è un'interpretazione. Se invece lo presenta come tesi degli autori, è un errore da registrare.
+
+Il notebook vi servirà per tutto il corso: aggiungete le letture man mano.
+:::
+
+## La matrice di delega {background-color="#C5612E"}
+
+::: {.notes}
+Ultima parte: portiamo le quattro domande di ieri (verificabilità, reversibilità, rischio, azione su persone) sui compiti del progetto.
+:::
+
+## Esercizio 4: dove mettereste questi compiti?
+
+::: {.columns}
+::: {.column width="50%"}
+### Compiti del progetto
+- Riassumere una lettura
+- Cercare studi su un tema
+- Descrivere un'immagine di un post
+- Codificare 500 commenti con il codebook
+- Scrivere la sezione "Risultati"
+- Seguire un account per vederne i contenuti
+:::
+
+::: {.column width="50%"}
+### Quattro caselle
+- **Delegabile** con controllo a campione
+- **Delegabile** con controllo di ogni risultato
+- **Solo come supporto** (voi decidete e scrivete)
+- **Non delegabile** (o vietato nel corso)
+:::
+:::
+
+::: {.notes}
+Lavoro a coppie, 10 minuti, poi confronto. Soluzioni attese da discutere, non da imporre:
+- riassumere una lettura: delegabile, ma il riassunto non sostituisce la lettura;
+- cercare studi: delegabile con controllo di ogni fonte (esercizio 2);
+- descrivere un'immagine: delegabile con controllo, lo faremo nel modulo 2;
+- codificare 500 commenti: delegabile con controllo a campione, cioè il protocollo LLMs-in-the-loop con codifica in cieco e kappa [@marino2024];
+- scrivere i risultati: solo come supporto (policy del corso: vietato l'uso sostitutivo);
+- seguire un account: non delegabile e vietato (niente follow, commenti, messaggi, carrelli o acquisti sugli account studiati).
+:::
+
+## Che cosa portiamo nel progetto
+
+- Ogni uso di un agente ha un **registro**
+- Le fonti trovate da un agente si **aprono e si leggono**
+- La codifica automatica si **valida** con una codifica umana in cieco
+- Nessun agente **agisce** sugli account studiati
+
+::: {.notes}
+Queste quattro regole entrano nella dichiarazione d'uso dell'IA che accompagnerà la relazione di gruppo.
+:::
+
+<!-- Eventuale consegna del registro su Moodle: da aggiungere a cura del docente -->
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura del modulo 1.
+:::
+
+## Il modulo 1 in una slide
+
+- **Realtà sintetica**: contenuti, identità, interazioni, istituzioni fabbricati insieme [@ferrara2026]
+- Gli LLM sono **interlocutori**; il disallineamento è strutturale [@esposito2026]
+- Gli **agenti** agiscono in più passi: il controllo si sposta alla fine
+- Contro la fiducia nell'artefatto: **registro**, verifica delle fonti, validazione
+
+::: {.notes}
+Il modulo 2 passa allo strato dell'identità: i personaggi sintetici, perché funzionano (media parasociali, leve di persuasione) e quali regole li riguardano.
+:::
+
+## Per la prossima lezione
+
+**Mercoledì 21 ottobre:** Personaggi sintetici e media parasociali
+
+- Lettura: @boyd2026 (breve, 4 pagine)
+- Aggiungete la lettura al vostro **notebook**
+- Pausa: **niente lezioni dal 14 al 16 ottobre**
+
+::: {.callout-warning}
+## Attenzione
+Oggi è l'ultimo giorno per l'**iscrizione a Moodle**.
+:::
+
+::: {.notes}
+Giovedì 22 ottobre è il Career Day, quindi la settimana del 21 ha due incontri (mercoledì e venerdì).
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Personaggi sintetici e media parasociali (21 ottobre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Buona pausa.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::
