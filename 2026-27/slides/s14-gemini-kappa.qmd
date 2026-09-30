@@ -1,0 +1,233 @@
+---
+title: "Codifica con Gemini, kappa e matrice di confusione"
+subtitle: "IA Generativa e Media — Incontro 14 · Modulo 5"
+date: "2026-11-13"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+<!--
+TWIAI: da compilare a cura del docente con una notizia reale della settimana (9–13 novembre 2026).
+Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
+-->
+
+::: {.callout-note}
+## Da discutere
+Che cosa cambia per il sistema dei media?
+:::
+
+::: {.notes}
+Dieci minuti al massimo.
+:::
+
+## Roadmap del laboratorio
+
+1. **Gemini su tutto il corpus** — come farlo in modo documentato
+2. **Il kappa per ogni variabile** — persone con persone, persone con Gemini
+3. **La matrice di confusione** — dove sbaglia il modello
+4. **Sotto 0,60** — che cosa fare
+5. **Laboratorio**
+
+::: {.notes}
+Secondo momento di verifica intermedia: a fine lezione ogni gruppo carica la tabella dei kappa.
+:::
+
+## Gemini su tutto il corpus {background-color="#C5612E"}
+
+::: {.notes}
+Il passo che il corso aggiunge al protocollo di Marino e Giglietto (2024).
+:::
+
+## Regole per la codifica con Gemini
+
+- Prompt **versione 2**, documentato, **uguale** per tutti i casi
+- Stesso **modello**, stesse **impostazioni**, dall'inizio alla fine
+- **Formato fisso**: una riga per caso, le colonne del codebook
+- Contate le risposte **mancanti** o **fuori formato**
+- Tutto nel **registro dell'agente**: data, modello, prompt, numero di casi
+
+::: {.notes}
+Le regole servono a rendere la codifica riproducibile: un altro gruppo, con lo stesso prompt e lo stesso corpus, dovrebbe ottenere risultati simili. Il modello non è neutro: dati di addestramento, prompt e messa a punto lo guidano insieme (Esposito, 2026). Per questo lo validiamo.
+
+<!-- Modalità tecnica di esecuzione (interfaccia di Gemini, fogli di calcolo con Gemini, altro): da completare a cura del docente. -->
+:::
+
+## Il kappa {background-color="#C5612E"}
+
+::: {.notes}
+Ripresa del 4 novembre.
+:::
+
+## Due confronti per ogni variabile
+
+| Confronto | Che cosa misura |
+|---|---|
+| **Codificatore A con codificatore B** (prima della riconciliazione) | quanto il codebook è chiaro **per le persone** |
+| **Codifica riconciliata con Gemini** | quanto il modello riproduce il **giudizio umano** |
+
+::: {.highlight-box}
+κ = (pₒ − pₑ) / (1 − pₑ): accordo osservato, corretto per l'accordo atteso per caso
+:::
+
+::: {.notes}
+Se il kappa tra persone è basso, il problema è il codebook: non ha senso chiedere al modello ciò su cui nemmeno voi siete d'accordo. Se il kappa tra persone è buono e quello con Gemini è basso, il problema è il prompt o il limite del modello.
+
+La soglia di 0,60 è una scelta del corso, non un valore dell'articolo di Marino e Giglietto.
+:::
+
+## Calcolare il kappa in un foglio di calcolo
+
+1. **pₒ**: quota di righe in cui i due valori coincidono
+2. Per ogni categoria: quota di A in quella categoria × quota di B in quella categoria
+3. **pₑ**: somma dei prodotti del punto 2
+4. **κ** = (pₒ − pₑ) / (1 − pₑ)
+
+::: {.notes}
+In un foglio Google: una colonna che confronta i due valori (vero/falso) e ne calcola la media per pₒ; per ogni categoria, CONTA.SE sulle due colonne diviso il numero di righe. Chi preferisce può usare una funzione già pronta in R o Python, ma deve saper spiegare il calcolo all'orale.
+
+Decidete prima come trattare i 98: esclusi dal calcolo, o una categoria a sé. Scrivetelo nella relazione.
+:::
+
+## La matrice di confusione {background-color="#C5612E"}
+
+::: {.notes}
+Il kappa dice quanto si è d'accordo; la matrice dice dove non lo si è.
+:::
+
+## Dove sbaglia il modello
+
+**Esempio didattico:** posizione del commento, 60 commenti
+
+| Persone ↓ · Gemini → | credulo | incredulo | incerto |
+|---|---|---|---|
+| **credulo** | 25 | 1 | 4 |
+| **incredulo** | 0 | 12 | 3 |
+| **incerto** | 6 | 2 | 7 |
+
+::: {.notes}
+Numeri inventati a scopo didattico, non dati del progetto.
+
+Lettura: sulla diagonale gli accordi (25 + 12 + 7 = 44 su 60). Fuori diagonale gli errori: Gemini classifica come "credulo" 6 commenti che le persone giudicano "incerti", e come "incerto" 4 commenti "creduli". La confusione è tra credulo e incerto, non tra credulo e incredulo.
+
+Domanda: che cosa cambiereste nel codebook o nel prompt? (Per esempio esempi più chiari di "incerto": domande, espressioni di dubbio.)
+:::
+
+## Leggere la matrice
+
+- La **diagonale** sono gli accordi
+- Gli errori sono **simmetrici** o vanno in una **direzione**?
+- Quali categorie si **confondono** tra loro?
+- Gli errori riguardano casi che anche voi avevate segnato **98**?
+
+::: {.notes}
+Un errore sistematico in una direzione (per esempio Gemini più prudente delle persone) si corregge spesso con il prompt. Errori sparsi su casi difficili dicono che la variabile è intrinsecamente ambigua.
+:::
+
+## Sotto 0,60 {background-color="#C5612E"}
+
+::: {.notes}
+Che cosa fare quando la validazione non passa.
+:::
+
+## Quando il kappa è sotto 0,60
+
+1. Guardate la **matrice**: dove si concentra l'errore?
+2. Rivedete **definizione** ed **esempi**; aggiornate il prompt (**versione 3**)
+3. Rifate girare Gemini sul campione di validazione e **ricalcolate**
+4. Se ancora non basta: variabile codificata **a mano** o **esclusa**, e **dichiarata**
+
+::: {.callout-warning}
+## Attenzione
+Non ritoccate il prompt caso per caso finché i numeri tornano: ogni modifica va **motivata** e **registrata**.
+:::
+
+::: {.notes}
+Modificare il prompt guardando solo i casi sbagliati del campione di validazione rischia di adattarlo a quei casi e non al corpus. Motivate ogni modifica con un problema di definizione, non con il singolo errore. È la stessa logica della ricerca confermativa di cui parlano Alizadeh et al. (2026): cercare la formulazione che dà il risultato atteso non è validare.
+:::
+
+## Che cosa si dichiara nella relazione
+
+- Il **kappa** di ogni variabile, tra persone e con Gemini
+- Le **versioni** del prompt e perché sono cambiate
+- Le variabili che Gemini **non** ha codificato in modo affidabile
+- Le variabili che hanno richiesto conoscenze **culturali o religiose** che il gruppo non aveva
+
+::: {.notes}
+Dalla scheda del corso: la relazione valuta l'applicazione e la validazione corretta della pipeline. Una variabile esclusa perché non affidabile, dichiarata bene, vale più di una variabile tenuta con un kappa di 0,35.
+:::
+
+## Laboratorio {background-color="#C5612E"}
+
+::: {.notes}
+Il resto della lezione.
+:::
+
+## Istruzioni per il laboratorio
+
+1. Gemini codifica il **corpus** della vostra linea con il prompt versione 2
+2. Kappa **A–B** e kappa **riconciliato–Gemini** per ogni variabile
+3. **Matrice di confusione** per ogni variabile sotto 0,60
+4. Revisione e nuovo giro dove serve
+5. Caricate la **tabella dei kappa** nella cartella del gruppo
+
+::: {.notes}
+Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- Gemini codifica con prompt **documentato** e formato **fisso**
+- Due kappa: **persone–persone** (il codebook) e **persone–Gemini** (il modello)
+- La **matrice di confusione** mostra dove e come si sbaglia
+- Sotto **0,60**: si rivede, si ricalcola, oppure si **dichiara**
+
+::: {.notes}
+Da mercoledì si passa dall'affidabilità al significato: che cosa dicono i dati.
+:::
+
+## Per la prossima lezione
+
+**Mercoledì 18 novembre:** Il pubblico nei commenti
+
+- Lettura: @wack2026
+- Tabella dei kappa caricata
+
+::: {.notes}
+Tutti leggono Wack e Prochaska, non solo i gruppi della linea 3: il ruolo del contesto sociale riguarda anche le altre linee.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Il pubblico nei commenti (18 novembre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Buon fine settimana.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

@@ -1,0 +1,240 @@
+---
+title: "Il pubblico nei commenti"
+subtitle: "IA Generativa e Media — Incontro 15 · Modulo 5"
+date: "2026-11-18"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap della lezione
+
+1. **Un esperimento in Kenya** — i commenti cambiano l'effetto di un *deepfake*?
+2. **Che cosa ne prendiamo**, e che cosa no
+3. **Il pubblico nei nostri dati** — posizioni, intimità, commenti sintetici
+4. **Laboratorio** — il livello della conversazione
+
+::: {.notes}
+Lettura: Wack e Prochaska (2026), Social Media + Society. È il testo di riferimento per la linea 3, ma riguarda tutti: dice che il significato di un contenuto sintetico si negozia nei commenti.
+:::
+
+## Un esperimento in Kenya {background-color="#C5612E"}
+
+::: {.notes}
+Un esperimento con questionario, preregistrato.
+:::
+
+## Il disegno
+
+- Circa **7.000** partecipanti in Kenya
+- Un ***deepfake***: un candidato alla presidenza (Odinga o Ruto) "confessa" uno schema di corruzione inventato
+- Sotto il video, commenti **scritti dai ricercatori**: **creduli**, **increduli** o **misti**
+- **Nessuna etichetta IA**, come spesso accade sulle piattaforme
+
+Adattato da @wack2026
+
+::: {.notes}
+Campione finale di 7.008 persone, divise tra video, audio e gruppo di controllo. Il commento credulo diceva, in sostanza, "non sorprende"; quello incredulo "è chiaramente falso". Gli autori hanno integrato i commenti nel questionario per farli sembrare il più possibile commenti veri, con la possibilità di aggiungerne uno proprio.
+
+Scelta degli autori: nessuna etichetta, perché le piattaforme si affidano alla dichiarazione degli autori e a un rilevamento automatico spesso impreciso.
+:::
+
+## I risultati principali
+
+| Condizione | Effetto sul sostegno al candidato (scala 0–100, rispetto a chi non ha visto il video) |
+|---|---|
+| Video, **commento credulo** | −4,90 |
+| Video, **commenti misti** | −2,85 |
+| Video, **nessun commento** | −2,25 |
+| Video, **commento incredulo** | −0,64 (non significativo) |
+
+Dati da @wack2026
+
+::: {.notes}
+Il commento credulo peggiora di più l'effetto del deepfake; quello incredulo lo neutralizza in parte. Rispetto al video senza commenti, il credulo abbassa ancora il sostegno (−2,56), l'incredulo lo alza un poco ma senza significatività statistica.
+
+Effetti piccoli su una scala da 0 a 100: attenzione a non esagerarli quando li riportate.
+:::
+
+## Il ruolo dell'appartenenza politica
+
+::: {.columns}
+::: {.column width="50%"}
+### Chi sostiene il candidato
+Il sostegno **cala** con il video, qualunque sia il commento
+:::
+
+::: {.column width="50%"}
+### Chi non lo sostiene
+Il commento **incredulo** fa **risalire** il sostegno: quasi 5 punti rispetto al video senza commenti
+:::
+:::
+
+Adattato da @wack2026
+
+::: {.notes}
+Risultato esplorativo e in parte inatteso: gli autori collegano il calo tra i sostenitori alla diffusione di narrazioni sulla corruzione, e dicono esplicitamente di non sapere perché gli effetti siano diversi tra i due gruppi. È un buon esempio di linguaggio calibrato: "agnostic" sul perché.
+:::
+
+## Il senso si costruisce insieme
+
+::: {.orange-box}
+L'impatto di un deepfake non è fissato al momento della produzione: si **negozia socialmente** negli spazi in cui circola. Senza segnali chiari, contano le **interpretazioni degli altri** [@wack2026].
+:::
+
+::: {.notes}
+Gli autori collegano il risultato alla "sensemaking" collettiva (Weick) e alla disinformazione come fenomeno partecipativo (Starbird et al., 2019): la stessa cornice di Marino et al. (2026) sulla dimensione della partecipazione.
+
+Conclusione degli autori: quando le piattaforme non aiutano a stabilire la veridicità, il pubblico si affida alle interpretazioni degli altri, che nelle campagne di disinformazione sono un misto di commenti autentici e inautentici.
+:::
+
+## Che cosa ne prendiamo {background-color="#C5612E"}
+
+::: {.notes}
+Come usare questo studio nel nostro progetto, senza forzarlo.
+:::
+
+## Le categorie sì, il metodo no
+
+::: {.columns}
+::: {.column width="50%"}
+### Prendiamo
+- Le categorie **credulo**, **incredulo**, **misto**
+- L'idea che i commenti **visibili** orientino l'interpretazione
+:::
+
+::: {.column width="50%"}
+### Non prendiamo
+- I **commenti scritti dai ricercatori**: i nostri sono reali
+- La misura degli **effetti**: noi osserviamo, non facciamo esperimenti
+:::
+:::
+
+::: {.notes}
+Punto cruciale per la relazione: con i nostri dati possiamo descrivere quali posizioni compaiono nei commenti e quanto sono visibili, non possiamo dire che un commento abbia cambiato l'opinione di qualcuno. Sarebbe un'affermazione di livello "ipotizzato", non "osservato".
+:::
+
+## I limiti dichiarati dagli autori
+
+- Commenti **simulati**, senza le vere interazioni dei social
+- Un **commento singolo** è raro: la condizione **mista** è la più realistica
+- Un solo contesto: uno **scandalo politico** in **Kenya**
+- Nessun **video autentico** di confronto
+
+Da @wack2026
+
+::: {.notes}
+Il secondo limite è importante per noi: nei commenti reali le posizioni sono sempre mescolate. La nostra variabile di livello della conversazione (c'è un commento incredulo visibile tra i primi?) cerca proprio di descrivere questa mescolanza.
+:::
+
+## Il pubblico nei nostri dati {background-color="#C5612E"}
+
+::: {.notes}
+Le variabili della linea 3, riprese con le letture che le sostengono.
+:::
+
+## Tre livelli di analisi
+
+| Livello | Domanda | Letture |
+|---|---|---|
+| **Commento** | credulo, incredulo, incerto, consapevole ma accetta? | @wack2026 e aggiunte del corso |
+| **Conversazione** | tra i primi commenti ce n'è uno **incredulo** visibile? | @wack2026 |
+| **Segnali sintetici** | commenti generici, ripetuti, sproporzionati? | @marino2026zombie |
+
+::: {.notes}
+Il livello della conversazione traduce il risultato di Wack e Prochaska in una domanda osservabile: se l'incredulità visibile conta, è visibile nelle conversazioni sui nostri personaggi?
+:::
+
+## L'intimità unilaterale
+
+- Ringraziamenti, **preghiere**, **confidenze** rivolte al personaggio
+- Una relazione **parasociale**: intensa, ma senza nessuno dall'altra parte [@boyd2026]
+- Chi scrive così **crede** che il personaggio sia reale? Non sempre si può dire: usate il **98**
+
+::: {.notes}
+Collegamento con l'incontro 4. Un commento come "grazie nonna, prega per me" può essere credulo, ironico, o scritto sapendo che è un avatar. La variabile "intimità unilaterale" è separata dalla posizione proprio per questo.
+:::
+
+## Segnali di commenti sintetici
+
+::: {.highlight-box}
+Nel caso del gioco d'azzardo: un post con **44.100** commenti ma solo **7** reazioni; commenti con lodi generiche, stringhe casuali, parole senza spazi [@marino2026zombie].
+:::
+
+- Più agenti coordinati possono fabbricare un **consenso sintetico** [@schroeder2026]
+- Nei nostri dati è una **stima**: codificatela come "probabilmente sintetico", con il 98
+
+::: {.notes}
+Un commento generico non è per forza sintetico: anche le persone scrivono "bellissimo". Il segnale è la combinazione: sproporzione tra commenti e reazioni, ripetizioni, stesse frasi da account diversi.
+:::
+
+## Laboratorio {background-color="#C5612E"}
+
+::: {.notes}
+Il resto della lezione.
+:::
+
+## Istruzioni per il laboratorio
+
+- **Linea 3:** codificate il **livello della conversazione** per i post del vostro corpus; stimate i segnali sintetici
+- **Linee 1 e 2:** prime tabelle e grafici dei risultati; per ogni risultato, il **livello di certezza**
+- **Tutti:** una frase che collega i vostri risultati al pubblico, con il livello di certezza
+
+::: {.notes}
+Domani lavoriamo su danni e responsabilità e sulla matrice affermazioni-evidenze: arrivate con i primi risultati.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura del modulo 5.
+:::
+
+## Concetti chiave di oggi
+
+- I commenti **visibili** cambiano l'effetto di un contenuto sintetico [@wack2026]
+- Il senso si **negozia** socialmente, soprattutto senza etichette
+- Prendiamo le **categorie**, non il metodo: noi **osserviamo**, non misuriamo effetti
+- Livelli: **commento**, **conversazione**, **segnali sintetici**
+
+::: {.notes}
+Il modulo 5 in una frase: dall'affidabilità della codifica (kappa) al significato dei dati (il pubblico).
+:::
+
+## Per la prossima lezione
+
+**Domani, giovedì 19 novembre:** Danni, responsabilità, matrice affermazioni-evidenze
+
+- Portate i **primi risultati** del gruppo
+- Rileggete i tre tipi di danno di @marino2026zombie e le raccomandazioni di @schiffrin2026
+
+::: {.notes}
+Domani si comincia a scrivere: le affermazioni della relazione, ciascuna con la sua evidenza.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Danni e responsabilità (19 novembre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

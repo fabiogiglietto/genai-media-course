@@ -1,0 +1,196 @@
+---
+title: "Codifica umana in cieco e riconciliazione"
+subtitle: "IA Generativa e Media — Incontro 13 · Modulo 5"
+date: "2026-11-12"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap del laboratorio
+
+1. **Dove siamo** nella pipeline
+2. **Codificare in cieco** — perché e come
+3. **La riunione di riconciliazione**
+4. **I disaccordi sono informazione**
+5. **Laboratorio**
+
+::: {.notes}
+Oggi è quasi tutto laboratorio. Le slide servono a fissare le regole prima di iniziare. Ieri avete chiuso il pilota: codebook e prompt versione 1.
+:::
+
+## Dove siamo
+
+| Passo | Quando | Stato |
+|---|---|---|
+| Pilota su 15 casi, codebook e prompt | 11 novembre | fatto |
+| **Codifica umana in cieco** del campione di validazione | **oggi** | |
+| **Riconciliazione** in coppia | **oggi** | |
+| Gemini su tutto il corpus; kappa e matrice di confusione | 13 novembre | |
+
+::: {.notes}
+Il campione di validazione è l'insieme di casi che codificate a mano e che userete come riferimento per giudicare Gemini. Più è curato, più è credibile la validazione.
+
+<!-- Dimensione del campione di validazione per gruppo: da completare a cura del docente. -->
+:::
+
+## Codificare in cieco {background-color="#C5612E"}
+
+::: {.notes}
+Il principio viene da Marino e Giglietto (2024): ognuno codifica per conto proprio, poi si confronta.
+:::
+
+## Perché in cieco
+
+::: {.highlight-box}
+Se vedo come ha codificato l'altra persona, il nostro accordo **non misura più** la chiarezza del codebook: misura quanto ci siamo **influenzati**.
+:::
+
+- Ognuno codifica **per conto proprio** [@marino2024]
+- Il disaccordo, prima della riconciliazione, è un **dato**: lo userete domani per il kappa tra persone
+
+::: {.notes}
+Nel protocollo di Marino e Giglietto i due membri della squadra codificano in modo indipendente e poi si incontrano per risolvere le discrepanze (§3).
+
+Nel corso calcoliamo il kappa anche tra le due persone, prima della riconciliazione: serve a capire quanto è affidabile il codebook per gli esseri umani, prima di chiederlo al modello.
+:::
+
+## Come si fa, in pratica
+
+1. Ognuno lavora su un **foglio separato**, non condiviso con l'altra persona
+2. **Stesso ordine** dei casi, **stesse colonne** del codebook
+3. Per ogni caso: un valore per variabile; **98** se non siete sicuri
+4. Una colonna **note**: perché avete esitato
+5. **Non parlate** dei casi finché entrambi non avete finito
+
+::: {.notes}
+Le note sono preziose nella riunione di riconciliazione: ricordano perché un caso era difficile. Il 98 non è un fallimento: è un'informazione su un caso ambiguo o su un limite della vostra conoscenza.
+
+Salvate i fogli prima della riconciliazione e non modificateli più: domani servono per il kappa tra persone.
+:::
+
+## La riconciliazione {background-color="#C5612E"}
+
+::: {.notes}
+Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Oggi facciamo quello conclusivo; il pilota di ieri era l'allineamento.
+:::
+
+## La riunione di riconciliazione
+
+1. Mettete a confronto i due fogli: dove siete **in disaccordo**?
+2. Per ogni disaccordo, ognuno spiega **perché**, citando la **definizione**
+3. Decidete un valore **condiviso**
+4. Risolvete i casi **98**: si assegna un valore, o si lascia 98 con una motivazione
+5. Se il problema è la **definizione**, annotatelo nel registro delle modifiche
+
+Adattato da @marino2024
+
+::: {.notes}
+Il risultato è un terzo foglio: la codifica riconciliata, che diventa il riferimento per giudicare Gemini. I due fogli originali restano intatti.
+
+La persona più esperta non ha automaticamente ragione: vale l'argomento che si appoggia meglio alla definizione.
+:::
+
+## I disaccordi sono informazione
+
+| Tipo di disaccordo | Che cosa fare |
+|---|---|
+| **Definizione ambigua** | riscrivere la voce del codebook e il prompt |
+| **Contesto mancante** | il caso richiede di vedere il post o il profilo |
+| **Conoscenza culturale** | annotare il limite; valutare il 98 |
+| **Distrazione** | correggere, senza cambiare il codebook |
+
+::: {.notes}
+Classificare i disaccordi aiuta a decidere se cambiare il codebook o no. Solo i primi tre richiedono modifiche o note metodologiche.
+
+Il terzo tipo è quello che Marino e Giglietto discutono nella sezione 5: chi valida deve conoscere il contesto. Per i personaggi religiosi, simboli, riferimenti e stereotipi possono sfuggire. Nella relazione dichiarate quali variabili hanno richiesto conoscenze che il gruppo non aveva.
+:::
+
+## Il registro delle modifiche
+
+| Data | Variabile | Che cosa è cambiato | Perché |
+|---|---|---|---|
+| 12 nov | posizione del commento | aggiunto un esempio di "incerto" | due disaccordi su commenti con un punto di domanda |
+| … | … | … | … |
+
+::: {.notes}
+Riga di esempio, da sostituire con le vostre. Il registro è parte della catena di evidenze metodologica: nella relazione mostra che il codebook è cambiato in base ai dati, in modo documentato.
+
+Ogni modifica al codebook va riportata anche nel prompt: il prompt diventa versione 2.
+:::
+
+## Laboratorio {background-color="#C5612E"}
+
+::: {.notes}
+Il resto della lezione.
+:::
+
+## Istruzioni per il laboratorio
+
+1. Codifica **in cieco** del campione di validazione, ognuno sul proprio foglio
+2. **Salvate** i fogli e non modificateli più
+3. **Riconciliazione** in coppia: foglio condiviso con i valori finali
+4. **Registro** dei disaccordi e delle modifiche
+5. Aggiornate codebook e prompt alla **versione 2**
+
+<!-- Link ai fogli di codifica dei gruppi: da completare a cura del docente. -->
+
+::: {.notes}
+Se il tempo non basta, la riconciliazione si completa entro domattina: domani servono i fogli pronti per Gemini e il kappa.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- In **cieco**: ognuno codifica per conto proprio [@marino2024]
+- I fogli originali **non si toccano**: servono per il kappa tra persone
+- **Riconciliazione**: si discute sulla definizione, non sull'autorità
+- I disaccordi si **classificano**: definizione, contesto, cultura, distrazione
+- Ogni modifica va nel **registro** e nel **prompt**
+
+::: {.notes}
+Domani il modello entra in scena.
+:::
+
+## Per la prossima lezione
+
+**Domani, venerdì 13 novembre, ore 9:00:** Codifica con Gemini, kappa, matrice di confusione
+
+- Tre fogli pronti: codificatore A, codificatore B, **riconciliato**
+- Prompt **versione 2** salvato
+
+::: {.notes}
+Portate il portatile. Chi conosce già i fogli di calcolo aiuti il proprio gruppo: domani calcoliamo il kappa per ogni variabile.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Codifica con Gemini e kappa (13 novembre 2026, ore 9:00)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::
