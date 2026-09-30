@@ -62,12 +62,34 @@ Struttura suggerita: i gruppi possono adattarla, ma tutte le parti devono esserc
 | **Limiti** | che cosa non possiamo dire, e perché |
 | **Dichiarazione d'uso dell'IA** | che cosa ha fatto l'IA, che cosa avete verificato |
 
-<!-- Lunghezza, formato e modello della relazione: da completare a cura del docente. -->
-
 ::: {.notes}
-In appendice: codebook finale, versioni del prompt con il registro delle modifiche, tabella completa dei kappa, registro dell'agente.
+Struttura IMRaD (introduzione, metodo, risultati, discussione) adattata al progetto: rispetto al modello dell'anno scorso si aggiungono la sezione su danni e responsabilità e la matrice affermazioni-evidenze come base dei risultati.
 
 Criteri di valutazione (scheda del corso): domanda e disegno chiari; pipeline applicata e validata; catena di evidenze documentata; danni e responsabilità ragionati; analisi solida; scrittura e visualizzazioni chiare; dichiarazione d'uso dell'IA.
+:::
+
+## Formato e consegna
+
+| Voce | Indicazione |
+|---|---|
+| Modello | copia del modello su Google Docs, a cura del capogruppo |
+| Lunghezza | circa 4.000–6.000 parole; abstract di 150–200 parole |
+| Citazioni | APA 7, solo fonti realmente consultate |
+| Appendici | prompt completo, codebook, tabella dei kappa, registro dell'agente |
+| Consegna | un unico PDF per gruppo, con i nomi di tutti, su Moodle |
+
+<!-- Link al modello 2026/27 su Google Docs: da aggiungere a cura del docente (copia adattata di Template_Paper_AI_Slop). -->
+
+::: {.notes}
+Indicazioni riprese dall'edizione 2025/26 e adattate.
+
+Il capogruppo copia il modello, lo condivide con i membri del gruppo in modifica e con il docente in commento: così si possono dare riscontri durante la scrittura.
+
+Citazioni: ogni riferimento va controllato sulla fonte originale. Una citazione inventata, anche se proposta da un modello linguistico, è un errore grave.
+
+Appendici: A, prompt completo in tutte le versioni con il registro delle modifiche; B, codebook finale con definizioni ed esempi; poi la tabella completa dei kappa e il registro dell'agente. La matrice affermazioni-evidenze può andare in appendice o nel materiale del gruppo.
+
+Consegna: un solo membro carica il PDF su Moodle per tutto il gruppo, almeno due settimane prima del primo appello dopo il corso.
 :::
 
 ## Scrivere al giusto livello {background-color="#C5612E"}
