@@ -1,0 +1,219 @@
+---
+title: "Danni, responsabilità, affermazioni ed evidenze"
+subtitle: "IA Generativa e Media — Incontro 16 · Modulo 6"
+date: "2026-11-19"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap del workshop
+
+1. **Quali danni** producono i nostri personaggi
+2. **Chi ne risponde** — dalla catena alle responsabilità
+3. **La matrice affermazioni-evidenze**
+4. **Workshop** — la matrice del vostro gruppo
+
+::: {.notes}
+Da oggi si passa dai dati alle conclusioni. Il rischio principale in questa fase: affermare più di quanto i dati permettano. La matrice affermazioni-evidenze serve a evitarlo.
+:::
+
+## Quali danni {background-color="#C5612E"}
+
+::: {.notes}
+Ripresa dei tre tipi di danno di Marino et al. (2026), incontro 8.
+:::
+
+## Tre tipi di danno
+
+| Danno | In Marino et al. | Domanda per il nostro caso |
+|---|---|---|
+| **Epistemico** | distorce la comprensione pubblica | che cosa fa credere il personaggio sul mondo? |
+| **Economico** | attira gli utenti in truffe | che cosa vende, a chi, con quali promesse? |
+| **Sociale-normativo** | espone a contenuti che violano le regole della comunità | quali stereotipi o norme mette in circolo? |
+
+Adattato da @marino2026zombie
+
+::: {.notes}
+Nell'articolo ogni caso produce soprattutto un tipo di danno. I nostri personaggi probabilmente ne producono più d'uno insieme: per esempio, per i finti rabbini Pilo (2026) documenta vendite (economico), "segreti" e teorie del complotto (epistemico), stereotipi antisemiti trasformati in autorità (sociale-normativo).
+
+Attenzione: indicare un tipo di danno richiede un'evidenza nei vostri dati, non solo nell'articolo di Facta.
+:::
+
+## Dove finisce il commercio e inizia la frode?
+
+::: {.columns}
+::: {.column width="50%"}
+### Elementi per dire "frode"
+- Inganno sull'**identità** usato per vendere
+- **Promesse** false o non verificabili
+- Spostamento verso **canali privati**
+:::
+
+::: {.column width="50%"}
+### Elementi per dire "zona grigia"
+- Prodotto **legale**
+- Nessuna persona reale **impersonata**
+- Nessuna **vittima** documentata nei dati
+:::
+:::
+
+Adattato da @schiffrin2026
+
+::: {.notes}
+Ripresa del dibattito del 28 ottobre. La definizione di Schiffrin et al. riguarda media generati usati per indurre a cedere denaro; il loro rapporto ruota attorno a deepfake di persone reali. Dove si collocano i vostri personaggi? La risposta può cambiare da personaggio a personaggio: dichiaratelo caso per caso.
+:::
+
+## Chi ne risponde {background-color="#C5612E"}
+
+::: {.notes}
+Dalla catena profilo → negozio alla mappa delle responsabilità.
+:::
+
+## Dalla catena alle responsabilità
+
+| Anello della catena | Chi c'è | Che cosa potrebbe fare |
+|---|---|---|
+| **Profilo** | piattaforma | etichette, verifica, rimozione |
+| **Link e pagina** | servizi di hosting e link | controlli sui domini |
+| **Negozio** | marketplace, piattaforme di corsi | verifica dei venditori |
+| **Pagamento o contatto** | pagamenti, messaggistica | segnalazioni, blocchi |
+
+Adattato da @schiffrin2026
+
+::: {.notes}
+Schiffrin et al. descrivono le frodi come un ecosistema di attori e raccomandano di spostare la responsabilità dalle persone alle istituzioni meglio posizionate per prevenire il danno: il "cheapest cost avoider" di Calabresi. Usate la vostra catena documentata per indicare chi, nel vostro caso, potrebbe intervenire al costo più basso.
+:::
+
+## Quale trasparenza servirebbe?
+
+::: {.highlight-box}
+Dichiarare **che cosa è** il sistema non riduce la persuasione; dichiarare **che cosa cerca di fare** la dimezza [@rauchfleisch2026].
+:::
+
+- Che cosa dichiarano oggi i vostri personaggi? (scheda del personaggio)
+- Quale dichiarazione **proteggerebbe** il pubblico?
+- Ricordate: l'esperimento riguarda **chatbot**, non personaggi; è un'**estensione**
+
+::: {.notes}
+Nella relazione la parte su responsabilità e trasparenza deve appoggiarsi ai vostri dati (dichiarazioni osservate nella scheda) e alle letture, con il giusto livello di certezza.
+:::
+
+## La matrice affermazioni-evidenze {background-color="#C5612E"}
+
+::: {.notes}
+Lo strumento centrale per scrivere la relazione.
+:::
+
+## Com'è fatta
+
+| Affermazione | Evidenza | Livello | Limiti |
+|---|---|---|---|
+| Frase che userete nella relazione | dato, tabella, schermata, citazione | osservato / ricostruito / ipotizzato | che cosa non possiamo dire |
+
+::: {.notes}
+Ogni affermazione della relazione deve avere una riga. Se una frase non trova un'evidenza, o si riformula a un livello di certezza più basso o si toglie.
+
+I livelli sono quelli dell'incontro 8, ripresi dal linguaggio graduato di Marino et al. (2026): "si osserva", "suggerisce", "ipotizziamo".
+:::
+
+## Un esempio
+
+| Affermazione | Evidenza | Livello |
+|---|---|---|
+| "Il personaggio X rimanda a un negozio online" | schermata del link in bio, data e indirizzo | osservato |
+| "X e Y sono gestiti dallo stesso operatore" | stesso negozio, stessi testi, pubblicazione sincronizzata | ricostruito |
+| "I commenti entusiasti sono in parte sintetici" | sproporzione commenti/reazioni, testi ripetuti | ipotizzato |
+
+::: {.notes}
+Esempio costruito sulle categorie del corso, non su dati reali. Notate come la stessa frase possa salire di livello con più evidenze convergenti, o scendere se un'evidenza cade.
+
+Domanda: che cosa servirebbe per portare la seconda affermazione da "ricostruito" a "osservato"? (Per esempio una dichiarazione esplicita, o dati che la piattaforma non ci dà.)
+:::
+
+## Errori da evitare
+
+- Confondere il **personaggio** con l'**operatore**
+- Trattare un **candidato** come una **prova**
+- Riportare un risultato delle **letture** come se fosse **vostro**
+- Dedurre un **effetto** sul pubblico da una **distribuzione** di commenti
+- Tacere le variabili con **kappa basso**
+
+::: {.notes}
+Ogni punto richiama una lezione: personaggio e operatore (incontri 4 e 8), candidato e prova (8), status delle fonti (tutto il corso), effetti e osservazione (15, Wack e Prochaska), validazione (14).
+:::
+
+## Workshop {background-color="#C5612E"}
+
+::: {.notes}
+Il resto della lezione, nei gruppi.
+:::
+
+## La matrice del vostro gruppo
+
+1. Scrivete le **5–10 affermazioni** principali della vostra relazione
+2. Per ciascuna: **evidenza**, **livello**, **limiti**
+3. Indicate il **tipo di danno** che i vostri dati documentano, se ce n'è uno
+4. Indicate **chi** potrebbe prevenirlo, lungo la vostra catena
+5. Scambio con un altro gruppo: **provate a smontare** le loro affermazioni
+
+::: {.notes}
+Lo scambio tra gruppi è il momento più utile: un altro gruppo vede subito le affermazioni troppo forti. Preferite gruppi della stessa famiglia (per esempio religiosi RQ1 con religiosi RQ3) o della stessa linea.
+
+La matrice va nella cartella del gruppo e diventa lo scheletro della relazione.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- Tre danni: **epistemico**, **economico**, **sociale-normativo** [@marino2026zombie]
+- Commercio e frode: una **zona grigia**, da valutare caso per caso [@schiffrin2026]
+- La catena documentata indica **chi** può prevenire il danno
+- Ogni affermazione ha **evidenza**, **livello** e **limiti**
+
+::: {.notes}
+Domani si scrive.
+:::
+
+## Per la prossima lezione
+
+**Domani, venerdì 20 novembre, ore 9:00:** Laboratorio di scrittura e consultazioni
+
+- Matrice affermazioni-evidenze **completa**
+- Una **bozza** della struttura della relazione
+
+::: {.notes}
+Domani ogni gruppo ha un momento di consultazione con il docente.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Laboratorio di scrittura (20 novembre 2026, ore 9:00)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

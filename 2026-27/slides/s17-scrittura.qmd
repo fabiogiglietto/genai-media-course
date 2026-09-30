@@ -1,0 +1,211 @@
+---
+title: "Laboratorio di scrittura e consultazioni"
+subtitle: "IA Generativa e Media — Incontro 17 · Modulo 6"
+date: "2026-11-20"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+<!--
+TWIAI: da compilare a cura del docente con una notizia reale della settimana (16–20 novembre 2026).
+Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
+-->
+
+::: {.callout-note}
+## Da discutere
+Che cosa cambia per il sistema dei media?
+:::
+
+::: {.notes}
+Ultimo "This Week in AI" del corso. Si può chiedere agli studenti di proporre una notizia della settimana e di collegarla al progetto.
+:::
+
+## Roadmap del laboratorio
+
+1. **La struttura della relazione**
+2. **Scrivere al giusto livello di certezza**
+3. **La dichiarazione d'uso dell'IA**
+4. **Laboratorio e consultazioni**
+
+::: {.notes}
+Poche slide, molto lavoro. Mentre i gruppi scrivono, il docente incontra ogni gruppo per una consultazione di circa 10 minuti.
+:::
+
+## La relazione {background-color="#C5612E"}
+
+::: {.notes}
+Struttura suggerita: i gruppi possono adattarla, ma tutte le parti devono esserci.
+:::
+
+## Una struttura possibile
+
+| Sezione | Che cosa contiene |
+|---|---|
+| **Introduzione** | il caso, la domanda di ricerca, perché conta |
+| **Letture** | la cornice: operazioni ingannevoli, personaggi, persuasione |
+| **Dati e metodo** | corpus, codebook, prompt, validazione con i kappa |
+| **Risultati** | tabelle e grafici, ogni affermazione con la sua evidenza |
+| **Danni e responsabilità** | quali danni, chi potrebbe prevenirli |
+| **Limiti** | che cosa non possiamo dire, e perché |
+| **Dichiarazione d'uso dell'IA** | che cosa ha fatto l'IA, che cosa avete verificato |
+
+::: {.notes}
+Struttura IMRaD (introduzione, metodo, risultati, discussione) adattata al progetto: rispetto al modello dell'anno scorso si aggiungono la sezione su danni e responsabilità e la matrice affermazioni-evidenze come base dei risultati.
+
+Criteri di valutazione (scheda del corso): domanda e disegno chiari; pipeline applicata e validata; catena di evidenze documentata; danni e responsabilità ragionati; analisi solida; scrittura e visualizzazioni chiare; dichiarazione d'uso dell'IA.
+:::
+
+## Formato e consegna
+
+| Voce | Indicazione |
+|---|---|
+| Modello | copia del modello su Google Docs, a cura del capogruppo |
+| Lunghezza | circa 4.000–6.000 parole; abstract di 150–200 parole |
+| Citazioni | APA 7, solo fonti realmente consultate |
+| Appendici | prompt completo, codebook, tabella dei kappa, registro dell'agente |
+| Consegna | un unico PDF per gruppo, con i nomi di tutti, su Moodle |
+
+<!-- Link al modello 2026/27 su Google Docs: da aggiungere a cura del docente (copia adattata di Template_Paper_AI_Slop). -->
+
+::: {.notes}
+Indicazioni riprese dall'edizione 2025/26 e adattate.
+
+Il capogruppo copia il modello, lo condivide con i membri del gruppo in modifica e con il docente in commento: così si possono dare riscontri durante la scrittura.
+
+Citazioni: ogni riferimento va controllato sulla fonte originale. Una citazione inventata, anche se proposta da un modello linguistico, è un errore grave.
+
+Appendici: A, prompt completo in tutte le versioni con il registro delle modifiche; B, codebook finale con definizioni ed esempi; poi la tabella completa dei kappa e il registro dell'agente. La matrice affermazioni-evidenze può andare in appendice o nel materiale del gruppo.
+
+Consegna: un solo membro carica il PDF su Moodle per tutto il gruppo, almeno due settimane prima del primo appello dopo il corso.
+:::
+
+## Scrivere al giusto livello {background-color="#C5612E"}
+
+::: {.notes}
+Il linguaggio della certezza, ripreso dalla matrice di ieri.
+:::
+
+## Parole per ogni livello
+
+| Livello | Formulazioni adatte |
+|---|---|
+| **Osservato** | "nel corpus", "si osserva", "X account su Y" |
+| **Ricostruito** | "suggerisce", "è coerente con", "indica" |
+| **Ipotizzato** | "ipotizziamo", "una possibile spiegazione", "da verificare" |
+
+Linguaggio graduato come in @marino2026zombie e @wack2026
+
+::: {.notes}
+Marino et al. usano "suggests", "likely", "we hypothesise"; Wack e Prochaska si dichiarano "agnostic" sul perché di un loro risultato. Sono esempi di scrittura scientifica che non esagera. Evitate "dimostra", "prova" e "sicuramente" a meno che l'evidenza non sia davvero conclusiva.
+:::
+
+## Riportare i numeri con onestà
+
+- Dite sempre **su quanti casi**: "12 account su 40", non solo "30%"
+- Riportate il **kappa** accanto alle variabili che usate
+- Distinguete i **vostri** dati dai dati delle **letture**
+- Un grafico deve avere **titolo**, **fonte** e **unità**
+
+::: {.notes}
+Un esempio dal corso: la rete di gioco d'azzardo ha 223 gruppi in Synthetic seduction e 260 in Marino et al. Chi cita un numero deve dire da quale studio viene.
+:::
+
+## La dichiarazione d'uso dell'IA {background-color="#C5612E"}
+
+::: {.notes}
+Obbligatoria per la policy del corso, e parte della valutazione.
+:::
+
+## Che cosa dichiarare
+
+1. **Quali strumenti**: Gemini, NotebookLM, altri
+2. **Per che cosa**: codifica, ricerca di fonti, revisione del testo, grafici
+3. **Che cosa avete verificato** a mano, e come
+4. Che cosa **non** avete delegato, e perché
+
+::: {.callout-warning}
+## Attenzione
+Uso **sostitutivo** vietato: l'IA può criticare e rivedere un vostro testo, non scriverlo al posto vostro.
+:::
+
+::: {.notes}
+Il registro dell'agente tenuto dal workshop del 9 ottobre è la base della dichiarazione. Al colloquio orale vi chiederemo anche che cosa avete delegato all'IA e perché: è un criterio della valutazione individuale.
+:::
+
+## Laboratorio {background-color="#C5612E"}
+
+::: {.notes}
+Il resto della lezione.
+:::
+
+## Istruzioni per il laboratorio
+
+1. Dividetevi le **sezioni** della relazione
+2. Partite dalla **matrice** affermazioni-evidenze: ogni riga diventa un paragrafo
+3. Preparate **una domanda** per la consultazione con il docente
+4. Prima bozza di **dati e metodo**: è la sezione più facile da scrivere subito
+
+<!-- Ordine e orari delle consultazioni con i gruppi: da completare a cura del docente. -->
+
+::: {.notes}
+Consultazione: 10 minuti per gruppo. Chiedete su ciò che vi blocca, non una revisione completa.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- Una relazione con **tutte le parti**, dalla domanda ai limiti
+- Ogni paragrafo parte da una riga della **matrice**
+- Parole diverse per **osservato**, **ricostruito**, **ipotizzato**
+- La **dichiarazione d'uso dell'IA** dice anche che cosa avete verificato
+
+::: {.notes}
+Mercoledì l'ultimo incontro: confronto tra gruppi e post-test.
+:::
+
+## Per l'ultimo incontro
+
+**Mercoledì 25 novembre:** Confronto tra gruppi, post-test, questionario finale
+
+- Ogni gruppo presenta **3 risultati** in **5 minuti**
+- Portate il portatile o il telefono per il **test** e il **questionario**
+- Consegna della relazione su Moodle almeno **due settimane prima del primo appello** dopo il corso
+
+::: {.notes}
+Le presentazioni di mercoledì non sono valutate a parte: servono al confronto tra famiglie e linee.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Confronto tra gruppi e chiusura (25 novembre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Buon lavoro.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

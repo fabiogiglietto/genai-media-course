@@ -1,0 +1,196 @@
+---
+title: "Confronto tra gruppi e chiusura"
+subtitle: "IA Generativa e Media — Incontro 18 · Modulo 6"
+date: "2026-11-25"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap dell'ultimo incontro
+
+1. **Il test di riconoscimento**, di nuovo
+2. **Confronto tra gruppi** — famiglie e linee
+3. **I risultati del test**: sicurezza e accuratezza
+4. **Che cosa abbiamo delegato all'IA**
+5. **Questionario finale** e saluti
+
+::: {.notes}
+Prima il test, poi le presentazioni: così nessuno è influenzato dalla discussione. I risultati del test si mostrano alla fine, confrontati con quelli del primo giorno.
+:::
+
+## Il test, di nuovo {background-color="#C5612E"}
+
+::: {.notes}
+Stessi 12 elementi del 7 ottobre, stesso ordine, stesse domande.
+:::
+
+## Test di riconoscimento: seconda volta
+
+Per ogni elemento, le stesse due domande del primo giorno:
+
+1. Generato con l'**IA** o prodotto da una **persona**?
+2. Quanto siete **sicuri** (da 1 a 5)?
+
+<!-- Link al quiz del post-test su Moodle: da aggiungere a cura del docente. -->
+
+::: {.notes}
+10 minuti. Non si discute degli elementi finché tutti non hanno finito. Dopo la chiusura del test si possono attivare nella revisione di Moodle le risposte corrette.
+:::
+
+## Confronto tra gruppi {background-color="#C5612E"}
+
+::: {.notes}
+Nove presentazioni da 5 minuti, poi discussione per righe e per colonne della matrice.
+:::
+
+## La matrice, riempita
+
+| | Religiosi | Anziani | Medici e benessere |
+|---|---|---|---|
+| **RQ1** autorità | gruppo 1 | gruppo 2 | gruppo 3 |
+| **RQ2** persuasione | gruppo 4 | gruppo 5 | gruppo 6 |
+| **RQ3** pubblico | gruppo 7 | gruppo 8 | gruppo 9 |
+
+Ogni gruppo: **3 risultati** in **5 minuti**, ciascuno con il suo **livello di certezza**
+
+::: {.notes}
+Ordine suggerito: per colonne (una famiglia alla volta, dalle tre linee), così emerge il quadro completo di una famiglia prima di passare alla successiva.
+:::
+
+## Due confronti
+
+::: {.columns}
+::: {.column width="50%"}
+### Per righe
+Una stessa domanda, tre famiglie: l'autorità si costruisce allo stesso modo per una suora, una nonna, un medico?
+:::
+
+::: {.column width="50%"}
+### Per colonne
+Una stessa famiglia, tre domande: come si collegano identità, persuasione e pubblico?
+:::
+:::
+
+::: {.notes}
+Domande guida per la discussione:
+- Ci sono infrastrutture commerciali condivise tra famiglie diverse (RQ1)?
+- Quali driver e valori cambiano tra le famiglie (RQ2)?
+- Il pubblico è più credulo con alcune figure che con altre (RQ3)? Attenzione: con i nostri dati descriviamo, non misuriamo effetti.
+
+Collegamento con Marino et al. (2026): operazioni con superfici diverse possono condividere la stessa logica strutturale.
+:::
+
+## Sicurezza e accuratezza {background-color="#C5612E"}
+
+::: {.notes}
+I risultati aggregati e anonimi del test, pre e post.
+:::
+
+## I risultati del test
+
+<!--
+Grafico da preparare a cura del docente dopo la chiusura del post-test:
+per ciascun elemento e nel complesso, accuratezza media e sicurezza media al 7 ottobre e al 25 novembre.
+Idea di visualizzazione: per ogni studente (anonimo) un punto con accuratezza sull'asse x e sicurezza media sull'asse y; la diagonale indica la calibrazione perfetta.
+-->
+
+- La nostra **accuratezza** è cambiata?
+- La nostra **sicurezza** è cambiata?
+- Siamo più **calibrati**: la sicurezza segue l'accuratezza?
+
+::: {.notes}
+Il punto didattico non è "quanti ne abbiamo presi", ma la calibrazione: chi è molto sicuro e sbaglia spesso è sovra-sicuro; chi è poco sicuro ma accurato è sotto-sicuro. È uno dei risultati di apprendimento del corso.
+
+Dopo il grafico, rivelare gli elementi uno per uno: quali erano generati con l'IA? Collegamento con Ferrara (incontro 1): credulità e cinismo, i due modi di fallire.
+:::
+
+## Che cosa abbiamo imparato dal test
+
+::: {.highlight-box}
+Riconoscere il contenuto sintetico dall'**artefatto** è difficile; per questo servono **processi** verificabili [@ferrara2026].
+:::
+
+::: {.notes}
+Chiusura del cerchio con la prima lezione: dalla fiducia negli artefatti alla fiducia nei processi. Il nostro progetto ha fatto proprio questo: non ha chiesto "questo volto è falso?", ma ha documentato catene, validato codifiche, dichiarato livelli di certezza.
+:::
+
+## Che cosa abbiamo delegato {background-color="#C5612E"}
+
+::: {.notes}
+Riflessione finale sugli agenti, tema nuovo di quest'anno.
+:::
+
+## La matrice di delega, rivista
+
+Riprendete la matrice del **9 ottobre**. Dopo il progetto:
+
+1. Che cosa avete **delegato** all'IA?
+2. Dove l'IA vi ha fatto **risparmiare** tempo?
+3. Dove vi ha fatto **sbagliare**, o avrebbe potuto?
+4. Che cosa **non delegherete** più, e che cosa delegherete di più?
+
+::: {.notes}
+Discussione di 15 minuti. Collegamento con Esposito (incontro 2): il disallineamento è strutturale; con Alizadeh et al.: la formulazione del prompt cambia ciò che l'agente fa. Le risposte servono anche per preparare il colloquio orale, dove chiederemo che cosa il gruppo ha delegato e perché.
+:::
+
+## Il corso in una slide
+
+| Modulo | Idea chiave |
+|---|---|
+| **1** | Realtà sintetica; interlocutori e agenti |
+| **2** | Personaggi parasociali, persuasione, trasparenza |
+| **3** | Operazioni ingannevoli; validare un LLM |
+| **4–5** | Codificare con persone e modelli, e misurarne l'accordo |
+| **6** | Danni, responsabilità, affermazioni al giusto livello |
+
+::: {.notes}
+Riepilogo rapido, da commentare con la classe: quale idea vi porterete via?
+:::
+
+## Questionario finale
+
+Compilate il **questionario di fine corso** su Moodle (circa 5 minuti).
+
+<!-- Link al questionario finale su Moodle: da aggiungere a cura del docente. -->
+
+::: {.notes}
+Il questionario raccoglie un giudizio sul corso e sul progetto. Anonimo. Le risposte servono a migliorare l'edizione dell'anno prossimo.
+:::
+
+## Prossimi passi
+
+- **Relazione** di gruppo su Moodle almeno **due settimane prima** del primo appello dopo il corso
+- **Colloquio orale** individuale sul progetto
+- Dubbi: forum di Moodle o ricevimento
+
+::: {.notes}
+Ricordare il peso: relazione 75%, partecipazione 10%, colloquio 15%.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Buon lavoro con le relazioni.**
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Fine del corso.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::
