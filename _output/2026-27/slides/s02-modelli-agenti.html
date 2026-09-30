@@ -266,7 +266,7 @@ Fabio Giglietto
 <p>Allucinazioni e disallineamento si possono <strong>controllare</strong>, ma sono <strong>in principio ineliminabili</strong>: non sono malfunzionamenti, sono conseguenze coerenti del modo in cui questi sistemi operano come <strong>interlocutori</strong> <span class="citation" data-cites="esposito2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Esposito, 2026</a>)</span>.</p>
 </div>
 <aside class="notes">
-<p>Parafrasi dalle Conclusioni di Esposito (“why misalignment is inevitable and how to deal with it”). È un cambio di prospettiva importante: non aspettiamo il modello che non sbaglia mai, organizziamo il lavoro sapendo che sbaglierà. È la logica del protocollo di validazione che useremo nel progetto (modulo 3).</p>
+<p>Parafrasi dalle Conclusioni di Esposito (“why misalignment is inevitable and how to deal with it”). Le allucinazioni nascono perché il sistema deve sempre rispondere, anche quando dati e prompt sono inadeguati, e non può sapere se sta inventando. Esposito nota anche un paradosso: i modelli di “ragionamento” più potenti tendono ad allucinare di più, perché diventano più sicuri delle proprie catene di argomentazione. È un cambio di prospettiva importante: non aspettiamo il modello che non sbaglia mai, organizziamo il lavoro sapendo che sbaglierà. È la logica del protocollo di validazione che useremo nel progetto (modulo 3).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -525,11 +525,12 @@ Fabio Giglietto
 <p>Due agenti di programmazione hanno provato a <strong>riprodurre studi di scienze sociali</strong> partendo dai materiali di replicazione: <strong>93,4%</strong> contro <strong>62,1%</strong> di compiti riusciti <span class="citation" data-cites="alizadeh2026">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Alizadeh et al., 2026</a>)</span>.</p>
 </div>
 <ul>
-<li>La differenza non stava nel <strong>ragionamento analitico</strong></li>
-<li>Stava nella capacità di <strong>riparare l’ambiente</strong> quando qualcosa non funzionava</li>
+<li>L’ostacolo principale non era la <strong>logica dell’analisi</strong>, ma la fragilità dell’<strong>ambiente</strong> di esecuzione</li>
+<li>L’agente migliore <strong>riparava da solo</strong> pacchetti mancanti e percorsi sbagliati</li>
 </ul>
 <aside class="notes">
-<p>Alizadeh et al.&nbsp;(2026), working paper non ancora sottoposto a revisione. Confronto tra Claude Code e Codex. A livello di articolo intero, 78,0% contro 35,8%. Dato ripreso dalla sintesi della nota nel mio archivio di letture: da verificare sul testo completo prima di approfondire.</p>
+<p>Alizadeh et al.&nbsp;(2026), working paper non ancora sottoposto a revisione (§2.1, Fig. 1). Benchmark di 221 compiti tratti da 54 articoli di scienza politica, sociologia, psicologia e comunicazione. Claude Code contro Codex: 93,4% contro 62,1% dei compiti, 78,0% contro 35,8% degli articoli riprodotti per intero; Codex non riusciva a completare il 17,8% dei compiti. Gli autori precisano che il risultato vale per questi agenti e questi compiti, e che misura la capacità degli agenti, non la riproducibilità della letteratura.</p>
+<p>Due risultati utili per la lezione sulla delega: fornire il PDF dell’articolo migliora di poco le prestazioni ma introduce distorsioni quando la riproduzione è impossibile; e una formulazione del prompt che spinge a “trovare i risultati dell’articolo” (lo chiamano sycophancy nudging) porta gli agenti verso una ricerca confermativa. Il modo in cui chiediamo cambia che cosa l’agente fa.</p>
 <p>Perché ci interessa: mostra che cosa rende utile un agente. Non tanto “pensare meglio”, quanto accorgersi che un passo è fallito e riprovare in un altro modo. È anche il punto in cui l’agente fa cose che non vedete.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -626,7 +627,7 @@ Fabio Giglietto
 </div></div>
 <aside class="notes">
 <p>Schroeder et al.&nbsp;(2026): il salto qualitativo rispetto alle botnet è la combinazione di ragionamento dei modelli e sistemi multi-agente. Il rischio per la democrazia è il consenso sintetico, che mina l’indipendenza di giudizio su cui si basa la “saggezza della folla”.</p>
-<p>Orlando et al.&nbsp;(2025), working paper: in un ambiente simulato, agenti con più consapevolezza operativa rafforzano coesione della rete, convergenza narrativa, amplificazione sincronizzata. Nessuno ha detto loro come coordinarsi.</p>
+<p>Orlando et al.&nbsp;(2025), working paper: in un ambiente simulato, agenti con più consapevolezza operativa rafforzano coesione della rete, convergenza narrativa, amplificazione sincronizzata e diffusione degli hashtag. Nessuno ha detto loro come coordinarsi. Dato sorprendente: basta rivelare agli agenti quali altri agenti condividono il loro obiettivo per ottenere un coordinamento quasi pari a quello ottenuto con deliberazione e voto collettivi. Nelle discussioni simulate, gli agenti convergono su strategie simili a quelle delle operazioni reali: amplificare i contenuti che funzionano, mantenere un messaggio coerente, cercare pubblici ricettivi.</p>
 <p>Collegamento con lo strato 3 di Ferrara (interazione) e con la riprova sociale: nei commenti del nostro caso cercheremo anche commenti probabilmente sintetici.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -695,14 +696,16 @@ Fabio Giglietto
 </div><div class="column" style="width:50%;">
 <h3 id="le-persone-fanno">Le persone fanno</h3>
 <ul>
-<li>Scrivono e rivedono il <strong>codebook</strong></li>
-<li>Codificano <strong>in cieco</strong> un campione</li>
-<li>Misurano l’accordo (<strong>kappa</strong>) e decidono</li>
+<li>Scrivono e rivedono il <strong>codebook</strong> dopo una fase <strong>pilota</strong></li>
+<li>Codificano un campione <strong>in coppia</strong>, ciascuno per conto proprio</li>
+<li><strong>Riconciliano</strong> i disaccordi e decidono</li>
 </ul>
 </div></div>
-<p>Protocollo: <span class="citation" data-cites="marino2024">Marino &amp; Giglietto (<a href="#/riferimenti" role="doc-biblioref" onclick="">2024</a>)</span></p>
+<p>Protocollo di validazione umana adattato da <span class="citation" data-cites="marino2024">Marino &amp; Giglietto (<a href="#/riferimenti" role="doc-biblioref" onclick="">2024</a>)</span></p>
 <aside class="notes">
-<p>Anteprima del metodo del progetto (lo vediamo per intero nel modulo 3). L’LLM è nel ciclo, non al posto delle persone. Le tre fonti di disallineamento di Esposito spiegano perché serve la validazione: il modello può divergere dal codebook anche se il prompt è scritto bene.</p>
+<p>Anteprima del metodo del progetto (lo vediamo per intero nel modulo 3). L’LLM è nel ciclo, non al posto delle persone.</p>
+<p>Da Marino e Giglietto (2024, §3–4): validazione con codificatori esperti; addestramento su un sottocampione pilota; squadre di due (uno più e uno meno esperto) che codificano in modo indipendente e poi si incontrano per risolvere le discrepanze; un livello 98 per i casi ambigui o incerti. Nel corso aggiungiamo una misura dell’accordo tra codifica umana e codifica del modello (kappa di Cohen): è una nostra scelta, non fa parte del protocollo dell’articolo.</p>
+<p>Le tre fonti di disallineamento di Esposito spiegano perché serve la validazione: il modello può divergere dal codebook anche se il prompt è scritto bene.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -815,7 +818,7 @@ Marino, G., &amp; Giglietto, F. (2024). Integrating Large Language Models in Pol
 Orlando, G. M., Ye, J., La Gatta, V., Saeedi, M., Moscato, V., Ferrara, E., &amp; Luceri, L. (2025). <em>Emergent Coordinated Behaviors in Networked <span>LLM</span> Agents: Modeling the Strategic Dynamics of Information Operations</em> [Manoscritto].
 </div>
 <div id="ref-schroeder2026" class="csl-entry" role="listitem">
-Schroeder, D. T., Cha, M., Baronchelli, A., Bostrom, N., Christakis, N. A., Garcia, D., Goldenberg, A., Kyrychenko, Y., Leyton-Brown, K., Lutz, N., Marcus, G., Menczer, F., Pennycook, G., Rand, D. G., Ressa, M., Schweitzer, F., Song, D., Summerfield, C., Tang, A., … Kunst, J. R. (2026). How Malicious <span>AI</span> Swarms Can Threaten Democracy. <em>Science</em>, <em>387</em>(6732), 354–357.
+Schroeder, D. T., Cha, M., Baronchelli, A., Bostrom, N., Christakis, N. A., Garcia, D., Goldenberg, A., Kyrychenko, Y., Leyton-Brown, K., Lutz, N., Marcus, G., Menczer, F., Pennycook, G., Rand, D. G., Ressa, M., Schweitzer, F., Song, D., Summerfield, C., Tang, A., … Kunst, J. R. (2026). How Malicious <span>AI</span> Swarms Can Threaten Democracy. <em>Science</em>, 354–357. <a href="https://doi.org/10.1126/science.adz1697">https://doi.org/10.1126/science.adz1697</a>
 </div>
 </div>
 

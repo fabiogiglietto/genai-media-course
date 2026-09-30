@@ -75,6 +75,9 @@ Three research questions, one per dimension of deceptive operations (Marino et a
 - **RQ2 Persuasion (content):** drivers and values used to transfer trust from persona to offer.
 - **RQ3 Audience (participation):** credulous / incredulous / uncertain / AI-aware-but-accepting comments; likely synthetic comments.
 
-Groups: 3 × 3 matrix (strand × persona family: religious; elders; medical/wellness). Validation: pilot until agreement with a "98 = non so" code; blind coding in pairs (one more, one less experienced coder); reconciliation meeting; Gemini on the full corpus with a documented prompt; Cohen's kappa per variable, refine below 0.60. Ethics: observe and archive only (no following, commenting, messaging, carts or purchases); pseudonymise commenters.
+Groups: 3 × 3 matrix (strand × persona family: religious; elders; medical/wellness). Validation: pilot until agreement with a "98 = non so" code; blind coding in pairs (one more, one less experienced coder); reconciliation meeting; Gemini on the full corpus with a documented prompt; Cohen's kappa per variable, refine below 0.60.
+**Attribution:** from Marino & Giglietto (2024, §3–4) come only expert coders, pilot training, pairs of one more and one less experienced coder coding independently, alignment and concluding meetings to resolve discrepancies, and a 98 level for ambiguous cases. The paper does NOT use Cohen's kappa, a 0.60 threshold or Gemini: those are the course's additions. Never cite `marino2024` for kappa.
+
+Rule for all decks: every claim tied to a reading must be checked against the full text (not the kasten note). Pilo (2026) documents only the rabbi personas; the other persona families come from Massimo Terenzi's research. Ethics: observe and archive only (no following, commenting, messaging, carts or purchases); pseudonymise commenters.
 
 The corpus (Instagram and TikTok posts and comments) is prepared by the instructor. Do not describe its size or content in slides until it exists.

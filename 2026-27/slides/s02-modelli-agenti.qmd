@@ -81,7 +81,7 @@ Allucinazioni e disallineamento si possono **controllare**, ma sono **in princip
 :::
 
 ::: {.notes}
-Parafrasi dalle Conclusioni di Esposito ("why misalignment is inevitable and how to deal with it"). È un cambio di prospettiva importante: non aspettiamo il modello che non sbaglia mai, organizziamo il lavoro sapendo che sbaglierà. È la logica del protocollo di validazione che useremo nel progetto (modulo 3).
+Parafrasi dalle Conclusioni di Esposito ("why misalignment is inevitable and how to deal with it"). Le allucinazioni nascono perché il sistema deve sempre rispondere, anche quando dati e prompt sono inadeguati, e non può sapere se sta inventando. Esposito nota anche un paradosso: i modelli di "ragionamento" più potenti tendono ad allucinare di più, perché diventano più sicuri delle proprie catene di argomentazione. È un cambio di prospettiva importante: non aspettiamo il modello che non sbaglia mai, organizziamo il lavoro sapendo che sbaglierà. È la logica del protocollo di validazione che useremo nel progetto (modulo 3).
 :::
 
 ## Interlocutori, non intelligenze {background-color="#C5612E"}
@@ -215,11 +215,13 @@ Domani lavoriamo ai livelli 2 e 3 (Deep Research in Gemini, NotebookLM). Nel pro
 Due agenti di programmazione hanno provato a **riprodurre studi di scienze sociali** partendo dai materiali di replicazione: **93,4%** contro **62,1%** di compiti riusciti [@alizadeh2026].
 :::
 
-- La differenza non stava nel **ragionamento analitico**
-- Stava nella capacità di **riparare l'ambiente** quando qualcosa non funzionava
+- L'ostacolo principale non era la **logica dell'analisi**, ma la fragilità dell'**ambiente** di esecuzione
+- L'agente migliore **riparava da solo** pacchetti mancanti e percorsi sbagliati
 
 ::: {.notes}
-Alizadeh et al. (2026), working paper non ancora sottoposto a revisione. Confronto tra Claude Code e Codex. A livello di articolo intero, 78,0% contro 35,8%. Dato ripreso dalla sintesi della nota nel mio archivio di letture: da verificare sul testo completo prima di approfondire.
+Alizadeh et al. (2026), working paper non ancora sottoposto a revisione (§2.1, Fig. 1). Benchmark di 221 compiti tratti da 54 articoli di scienza politica, sociologia, psicologia e comunicazione. Claude Code contro Codex: 93,4% contro 62,1% dei compiti, 78,0% contro 35,8% degli articoli riprodotti per intero; Codex non riusciva a completare il 17,8% dei compiti. Gli autori precisano che il risultato vale per questi agenti e questi compiti, e che misura la capacità degli agenti, non la riproducibilità della letteratura.
+
+Due risultati utili per la lezione sulla delega: fornire il PDF dell'articolo migliora di poco le prestazioni ma introduce distorsioni quando la riproduzione è impossibile; e una formulazione del prompt che spinge a "trovare i risultati dell'articolo" (lo chiamano sycophancy nudging) porta gli agenti verso una ricerca confermativa. Il modo in cui chiediamo cambia che cosa l'agente fa.
 
 Perché ci interessa: mostra che cosa rende utile un agente. Non tanto "pensare meglio", quanto accorgersi che un passo è fallito e riprovare in un altro modo. È anche il punto in cui l'agente fa cose che non vedete.
 :::
@@ -276,7 +278,7 @@ Agenti LLM in rete riproducono **da soli** meccanismi di coordinamento tipici de
 ::: {.notes}
 Schroeder et al. (2026): il salto qualitativo rispetto alle botnet è la combinazione di ragionamento dei modelli e sistemi multi-agente. Il rischio per la democrazia è il consenso sintetico, che mina l'indipendenza di giudizio su cui si basa la "saggezza della folla".
 
-Orlando et al. (2025), working paper: in un ambiente simulato, agenti con più consapevolezza operativa rafforzano coesione della rete, convergenza narrativa, amplificazione sincronizzata. Nessuno ha detto loro come coordinarsi.
+Orlando et al. (2025), working paper: in un ambiente simulato, agenti con più consapevolezza operativa rafforzano coesione della rete, convergenza narrativa, amplificazione sincronizzata e diffusione degli hashtag. Nessuno ha detto loro come coordinarsi. Dato sorprendente: basta rivelare agli agenti quali altri agenti condividono il loro obiettivo per ottenere un coordinamento quasi pari a quello ottenuto con deliberazione e voto collettivi. Nelle discussioni simulate, gli agenti convergono su strategie simili a quelle delle operazioni reali: amplificare i contenuti che funzionano, mantenere un messaggio coerente, cercare pubblici ricettivi.
 
 Collegamento con lo strato 3 di Ferrara (interazione) e con la riprova sociale: nei commenti del nostro caso cercheremo anche commenti probabilmente sintetici.
 :::
@@ -319,16 +321,20 @@ Riprendere le risposte degli studenti alla domanda del questionario su che cosa 
 
 ::: {.column width="50%"}
 ### Le persone fanno
-- Scrivono e rivedono il **codebook**
-- Codificano **in cieco** un campione
-- Misurano l'accordo (**kappa**) e decidono
+- Scrivono e rivedono il **codebook** dopo una fase **pilota**
+- Codificano un campione **in coppia**, ciascuno per conto proprio
+- **Riconciliano** i disaccordi e decidono
 :::
 :::
 
-Protocollo: @marino2024
+Protocollo di validazione umana adattato da @marino2024
 
 ::: {.notes}
-Anteprima del metodo del progetto (lo vediamo per intero nel modulo 3). L'LLM è nel ciclo, non al posto delle persone. Le tre fonti di disallineamento di Esposito spiegano perché serve la validazione: il modello può divergere dal codebook anche se il prompt è scritto bene.
+Anteprima del metodo del progetto (lo vediamo per intero nel modulo 3). L'LLM è nel ciclo, non al posto delle persone.
+
+Da Marino e Giglietto (2024, §3–4): validazione con codificatori esperti; addestramento su un sottocampione pilota; squadre di due (uno più e uno meno esperto) che codificano in modo indipendente e poi si incontrano per risolvere le discrepanze; un livello 98 per i casi ambigui o incerti. Nel corso aggiungiamo una misura dell'accordo tra codifica umana e codifica del modello (kappa di Cohen): è una nostra scelta, non fa parte del protocollo dell'articolo.
+
+Le tre fonti di disallineamento di Esposito spiegano perché serve la validazione: il modello può divergere dal codebook anche se il prompt è scritto bene.
 :::
 
 ## Sintesi {background-color="#C5612E"}

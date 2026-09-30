@@ -196,7 +196,7 @@ Lavoro a coppie, 10 minuti, poi confronto. Soluzioni attese da discutere, non da
 - riassumere una lettura: delegabile, ma il riassunto non sostituisce la lettura;
 - cercare studi: delegabile con controllo di ogni fonte (esercizio 2);
 - descrivere un'immagine: delegabile con controllo, lo faremo nel modulo 2;
-- codificare 500 commenti: delegabile con controllo a campione, cioè il protocollo LLMs-in-the-loop con codifica in cieco e kappa [@marino2024];
+- codificare 500 commenti: delegabile con controllo a campione, cioè il protocollo LLMs-in-the-loop: codifica umana indipendente in coppia e riconciliazione, come in Marino e Giglietto (2024), più il kappa che aggiungiamo nel corso;
 - scrivere i risultati: solo come supporto (policy del corso: vietato l'uso sostitutivo);
 - seguire un account: non delegabile e vietato (niente follow, commenti, messaggi, carrelli o acquisti sugli account studiati).
 :::
