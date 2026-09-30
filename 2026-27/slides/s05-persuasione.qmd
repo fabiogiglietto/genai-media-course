@@ -1,0 +1,294 @@
+---
+title: "Driver di persuasione e trasferimento di fiducia"
+subtitle: "IA Generativa e Media — Incontro 5 · Modulo 2"
+date: "2026-10-23"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap della lezione
+
+1. **Il caso di *Synthetic seduction*** — una rete di gruppi Facebook che promuove il gioco d'azzardo
+2. **Sette driver visivi** di persuasione
+3. **Che cosa cambia con l'IA generativa**
+4. **Dal gioco d'azzardo ai nostri personaggi** — trasferimento di fiducia
+5. **Esercizio** — descrizioni denotative e connotative con Gemini
+
+::: {.notes}
+Mercoledì abbiamo visto chi ci parla (identità). Oggi vediamo come si convince: quali leve visive trasferiscono fiducia dal volto al prodotto.
+
+Lettura: Giglietto, Terenzi, Chakraborty e Marino (2026), capitolo di libro. Il caso riguarda il gioco d'azzardo su Facebook, non i nostri personaggi: lo useremo come strumento da adattare.
+:::
+
+## Il caso {background-color="#C5612E"}
+
+::: {.notes}
+Il capitolo nasce dal progetto europeo vera.ai sulle reti coordinate che diffondono contenuti dannosi.
+:::
+
+## Una rete coordinata
+
+- **223 gruppi pubblici** Facebook coordinati, dedicati al gioco d'azzardo
+- In media oltre **10.000 post all'ora**
+- Gruppi ancora attivi nel 2025 con circa **200.000 membri** in media
+- **2.323 immagini** analizzate
+
+Dati da @giglietto2026seduction (§3.1)
+
+::: {.notes}
+La rete è stata scoperta con un sistema di monitoraggio del comportamento coordinato (condivisione degli stessi link in pochi secondi). Le immagini sono state raccolte tramite la Meta Content Library, che però restituisce solo i contenuti degli account più popolari: è un limite importante.
+
+Domanda: perché una rete così grande resta visibile per anni su una piattaforma che vieta la pubblicità non autorizzata del gioco d'azzardo? (§2.1.1: i contenuti "organici" sfuggono alle regole sulla pubblicità.)
+:::
+
+## Il metodo: un LLM nel ciclo
+
+| Passo | Chi lo fa |
+|---|---|
+| Descrizione **denotativa** e **connotativa** di ogni immagine | GPT-4o |
+| Trasformazione delle descrizioni in vettori e raggruppamento | algoritmi (UMAP, HDBSCAN) |
+| Incrocio dei gruppi: **366 combinazioni** | calcolo |
+| Codifica qualitativa di **85 combinazioni** fino a saturazione | **4 ricercatori** |
+
+Adattato da @giglietto2026seduction (§3)
+
+::: {.notes}
+Denotativa: che cosa si vede, in modo letterale. Connotativa: sentimenti, idee e significati culturali associati. Il modello ha prodotto le descrizioni; le persone hanno interpretato i gruppi e costruito la tipologia dei driver.
+
+È un esempio di "LLM nel ciclo" diverso da quello che useremo noi: qui il modello aiuta a esplorare, nel progetto il modello codifica e noi lo validiamo con il kappa.
+:::
+
+## Sette driver visivi {background-color="#C5612E"}
+
+::: {.notes}
+§4.1 e Tabella 1 del capitolo. Le percentuali si riferiscono alle combinazioni di gruppi analizzate, non a tutte le immagini.
+:::
+
+## I sette driver
+
+| Driver | In breve |
+|---|---|
+| **Ricchezza aspirazionale** | auto, orologi, contanti, status maschile |
+| **Fiducia fabbricata** | ricevute di pagamento, prove di vincita |
+| **FOMO e urgenza** | conti alla rovescia, offerte a tempo |
+| **Gamification e soglie basse** | pulsanti "spin", puntate minime |
+| **Testimonial famosi** | la credibilità di una celebrità passa al marchio |
+| **Sfruttamento delle relazioni** | "invita tre amici" |
+| **Localizzazione culturale e linguistica** | lingua, umorismo, valori locali |
+
+Adattato da @giglietto2026seduction (Tab. 1)
+
+::: {.notes}
+La tabella riassume §4.1.1–4.1.7. I driver non lavorano da soli: nelle combinazioni si rafforzano a vicenda (per esempio immagini aspirazionali accanto a ricevute di pagamento), in quella che il capitolo chiama un "loop" di desiderio, conferma e attivazione (§5).
+:::
+
+## Ricchezza aspirazionale e fiducia fabbricata
+
+::: {.columns}
+::: {.column width="50%"}
+### Aspirazione
+Motivi di lusso e ascesa sociale in circa il **55%** delle combinazioni: il gioco come via verso ricchezza e status
+:::
+
+::: {.column width="50%"}
+### Fiducia fabbricata
+Prove di pagamento in circa il **37%**: ricevute con data e numero di riferimento come **dimostrazione di affidabilità**
+:::
+:::
+
+Dati da @giglietto2026seduction (§4.1.1–4.1.2)
+
+::: {.notes}
+Il secondo driver è quello più vicino al nostro caso: la fiducia si costruisce con "prove" che sembrano documenti (ricevute, screenshot, conferme). Il capitolo nota anche l'uso di meme sulle perdite: l'umorismo normalizza il perdere e spinge a riprovare.
+
+Domanda: quali sarebbero le "prove" equivalenti per un personaggio che vende un libro o un integratore? (Testimonianze, foto di clienti soddisfatti, numeri di vendita, citazioni.)
+:::
+
+## Il testimonial trasferisce fiducia
+
+::: {.orange-box}
+Il testimonial famoso **trasferisce capitale simbolico** dalla figura pubblica al marchio: partecipare diventa accettabile, desiderabile, perfino patriottico [@giglietto2026seduction, §4.1.5].
+:::
+
+::: {.notes}
+Nel caso del capitolo: sportivi nazionali e personaggi dei media, spesso con la maglietta del marchio. Il meccanismo è il trasferimento di fiducia: la credibilità di una persona nota passa al servizio promosso.
+
+Il nostro caso sposta questo meccanismo: al posto della celebrità reale c'è un'autorità inventata (una suora, un medico). La fiducia non viene da una fama verificabile ma dall'aspetto del ruolo.
+:::
+
+## Localizzazione: i valori come leva
+
+- **56 cluster** di immagini in filippino e urdu
+- Umorismo locale e pressione del gruppo per rendere il gioco una **pratica comunitaria**
+- Nel gruppo in urdu: donne in difficoltà, famiglie in crisi, **valori tradizionali**, e il gioco inserito in queste narrazioni morali
+
+Adattato da @giglietto2026seduction (§4.1.7)
+
+::: {.notes}
+Il driver più nascosto. Nel gruppo in urdu i contenuti quasi non parlano di gioco: raccontano vittime, tradimenti, crollo della famiglia tradizionale, con didascalie moralizzanti. Il capitolo parla di un messaggio che diventa "ideologicamente manipolativo" (§5).
+
+Collegamento diretto con i nostri personaggi, che parlano di valori tradizionali prima di rimandare al negozio.
+:::
+
+## Che cosa cambia con l'IA {background-color="#C5612E"}
+
+::: {.notes}
+§4.2 del capitolo: l'analisi temporale dopo il lancio di ChatGPT.
+:::
+
+## Una crescita esplosiva
+
+::: {.highlight-box}
+Post mensili della rete: in media **2.121** prima di ChatGPT, **280.952** dopo; picchi oltre **10 milioni** al mese nel 2024, con un punto di rottura a **luglio 2023** [@giglietto2026seduction, §4.2].
+:::
+
+- Gli autori avvertono: è una **correlazione temporale**, non una prova di causa
+- Altri fattori possibili: politiche di Meta, strategie di marketing
+
+::: {.notes}
+Il salto è enorme e statisticamente significativo, ma il capitolo è esplicito sui limiti: non si può attribuire la crescita solo all'IA generativa. La tempistica e la dimensione del fenomeno suggeriscono però che la produzione di contenuti sia diventata più facile e veloce.
+
+Esercizio di giudizio (descrittore "autonomia di giudizio"): come formulereste questa conclusione in una frase, al giusto livello di certezza?
+:::
+
+## Riconoscere le immagini generate
+
+Indizi ricorrenti nelle immagini più recenti [@giglietto2026seduction, §4.2]:
+
+- Luce **iperrealistica**, superfici **troppo lisce**, simmetria quasi perfetta
+- Colori saturi, atmosfere da **sogno**
+- Accostamenti **improbabili** (squali, forzieri, slot machine nella stessa scena)
+
+::: {.callout-warning}
+## Attenzione
+Gli autori parlano di un'attribuzione **plausibile**, non verificabile forensicamente.
+:::
+
+::: {.notes}
+Questi indizi valgono per le immagini fantastiche del gioco d'azzardo. I ritratti realistici dei nostri personaggi sono molto più difficili da riconoscere. Ricordate il test del primo giorno: lo ripeteremo a fine corso.
+:::
+
+## Personaggi sintetici al posto dei testimonial
+
+::: {.orange-box}
+Personaggi, mascotte e avatar generati con l'IA possono sostituire influencer e modelli umani: simulano **intimità** o **autorità**, ma **senza le regole** che valgono per i post con persone reali [@giglietto2026seduction, §5].
+:::
+
+::: {.notes}
+Questa è la frase del capitolo più vicina al nostro progetto. Le regole su testimonial e influencer (trasparenza sulle sponsorizzazioni, responsabilità di chi promuove) presuppongono una persona reale. Un personaggio sintetico può aggirarle.
+
+Il capitolo parla anche di "opacità epistemica": gli utenti non distinguono più contenuti organici, promozioni pagate e manipolazioni sintetiche.
+:::
+
+## Dal gioco ai personaggi {background-color="#C5612E"}
+
+::: {.notes}
+Adattiamo i driver al nostro caso. Attenzione: è un'estensione nostra, da verificare sui dati, non un risultato del capitolo.
+:::
+
+## I driver come ipotesi per la domanda 2
+
+| Driver del capitolo | Domanda per i nostri personaggi |
+|---|---|
+| Fiducia fabbricata | Quali "prove" accompagnano l'offerta? |
+| Testimonial | Da quale ruolo viene l'autorità? |
+| Localizzazione e valori | Quali valori precedono il link al negozio? |
+| FOMO e urgenza | Ci sono scadenze, scarsità, "solo oggi"? |
+| Aspirazione | Che cosa promette: ricchezza, salute, serenità? |
+
+Adattato da @giglietto2026seduction
+
+::: {.notes}
+Queste domande diventeranno variabili del codebook per la domanda di ricerca 2 (persuasione). Non tutti i driver si trasferiranno; potrebbero emergerne di nuovi (per esempio la religiosità, la nostalgia). È il lavoro dei gruppi della linea 2.
+:::
+
+## Esercizio {background-color="#C5612E"}
+
+::: {.notes}
+30 minuti, a coppie, con Gemini (account istituzionale).
+:::
+
+## Denotativo e connotativo con Gemini
+
+1. Scegliete un'**immagine pubblicitaria** dal vostro feed (non dagli account del caso)
+2. Chiedete a Gemini una descrizione **denotativa** (che cosa si vede) e una **connotativa** (che cosa evoca)
+3. Scrivete **voi** una connotazione, **prima** di leggere quella del modello
+4. Confrontate: che cosa ha colto il modello? Che cosa ha **appiattito**?
+
+::: {.notes}
+Il capitolo stesso segnala il rischio (§5): i modelli possono codificare pregiudizi, perdere significati culturalmente specifici o appiattire le sfumature. È il motivo per cui nel progetto validiamo il modello con una codifica umana.
+
+Annotate nel registro dell'agente: prompt usato, output, vostro confronto. Raccogliere 2–3 esempi alla fine per discuterli con la classe.
+:::
+
+## Limiti da ricordare
+
+- Una **sola rete**, su **una sola piattaforma** (Facebook)
+- Solo i contenuti degli account **più popolari** (limite della Meta Content Library)
+- L'effetto dell'IA è una **correlazione**; l'attribuzione delle immagini è **plausibile**, non verificata
+- Non misura l'**efficacia** della persuasione sugli utenti
+
+Da @giglietto2026seduction (§5–6)
+
+::: {.notes}
+Limiti dichiarati dagli autori. Il capitolo indica come direzione futura proprio la misura dell'effetto sugli utenti: esperimenti, eye-tracking, questionari. Collegamento con la lettura di mercoledì: Rauchfleisch e Jungherr misurano l'effetto della trasparenza con un esperimento.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- Sette **driver visivi** che si rafforzano a vicenda [@giglietto2026seduction]
+- La fiducia si **fabbrica** con prove e si **trasferisce** da una figura al prodotto
+- I **valori** e la cultura locale possono essere leve di persuasione
+- L'IA generativa **amplifica** i driver e la scala, e permette figure **sintetiche** fuori dalle regole
+- Descrizioni **denotative** e **connotative**: il modello aiuta, le persone interpretano
+
+::: {.notes}
+Il filo verso mercoledì: se le regole sui testimonial non bastano, che cosa dovrebbe dichiarare un personaggio sintetico? E chi dovrebbe impedire i danni?
+:::
+
+## Per la prossima lezione
+
+**Mercoledì 28 ottobre:** Trasparenza e regole
+
+- Letture: @rauchfleisch2026 (preprint) e @schiffrin2026 (policy brief)
+- Mercoledì faremo un **dibattito**: arrivate con una posizione
+
+**Giovedì 29 ottobre:** seminario di **Massimo Terenzi**, leggete @pilo2026
+
+::: {.notes}
+Due letture non sottoposte a revisione tra pari: un preprint e un policy brief. Leggetele sapendolo (descrittore "capacità di apprendere": valutare lo status di una fonte).
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Trasparenza e regole (28 ottobre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Buon fine settimana.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

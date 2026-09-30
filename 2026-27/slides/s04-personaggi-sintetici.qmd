@@ -1,0 +1,326 @@
+---
+title: "Personaggi sintetici e media parasociali"
+subtitle: "IA Generativa e Media — Incontro 4 · Modulo 2"
+date: "2026-10-21"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+<!--
+TWIAI: da compilare a cura del docente con una notizia reale della settimana (19–23 ottobre 2026).
+Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
+Preferire una notizia su personaggi o influencer generati con l'IA, o su nuove funzioni delle piattaforme.
+-->
+
+::: {.callout-note}
+## Da discutere
+Che cosa cambia per il sistema dei media?
+:::
+
+::: {.notes}
+Dieci minuti al massimo. Primo incontro dopo la pausa: riprendere in una frase il modulo 1 (realtà sintetica, interlocutori, agenti).
+:::
+
+## Roadmap della lezione
+
+1. **Dal contenuto all'identità** — il secondo strato della realtà sintetica
+2. **Da *social media* a media parasociali** — la tesi di boyd
+3. **Personaggi sintetici** — relazioni parasociali con nessuno dall'altra parte
+4. **Esercizio** — i segnali di credibilità di un personaggio
+
+::: {.notes}
+Apriamo il modulo 2: identità, persuasione e regole. Oggi l'identità (lettura: boyd, 2026). Venerdì la persuasione (Synthetic seduction), mercoledì prossimo le regole. Giovedì 29 il seminario di Massimo Terenzi sul caso.
+:::
+
+## Dal contenuto all'identità {background-color="#C5612E"}
+
+::: {.notes}
+Riprendiamo il modello a strati di Ferrara visto il primo giorno. Nel modulo 1 abbiamo lavorato su contenuti e interazioni; ora passiamo allo strato 2.
+:::
+
+## Lo strato dell'identità
+
+::: {.orange-box}
+Un rischio chiave è la fabbricazione di **"testimoni credibili"**: account che appaiono **coerenti nel tempo, tra piattaforme e tra modalità** [@ferrara2026, §2.2].
+:::
+
+- Voci clonate, volti animati, documenti, **personaggi social**
+- Segnali che erano **costosi** da produrre diventano **economici** e remixabili
+
+::: {.notes}
+Ferrara §2.2: la realtà sintetica si espande quando si possono rappresentare persone, non solo contenuti. Tra gli esempi cita esplicitamente i "convincing social media personae". Il punto chiave: un personaggio coerente era una prova ad alto attrito (servivano anni per costruirlo), ora costa poco.
+
+Domanda: quali segnali usate per decidere che un profilo è una persona reale? Scrivetene due su un foglio, li riprendiamo nell'esercizio finale.
+:::
+
+## Perché l'identità conta
+
+| Strato | Domanda che ci facciamo |
+|---|---|
+| **Contenuto** | Questa immagine è vera? |
+| **Identità** | **Chi** mi sta parlando? Esiste? |
+| **Interazione** | Perché mi risponde, e che cosa vuole? |
+| **Istituzioni** | Chi controlla, chi risponde dei danni? |
+
+Adattato da @ferrara2026
+
+::: {.notes}
+Il nostro caso sposta la domanda dal contenuto all'identità. Un'immagine di una suora o di un medico può essere verosimile; il problema è che la persona non esiste e parla ogni giorno a migliaia di follower.
+
+Collegamento con Esposito (incontro 2): in alcune comunicazioni conta chi parla e come, non solo che cosa viene detto.
+:::
+
+## Media parasociali {background-color="#C5612E"}
+
+::: {.notes}
+Lettura: boyd (2026), Social media is now parasocial media, Social Media + Society. Saggio breve (5 pagine) per il numero dell'anniversario della rivista. Non è uno studio empirico: è una tesi argomentata da una delle studiose che hanno definito il campo.
+:::
+
+## La tesi
+
+::: {.highlight-box}
+L'essenza dei *social media* è cambiata: dovremmo smettere di chiamarli "social media" e riconoscere che sono diventati **"media parasociali"** [@boyd2026].
+:::
+
+::: {.notes}
+boyd è coautrice, con Nicole Ellison, della definizione di "social network sites" (2007). Per questo la sua proposta di abbandonare l'etichetta pesa. L'argomento: vent'anni fa questi strumenti servivano a socializzare con amici e comunità; oggi chi li usa scorre molto più di quanto pubblichi, e ciò che consuma è prodotto in modo strategico e curato dagli algoritmi.
+:::
+
+## 2006 e 2026
+
+| | 2006 | 2026 |
+|---|---|---|
+| Che cosa fanno gli utenti | **pubblicano** per amici e comunità | **scorrono** contenuti di altri |
+| Chi produce | persone comuni, contenuti "improvvisati" | creator strategici e inserzionisti |
+| Che cosa premia la piattaforma | la relazione | il contenuto **levigato** che trattiene |
+| Che cosa diventa virale | ciò che circola tra amici | spesso ciò che è **fabbricato per piacere** |
+
+Adattato da @boyd2026
+
+::: {.notes}
+boyd descrive la trasformazione con una contrapposizione tra 2006 e 2026 (pp. 2–3). Nel 2026 pubblicare è diventato meno frequente (cita John, 2024); i contenuti personali degli amici sono sommersi da quelli di inserzionisti e creator; ciò che diventa virale è spesso "manufactured in a lab". "Benvenuti nell'era degli influencer."
+
+Domanda alla classe: nell'ultima settimana, quante cose avete pubblicato e quante ne avete guardate?
+:::
+
+## Perché è successo
+
+Secondo boyd, la spinta alla crescita finanziaria ha allontanato le piattaforme dalla **socialità** [@boyd2026]:
+
+1. Le piattaforme attirano gli utenti con un buon servizio
+2. Li sfruttano a vantaggio degli **inserzionisti**
+3. Sfruttano utenti e inserzionisti a vantaggio degli **investitori**
+
+::: {.notes}
+boyd riprende la teoria della "enshittification" di Cory Doctorow (2025), in tre fasi (più una quarta: la piattaforma muore). Secondo boyd nel 2026 molte piattaforme sono nella terza fase. La socialità tra amici è meno "assetizzabile" dei contenuti mediali.
+
+È una lettura critica e dichiaratamente normativa. L'autrice dichiara anche il proprio conflitto di interessi: ha lavorato per diverse aziende tecnologiche tra il 2002 e il 2025.
+:::
+
+## Che cos'è una relazione parasociale
+
+::: {.orange-box}
+Una connessione **unilaterale**: seguiamo la vita di persone che **non ci conoscono** e non sentono alcun obbligo di **ricambiare** [@boyd2026].
+:::
+
+- Il concetto risale ai mass media: Horton e Wohl, 1956
+- Può essere **emotivamente intensa**
+- Ma **non costruisce** il tessuto sociale che ci sostiene nei momenti difficili
+
+::: {.notes}
+boyd (p. 3) riprende Horton e Wohl (1956), "intimacy at a distance". Riviste, radio e TV trasformavano artisti e sportivi in celebrità osservabili; i social media hanno poi permesso alle celebrità di apparire più autentiche e a chiunque di diventare "micro-celebrità". Le piattaforme hanno spinto i creator a diventare influencer lavorando per l'algoritmo.
+
+Distinzione utile per il progetto: intensità emotiva e reciprocità sono due cose diverse.
+:::
+
+## La parasocialità è un *trickster*
+
+::: {.columns}
+::: {.column width="50%"}
+### Per chi guarda
+- Piacere, compagnia, intimità a distanza
+- Si può essere **soli** pur passando ore dentro i drammi degli altri
+:::
+
+::: {.column width="50%"}
+### Per chi produce
+- Forme di **intimità contorte**
+- Le persone diventano **oggetti mediatizzati** osservati a distanza
+:::
+:::
+
+Adattato da @boyd2026
+
+::: {.notes}
+boyd usa l'immagine del trickster: la relazione parasociale dà piacere ma non rafforza il tessuto sociale collettivo. L'amicizia richiede reciprocità e compassione. Chiude con un omaggio a Postman: "divertirsi da morire".
+
+Domanda: questa descrizione vi sembra corretta per il vostro uso di Instagram e TikTok? Dove è esagerata?
+:::
+
+## Personaggi sintetici {background-color="#C5612E"}
+
+::: {.notes}
+Ora colleghiamo boyd e Ferrara al nostro caso. Attenzione: boyd non parla di personaggi generati con l'IA. Il collegamento è nostro.
+:::
+
+## Una relazione con nessuno dall'altra parte
+
+::: {.highlight-box}
+Se i social sono diventati **parasociali** [@boyd2026], un personaggio sintetico è il caso limite: una relazione unilaterale in cui **dall'altra parte non c'è nessuno**, se non chi gestisce l'account.
+:::
+
+::: {.notes}
+Questa è la cornice del corso, non una tesi di boyd. Nella relazione parasociale classica la celebrità almeno esiste. Nel personaggio sintetico il volto, la biografia e la voce sono fabbricati; esiste però un operatore, con i suoi obiettivi.
+
+Distinzione che useremo per tutto il progetto: personaggio (ciò che vediamo) contro operatore (chi lo gestisce, spesso sconosciuto). Non confonderli nelle conclusioni.
+:::
+
+## Dichiarati e non dichiarati
+
+::: {.columns}
+::: {.column width="50%"}
+### Personaggio dichiarato
+- Si presenta come **virtuale**
+- La finzione è parte del gioco
+- La domanda è: **che cosa vende**, e a chi?
+:::
+
+::: {.column width="50%"}
+### Personaggio non dichiarato
+- Si presenta come **persona reale**
+- La credibilità dipende dall'**inganno sull'identità**
+- La domanda è: **chi** parla, e con quale scopo?
+:::
+:::
+
+::: {.notes}
+Distinzione di lavoro per il corso. Molti influencer virtuali dichiarano di essere personaggi; i profili del nostro caso invece si presentano come persone reali con un'autorità (religiosa, di età, professionale).
+
+Anticipazione della lezione del 28 ottobre: dichiarare che un sistema è un'IA (che cosa è) non equivale a dichiarare che cosa sta cercando di fare (Rauchfleisch e Jungherr).
+:::
+
+## Il caso: autorità fabbricate
+
+::: {.callout-warning}
+## Nota sui contenuti
+Alcuni personaggi del caso usano **stereotipi antisemiti**. Li analizziamo, non li riproduciamo.
+:::
+
+- Rabbini, un monaco, suore, nonne, medici **generati con l'IA**
+- Consigli di vita e **valori tradizionali**, poi un **negozio**
+- Alcuni personaggi vendono ricchezza e "conoscenza segreta" [@pilo2026]
+
+::: {.notes}
+Ripresa dal primo giorno. Le tre famiglie di personaggi del progetto: religiosi; anziani; medici e benessere. Leggete l'articolo di Pilo (Facta) prima del seminario di Massimo Terenzi di giovedì 29 ottobre.
+
+Regola etica: nessuna interazione con questi account. Osserviamo e archiviamo soltanto.
+:::
+
+## Perché proprio queste figure?
+
+| Figura | Da dove viene l'autorità | Che cosa promette la relazione |
+|---|---|---|
+| **Religiosa** | fede, saggezza, tradizione | guida, protezione, "segreti" |
+| **Anziana** | esperienza, affetto familiare | cura, consigli, calore |
+| **Medica o del benessere** | competenza, cura del corpo | salute, sollievo, soluzioni |
+
+::: {.notes}
+Tabella di lavoro per ragionare, non un risultato di ricerca. Ogni figura porta con sé un'autorità che non ha bisogno di prove: la riconosciamo dall'abito, dall'età, dal camice. È la fiducia basata sull'artefatto di Ferrara: crediamo a ciò che sembra autentico.
+
+Venerdì vedremo come questa fiducia viene trasferita dal personaggio al prodotto.
+:::
+
+## Esercizio {background-color="#C5612E"}
+
+::: {.notes}
+Lavoro a gruppi di 3–4 persone, 25 minuti. Serve a costruire la prima bozza di una parte del codebook per la domanda di ricerca 1 (come si costruisce un'autorità).
+:::
+
+## I segnali di credibilità di un personaggio
+
+In gruppo, elencate i segnali che rendono **credibile** un profilo che dice di essere una suora, una nonna o un medico. Per ciascuno indicate:
+
+1. **Dove** si vede (foto, bio, post, commenti, link)
+2. Se è **costoso** o **economico** da fabbricare con l'IA
+3. Come lo **osservereste** su un post, senza interagire con l'account
+
+::: {.notes}
+Guidare verso i criteri di Ferrara §2.2: coerenza nel tempo, tra piattaforme, tra modalità (foto, video, testo); prove legate all'identità (titoli, biografia, luoghi). Esempi che dovrebbero emergere: abiti e simboli, ambientazioni, età apparente, linguaggio, costanza della pubblicazione, numero di follower, risposte ai commenti, presenza su più piattaforme, link a un negozio.
+
+Il terzo punto è quello metodologico: una variabile va resa osservabile senza agire sull'account (niente follow, commenti, messaggi).
+:::
+
+## Dalla lista al codebook
+
+| Segnale | Dove | Variabile possibile |
+|---|---|---|
+| Abito o simbolo di ruolo | foto | presenza (sì / no / 98 = non so) |
+| Coerenza del volto | più post | coerente / incoerente / 98 |
+| Biografia con credenziali | bio | presente / assente |
+| Link a un negozio | bio o post | presente / assente |
+
+::: {.notes}
+Esempio di come una lista diventa variabili codificabili. Il codice 98 = non so lo useremo sempre: meglio un "non so" dichiarato di una risposta forzata.
+
+Conservate la vostra lista: la riprendiamo il 6 novembre (codifica dei personaggi).
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- Lo strato dell'**identità**: la fabbricazione di **testimoni credibili** [@ferrara2026]
+- Da *social media* a **media parasociali**: si scorre più di quanto si pubblichi [@boyd2026]
+- Relazione parasociale: **intensa** ma **unilaterale**
+- Un personaggio sintetico: una relazione con **nessuno dall'altra parte**
+- Distinguere **personaggio** e **operatore**
+
+::: {.notes}
+Il filo verso venerdì: se la relazione parasociale produce fiducia, come viene trasferita al prodotto?
+:::
+
+## Per la prossima lezione
+
+**Venerdì 23 ottobre, ore 9:00:** Driver di persuasione e trasferimento di fiducia
+
+- Lettura: @giglietto2026seduction (§1, §2.2, §4.1 con la Tabella 1, §4.2, §5)
+- Il capitolo **non** è ad accesso aperto: il PDF è nella pagina Letture di Moodle
+- Portate il portatile: faremo un esercizio con **Gemini**
+
+::: {.notes}
+Giovedì 22 ottobre non c'è lezione (Career Day).
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Driver di persuasione e trasferimento di fiducia (23 ottobre 2026, ore 9:00)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A venerdì.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

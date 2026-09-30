@@ -1,0 +1,313 @@
+---
+title: "Trasparenza e regole"
+subtitle: "IA Generativa e Media — Incontro 6 · Modulo 2"
+date: "2026-10-28"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap della lezione
+
+1. **Dire che è un'IA basta?** — l'esperimento di Rauchfleisch e Jungherr
+2. **Le frodi con i *deepfake*** — ecosistema e regole
+3. **Chi deve prevenire i danni?** — dalla responsabilità individuale a quella delle istituzioni
+4. **Dibattito** — un personaggio inventato che vende un prodotto legale
+
+::: {.notes}
+Ultimo incontro del modulo 2: lo strato delle istituzioni di Ferrara. Due letture non sottoposte a revisione tra pari: un preprint (Rauchfleisch e Jungherr, 2026) e un policy brief di Data & Society (Schiffrin et al., 2026). Domani il seminario di Massimo Terenzi.
+:::
+
+## Dire che è un'IA basta? {background-color="#C5612E"}
+
+::: {.notes}
+Lettura: Rauchfleisch e Jungherr (2026), preprint. Esperimento preregistrato.
+:::
+
+## La regola: dichiarare che è un'IA
+
+::: {.highlight-box}
+Dal **2 agosto 2026** si applica l'**articolo 50** dell'AI Act: chi fornisce sistemi di IA che interagiscono con le persone deve informarle che stanno interagendo con un'IA [@rauchfleisch2026].
+:::
+
+- È una regola su **che cosa è** il sistema
+- Studi precedenti trovano effetti **piccoli o nulli** di queste dichiarazioni sugli atteggiamenti
+
+::: {.notes}
+Rauchfleisch e Jungherr aprono con l'entrata in applicazione dell'articolo 50 (Regolamento UE 2024/1689). La domanda: queste etichette proteggono davvero le persone da campagne di persuasione automatizzate?
+
+Domanda alla classe: se un chatbot vi dice "sono un'IA", cambiate il modo in cui valutate i suoi argomenti?
+:::
+
+## L'esperimento
+
+- **1.500** adulti nel Regno Unito conversano con un **chatbot persuasivo** su una di **60** questioni politiche
+- Stesso chatbot per tutti; cambia solo la **dichiarazione**:
+
+| Gruppo | Che cosa vedono |
+|---|---|
+| **Controllo** | nessuna dichiarazione |
+| **T1** | "contenuto generato con l'IA": stai parlando con un chatbot |
+| **T2** | la stessa etichetta **più** lo **scopo**: questo chatbot ha l'istruzione di farti cambiare idea |
+
+Adattato da @rauchfleisch2026
+
+::: {.notes}
+Il disegno riprende Hackenburg et al. (2025). T1 segue la logica dell'articolo 50 (identità del sistema); T2 aggiunge le istruzioni e lo scopo persuasivo, ispirandosi alla logica del regolamento UE 2024/900 sulla pubblicità politica. Il chatbot non sapeva a quale gruppo appartenesse il partecipante.
+:::
+
+## I risultati
+
+| | Controllo | T1: etichetta IA | T2: etichetta + scopo |
+|---|---|---|---|
+| **Spostamento dell'opinione** (scala 0–100) | **+12,6** | **+13,1** | **+6,3** |
+
+::: {.highlight-box}
+L'etichetta "IA" non riduce la persuasione. Dichiarare lo **scopo** la **dimezza** [@rauchfleisch2026].
+:::
+
+::: {.notes}
+L'etichetta non è passata inosservata: il 97,8% del gruppo T1 la ricordava. Semplicemente non ha cambiato l'effetto. Il test di equivalenza preregistrato esclude effetti più grandi di ±3,7 punti.
+
+La dichiarazione dello scopo riduce la persuasione di circa 6,8 punti rispetto a T1, e l'effetto va nella stessa direzione per tutte le 60 questioni.
+:::
+
+## Che cosa cambia quando si conosce lo scopo
+
+::: {.columns}
+::: {.column width="50%"}
+### Aumentano
+- Consapevolezza di essere oggetto di **persuasione**
+- Percezione di **manipolazione**
+- **Controargomentazione**
+- Sostegno a **sanzioni** per chi ha organizzato la campagna
+:::
+
+::: {.column width="50%"}
+### Non cambiano (o poco)
+- La **rabbia** resta bassa
+- La risposta è più **cognitiva** che emotiva
+:::
+:::
+
+Adattato da @rauchfleisch2026
+
+::: {.notes}
+Il meccanismo è quello del "persuasion knowledge model" (Friestad e Wright, 1994): la dichiarazione funziona quando fornisce un'informazione che le persone non hanno già, cioè lo scopo nascosto. Gli autori concludono: le regole dovrebbero riguardare non solo che cosa è il sistema, ma che cosa sta cercando di fare.
+:::
+
+## Attenzione a come lo applichiamo
+
+::: {.callout-warning}
+## Attenzione
+L'esperimento riguarda **conversazioni dirette con un chatbot** su temi **politici**, nel Regno Unito. Non ha testato etichette nei **feed** social né **personaggi** che vendono prodotti.
+:::
+
+- Applicarlo ai nostri personaggi è un'**estensione**, da discutere
+- È un **preprint**: non ancora sottoposto a revisione tra pari
+
+::: {.notes}
+Limite chiave. Per i personaggi possiamo formulare un'ipotesi: un'etichetta "IA" su un personaggio potrebbe proteggere poco, mentre dire che il profilo è gestito per vendere un prodotto potrebbe proteggere di più. Ma è un'ipotesi, non un risultato.
+
+Gli autori stessi notano che nel loro esperimento le persone non potevano abbandonare la conversazione prima di due scambi: nella realtà si può ignorare il messaggio.
+:::
+
+## Le frodi con i *deepfake* {background-color="#C5612E"}
+
+::: {.notes}
+Lettura: Schiffrin, Marwick et al. (2026), policy brief di Data & Society. Un rapporto di politiche pubbliche, non uno studio con dati originali.
+:::
+
+## Definizione
+
+::: {.orange-box}
+**Frode finanziaria con deepfake:** qualsiasi reato finanziario in cui l'autore usa media **generati o manipolati con l'IA** per indurre persone od organizzazioni a cedere denaro o beni [@schiffrin2026].
+:::
+
+- Frodi di impersonificazione, finti investimenti, criptovalute, truffe romantiche, false donazioni
+- Spesso con i volti di **persone famose reali**
+
+::: {.notes}
+Il rapporto si concentra su deepfake di persone reali (attori, sportivi, persone ricche) usati per truffare. I danni sono economici per le vittime, reputazionali per le persone impersonate e sociali per la perdita di fiducia.
+
+Tenete a mente il punto: la definizione ruota attorno all'impersonificazione di persone reali. I nostri personaggi non impersonano nessuno.
+:::
+
+## Un ecosistema, non un singolo truffatore
+
+| Attore | Ruolo nella frode |
+|---|---|
+| **Piattaforme social e pubblicità** | raggiungono le vittime |
+| **App di messaggistica** | spostano la conversazione dove il controllo è minimo |
+| **Motori di ricerca, app store, hosting** | danno visibilità e apparente legittimità |
+| **Banche e pagamenti** | senza trasferimento di denaro non c'è truffa |
+
+Adattato da @schiffrin2026
+
+::: {.notes}
+Il rapporto descrive un percorso tipico: il contatto inizia con contenuti pubblici su grandi piattaforme e si sposta su WhatsApp, Telegram o messaggi privati, dove i contenuti non vengono moderati. Il denaro viene poi riciclato attraverso gioco d'azzardo, immobili e altri canali opachi.
+
+Per il nostro caso: il percorso profilo → negozio è l'equivalente pubblico di questo ecosistema. Lo ricostruiremo nel progetto (domanda di ricerca 1).
+:::
+
+## Le regole: un mosaico
+
+- **Digital Services Act (DSA):** le piattaforme molto grandi devono valutare e ridurre i rischi, compresi **pubblicità fraudolenta**, **impersonificazioni** e **media sintetici**
+- **AI Act:** obbligo di **dichiarare** i contenuti generati
+- Ma la trasparenza resta **limitata** nelle truffe private e tra più piattaforme
+
+Da @schiffrin2026
+
+::: {.notes}
+Il rapporto descrive un "patchwork" di approcci: sicurezza online, regolazione finanziaria, telecomunicazioni, tutela dei consumatori, diritto penale. Gli interventi più solidi si concentrano sui "gatekeeper" (piattaforme, telecomunicazioni, banche) invece che sulle singole vittime. Le etichette hanno anche un problema pratico: i metadati si possono rimuovere.
+:::
+
+## Chi deve prevenire i danni? {background-color="#C5612E"}
+
+::: {.notes}
+La parte normativa del rapporto: "Moving forward: from individual responsibility to liability".
+:::
+
+## Dalla responsabilità individuale a quella delle istituzioni
+
+::: {.highlight-box}
+Educazione e avvertimenti non bastano e **scaricano sulle persone** il compito di riconoscere inganni progettati per non essere riconosciuti [@schiffrin2026].
+:::
+
+::: {.notes}
+Il rapporto elenca campagne di sensibilizzazione di banche e governi (J.P. Morgan, Santander, la Reserve Bank of India) e ne riconosce il valore, ma sostiene che non possano tenere il passo. I deepfake sono progettati per ingannare e i truffatori puntano sullo stress emotivo per scavalcare il giudizio.
+
+Collegamento con il nostro test di riconoscimento: se riconoscere è difficile anche per voi, che studiate il tema, possiamo davvero chiederlo a tutti?
+:::
+
+## Il "*cheapest cost avoider*"
+
+::: {.orange-box}
+Principio di Calabresi (1970): la responsabilità va attribuita a chi può **prevenire il danno al costo più basso** [@schiffrin2026].
+:::
+
+- Per le frodi: chi è meglio posizionato per **individuare e fermare** le truffe prima del danno
+- Non la vittima, ma **piattaforme**, **telecomunicazioni** e **banche**
+
+::: {.notes}
+Il principio viene dal diritto della responsabilità civile. Il rapporto lo usa in chiave normativa: attribuire la responsabilità a chi può prevenire il danno al costo più basso porta ai risultati più efficienti e più equi.
+
+Domanda: nel percorso profilo → negozio del nostro caso, chi è il cheapest cost avoider? La piattaforma che ospita il profilo? Chi ospita il negozio? Chi gestisce i pagamenti?
+:::
+
+## Le raccomandazioni
+
+::: {.columns}
+::: {.column width="50%"}
+### Alle piattaforme
+- **Verificare gli inserzionisti** e pubblicarne l'elenco
+- **Etichettare** i media sintetici
+- **Rimuovere** i deepfake in poche ore
+- **Rapporti di trasparenza** regolari
+:::
+
+::: {.column width="50%"}
+### Ai governi
+- Obblighi di **conoscere il cliente** per chi compra pubblicità
+- Un **dovere di diligenza** per piattaforme e banche
+- Un **diritto di azione** delle vittime se il dovere non è rispettato
+:::
+:::
+
+Adattato da @schiffrin2026
+
+::: {.notes}
+Il rapporto cita anche due studi a favore delle etichette: uno dell'Ontario Securities Commission, in cui un avviso nel browser ha ridotto del 31% le somme investite in offerte fraudolente, e uno di Altay e Gilardi (2024), in cui l'etichetta "generato con l'IA" riduce la credibilità percepita dei titoli, anche di quelli veri.
+
+Contrasto utile con Rauchfleisch e Jungherr: le etichette funzionano in alcuni contesti e non in altri. Da che cosa può dipendere?
+:::
+
+## Dibattito {background-color="#C5612E"}
+
+::: {.notes}
+40 minuti. Divisione in squadre, 10 minuti di preparazione, 3 minuti per posizione, repliche, discussione finale.
+:::
+
+## Il caso per il dibattito
+
+Un personaggio **generato con l'IA** si presenta come una persona reale con un'autorità (una suora, un medico). Offre consigli ogni giorno e rimanda a un negozio che vende un **prodotto legale**.
+
+1. È **frode**, o marketing lecito ma ingannevole?
+2. Quale dichiarazione proteggerebbe il pubblico: "**sono un'IA**" o "**questo profilo esiste per vendere**"?
+3. Chi è il ***cheapest cost avoider***?
+
+::: {.notes}
+Zona grigia voluta. La definizione di Schiffrin et al. riguarda i deepfake di persone reali: qui non c'è impersonificazione e il prodotto è legale. Ma c'è un inganno sull'identità e un trasferimento di fiducia verso una vendita.
+
+Squadre suggerite: (A) è frode, (B) è marketing lecito, (C) regolatori che devono scrivere la regola. Ogni squadra deve citare almeno una delle letture del modulo.
+:::
+
+## Criteri per il dibattito
+
+| Per ogni argomento indicate | Esempio |
+|---|---|
+| **Quale danno** | economico, epistemico, sociale |
+| **Su quale evidenza** | una lettura, un dato, un'ipotesi |
+| **Con quale certezza** | dimostrato, plausibile, da verificare |
+
+::: {.notes}
+I tre tipi di danno (economico, epistemico, sociale-normativo) li vedremo in dettaglio venerdì 30 ottobre con Marino et al. (2026). Il terzo criterio allena a "argomentare al giusto livello di certezza", uno dei risultati di apprendimento del corso.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura del modulo 2.
+:::
+
+## Concetti chiave di oggi
+
+- Dichiarare **che cosa è** il sistema non riduce la persuasione; dichiarare **che cosa vuole** la dimezza [@rauchfleisch2026]
+- Le frodi con i *deepfake* sono un **ecosistema** di attori [@schiffrin2026]
+- Dalla responsabilità individuale a quella di chi può prevenire il danno: il ***cheapest cost avoider***
+- I nostri personaggi stanno in una **zona grigia** tra marketing e frode
+
+::: {.notes}
+Il modulo 2 in una frase: un'identità fabbricata (boyd, Ferrara), una persuasione che trasferisce fiducia (Synthetic seduction), regole che guardano all'identità più che allo scopo (Rauchfleisch e Jungherr, Schiffrin et al.).
+:::
+
+## Per le prossime lezioni
+
+**Domani, giovedì 29 ottobre:** seminario di **Massimo Terenzi** (LUISS) sul caso
+
+- Lettura: @pilo2026, portate domande
+
+**Venerdì 30 ottobre, ore 9:00:** Operazioni informative ingannevoli, danni, catene di evidenze
+
+- Lettura: @marino2026zombie
+
+::: {.notes}
+Il seminario di domani non ha slide del docente. Chiedere agli studenti di preparare almeno una domanda a testa per Massimo Terenzi.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Seminario di Massimo Terenzi (29 ottobre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::
