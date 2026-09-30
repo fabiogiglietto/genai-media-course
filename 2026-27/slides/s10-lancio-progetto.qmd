@@ -1,0 +1,232 @@
+---
+title: "Lancio del progetto"
+subtitle: "IA Generativa e Media — Incontro 10 · Modulo 4"
+date: "2026-11-05"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap del workshop
+
+1. **Il progetto** — domande, casi, piattaforme
+2. **I gruppi** — la matrice 3 × 3
+3. **Il corpus e le regole etiche**
+4. **Calendario e consegna**
+5. **Primo lavoro di gruppo** — il piano di ricerca
+
+::: {.notes}
+Da oggi a fine corso lavoriamo sul progetto. Le lezioni dei moduli 1–3 sono la cassetta degli attrezzi: realtà sintetica, personaggi e media parasociali, driver di persuasione, trasparenza, operazioni ingannevoli, validazione.
+:::
+
+## Il progetto {background-color="#C5612E"}
+
+::: {.notes}
+Presentazione del disegno di ricerca comune a tutti i gruppi.
+:::
+
+## Che cosa studiamo
+
+::: {.orange-box}
+Personaggi di **autorità sintetici** su **Instagram** e **TikTok**, analizzati come **operazioni informative ingannevoli**: chi fingono di essere e che cosa dicono, come usano piattaforme e negozi, come risponde il pubblico [@marino2026zombie].
+:::
+
+::: {.notes}
+Il caso: finti rabbini, un monaco, suore, nonne, medici generati con l'IA, che offrono consigli e rimandano a una vendita. I rabbini sono documentati da Pilo (2026); le altre famiglie vengono dalla ricerca di Massimo Terenzi, presentata al seminario del 29 ottobre.
+:::
+
+## Tre domande di ricerca
+
+| | Domanda | Dimensione |
+|---|---|---|
+| **RQ1** | Come si costruisce l'autorità e come diventa una vendita? La stessa infrastruttura serve mercati diversi? | identità e *affordance* |
+| **RQ2** | Quali driver e valori trasferiscono la fiducia dal personaggio all'offerta? | contenuto |
+| **RQ3** | Il pubblico tratta il personaggio come reale, lo smaschera, dubita, o sa che è IA e non gli importa? | partecipazione |
+
+Dimensioni da @marino2026zombie
+
+::: {.notes}
+Per RQ2, l'articolo di Facta mostra che le fonti di autorità non sono solo fede e tradizione: anche ricchezza, "conoscenza segreta" e stereotipi antisemiti rovesciati (Pilo, 2026). Per RQ3 ci chiediamo anche quali commenti siano a loro volta probabilmente sintetici, come nel caso del gioco d'azzardo di Marino et al.
+:::
+
+## Da Facebook a Instagram e TikTok
+
+Gli studi che abbiamo letto riguardano **gruppi Facebook**: parte del lavoro è **adattare** le loro categorie.
+
+| Su Facebook | Nel nostro caso |
+|---|---|
+| post nei gruppi | **link in bio** |
+| immagini | **Reel** e video brevi |
+| nessuna etichetta | le **etichette IA** di ciascuna piattaforma |
+
+::: {.notes}
+Marino et al. (2026) e Synthetic seduction studiano reti di gruppi Facebook. I nostri personaggi sono profili su Instagram e TikTok: il percorso verso la vendita passa dal link in bio, i contenuti sono soprattutto video brevi, e le piattaforme hanno proprie etichette per i contenuti generati con l'IA. Pagine Facebook e canali YouTube del caso restano fuori dal progetto.
+:::
+
+## I gruppi {background-color="#C5612E"}
+
+::: {.notes}
+La matrice 3 × 3.
+:::
+
+## La matrice 3 × 3
+
+| | Religiosi | Anziani | Medici e benessere |
+|---|---|---|---|
+| **RQ1** autorità | gruppo 1 | gruppo 2 | gruppo 3 |
+| **RQ2** persuasione | gruppo 4 | gruppo 5 | gruppo 6 |
+| **RQ3** pubblico | gruppo 7 | gruppo 8 | gruppo 9 |
+
+Nove gruppi di circa sei persone.
+
+::: {.notes}
+Famiglie: religiosi (rabbino, monaco, suora); anziani (nonne e nonni); medici e benessere (medici; è il ramo in lingua inglese).
+
+La matrice permette due confronti a fine corso: tra famiglie dentro una stessa domanda (per esempio come cambia il pubblico tra religiosi e medici) e tra domande dentro una stessa famiglia.
+
+<!-- Modalità di formazione dei gruppi: da decidere a cura del docente (per esempio dalle risposte al questionario del primo giorno). -->
+:::
+
+## Tutti partono dal personaggio
+
+- Domani **tutti i gruppi** codificano insieme il **livello del personaggio** (account)
+- Poi ogni gruppo lavora sul proprio livello: **post** (RQ2) o **commenti** (RQ3), oppure approfondisce **account e catene** (RQ1)
+- Dentro ogni gruppo: **coppie** di codificatori, una persona più esperta e una meno esperta
+
+::: {.notes}
+Le coppie seguono il protocollo di Marino e Giglietto (2024) visto ieri. "Più esperta" può voler dire: conosce meglio il contesto religioso, o l'inglese, o ha già fatto codifica di contenuti. Decidetelo dentro il gruppo.
+:::
+
+## Corpus ed etica {background-color="#C5612E"}
+
+::: {.notes}
+Il corpus è preparato dal docente.
+:::
+
+## Il corpus
+
+- Post e commenti di **Instagram** e **TikTok**, **archiviati** dal docente
+- Livello del personaggio: tutte le lingue; post e commenti: solo **italiano** e **inglese**
+- Condiviso in cartelle e fogli **Google Workspace** del corso
+
+<!-- Dimensioni, periodo e struttura del corpus: da completare a cura del docente quando il corpus è pronto. -->
+
+::: {.notes}
+Codifichiamo i contenuti solo nelle lingue che il gruppo sa validare: è una regola della policy del corso e una lezione di Marino e Giglietto (2024, §5) sui limiti della conoscenza di chi valida.
+
+Completare con i dettagli del corpus (numero di account, post e commenti; periodo di raccolta; formato dei file) solo quando è pronto.
+:::
+
+## Le regole etiche
+
+::: {.callout-warning}
+## Attenzione
+Osserviamo e **archiviamo** soltanto: niente follow, commenti, messaggi, carrelli o acquisti. Né voi né un agente.
+:::
+
+- I commentatori sono **pseudonimizzati**
+- I post con **stereotipi antisemiti** si analizzano come evidenza, con una nota sui contenuti; non si riproducono nelle presentazioni
+- Ogni uso di un agente ha un **registro**
+
+::: {.notes}
+Le regole valgono anche per le relazioni finali: nessun nome o immagine di commentatori; citazioni dei commenti solo se necessarie e pseudonimizzate.
+
+Se durante il lavoro trovate qualcosa che vi preoccupa (per esempio segnali di truffe in corso verso persone vulnerabili), parlatene con il docente: non intervenite da soli.
+:::
+
+## Calendario e consegna {background-color="#C5612E"}
+
+::: {.notes}
+Il percorso da qui a fine corso.
+:::
+
+## Il calendario del progetto
+
+| Data | Che cosa si fa |
+|---|---|
+| **Ven 6 nov** | livello del personaggio; catena profilo → negozio |
+| **Mer 11 nov** | codebook, prompt, **pilota** su 15 casi |
+| **Gio 12 nov** | codifica umana **in cieco** e riconciliazione |
+| **Ven 13 nov** | Gemini su tutto il corpus; **kappa** e matrice di confusione |
+| **Mer 18 nov** | il pubblico nei commenti |
+| **Gio 19 nov** | danni, responsabilità, matrice affermazioni-evidenze |
+| **Ven 20 nov** | laboratorio di scrittura e consultazioni |
+| **Mer 25 nov** | confronto tra gruppi, post-test, chiusura |
+
+::: {.notes}
+Due momenti di verifica intermedia: il codebook pilota (11 novembre) e la validazione con il kappa (13 novembre). Ricevete un riscontro prima della consegna finale.
+:::
+
+## Che cosa si valuta nella relazione
+
+- Domanda e disegno di ricerca **chiari**
+- Pipeline *LLMs-in-the-loop* applicata e **validata** (kappa)
+- **Catena di evidenze** documentata: ogni affermazione con la sua prova
+- Valutazione ragionata di **danni** e **responsabilità**
+- Analisi solida, scrittura e visualizzazioni chiare
+- **Dichiarazione d'uso dell'IA**
+
+::: {.notes}
+Criteri della scheda del corso. La relazione vale il 75% del voto. Consegna su Moodle almeno due settimane prima del primo appello dopo il corso.
+
+Il colloquio orale (15%) verte sul progetto, compreso che cosa il gruppo ha delegato all'IA e perché.
+:::
+
+## Esercizio {background-color="#C5612E"}
+
+::: {.notes}
+30 minuti, nei gruppi appena formati.
+:::
+
+## Il vostro piano di ricerca
+
+In gruppo, scrivete una pagina:
+
+1. La vostra **domanda**, riformulata per la vostra famiglia di personaggi
+2. Le **variabili** che pensate di usare (partite dalle liste del 21 e 23 ottobre)
+3. Che cosa vi aspettate di trovare: un'**ipotesi**, dichiarata come tale
+4. Un **rischio**: che cosa potrebbe andare storto?
+
+::: {.notes}
+Il piano non è vincolante: serve a fissare le aspettative prima di vedere i dati, così a fine corso potrete confrontare ipotesi e risultati. Caricatelo nella cartella del gruppo.
+
+<!-- Consegna del piano su Moodle o in Workspace: da definire a cura del docente. -->
+:::
+
+## Per la prossima lezione
+
+**Domani, venerdì 6 novembre, ore 9:00:** Codifica dei personaggi e percorsi profilo → negozio
+
+- Portate il portatile
+- Rileggete @marino2026zombie (i tre casi) e la vostra lista dei segnali di credibilità
+
+::: {.notes}
+Domani si lavora sui dati per la prima volta.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Codifica dei personaggi (6 novembre 2026, ore 9:00)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

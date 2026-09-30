@@ -1,0 +1,204 @@
+---
+title: "Codebook, prompt e codifica pilota"
+subtitle: "IA Generativa e Media — Incontro 12 · Modulo 4"
+date: "2026-11-11"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap del laboratorio
+
+1. **I codebook delle linee** — post (RQ2) e commenti (RQ3)
+2. **Dal codebook al prompt** — come istruire Gemini
+3. **La fase pilota** — 15 casi fino all'accordo
+4. **Laboratorio** — codebook, prompt, pilota
+
+::: {.notes}
+Venerdì tutti i gruppi hanno codificato il livello del personaggio. Oggi ogni gruppo costruisce il codebook della propria linea e il prompt per Gemini, e li prova su 15 casi.
+
+Primo momento di verifica intermedia: a fine lezione ogni gruppo carica codebook e prompt.
+:::
+
+## I codebook delle linee {background-color="#C5612E"}
+
+::: {.notes}
+Le liste di partenza vengono dalle letture. I gruppi le adattano ai propri personaggi.
+:::
+
+## Linea 2: il post
+
+| Variabile | Da dove viene |
+|---|---|
+| **I sette driver** adattati: virtù o ricchezza aspirazionale, prove di autorità, urgenza, soglie basse, personaggio come testimonial, reclutamento tramite legami, localizzazione culturale e morale | @giglietto2026seduction |
+| **Valori** invocati | @giglietto2026seduction (§4.1.7) |
+| **Reciprocità simulata**: rivolgersi al follower, benedizioni, risposte | @boyd2026 |
+| **Tipo di offerta** | @pilo2026 |
+
+::: {.notes}
+Adattare significa riformulare, non copiare: nel capitolo "prove di pagamento" diventa per noi "prove di autorità" (credenziali, testimonianze, numeri); "testimonial famosi" diventa "il personaggio stesso come testimonial"; "invita tre amici" diventa "reclutamento tramite legami familiari o di comunità".
+
+La reciprocità simulata viene da boyd: la relazione parasociale è unilaterale, ma il personaggio può simulare la reciprocità (ti benedico, rispondo ai commenti).
+:::
+
+## Linea 3: il commento
+
+| Variabile | Valori di partenza |
+|---|---|
+| **Posizione** | credulo / incredulo / incerto / consapevole che è IA ma accetta / altro / 98 |
+| **Intimità unilaterale** | ringraziamenti, preghiere, confidenze |
+| **Lamentela o avviso di truffa** | sì / no; a chi dà la colpa |
+| **Commento probabilmente sintetico** | sì / no / 98 |
+
+Categorie adattate da @wack2026, @boyd2026, @schiffrin2026 e @marino2026zombie
+
+::: {.notes}
+Wack e Prochaska (2026) usano tre categorie di commenti: creduli, increduli, misti. Attenzione: nel loro esperimento i commenti li hanno scritti i ricercatori; noi prendiamo le categorie, non il metodo. "Incerto" e "consapevole che è IA ma accetta" sono aggiunte del corso, pensate per commenti del tipo "se condivido un avatar IA, che cosa cambia?".
+
+"Probabilmente sintetico" riprende le anomalie osservate da Marino et al. (2026): lodi generiche, stringhe casuali, parole senza spazi. È una stima: usate il 98.
+:::
+
+## Linea 1: account e catene
+
+- Approfondisce la **scheda del personaggio** di venerdì
+- Confronta le **catene** profilo → negozio tra personaggi e **mercati**
+- Cerca **infrastrutture condivise**: stessi negozi, stesse piattaforme, stessi schemi
+
+Adattato da @marino2026zombie
+
+::: {.notes}
+La domanda di RQ1: la stessa infrastruttura serve personaggi rivolti a mercati diversi? È la dimensione dello sfruttamento delle affordance e dell'infrastruttura. Attenzione ai livelli di certezza: due negozi simili sono un indizio, non una prova di un operatore comune.
+:::
+
+## Dal codebook al prompt {background-color="#C5612E"}
+
+::: {.notes}
+Il prompt è la traduzione del codebook per il modello. È una delle tre fonti di disallineamento di Esposito.
+:::
+
+## Com'è fatto un prompt di codifica
+
+| Parte | Che cosa contiene |
+|---|---|
+| **Ruolo e compito** | che cosa deve fare il modello, in una frase |
+| **Definizioni** | le voci del codebook, con esempi |
+| **Regola per il 98** | quando non rispondere |
+| **Formato fisso** | una riga per caso, colonne sempre uguali |
+| **Il caso** | il testo del post o del commento |
+
+::: {.notes}
+Un formato fisso (per esempio una colonna per variabile) serve a confrontare automaticamente la codifica di Gemini con quella umana e a calcolare il kappa.
+
+Il prompt va documentato: salvate ogni versione con data e motivo della modifica. Nella relazione riporterete la versione finale.
+:::
+
+## Il prompt non è neutro
+
+::: {.highlight-box}
+La formulazione della richiesta può spingere un agente verso risultati **confermativi** [@alizadeh2026].
+:::
+
+- Il prompt è una delle **tre fonti** che guidano il modello [@esposito2026]
+- Chiedete di **classificare secondo le definizioni**, non di "trovare" ciò che cercate
+- Stesso prompt per **tutti i casi**, stesso modello, stesse impostazioni
+
+::: {.notes}
+Alizadeh et al. hanno mostrato che un prompt che spinge a "trovare i risultati dell'articolo" porta gli agenti a cercare conferme invece di eseguire fedelmente il compito. Per noi: un prompt che dice "individua i commenti ingannati" orienta il modello; uno che chiede di classificare ogni commento secondo le definizioni no.
+:::
+
+## La fase pilota {background-color="#C5612E"}
+
+::: {.notes}
+Dal protocollo di Marino e Giglietto (2024).
+:::
+
+## Il pilota in cinque passi
+
+1. Ogni coppia codifica **gli stessi 15 casi**, ciascuno per conto proprio
+2. Confronto: dove non siete d'accordo?
+3. Discussione dei casi **98**
+4. Revisione di **definizioni** ed **esempi** del codebook
+5. Si ripete finché la coppia è **d'accordo**
+
+Adattato da @marino2024
+
+::: {.notes}
+Nel protocollo di Marino e Giglietto l'addestramento su un sottocampione pilota precede la codifica vera. I 15 casi sono una scelta del corso.
+
+Provate lo stesso prompt su Gemini con gli stessi 15 casi: dove il modello sbaglia, il problema può essere nella definizione (serve anche a voi) o nel prompt (serve solo al modello).
+:::
+
+## Laboratorio {background-color="#C5612E"}
+
+::: {.notes}
+Il resto della lezione.
+:::
+
+## Istruzioni per il laboratorio
+
+1. Scrivete il **codebook** della vostra linea (usate il modello di voce del 4 novembre)
+2. Scrivete il **prompt** e salvatelo come **versione 1**
+3. **Pilota** in coppia sui 15 casi
+4. Provate il prompt su Gemini con gli stessi casi
+5. Caricate codebook, prompt e note sul pilota nella cartella del gruppo
+
+<!-- Selezione dei 15 casi pilota e link alle cartelle dei gruppi: da completare a cura del docente quando il corpus è pronto. -->
+
+::: {.notes}
+Verifica intermedia: il docente legge i codebook e dà un riscontro entro la lezione successiva. Registrate l'uso di Gemini nel registro dell'agente.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- Ogni linea ha il suo **codebook**, adattato dalle letture
+- Il **prompt** traduce il codebook per il modello e va **documentato**
+- La formulazione del prompt **orienta** il risultato [@alizadeh2026]
+- **Pilota** su 15 casi fino all'accordo, con il codice **98**
+
+::: {.notes}
+Il filo verso domani: codifica in cieco del campione di validazione.
+:::
+
+## Per la prossima lezione
+
+**Domani, giovedì 12 novembre:** Codifica umana in cieco e riconciliazione
+
+- Codebook e prompt **versione 1** caricati nella cartella del gruppo
+- Coppie definite: una persona più esperta e una meno esperta
+
+::: {.notes}
+Domani ognuno codifica senza vedere la codifica dell'altro: organizzate i fogli in modo che non siano visibili a vicenda fino alla riconciliazione.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Codifica umana in cieco (12 novembre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

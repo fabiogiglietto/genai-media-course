@@ -1,0 +1,238 @@
+---
+title: "Codifica dei personaggi"
+subtitle: "IA Generativa e Media — Incontro 11 · Modulo 4"
+date: "2026-11-06"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+<!--
+TWIAI: da compilare a cura del docente con una notizia reale della settimana (2–6 novembre 2026).
+Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
+-->
+
+::: {.callout-note}
+## Da discutere
+Che cosa cambia per il sistema dei media?
+:::
+
+::: {.notes}
+Dieci minuti al massimo: oggi il tempo serve al laboratorio.
+:::
+
+## Roadmap del laboratorio
+
+1. **La scheda del personaggio** — le variabili del livello account
+2. **Segnali di IA e dichiarazioni** — che cosa possiamo dire, e con quale certezza
+3. **La catena profilo → negozio** — con un agente, verificata a mano
+4. **Laboratorio** — prime schede in coppia
+
+::: {.notes}
+Oggi tutti i gruppi lavorano sullo stesso livello: il personaggio (account). È la base comune che permette i confronti tra gruppi a fine corso.
+:::
+
+## La scheda del personaggio {background-color="#C5612E"}
+
+::: {.notes}
+Le variabili di partenza vengono dalle letture; i gruppi possono proporre modifiche.
+:::
+
+## Chi finge di essere
+
+| Variabile | Valori di partenza |
+|---|---|
+| **Tipo di personaggio** | inventato / usa l'aspetto di una persona reale / 98 |
+| **Segnali di autorità** | abito, titolo, credenziali dichiarate, biografia |
+| **Marcatori di stile IA** | presenti / assenti / 98 |
+| **Cambi di nome o di tema** | sì / no / 98 |
+| **Cloni in altre lingue** | sì / no / 98 |
+
+Variabili adattate da @marino2026zombie, @ferrara2026 e @pilo2026
+
+::: {.notes}
+Cambi di nome e di tema vengono dalla dimensione "gestione dell'identità" di Marino et al. (2026), che hanno osservato gruppi rinominati fino a 13 volte. I segnali di autorità riprendono i "testimoni credibili" di Ferrara (§2.2) e la lista che avete costruito il 21 ottobre. I cloni in altre lingue sono documentati da Pilo (2026): oltre venti account di finti rabbini in varie lingue.
+:::
+
+## Che cosa dichiara, e che cosa vende
+
+| Variabile | Valori di partenza |
+|---|---|
+| **Dichiarazione IA** | nessuna / etichetta della piattaforma / dichiarata nella bio, nella didascalia o in un hashtag |
+| **Intento commerciale dichiarato** | nessuno / solo link in bio / esplicito |
+| **Catena commerciale** | negozio, piattaforma di corsi, marketplace, messaggi privati, WhatsApp |
+| **Volti o marchi reali** | sì / no / 98 |
+| **Ancora online** al controllo successivo | sì / no |
+
+Variabili adattate da @rauchfleisch2026 e @schiffrin2026
+
+::: {.notes}
+Le due righe sulla dichiarazione riprendono la distinzione di Rauchfleisch e Jungherr: dichiarare che cosa è (IA) e dichiarare che cosa vuole (vendere). La catena commerciale riprende l'ecosistema delle frodi di Schiffrin et al.: dal contenuto pubblico ai canali privati, dove il controllo è minimo. "Ancora online" riprende l'osservazione di Marino et al. sui post rimossi.
+
+Per le etichette: Instagram usa l'etichetta "AI info", TikTok "AI-generated". Registrate quella che vedete, senza interpretarla.
+:::
+
+## Segnali e dichiarazioni {background-color="#C5612E"}
+
+::: {.notes}
+Due variabili delicate: i marcatori di stile IA e l'assenza di dichiarazione.
+:::
+
+## I marcatori di stile IA sono una stima
+
+- Indizi possibili: luce **iperrealistica**, superfici **troppo lisce**, simmetria perfetta, accostamenti improbabili [@giglietto2026seduction]
+- Gli autori stessi parlano di attribuzione **plausibile**, non verificabile forensicamente
+- Il test del primo giorno ci ha mostrato quanto la **sicurezza** possa superare l'**accuratezza**
+
+::: {.highlight-box}
+Codificate ciò che **vedete**; usate **98** quando non siete sicuri.
+:::
+
+::: {.notes}
+Gli indizi di Synthetic seduction (§4.2) valgono soprattutto per immagini fantastiche; i ritratti realistici sono più difficili. Una variabile "marcatori presenti" non equivale a "il personaggio è generato con l'IA": è un'osservazione, non una conclusione.
+
+Collegamento con i tre livelli di certezza di mercoledì 30: osservato, ricostruito, ipotizzato.
+:::
+
+## Assenza di etichetta non è assenza di IA
+
+::: {.columns}
+::: {.column width="50%"}
+### Che cosa possiamo osservare
+- C'è o non c'è un'**etichetta**
+- C'è o non c'è una **dichiarazione** dell'autore
+:::
+
+::: {.column width="50%"}
+### Che cosa non possiamo concludere
+- Che un contenuto **senza etichetta** sia autentico
+- Che l'etichetta dica **che cosa vuole** il profilo
+:::
+:::
+
+::: {.notes}
+Le piattaforme si basano su dichiarazioni degli autori e rilevamento automatico, spesso impreciso (lo notano anche Wack e Prochaska, che leggeremo il 18 novembre). E anche un'etichetta corretta dice che cosa è il contenuto, non che cosa vuole chi lo pubblica (Rauchfleisch e Jungherr).
+:::
+
+## La catena profilo → negozio {background-color="#C5612E"}
+
+::: {.notes}
+Il pezzo più delicato dal punto di vista etico.
+:::
+
+## I passaggi della catena
+
+1. **Profilo**: nome, bio, link in bio
+2. **Pagina di destinazione**: che cosa promette
+3. **Negozio o piattaforma**: che cosa vende, a che prezzo
+4. **Pagamento o contatto**: quali canali (carte, messaggi, WhatsApp)
+
+Per ogni passaggio: **indirizzo**, **data e ora**, **schermata**.
+
+::: {.notes}
+Ogni passaggio documentato è un anello della catena di evidenze che userete nella relazione. Senza indirizzo, data e schermata, un passaggio è un ricordo, non una prova.
+
+Collegamento con Pilo (2026): nel caso dei rabbini la catena porta a un libro, a corsi e a messaggi privati su investimenti.
+:::
+
+## Un agente può aiutare, entro limiti precisi
+
+::: {.columns}
+::: {.column width="50%"}
+### L'agente può
+- Aprire **pagine pubbliche** e riassumerle
+- Elencare i **link** e i domini incontrati
+- Proporre la **struttura** della catena
+:::
+
+::: {.column width="50%"}
+### L'agente non può
+- **Accedere** con un account
+- Compilare **moduli**, aggiungere al **carrello**, scrivere **messaggi**
+- Seguire, commentare, mettere "mi piace"
+:::
+:::
+
+::: {.notes}
+Sono le regole della policy del corso applicate alla catena. Ogni passaggio fatto dall'agente va nel registro e va verificato a mano: aprite voi l'indirizzo e fate voi la schermata.
+
+Ricordate Alizadeh et al. (2026): il modo in cui formulate la richiesta cambia che cosa l'agente fa. Chiedete di descrivere, non di "trovare la truffa".
+:::
+
+## Laboratorio {background-color="#C5612E"}
+
+::: {.notes}
+Il resto della lezione: codifica in coppia.
+:::
+
+## Istruzioni per il laboratorio
+
+1. Ogni coppia riceve un gruppo di **account** dal corpus
+2. Per ogni account compila la **scheda** nel foglio condiviso
+3. Per ogni valore indica il **livello**: osservato, ricostruito, ipotizzato
+4. Ricostruisce la **catena** di almeno un account, con registro dell'agente
+5. Alla fine: confronto tra le coppie dello stesso gruppo
+
+<!-- Numero di account per coppia e link al foglio condiviso: da completare a cura del docente quando il corpus è pronto. -->
+
+::: {.notes}
+Obiettivo di oggi non è finire, ma scoprire dove la scheda non funziona: variabili ambigue, valori mancanti, casi 98 frequenti. Annotate tutto: mercoledì 11 lo userete per rivedere il codebook.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- La **scheda del personaggio**: chi finge di essere, che cosa dichiara, che cosa vende
+- I marcatori di stile IA sono una **stima**: usate il **98**
+- Un'etichetta dice **che cosa è**, non **che cosa vuole**
+- La catena profilo → negozio si **documenta**: indirizzo, data, schermata
+- Un agente può **descrivere**, mai **agire** sugli account
+
+::: {.notes}
+Il filo verso mercoledì: dal livello del personaggio ai livelli dei singoli gruppi (post e commenti) e al prompt per Gemini.
+:::
+
+## Per la prossima lezione
+
+**Mercoledì 11 novembre:** Codebook, prompt e codifica pilota
+
+- Portate le **note** su dove la scheda non ha funzionato
+- Rileggete @giglietto2026seduction (Tabella 1) per i gruppi della linea 2
+
+::: {.notes}
+I gruppi della linea 3 (pubblico) possono iniziare a leggere Wack e Prochaska (2026), in programma il 18 novembre.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Codebook, prompt e codifica pilota (11 novembre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Buon fine settimana.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::
