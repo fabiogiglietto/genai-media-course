@@ -1,0 +1,273 @@
+---
+title: "Il protocollo di validazione"
+subtitle: "IA Generativa e Media — Incontro 9 · Modulo 3"
+date: "2026-11-04"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## Roadmap del workshop
+
+1. **Perché validare** un LLM che codifica
+2. **Un caso reale** — la *pipeline* di Marino e Giglietto
+3. **Tre sfide** e come affrontarle
+4. **Il nostro protocollo** per il progetto, con il **kappa di Cohen**
+5. **Esercizi** — una voce del codebook e un kappa calcolato a mano
+
+::: {.notes}
+Workshop: metà spiegazione, metà esercizi. Lettura: Marino e Giglietto (2024), Sociologica, sezioni 3–5. Domani lanciamo il progetto: oggi costruiamo gli strumenti per fidarci (o non fidarci) della codifica.
+:::
+
+## Perché validare {background-color="#C5612E"}
+
+::: {.notes}
+Riprendiamo Esposito (incontro 2): il disallineamento è strutturale, non un guasto occasionale.
+:::
+
+## Il modello non è un codificatore neutro
+
+- Il suo comportamento viene da **tre fonti umane** non coordinate: dati, prompt, messa a punto [@esposito2026]
+- Gli LLM sono **generici**: ogni uso in una ricerca richiede decisioni umane da **giustificare** [@marino2024]
+- Le verifiche standard (accuratezza, F1) non colgono coerenza, rilevanza, **sfumature culturali**
+
+::: {.notes}
+Marino e Giglietto (§3): i modelli linguistici sono pensati per inferenze generiche guidate da prompt; adattarli a un obiettivo di ricerca richiede molte scelte umane (modello, parametri, prompt, campione), ciascuna da valutare contro le alternative. I benchmark standard sono spesso in inglese e poi tradotti: rischiano di non cogliere le sfumature di altre lingue.
+
+Conclusione pratica: la validazione umana resta indispensabile.
+:::
+
+## Un caso reale {background-color="#C5612E"}
+
+::: {.notes}
+Marino e Giglietto (2024): notizie politiche condivise su Facebook durante le elezioni italiane del 2018 e del 2022.
+:::
+
+## La *pipeline*
+
+| Passo | Che cosa fa l'LLM |
+|---|---|
+| **Classificare** | distingue link politici e non politici (modello messo a punto con dati codificati a mano) |
+| **Raggruppare** | trasforma titoli e descrizioni in vettori e li raggruppa (circa 200 gruppi per elezione) |
+| **Etichettare** | scrive un'etichetta breve per ogni gruppo (GPT-4-turbo) |
+
+Adattato da @marino2024 (§2)
+
+::: {.notes}
+Dati: 84.874 link di notizie dal Meta URL Shares Dataset. Il classificatore è stato messo a punto con 3.800 casi codificati da sette studiosi; i gruppi sono 199 per il 2018 e 198 per il 2022; etichettare tutti i gruppi è costato 30 dollari. Al modello sono stati dati solo titoli e descrizioni pubblici dei link.
+
+Ogni passo usa l'LLM in modo diverso: per questo serve una validazione diversa per ogni passo.
+:::
+
+## Tre validazioni, tre compiti
+
+| Compito | Come è stato validato |
+|---|---|
+| **Classificatore** | codifica manuale di 7 esperti; F1 = **0,897** sul campione di validazione |
+| **Coerenza dei gruppi** | coppie di link valutate da **6 esperti** su una scala 0–4, più il codice **98** |
+| **Etichette** | adeguatezza valutata con **4 criteri** e 3 livelli (non adatta, parziale, buona) |
+
+Dati da @marino2024 (§3)
+
+::: {.notes}
+Prima della codifica per il classificatore, i sette codificatori sono stati addestrati fino a un buon accordo (alfa di Krippendorff = 0,812 su 200 casi, §2.1.2). Precisione 0,911, richiamo 0,883.
+
+I quattro criteri per le etichette (§4): allineamento tematico, implicazioni, copertura del contenuto, allineamento al contesto.
+:::
+
+## Come lavorano i codificatori
+
+1. **Addestramento** su un sottocampione **pilota** e linee guida condivise
+2. Squadre di **due**: una persona più esperta e una meno esperta
+3. Ognuno codifica **per conto proprio**
+4. Un incontro di **allineamento** e uno **conclusivo** per risolvere le discrepanze
+5. Il codice **98** per i casi ambigui, discussi alla fine
+
+Adattato da @marino2024 (§3–4)
+
+::: {.notes}
+Questa è la parte del protocollo che adottiamo direttamente nel progetto. Il codice 98 serve a non forzare una risposta quando non si è sicuri: i casi 98 vengono discussi in coppia e riassegnati.
+
+Le persone meno esperte venivano affiancate e supervisionate da quelle più esperte, soprattutto per la conoscenza del contesto politico italiano degli ultimi dieci anni (§5).
+:::
+
+## Tre sfide {background-color="#C5612E"}
+
+::: {.notes}
+Le tre sezioni centrali dell'articolo corrispondono a tre sfide.
+:::
+
+## Le tre sfide della validazione
+
+| Sfida | Risposta nell'articolo |
+|---|---|
+| Gli LLM sono **generici** | un protocollo **su misura** per ogni passo |
+| La **granularità** varia: da un tema a una singola notizia | linee guida **a più livelli** |
+| Il modello **sa più** dei codificatori | codificatori **esperti**, non *crowdworker* |
+
+Adattato da @marino2024 (§3–5)
+
+::: {.notes}
+Sulla seconda sfida (§4): alcuni gruppi erano generici (un tema come l'immigrazione), altri legati a una sola storia giornalistica. La scala di coerenza distingue questi livelli.
+
+Sulla terza (§5): gli autori avevano pensato di usare lavoratori di piattaforme freelance, poi hanno rinunciato, perché gli studi mostrano che gli LLM superano i crowdworker in compiti complessi. Esempio dall'articolo: una notizia sembrava la morte di un ex parlamentare poco noto; solo cercando il nome si scopriva un legame con una condanna per mafia. Nemmeno esperti di politica italiana ricordano tutto.
+:::
+
+## Che cosa significa per noi
+
+::: {.highlight-box}
+Se il modello **sa più di noi** su un contesto, validarlo richiede persone che quel contesto lo conoscano davvero.
+:::
+
+- Codifichiamo solo in **italiano** e **inglese**
+- Segnaliamo con **98** ciò che non sappiamo riconoscere
+- Nella relazione dichiariamo i **limiti** della nostra conoscenza culturale
+
+::: {.notes}
+Applicazione della sezione 5 al nostro caso. I personaggi religiosi usano simboli, parole, riferimenti che non tutti conoscono: riconoscere uno stereotipo antisemita o un riferimento religioso richiede competenza. È anche uno dei risultati di apprendimento del corso: riconoscere i limiti della propria conoscenza culturale quando si valida.
+:::
+
+## Il nostro protocollo {background-color="#C5612E"}
+
+::: {.notes}
+Ora il protocollo del progetto. Prima parte dall'articolo, seconda parte aggiunta nel corso.
+:::
+
+## Dall'articolo e in più
+
+::: {.columns}
+::: {.column width="50%"}
+### Da Marino e Giglietto
+- Fase **pilota** e linee guida
+- Coppie **esperto + meno esperto**
+- Codifica **indipendente**
+- **Riconciliazione** e codice **98**
+:::
+
+::: {.column width="50%"}
+### Aggiunto nel corso
+- Gemini codifica **tutto il corpus** con un prompt **documentato**
+- Confronto con la codifica umana riconciliata
+- **Kappa di Cohen** per ogni variabile
+- Sotto **0,60**: si rivedono codebook e prompt
+:::
+:::
+
+Protocollo adattato da @marino2024
+
+::: {.notes}
+Importante per la correttezza delle citazioni: l'articolo non usa il kappa di Cohen né una soglia di 0,60. Usa l'alfa di Krippendorff per l'addestramento dei codificatori e F1, precisione e richiamo per il classificatore. Il kappa e la soglia sono scelte del corso, per avere una misura semplice dell'accordo tra persone e modello su ogni variabile.
+:::
+
+## Che cos'è il kappa di Cohen
+
+::: {.orange-box}
+Una misura dell'**accordo tra due codificatori** che tiene conto dell'accordo che si otterrebbe **per caso**: 1 è accordo perfetto, 0 è l'accordo atteso per caso.
+:::
+
+::: {.highlight-box}
+**κ = (pₒ − pₑ) / (1 − pₑ)**
+:::
+
+- **pₒ**: quota di casi su cui i due codificatori sono d'accordo
+- **pₑ**: quota di accordo attesa per caso, dalle distribuzioni dei due codificatori
+
+::: {.notes}
+Perché non basta la percentuale di accordo: se il 90% dei commenti è "credulo", due codificatori che rispondono sempre "credulo" sono d'accordo nell'81% dei casi per puro caso. Il kappa corregge per questo.
+
+Nel progetto i due "codificatori" saranno la codifica umana riconciliata e Gemini.
+:::
+
+## Esercizio 1: un kappa a mano
+
+**Esempio didattico:** 100 commenti, codifica umana e Gemini, variabile "il commento mette in dubbio che il profilo sia reale?"
+
+| | Gemini: sì | Gemini: no |
+|---|---|---|
+| Persone: **sì** | 20 | 10 |
+| Persone: **no** | 5 | 65 |
+
+Calcolate pₒ, pₑ e κ. Superiamo 0,60?
+
+::: {.notes}
+Numeri inventati a scopo didattico, non dati del progetto.
+
+Soluzione: p_o = (20 + 65) / 100 = 0,85. Persone "sì" = 30%, Gemini "sì" = 25%. p_e = 0,30 × 0,25 + 0,70 × 0,75 = 0,075 + 0,525 = 0,60. κ = (0,85 − 0,60) / (1 − 0,60) = 0,625. Appena sopra la soglia.
+
+Domanda: guardando la tabella, quale errore fa più spesso Gemini? (Manca 10 casi "sì": è più prudente delle persone.) Che cosa cambiereste nel prompt?
+:::
+
+## Esercizio 2: una voce del codebook
+
+Scegliete un segnale dalla lista del 21 ottobre (per esempio "abito o simbolo di ruolo") e scrivete la voce completa:
+
+| Campo | Contenuto |
+|---|---|
+| **Nome** | breve, senza ambiguità |
+| **Definizione** | che cosa conta, in una frase |
+| **Valori** | sì / no / 98 = non so |
+| **Esempi** | un caso "sì", un caso "no", un caso dubbio |
+| **Regola per il 98** | quando usarlo |
+
+::: {.notes}
+25 minuti in coppia, poi scambio tra coppie: un'altra coppia legge la vostra voce e prova a trovare un caso che la mette in crisi. È la logica della fase pilota: le linee guida migliorano quando qualcuno prova ad applicarle.
+
+Gli esempi devono essere descritti a parole, senza aprire gli account del caso: il corpus arriverà domani.
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura del modulo 3.
+:::
+
+## Concetti chiave di oggi
+
+- Un LLM generico richiede una validazione **su misura** per ogni compito [@marino2024]
+- Coppie **esperto + meno esperto**, codifica **indipendente**, **riconciliazione**, codice **98**
+- Se il modello sa più di noi, servono codificatori **esperti** e limiti **dichiarati**
+- Nel corso aggiungiamo il **kappa di Cohen**, con soglia **0,60**
+- Una buona voce del codebook ha definizione, valori, esempi e regola per il **98**
+
+::: {.notes}
+Il modulo 3 in una frase: il caso (seminario di Terenzi), la cornice (operazioni ingannevoli), il metodo (validazione). Domani si parte.
+:::
+
+## Per la prossima lezione
+
+**Domani, giovedì 5 novembre:** Lancio del progetto
+
+- Formazione dei **gruppi** (matrice 3 × 3: domanda di ricerca × famiglia di personaggi)
+- Consegna del **corpus** e delle regole etiche
+- Portate la vostra **voce del codebook**
+
+::: {.notes}
+Ricordare le regole etiche: osservare e archiviare soltanto; nessun follow, commento, messaggio, carrello o acquisto; commentatori pseudonimizzati.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Lancio del progetto (5 novembre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+A domani.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::

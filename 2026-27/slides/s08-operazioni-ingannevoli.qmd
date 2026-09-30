@@ -1,0 +1,342 @@
+---
+title: "Operazioni informative ingannevoli"
+subtitle: "IA Generativa e Media — Incontro 8 · Modulo 3"
+date: "2026-10-30"
+format:
+  revealjs:
+    theme: [default, ../../_extensions/uniurb/discui.scss]
+    logo: ../../assets/logo-nh-uniurb.svg
+    slide-number: c/t
+    transition: fade
+    width: 1920
+    height: 1080
+    margin: 0.08
+    center: false
+    hash: true
+bibliography: ../../references.bib
+csl: ../../apa.csl
+---
+
+## [This Week in AI]{.twiai-badge}
+
+<!--
+TWIAI: da compilare a cura del docente con una notizia reale della settimana (26–30 ottobre 2026).
+Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
+-->
+
+::: {.callout-note}
+## Da discutere
+Che cosa cambia per il sistema dei media?
+:::
+
+::: {.notes}
+Dieci minuti al massimo. Poi un breve ritorno sul seminario di ieri di Massimo Terenzi: quali domande sono rimaste aperte?
+:::
+
+## Roadmap della lezione
+
+1. **Oltre le *fake news*** — che cos'è un'operazione informativa ingannevole
+2. **Tre casi su Facebook** — propaganda, gioco d'azzardo, gruppi senza moderazione
+3. **Tre tipi di danno** e lo ***Zombie Internet***
+4. **Dal sospetto alla prova** — osservare, ricostruire, ipotizzare
+
+::: {.notes}
+Lettura: Marino, Giglietto, Chakraborty, Terenzi e Olaniran (2026), Mediascapes journal. È l'articolo che dà la struttura al nostro progetto: le tre domande di ricerca corrispondono alle sue tre dimensioni.
+:::
+
+## Oltre le *fake news* {background-color="#C5612E"}
+
+::: {.notes}
+Il punto di partenza dell'articolo: le tassonomie della disinformazione (vero/falso, intenzionale/non intenzionale) non bastano a descrivere ciò che accade oggi sulle piattaforme.
+:::
+
+## Il problema
+
+- Clickbait, contenuti che provocano rabbia, immagini generate, truffe: le piattaforme ne sono **sommerse**
+- Molti di questi contenuti **non sono falsi** in senso stretto
+- Mescolano contenuti **innocui** e **dannosi** per nascondere l'intento ed evitare la moderazione
+
+Adattato da @marino2026zombie
+
+::: {.notes}
+L'articolo cita strategie esplicite di "inondazione" dell'ambiente informativo (il "flood the zone" attribuito a Bannon, lo "spaghetti approach"). L'effetto non è solo ingannare su un fatto, ma confondere il confine tra informazione falsa e legittima e alimentare il cinismo.
+
+Collegamento con Ferrara (incontro 1): i due modi di fallire, credulità e cinismo.
+:::
+
+## Una definizione
+
+::: {.orange-box}
+**Operazioni informative ingannevoli:** attività comunicative **organizzate** sui social media, progettate per far circolare informazioni con l'**intento di causare un danno**. Non richiedono contenuti falsi: la disinformazione può esserci, ma non è né necessaria né sufficiente [@marino2026zombie].
+:::
+
+::: {.notes}
+L'articolo mette insieme tre tradizioni: la teoria dell'inganno di Chadwick e Stanyer (2022), le operazioni informative strategiche di Starbird et al. (2019) e la categoria di Meta di "Coordinated Inauthentic Behaviour" (Gleicher, 2018). Ognuna coglie un pezzo; nessuna basta da sola.
+
+Per Chadwick e Stanyer l'inganno avviene quando l'intenzione di fuorviare produce cambiamenti di atteggiamento o comportamento allineati agli obiettivi di chi inganna.
+:::
+
+## Tre dimensioni
+
+| Dimensione | Domanda | Nel progetto |
+|---|---|---|
+| **Intento ingannevole** nei contenuti e nelle identità | Come inganna? | RQ2 (persuasione) |
+| **Sfruttamento delle *affordance*** della piattaforma | Quali funzioni usa per crescere? | RQ1 (autorità e infrastruttura) |
+| **Coordinamento** tra più account, anche simulato | Chi partecipa, e come? | RQ3 (pubblico) |
+
+Adattato da @marino2026zombie
+
+::: {.notes}
+Il punto chiave dell'articolo (Discussione): ogni dimensione varia in modo indipendente; è la loro convergenza, non una singola caratteristica, a rendere un'operazione "ingannevole" nel senso proposto.
+
+La terza colonna è la nostra traduzione nel progetto di gruppo.
+:::
+
+## Due livelli di inganno
+
+::: {.columns}
+::: {.column width="50%"}
+### Verso gli utenti
+False impressioni di **popolarità**, di **consenso** della comunità, di **autenticità** degli account
+:::
+
+::: {.column width="50%"}
+### Verso la piattaforma
+Manipolazione dell'**amplificazione algoritmica** ed elusione delle **regole**
+:::
+:::
+
+::: {.highlight-box}
+L'inganno verso la piattaforma è l'infrastruttura che fa crescere l'inganno verso gli utenti [@marino2026zombie].
+:::
+
+::: {.notes}
+Distinzione utile per i nostri personaggi: un profilo può ingannare chi lo segue (sembra una suora vera) e insieme ingannare la piattaforma (sembra un account personale, non un'attività commerciale).
+:::
+
+## Tre casi su Facebook {background-color="#C5612E"}
+
+::: {.notes}
+I tre casi vengono da 17 reti rilevate da un sistema di monitoraggio del comportamento coordinato (ottobre 2023 – agosto 2024). Per ogni caso gli autori hanno analizzato i metadati degli account e i 500 post più visti, raccolti con la Meta Content Library.
+:::
+
+## Il metodo
+
+- Un sistema di monitoraggio parte da account già segnalati dai **fact-checker** e ne scopre altri che condividono gli stessi contenuti **negli stessi secondi**
+- **17 reti** individuate; **3 casi** scelti per diversità di obiettivi, attori e forme di coordinamento
+- Per ogni caso: metadati degli account e **500 post più visti**
+- Codifica **induttiva**; il primo autore ricodifica il **30%** dei dati
+
+Adattato da @marino2026zombie
+
+::: {.notes}
+Il campione è intenzionale, non statistico: i casi illustrano tipi diversi di operazione, non rappresentano tutte le operazioni ingannevoli. Le categorie di analisi (per esempio "brandjacking", mescolanza di narrazioni, raffiche di pubblicazioni sincronizzate) sono emerse dalla lettura dei dati, dentro tre dimensioni decise in anticipo.
+
+Il sistema di monitoraggio è lo stesso da cui viene la rete di gioco d'azzardo di Synthetic seduction.
+:::
+
+## Caso 1: propaganda pro-Putin
+
+- **27 gruppi** pubblici con nomi e descrizioni quasi identici
+- Contenuti **innocui** (lo sviluppo urbano di Mosca) accanto a contenuti **polarizzanti**
+- Un meme contro Zelensky pubblicato da **sei gruppi in sei minuti**: oltre **1,1 milioni** di visualizzazioni
+- Nomi dei gruppi cambiati **poche settimane prima** dell'invasione dell'Ucraina
+
+Dati da @marino2026zombie
+
+::: {.notes}
+Il 12 febbraio 2024, tra le 9:12 e le 9:18, sei gruppi hanno pubblicato la stessa immagine. Un altro account ha pubblicato la stessa immagine in dieci gruppi in tre minuti. Ci sono anche immagini generate con l'IA di Putin in pose eroiche e post in arabo e in inglese per raggiungere pubblici non russi.
+
+La mescolanza di contenuti innocui e polarizzanti è ciò che l'articolo chiama, con Jack (2017), una strategia di "gaslighting": confonde, oltre a persuadere.
+:::
+
+## Caso 2: gioco d'azzardo
+
+- **260 gruppi**, da 30.000 a quasi 600.000 membri
+- Marchi noti usati **senza affiliazione verificata** (*brandjacking*)
+- Dei 500 post più visti, **368** non erano più accessibili al momento dell'analisi
+- Un post: **169.100** visualizzazioni, **44.100** commenti, **7** reazioni, **0** condivisioni
+
+Dati da @marino2026zombie
+
+::: {.notes}
+Il rapporto tra commenti e reazioni è un'anomalia che suggerisce commenti gonfiati artificialmente: lodi generiche ("great platform"), stringhe casuali di lettere, parole senza spazi. Alcuni gruppi pubblicano fino a 10.000 post al mese, un volume difficile da sostenere a mano.
+
+Nota di metodo: in Synthetic seduction la stessa area di attività è descritta con 223 gruppi, qui con 260. Sono selezioni e momenti diversi della stessa ricerca: quando citate un numero, dite sempre da quale studio viene.
+:::
+
+## Caso 3: gruppi senza moderazione
+
+- **222 gruppi** pubblici riutilizzati per contenuti per adulti e link fraudolenti
+- Un gruppo ha cambiato nome **13 volte**, diventando "elezioni" prima del voto in Sudafrica
+- Una falsa notizia già smentita: **3,5 milioni** di visualizzazioni
+- Link nascosti sotto testi innocui e domini apparentemente sicuri
+
+Dati da @marino2026zombie
+
+::: {.notes}
+Esempi dall'articolo: un post racconta la storia della BMW, ma l'anteprima contiene materiale esplicito e il link porta altrove tramite un accorciatore; un gruppo che si presenta come comunità religiosa ospita in realtà contenuti per adulti. La falsa notizia citata è quella secondo cui una bibita contiene alcol.
+
+Collegamento con il nostro caso: presentarsi come comunità religiosa per attirare membri.
+:::
+
+## Tre danni, una logica {background-color="#C5612E"}
+
+::: {.notes}
+Il confronto tra i casi.
+:::
+
+## Tre tipi di danno
+
+| Caso | Danno | Che cosa colpisce |
+|---|---|---|
+| Propaganda pro-Putin | **epistemico** | la comprensione pubblica degli eventi |
+| Gioco d'azzardo | **economico** | il denaro degli utenti, attirati in truffe |
+| Gruppi senza moderazione | **sociale-normativo** | le regole della comunità, con contenuti illeciti |
+
+Adattato da @marino2026zombie
+
+::: {.notes}
+Il meccanismo dell'inganno resta lo stesso; cambiano la motivazione e il tipo di danno. Ciò che unisce i casi è strutturale, non il contenuto.
+
+Domanda per il progetto: quale danno producono i nostri personaggi? Probabilmente più di uno: economico (le vendite), epistemico (i "segreti", le teorie del complotto documentate da Pilo), sociale-normativo (stereotipi antisemiti trasformati in autorità). Da verificare sui dati.
+:::
+
+## Lo *Zombie Internet*
+
+::: {.orange-box}
+Una condizione dell'ecosistema in cui la distinzione tra partecipazione **umana** e **automatizzata** diventa sempre più difficile da mantenere [@marino2026zombie].
+:::
+
+- Il termine viene da un giornalista, Koebler (2024)
+- Le operazioni sono l'**unità di attività**; lo *Zombie Internet* è la **condizione sistemica**
+
+::: {.notes}
+L'articolo distingue tra le operazioni (ciò che studiamo) e la condizione che le rende possibili e che esse riproducono: interazioni fabbricate e identità sintetiche si accumulano in un circolo che abbassa il costo delle operazioni successive.
+
+Collegamento con boyd (incontro 4): in un ambiente parasociale, dove si scorre più che partecipare, distinguere chi è umano diventa ancora più difficile.
+:::
+
+## Il paradosso delle piattaforme
+
+::: {.highlight-box}
+Le caratteristiche che rendono i social media un **successo commerciale** sono le stesse che li rendono **ospitali alla manipolazione** [@marino2026zombie; @schroeder2026].
+:::
+
+- La categoria di Meta (CIB) riconosce il danno solo dove si incontrano **coordinamento** e **account inautentici**
+- I casi segnalati a Meta nel 2023 e 2024: riconoscimento, ma **seguito limitato**
+
+::: {.notes}
+Implicazione di governance: gioco d'azzardo e gruppi senza moderazione producono danni ma sfuggono alla definizione di CIB, perché la loro logica non si riduce a "coordinamento più inautenticità". Il contributo dell'articolo è dare un nome a pratiche che le categorie di applicazione delle regole non vedono.
+
+Collegamento con Schiffrin et al. (incontro 6): chi deve prevenire il danno?
+:::
+
+## Dal sospetto alla prova {background-color="#C5612E"}
+
+::: {.notes}
+Ultima parte: un'abilità che useremo in tutto il progetto. Distinguere ciò che si osserva da ciò che si ricostruisce e da ciò che si ipotizza.
+:::
+
+## Tre livelli di certezza
+
+| Livello | Che cosa significa | Esempio dall'articolo |
+|---|---|---|
+| **Osservato** | si vede nei dati | sei gruppi, stessa immagine, 9:12–9:18 |
+| **Ricostruito** | inferito da più osservazioni | volumi così alti "suggeriscono" l'uso di bot |
+| **Ipotizzato** | spiegazione plausibile, da verificare | "ipotizziamo" che serva a eludere i controlli |
+
+Esempi da @marino2026zombie
+
+::: {.notes}
+L'articolo usa esplicitamente un linguaggio graduato: "suggests", "likely", "we hypothesise". Per esempio: i post non più accessibili sono stati "probabilmente" rimossi per violazioni; il cambio periodico di immagine di pagine vuote è un'ipotesi per spiegare l'elusione dei controlli.
+
+Nel progetto chiediamo lo stesso: ogni affermazione nella relazione dichiara il suo livello. È uno dei risultati di apprendimento: argomentare al giusto livello di certezza.
+:::
+
+## Personaggio e operatore
+
+::: {.columns}
+::: {.column width="50%"}
+### Ciò che vediamo
+Il **personaggio**: volto, nome, biografia, post, link
+:::
+
+::: {.column width="50%"}
+### Ciò che ricostruiamo
+L'**operatore**: chi gestisce l'account, con quali obiettivi, con quali altri account
+:::
+:::
+
+::: {.callout-warning}
+## Attenzione
+Un collegamento tra account è un **candidato**, non una **prova**, finché non è documentato.
+:::
+
+::: {.notes}
+Distinzione del corso, coerente con l'articolo: gli autori ricostruiscono per esempio che gli account amministratori dei gruppi di gioco "sembrano" gestiti centralmente, ma lo presentano come risultato dell'analisi, non come fatto accertato.
+
+Nel progetto: documentate ogni passaggio (data, indirizzo, schermata) senza interagire con gli account.
+:::
+
+## Esercizio: classificate le affermazioni
+
+A coppie, per ciascuna affermazione: **osservato**, **ricostruito** o **ipotizzato**?
+
+1. Il profilo pubblica ogni giorno alla stessa ora
+2. Il profilo è gestito dalla stessa persona che gestisce un altro profilo
+3. Il link in bio porta a un negozio online
+4. Il volto del profilo è generato con l'IA
+5. I commenti entusiasti sono scritti da account automatici
+
+::: {.notes}
+15 minuti. Soluzioni da discutere, non da imporre. (1) e (3) sono osservazioni, se documentate. (2) è al massimo una ricostruzione: servono più indizi convergenti. (4) è un giudizio: con il test del primo giorno avete visto quanto è difficile esserne sicuri; senza una dichiarazione o un'analisi tecnica resta una stima con un grado di certezza. (5) è un'ipotesi, a meno di anomalie osservabili come quelle dell'articolo (tanti commenti, poche reazioni, testi generici).
+
+Chiedere per ogni risposta: che cosa servirebbe per salire di un livello?
+:::
+
+## Sintesi {background-color="#C5612E"}
+
+::: {.notes}
+Chiusura.
+:::
+
+## Concetti chiave di oggi
+
+- Le **operazioni informative ingannevoli** non richiedono contenuti falsi [@marino2026zombie]
+- Tre dimensioni che convergono: **intento**, **affordance**, **coordinamento**
+- Tre danni: **epistemico**, **economico**, **sociale-normativo**
+- Lo ***Zombie Internet***: umano e automatico sempre meno distinguibili
+- Ogni affermazione ha un livello: **osservato**, **ricostruito**, **ipotizzato**
+
+::: {.notes}
+Il filo verso mercoledì: se il modello ci aiuta a codificare, come facciamo a fidarci della codifica? Il protocollo di validazione.
+:::
+
+## Per la prossima lezione
+
+**Mercoledì 4 novembre:** Il protocollo di validazione (workshop)
+
+- Lettura: @marino2024, soprattutto le sezioni 3–5
+- Portate il portatile e la lista dei segnali di credibilità del 21 ottobre
+
+::: {.notes}
+Nella settimana 2–7 novembre ci sono le prove intermedie, ma le lezioni continuano regolarmente.
+:::
+
+## Grazie! {background-color="#C5612E"}
+
+**Prossima lezione:** Il protocollo di validazione (4 novembre 2026)
+
+📧 fabio.giglietto@uniurb.it
+
+🌐 blended.uniurb.it
+
+::: {.notes}
+Buon fine settimana.
+:::
+
+## Riferimenti
+
+::: {#refs}
+:::
