@@ -43,6 +43,7 @@ Sezione organizzativa. Tutte le informazioni sono anche nella scheda ufficiale d
 |---|---|
 | **Insegnamento** | IA Generativa e Media (6 CFU, 36 ore) |
 | **Docente** | Prof. Fabio Giglietto |
+| **Teaching assistant** | María José Ávalos Troncoso (m.avalostroncoso@campus.uniurb.it) |
 | **Periodo** | 7 ottobre – 25 novembre 2026 |
 | **Orari** | Mer e Gio 11:00–13:00, Ven 9:00–11:00 |
 | **Strumenti IA** | Google Gemini e NotebookLM (account `@uniurb.it`) |
@@ -470,6 +471,25 @@ Verificate **oggi** l'accesso a Gemini e NotebookLM con l'account `@uniurb.it` e
 
 ::: {.notes}
 Esposito è un testo teorico più impegnativo: leggete le parti indicate, la storia dei motori di ricerca e le sottosezioni sui modelli RAG sono facoltative. Entrambe le letture sono ad accesso libero, i link sono nella pagina Letture su Moodle.
+:::
+
+## Seminario di oggi pomeriggio {background-color="#C5612E"}
+
+**The Memeplex: An Exploration of Conspiracy Theories, Feeds and Memes**
+
+Prof. **Marc Tuters**, University of Amsterdam
+
+- **Oggi**, 7 ottobre, ore **16:00–19:00**
+- **Aula D1** — Polo Didattico Paolo Volponi
+
+::: {.highlight-box}
+Come le teorie del complotto vengono trasformate dai media digitali: ipertestualità, *feedfluence* e *memesis*.
+:::
+
+::: {.notes}
+Seminario internazionale del dottorato in Scienze Umanistiche, curriculum Communication Science and Digital Culture. Marc Tuters (University of Amsterdam) presenta il libro in uscita *The Memeplex*, scritto con Tommaso Venturini. Il caso principale è la cultura cospirazionista cristallizzata attorno al COVID-19 e al "Great Reset" del World Economic Forum. Tuters propone il concetto di *conspiracy complex*: un repertorio fluido e ricombinante che viaggia tra temi e piattaforme, analizzato attraverso tre regimi di comunicazione — ipertestualità, feedfluence e memesis.
+
+Molto rilevante per il corso: meme, sottoculture politiche radicali online, fake news e politica delle piattaforme sono al centro della ricerca di Tuters. Partecipazione fortemente consigliata.
 :::
 
 ## Grazie! {background-color="#C5612E"}
