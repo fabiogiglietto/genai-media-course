@@ -43,6 +43,7 @@ Sezione organizzativa. Tutte le informazioni sono anche nella scheda ufficiale d
 |---|---|
 | **Insegnamento** | IA Generativa e Media (6 CFU, 36 ore) |
 | **Docente** | Prof. Fabio Giglietto |
+| **Teaching assistant** | María José Ávalos Troncoso (m.avalostroncoso@campus.uniurb.it) |
 | **Periodo** | 7 ottobre – 25 novembre 2026 |
 | **Orari** | Mer e Gio 11:00–13:00, Ven 9:00–11:00 |
 | **Strumenti IA** | Google Gemini e NotebookLM (account `@uniurb.it`) |
