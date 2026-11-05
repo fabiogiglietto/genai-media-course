@@ -50,7 +50,7 @@ Poche slide, molto lavoro. Mentre i gruppi scrivono, il docente incontra ogni gr
 Struttura suggerita: i gruppi possono adattarla, ma tutte le parti devono esserci.
 :::
 
-## Una struttura possibile
+## Una struttura possibile {.smaller}
 
 | Sezione | Che cosa contiene |
 |---|---|

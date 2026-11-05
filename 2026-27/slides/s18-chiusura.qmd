@@ -51,16 +51,16 @@ Per ogni elemento, le stesse due domande del primo giorno:
 ## Confronto tra gruppi {background-color="#C5612E"}
 
 ::: {.notes}
-Nove presentazioni da 5 minuti, poi discussione per righe e per colonne della matrice.
+Una presentazione da 5 minuti per gruppo, poi discussione per righe e per colonne della matrice.
 :::
 
 ## La matrice, riempita
 
 | | Religiosi | Anziani | Medici e benessere |
 |---|---|---|---|
-| **RQ1** autorità | gruppo 1 | gruppo 2 | gruppo 3 |
-| **RQ2** persuasione | gruppo 4 | gruppo 5 | gruppo 6 |
-| **RQ3** pubblico | gruppo 7 | gruppo 8 | gruppo 9 |
+| **RQ1** autorità | casella 1 | casella 2 | casella 3 |
+| **RQ2** persuasione | casella 4 | casella 5 | casella 6 |
+| **RQ3** pubblico | casella 7 | casella 8 | casella 9 |
 
 Ogni gruppo: **3 risultati** in **5 minuti**, ciascuno con il suo **livello di certezza**
 

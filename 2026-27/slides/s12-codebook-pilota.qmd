@@ -192,7 +192,7 @@ Il filo verso domani: codifica in cieco del campione di validazione.
 
 ## Per la prossima lezione
 
-**Domani, giovedì 12 novembre:** Codifica umana in cieco e riconciliazione
+**Domani, giovedì 12 novembre:** Codifica umana in cieco
 
 - Codebook e prompt **versione 1** caricati nella cartella del gruppo
 - Coppie definite: una persona più esperta e una meno esperta

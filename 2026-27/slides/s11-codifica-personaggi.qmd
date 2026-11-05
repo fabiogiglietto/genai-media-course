@@ -164,7 +164,7 @@ Il resto della lezione: codifica in coppia.
 
 ## Istruzioni per il laboratorio
 
-1. Ogni gruppo ha **3 account**, uguali per tutte le sue coppie: il foglio è su **Moodle**
+1. Ogni **casella** della matrice ha **3 account**, uguali per tutte le coppie del gruppo: il foglio è su **Moodle**
 2. Per ogni account la coppia compila la **scheda** nel foglio condiviso
 3. Per ogni valore indica il **livello**: osservato, ricostruito, ipotizzato
 4. Ricostruisce la **catena** di almeno un account, con registro dell'agente

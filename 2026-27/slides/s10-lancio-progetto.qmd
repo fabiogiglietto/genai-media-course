@@ -17,10 +17,28 @@ bibliography: ../../references.bib
 csl: ../../apa.csl
 ---
 
+## Formate il gruppo
+
+**Da fare oggi:**
+
+1. Formate un gruppo da **4 a 6 persone**
+2. Scegliete una persona come **coordinatore** o **coordinatrice**
+3. Nel **forum su Moodle**, rispondete al post aperto dal docente con **un solo messaggio per gruppo**
+
+::: {.highlight-box}
+**Il messaggio contiene:** i nomi e cognomi di tutti i membri, con l'indicazione di chi coordina.
+:::
+
+::: {.notes}
+Dare 10-15 minuti per formare i gruppi; se serve, il docente interviene per bilanciarli. Chi coordina è il punto di contatto organizzativo con il docente e tiene i tempi del gruppo, ma tutti partecipano a tutte le fasi.
+
+Un solo messaggio per gruppo, scritto da uno dei membri: così l'elenco dei gruppi resta leggibile. Formato come lo scorso anno.
+:::
+
 ## Roadmap del workshop
 
 1. **Il progetto** — domande, casi, piattaforme
-2. **I gruppi** — la matrice 3 × 3 e la formazione dei gruppi
+2. **I gruppi** — la matrice 3 × 3
 3. **Il corpus e le regole etiche**
 4. **Calendario e consegna**
 5. **Primo lavoro di gruppo** — il piano di ricerca
@@ -83,34 +101,18 @@ La matrice 3 × 3.
 
 | | Religiosi | Anziani | Medici e benessere |
 |---|---|---|---|
-| **RQ1** autorità | gruppo 1 | gruppo 2 | gruppo 3 |
-| **RQ2** persuasione | gruppo 4 | gruppo 5 | gruppo 6 |
-| **RQ3** pubblico | gruppo 7 | gruppo 8 | gruppo 9 |
+| **RQ1** autorità | casella 1 | casella 2 | casella 3 |
+| **RQ2** persuasione | casella 4 | casella 5 | casella 6 |
+| **RQ3** pubblico | casella 7 | casella 8 | casella 9 |
 
-Nove gruppi da **4 a 6 persone**.
+Dopo le risposte nel forum, il docente assegna a ogni gruppo una **casella**.
 
 ::: {.notes}
 Famiglie: religiosi (rabbino, monaco, suora); anziani (nonne e nonni); medici e benessere (medici; è il ramo in lingua inglese).
 
+Il numero dei gruppi dipende da quanti se ne formano. Con meno di nove gruppi si coprono prima tutte le famiglie e tutte le domande; con più di nove, i gruppi in più vanno su Religiosi o Medici e benessere, con altri account.
+
 La matrice permette due confronti a fine corso: tra famiglie dentro una stessa domanda (per esempio come cambia il pubblico tra religiosi e medici) e tra domande dentro una stessa famiglia.
-:::
-
-## Formate il gruppo
-
-**Da fare oggi:**
-
-1. Formate un gruppo da **4 a 6 persone**
-2. Scegliete una persona come **coordinatore** o **coordinatrice**
-3. Nel **forum su Moodle**, rispondete al post aperto dal docente con **un solo messaggio per gruppo**
-
-::: {.highlight-box}
-**Il messaggio contiene:** i nomi e cognomi di tutti i membri, con l'indicazione di chi coordina.
-:::
-
-::: {.notes}
-Dare 10-15 minuti per formare i gruppi; se serve, il docente interviene per bilanciarli. Chi coordina è il punto di contatto organizzativo con il docente e tiene i tempi del gruppo, ma tutti partecipano a tutte le fasi.
-
-Un solo messaggio per gruppo, scritto da uno dei membri: così l'elenco dei gruppi resta leggibile. Formato come lo scorso anno.
 :::
 
 ## Tutti partono dal personaggio
@@ -166,15 +168,15 @@ Se durante il lavoro trovate qualcosa che vi preoccupa (per esempio segnali di t
 Il percorso da qui a fine corso.
 :::
 
-## Il calendario del progetto
+## Il calendario del progetto {.smaller}
 
 | Data | Che cosa si fa |
 |---|---|
-| **Ven 6 nov** | livello del personaggio; catena profilo → negozio; **modello della relazione** |
+| **Ven 6 nov** | personaggio; catena profilo → negozio; **modello della relazione** |
 | **Mer 11 nov** | codebook, prompt, **pilota** su 15 casi |
-| **Gio 12 nov** | codifica umana **in cieco**, un campione per coppia |
-| **Ven 13 nov** | **kappa** tra persone e riconciliazione; Gemini: messa a punto del prompt e **test su casi nuovi** |
-| **Mer 18 nov** | Gemini su tutto il corpus del gruppo; analisi; il pubblico nei commenti |
+| **Gio 12 nov** | codifica **in cieco**, un campione per coppia |
+| **Ven 13 nov** | **kappa** e riconciliazione; Gemini: messa a punto e **test su casi nuovi** |
+| **Mer 18 nov** | codifica completa con Gemini; analisi; il pubblico nei commenti |
 | **Gio 19 nov** | danni, responsabilità, matrice affermazioni-evidenze |
 | **Ven 20 nov** | laboratorio di scrittura e consultazioni |
 | **Mer 25 nov** | confronto tra gruppi, post-test, chiusura |

@@ -6,8 +6,8 @@
 <script src="s18-chiusura_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="s18-chiusura_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="s18-chiusura_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="s18-chiusura_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="s18-chiusura_files/libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Fabio Giglietto">
   <title>Confronto tra gruppi e chiusura</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="s18-chiusura_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="s18-chiusura_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -49,7 +55,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="s18-chiusura_files/libs/revealjs/dist/theme/quarto-d62efcba5ba6be39c14e1f1fd464faa3.css">
+  <link rel="stylesheet" href="s18-chiusura_files/libs/revealjs/dist/theme/quarto-e07eb108ecb25e1899bab7da0bf5c589.css">
   <link href="s18-chiusura_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="s18-chiusura_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="s18-chiusura_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -153,7 +159,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Fabio Giglietto 
+Fabio Giglietto
 </div>
         <p class="quarto-title-affiliation">
             DISCUI · Università degli Studi di Urbino Carlo Bo
@@ -227,7 +233,7 @@ Fabio Giglietto
 <section id="confronto-tra-gruppi" class="slide level2" data-background-color="#C5612E">
 <h2>Confronto tra gruppi</h2>
 <aside class="notes">
-<p>Nove presentazioni da 5 minuti, poi discussione per righe e per colonne della matrice.</p>
+<p>Una presentazione da 5 minuti per gruppo, poi discussione per righe e per colonne della matrice.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -254,21 +260,21 @@ Fabio Giglietto
 <tbody>
 <tr class="odd">
 <td><strong>RQ1</strong> autorità</td>
-<td>gruppo 1</td>
-<td>gruppo 2</td>
-<td>gruppo 3</td>
+<td>casella 1</td>
+<td>casella 2</td>
+<td>casella 3</td>
 </tr>
 <tr class="even">
 <td><strong>RQ2</strong> persuasione</td>
-<td>gruppo 4</td>
-<td>gruppo 5</td>
-<td>gruppo 6</td>
+<td>casella 4</td>
+<td>casella 5</td>
+<td>casella 6</td>
 </tr>
 <tr class="odd">
 <td><strong>RQ3</strong> pubblico</td>
-<td>gruppo 7</td>
-<td>gruppo 8</td>
-<td>gruppo 9</td>
+<td>casella 7</td>
+<td>casella 8</td>
+<td>casella 9</td>
 </tr>
 </tbody>
 </table>
@@ -717,7 +723,7 @@ Ferrara, E. (2026). <em>The Generative <span>AI</span> Paradox: <span>GenAI</spa
         margin: 8.0e-2,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -861,13 +867,14 @@ Ferrara, E. (2026). <em>The Generative <span>AI</span> Paradox: <span>GenAI</spa
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy
