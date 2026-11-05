@@ -64,26 +64,8 @@ Dati da @wack2026
 Il commento credulo peggiora di più l'effetto del deepfake; quello incredulo lo neutralizza in parte. Rispetto al video senza commenti, il credulo abbassa ancora il sostegno (−2,56), l'incredulo lo alza un poco ma senza significatività statistica.
 
 Effetti piccoli su una scala da 0 a 100: attenzione a non esagerarli quando li riportate.
-:::
 
-## Il ruolo dell'appartenenza politica
-
-::: {.columns}
-::: {.column width="50%"}
-### Chi sostiene il candidato
-Il sostegno **cala** con il video, qualunque sia il commento
-:::
-
-::: {.column width="50%"}
-### Chi non lo sostiene
-Il commento **incredulo** fa **risalire** il sostegno: quasi 5 punti rispetto al video senza commenti
-:::
-:::
-
-Adattato da @wack2026
-
-::: {.notes}
-Risultato esplorativo e in parte inatteso: gli autori collegano il calo tra i sostenitori alla diffusione di narrazioni sulla corruzione, e dicono esplicitamente di non sapere perché gli effetti siano diversi tra i due gruppi. È un buon esempio di linguaggio calibrato: "agnostic" sul perché.
+Da citare a voce: tra chi sostiene il candidato il sostegno cala con il video qualunque sia il commento; tra chi non lo sostiene il commento incredulo lo fa risalire di quasi 5 punti rispetto al video senza commenti. È un risultato esplorativo: gli autori dicono di non sapere perché gli effetti siano diversi.
 :::
 
 ## Il senso si costruisce insieme
@@ -187,11 +169,12 @@ Il resto della lezione.
 ## Istruzioni per il laboratorio
 
 - **Linea 3:** codificate il **livello della conversazione** per i post del vostro corpus; stimate i segnali sintetici
-- **Linee 1 e 2:** prime tabelle e grafici dei risultati; per ogni risultato, il **livello di certezza**
+- **Linee 1 e 2:** prime tabelle e grafici sulla codifica completa di Gemini; per ogni risultato, il **livello di certezza**
 - **Tutti:** una frase che collega i vostri risultati al pubblico, con il livello di certezza
+- **Tutti, ultimi 15 minuti:** sezione **5** della relazione
 
 ::: {.notes}
-Domani lavoriamo su danni e responsabilità e sulla matrice affermazioni-evidenze: arrivate con i primi risultati.
+Lezione entro i primi 30 minuti: il resto è analisi in aula. La codifica completa riguarda solo le variabili validate il 13 novembre. Domani lavoriamo su danni e responsabilità e sulla matrice affermazioni-evidenze: arrivate con i primi risultati.
 :::
 
 ## Sintesi {background-color="#C5612E"}
@@ -219,7 +202,7 @@ Il modulo 5 in una frase: dall'affidabilità della codifica (kappa) al significa
 - Rileggete i tre tipi di danno di @marino2026zombie e le raccomandazioni di @schiffrin2026
 
 ::: {.notes}
-Domani si comincia a scrivere: le affermazioni della relazione, ciascuna con la sua evidenza.
+Domani si lavora sulle affermazioni della relazione, ciascuna con la sua evidenza.
 :::
 
 ## Grazie! {background-color="#C5612E"}

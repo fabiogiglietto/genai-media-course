@@ -35,7 +35,7 @@ Dieci minuti al massimo.
 
 ## Roadmap del laboratorio
 
-1. **Gemini su tutto il corpus** — come farlo in modo documentato
+1. **Validare Gemini** — si mette a punto su un campione, si valuta su un altro
 2. **Il kappa per ogni variabile** — persone con persone, persone con Gemini
 3. **La matrice di confusione** — dove sbaglia il modello
 4. **Sotto 0,60** — che cosa fare
@@ -45,10 +45,35 @@ Dieci minuti al massimo.
 Secondo momento di verifica intermedia: a fine lezione ogni gruppo carica la tabella dei kappa.
 :::
 
-## Gemini su tutto il corpus {background-color="#C5612E"}
+## Validare Gemini {background-color="#C5612E"}
 
 ::: {.notes}
 Il passo che il corso aggiunge al protocollo di Marino e Giglietto (2024).
+:::
+
+## Prima le persone, poi il modello
+
+1. **Kappa tra persone**, coppia per coppia, sui fogli originali
+2. Sotto 0,60: si rivede il **codebook** e si riprova su **casi nuovi**
+3. Solo dopo: **Gemini** contro la codifica **riconciliata**
+
+::: {.notes}
+Non ha senso chiedere al modello ciò su cui nemmeno voi siete d'accordo. I casi nuovi servono perché, dopo la riconciliazione, una coppia ha già discusso quelli vecchi: il suo accordo sugli stessi casi non vale più.
+:::
+
+## Due campioni, due compiti
+
+| Campione | A che cosa serve | Quante volte |
+|---|---|---|
+| Coppia **A** | **messa a punto**: definizioni ed esempi nel prompt | fino a **3 giri** per variabile |
+| Coppia **B** | **test** del prompt finale su casi nuovi | **una sola volta** |
+
+::: {.highlight-box}
+Il kappa che riportate è quello del **test**: Gemini non deve aver già visto quei casi.
+:::
+
+::: {.notes}
+Se gli esempi del prompt vengono dagli stessi casi su cui si misura l'accordo, il modello viene valutato su ciò che ha già visto e il kappa sale senza dire nulla sul resto del corpus. Con una terza coppia, il suo campione si aggiunge al test: quaranta casi invece di venti.
 :::
 
 ## Regole per la codifica con Gemini
@@ -62,7 +87,7 @@ Il passo che il corso aggiunge al protocollo di Marino e Giglietto (2024).
 ::: {.notes}
 Le regole servono a rendere la codifica riproducibile: un altro gruppo, con lo stesso prompt e lo stesso corpus, dovrebbe ottenere risultati simili. Il modello non è neutro: dati di addestramento, prompt e messa a punto lo guidano insieme (Esposito, 2026). Per questo lo validiamo.
 
-<!-- Modalità tecnica di esecuzione (interfaccia di Gemini, fogli di calcolo con Gemini, altro): da completare a cura del docente. -->
+In aula i gruppi lavorano sui due campioni con Gemini.
 :::
 
 ## Il kappa {background-color="#C5612E"}
@@ -83,7 +108,9 @@ Ripresa del 4 novembre.
 :::
 
 ::: {.notes}
-Se il kappa tra persone è basso, il problema è il codebook: non ha senso chiedere al modello ciò su cui nemmeno voi siete d'accordo. Se il kappa tra persone è buono e quello con Gemini è basso, il problema è il prompt o il limite del modello.
+Se il kappa tra persone è basso, il problema è il codebook. Se il kappa tra persone è buono e quello con Gemini è basso, il problema è il prompt o il limite del modello.
+
+Venti casi sono pochi: con un accordo dell'85% e un accordo atteso per caso del 50%, kappa è 0,70 con un margine di circa ±0,31; con quaranta casi, circa ±0,22. Riportate sempre il numero di casi e accorpate le categorie rare: 0,60 è una soglia di lavoro, non una linea precisa.
 
 La soglia di 0,60 è una scelta del corso, non un valore dell'articolo di Marino e Giglietto.
 :::
@@ -145,9 +172,10 @@ Che cosa fare quando la validazione non passa.
 ## Quando il kappa è sotto 0,60
 
 1. Guardate la **matrice**: dove si concentra l'errore?
-2. Rivedete **definizione** ed **esempi**; aggiornate il prompt (**versione 3**)
-3. Rifate girare Gemini sul campione di validazione e **ricalcolate**
-4. Se ancora non basta: variabile codificata **a mano** o **esclusa**, e **dichiarata**
+2. Rivedete **definizione** ed **esempi** presi dal campione A (uno o più); aggiornate il prompt
+3. Rifate girare Gemini sul **campione A** e **ricalcolate**: al massimo **3 giri**
+4. Prompt finale: **una sola volta** sul **campione B**
+5. Se ancora non basta: variabile codificata **a mano** o **esclusa**, e **dichiarata**
 
 ::: {.callout-warning}
 ## Attenzione
@@ -155,12 +183,12 @@ Non ritoccate il prompt caso per caso finché i numeri tornano: ogni modifica va
 :::
 
 ::: {.notes}
-Modificare il prompt guardando solo i casi sbagliati del campione di validazione rischia di adattarlo a quei casi e non al corpus. Motivate ogni modifica con un problema di definizione, non con il singolo errore. È la stessa logica della ricerca confermativa di cui parlano Alizadeh et al. (2026): cercare la formulazione che dà il risultato atteso non è validare.
+Modificare il prompt guardando solo i casi sbagliati rischia di adattarlo a quei casi e non al corpus: per questo il test si fa su casi nuovi, e se dopo il test cambiate il prompt quel test non vale più. Motivate ogni modifica con un problema di definizione, non con il singolo errore. È la stessa logica della ricerca confermativa di cui parlano Alizadeh et al. (2026): cercare la formulazione che dà il risultato atteso non è validare.
 :::
 
 ## Che cosa si dichiara nella relazione
 
-- Il **kappa** di ogni variabile, tra persone e con Gemini
+- Il **kappa** di ogni variabile: tra persone e con Gemini **sul test**, con il numero di casi
 - Le **versioni** del prompt e perché sono cambiate
 - Le variabili che Gemini **non** ha codificato in modo affidabile
 - Le variabili che hanno richiesto conoscenze **culturali o religiose** che il gruppo non aveva
@@ -177,14 +205,17 @@ Il resto della lezione.
 
 ## Istruzioni per il laboratorio
 
-1. Gemini codifica il **corpus** della vostra linea con il prompt versione 2
-2. Kappa **A–B** e kappa **riconciliato–Gemini** per ogni variabile
-3. **Matrice di confusione** per ogni variabile sotto 0,60
-4. Revisione e nuovo giro dove serve
-5. Caricate la **tabella dei kappa** nella cartella del gruppo
+1. Kappa **tra persone** sui fogli originali, poi **riconciliazione** e prompt **versione 2**
+2. Gemini sul **campione A**: kappa e **matrice di confusione**
+3. Revisione del prompt dove serve, fino a 3 giri
+4. Prompt finale sul **campione B**, una sola volta
+5. Caricate la **tabella dei kappa** e il **prompt finale** nella cartella del gruppo
+6. **Ultimi 15 minuti:** sezioni **4.6** e **4.7** della relazione
 
 ::: {.notes}
-Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.
+Tempi indicativi: slide 20 minuti, kappa e riconciliazione 35, Gemini 50, relazione 15. Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.
+
+Dopo la validazione, Gemini codifica tutto il corpus del gruppo (la sua famiglia, in italiano e inglese) con il prompt finale, solo per le variabili validate. L'esecuzione è a cura del docente, entro il 18 novembre. Su quella codifica il gruppo fa l'analisi per rispondere alla domanda di ricerca.
 :::
 
 ## Sintesi {background-color="#C5612E"}
@@ -195,10 +226,10 @@ Chiusura.
 
 ## Concetti chiave di oggi
 
-- Gemini codifica con prompt **documentato** e formato **fisso**
+- Si **mette a punto** su un campione, si **valuta** su un altro, una sola volta
 - Due kappa: **persone–persone** (il codebook) e **persone–Gemini** (il modello)
 - La **matrice di confusione** mostra dove e come si sbaglia
-- Sotto **0,60**: si rivede, si ricalcola, oppure si **dichiara**
+- Sotto **0,60**: si rivede, al massimo 3 giri, oppure si **dichiara**
 
 ::: {.notes}
 Da mercoledì si passa dall'affidabilità al significato: che cosa dicono i dati.

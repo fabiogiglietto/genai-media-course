@@ -6,8 +6,8 @@
 <script src="s13-codifica-cieco_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="s13-codifica-cieco_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="s13-codifica-cieco_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="s13-codifica-cieco_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="s13-codifica-cieco_files/libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Fabio Giglietto">
   <title>Codifica umana in cieco e riconciliazione</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="s13-codifica-cieco_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="s13-codifica-cieco_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -49,7 +55,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="s13-codifica-cieco_files/libs/revealjs/dist/theme/quarto-d62efcba5ba6be39c14e1f1fd464faa3.css">
+  <link rel="stylesheet" href="s13-codifica-cieco_files/libs/revealjs/dist/theme/quarto-e07eb108ecb25e1899bab7da0bf5c589.css">
   <link href="s13-codifica-cieco_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="s13-codifica-cieco_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="s13-codifica-cieco_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -153,7 +159,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Fabio Giglietto 
+Fabio Giglietto
 </div>
         <p class="quarto-title-affiliation">
             DISCUI · Università degli Studi di Urbino Carlo Bo
@@ -208,25 +214,30 @@ Fabio Giglietto
 <td>fatto</td>
 </tr>
 <tr class="even">
-<td><strong>Codifica umana in cieco</strong> del campione di validazione</td>
+<td><strong>Codifica umana in cieco</strong>: ogni coppia ha il <strong>suo</strong> campione</td>
 <td><strong>oggi</strong></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><strong>Riconciliazione</strong> in coppia</td>
-<td><strong>oggi</strong></td>
+<td><strong>Kappa</strong> tra persone e <strong>riconciliazione</strong></td>
+<td>13 novembre</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Gemini su tutto il corpus; kappa e matrice di confusione</td>
+<td>Gemini: messa a punto su un campione, test sull’altro</td>
 <td>13 novembre</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Gemini su tutto il corpus del gruppo; analisi</td>
+<td>entro il 18 novembre</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
 <p>Il campione di validazione è l’insieme di casi che codificate a mano e che userete come riferimento per giudicare Gemini. Più è curato, più è credibile la validazione.</p>
-<!-- Dimensione del campione di validazione per gruppo: da completare a cura del docente. -->
+<p>Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I campioni sono diversi perché domani uno servirà a mettere a punto il prompt e l’altro a valutarlo su casi che Gemini non ha mai visto. In un gruppo di cinque, la quinta persona codifica come terzo codificatore il campione di una coppia.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -262,7 +273,7 @@ Fabio Giglietto
 </div>
 <ul>
 <li>Ognuno codifica <strong>per conto proprio</strong> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></li>
-<li>Il disaccordo, prima della riconciliazione, è un <strong>dato</strong>: lo userete domani per il kappa tra persone</li>
+<li>Il disaccordo, prima della riconciliazione, è un <strong>dato</strong>: domani lo misurate con il kappa tra persone</li>
 </ul>
 <aside class="notes">
 <p>Nel protocollo di Marino e Giglietto i due membri della squadra codificano in modo indipendente e poi si incontrano per risolvere le discrepanze (§3).</p>
@@ -306,7 +317,7 @@ Fabio Giglietto
 <section id="la-riconciliazione" class="slide level2" data-background-color="#C5612E">
 <h2>La riconciliazione</h2>
 <aside class="notes">
-<p>Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Oggi facciamo quello conclusivo; il pilota di ieri era l’allineamento.</p>
+<p>Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Domani, dopo il kappa, facciamo quello conclusivo; il pilota di ieri era l’allineamento.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -457,15 +468,14 @@ Fabio Giglietto
 <section id="istruzioni-per-il-laboratorio" class="slide level2">
 <h2>Istruzioni per il laboratorio</h2>
 <ol type="1">
-<li>Codifica <strong>in cieco</strong> del campione di validazione, ognuno sul proprio foglio</li>
+<li>Codifica <strong>in cieco</strong> del campione della coppia, ognuno sul proprio foglio</li>
 <li><strong>Salvate</strong> i fogli e non modificateli più</li>
-<li><strong>Riconciliazione</strong> in coppia: foglio condiviso con i valori finali</li>
-<li><strong>Registro</strong> dei disaccordi e delle modifiche</li>
-<li>Aggiornate codebook e prompt alla <strong>versione 2</strong></li>
+<li><strong>Non</strong> parlate dei casi: la riconciliazione è domani</li>
+<li><strong>Ultimi 15 minuti:</strong> sezione <strong>4.5</strong> della relazione</li>
 </ol>
 <!-- Link ai fogli di codifica dei gruppi: da completare a cura del docente. -->
 <aside class="notes">
-<p>Se il tempo non basta, la riconciliazione si completa entro domattina: domani servono i fogli pronti per Gemini e il kappa.</p>
+<p>Oggi le slide non superano i 15 minuti: tutto il resto è codifica in aula. La riconciliazione, il registro delle modifiche e il prompt versione 2 si fanno domani, subito dopo il kappa.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -521,8 +531,8 @@ Fabio Giglietto
 <h2>Per la prossima lezione</h2>
 <p><strong>Domani, venerdì 13 novembre, ore 9:00:</strong> Codifica con Gemini, kappa, matrice di confusione</p>
 <ul>
-<li>Tre fogli pronti: codificatore A, codificatore B, <strong>riconciliato</strong></li>
-<li>Prompt <strong>versione 2</strong> salvato</li>
+<li>Per ogni coppia, due fogli salvati: codificatore A e codificatore B</li>
+<li>Codebook e prompt <strong>versione 1</strong> a portata di mano</li>
 </ul>
 <aside class="notes">
 <p>Portate il portatile. Chi conosce già i fogli di calcolo aiuti il proprio gruppo: domani calcoliamo il kappa per ogni variabile.</p>
@@ -757,7 +767,7 @@ Marino, G., &amp; Giglietto, F. (2024). Integrating Large Language Models in Pol
         margin: 8.0e-2,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -901,13 +911,14 @@ Marino, G., &amp; Giglietto, F. (2024). Integrating Large Language Models in Pol
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

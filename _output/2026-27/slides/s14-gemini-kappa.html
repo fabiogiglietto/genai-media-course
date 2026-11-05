@@ -6,8 +6,8 @@
 <script src="s14-gemini-kappa_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="s14-gemini-kappa_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="s14-gemini-kappa_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="s14-gemini-kappa_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="s14-gemini-kappa_files/libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Fabio Giglietto">
   <title>Codifica con Gemini, kappa e matrice di confusione</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="s14-gemini-kappa_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="s14-gemini-kappa_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -49,7 +55,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="s14-gemini-kappa_files/libs/revealjs/dist/theme/quarto-d62efcba5ba6be39c14e1f1fd464faa3.css">
+  <link rel="stylesheet" href="s14-gemini-kappa_files/libs/revealjs/dist/theme/quarto-e07eb108ecb25e1899bab7da0bf5c589.css">
   <link href="s14-gemini-kappa_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="s14-gemini-kappa_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="s14-gemini-kappa_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -153,7 +159,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Fabio Giglietto 
+Fabio Giglietto
 </div>
         <p class="quarto-title-affiliation">
             DISCUI · Università degli Studi di Urbino Carlo Bo
@@ -199,7 +205,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <section id="roadmap-del-laboratorio" class="slide level2">
 <h2>Roadmap del laboratorio</h2>
 <ol type="1">
-<li><strong>Gemini su tutto il corpus</strong> — come farlo in modo documentato</li>
+<li><strong>Validare Gemini</strong> — si mette a punto su un campione, si valuta su un altro</li>
 <li><strong>Il kappa per ogni variabile</strong> — persone con persone, persone con Gemini</li>
 <li><strong>La matrice di confusione</strong> — dove sbaglia il modello</li>
 <li><strong>Sotto 0,60</strong> — che cosa fare</li>
@@ -219,10 +225,76 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
           display:block!important;
       }</style></aside>
 </section>
-<section id="gemini-su-tutto-il-corpus" class="slide level2" data-background-color="#C5612E">
-<h2>Gemini su tutto il corpus</h2>
+<section id="validare-gemini" class="slide level2" data-background-color="#C5612E">
+<h2>Validare Gemini</h2>
 <aside class="notes">
 <p>Il passo che il corso aggiunge al protocollo di Marino e Giglietto (2024).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="prima-le-persone-poi-il-modello" class="slide level2">
+<h2>Prima le persone, poi il modello</h2>
+<ol type="1">
+<li><strong>Kappa tra persone</strong>, coppia per coppia, sui fogli originali</li>
+<li>Sotto 0,60: si rivede il <strong>codebook</strong> e si riprova su <strong>casi nuovi</strong></li>
+<li>Solo dopo: <strong>Gemini</strong> contro la codifica <strong>riconciliata</strong></li>
+</ol>
+<aside class="notes">
+<p>Non ha senso chiedere al modello ciò su cui nemmeno voi siete d’accordo. I casi nuovi servono perché, dopo la riconciliazione, una coppia ha già discusso quelli vecchi: il suo accordo sugli stessi casi non vale più.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="due-campioni-due-compiti" class="slide level2">
+<h2>Due campioni, due compiti</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Campione</th>
+<th>A che cosa serve</th>
+<th>Quante volte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Coppia <strong>A</strong></td>
+<td><strong>messa a punto</strong>: definizioni ed esempi nel prompt</td>
+<td>fino a <strong>3 giri</strong> per variabile</td>
+</tr>
+<tr class="even">
+<td>Coppia <strong>B</strong></td>
+<td><strong>test</strong> del prompt finale su casi nuovi</td>
+<td><strong>una sola volta</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<p>Il kappa che riportate è quello del <strong>test</strong>: Gemini non deve aver già visto quei casi.</p>
+</div>
+<aside class="notes">
+<p>Se gli esempi del prompt vengono dagli stessi casi su cui si misura l’accordo, il modello viene valutato su ciò che ha già visto e il kappa sale senza dire nulla sul resto del corpus. Con una terza coppia, il suo campione si aggiunge al test: quaranta casi invece di venti.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -246,7 +318,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 </ul>
 <aside class="notes">
 <p>Le regole servono a rendere la codifica riproducibile: un altro gruppo, con lo stesso prompt e lo stesso corpus, dovrebbe ottenere risultati simili. Il modello non è neutro: dati di addestramento, prompt e messa a punto lo guidano insieme (Esposito, 2026). Per questo lo validiamo.</p>
-<!-- Modalità tecnica di esecuzione (interfaccia di Gemini, fogli di calcolo con Gemini, altro): da completare a cura del docente. -->
+<p>In aula i gruppi lavorano sui due campioni con Gemini.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -303,7 +375,8 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <p>κ = (pₒ − pₑ) / (1 − pₑ): accordo osservato, corretto per l’accordo atteso per caso</p>
 </div>
 <aside class="notes">
-<p>Se il kappa tra persone è basso, il problema è il codebook: non ha senso chiedere al modello ciò su cui nemmeno voi siete d’accordo. Se il kappa tra persone è buono e quello con Gemini è basso, il problema è il prompt o il limite del modello.</p>
+<p>Se il kappa tra persone è basso, il problema è il codebook. Se il kappa tra persone è buono e quello con Gemini è basso, il problema è il prompt o il limite del modello.</p>
+<p>Venti casi sono pochi: con un accordo dell’85% e un accordo atteso per caso del 50%, kappa è 0,70 con un margine di circa ±0,31; con quaranta casi, circa ±0,22. Riportate sempre il numero di casi e accorpate le categorie rare: 0,60 è una soglia di lavoro, non una linea precisa.</p>
 <p>La soglia di 0,60 è una scelta del corso, non un valore dell’articolo di Marino e Giglietto.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -447,8 +520,9 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <h2>Quando il kappa è sotto 0,60</h2>
 <ol type="1">
 <li>Guardate la <strong>matrice</strong>: dove si concentra l’errore?</li>
-<li>Rivedete <strong>definizione</strong> ed <strong>esempi</strong>; aggiornate il prompt (<strong>versione 3</strong>)</li>
-<li>Rifate girare Gemini sul campione di validazione e <strong>ricalcolate</strong></li>
+<li>Rivedete <strong>definizione</strong> ed <strong>esempi</strong> presi dal campione A (uno o più); aggiornate il prompt</li>
+<li>Rifate girare Gemini sul <strong>campione A</strong> e <strong>ricalcolate</strong>: al massimo <strong>3 giri</strong></li>
+<li>Prompt finale: <strong>una sola volta</strong> sul <strong>campione B</strong></li>
 <li>Se ancora non basta: variabile codificata <strong>a mano</strong> o <strong>esclusa</strong>, e <strong>dichiarata</strong></li>
 </ol>
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -465,7 +539,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 </div>
 </div>
 <aside class="notes">
-<p>Modificare il prompt guardando solo i casi sbagliati del campione di validazione rischia di adattarlo a quei casi e non al corpus. Motivate ogni modifica con un problema di definizione, non con il singolo errore. È la stessa logica della ricerca confermativa di cui parlano Alizadeh et al.&nbsp;(2026): cercare la formulazione che dà il risultato atteso non è validare.</p>
+<p>Modificare il prompt guardando solo i casi sbagliati rischia di adattarlo a quei casi e non al corpus: per questo il test si fa su casi nuovi, e se dopo il test cambiate il prompt quel test non vale più. Motivate ogni modifica con un problema di definizione, non con il singolo errore. È la stessa logica della ricerca confermativa di cui parlano Alizadeh et al.&nbsp;(2026): cercare la formulazione che dà il risultato atteso non è validare.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -481,7 +555,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <section id="che-cosa-si-dichiara-nella-relazione" class="slide level2">
 <h2>Che cosa si dichiara nella relazione</h2>
 <ul>
-<li>Il <strong>kappa</strong> di ogni variabile, tra persone e con Gemini</li>
+<li>Il <strong>kappa</strong> di ogni variabile: tra persone e con Gemini <strong>sul test</strong>, con il numero di casi</li>
 <li>Le <strong>versioni</strong> del prompt e perché sono cambiate</li>
 <li>Le variabili che Gemini <strong>non</strong> ha codificato in modo affidabile</li>
 <li>Le variabili che hanno richiesto conoscenze <strong>culturali o religiose</strong> che il gruppo non aveva</li>
@@ -519,14 +593,16 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <section id="istruzioni-per-il-laboratorio" class="slide level2">
 <h2>Istruzioni per il laboratorio</h2>
 <ol type="1">
-<li>Gemini codifica il <strong>corpus</strong> della vostra linea con il prompt versione 2</li>
-<li>Kappa <strong>A–B</strong> e kappa <strong>riconciliato–Gemini</strong> per ogni variabile</li>
-<li><strong>Matrice di confusione</strong> per ogni variabile sotto 0,60</li>
-<li>Revisione e nuovo giro dove serve</li>
-<li>Caricate la <strong>tabella dei kappa</strong> nella cartella del gruppo</li>
+<li>Kappa <strong>tra persone</strong> sui fogli originali, poi <strong>riconciliazione</strong> e prompt <strong>versione 2</strong></li>
+<li>Gemini sul <strong>campione A</strong>: kappa e <strong>matrice di confusione</strong></li>
+<li>Revisione del prompt dove serve, fino a 3 giri</li>
+<li>Prompt finale sul <strong>campione B</strong>, una sola volta</li>
+<li>Caricate la <strong>tabella dei kappa</strong> e il <strong>prompt finale</strong> nella cartella del gruppo</li>
+<li><strong>Ultimi 15 minuti:</strong> sezioni <strong>4.6</strong> e <strong>4.7</strong> della relazione</li>
 </ol>
 <aside class="notes">
-<p>Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.</p>
+<p>Tempi indicativi: slide 20 minuti, kappa e riconciliazione 35, Gemini 50, relazione 15. Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.</p>
+<p>Dopo la validazione, Gemini codifica tutto il corpus del gruppo (la sua famiglia, in italiano e inglese) con il prompt finale, solo per le variabili validate. L’esecuzione è a cura del docente, entro il 18 novembre. Su quella codifica il gruppo fa l’analisi per rispondere alla domanda di ricerca.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -558,10 +634,10 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <section id="concetti-chiave-di-oggi" class="slide level2">
 <h2>Concetti chiave di oggi</h2>
 <ul>
-<li>Gemini codifica con prompt <strong>documentato</strong> e formato <strong>fisso</strong></li>
+<li>Si <strong>mette a punto</strong> su un campione, si <strong>valuta</strong> su un altro, una sola volta</li>
 <li>Due kappa: <strong>persone–persone</strong> (il codebook) e <strong>persone–Gemini</strong> (il modello)</li>
 <li>La <strong>matrice di confusione</strong> mostra dove e come si sbaglia</li>
-<li>Sotto <strong>0,60</strong>: si rivede, si ricalcola, oppure si <strong>dichiara</strong></li>
+<li>Sotto <strong>0,60</strong>: si rivede, al massimo 3 giri, oppure si <strong>dichiara</strong></li>
 </ul>
 <aside class="notes">
 <p>Da mercoledì si passa dall’affidabilità al significato: che cosa dicono i dati.</p>
@@ -817,7 +893,7 @@ Wack, M., &amp; Prochaska, S. (2026). Making Sense of <span>AI</span>-Generated 
         margin: 8.0e-2,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -961,13 +1037,14 @@ Wack, M., &amp; Prochaska, S. (2026). Making Sense of <span>AI</span>-Generated 
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

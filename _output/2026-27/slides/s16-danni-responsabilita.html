@@ -6,8 +6,8 @@
 <script src="s16-danni-responsabilita_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="s16-danni-responsabilita_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="s16-danni-responsabilita_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="s16-danni-responsabilita_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="s16-danni-responsabilita_files/libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Fabio Giglietto">
   <title>Danni, responsabilità, affermazioni ed evidenze</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="s16-danni-responsabilita_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="s16-danni-responsabilita_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -49,7 +55,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="s16-danni-responsabilita_files/libs/revealjs/dist/theme/quarto-d62efcba5ba6be39c14e1f1fd464faa3.css">
+  <link rel="stylesheet" href="s16-danni-responsabilita_files/libs/revealjs/dist/theme/quarto-e07eb108ecb25e1899bab7da0bf5c589.css">
   <link href="s16-danni-responsabilita_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="s16-danni-responsabilita_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="s16-danni-responsabilita_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -153,7 +159,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Fabio Giglietto 
+Fabio Giglietto
 </div>
         <p class="quarto-title-affiliation">
             DISCUI · Università degli Studi di Urbino Carlo Bo
@@ -528,6 +534,7 @@ Fabio Giglietto
 <li>Indicate il <strong>tipo di danno</strong> che i vostri dati documentano, se ce n’è uno</li>
 <li>Indicate <strong>chi</strong> potrebbe prevenirlo, lungo la vostra catena</li>
 <li>Scambio con un altro gruppo: <strong>provate a smontare</strong> le loro affermazioni</li>
+<li><strong>Ultimi 15 minuti:</strong> sezione <strong>6</strong> e <strong>Appendice E</strong> della relazione</li>
 </ol>
 <aside class="notes">
 <p>Lo scambio tra gruppi è il momento più utile: un altro gruppo vede subito le affermazioni troppo forti. Preferite gruppi della stessa famiglia (per esempio religiosi RQ1 con religiosi RQ3) o della stessa linea.</p>
@@ -828,7 +835,7 @@ Schiffrin, A., Marwick, A. E., Sinha, N., Wangnoo, A., Williams, K., Huseynova, 
         margin: 8.0e-2,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -972,13 +979,14 @@ Schiffrin, A., Marwick, A. E., Sinha, N., Wangnoo, A., Williams, K., Huseynova, 
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

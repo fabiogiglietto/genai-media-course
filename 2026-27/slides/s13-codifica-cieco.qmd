@@ -34,14 +34,15 @@ Oggi è quasi tutto laboratorio. Le slide servono a fissare le regole prima di i
 | Passo | Quando | Stato |
 |---|---|---|
 | Pilota su 15 casi, codebook e prompt | 11 novembre | fatto |
-| **Codifica umana in cieco** del campione di validazione | **oggi** | |
-| **Riconciliazione** in coppia | **oggi** | |
-| Gemini su tutto il corpus; kappa e matrice di confusione | 13 novembre | |
+| **Codifica umana in cieco**: ogni coppia ha il **suo** campione | **oggi** | |
+| **Kappa** tra persone e **riconciliazione** | 13 novembre | |
+| Gemini: messa a punto su un campione, test sull'altro | 13 novembre | |
+| Gemini su tutto il corpus del gruppo; analisi | entro il 18 novembre | |
 
 ::: {.notes}
 Il campione di validazione è l'insieme di casi che codificate a mano e che userete come riferimento per giudicare Gemini. Più è curato, più è credibile la validazione.
 
-<!-- Dimensione del campione di validazione per gruppo: da completare a cura del docente. -->
+Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I campioni sono diversi perché domani uno servirà a mettere a punto il prompt e l'altro a valutarlo su casi che Gemini non ha mai visto. In un gruppo di cinque, la quinta persona codifica come terzo codificatore il campione di una coppia.
 :::
 
 ## Codificare in cieco {background-color="#C5612E"}
@@ -57,7 +58,7 @@ Se vedo come ha codificato l'altra persona, il nostro accordo **non misura più*
 :::
 
 - Ognuno codifica **per conto proprio** [@marino2024]
-- Il disaccordo, prima della riconciliazione, è un **dato**: lo userete domani per il kappa tra persone
+- Il disaccordo, prima della riconciliazione, è un **dato**: domani lo misurate con il kappa tra persone
 
 ::: {.notes}
 Nel protocollo di Marino e Giglietto i due membri della squadra codificano in modo indipendente e poi si incontrano per risolvere le discrepanze (§3).
@@ -82,7 +83,7 @@ Salvate i fogli prima della riconciliazione e non modificateli più: domani serv
 ## La riconciliazione {background-color="#C5612E"}
 
 ::: {.notes}
-Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Oggi facciamo quello conclusivo; il pilota di ieri era l'allineamento.
+Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Domani, dopo il kappa, facciamo quello conclusivo; il pilota di ieri era l'allineamento.
 :::
 
 ## La riunione di riconciliazione
@@ -137,16 +138,15 @@ Il resto della lezione.
 
 ## Istruzioni per il laboratorio
 
-1. Codifica **in cieco** del campione di validazione, ognuno sul proprio foglio
+1. Codifica **in cieco** del campione della coppia, ognuno sul proprio foglio
 2. **Salvate** i fogli e non modificateli più
-3. **Riconciliazione** in coppia: foglio condiviso con i valori finali
-4. **Registro** dei disaccordi e delle modifiche
-5. Aggiornate codebook e prompt alla **versione 2**
+3. **Non** parlate dei casi: la riconciliazione è domani
+4. **Ultimi 15 minuti:** sezione **4.5** della relazione
 
 <!-- Link ai fogli di codifica dei gruppi: da completare a cura del docente. -->
 
 ::: {.notes}
-Se il tempo non basta, la riconciliazione si completa entro domattina: domani servono i fogli pronti per Gemini e il kappa.
+Oggi le slide non superano i 15 minuti: tutto il resto è codifica in aula. La riconciliazione, il registro delle modifiche e il prompt versione 2 si fanno domani, subito dopo il kappa.
 :::
 
 ## Sintesi {background-color="#C5612E"}
@@ -171,8 +171,8 @@ Domani il modello entra in scena.
 
 **Domani, venerdì 13 novembre, ore 9:00:** Codifica con Gemini, kappa, matrice di confusione
 
-- Tre fogli pronti: codificatore A, codificatore B, **riconciliato**
-- Prompt **versione 2** salvato
+- Per ogni coppia, due fogli salvati: codificatore A e codificatore B
+- Codebook e prompt **versione 1** a portata di mano
 
 ::: {.notes}
 Portate il portatile. Chi conosce già i fogli di calcolo aiuti il proprio gruppo: domani calcoliamo il kappa per ogni variabile.

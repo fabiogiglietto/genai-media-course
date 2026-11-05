@@ -6,8 +6,8 @@
 <script src="s17-scrittura_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="s17-scrittura_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="s17-scrittura_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="s17-scrittura_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="s17-scrittura_files/libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Fabio Giglietto">
   <title>Laboratorio di scrittura e consultazioni</title>
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="s17-scrittura_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="s17-scrittura_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -49,7 +55,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="s17-scrittura_files/libs/revealjs/dist/theme/quarto-d62efcba5ba6be39c14e1f1fd464faa3.css">
+  <link rel="stylesheet" href="s17-scrittura_files/libs/revealjs/dist/theme/quarto-e07eb108ecb25e1899bab7da0bf5c589.css">
   <link href="s17-scrittura_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="s17-scrittura_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="s17-scrittura_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -153,7 +159,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Fabio Giglietto 
+Fabio Giglietto
 </div>
         <p class="quarto-title-affiliation">
             DISCUI · Università degli Studi di Urbino Carlo Bo
@@ -305,7 +311,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <tbody>
 <tr class="odd">
 <td>Modello</td>
-<td><a href="https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/edit">copia del modello</a> su Google Docs, a cura del capogruppo</td>
+<td>la copia del <a href="https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/edit">modello</a> creata il 6 novembre</td>
 </tr>
 <tr class="even">
 <td>Lunghezza</td>
@@ -327,7 +333,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 </table>
 <aside class="notes">
 <p>Indicazioni riprese dall’edizione 2025/26 e adattate.</p>
-<p>Il capogruppo copia il modello, lo condivide con i membri del gruppo in modifica e con il docente in commento: così si possono dare riscontri durante la scrittura.</p>
+<p>La copia, condivisa con i membri del gruppo in modifica e con il docente in commento, permette riscontri durante la scrittura.</p>
 <p>Citazioni: ogni riferimento va controllato sulla fonte originale. Una citazione inventata, anche se proposta da un modello linguistico, è un errore grave.</p>
 <p>Appendici del modello: A, prompt in tutte le versioni con il registro delle modifiche; B, codebook completo; C, kappa e matrici di confusione; D, registro dell’agente; E, matrice affermazioni-evidenze.</p>
 <p>Il modello ha istruzioni in corsivo (➤) per ogni sezione, da cancellare prima della consegna.</p>
@@ -498,7 +504,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <li>Dividetevi le <strong>sezioni</strong> della relazione</li>
 <li>Partite dalla <strong>matrice</strong> affermazioni-evidenze: ogni riga diventa un paragrafo</li>
 <li>Preparate <strong>una domanda</strong> per la consultazione con il docente</li>
-<li>Prima bozza di <strong>dati e metodo</strong>: è la sezione più facile da scrivere subito</li>
+<li>Completate <strong>dati e metodo</strong> e la prima bozza delle sezioni mancanti</li>
 </ol>
 <!-- Ordine e orari delle consultazioni con i gruppi: da completare a cura del docente. -->
 <aside class="notes">
@@ -797,7 +803,7 @@ Wack, M., &amp; Prochaska, S. (2026). Making Sense of <span>AI</span>-Generated 
         margin: 8.0e-2,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -941,13 +947,14 @@ Wack, M., &amp; Prochaska, S. (2026). Making Sense of <span>AI</span>-Generated 
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

@@ -170,11 +170,11 @@ Il percorso da qui a fine corso.
 
 | Data | Che cosa si fa |
 |---|---|
-| **Ven 6 nov** | livello del personaggio; catena profilo → negozio |
+| **Ven 6 nov** | livello del personaggio; catena profilo → negozio; **modello della relazione** |
 | **Mer 11 nov** | codebook, prompt, **pilota** su 15 casi |
-| **Gio 12 nov** | codifica umana **in cieco** e riconciliazione |
-| **Ven 13 nov** | Gemini su tutto il corpus; **kappa** e matrice di confusione |
-| **Mer 18 nov** | il pubblico nei commenti |
+| **Gio 12 nov** | codifica umana **in cieco**, un campione per coppia |
+| **Ven 13 nov** | **kappa** tra persone e riconciliazione; Gemini: messa a punto del prompt e **test su casi nuovi** |
+| **Mer 18 nov** | Gemini su tutto il corpus del gruppo; analisi; il pubblico nei commenti |
 | **Gio 19 nov** | danni, responsabilità, matrice affermazioni-evidenze |
 | **Ven 20 nov** | laboratorio di scrittura e consultazioni |
 | **Mer 25 nov** | confronto tra gruppi, post-test, chiusura |

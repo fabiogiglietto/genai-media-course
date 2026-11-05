@@ -17,28 +17,13 @@ bibliography: ../../references.bib
 csl: ../../apa.csl
 ---
 
-## [This Week in AI]{.twiai-badge}
-
-<!--
-TWIAI: da compilare a cura del docente con una notizia reale della settimana (2–6 novembre 2026).
-Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
--->
-
-::: {.callout-note}
-## Da discutere
-Che cosa cambia per il sistema dei media?
-:::
-
-::: {.notes}
-Dieci minuti al massimo: oggi il tempo serve al laboratorio.
-:::
-
 ## Roadmap del laboratorio
 
 1. **La scheda del personaggio** — le variabili del livello account
 2. **Segnali di IA e dichiarazioni** — che cosa possiamo dire, e con quale certezza
 3. **La catena profilo → negozio** — con un agente, verificata a mano
 4. **Laboratorio** — prime schede in coppia
+5. **La relazione** — copia del modello e prime sezioni
 
 ::: {.notes}
 Oggi tutti i gruppi lavorano sullo stesso livello: il personaggio (account). È la base comune che permette i confronti tra gruppi a fine corso.
@@ -179,16 +164,28 @@ Il resto della lezione: codifica in coppia.
 
 ## Istruzioni per il laboratorio
 
-1. Ogni coppia riceve un gruppo di **account** dal corpus
-2. Per ogni account compila la **scheda** nel foglio condiviso
+1. Ogni gruppo ha **3 account**, uguali per tutte le sue coppie: il foglio è su **Moodle**
+2. Per ogni account la coppia compila la **scheda** nel foglio condiviso
 3. Per ogni valore indica il **livello**: osservato, ricostruito, ipotizzato
 4. Ricostruisce la **catena** di almeno un account, con registro dell'agente
 5. Alla fine: confronto tra le coppie dello stesso gruppo
 
-<!-- Numero di account per coppia e link al foglio condiviso: da completare a cura del docente quando il corpus è pronto. -->
-
 ::: {.notes}
 Obiettivo di oggi non è finire, ma scoprire dove la scheda non funziona: variabili ambigue, valori mancanti, casi 98 frequenti. Annotate tutto: mercoledì 11 lo userete per rivedere il codebook.
+
+Gli account sono assegnati per sorteggio dentro ogni famiglia; il foglio indica la piattaforma di ciascuno. Le etichette IA non sono nei dati: si controllano sul profilo.
+:::
+
+## La relazione si scrive man mano
+
+**Ultimi 15 minuti:**
+
+1. Chi coordina copia il [**modello di relazione**](https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/edit) (File → Crea una copia)
+2. Condivide la copia: **Editor** per il gruppo, **Commentatore** per fabio.giglietto@uniurb.it
+3. Iniziate le sezioni **3** (domanda e ipotesi), **4.2** (etica) e **4.3** (scheda e catena)
+
+::: {.notes}
+Alla fine di ogni laboratorio i gruppi compilano la sezione che hanno appena prodotto: 4.4 l'11 novembre, 4.5 il 12, 4.6 e 4.7 il 13, i risultati dal 18. Così il 20 novembre si lavora su una bozza completa.
 :::
 
 ## Sintesi {background-color="#C5612E"}

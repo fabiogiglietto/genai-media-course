@@ -72,7 +72,7 @@ Criteri di valutazione (scheda del corso): domanda e disegno chiari; pipeline ap
 
 | Voce | Indicazione |
 |---|---|
-| Modello | [copia del modello](https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/edit) su Google Docs, a cura del capogruppo |
+| Modello | la copia del [modello](https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/edit) creata il 6 novembre |
 | Lunghezza | circa 4.000–6.000 parole; abstract di 150–200 parole |
 | Citazioni | APA 7, solo fonti realmente consultate |
 | Appendici | prompt completo, codebook, tabella dei kappa, registro dell'agente |
@@ -81,7 +81,7 @@ Criteri di valutazione (scheda del corso): domanda e disegno chiari; pipeline ap
 ::: {.notes}
 Indicazioni riprese dall'edizione 2025/26 e adattate.
 
-Il capogruppo copia il modello, lo condivide con i membri del gruppo in modifica e con il docente in commento: così si possono dare riscontri durante la scrittura.
+La copia, condivisa con i membri del gruppo in modifica e con il docente in commento, permette riscontri durante la scrittura.
 
 Citazioni: ogni riferimento va controllato sulla fonte originale. Una citazione inventata, anche se proposta da un modello linguistico, è un errore grave.
 
@@ -156,7 +156,7 @@ Il resto della lezione.
 1. Dividetevi le **sezioni** della relazione
 2. Partite dalla **matrice** affermazioni-evidenze: ogni riga diventa un paragrafo
 3. Preparate **una domanda** per la consultazione con il docente
-4. Prima bozza di **dati e metodo**: è la sezione più facile da scrivere subito
+4. Completate **dati e metodo** e la prima bozza delle sezioni mancanti
 
 <!-- Ordine e orari delle consultazioni con i gruppi: da completare a cura del docente. -->
 
