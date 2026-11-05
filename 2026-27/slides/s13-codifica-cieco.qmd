@@ -169,7 +169,7 @@ Domani il modello entra in scena.
 
 ## Per la prossima lezione
 
-**Domani, venerdì 13 novembre, ore 9:00:** Codifica con Gemini, kappa, matrice di confusione
+**Domani, venerdì 13 novembre, ore 9:00:** Kappa e validazione di Gemini
 
 - Per ogni coppia, due fogli salvati: codificatore A e codificatore B
 - Codebook e prompt **versione 1** a portata di mano
@@ -180,7 +180,7 @@ Portate il portatile. Chi conosce già i fogli di calcolo aiuti il proprio grupp
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Codifica con Gemini e kappa (13 novembre 2026, ore 9:00)
+**Prossima lezione:** Kappa e validazione di Gemini (13 novembre 2026, ore 9:00)
 
 📧 fabio.giglietto@uniurb.it
 

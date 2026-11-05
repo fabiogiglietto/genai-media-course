@@ -1,5 +1,5 @@
 ---
-title: "Codifica con Gemini, kappa e matrice di confusione"
+title: "Kappa e validazione di Gemini"
 subtitle: "IA Generativa e Media — Incontro 14 · Modulo 5"
 date: "2026-11-13"
 format:
