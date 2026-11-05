@@ -20,7 +20,7 @@ csl: ../../apa.csl
 ## Roadmap del workshop
 
 1. **Il progetto** — domande, casi, piattaforme
-2. **I gruppi** — la matrice 3 × 3
+2. **I gruppi** — la matrice 3 × 3 e la formazione dei gruppi
 3. **Il corpus e le regole etiche**
 4. **Calendario e consegna**
 5. **Primo lavoro di gruppo** — il piano di ricerca
@@ -87,14 +87,30 @@ La matrice 3 × 3.
 | **RQ2** persuasione | gruppo 4 | gruppo 5 | gruppo 6 |
 | **RQ3** pubblico | gruppo 7 | gruppo 8 | gruppo 9 |
 
-Nove gruppi di circa sei persone.
+Nove gruppi da **4 a 6 persone**.
 
 ::: {.notes}
 Famiglie: religiosi (rabbino, monaco, suora); anziani (nonne e nonni); medici e benessere (medici; è il ramo in lingua inglese).
 
 La matrice permette due confronti a fine corso: tra famiglie dentro una stessa domanda (per esempio come cambia il pubblico tra religiosi e medici) e tra domande dentro una stessa famiglia.
+:::
 
-<!-- Modalità di formazione dei gruppi: da decidere a cura del docente (per esempio dalle risposte al questionario del primo giorno). -->
+## Formate il gruppo
+
+**Da fare oggi:**
+
+1. Formate un gruppo da **4 a 6 persone**
+2. Scegliete una persona come **coordinatore** o **coordinatrice**
+3. Nel **forum su Moodle**, rispondete al post aperto dal docente con **un solo messaggio per gruppo**
+
+::: {.highlight-box}
+**Il messaggio contiene:** i nomi e cognomi di tutti i membri, con l'indicazione di chi coordina.
+:::
+
+::: {.notes}
+Dare 10-15 minuti per formare i gruppi; se serve, il docente interviene per bilanciarli. Chi coordina è il punto di contatto organizzativo con il docente e tiene i tempi del gruppo, ma tutti partecipano a tutte le fasi.
+
+Un solo messaggio per gruppo, scritto da uno dei membri: così l'elenco dei gruppi resta leggibile. Formato come lo scorso anno.
 :::
 
 ## Tutti partono dal personaggio
