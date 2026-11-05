@@ -188,6 +188,7 @@ Due momenti di verifica intermedia: il codebook pilota (11 novembre) e la valida
 ## Che cosa si valuta nella relazione
 
 - Domanda e disegno di ricerca **chiari**
+- Uso appropriato dei **concetti** nei materiali di studio introdotti a lezione
 - Pipeline *LLMs-in-the-loop* applicata e **validata** (kappa)
 - **Catena di evidenze** documentata: ogni affermazione con la sua prova
 - Valutazione ragionata di **danni** e **responsabilità**
