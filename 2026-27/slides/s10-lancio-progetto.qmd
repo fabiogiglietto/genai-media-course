@@ -35,6 +35,22 @@ Dare 10-15 minuti per formare i gruppi; se serve, il docente interviene per bila
 Un solo messaggio per gruppo, scritto da uno dei membri: così l'elenco dei gruppi resta leggibile. Formato come lo scorso anno.
 :::
 
+## Create la copia della relazione
+
+Chi coordina:
+
+1. Apre su Moodle il [**modello della relazione**](https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/copy) e clicca **Crea una copia**
+2. Rinomina la copia: **Casella [n.] – [cognome di chi coordina]**
+3. **Condividi**: **Editor** per i membri del gruppo; **Commentatore** per fabio.giglietto@uniurb.it e maria.avalostroncoso@uniurb.it
+
+::: {.highlight-box}
+Il modello originale resta in **sola lettura**: tutti i gruppi partono dalla **stessa versione**.
+:::
+
+::: {.notes}
+Il link porta direttamente alla richiesta di copia. Il numero della casella arriva dopo l'assegnazione del docente: fino ad allora basta il cognome di chi coordina. La relazione si scrive man mano: alla fine di ogni laboratorio i gruppi compilano la sezione che hanno appena prodotto.
+:::
+
 ## Roadmap del workshop
 
 1. **Il progetto** — domande, casi, piattaforme
