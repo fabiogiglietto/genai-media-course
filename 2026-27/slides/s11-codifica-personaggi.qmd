@@ -180,11 +180,13 @@ Gli account sono assegnati per sorteggio dentro ogni famiglia; il foglio indica 
 
 **Ultimi 15 minuti:**
 
-1. Chi coordina copia il [**modello di relazione**](https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/edit) (File → Crea una copia)
-2. Condivide la copia: **Editor** per il gruppo, **Commentatore** per fabio.giglietto@uniurb.it
+1. Chi coordina apre il [**modello di relazione**](https://docs.google.com/document/d/1bjJ6cv6Mv95CKSNVmpGO7sMUhgCBSwL1vyCM3_h4AG8/copy) e clicca **Crea una copia**
+2. Condivide la copia: **Editor** per il gruppo, **Commentatore** per fabio.giglietto@uniurb.it e maria.avalostroncoso@uniurb.it
 3. Iniziate le sezioni **3** (domanda e ipotesi), **4.2** (etica) e **4.3** (scheda e catena)
 
 ::: {.notes}
+Il link apre direttamente la richiesta di copia: il modello originale resta in sola lettura, così tutti i gruppi partono dalla stessa versione. Rinominate la copia "Casella [n.] – [cognome di chi coordina]".
+
 Alla fine di ogni laboratorio i gruppi compilano la sezione che hanno appena prodotto: 4.4 l'11 novembre, 4.5 il 12, 4.6 e 4.7 il 13, i risultati dal 18. Così il 20 novembre si lavora su una bozza completa.
 :::
 
