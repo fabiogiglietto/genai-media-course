@@ -1,7 +1,7 @@
 ---
-title: "Danni, responsabilità, affermazioni ed evidenze"
+title: "Pubblico, danni e responsabilità"
 subtitle: "IA Generativa e Media — Incontro 16 · Modulo 6"
-date: "2026-11-19"
+date: "2026-11-20"
 format:
   revealjs:
     theme: [default, ../../_extensions/uniurb/discui.scss]
@@ -19,6 +19,7 @@ csl: ../../apa.csl
 
 ## Roadmap del workshop
 
+0. **Il pubblico nei commenti** — Wack e Prochaska in 20 minuti
 1. **Quali danni** producono i nostri personaggi
 2. **Chi ne risponde** — dalla catena alle responsabilità
 3. **La matrice affermazioni-evidenze**
@@ -26,6 +27,76 @@ csl: ../../apa.csl
 
 ::: {.notes}
 Da oggi si passa dai dati alle conclusioni. Il rischio principale in questa fase: affermare più di quanto i dati permettano. La matrice affermazioni-evidenze serve a evitarlo.
+:::
+
+## Il pubblico nei commenti {background-color="#C5612E"}
+
+::: {.notes}
+Venti minuti: la lettura di Wack e Prochaska (2026) e che cosa ne prendiamo. Il resto della lezione è analisi e matrice.
+:::
+
+## I risultati principali
+
+| Condizione | Effetto sul sostegno al candidato (scala 0–100, rispetto a chi non ha visto il video) |
+|---|---|
+| Video, **commento credulo** | −4,90 |
+| Video, **commenti misti** | −2,85 |
+| Video, **nessun commento** | −2,25 |
+| Video, **commento incredulo** | −0,64 (non significativo) |
+
+Dati da @wack2026
+
+::: {.notes}
+Il commento credulo peggiora di più l'effetto del deepfake; quello incredulo lo neutralizza in parte. Rispetto al video senza commenti, il credulo abbassa ancora il sostegno (−2,56), l'incredulo lo alza un poco ma senza significatività statistica.
+
+Effetti piccoli su una scala da 0 a 100: attenzione a non esagerarli quando li riportate.
+
+Da citare a voce: tra chi sostiene il candidato il sostegno cala con il video qualunque sia il commento; tra chi non lo sostiene il commento incredulo lo fa risalire di quasi 5 punti rispetto al video senza commenti. È un risultato esplorativo: gli autori dicono di non sapere perché gli effetti siano diversi.
+:::
+
+## Le categorie sì, il metodo no
+
+::: {.columns}
+::: {.column width="50%"}
+### Prendiamo
+- Le categorie **credulo**, **incredulo**, **misto**
+- L'idea che i commenti **visibili** orientino l'interpretazione
+:::
+
+::: {.column width="50%"}
+### Non prendiamo
+- I **commenti scritti dai ricercatori**: i nostri sono reali
+- La misura degli **effetti**: noi osserviamo, non facciamo esperimenti
+:::
+:::
+
+::: {.notes}
+Punto cruciale per la relazione: con i nostri dati possiamo descrivere quali posizioni compaiono nei commenti e quanto sono visibili, non possiamo dire che un commento abbia cambiato l'opinione di qualcuno. Sarebbe un'affermazione di livello "ipotizzato", non "osservato".
+:::
+
+## Tre livelli di analisi
+
+| Livello | Domanda | Letture |
+|---|---|---|
+| **Commento** | credulo, incredulo, incerto, consapevole ma accetta? | @wack2026 e aggiunte del corso |
+| **Conversazione** | tra i primi commenti ce n'è uno **incredulo** visibile? | @wack2026 |
+| **Segnali sintetici** | commenti generici, ripetuti, sproporzionati? | @marino2026zombie |
+
+::: {.notes}
+Il livello della conversazione traduce il risultato di Wack e Prochaska in una domanda osservabile: se l'incredulità visibile conta, è visibile nelle conversazioni sui nostri personaggi?
+:::
+
+## Segnali di commenti sintetici
+
+::: {.highlight-box}
+Nel caso del gioco d'azzardo: un post con **44.100** commenti ma solo **7** reazioni; commenti con lodi generiche, stringhe casuali, parole senza spazi [@marino2026zombie].
+:::
+
+- Più agenti coordinati possono fabbricare un **consenso sintetico** [@schroeder2026]
+- Nei nostri dati è una **stima**: codificatela come "probabilmente sintetico", con il 98
+
+::: {.notes}
+Un commento generico non è per forza sintetico: anche le persone scrivono "bellissimo". Il segnale è la combinazione: sproporzione tra commenti e reazioni, ripetizioni, stesse frasi da account diversi.
 :::
 
 ## Quali danni {background-color="#C5612E"}
@@ -161,12 +232,13 @@ Il resto della lezione, nei gruppi.
 
 ## La matrice del vostro gruppo
 
-1. Scrivete le **5–10 affermazioni** principali della vostra relazione
-2. Per ciascuna: **evidenza**, **livello**, **limiti**
-3. Indicate il **tipo di danno** che i vostri dati documentano, se ce n'è uno
-4. Indicate **chi** potrebbe prevenirlo, lungo la vostra catena
-5. Scambio con un altro gruppo: **provate a smontare** le loro affermazioni
-6. **Ultimi 15 minuti:** sezione **6** e **Appendice E** della relazione
+1. **Primi risultati**: tabelle dai campioni riconciliati (e dalla codifica completa di Gemini, se pronta)
+2. Scrivete le **5–10 affermazioni** principali della vostra relazione
+3. Per ciascuna: **evidenza**, **livello**, **limiti**
+4. Indicate il **tipo di danno** che i vostri dati documentano, se ce n'è uno
+5. Indicate **chi** potrebbe prevenirlo, lungo la vostra catena
+6. Scambio con un altro gruppo: **provate a smontare** le loro affermazioni
+7. **Ultimi 15 minuti:** sezione **6** e **Appendice E** della relazione
 
 ::: {.notes}
 Lo scambio tra gruppi è il momento più utile: un altro gruppo vede subito le affermazioni troppo forti. Preferite gruppi della stessa famiglia (per esempio religiosi RQ1 con religiosi RQ3) o della stessa linea.
@@ -188,23 +260,23 @@ Chiusura.
 - Ogni affermazione ha **evidenza**, **livello** e **limiti**
 
 ::: {.notes}
-Domani si scrive.
+Mercoledì l'ultimo incontro.
 :::
 
 ## Per la prossima lezione
 
-**Domani, venerdì 20 novembre, ore 9:00:** Laboratorio di scrittura e consultazioni
+**Mercoledì 25 novembre, ore 11:00:** Confronto tra gruppi, relazione e chiusura
 
 - Matrice affermazioni-evidenze **completa**
 - Una **bozza** della struttura della relazione
 
 ::: {.notes}
-Domani ogni gruppo ha un momento di consultazione con il docente.
+Mercoledì ogni gruppo presenta tre risultati in quattro minuti; poi le indicazioni per la relazione.
 :::
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Laboratorio di scrittura (20 novembre 2026, ore 9:00)
+**Prossima lezione:** Confronto tra gruppi e chiusura (25 novembre 2026, ore 11:00)
 
 📧 fabio.giglietto@uniurb.it
 

@@ -1,7 +1,7 @@
 ---
 title: "Codifica umana in cieco e riconciliazione"
 subtitle: "IA Generativa e Media — Incontro 13 · Modulo 5"
-date: "2026-11-12"
+date: "2026-11-18"
 format:
   revealjs:
     theme: [default, ../../_extensions/uniurb/discui.scss]
@@ -26,23 +26,23 @@ csl: ../../apa.csl
 5. **Laboratorio**
 
 ::: {.notes}
-Oggi è quasi tutto laboratorio. Le slide servono a fissare le regole prima di iniziare. Ieri avete chiuso il pilota: codebook e prompt versione 1.
+Oggi è quasi tutto laboratorio. Le slide servono a fissare le regole prima di iniziare. Il 13 novembre avete chiuso il pilota: codebook e prompt versione 1.
 :::
 
 ## Dove siamo
 
 | Passo | Quando | Stato |
 |---|---|---|
-| Pilota su 15 casi, codebook e prompt | 11 novembre | fatto |
+| Pilota su 15 casi, codebook e prompt | 13 novembre | fatto |
 | **Codifica umana in cieco**: ogni coppia ha il **suo** campione | **oggi** | |
-| **Kappa** tra persone e **riconciliazione** | 13 novembre | |
-| Gemini: messa a punto su un campione, test sull'altro | 13 novembre | |
-| Gemini su tutto il corpus del gruppo; analisi | entro il 18 novembre | |
+| **Kappa** tra persone e **riconciliazione** | 19 novembre | |
+| Gemini: messa a punto su un campione, test sull'altro | 19 novembre | |
+| Gemini su tutto il corpus del gruppo; analisi | dal 20 novembre | |
 
 ::: {.notes}
 Il campione di validazione è l'insieme di casi che codificate a mano e che userete come riferimento per giudicare Gemini. Più è curato, più è credibile la validazione.
 
-Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I campioni sono diversi perché domani uno servirà a mettere a punto il prompt e l'altro a valutarlo su casi che Gemini non ha mai visto. In un gruppo di cinque, la quinta persona codifica come terzo codificatore il campione di una coppia.
+Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I campioni sono diversi perché domani uno servirà a mettere a punto il prompt e l'altro a valutarlo su casi che Gemini non ha mai visto. In un gruppo di cinque, la quinta persona codifica come terzo codificatore il campione della coppia A (foglio coppia_A_cod3). In un gruppo di due, la coppia codifica entrambi i campioni, A e B.
 :::
 
 ## Codificare in cieco {background-color="#C5612E"}
@@ -138,7 +138,7 @@ Il resto della lezione.
 
 ## Istruzioni per il laboratorio
 
-1. Codifica **in cieco** del campione della coppia, ognuno sul proprio foglio
+1. Codifica **in cieco** del campione della coppia, ognuno sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …)
 2. **Salvate** i fogli e non modificateli più
 3. **Non** parlate dei casi: la riconciliazione è domani
 4. **Ultimi 15 minuti:** sezione **4.5** della relazione
@@ -169,7 +169,7 @@ Domani il modello entra in scena.
 
 ## Per la prossima lezione
 
-**Domani, venerdì 13 novembre, ore 9:00:** Kappa e validazione di Gemini
+**Domani, giovedì 19 novembre, ore 11:00:** Kappa e validazione di Gemini
 
 - Per ogni coppia, due fogli salvati: codificatore A e codificatore B
 - Codebook e prompt **versione 1** a portata di mano
@@ -180,7 +180,7 @@ Portate il portatile. Chi conosce già i fogli di calcolo aiuti il proprio grupp
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Kappa e validazione di Gemini (13 novembre 2026, ore 9:00)
+**Prossima lezione:** Kappa e validazione di Gemini (19 novembre 2026, ore 11:00)
 
 📧 fabio.giglietto@uniurb.it
 

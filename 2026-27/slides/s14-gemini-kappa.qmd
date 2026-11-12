@@ -1,7 +1,7 @@
 ---
 title: "Kappa e validazione di Gemini"
 subtitle: "IA Generativa e Media — Incontro 14 · Modulo 5"
-date: "2026-11-13"
+date: "2026-11-19"
 format:
   revealjs:
     theme: [default, ../../_extensions/uniurb/discui.scss]
@@ -20,7 +20,7 @@ csl: ../../apa.csl
 ## [This Week in AI]{.twiai-badge}
 
 <!--
-TWIAI: da compilare a cura del docente con una notizia reale della settimana (9–13 novembre 2026).
+TWIAI: da compilare a cura del docente con una notizia reale della settimana (16–20 novembre 2026).
 Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con data.
 -->
 
@@ -205,7 +205,7 @@ Il resto della lezione.
 
 ## Istruzioni per il laboratorio
 
-1. Kappa **tra persone** sui fogli originali, poi **riconciliazione** e prompt **versione 2**
+1. Kappa **tra persone** sui fogli originali, poi **riconciliazione** (foglio riconciliato_A, _B…) e prompt **versione 2**
 2. Gemini sul **campione A**: kappa e **matrice di confusione**
 3. Revisione del prompt dove serve, fino a 3 giri
 4. Prompt finale sul **campione B**, una sola volta
@@ -215,7 +215,7 @@ Il resto della lezione.
 ::: {.notes}
 Tempi indicativi: slide 20 minuti, kappa e riconciliazione 35, Gemini 50, relazione 15. Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.
 
-Dopo la validazione, Gemini codifica tutto il corpus del gruppo (la sua famiglia, in italiano e inglese) con il prompt finale, solo per le variabili validate. L'esecuzione è a cura del docente, entro il 18 novembre. Su quella codifica il gruppo fa l'analisi per rispondere alla domanda di ricerca.
+Dopo la validazione, Gemini codifica tutto il corpus del gruppo (la sua famiglia, in italiano e inglese) con il prompt finale, solo per le variabili validate. L'esecuzione è a cura del docente, dopo questa lezione. Domani le prime analisi partono dai campioni riconciliati; la codifica completa si aggiunge per la relazione.
 :::
 
 ## Sintesi {background-color="#C5612E"}
@@ -237,7 +237,7 @@ Da mercoledì si passa dall'affidabilità al significato: che cosa dicono i dati
 
 ## Per la prossima lezione
 
-**Mercoledì 18 novembre:** Il pubblico nei commenti
+**Domani, venerdì 20 novembre, ore 9:00:** Pubblico, danni e responsabilità
 
 - Lettura: @wack2026
 - Tabella dei kappa caricata
@@ -248,14 +248,14 @@ Tutti leggono Wack e Prochaska, non solo i gruppi della linea 3: il ruolo del co
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Il pubblico nei commenti (18 novembre 2026)
+**Prossima lezione:** Pubblico, danni e responsabilità (20 novembre 2026, ore 9:00)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-Buon fine settimana.
+A domani.
 :::
 
 ## Riferimenti

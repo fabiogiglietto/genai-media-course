@@ -40,14 +40,16 @@ Year-specific instructions. Shared conventions (palette, slide types, text densi
 | 8 | `s08-operazioni-ingannevoli.qmd` | Fri 30 Oct | Operazioni informative ingannevoli, danni, catene di evidenze | marino2026zombie | Lecture + TWIAI |
 | 9 | `s09-validazione.qmd` | Wed 4 Nov | Il protocollo di validazione | marino2024 | Workshop |
 | 10 | `s10-lancio-progetto.qmd` | Thu 5 Nov | Lancio del progetto | — | Workshop |
-| 11 | `s11-codifica-personaggi.qmd` | Fri 6 Nov | Codifica dei personaggi e percorsi profilo → negozio | — | Lab + TWIAI |
-| 12 | `s12-codebook-pilota.qmd` | Wed 11 Nov | Codebook, prompt e codifica pilota | — | Lab |
-| 13 | `s13-codifica-cieco.qmd` | Thu 12 Nov | Codifica umana in cieco e riconciliazione | — | Lab |
-| 14 | `s14-gemini-kappa.qmd` | Fri 13 Nov | Codifica con Gemini, kappa, matrice di confusione | — | Lab + TWIAI |
-| 15 | `s15-pubblico-commenti.qmd` | Wed 18 Nov | Il pubblico nei commenti | wack2026 | Lab |
-| 16 | `s16-danni-responsabilita.qmd` | Thu 19 Nov | Analisi: danni, responsabilità, matrice affermazioni-evidenze | — | Workshop |
-| 17 | `s17-scrittura.qmd` | Fri 20 Nov | Laboratorio di scrittura e consultazioni | — | Workshop + TWIAI |
+| 11 | `s11-codifica-personaggi.qmd` | Fri 6 Nov | Codifica dei personaggi e percorsi profilo → negozio | — | Lab |
+| 12 | `s12-codebook-pilota.qmd` | Fri 13 Nov | Codebook, prompt e codifica pilota | — | Lab |
+| 13 | `s13-codifica-cieco.qmd` | Wed 18 Nov | Codifica umana in cieco e riconciliazione | — | Lab |
+| 14 | `s14-gemini-kappa.qmd` | Thu 19 Nov | Kappa e validazione di Gemini | — | Lab + TWIAI |
+| 15 | `s15-pubblico-commenti.qmd` | (merged into 16) | Il pubblico nei commenti | wack2026 | Lab |
+| 16 | `s16-danni-responsabilita.qmd` | Fri 20 Nov | Pubblico, danni e responsabilità (with s15) | — | Workshop |
+| 17 | `s17-scrittura.qmd` | (merged into 18) | Laboratorio di scrittura e consultazioni | — | Workshop + TWIAI |
 | 18 | `s18-chiusura.qmd` | Wed 25 Nov | Confronto tra gruppi, post-test, questionario finale | — | Closing |
+
+**Schedule change (12 Nov):** the class ran one session behind, so s12–s14 moved by one slot, s15 was merged into s16 (Fri 20 Nov) and s17 into s18 (Wed 25 Nov); the merged decks stay online and the index marks them as merged.
 
 "This Week in AI" (TWIAI) opens the first session of each calendar week that has a free slot; in session 1 it is skipped for the admin block. Never invent news: leave a commented placeholder for the instructor.
 
@@ -75,7 +77,7 @@ Three research questions, one per dimension of deceptive operations (Marino et a
 - **RQ2 Persuasion (content):** drivers and values used to transfer trust from persona to offer.
 - **RQ3 Audience (participation):** credulous / incredulous / uncertain / AI-aware-but-accepting comments; likely synthetic comments.
 
-Groups: 3 × 3 matrix (strand × persona family: religious; elders; medical/wellness). Validation: pilot until agreement with a "98 = non so" code; blind coding in pairs (one more, one less experienced coder); reconciliation meeting; Gemini on the full corpus with a documented prompt; Cohen's kappa per variable, refine below 0.60.
+Groups: 3 × 3 matrix (strand × persona family: religious; elders; medical/wellness). Validation: pilot until agreement with a "98 = non so" code; blind coding in pairs (one more, one less experienced coder), each pair on its own sample (20 posts for strands 1–2, 60 comments for strand 3), coded in class on 12 Nov; on 13 Nov, human Cohen's kappa per variable, then the reconciliation meeting (kappa below 0.60: revise the codebook and retest on new cases); Gemini tuned on pair A's sample (definitions and examples, at most 3 rounds per variable), then tested once on pair B's unseen sample, whose kappa is the one reported; variables still below 0.60 are coded by hand or excluded, and declared; Gemini then codes the group's whole corpus (its family, Italian and English) with the final prompt, run by the instructor; groups analyse that coding to answer their question. For strand 1, Gemini validation uses posts; account sheets and chains stay hand-coded evidence. All project work happens in class. Each lab ends with about 15 minutes on the report section it produced; groups copy the report template on 6 Nov.
 **Attribution:** from Marino & Giglietto (2024, §3–4) come only expert coders, pilot training, pairs of one more and one less experienced coder coding independently, alignment and concluding meetings to resolve discrepancies, and a 98 level for ambiguous cases. The paper does NOT use Cohen's kappa, a 0.60 threshold or Gemini: those are the course's additions. Never cite `marino2024` for kappa.
 
 Rule for all decks: every claim tied to a reading must be checked against the full text (not the kasten note). Pilo (2026) documents only the rabbi personas; the other persona families come from Massimo Terenzi's research. Ethics: observe and archive only (no following, commenting, messaging, carts or purchases); pseudonymise commenters.

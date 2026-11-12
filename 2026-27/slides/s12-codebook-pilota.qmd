@@ -1,7 +1,7 @@
 ---
 title: "Codebook, prompt e codifica pilota"
 subtitle: "IA Generativa e Media — Incontro 12 · Modulo 4"
-date: "2026-11-11"
+date: "2026-11-13"
 format:
   revealjs:
     theme: [default, ../../_extensions/uniurb/discui.scss]
@@ -25,7 +25,7 @@ csl: ../../apa.csl
 4. **Laboratorio** — codebook, prompt, pilota
 
 ::: {.notes}
-Venerdì tutti i gruppi hanno codificato il livello del personaggio. Oggi ogni gruppo costruisce il codebook della propria linea e il prompt per Gemini, e li prova su 15 casi.
+Ieri tutti i gruppi hanno completato le schede del personaggio e la catena. Oggi ogni gruppo costruisce il codebook della propria linea e il prompt per Gemini, e li prova su 15 casi.
 
 Primo momento di verifica intermedia: a fine lezione ogni gruppo carica codebook e prompt.
 :::
@@ -88,7 +88,7 @@ La domanda di RQ1: la stessa infrastruttura serve personaggi rivolti a mercati d
 | **2** persuasione | il **post** | **20** post |
 | **3** pubblico | il **commento** | **60** commenti |
 
-Ogni coppia ha un campione **diverso**: domani capite perché.
+Ogni coppia ha un campione **diverso**: il 19 novembre capite perché.
 
 ::: {.notes}
 Il numero di casi cambia con l'unità: un commento si codifica più in fretta di un post, e con le categorie della linea 3 venti commenti sarebbero troppo pochi. I numeri sono pensati per codificare in aula.
@@ -162,14 +162,16 @@ Il resto della lezione.
 
 ## Istruzioni per il laboratorio
 
-1. Scrivete il **codebook** della vostra linea (usate il modello di voce del 4 novembre)
-2. Scrivete il **prompt** e salvatelo come **versione 1**
-3. **Pilota** in coppia sui 15 casi
-4. Provate il prompt su Gemini con gli stessi casi
-5. Caricate codebook, prompt e note sul pilota nella cartella del gruppo
+1. Aprite il **dataset di codifica** del vostro gruppo (link su Moodle) e leggete il foglio **leggimi**
+2. Scrivete il **codebook** della vostra linea (usate il modello di voce del 4 novembre)
+3. Scrivete il **prompt** e salvatelo come **versione 1**
+4. **Pilota** sui 15 casi del foglio **pilota**: una colonna per variabile e per persona
+5. Provate il prompt su Gemini con gli stessi casi
 6. **Ultimi 15 minuti:** sezione **4.4** della relazione
 
 ::: {.notes}
+Nel dataset le colonne con i casi sono bloccate: aggiungete le vostre colonne a destra, con gli stessi nomi in tutti i fogli. Codebook e prompt vanno nella relazione (sezione 4.4 e Appendice A).
+
 Verifica intermedia: il docente legge i codebook e dà un riscontro entro la lezione successiva. Registrate l'uso di Gemini nel registro dell'agente.
 :::
 
@@ -187,30 +189,30 @@ Chiusura.
 - **Pilota** su 15 casi fino all'accordo, con il codice **98**
 
 ::: {.notes}
-Il filo verso domani: codifica in cieco del campione di validazione.
+Il filo verso il 18 novembre: codifica in cieco del campione di validazione.
 :::
 
 ## Per la prossima lezione
 
-**Domani, giovedì 12 novembre:** Codifica umana in cieco
+**Mercoledì 18 novembre, ore 11:00:** Codifica umana in cieco
 
-- Codebook e prompt **versione 1** caricati nella cartella del gruppo
+- Codebook e prompt **versione 1** nella relazione del gruppo
 - Coppie definite: una persona più esperta e una meno esperta
 
 ::: {.notes}
-Domani ognuno codifica senza vedere la codifica dell'altro: organizzate i fogli in modo che non siano visibili a vicenda fino alla riconciliazione.
+Il 18 novembre ognuno codifica sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …) senza aprire quello dell'altra persona fino alla riconciliazione.
 :::
 
 ## Grazie! {background-color="#C5612E"}
 
-**Prossima lezione:** Codifica umana in cieco (12 novembre 2026)
+**Prossima lezione:** Codifica umana in cieco (18 novembre 2026, ore 11:00)
 
 📧 fabio.giglietto@uniurb.it
 
 🌐 blended.uniurb.it
 
 ::: {.notes}
-A domani.
+Buon fine settimana.
 :::
 
 ## Riferimenti
