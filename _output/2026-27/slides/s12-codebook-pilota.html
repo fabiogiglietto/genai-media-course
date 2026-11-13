@@ -173,6 +173,7 @@ Fabio Giglietto
 <h2>Roadmap del laboratorio</h2>
 <ol type="1">
 <li><strong>I codebook delle linee</strong> — post (RQ2) e commenti (RQ3)</li>
+<li><strong>Il dataset del gruppo</strong> — fogli, campioni, percorso dei casi</li>
 <li><strong>Dal codebook al prompt</strong> — come istruire Gemini</li>
 <li><strong>La fase pilota</strong> — 15 casi fino all’accordo</li>
 <li><strong>Laboratorio</strong> — codebook, prompt, pilota</li>
@@ -374,6 +375,277 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
+<section id="il-dataset-del-gruppo" class="slide level2" data-background-color="#C5612E">
+<h2>Il dataset del gruppo</h2>
+<aside class="notes">
+<p>Prima di scrivere il prompt, guardiamo su che cosa lavorerete fino al 19 novembre: un dataset per gruppo, uno per casella della matrice, preparato dal docente. Queste slide valgono per tutti i gruppi; i dettagli del vostro sono nel foglio leggimi.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="il-percorso-dei-casi" class="slide level2">
+<h2>Il percorso dei casi</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 22%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quando</th>
+<th>Chi</th>
+<th>Che cosa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>13 nov</strong></td>
+<td>tutto il gruppo</td>
+<td><strong>pilota</strong> su 15 casi; codebook e prompt versione 1</td>
+</tr>
+<tr class="even">
+<td><strong>18 nov</strong></td>
+<td>ogni coppia, <strong>in cieco</strong></td>
+<td>il <strong>proprio campione</strong>; la coppia A anche il <strong>mirato</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>19 nov</strong></td>
+<td>coppie, poi gruppo</td>
+<td><strong>kappa</strong> tra persone e <strong>riconciliazione</strong>; Gemini: <strong>messa a punto</strong> su A (max 3 giri), <strong>test</strong> una volta su B, C e mirato</td>
+</tr>
+<tr class="even">
+<td><strong>dopo il 19</strong></td>
+<td>docente</td>
+<td>Gemini su <strong>tutto il corpus</strong> del gruppo, solo variabili validate</td>
+</tr>
+<tr class="odd">
+<td><strong>dal 20 nov</strong></td>
+<td>gruppo</td>
+<td><strong>analisi</strong> per rispondere alla domanda</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>È la pipeline del 4 novembre applicata ai vostri dati. Ogni foglio del dataset corrisponde a una riga di questa tabella.</p>
+<p>Il punto da ricordare: i casi su cui si misura Gemini (B, C e mirato) non devono mai entrare nel prompt. Per questo sono fogli separati, estratti prima, e nessuno li usa per scrivere definizioni o esempi.</p>
+<p>Il corpus completo lo codifica Gemini, con il prompt finale, solo per le variabili che hanno superato la validazione. Lo lancia il docente dopo il 19 novembre; voi analizzate il risultato.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="che-cosa-cè-nel-dataset" class="slide level2">
+<h2>Che cosa c’è nel dataset</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 40%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Foglio</th>
+<th>Che cosa contiene</th>
+<th>Quando si usa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>leggimi</strong></td>
+<td>istruzioni e note sui dati del gruppo</td>
+<td>sempre</td>
+</tr>
+<tr class="even">
+<td><strong>corpus</strong></td>
+<td>tutti i casi della famiglia, in italiano e inglese</td>
+<td>consultazione e analisi</td>
+</tr>
+<tr class="odd">
+<td><strong>pilota</strong></td>
+<td>15 casi, gli stessi per tutto il gruppo</td>
+<td>oggi</td>
+</tr>
+<tr class="even">
+<td><strong>coppia_A_cod1</strong>, <strong>coppia_A_cod2</strong>, …</td>
+<td>il campione della coppia, un foglio per persona</td>
+<td>18 novembre</td>
+</tr>
+<tr class="odd">
+<td><strong>riconciliato_A</strong>, …</td>
+<td>la codifica condivisa della coppia</td>
+<td>19 novembre</td>
+</tr>
+<tr class="even">
+<td><strong>mirato_cod1</strong>, <strong>mirato_cod2</strong>, <strong>riconciliato_mirato</strong></td>
+<td>solo in sei gruppi</td>
+<td>18 e 19 novembre</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Le colonne con i casi, il leggimi e il corpus sono bloccati: li possono modificare solo i docenti. Voi scrivete nelle colonne del codebook, a destra: una colonna per variabile, con gli stessi nomi in tutti i fogli. Nomi uguali servono a confrontare i fogli in automatico e a calcolare il kappa.</p>
+<p>Il link al dataset del gruppo è su Moodle. Se l’avevate aperto ieri, ricaricate la pagina: alcuni casi sono stati sostituiti stamattina (prossima slide).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="come-sono-stati-scelti-i-casi" class="slide level2">
+<h2>Come sono stati scelti i casi</h2>
+<ul>
+<li><strong>Corpus</strong>: tutti i post (linee 1 e 2) o tutti i commenti TikTok (linea 3) della famiglia, in <strong>italiano e inglese</strong>, dal 1 gennaio al 29 ottobre 2026</li>
+<li><strong>Estrazione casuale</strong> con un <strong>seme fisso</strong>: l’estrazione si può ripetere identica</li>
+<li>Pilota e campioni <strong>non si sovrappongono</strong>, né tra coppie né tra gruppi della stessa famiglia</li>
+<li>Solo post con il <strong>file media</strong> disponibile</li>
+<li><strong>13 novembre</strong>: casi sostituiti con le stesse regole (file mancante, altra lingua, commento senza testo)</li>
+</ul>
+<aside class="notes">
+<p>Il seme fisso rende l’estrazione riproducibile: va citato nella relazione, insieme alle dimensioni dei campioni. Il seme è scritto nel leggimi.</p>
+<p>Niente sovrapposizioni: due gruppi della stessa famiglia lavorano sullo stesso corpus ma su casi diversi, così i casi di test di un gruppo non compaiono nel lavoro di un altro.</p>
+<p>“Solo post con il file media” è un limite da dichiarare: i post senza file non possono entrare nei campioni, quindi i campioni rappresentano i post con file, non tutto il corpus.</p>
+<p>Le sostituzioni del 13 novembre sono registrate caso per caso, con il motivo: sono state fatte prima di qualunque codifica e con la stessa regola casuale, quindi non cambiano la logica dell’estrazione.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="chi-codifica-che-cosa" class="slide level2">
+<h2>Chi codifica che cosa</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Persone nel gruppo</th>
+<th>Campioni di coppia</th>
+<th>Come</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>2</strong></td>
+<td>A e B</td>
+<td>la stessa coppia codifica entrambi</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td>A e B</td>
+<td>una coppia per campione</td>
+</tr>
+<tr class="odd">
+<td><strong>5</strong></td>
+<td>A e B</td>
+<td>la quinta persona è il <strong>terzo codificatore</strong> di A (coppia_A_cod3)</td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td>A, B e C</td>
+<td>C si aggiunge al <strong>test</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Ogni coppia: una persona <strong>più esperta</strong> e una <strong>meno esperta</strong></p>
+<aside class="notes">
+<p>Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3, come nella slide precedente sui casi di ogni linea.</p>
+<p>Nel gruppo di due, A serve a mettere a punto il prompt e B a valutarlo, come negli altri gruppi: cambia solo che a codificarli sono le stesse due persone.</p>
+<p>Con tre coppie, il campione C si somma a B per il test: quaranta casi invece di venti, quindi un kappa più stabile.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="il-campione-mirato" class="slide level2">
+<h2>Il campione mirato</h2>
+<div class="highlight-box">
+<p>Alcune categorie sono <strong>rare</strong> nei campioni casuali: con pochi casi il kappa non si può calcolare.</p>
+</div>
+<ul>
+<li><strong>Linea 3</strong> (caselle 7, 7b, 8, 9): fino a <strong>30 commenti</strong> che parlano di IA o di finzione</li>
+<li><strong>Linea 2, Religiosi</strong> (caselle 4, 4b): <strong>20 post</strong> con un invito esplicito all’azione</li>
+<li>Scelti per <strong>parole chiave</strong>, <strong>non a caso</strong>: li codifica la <strong>coppia A</strong>, il 18 novembre</li>
+<li>Servono <strong>solo al test</strong> di quelle categorie: mai come esempi nel prompt, mai per stimare <strong>frequenze</strong></li>
+</ul>
+<aside class="notes">
+<p>Il problema: nei campioni casuali di commenti quasi nessuno parla della natura sintetica del personaggio, e nei post dei personaggi religiosi gli inviti espliciti a comprare, commentare o seguire sono pochi. Su due o tre casi un kappa non dice nulla.</p>
+<p>La soluzione è una scelta del corso: un campione aggiuntivo scelto per parole chiave (per esempio “IA”, “intelligenza artificiale”, “finto” per i commenti; “link”, “commenta”, “salva”, “compra” per i post). Alcuni casi non saranno pertinenti: codificateli normalmente.</p>
+<p>Regole: si codifica in cieco come gli altri campioni (mirato_cod1, mirato_cod2), si riconcilia il 19 (riconciliato_mirato), poi Gemini lo codifica una sola volta con il prompt finale, insieme al test B. Il kappa del mirato si riporta a parte e solo per le categorie rare. Poiché non è casuale, non dice quanto quelle categorie sono frequenti nel corpus.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="note-sui-dati" class="slide level2">
+<h2>Note sui dati</h2>
+<ul>
+<li>Lingua dei TikTok <strong>stimata</strong>: se un caso non è in italiano o inglese, codificatelo <strong>98</strong></li>
+<li>Lingua <strong>und</strong>: testo troppo breve per stimarla (spesso solo emoji); si codifica normalmente</li>
+<li>Instagram: <strong>url_originale</strong> apre il profilo, non il post: codificate dal <strong>file media</strong></li>
+<li>Autori dei commenti <strong>pseudonimizzati</strong> (U-xxxxxx): non cercate né riportate i nomi</li>
+<li>Contenuti con <strong>stereotipi antisemiti</strong>: evidenze da analizzare, non da riprodurre</li>
+</ul>
+<aside class="notes">
+<p>La lingua di TikTok non è un campo della piattaforma: la stima viene dal testo, e quando il testo è fatto solo di hashtag viene dalla regione dell’account, meno affidabile (colonna lingua_auto). Per questo esiste il 98: un caso in spagnolo sfuggito al filtro non si scarta, si codifica 98 e si annota.</p>
+<p>Il file media è il materiale da codificare: per i post Instagram è l’unico modo di vedere il contenuto. Per TikTok url_originale apre il video, se è ancora online.</p>
+<p>Content note per i gruppi Religiosi: i personaggi rabbino usano stereotipi antisemiti rovesciati. Si analizzano come evidenza (Pilo, 2026), non si riproducono nelle presentazioni oltre il necessario.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="dal-codebook-al-prompt" class="slide level2" data-background-color="#C5612E">
 <h2>Dal codebook al prompt</h2>
 <aside class="notes">
@@ -480,16 +752,16 @@ Fabio Giglietto
 <section id="il-pilota-in-cinque-passi" class="slide level2">
 <h2>Il pilota in cinque passi</h2>
 <ol type="1">
-<li>Ogni coppia codifica <strong>gli stessi 15 casi</strong>, ciascuno per conto proprio</li>
+<li>Tutto il gruppo codifica <strong>gli stessi 15 casi</strong> (foglio <strong>pilota</strong>), ciascuno per conto proprio</li>
 <li>Confronto: dove non siete d’accordo?</li>
 <li>Discussione dei casi <strong>98</strong></li>
 <li>Revisione di <strong>definizioni</strong> ed <strong>esempi</strong> del codebook</li>
-<li>Si ripete finché la coppia è <strong>d’accordo</strong></li>
+<li>Si ripete finché il gruppo è <strong>d’accordo</strong></li>
 </ol>
 <p>Adattato da <span class="citation" data-cites="marino2024">Marino &amp; Giglietto (<a href="#/riferimenti" role="doc-biblioref" onclick="">2024</a>)</span></p>
 <aside class="notes">
 <p>Nel protocollo di Marino e Giglietto l’addestramento su un sottocampione pilota precede la codifica vera. I 15 casi sono una scelta del corso.</p>
-<p>Provate lo stesso prompt su Gemini con gli stessi 15 casi: dove il modello sbaglia, il problema può essere nella definizione (serve anche a voi) o nel prompt (serve solo al modello). I casi del pilota servono a fare pratica: non rientrano nei campioni di domani.</p>
+<p>Provate lo stesso prompt su Gemini con gli stessi 15 casi: dove il modello sbaglia, il problema può essere nella definizione (serve anche a voi) o nel prompt (serve solo al modello). I casi del pilota servono a fare pratica: non rientrano nei campioni del 18 novembre, e potete usarli come esempi nel prompt.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -524,7 +796,7 @@ Fabio Giglietto
 <li>Aprite il <strong>dataset di codifica</strong> del vostro gruppo (link su Moodle) e leggete il foglio <strong>leggimi</strong></li>
 <li>Scrivete il <strong>codebook</strong> della vostra linea (usate il modello di voce del 4 novembre)</li>
 <li>Scrivete il <strong>prompt</strong> e salvatelo come <strong>versione 1</strong></li>
-<li><strong>Pilota</strong> sui 15 casi del foglio <strong>pilota</strong>: una colonna per variabile e per persona</li>
+<li><strong>Pilota</strong> sui 15 casi del foglio <strong>pilota</strong>: una colonna per variabile e per persona (es. posizione_cod1)</li>
 <li>Provate il prompt su Gemini con gli stessi casi</li>
 <li><strong>Ultimi 15 minuti:</strong> sezione <strong>4.4</strong> della relazione</li>
 </ol>
@@ -589,7 +861,7 @@ Fabio Giglietto
 <li>Coppie definite: una persona più esperta e una meno esperta</li>
 </ul>
 <aside class="notes">
-<p>Il 18 novembre ognuno codifica sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …) senza aprire quello dell’altra persona fino alla riconciliazione.</p>
+<p>Il 18 novembre ognuno codifica sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …) senza aprire quello dell’altra persona fino alla riconciliazione. Nei gruppi con il campione mirato, la coppia A codifica anche mirato_cod1 e mirato_cod2.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

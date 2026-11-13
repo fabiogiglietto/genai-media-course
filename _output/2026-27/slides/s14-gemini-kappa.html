@@ -284,9 +284,14 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <td>fino a <strong>3 giri</strong> per variabile</td>
 </tr>
 <tr class="even">
-<td>Coppia <strong>B</strong></td>
+<td>Coppia <strong>B</strong> (e <strong>C</strong>)</td>
 <td><strong>test</strong> del prompt finale su casi nuovi</td>
 <td><strong>una sola volta</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Mirato</strong> (sei gruppi)</td>
+<td><strong>test</strong> delle sole categorie rare</td>
+<td><strong>una sola volta</strong>, con B</td>
 </tr>
 </tbody>
 </table>
@@ -295,6 +300,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 </div>
 <aside class="notes">
 <p>Se gli esempi del prompt vengono dagli stessi casi su cui si misura l’accordo, il modello viene valutato su ciò che ha già visto e il kappa sale senza dire nulla sul resto del corpus. Con una terza coppia, il suo campione si aggiunge al test: quaranta casi invece di venti.</p>
+<p>Il campione mirato (scelto per parole chiave, codificato dalla coppia A il 18 novembre) non entra mai nella messa a punto: niente esempi presi da lì. Gemini lo codifica una sola volta, con il prompt finale, insieme a B. Il suo kappa si calcola e si riporta solo per le categorie rare per cui è stato costruito (per esempio “sa che è IA” nella linea 3, gli inviti all’azione nella linea 2), separato da quello di B. Non essendo casuale, non serve a stimare quanto sono frequenti.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -556,6 +562,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <h2>Che cosa si dichiara nella relazione</h2>
 <ul>
 <li>Il <strong>kappa</strong> di ogni variabile: tra persone e con Gemini <strong>sul test</strong>, con il numero di casi</li>
+<li>Il kappa sul <strong>mirato</strong>, a parte, solo per le categorie rare</li>
 <li>Le <strong>versioni</strong> del prompt e perché sono cambiate</li>
 <li>Le variabili che Gemini <strong>non</strong> ha codificato in modo affidabile</li>
 <li>Le variabili che hanno richiesto conoscenze <strong>culturali o religiose</strong> che il gruppo non aveva</li>
@@ -593,10 +600,10 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <section id="istruzioni-per-il-laboratorio" class="slide level2">
 <h2>Istruzioni per il laboratorio</h2>
 <ol type="1">
-<li>Kappa <strong>tra persone</strong> sui fogli originali, poi <strong>riconciliazione</strong> (foglio riconciliato_A, _B…) e prompt <strong>versione 2</strong></li>
+<li>Kappa <strong>tra persone</strong> sui fogli originali, poi <strong>riconciliazione</strong> (riconciliato_A, _B, …, _mirato) e prompt <strong>versione 2</strong></li>
 <li>Gemini sul <strong>campione A</strong>: kappa e <strong>matrice di confusione</strong></li>
 <li>Revisione del prompt dove serve, fino a 3 giri</li>
-<li>Prompt finale sul <strong>campione B</strong>, una sola volta</li>
+<li>Prompt finale sul <strong>campione B</strong> (e C, e mirato), una sola volta</li>
 <li>Caricate la <strong>tabella dei kappa</strong> e il <strong>prompt finale</strong> nella cartella del gruppo</li>
 <li><strong>Ultimi 15 minuti:</strong> sezioni <strong>4.6</strong> e <strong>4.7</strong> della relazione</li>
 </ol>

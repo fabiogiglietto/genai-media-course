@@ -20,9 +20,10 @@ csl: ../../apa.csl
 ## Roadmap del laboratorio
 
 1. **I codebook delle linee** — post (RQ2) e commenti (RQ3)
-2. **Dal codebook al prompt** — come istruire Gemini
-3. **La fase pilota** — 15 casi fino all'accordo
-4. **Laboratorio** — codebook, prompt, pilota
+2. **Il dataset del gruppo** — fogli, campioni, percorso dei casi
+3. **Dal codebook al prompt** — come istruire Gemini
+4. **La fase pilota** — 15 casi fino all'accordo
+5. **Laboratorio** — codebook, prompt, pilota
 
 ::: {.notes}
 Ieri tutti i gruppi hanno completato le schede del personaggio e la catena. Oggi ogni gruppo costruisce il codebook della propria linea e il prompt per Gemini, e li prova su 15 casi.
@@ -96,6 +97,123 @@ Il numero di casi cambia con l'unità: un commento si codifica più in fretta di
 Per la linea 1 gli account sono troppo pochi per un kappa: la validazione con Gemini si fa sui post. Le schede del personaggio e le catene profilo → negozio restano codificate a mano e sono evidenze documentate.
 :::
 
+## Il dataset del gruppo {background-color="#C5612E"}
+
+::: {.notes}
+Prima di scrivere il prompt, guardiamo su che cosa lavorerete fino al 19 novembre: un dataset per gruppo, uno per casella della matrice, preparato dal docente. Queste slide valgono per tutti i gruppi; i dettagli del vostro sono nel foglio leggimi.
+:::
+
+## Il percorso dei casi
+
+| Quando | Chi | Che cosa |
+|---|---|---|
+| **13 nov** | tutto il gruppo | **pilota** su 15 casi; codebook e prompt versione 1 |
+| **18 nov** | ogni coppia, **in cieco** | il **proprio campione**; la coppia A anche il **mirato** |
+| **19 nov** | coppie, poi gruppo | **kappa** tra persone e **riconciliazione**; Gemini: **messa a punto** su A (max 3 giri), **test** una volta su B, C e mirato |
+| **dopo il 19** | docente | Gemini su **tutto il corpus** del gruppo, solo variabili validate |
+| **dal 20 nov** | gruppo | **analisi** per rispondere alla domanda |
+
+: {tbl-colwidths="[14,22,64]"}
+
+::: {.notes}
+È la pipeline del 4 novembre applicata ai vostri dati. Ogni foglio del dataset corrisponde a una riga di questa tabella.
+
+Il punto da ricordare: i casi su cui si misura Gemini (B, C e mirato) non devono mai entrare nel prompt. Per questo sono fogli separati, estratti prima, e nessuno li usa per scrivere definizioni o esempi.
+
+Il corpus completo lo codifica Gemini, con il prompt finale, solo per le variabili che hanno superato la validazione. Lo lancia il docente dopo il 19 novembre; voi analizzate il risultato.
+:::
+
+## Che cosa c'è nel dataset
+
+| Foglio | Che cosa contiene | Quando si usa |
+|---|---|---|
+| **leggimi** | istruzioni e note sui dati del gruppo | sempre |
+| **corpus** | tutti i casi della famiglia, in italiano e inglese | consultazione e analisi |
+| **pilota** | 15 casi, gli stessi per tutto il gruppo | oggi |
+| **coppia_A_cod1**, **coppia_A_cod2**, … | il campione della coppia, un foglio per persona | 18 novembre |
+| **riconciliato_A**, … | la codifica condivisa della coppia | 19 novembre |
+| **mirato_cod1**, **mirato_cod2**, **riconciliato_mirato** | solo in sei gruppi | 18 e 19 novembre |
+
+: {tbl-colwidths="[38,40,22]"}
+
+::: {.notes}
+Le colonne con i casi, il leggimi e il corpus sono bloccati: li possono modificare solo i docenti. Voi scrivete nelle colonne del codebook, a destra: una colonna per variabile, con gli stessi nomi in tutti i fogli. Nomi uguali servono a confrontare i fogli in automatico e a calcolare il kappa.
+
+Il link al dataset del gruppo è su Moodle. Se l'avevate aperto ieri, ricaricate la pagina: alcuni casi sono stati sostituiti stamattina (prossima slide).
+:::
+
+## Come sono stati scelti i casi
+
+- **Corpus**: tutti i post (linee 1 e 2) o tutti i commenti TikTok (linea 3) della famiglia, in **italiano e inglese**, dal 1 gennaio al 29 ottobre 2026
+- **Estrazione casuale** con un **seme fisso**: l'estrazione si può ripetere identica
+- Pilota e campioni **non si sovrappongono**, né tra coppie né tra gruppi della stessa famiglia
+- Solo post con il **file media** disponibile
+- **13 novembre**: casi sostituiti con le stesse regole (file mancante, altra lingua, commento senza testo)
+
+::: {.notes}
+Il seme fisso rende l'estrazione riproducibile: va citato nella relazione, insieme alle dimensioni dei campioni. Il seme è scritto nel leggimi.
+
+Niente sovrapposizioni: due gruppi della stessa famiglia lavorano sullo stesso corpus ma su casi diversi, così i casi di test di un gruppo non compaiono nel lavoro di un altro.
+
+"Solo post con il file media" è un limite da dichiarare: i post senza file non possono entrare nei campioni, quindi i campioni rappresentano i post con file, non tutto il corpus.
+
+Le sostituzioni del 13 novembre sono registrate caso per caso, con il motivo: sono state fatte prima di qualunque codifica e con la stessa regola casuale, quindi non cambiano la logica dell'estrazione.
+:::
+
+## Chi codifica che cosa
+
+| Persone nel gruppo | Campioni di coppia | Come |
+|---|---|---|
+| **2** | A e B | la stessa coppia codifica entrambi |
+| **4** | A e B | una coppia per campione |
+| **5** | A e B | la quinta persona è il **terzo codificatore** di A (coppia_A_cod3) |
+| **6** | A, B e C | C si aggiunge al **test** |
+
+Ogni coppia: una persona **più esperta** e una **meno esperta**
+
+::: {.notes}
+Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3, come nella slide precedente sui casi di ogni linea.
+
+Nel gruppo di due, A serve a mettere a punto il prompt e B a valutarlo, come negli altri gruppi: cambia solo che a codificarli sono le stesse due persone.
+
+Con tre coppie, il campione C si somma a B per il test: quaranta casi invece di venti, quindi un kappa più stabile.
+:::
+
+## Il campione mirato
+
+::: {.highlight-box}
+Alcune categorie sono **rare** nei campioni casuali: con pochi casi il kappa non si può calcolare.
+:::
+
+- **Linea 3** (caselle 7, 7b, 8, 9): fino a **30 commenti** che parlano di IA o di finzione
+- **Linea 2, Religiosi** (caselle 4, 4b): **20 post** con un invito esplicito all'azione
+- Scelti per **parole chiave**, **non a caso**: li codifica la **coppia A**, il 18 novembre
+- Servono **solo al test** di quelle categorie: mai come esempi nel prompt, mai per stimare **frequenze**
+
+::: {.notes}
+Il problema: nei campioni casuali di commenti quasi nessuno parla della natura sintetica del personaggio, e nei post dei personaggi religiosi gli inviti espliciti a comprare, commentare o seguire sono pochi. Su due o tre casi un kappa non dice nulla.
+
+La soluzione è una scelta del corso: un campione aggiuntivo scelto per parole chiave (per esempio "IA", "intelligenza artificiale", "finto" per i commenti; "link", "commenta", "salva", "compra" per i post). Alcuni casi non saranno pertinenti: codificateli normalmente.
+
+Regole: si codifica in cieco come gli altri campioni (mirato_cod1, mirato_cod2), si riconcilia il 19 (riconciliato_mirato), poi Gemini lo codifica una sola volta con il prompt finale, insieme al test B. Il kappa del mirato si riporta a parte e solo per le categorie rare. Poiché non è casuale, non dice quanto quelle categorie sono frequenti nel corpus.
+:::
+
+## Note sui dati
+
+- Lingua dei TikTok **stimata**: se un caso non è in italiano o inglese, codificatelo **98**
+- Lingua **und**: testo troppo breve per stimarla (spesso solo emoji); si codifica normalmente
+- Instagram: **url_originale** apre il profilo, non il post: codificate dal **file media**
+- Autori dei commenti **pseudonimizzati** (U-xxxxxx): non cercate né riportate i nomi
+- Contenuti con **stereotipi antisemiti**: evidenze da analizzare, non da riprodurre
+
+::: {.notes}
+La lingua di TikTok non è un campo della piattaforma: la stima viene dal testo, e quando il testo è fatto solo di hashtag viene dalla regione dell'account, meno affidabile (colonna lingua_auto). Per questo esiste il 98: un caso in spagnolo sfuggito al filtro non si scarta, si codifica 98 e si annota.
+
+Il file media è il materiale da codificare: per i post Instagram è l'unico modo di vedere il contenuto. Per TikTok url_originale apre il video, se è ancora online.
+
+Content note per i gruppi Religiosi: i personaggi rabbino usano stereotipi antisemiti rovesciati. Si analizzano come evidenza (Pilo, 2026), non si riproducono nelle presentazioni oltre il necessario.
+:::
+
 ## Dal codebook al prompt {background-color="#C5612E"}
 
 ::: {.notes}
@@ -140,18 +258,18 @@ Dal protocollo di Marino e Giglietto (2024).
 
 ## Il pilota in cinque passi
 
-1. Ogni coppia codifica **gli stessi 15 casi**, ciascuno per conto proprio
+1. Tutto il gruppo codifica **gli stessi 15 casi** (foglio **pilota**), ciascuno per conto proprio
 2. Confronto: dove non siete d'accordo?
 3. Discussione dei casi **98**
 4. Revisione di **definizioni** ed **esempi** del codebook
-5. Si ripete finché la coppia è **d'accordo**
+5. Si ripete finché il gruppo è **d'accordo**
 
 Adattato da @marino2024
 
 ::: {.notes}
 Nel protocollo di Marino e Giglietto l'addestramento su un sottocampione pilota precede la codifica vera. I 15 casi sono una scelta del corso.
 
-Provate lo stesso prompt su Gemini con gli stessi 15 casi: dove il modello sbaglia, il problema può essere nella definizione (serve anche a voi) o nel prompt (serve solo al modello). I casi del pilota servono a fare pratica: non rientrano nei campioni di domani.
+Provate lo stesso prompt su Gemini con gli stessi 15 casi: dove il modello sbaglia, il problema può essere nella definizione (serve anche a voi) o nel prompt (serve solo al modello). I casi del pilota servono a fare pratica: non rientrano nei campioni del 18 novembre, e potete usarli come esempi nel prompt.
 :::
 
 ## Laboratorio {background-color="#C5612E"}
@@ -165,7 +283,7 @@ Il resto della lezione.
 1. Aprite il **dataset di codifica** del vostro gruppo (link su Moodle) e leggete il foglio **leggimi**
 2. Scrivete il **codebook** della vostra linea (usate il modello di voce del 4 novembre)
 3. Scrivete il **prompt** e salvatelo come **versione 1**
-4. **Pilota** sui 15 casi del foglio **pilota**: una colonna per variabile e per persona
+4. **Pilota** sui 15 casi del foglio **pilota**: una colonna per variabile e per persona (es. posizione_cod1)
 5. Provate il prompt su Gemini con gli stessi casi
 6. **Ultimi 15 minuti:** sezione **4.4** della relazione
 
@@ -200,7 +318,7 @@ Il filo verso il 18 novembre: codifica in cieco del campione di validazione.
 - Coppie definite: una persona più esperta e una meno esperta
 
 ::: {.notes}
-Il 18 novembre ognuno codifica sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …) senza aprire quello dell'altra persona fino alla riconciliazione.
+Il 18 novembre ognuno codifica sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …) senza aprire quello dell'altra persona fino alla riconciliazione. Nei gruppi con il campione mirato, la coppia A codifica anche mirato_cod1 e mirato_cod2.
 :::
 
 ## Grazie! {background-color="#C5612E"}

@@ -66,7 +66,8 @@ Non ha senso chiedere al modello ciò su cui nemmeno voi siete d'accordo. I casi
 | Campione | A che cosa serve | Quante volte |
 |---|---|---|
 | Coppia **A** | **messa a punto**: definizioni ed esempi nel prompt | fino a **3 giri** per variabile |
-| Coppia **B** | **test** del prompt finale su casi nuovi | **una sola volta** |
+| Coppia **B** (e **C**) | **test** del prompt finale su casi nuovi | **una sola volta** |
+| **Mirato** (sei gruppi) | **test** delle sole categorie rare | **una sola volta**, con B |
 
 ::: {.highlight-box}
 Il kappa che riportate è quello del **test**: Gemini non deve aver già visto quei casi.
@@ -74,6 +75,8 @@ Il kappa che riportate è quello del **test**: Gemini non deve aver già visto q
 
 ::: {.notes}
 Se gli esempi del prompt vengono dagli stessi casi su cui si misura l'accordo, il modello viene valutato su ciò che ha già visto e il kappa sale senza dire nulla sul resto del corpus. Con una terza coppia, il suo campione si aggiunge al test: quaranta casi invece di venti.
+
+Il campione mirato (scelto per parole chiave, codificato dalla coppia A il 18 novembre) non entra mai nella messa a punto: niente esempi presi da lì. Gemini lo codifica una sola volta, con il prompt finale, insieme a B. Il suo kappa si calcola e si riporta solo per le categorie rare per cui è stato costruito (per esempio "sa che è IA" nella linea 3, gli inviti all'azione nella linea 2), separato da quello di B. Non essendo casuale, non serve a stimare quanto sono frequenti.
 :::
 
 ## Regole per la codifica con Gemini
@@ -189,6 +192,7 @@ Modificare il prompt guardando solo i casi sbagliati rischia di adattarlo a quei
 ## Che cosa si dichiara nella relazione
 
 - Il **kappa** di ogni variabile: tra persone e con Gemini **sul test**, con il numero di casi
+- Il kappa sul **mirato**, a parte, solo per le categorie rare
 - Le **versioni** del prompt e perché sono cambiate
 - Le variabili che Gemini **non** ha codificato in modo affidabile
 - Le variabili che hanno richiesto conoscenze **culturali o religiose** che il gruppo non aveva
@@ -205,10 +209,10 @@ Il resto della lezione.
 
 ## Istruzioni per il laboratorio
 
-1. Kappa **tra persone** sui fogli originali, poi **riconciliazione** (foglio riconciliato_A, _B…) e prompt **versione 2**
+1. Kappa **tra persone** sui fogli originali, poi **riconciliazione** (riconciliato_A, _B, …, _mirato) e prompt **versione 2**
 2. Gemini sul **campione A**: kappa e **matrice di confusione**
 3. Revisione del prompt dove serve, fino a 3 giri
-4. Prompt finale sul **campione B**, una sola volta
+4. Prompt finale sul **campione B** (e C, e mirato), una sola volta
 5. Caricate la **tabella dei kappa** e il **prompt finale** nella cartella del gruppo
 6. **Ultimi 15 minuti:** sezioni **4.6** e **4.7** della relazione
 

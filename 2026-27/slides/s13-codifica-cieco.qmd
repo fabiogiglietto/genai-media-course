@@ -34,15 +34,17 @@ Oggi è quasi tutto laboratorio. Le slide servono a fissare le regole prima di i
 | Passo | Quando | Stato |
 |---|---|---|
 | Pilota su 15 casi, codebook e prompt | 13 novembre | fatto |
-| **Codifica umana in cieco**: ogni coppia ha il **suo** campione | **oggi** | |
+| **Codifica umana in cieco**: ogni coppia ha il **suo** campione; la coppia A anche il **mirato** | **oggi** | |
 | **Kappa** tra persone e **riconciliazione** | 19 novembre | |
-| Gemini: messa a punto su un campione, test sull'altro | 19 novembre | |
-| Gemini su tutto il corpus del gruppo; analisi | dal 20 novembre | |
+| Gemini: messa a punto su A, test su B, C e mirato | 19 novembre | |
+| Gemini su tutto il corpus del gruppo (docente); analisi | dal 20 novembre | |
 
 ::: {.notes}
 Il campione di validazione è l'insieme di casi che codificate a mano e che userete come riferimento per giudicare Gemini. Più è curato, più è credibile la validazione.
 
-Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I campioni sono diversi perché domani uno servirà a mettere a punto il prompt e l'altro a valutarlo su casi che Gemini non ha mai visto. In un gruppo di cinque, la quinta persona codifica come terzo codificatore il campione della coppia A (foglio coppia_A_cod3). In un gruppo di due, la coppia codifica entrambi i campioni, A e B.
+Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I campioni sono diversi perché domani uno servirà a mettere a punto il prompt e l'altro a valutarlo su casi che Gemini non ha mai visto. In un gruppo di cinque, la quinta persona codifica come terzo codificatore il campione della coppia A (foglio coppia_A_cod3). In un gruppo di due, la coppia codifica entrambi i campioni, A e B. In un gruppo di sei c'è anche la coppia C, il cui campione si aggiunge al test.
+
+Nei sei gruppi con il campione mirato (caselle 4, 4b, 7, 7b, 8, 9) la coppia A codifica, dopo il proprio campione, anche mirato_cod1 e mirato_cod2: stesse regole, stesso cieco. Il mirato serve solo al test delle categorie rare (s12).
 :::
 
 ## Codificare in cieco {background-color="#C5612E"}
@@ -121,7 +123,7 @@ Il terzo tipo è quello che Marino e Giglietto discutono nella sezione 5: chi va
 
 | Data | Variabile | Che cosa è cambiato | Perché |
 |---|---|---|---|
-| 12 nov | posizione del commento | aggiunto un esempio di "incerto" | due disaccordi su commenti con un punto di domanda |
+| 13 nov | posizione del commento | aggiunto un esempio di "incerto" | due disaccordi su commenti con un punto di domanda |
 | … | … | … | … |
 
 ::: {.notes}
@@ -139,11 +141,12 @@ Il resto della lezione.
 ## Istruzioni per il laboratorio
 
 1. Codifica **in cieco** del campione della coppia, ognuno sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …)
-2. **Salvate** i fogli e non modificateli più
-3. **Non** parlate dei casi: la riconciliazione è domani
-4. **Ultimi 15 minuti:** sezione **4.5** della relazione
+2. Coppia **A**, se il gruppo ha il mirato: anche **mirato_cod1** e **mirato_cod2**
+3. **Salvate** i fogli e non modificateli più
+4. **Non** parlate dei casi: la riconciliazione è domani
+5. **Ultimi 15 minuti:** sezione **4.5** della relazione
 
-<!-- Link ai fogli di codifica dei gruppi: da completare a cura del docente. -->
+Il dataset del gruppo è su Moodle: ricaricatelo prima di iniziare.
 
 ::: {.notes}
 Oggi le slide non superano i 15 minuti: tutto il resto è codifica in aula. La riconciliazione, il registro delle modifiche e il prompt versione 2 si fanno domani, subito dopo il kappa.
