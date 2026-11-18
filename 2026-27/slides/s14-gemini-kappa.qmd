@@ -35,30 +35,124 @@ Dieci minuti al massimo.
 
 ## Roadmap del laboratorio
 
-1. **Validare Gemini** — si mette a punto su un campione, si valuta su un altro
-2. **Il kappa per ogni variabile** — persone con persone, persone con Gemini
-3. **La matrice di confusione** — dove sbaglia il modello
-4. **Sotto 0,60** — che cosa fare
-5. **Laboratorio**
+1. **Dove siamo** e i **due kappa** di oggi
+2. **Le persone**: leggere il foglio kappa, poi riconciliare
+3. **Il modello**: mettere a punto Gemini sul campione A
+4. **Il test**: una sola volta sul campione B
+5. **Che cosa si consegna** e **laboratorio**
 
 ::: {.notes}
-Secondo momento di verifica intermedia: a fine lezione ogni gruppo carica la tabella dei kappa.
+Ieri ogni coppia ha codificato in cieco il proprio campione. Oggi si parte dal foglio kappa del dataset e si arriva al prompt finale, validato su casi che Gemini non ha mai visto.
+
+Secondo momento di verifica intermedia: a fine lezione ogni gruppo carica la tabella dei kappa e il prompt finale.
+:::
+
+## Dove siamo
+
+| Passo | Quando | Stato |
+|---|---|---|
+| Pilota, codebook e prompt versione 1 | 13 novembre | fatto |
+| Codifica umana in cieco, coppia per coppia | 18 novembre | fatto |
+| **Kappa tra persone**, **riconciliazione**, prompt **versione 2** | **oggi** | |
+| **Gemini**: messa a punto su A, **test** su B, C e mirato | **oggi** | |
+| Gemini su tutto il corpus del gruppo (docente); analisi | dal 20 novembre | |
+
+::: {.notes}
+Oggi si chiude la validazione. Dopo questa lezione, il docente fa girare Gemini sull'intero corpus del gruppo con il prompt finale, solo per le variabili validate.
+:::
+
+## Due kappa, due domande
+
+| Confronto | Che cosa misura |
+|---|---|
+| **Codificatore 1 con codificatore 2** (prima della riconciliazione) | quanto il codebook è chiaro **per le persone** |
+| **Codifica riconciliata con Gemini** | quanto il modello riproduce il **giudizio umano** |
+
+::: {.highlight-box}
+**Prima le persone, poi il modello**: non ha senso chiedere a Gemini ciò su cui nemmeno voi siete d'accordo.
+:::
+
+::: {.notes}
+Se il kappa tra persone è basso, il problema è il codebook. Se il kappa tra persone è buono e quello con Gemini è basso, il problema è il prompt o il limite del modello.
+
+La soglia di lavoro è 0,60 per entrambi. È una scelta del corso, non un valore dell'articolo di Marino e Giglietto.
+:::
+
+## Il lavoro di oggi {background-color="#C5612E"}
+
+::: {.notes}
+Cinque passi, nello stesso ordine per tutti i gruppi. I primi due riguardano le persone, il terzo e il quarto il modello, il quinto la consegna.
+:::
+
+## Cinque passi
+
+| Passo | Dove | Che cosa |
+|---|---|---|
+| **1** | foglio **kappa** | kappa **tra persone**, coppia per coppia |
+| **2** | **riconciliato_X**, **codebook** | **riconciliazione**; codebook e prompt **versione 2** |
+| **3** | Gemini, campione **A** | **messa a punto**: kappa e matrice, fino a **3 giri** |
+| **4** | Gemini, campione **B** (C, mirato) | **test** del prompt finale, **una sola volta** |
+| **5** | cartella del gruppo, relazione | tabella dei kappa, prompt finale, sezioni **4.6–4.7** |
+
+: {tbl-colwidths="[10,32,58]"}
+
+::: {.notes}
+L'ordine conta: il passo 4 si fa una volta sola e solo dopo aver chiuso il 3. Se dopo il test cambiate il prompt, quel test non vale più.
+:::
+
+## Passo 1 · Il foglio kappa
+
+- Prima: tutti i fogli **spuntati** nel foglio codificatori
+- Correggete i **valori fuori codebook** (refusi, varianti)
+- Per ogni variabile: **casi**, **accordo**, **kappa**
+- Sotto **0,60**: cella evidenziata, il problema è il **codebook**
+
+::: {.notes}
+Il foglio kappa mostra «in attesa» finché una delle due persone della coppia non ha spuntato «codifica terminata». Controllate anche la riga «controllo dei casi»: i due fogli devono avere gli stessi casi nello stesso ordine.
+
+I valori fuori codebook sono varianti come «si» e «sì», singolare e plurale, spazi in più: il confronto è lettera per lettera (maiuscole escluse), quindi abbassano il kappa senza essere veri disaccordi. Correggerli è una correzione di forma. Cambiare un valore per decidere meglio un caso è una ricodifica, e quella si fa solo nel foglio riconciliato.
+
+Il foglio conta il 98 come una categoria a sé ed esclude le celle vuote: scrivetelo nella relazione. Nei gruppi da cinque la coppia A ha tre confronti.
+:::
+
+## Che cosa calcola il foglio
+
+1. **pₒ**: quota di casi in cui i due valori coincidono
+2. Per ogni categoria: quota di 1 in quella categoria × quota di 2 in quella categoria
+3. **pₑ**: somma dei prodotti del punto 2
+4. **κ** = (pₒ − pₑ) / (1 − pₑ)
+
+::: {.highlight-box}
+Accordo osservato, **corretto** per l'accordo atteso per caso
+:::
+
+::: {.notes}
+Il foglio vi risparmia i conti, ma all'orale dovete saper spiegare il calcolo.
+
+Venti casi sono pochi: con un accordo dell'85% e un accordo atteso per caso del 50%, kappa è 0,70 con un margine di circa ±0,31; con quaranta casi, circa ±0,22. Riportate sempre il numero di casi e accorpate le categorie rare: 0,60 è una soglia di lavoro, non una linea precisa.
+
+Per il confronto con Gemini (passi 3 e 4) il calcolo è lo stesso, ma si fa a mano: una colonna che confronta i due valori (vero/falso) e ne calcola la media per pₒ; per ogni categoria, CONTA.SE sulle due colonne diviso il numero di casi. Chi preferisce può usare una funzione già pronta in R o Python.
+:::
+
+## Passo 2 · Riconciliazione e versione 2
+
+1. Per ogni disaccordo: si discute sulla **definizione**, si scrive il valore nel foglio **riconciliato_X**
+2. I fogli originali **non si toccano**
+3. Ogni modifica nel **registro**, nel foglio **codebook** e nel prompt: **versione 2**
+4. Kappa tra persone sotto **0,60**: si rivede il codebook e si riprova su **casi nuovi**
+
+::: {.notes}
+È la riunione vista ieri (s13): confronto, motivazione con la definizione, valore condiviso, casi 98, registro. La persona più esperta non ha automaticamente ragione.
+
+Il foglio riconciliato diventa il riferimento per giudicare Gemini: per questo va completato prima del passo 3.
+
+I casi nuovi servono perché, dopo la riconciliazione, una coppia ha già discusso quelli vecchi: il suo accordo sugli stessi casi non vale più.
 :::
 
 ## Validare Gemini {background-color="#C5612E"}
 
 ::: {.notes}
 Il passo che il corso aggiunge al protocollo di Marino e Giglietto (2024).
-:::
-
-## Prima le persone, poi il modello
-
-1. **Kappa tra persone**, coppia per coppia, sui fogli originali
-2. Sotto 0,60: si rivede il **codebook** e si riprova su **casi nuovi**
-3. Solo dopo: **Gemini** contro la codifica **riconciliata**
-
-::: {.notes}
-Non ha senso chiedere al modello ciò su cui nemmeno voi siete d'accordo. I casi nuovi servono perché, dopo la riconciliazione, una coppia ha già discusso quelli vecchi: il suo accordo sugli stessi casi non vale più.
 :::
 
 ## Due campioni, due compiti
@@ -90,53 +184,20 @@ Il campione mirato (scelto per parole chiave, codificato dalla coppia A il 18 no
 ::: {.notes}
 Le regole servono a rendere la codifica riproducibile: un altro gruppo, con lo stesso prompt e lo stesso corpus, dovrebbe ottenere risultati simili. Il modello non è neutro: dati di addestramento, prompt e messa a punto lo guidano insieme (Esposito, 2026). Per questo lo validiamo.
 
-In aula i gruppi lavorano sui due campioni con Gemini.
+Usate gli stessi valori del foglio codebook, scritti allo stesso modo: altrimenti il confronto con il foglio riconciliato conta come disaccordo anche quando il significato è lo stesso.
 :::
 
-## Il kappa {background-color="#C5612E"}
+## Passo 3 · Gemini sul campione A
+
+- Gemini codifica il campione **A** con il prompt **versione 2**
+- Confronto con **riconciliato_A**: **kappa** per variabile
+- **Matrice di confusione**: dove si concentra l'errore?
+- Revisione del prompt e nuovo giro: al massimo **3 giri** per variabile
 
 ::: {.notes}
-Ripresa del 4 novembre.
-:::
+Il kappa dice quanto si è d'accordo; la matrice dice dove non lo si è. Le prossime due slide mostrano come leggerla.
 
-## Due confronti per ogni variabile
-
-| Confronto | Che cosa misura |
-|---|---|
-| **Codificatore A con codificatore B** (prima della riconciliazione) | quanto il codebook è chiaro **per le persone** |
-| **Codifica riconciliata con Gemini** | quanto il modello riproduce il **giudizio umano** |
-
-::: {.highlight-box}
-κ = (pₒ − pₑ) / (1 − pₑ): accordo osservato, corretto per l'accordo atteso per caso
-:::
-
-::: {.notes}
-Se il kappa tra persone è basso, il problema è il codebook. Se il kappa tra persone è buono e quello con Gemini è basso, il problema è il prompt o il limite del modello.
-
-Venti casi sono pochi: con un accordo dell'85% e un accordo atteso per caso del 50%, kappa è 0,70 con un margine di circa ±0,31; con quaranta casi, circa ±0,22. Riportate sempre il numero di casi e accorpate le categorie rare: 0,60 è una soglia di lavoro, non una linea precisa.
-
-La soglia di 0,60 è una scelta del corso, non un valore dell'articolo di Marino e Giglietto.
-:::
-
-## Calcolare il kappa in un foglio di calcolo
-
-1. **pₒ**: quota di righe in cui i due valori coincidono
-2. Per ogni categoria: quota di A in quella categoria × quota di B in quella categoria
-3. **pₑ**: somma dei prodotti del punto 2
-4. **κ** = (pₒ − pₑ) / (1 − pₑ)
-
-Tra persone, il foglio **kappa** del dataset fa questo calcolo per ogni coppia
-
-::: {.notes}
-Il foglio kappa del dataset del gruppo calcola casi, accordo e kappa per ogni variabile e ogni coppia, ma solo quando entrambe le persone hanno spuntato «codifica terminata» nel foglio codificatori. Conta il 98 come una categoria a sé ed esclude le celle vuote: scrivetelo nella relazione. La colonna «valori fuori codebook» segnala refusi e varianti (per esempio «si» e «sì», singolare e plurale): correggeteli prima di leggere il kappa, perché il confronto è lettera per lettera.
-
-Per il confronto persone–Gemini il calcolo è lo stesso: una colonna che confronta i due valori (vero/falso) e ne calcola la media per pₒ; per ogni categoria, CONTA.SE sulle due colonne diviso il numero di righe. Chi preferisce può usare una funzione già pronta in R o Python. In ogni caso dovete saper spiegare il calcolo all'orale.
-:::
-
-## La matrice di confusione {background-color="#C5612E"}
-
-::: {.notes}
-Il kappa dice quanto si è d'accordo; la matrice dice dove non lo si è.
+Ogni giro va registrato: che cosa è cambiato nel prompt e perché.
 :::
 
 ## Dove sbaglia il modello
@@ -168,58 +229,71 @@ Domanda: che cosa cambiereste nel codebook o nel prompt? (Per esempio esempi pi�
 Un errore sistematico in una direzione (per esempio Gemini più prudente delle persone) si corregge spesso con il prompt. Errori sparsi su casi difficili dicono che la variabile è intrinsecamente ambigua.
 :::
 
-## Sotto 0,60 {background-color="#C5612E"}
-
-::: {.notes}
-Che cosa fare quando la validazione non passa.
-:::
-
-## Quando il kappa è sotto 0,60
+## Quando il kappa è sotto 0,60 {background-color="#C5612E"}
 
 1. Guardate la **matrice**: dove si concentra l'errore?
-2. Rivedete **definizione** ed **esempi** presi dal campione A (uno o più); aggiornate il prompt
-3. Rifate girare Gemini sul **campione A** e **ricalcolate**: al massimo **3 giri**
-4. Prompt finale: **una sola volta** sul **campione B**
-5. Se ancora non basta: variabile codificata **a mano** o **esclusa**, e **dichiarata**
-
-::: {.callout-warning}
-## Attenzione
-Non ritoccate il prompt caso per caso finché i numeri tornano: ogni modifica va **motivata** e **registrata**.
-:::
+2. Rivedete **definizione** ed **esempi** presi dal campione A; aggiornate il prompt
+3. Nuovo giro sul **campione A** e nuovo calcolo: al massimo **3 giri**
+4. Se non basta: variabile codificata **a mano** o **esclusa**, e **dichiarata**
 
 ::: {.notes}
+Non ritoccate il prompt caso per caso finché i numeri tornano: ogni modifica va motivata e registrata.
+
 Modificare il prompt guardando solo i casi sbagliati rischia di adattarlo a quei casi e non al corpus: per questo il test si fa su casi nuovi, e se dopo il test cambiate il prompt quel test non vale più. Motivate ogni modifica con un problema di definizione, non con il singolo errore. È la stessa logica della ricerca confermativa di cui parlano Alizadeh et al. (2026): cercare la formulazione che dà il risultato atteso non è validare.
 :::
 
-## Che cosa si dichiara nella relazione
+## Passo 4 · Il test
 
-- Il **kappa** di ogni variabile: tra persone e con Gemini **sul test**, con il numero di casi
-- Il kappa sul **mirato**, a parte, solo per le categorie rare
-- Le **versioni** del prompt e perché sono cambiate
-- Le variabili che Gemini **non** ha codificato in modo affidabile
-- Le variabili che hanno richiesto conoscenze **culturali o religiose** che il gruppo non aveva
+::: {.highlight-box}
+Prompt **finale**, **una sola volta**, su casi che Gemini non ha mai visto: campione **B** (e **C**), più il **mirato** dove c'è.
+:::
+
+- Confronto con **riconciliato_B** (e _C, _mirato): **kappa** per variabile
+- Il mirato si riporta **a parte**, solo per le categorie rare
+- Dopo il test il prompt **non cambia più**
+
+::: {.notes}
+Questo è il kappa che va nella relazione: misura quanto il prompt funziona su casi nuovi, quindi quanto ci si può fidare della codifica dell'intero corpus.
+
+Se il test va male per una variabile, non si torna alla messa a punto: la variabile si codifica a mano o si esclude, e si dichiara.
+:::
+
+## Passo 5 · Che cosa si consegna e si dichiara
+
+::: {.columns}
+::: {.column width="50%"}
+### Nella cartella del gruppo
+
+- La **tabella dei kappa**
+- Il **prompt finale**
+:::
+
+::: {.column width="50%"}
+### Nella relazione
+
+- Kappa **tra persone** e **sul test**, con il numero di casi
+- Kappa sul **mirato**, a parte
+- **Versioni** del prompt e perché sono cambiate
+- Variabili **non affidabili** e limiti **culturali o religiosi**
+:::
+:::
 
 ::: {.notes}
 Dalla scheda del corso: la relazione valuta l'applicazione e la validazione corretta della pipeline. Una variabile esclusa perché non affidabile, dichiarata bene, vale più di una variabile tenuta con un kappa di 0,35.
+
+Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.
 :::
 
-## Laboratorio {background-color="#C5612E"}
+## Il laboratorio, in ordine
+
+| Tempi indicativi | Che cosa |
+|---|---|
+| **35 min** | passi 1 e 2: foglio **kappa**, **riconciliazione**, prompt **versione 2** |
+| **50 min** | passi 3 e 4: Gemini su **A** (fino a 3 giri), poi **test** su B |
+| **ultimi 15 min** | passo 5: consegna e sezioni **4.6** e **4.7** della relazione |
 
 ::: {.notes}
-Il resto della lezione.
-:::
-
-## Istruzioni per il laboratorio
-
-1. Kappa **tra persone** sui fogli originali, poi **riconciliazione** (riconciliato_A, _B, …, _mirato) e prompt **versione 2**
-2. Gemini sul **campione A**: kappa e **matrice di confusione**
-3. Revisione del prompt dove serve, fino a 3 giri
-4. Prompt finale sul **campione B** (e C, e mirato), una sola volta
-5. Caricate la **tabella dei kappa** e il **prompt finale** nella cartella del gruppo
-6. **Ultimi 15 minuti:** sezioni **4.6** e **4.7** della relazione
-
-::: {.notes}
-Tempi indicativi: slide 20 minuti, kappa e riconciliazione 35, Gemini 50, relazione 15. Verifica intermedia: il docente legge le tabelle dei kappa e dà un riscontro entro mercoledì.
+Tempi indicativi: slide 20 minuti, kappa e riconciliazione 35, Gemini 50, relazione 15.
 
 Dopo la validazione, Gemini codifica tutto il corpus del gruppo (la sua famiglia, in italiano e inglese) con il prompt finale, solo per le variabili validate. L'esecuzione è a cura del docente, dopo questa lezione. Domani le prime analisi partono dai campioni riconciliati; la codifica completa si aggiunge per la relazione.
 :::
@@ -232,13 +306,13 @@ Chiusura.
 
 ## Concetti chiave di oggi
 
-- Si **mette a punto** su un campione, si **valuta** su un altro, una sola volta
-- Due kappa: **persone–persone** (il codebook) e **persone–Gemini** (il modello)
+- **Prima le persone, poi il modello**: due kappa, due domande
+- Si **mette a punto** su un campione, si **valuta** su un altro, **una sola volta**
 - La **matrice di confusione** mostra dove e come si sbaglia
 - Sotto **0,60**: si rivede, al massimo 3 giri, oppure si **dichiara**
 
 ::: {.notes}
-Da mercoledì si passa dall'affidabilità al significato: che cosa dicono i dati.
+Da domani si passa dall'affidabilità al significato: che cosa dicono i dati.
 :::
 
 ## Per la prossima lezione
@@ -246,7 +320,7 @@ Da mercoledì si passa dall'affidabilità al significato: che cosa dicono i dati
 **Domani, venerdì 20 novembre, ore 9:00:** Pubblico, danni e responsabilità
 
 - Lettura: @wack2026
-- Tabella dei kappa caricata
+- Tabella dei kappa e prompt finale caricati
 
 ::: {.notes}
 Tutti leggono Wack e Prochaska, non solo i gruppi della linea 3: il ruolo del contesto sociale riguarda anche le altre linee.
