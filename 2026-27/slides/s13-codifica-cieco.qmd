@@ -47,31 +47,6 @@ Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I camp
 Nei sei gruppi con il campione mirato (caselle 4, 4b, 7, 7b, 8, 9) la coppia A codifica, dopo il proprio campione, anche mirato_cod1 e mirato_cod2: stesse regole, stesso cieco. Il mirato serve solo al test delle categorie rare (s12).
 :::
 
-## Una correzione sul pilota
-
-::: {.highlight-box}
-Il 13 novembre vi ho chiesto di codificare il pilota **in gruppo**. Era previsto che ognuno lo codificasse **per conto proprio**: l'errore è mio.
-:::
-
-- Che cosa cambia: non sappiamo **quanto eravate d'accordo** prima della discussione
-- Che cosa **non** cambia: il kappa che riporterete viene dalla codifica **di oggi**
-- Oggi: **ognuno per conto proprio**, **98** se non siete sicuri
-- Nella relazione: il pilota è stato codificato **in gruppo, per consenso**
-
-::: {.notes}
-Dirlo subito e in modo diretto: l'istruzione sbagliata è stata del docente, non dei gruppi.
-
-Che cosa si perde. Codificando insieme, i dubbi si risolvono nella discussione e spesso prevale chi parla per primo o con più sicurezza. Così alcune ambiguità del codebook possono essere rimaste nascoste. Possiamo aspettarci qualche variabile più debole del previsto nel kappa di domani.
-
-Che cosa resta valido. Il pilota serviva ad allenarsi e a rivedere il codebook, non a produrre un numero. Il kappa tra persone si calcola sui campioni delle coppie, codificati oggi in cieco. E se una variabile resta sotto 0,60, il protocollo prevede già di rivedere il codebook e di riprovare su casi nuovi.
-
-Per questo oggi le regole del cieco vanno rispettate alla lettera. E usate il 98 quando siete davvero incerti: non cercate di indovinare che cosa avrebbe deciso il gruppo.
-
-Nella sezione Metodi: scrivete che il pilota è stato codificato insieme, per consenso, e che quindi l'accordo nel pilota non è stato misurato. È una deviazione dal protocollo del corso e va dichiarata come tale.
-
-Domanda alla classe: nel pilota, ci sono stati casi in cui avete cambiato idea solo perché gli altri la pensavano diversamente? Annotateli: sono i primi candidati per i disaccordi di oggi.
-:::
-
 ## Codificare in cieco {background-color="#C5612E"}
 
 ::: {.notes}
