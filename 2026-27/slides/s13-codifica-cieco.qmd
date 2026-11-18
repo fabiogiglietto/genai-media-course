@@ -47,6 +47,31 @@ Venti post per coppia nelle linee 1 e 2, sessanta commenti nella linea 3. I camp
 Nei sei gruppi con il campione mirato (caselle 4, 4b, 7, 7b, 8, 9) la coppia A codifica, dopo il proprio campione, anche mirato_cod1 e mirato_cod2: stesse regole, stesso cieco. Il mirato serve solo al test delle categorie rare (s12).
 :::
 
+## Una correzione sul pilota
+
+::: {.highlight-box}
+Il 13 novembre vi ho chiesto di codificare il pilota **in gruppo**. Era previsto che ognuno lo codificasse **per conto proprio**: l'errore è mio.
+:::
+
+- Che cosa cambia: non sappiamo **quanto eravate d'accordo** prima della discussione
+- Che cosa **non** cambia: il kappa che riporterete viene dalla codifica **di oggi**
+- Oggi: **ognuno per conto proprio**, **98** se non siete sicuri
+- Nella relazione: il pilota è stato codificato **in gruppo, per consenso**
+
+::: {.notes}
+Dirlo subito e in modo diretto: l'istruzione sbagliata è stata del docente, non dei gruppi.
+
+Che cosa si perde. Codificando insieme, i dubbi si risolvono nella discussione e spesso prevale chi parla per primo o con più sicurezza. Così alcune ambiguità del codebook possono essere rimaste nascoste. Possiamo aspettarci qualche variabile più debole del previsto nel kappa di domani.
+
+Che cosa resta valido. Il pilota serviva ad allenarsi e a rivedere il codebook, non a produrre un numero. Il kappa tra persone si calcola sui campioni delle coppie, codificati oggi in cieco. E se una variabile resta sotto 0,60, il protocollo prevede già di rivedere il codebook e di riprovare su casi nuovi.
+
+Per questo oggi le regole del cieco vanno rispettate alla lettera. E usate il 98 quando siete davvero incerti: non cercate di indovinare che cosa avrebbe deciso il gruppo.
+
+Nella sezione Metodi: scrivete che il pilota è stato codificato insieme, per consenso, e che quindi l'accordo nel pilota non è stato misurato. È una deviazione dal protocollo del corso e va dichiarata come tale.
+
+Domanda alla classe: nel pilota, ci sono stati casi in cui avete cambiato idea solo perché gli altri la pensavano diversamente? Annotateli: sono i primi candidati per i disaccordi di oggi.
+:::
+
 ## Codificare in cieco {background-color="#C5612E"}
 
 ::: {.notes}
@@ -71,21 +96,66 @@ Nel corso calcoliamo il kappa anche tra le due persone, prima della riconciliazi
 ## Come si fa, in pratica
 
 1. Ognuno lavora su un **foglio separato**, non condiviso con l'altra persona
-2. **Stesso ordine** dei casi, **stesse colonne** del codebook
-3. Per ogni caso: un valore per variabile; **98** se non siete sicuri
+2. **Stesso ordine** dei casi, **stesse colonne**: le crea il foglio codebook
+3. Per ogni caso: un valore per variabile dal **menu a tendina**; **98** se non siete sicuri
 4. Una colonna **note**: perché avete esitato
 5. **Non parlate** dei casi finché entrambi non avete finito
 
 ::: {.notes}
 Le note sono preziose nella riunione di riconciliazione: ricordano perché un caso era difficile. Il 98 non è un fallimento: è un'informazione su un caso ambiguo o su un limite della vostra conoscenza.
 
-Salvate i fogli prima della riconciliazione e non modificateli più: domani servono per il kappa tra persone.
+Quando avete finito, spuntate «codifica terminata» nel foglio codificatori e non modificate più il vostro foglio: domani serve per il kappa tra persone.
+:::
+
+## Il dataset, foglio per foglio
+
+| Ordine | Foglio | Che cosa fate |
+|---|---|---|
+| **1** | **codificatori** | chi codifica ogni foglio; più o meno esperta |
+| **2** | **codebook** | una riga per variabile: definizione e **valori ammessi** |
+| **3** | **coppia_X_codN**, **mirato_codN** | la codifica in cieco, dai menu a tendina |
+| **4** | **codificatori** | a foglio finito: **codifica terminata** |
+| **5** | **kappa** | si calcola da solo, per coppia e per variabile |
+
+: {tbl-colwidths="[12,32,56]"}
+
+::: {.notes}
+Tre fogli sono nuovi rispetto al 13 novembre: codificatori, codebook e kappa.
+
+Il codebook va compilato prima di iniziare, tutti insieme: è l'unico momento di oggi in cui il gruppo lavora insieme. I nomi della colonna B diventano le intestazioni delle colonne dei fogli di codifica, e i valori diventano i menu a tendina di quella colonna. Il 98 c'è già in ogni riga.
+
+Variabili con più risposte possibili (per esempio i sette driver della linea 2): una variabile sì/no per ogni categoria. In ogni cella va un solo valore.
+
+Dopo l'inizio della codifica le righe del codebook non si spostano e non si cancellano, altrimenti i dati finiscono sotto l'etichetta sbagliata. Per togliere una variabile, lasciate la riga e scrivete «non usata» nella definizione.
+
+Un valore fuori dal menu viene accettato ma segnalato in rosso: correggetelo.
+:::
+
+## Il foglio kappa
+
+::: {.highlight-box}
+Il kappa di una coppia compare solo quando **entrambe** le persone hanno spuntato **codifica terminata**. Prima vedete «in attesa».
+:::
+
+- Per ogni variabile: **casi**, **accordo**, **kappa**, **valori fuori codebook**
+- Kappa sotto **0,60**: cella evidenziata
+- Il **98** conta come una categoria; le celle vuote non contano
+- **Controllo dei casi**: i due fogli devono avere gli stessi casi, nello stesso ordine
+
+::: {.notes}
+Perché il kappa compare solo alla fine: se lo vedeste mentre codificate, sapreste già quanto siete d'accordo con l'altra persona e potreste correggervi in base a quello. È proprio l'influenza che la codifica in cieco deve evitare (slide precedenti).
+
+«Valori fuori codebook»: refusi e varianti come «si» e «sì», singolare e plurale, spazi in più. Il confronto è lettera per lettera (maiuscole escluse), quindi una variante conta come disaccordo e abbassa il kappa. Correggete questi valori prima di leggere il kappa: è una correzione di forma. Cambiare un valore per decidere meglio un caso è invece una ricodifica e si fa domani, nella riconciliazione.
+
+Il calcolo è quello che vedremo domani: accordo osservato corretto per l'accordo atteso per caso. Il foglio vi risparmia i conti, ma all'orale dovete saperlo spiegare. Nella relazione scrivete che il 98 è stato trattato come una categoria.
+
+Nei gruppi da cinque, la coppia A ha tre confronti (cod1–cod2, cod1–cod3, cod2–cod3).
 :::
 
 ## La riconciliazione {background-color="#C5612E"}
 
 ::: {.notes}
-Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Domani, dopo il kappa, facciamo quello conclusivo; il pilota di ieri era l'allineamento.
+Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Domani, dopo il kappa, facciamo quello conclusivo; il pilota del 13 novembre, svolto in gruppo, ha fatto da allineamento.
 :::
 
 ## La riunione di riconciliazione
@@ -140,16 +210,19 @@ Il resto della lezione.
 
 ## Istruzioni per il laboratorio
 
-1. Codifica **in cieco** del campione della coppia, ognuno sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …)
-2. Coppia **A**, se il gruppo ha il mirato: anche **mirato_cod1** e **mirato_cod2**
-3. **Salvate** i fogli e non modificateli più
-4. **Non** parlate dei casi: la riconciliazione è domani
-5. **Ultimi 15 minuti:** sezione **4.5** della relazione
+1. Prima di codificare: fogli **codificatori** (chi codifica cosa) e **codebook** (variabili e valori)
+2. Codifica **in cieco** del campione della coppia, ognuno sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …)
+3. Coppia **A**, se il gruppo ha il mirato: anche **mirato_cod1** e **mirato_cod2**
+4. Finito il foglio: spuntate **codifica terminata** e non modificatelo più
+5. **Non** parlate dei casi: la riconciliazione è domani
+6. **Ultimi 15 minuti:** sezione **4.5** della relazione
 
 Il dataset del gruppo è su Moodle: ricaricatelo prima di iniziare.
 
 ::: {.notes}
 Oggi le slide non superano i 15 minuti: tutto il resto è codifica in aula. La riconciliazione, il registro delle modifiche e il prompt versione 2 si fanno domani, subito dopo il kappa.
+
+I fogli codificatori, codebook e kappa sono spiegati nelle slide «Il dataset, foglio per foglio» e «Il foglio kappa». Prima di iniziare, controllate che ogni gruppo abbia compilato il codebook: senza valori i menu a tendina sono vuoti.
 :::
 
 ## Sintesi {background-color="#C5612E"}

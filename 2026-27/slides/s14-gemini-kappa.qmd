@@ -125,10 +125,12 @@ La soglia di 0,60 è una scelta del corso, non un valore dell'articolo di Marino
 3. **pₑ**: somma dei prodotti del punto 2
 4. **κ** = (pₒ − pₑ) / (1 − pₑ)
 
-::: {.notes}
-In un foglio Google: una colonna che confronta i due valori (vero/falso) e ne calcola la media per pₒ; per ogni categoria, CONTA.SE sulle due colonne diviso il numero di righe. Chi preferisce può usare una funzione già pronta in R o Python, ma deve saper spiegare il calcolo all'orale.
+Tra persone, il foglio **kappa** del dataset fa questo calcolo per ogni coppia
 
-Decidete prima come trattare i 98: esclusi dal calcolo, o una categoria a sé. Scrivetelo nella relazione.
+::: {.notes}
+Il foglio kappa del dataset del gruppo calcola casi, accordo e kappa per ogni variabile e ogni coppia, ma solo quando entrambe le persone hanno spuntato «codifica terminata» nel foglio codificatori. Conta il 98 come una categoria a sé ed esclude le celle vuote: scrivetelo nella relazione. La colonna «valori fuori codebook» segnala refusi e varianti (per esempio «si» e «sì», singolare e plurale): correggeteli prima di leggere il kappa, perché il confronto è lettera per lettera.
+
+Per il confronto persone–Gemini il calcolo è lo stesso: una colonna che confronta i due valori (vero/falso) e ne calcola la media per pₒ; per ogni categoria, CONTA.SE sulle due colonne diviso il numero di righe. Chi preferisce può usare una funzione già pronta in R o Python. In ogni caso dovete saper spiegare il calcolo all'orale.
 :::
 
 ## La matrice di confusione {background-color="#C5612E"}
