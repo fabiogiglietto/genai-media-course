@@ -268,10 +268,94 @@ In gruppo, elencate i segnali che rendono **credibile** un profilo che dice di e
 2. Se è **costoso** o **economico** da fabbricare con l'IA
 3. Come lo **osservereste** su un post, senza interagire con l'account
 
+::: {.small}
+**Esempio**
+
+| Segnale | Dove | Costo con l'IA | Come lo osservo |
+|---|---|---|---|
+| Nome ricamato sul camice | foto profilo | economico | presente / assente / 98 |
+:::
+
 ::: {.notes}
 Guidare verso i criteri di Ferrara §2.2: coerenza nel tempo, tra piattaforme, tra modalità (foto, video, testo); prove legate all'identità (titoli, biografia, luoghi). Esempi che dovrebbero emergere: abiti e simboli, ambientazioni, età apparente, linguaggio, costanza della pubblicazione, numero di follower, risposte ai commenti, presenza su più piattaforme, link a un negozio.
 
 Il terzo punto è quello metodologico: una variabile va resa osservabile senza agire sull'account (niente follow, commenti, messaggi).
+
+La riga di esempio è solo un modello di formato: mostra le quattro colonne da compilare, non è una risposta da copiare. Il segnale scelto non compare nella slide successiva.
+
+Materiale: una scheda fittizia per gruppo (slide seguente e dispensa). Ogni scheda è pensata per far emergere alcune famiglie di segnali:
+
+- **Suor Benedetta** (suora): abiti e simboli (velo, crocifisso), ambientazioni (chiostro, cappella), linguaggio liturgico, risposte ai commenti (risponde e invita a scriverle in privato).
+- **Nonna Ottavia** (nonna): età apparente, numero di follower (molto alto rispetto ai commenti), risposte ai commenti (assenti, anche alla domanda "è fatta con l'IA?"), link a un negozio (ricettario a pagamento), coerenza del volto (gli occhi sono scuri nei post 1 e 3, chiari nel post 2).
+- **Dott. Aurelio** (medico): abiti e simboli (camice, stetoscopio), biografia con credenziali generiche, linguaggio tecnico e urgente, costanza della pubblicazione (ogni giorno alla stessa ora: costosa per una persona, economica per un'automazione), risposte ai commenti (risponde, ma solo per rinviare al link), link a un negozio di integratori.
+
+Dove sono i casi ambigui (98):
+
+- Suor Benedetta: "mi trovate anche sulle altre app, stesso nome" (non verificabile dal post); il link in bio "I miei doni per voi" (dal post non si capisce se è un negozio); la "piccola comunità sulle colline" (nessuna comunità nominata).
+- Nonna Ottavia: costanza della pubblicazione (due post a pochi minuti di distanza, poi due mesi di silenzio); stessa cucina o no nei post 1 e 4 (nel post 4 l'inquadratura è stretta e dello sfondo si vede solo un muro chiaro).
+- Dott. Aurelio: sul camice c'è un piccolo ricamo, ma non si distingue se sia un nome o un logo (lo stesso segnale della riga di esempio: qui il codice onesto è 98); "seguimi anche sul mio canale video" (non verificabile).
+
+Se un gruppo forza un sì o un no su questi punti, chiedere: che cosa vedete davvero nel post?
+:::
+
+## Le schede dei personaggi
+
+::: {.columns}
+::: {.column width="25%"}
+::: {.highlight-box .small}
+**Suor Benedetta**
+
+\@suor.benedetta.esercizio
+
+[Profilo fittizio creato per l'esercizio]{.muted}
+
+Velo, crocifisso, chiostro · linguaggio liturgico · risponde ai commenti · link "I miei doni per voi"
+:::
+:::
+
+::: {.column width="25%"}
+::: {.highlight-box .small}
+**Nonna Ottavia**
+
+\@nonna.ottavia.esercizio
+
+[Profilo fittizio creato per l'esercizio]{.muted}
+
+Cucina con pentole di rame · 248 mila follower · non risponde · ricettario a 19,90 €
+:::
+:::
+
+::: {.column width="25%"}
+::: {.highlight-box .small}
+**Dott. Aurelio**
+
+\@dott.aurelio.esercizio
+
+[Profilo fittizio creato per l'esercizio]{.muted}
+
+Camice e stetoscopio · credenziali generiche · un post al giorno alle 7:00 · integratori
+:::
+:::
+
+::: {.column width="25%"}
+::: {.highlight-box .small}
+**Contrasto: un account reale istituzionale**
+
+[DA INSERIRE a cura del docente: screenshot di un account reale]{.muted}
+:::
+:::
+:::
+
+Tutti i profili sono **fittizi**, creati per l'esercizio. Schede complete con post e commenti: [HTML](../materiali/s04-schede-personaggi.html) · [PDF](../materiali/s04-schede-personaggi.pdf)
+
+<!-- TODO (docente): nella quarta colonna inserire lo screenshot di un account reale istituzionale (per esempio un ente sanitario o una diocesi) come termine di confronto. Non va fabbricato. -->
+
+::: {.notes}
+Una scheda per gruppo, distribuite a rotazione, così che ogni scheda sia lavorata da almeno due gruppi e si possano confrontare le liste. Le schede complete (quattro post e due commenti ciascuna) sono nella dispensa: stampata o aperta sul portatile.
+
+Le immagini sono descrizioni tra parentesi quadre: nessuna foto di persone reali e nessun volto generato. Si lavora sulla descrizione come se fosse l'immagine.
+
+La quarta colonna serve alla discussione finale: confrontare i segnali di un account reale e istituzionale con quelli dei personaggi. Quali segnali costosi ha l'account reale che i personaggi non hanno?
 :::
 
 ## Dalla lista al codebook
