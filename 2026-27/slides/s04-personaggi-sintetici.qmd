@@ -346,7 +346,7 @@ Camice e stetoscopio · credenziali generiche · un post al giorno alle 7:00 · 
 :::
 :::
 
-Tutti i profili sono **fittizi**, creati per l'esercizio. Schede complete con post e commenti: [HTML](../materiali/s04-schede-personaggi.html) · [PDF](../materiali/s04-schede-personaggi.pdf)
+Tutti i profili sono **fittizi**, creati per l'esercizio. Schede complete con post e commenti: foglio *schede_personaggi* nella [cartella dei materiali del laboratorio](https://drive.google.com/drive/folders/1Wn6PLSo2dUCZSJ3M-6d_p4l9e9AcOyBy)
 
 <!-- TODO (docente): nella quarta colonna inserire lo screenshot di un account reale istituzionale (per esempio un ente sanitario o una diocesi) come termine di confronto. Non va fabbricato. -->
 
