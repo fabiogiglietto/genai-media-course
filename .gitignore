@@ -18,3 +18,8 @@ Thumbs.db
 data/
 download_*.csv
 
+# Student paper reviews — submissions and generated evaluations live outside the repo
+tograde/
+draft-reviews
+draft-reviews/
+CLAUDE.local.md
