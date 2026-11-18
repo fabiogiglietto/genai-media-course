@@ -167,13 +167,14 @@ Fabio Giglietto
 <h2>Roadmap del laboratorio</h2>
 <ol type="1">
 <li><strong>Dove siamo</strong> nella pipeline</li>
-<li><strong>Codificare in cieco</strong> — perché e come</li>
-<li><strong>La riunione di riconciliazione</strong></li>
-<li><strong>I disaccordi sono informazione</strong></li>
+<li><strong>Perché in cieco</strong></li>
+<li><strong>Il lavoro di oggi</strong>, passo per passo: codificatori, codebook, codifica, kappa</li>
+<li><strong>Domani</strong>: dal kappa alla riconciliazione</li>
 <li><strong>Laboratorio</strong></li>
 </ol>
 <aside class="notes">
-<p>Oggi è quasi tutto laboratorio. Le slide servono a fissare le regole prima di iniziare. Il 13 novembre avete chiuso il pilota: codebook e prompt versione 1.</p>
+<p>Oggi è quasi tutto laboratorio. Le slide servono a fissare le regole e l’ordine dei passi prima di iniziare: non superano i 15 minuti.</p>
+<p>Il 13 novembre avete chiuso il pilota: codebook e prompt versione 1. Oggi il codebook passa nel foglio di calcolo e diventa lo strumento con cui ognuno codifica il proprio campione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -245,8 +246,8 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="codificare-in-cieco" class="slide level2" data-background-color="#C5612E">
-<h2>Codificare in cieco</h2>
+<section id="perché-in-cieco" class="slide level2" data-background-color="#C5612E">
+<h2>Perché in cieco</h2>
 <aside class="notes">
 <p>Il principio viene da Marino e Giglietto (2024): ognuno codifica per conto proprio, poi si confronta.</p>
 <style type="text/css">
@@ -261,18 +262,19 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="perché-in-cieco" class="slide level2">
-<h2>Perché in cieco</h2>
+<section id="il-disaccordo-è-un-dato" class="slide level2">
+<h2>Il disaccordo è un dato</h2>
 <div class="highlight-box">
 <p>Se vedo come ha codificato l’altra persona, il nostro accordo <strong>non misura più</strong> la chiarezza del codebook: misura quanto ci siamo <strong>influenzati</strong>.</p>
 </div>
 <ul>
-<li>Ognuno codifica <strong>per conto proprio</strong> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></li>
-<li>Il disaccordo, prima della riconciliazione, è un <strong>dato</strong>: domani lo misurate con il kappa tra persone</li>
+<li>Ognuno codifica <strong>per conto proprio</strong>, poi ci si confronta <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></li>
+<li>Il disaccordo, prima della riconciliazione, è un <strong>dato</strong>: domani lo misurate con il <strong>kappa</strong> tra persone</li>
 </ul>
 <aside class="notes">
 <p>Nel protocollo di Marino e Giglietto i due membri della squadra codificano in modo indipendente e poi si incontrano per risolvere le discrepanze (§3).</p>
-<p>Nel corso calcoliamo il kappa anche tra le due persone, prima della riconciliazione: serve a capire quanto è affidabile il codebook per gli esseri umani, prima di chiederlo al modello.</p>
+<p>Nel corso calcoliamo anche il kappa tra le due persone, prima della riconciliazione: serve a capire quanto è affidabile il codebook per gli esseri umani, prima di chiederlo al modello. Kappa e soglia di 0,60 sono scelte del corso, non dell’articolo.</p>
+<p>Da qui la regola di oggi: niente sguardi al foglio dell’altra persona e niente discussioni sui casi fino a domani.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -285,18 +287,10 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="come-si-fa-in-pratica" class="slide level2">
-<h2>Come si fa, in pratica</h2>
-<ol type="1">
-<li>Ognuno lavora su un <strong>foglio separato</strong>, non condiviso con l’altra persona</li>
-<li><strong>Stesso ordine</strong> dei casi, <strong>stesse colonne</strong>: le crea il foglio codebook</li>
-<li>Per ogni caso: un valore per variabile dal <strong>menu a tendina</strong>; <strong>98</strong> se non siete sicuri</li>
-<li>Una colonna <strong>note</strong>: perché avete esitato</li>
-<li><strong>Non parlate</strong> dei casi finché entrambi non avete finito</li>
-</ol>
+<section id="il-lavoro-di-oggi" class="slide level2" data-background-color="#C5612E">
+<h2>Il lavoro di oggi</h2>
 <aside class="notes">
-<p>Le note sono preziose nella riunione di riconciliazione: ricordano perché un caso era difficile. Il 98 non è un fallimento: è un’informazione su un caso ambiguo o su un limite della vostra conoscenza.</p>
-<p>Quando avete finito, spuntate «codifica terminata» nel foglio codificatori e non modificate più il vostro foglio: domani serve per il kappa tra persone.</p>
+<p>Quattro passi, nello stesso ordine per tutti i gruppi. Ogni passo corrisponde a un foglio del dataset del gruppo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -309,55 +303,54 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="il-dataset-foglio-per-foglio" class="slide level2">
-<h2>Il dataset, foglio per foglio</h2>
+<section id="quattro-passi-quattro-fogli" class="slide level2">
+<h2>Quattro passi, quattro fogli</h2>
 <table class="caption-top">
 <colgroup>
-<col style="width: 12%">
-<col style="width: 32%">
-<col style="width: 56%">
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Ordine</th>
+<th>Passo</th>
 <th>Foglio</th>
-<th>Che cosa fate</th>
+<th>Chi</th>
+<th>Che cosa</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>1</strong></td>
 <td><strong>codificatori</strong></td>
+<td>il gruppo</td>
 <td>chi codifica ogni foglio; più o meno esperta</td>
 </tr>
 <tr class="even">
 <td><strong>2</strong></td>
 <td><strong>codebook</strong></td>
-<td>una riga per variabile: definizione e <strong>valori ammessi</strong></td>
+<td>il gruppo</td>
+<td>variabili, definizioni, <strong>valori ammessi</strong></td>
 </tr>
 <tr class="odd">
 <td><strong>3</strong></td>
 <td><strong>coppia_X_codN</strong>, <strong>mirato_codN</strong></td>
-<td>la codifica in cieco, dai menu a tendina</td>
+<td><strong>ognuno da solo</strong></td>
+<td>la codifica <strong>in cieco</strong></td>
 </tr>
 <tr class="even">
 <td><strong>4</strong></td>
-<td><strong>codificatori</strong></td>
-<td>a foglio finito: <strong>codifica terminata</strong></td>
-</tr>
-<tr class="odd">
-<td><strong>5</strong></td>
-<td><strong>kappa</strong></td>
-<td>si calcola da solo, per coppia e per variabile</td>
+<td><strong>codificatori</strong> → <strong>kappa</strong></td>
+<td>ognuno, poi la coppia</td>
+<td><strong>codifica terminata</strong>; il kappa si calcola da solo</td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
-<p>Tre fogli sono nuovi rispetto al 13 novembre: codificatori, codebook e kappa.</p>
-<p>Il codebook va compilato prima di iniziare, tutti insieme: è l’unico momento di oggi in cui il gruppo lavora insieme. I nomi della colonna B diventano le intestazioni delle colonne dei fogli di codifica, e i valori diventano i menu a tendina di quella colonna. Il 98 c’è già in ogni riga.</p>
-<p>Variabili con più risposte possibili (per esempio i sette driver della linea 2): una variabile sì/no per ogni categoria. In ogni cella va un solo valore.</p>
-<p>Dopo l’inizio della codifica le righe del codebook non si spostano e non si cancellano, altrimenti i dati finiscono sotto l’etichetta sbagliata. Per togliere una variabile, lasciate la riga e scrivete «non usata» nella definizione.</p>
-<p>Un valore fuori dal menu viene accettato ma segnalato in rosso: correggetelo.</p>
+<p>I passi 1 e 2 si fanno insieme, all’inizio, e sono gli unici momenti di oggi in cui il gruppo lavora insieme. Dal passo 3 ognuno lavora da solo.</p>
+<p>I fogli codificatori, codebook e kappa sono nuovi rispetto al 13 novembre. Il pilota resta com’è: lì le colonne le avevate aggiunte a mano, e il pilota non entra nel kappa.</p>
+<p>Ricaricate il dataset del gruppo (link su Moodle) prima di iniziare.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -370,22 +363,106 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="il-foglio-kappa" class="slide level2">
-<h2>Il foglio kappa</h2>
+<section id="passo-1-chi-codifica-che-cosa" class="slide level2">
+<h2>Passo 1 · Chi codifica che cosa</h2>
+<ul>
+<li>Nel foglio <strong>codificatori</strong>: una riga per ogni foglio di codifica</li>
+<li>Per ogni foglio: <strong>nome</strong> di chi codifica, <strong>più</strong> o <strong>meno esperta</strong></li>
+<li>In ogni coppia: una persona <strong>più esperta</strong> e una <strong>meno esperta</strong> <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></li>
+<li>La casella <strong>codifica terminata</strong> resta vuota fino al passo 4</li>
+</ul>
+<aside class="notes">
+<p>Le coppie con una persona più esperta e una meno esperta vengono dal protocollo di Marino e Giglietto (§3).</p>
+<p>Nel gruppo di cinque, la quinta persona è coppia_A_cod3. Nel gruppo di due, le stesse due persone compaiono sia in A sia in B.</p>
+<p>I nomi servono a leggere il foglio kappa: accanto a ogni confronto compare chi ha codificato.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="passo-2-il-codebook-nel-foglio" class="slide level2">
+<h2>Passo 2 · Il codebook nel foglio</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="che-cosa-scrivete">Che cosa scrivete</h3>
+<ul>
+<li><strong>Una riga per variabile</strong>: nome breve, definizione, regole ed esempi</li>
+<li><strong>Valori ammessi</strong>: fino a dieci</li>
+<li>Il <strong>98</strong> c’è già</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="che-cosa-succede">Che cosa succede</h3>
+<ul>
+<li>I nomi diventano le <strong>intestazioni</strong> dei fogli di codifica</li>
+<li>I valori diventano i <strong>menu a tendina</strong></li>
+<li>Un valore fuori menu viene <strong>segnalato</strong></li>
+</ul>
+</div></div>
+<aside class="notes">
+<p>Il codebook è quello del 13 novembre, versione 1: lo trascrivete nel foglio, non lo riscrivete. Fatelo prima di iniziare a codificare: senza valori i menu a tendina sono vuoti.</p>
+<p>Variabili con più risposte possibili (per esempio i sette driver della linea 2): una variabile sì/no per ogni categoria. In ogni cella va un solo valore, altrimenti il kappa non si può calcolare.</p>
+<p>Dopo l’inizio della codifica le righe del codebook non si spostano e non si cancellano: i dati finirebbero sotto l’etichetta sbagliata. Per togliere una variabile, lasciate la riga e scrivete «non usata» nella definizione.</p>
+<p>Un valore scritto a mano fuori dal menu viene accettato ma segnalato: correggetelo subito.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="passo-3-codificare-in-cieco" class="slide level2">
+<h2>Passo 3 · Codificare in cieco</h2>
+<ol type="1">
+<li>Ognuno sul <strong>proprio foglio</strong>: non aprite quello dell’altra persona</li>
+<li>Per ogni caso: un valore per variabile dal <strong>menu</strong>; <strong>98</strong> se non siete sicuri</li>
+<li>Colonna <strong>note</strong>: perché avete esitato</li>
+<li>Coppia <strong>A</strong> con il mirato: anche <strong>mirato_cod1</strong> e <strong>mirato_cod2</strong></li>
+<li><strong>Non parlate</strong> dei casi fino a domani</li>
+</ol>
+<aside class="notes">
+<p>Le note sono preziose nella riunione di riconciliazione: ricordano perché un caso era difficile. Il 98 non è un fallimento: è un’informazione su un caso ambiguo o su un limite della vostra conoscenza. Usatelo quando siete davvero incerti, senza cercare di indovinare che cosa direbbe l’altra persona.</p>
+<p>Le colonne dei casi (testo, trascrizione, link al media) sono bloccate: si scrive solo nelle colonne del codebook e nelle note.</p>
+<p>Il mirato si codifica dopo il proprio campione, con le stesse regole e lo stesso cieco.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="passo-4-codifica-terminata-poi-il-kappa" class="slide level2">
+<h2>Passo 4 · Codifica terminata, poi il kappa</h2>
 <div class="highlight-box">
 <p>Il kappa di una coppia compare solo quando <strong>entrambe</strong> le persone hanno spuntato <strong>codifica terminata</strong>. Prima vedete «in attesa».</p>
 </div>
 <ul>
 <li>Per ogni variabile: <strong>casi</strong>, <strong>accordo</strong>, <strong>kappa</strong>, <strong>valori fuori codebook</strong></li>
 <li>Kappa sotto <strong>0,60</strong>: cella evidenziata</li>
-<li>Il <strong>98</strong> conta come una categoria; le celle vuote non contano</li>
-<li><strong>Controllo dei casi</strong>: i due fogli devono avere gli stessi casi, nello stesso ordine</li>
+<li><strong>98</strong> conta come una categoria; le celle vuote non contano</li>
+<li>Dopo la spunta, il vostro foglio <strong>non si modifica più</strong></li>
 </ul>
 <aside class="notes">
-<p>Perché il kappa compare solo alla fine: se lo vedeste mentre codificate, sapreste già quanto siete d’accordo con l’altra persona e potreste correggervi in base a quello. È proprio l’influenza che la codifica in cieco deve evitare (slide precedenti).</p>
-<p>«Valori fuori codebook»: refusi e varianti come «si» e «sì», singolare e plurale, spazi in più. Il confronto è lettera per lettera (maiuscole escluse), quindi una variante conta come disaccordo e abbassa il kappa. Correggete questi valori prima di leggere il kappa: è una correzione di forma. Cambiare un valore per decidere meglio un caso è invece una ricodifica e si fa domani, nella riconciliazione.</p>
-<p>Il calcolo è quello che vedremo domani: accordo osservato corretto per l’accordo atteso per caso. Il foglio vi risparmia i conti, ma all’orale dovete saperlo spiegare. Nella relazione scrivete che il 98 è stato trattato come una categoria.</p>
-<p>Nei gruppi da cinque, la coppia A ha tre confronti (cod1–cod2, cod1–cod3, cod2–cod3).</p>
+<p>Perché il kappa compare solo alla fine: se lo vedeste mentre codificate, sapreste già quanto siete d’accordo e potreste correggervi in base a quello. È proprio l’influenza che la codifica in cieco deve evitare.</p>
+<p>«Valori fuori codebook»: refusi e varianti come «si» e «sì», singolare e plurale, spazi in più. Il confronto è lettera per lettera (maiuscole escluse), quindi una variante conta come disaccordo. Correggere un refuso è una correzione di forma e si può fare. Cambiare un valore per decidere meglio un caso è una ricodifica: quella si fa domani, nella riconciliazione, e non nel foglio originale.</p>
+<p>Il foglio controlla anche che i due fogli abbiano gli stessi casi nello stesso ordine. Nei gruppi da cinque la coppia A ha tre confronti (cod1–cod2, cod1–cod3, cod2–cod3).</p>
+<p>Il calcolo lo vediamo domani: accordo osservato corretto per l’accordo atteso per caso. Il foglio vi risparmia i conti, ma all’orale dovete saperlo spiegare. Nella relazione scrivete che il 98 è stato trattato come una categoria.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -398,10 +475,11 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="la-riconciliazione" class="slide level2" data-background-color="#C5612E">
-<h2>La riconciliazione</h2>
+<section id="domani-dal-kappa-alla-riconciliazione" class="slide level2" data-background-color="#C5612E">
+<h2>Domani: dal kappa alla riconciliazione</h2>
 <aside class="notes">
-<p>Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Domani, dopo il kappa, facciamo quello conclusivo; il pilota del 13 novembre, svolto in gruppo, ha fatto da allineamento.</p>
+<p>Le prossime tre slide anticipano il lavoro di domani, subito dopo il kappa. Le vediamo oggi perché sapere come si userà il disaccordo aiuta a codificare con attenzione e a scrivere note utili.</p>
+<p>Marino e Giglietto descrivono un incontro di allineamento e uno conclusivo. Il pilota del 13 novembre ha fatto da allineamento; domani, dopo il kappa, facciamo quello conclusivo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -419,13 +497,13 @@ Fabio Giglietto
 <ol type="1">
 <li>Mettete a confronto i due fogli: dove siete <strong>in disaccordo</strong>?</li>
 <li>Per ogni disaccordo, ognuno spiega <strong>perché</strong>, citando la <strong>definizione</strong></li>
-<li>Decidete un valore <strong>condiviso</strong></li>
+<li>Decidete un valore <strong>condiviso</strong> nel foglio <strong>riconciliato_X</strong></li>
 <li>Risolvete i casi <strong>98</strong>: si assegna un valore, o si lascia 98 con una motivazione</li>
 <li>Se il problema è la <strong>definizione</strong>, annotatelo nel registro delle modifiche</li>
 </ol>
 <p>Adattato da <span class="citation" data-cites="marino2024">Marino &amp; Giglietto (<a href="#/riferimenti" role="doc-biblioref" onclick="">2024</a>)</span></p>
 <aside class="notes">
-<p>Il risultato è un terzo foglio: la codifica riconciliata, che diventa il riferimento per giudicare Gemini. I due fogli originali restano intatti.</p>
+<p>Il risultato è un terzo foglio: la codifica riconciliata, che diventa il riferimento per giudicare Gemini. I due fogli originali restano intatti: servono per il kappa tra persone.</p>
 <p>La persona più esperta non ha automaticamente ragione: vale l’argomento che si appoggia meglio alla definizione.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -505,7 +583,7 @@ Fabio Giglietto
 </thead>
 <tbody>
 <tr class="odd">
-<td>13 nov</td>
+<td>19 nov</td>
 <td>posizione del commento</td>
 <td>aggiunto un esempio di “incerto”</td>
 <td>due disaccordi su commenti con un punto di domanda</td>
@@ -520,7 +598,7 @@ Fabio Giglietto
 </table>
 <aside class="notes">
 <p>Riga di esempio, da sostituire con le vostre. Il registro è parte della catena di evidenze metodologica: nella relazione mostra che il codebook è cambiato in base ai dati, in modo documentato.</p>
-<p>Ogni modifica al codebook va riportata anche nel prompt: il prompt diventa versione 2.</p>
+<p>Ogni modifica va riportata sia nel foglio codebook sia nel prompt: il prompt diventa versione 2. Se cambiate un valore ammesso, aggiornate anche le celle già codificate nel foglio riconciliato.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -549,20 +627,41 @@ Fabio Giglietto
           display:block!important;
       }</style></aside>
 </section>
-<section id="istruzioni-per-il-laboratorio" class="slide level2">
-<h2>Istruzioni per il laboratorio</h2>
-<ol type="1">
-<li>Prima di codificare: fogli <strong>codificatori</strong> (chi codifica cosa) e <strong>codebook</strong> (variabili e valori)</li>
-<li>Codifica <strong>in cieco</strong> del campione della coppia, ognuno sul proprio foglio (coppia_A_cod1, coppia_A_cod2, …)</li>
-<li>Coppia <strong>A</strong>, se il gruppo ha il mirato: anche <strong>mirato_cod1</strong> e <strong>mirato_cod2</strong></li>
-<li>Finito il foglio: spuntate <strong>codifica terminata</strong> e non modificatelo più</li>
-<li><strong>Non</strong> parlate dei casi: la riconciliazione è domani</li>
-<li><strong>Ultimi 15 minuti:</strong> sezione <strong>4.5</strong> della relazione</li>
-</ol>
-<p>Il dataset del gruppo è su Moodle: ricaricatelo prima di iniziare.</p>
+<section id="il-laboratorio-in-ordine" class="slide level2">
+<h2>Il laboratorio, in ordine</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tempi indicativi</th>
+<th>Che cosa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>15 min</strong></td>
+<td>passi 1 e 2, tutto il gruppo: <strong>codificatori</strong> e <strong>codebook</strong></td>
+</tr>
+<tr class="even">
+<td><strong>fino alla fine</strong></td>
+<td>passo 3, ognuno da solo: codifica <strong>in cieco</strong> (e <strong>mirato</strong>)</td>
+</tr>
+<tr class="odd">
+<td>a foglio finito</td>
+<td>passo 4: <strong>codifica terminata</strong>; correggete i valori fuori codebook</td>
+</tr>
+<tr class="even">
+<td><strong>ultimi 15 min</strong></td>
+<td>sezione <strong>4.5</strong> della relazione</td>
+</tr>
+</tbody>
+</table>
 <aside class="notes">
-<p>Oggi le slide non superano i 15 minuti: tutto il resto è codifica in aula. La riconciliazione, il registro delle modifiche e il prompt versione 2 si fanno domani, subito dopo il kappa.</p>
-<p>I fogli codificatori, codebook e kappa sono spiegati nelle slide «Il dataset, foglio per foglio» e «Il foglio kappa». Prima di iniziare, controllate che ogni gruppo abbia compilato il codebook: senza valori i menu a tendina sono vuoti.</p>
+<p>I tempi sono indicativi: chi finisce prima spunta, controlla i valori fuori codebook e passa alla relazione. Tutto il lavoro del progetto si fa in aula.</p>
+<p>Girando tra i gruppi: verificate che il codebook sia compilato prima che parta la codifica, che nessuno abbia aperto il foglio dell’altra persona e che le variabili con più risposte siano state spezzate in sì/no.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -595,9 +694,9 @@ Fabio Giglietto
 <h2>Concetti chiave di oggi</h2>
 <ul>
 <li>In <strong>cieco</strong>: ognuno codifica per conto proprio <span class="citation" data-cites="marino2024">(<a href="#/riferimenti" role="doc-biblioref" onclick="">Marino &amp; Giglietto, 2024</a>)</span></li>
-<li>I fogli originali <strong>non si toccano</strong>: servono per il kappa tra persone</li>
+<li>Prima il <strong>codebook</strong> nel foglio, poi la codifica: un valore per cella</li>
+<li>I fogli originali <strong>non si toccano</strong> dopo la spunta: servono per il kappa</li>
 <li><strong>Riconciliazione</strong>: si discute sulla definizione, non sull’autorità</li>
-<li>I disaccordi si <strong>classificano</strong>: definizione, contesto, cultura, distrazione</li>
 <li>Ogni modifica va nel <strong>registro</strong> e nel <strong>prompt</strong></li>
 </ul>
 <aside class="notes">
@@ -618,11 +717,11 @@ Fabio Giglietto
 <h2>Per la prossima lezione</h2>
 <p><strong>Domani, giovedì 19 novembre, ore 11:00:</strong> Kappa e validazione di Gemini</p>
 <ul>
-<li>Per ogni coppia, due fogli salvati: codificatore A e codificatore B</li>
+<li>Si parte dal foglio <strong>kappa</strong>: fogli di codifica completi e spuntati</li>
 <li>Codebook e prompt <strong>versione 1</strong> a portata di mano</li>
 </ul>
 <aside class="notes">
-<p>Portate il portatile. Chi conosce già i fogli di calcolo aiuti il proprio gruppo: domani calcoliamo il kappa per ogni variabile.</p>
+<p>Portate il portatile. Domani si parte dal foglio kappa, poi riconciliazione e Gemini.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
