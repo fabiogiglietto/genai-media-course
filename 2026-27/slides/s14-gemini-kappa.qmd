@@ -89,15 +89,17 @@ Cinque passi, nello stesso ordine per tutti i gruppi. I primi due riguardano le 
 | Passo | Dove | Che cosa |
 |---|---|---|
 | **1** | foglio **kappa** | kappa **tra persone**, coppia per coppia |
-| **2** | **riconciliato_X**, **codebook** | **riconciliazione**; codebook e prompt **versione 2** |
-| **3** | Gemini, campione **A** | **messa a punto**: kappa e matrice, fino a **3 giri** |
-| **4** | Gemini, campione **B** (C, mirato) | **test** del prompt finale, **una sola volta** |
-| **5** | cartella del gruppo, relazione | tabella dei kappa, prompt finale, sezioni **4.6–4.7** |
+| **2** | **riconciliato_X**, **codebook**, **registro_codebook** | **riconciliazione**; codebook e prompt **versione 2** |
+| **3** | **gemini_A_giro1–3**, **kappa_gemini** | **messa a punto** su A: kappa e matrice, fino a **3 giri** |
+| **4** | **gemini_B** (C, mirato), **kappa_gemini** | **test** del prompt finale, **una sola volta** |
+| **5** | cartella del gruppo, relazione | tabelle dei kappa, prompt finale, sezioni **4.6–4.7** |
 
-: {tbl-colwidths="[10,32,58]"}
+: {tbl-colwidths="[10,40,50]"}
 
 ::: {.notes}
 L'ordine conta: il passo 4 si fa una volta sola e solo dopo aver chiuso il 3. Se dopo il test cambiate il prompt, quel test non vale più.
+
+Fogli nuovi nel dataset del gruppo: gemini_A_giro1, gemini_A_giro2, gemini_A_giro3 (un foglio per giro di messa a punto), gemini_B, e gemini_C o gemini_mirato dove ci sono; kappa_gemini, che calcola il kappa tra ogni foglio riconciliato e il foglio Gemini corrispondente; registro_codebook e registro_agente. Nel foglio codificatori ci sono le righe per i fogli riconciliati e per i fogli Gemini: il kappa compare quando entrambi sono spuntati.
 :::
 
 ## Passo 1 · Il foglio kappa
@@ -131,14 +133,14 @@ Il foglio vi risparmia i conti, ma all'orale dovete saper spiegare il calcolo.
 
 Venti casi sono pochi: con un accordo dell'85% e un accordo atteso per caso del 50%, kappa è 0,70 con un margine di circa ±0,31; con quaranta casi, circa ±0,22. Riportate sempre il numero di casi e accorpate le categorie rare: 0,60 è una soglia di lavoro, non una linea precisa.
 
-Per il confronto con Gemini (passi 3 e 4) il calcolo è lo stesso, ma si fa a mano: una colonna che confronta i due valori (vero/falso) e ne calcola la media per pₒ; per ogni categoria, CONTA.SE sulle due colonne diviso il numero di casi. Chi preferisce può usare una funzione già pronta in R o Python.
+Per il confronto con Gemini (passi 3 e 4) il calcolo è lo stesso e lo fa il foglio kappa_gemini: un blocco per ogni giro su A e uno per ogni campione di test. Le celle vuote sono escluse, quindi le risposte che Gemini non ha dato vanno contate a parte nel registro_agente.
 :::
 
 ## Passo 2 · Riconciliazione e versione 2
 
 1. Per ogni disaccordo: si discute sulla **definizione**, si scrive il valore nel foglio **riconciliato_X**
-2. I fogli originali **non si toccano**
-3. Ogni modifica nel **registro**, nel foglio **codebook** e nel prompt: **versione 2**
+2. I fogli originali **non si toccano**; a fine lavoro spuntate **riconciliato_X** in codificatori
+3. Ogni modifica nel foglio **registro_codebook**, nel **codebook** e nel prompt: **versione 2**
 4. Kappa tra persone sotto **0,60**: si rivede il codebook e si riprova su **casi nuovi**
 
 ::: {.notes}
@@ -179,7 +181,7 @@ Il campione mirato (scelto per parole chiave, codificato dalla coppia A il 18 no
 - Stesso **modello**, stesse **impostazioni**, dall'inizio alla fine
 - **Formato fisso**: una riga per caso, le colonne del codebook
 - Contate le risposte **mancanti** o **fuori formato**
-- Tutto nel **registro dell'agente**: data, modello, prompt, numero di casi
+- Tutto nel foglio **registro_agente**: data, modello, prompt, numero di casi
 
 ::: {.notes}
 Le regole servono a rendere la codifica riproducibile: un altro gruppo, con lo stesso prompt e lo stesso corpus, dovrebbe ottenere risultati simili. Il modello non è neutro: dati di addestramento, prompt e messa a punto lo guidano insieme (Esposito, 2026). Per questo lo validiamo.
@@ -187,15 +189,123 @@ Le regole servono a rendere la codifica riproducibile: un altro gruppo, con lo s
 Usate gli stessi valori del foglio codebook, scritti allo stesso modo: altrimenti il confronto con il foglio riconciliato conta come disaccordo anche quando il significato è lo stesso.
 :::
 
-## Passo 3 · Gemini sul campione A
+## Codificare un post con Gemini: che cosa serve
 
-- Gemini codifica il campione **A** con il prompt **versione 2**
-- Confronto con **riconciliato_A**: **kappa** per variabile
-- **Matrice di confusione**: dove si concentra l'errore?
-- Revisione del prompt e nuovo giro: al massimo **3 giri** per variabile
+| Che cosa | Dove si trova |
+|---|---|
+| Il **file** del post (immagine o video) | colonna **media** del foglio: il link apre il file su Drive |
+| I **metadati** del caso | colonne **A–J**: caso, piattaforma, account, data, tipo, testo, trascrizione |
+| Il **prompt versione 2** | definizioni, regole e valori del foglio **codebook** |
+| Il foglio di **destinazione** | **gemini_A_giro1** (poi giro2, giro3); per il test **gemini_B** |
+
+: {tbl-colwidths="[38,62]"}
 
 ::: {.notes}
-Il kappa dice quanto si è d'accordo; la matrice dice dove non lo si è. Le prossime due slide mostrano come leggerla.
+Il modello deve vedere lo stesso materiale che avete visto voi: il file e i metadati. Se gli date solo la didascalia, codifica un'altra cosa, e il confronto con il foglio riconciliato non misura più quello che vogliamo.
+
+Per i gruppi della linea 3 il caso è un commento: i metadati sono il commento, la didascalia del video e l'account; il file è il video (colonna media_video).
+:::
+
+## Passo per passo
+
+1. Nuova chat, **stesso modello** per tutti i casi: incollate il **prompt versione 2**
+2. Per ogni caso: **allegate il file** da Drive e incollate i **metadati**
+3. **Pochi casi per messaggio**, nello stesso ordine della colonna A
+4. Chiedete una **tabella**: una riga per caso, le variabili in ordine, il **codice del caso** in fondo
+5. Copiate la tabella in **K2** del foglio gemini_X e spuntatelo in **codificatori**
+6. Una riga nel **registro_agente**, poi leggete **kappa_gemini**
+
+::: {.notes}
+Pochi casi per messaggio (per esempio cinque) riducono gli errori di abbinamento tra file e metadati. Una chat nuova per ogni giro: così il modello non si porta dietro le correzioni fatte a voce nei messaggi precedenti, che non sarebbero nel prompt documentato.
+
+Le celle K2 e successive sono le colonne delle variabili, nello stesso ordine del codebook: per questo la tabella deve seguire quell'ordine. Il codice del caso finisce nella prima colonna libera dopo le variabili e serve solo per il controllo.
+:::
+
+## Esempio didattico · il prompt
+
+```text
+Sei un codificatore per una ricerca universitaria. Per ogni post riceverai
+un file (immagine o video) e i metadati. Guarda il file, leggi testo e
+trascrizione, poi codifica le variabili.
+
+VARIABILI, in quest'ordine
+1. autorità: il personaggio si presenta come esperto (titolo, camice,
+   "da medico")? Valori: sì | no | 98
+2. invito all'azione: il post chiede di fare qualcosa (link, commenta,
+   compra)? Valori: sì | no | 98
+Usa 98 solo se dal materiale non si può decidere.
+
+FORMATO
+Rispondi solo con una tabella: una riga per post, una colonna per
+variabile nell'ordine indicato, come ultima colonna il codice del caso.
+Usa solo i valori ammessi, scritti così. Nessun commento.
+```
+
+::: {.notes}
+Due variabili inventate, solo per mostrare la struttura: ruolo, compito, definizioni con i valori ammessi (presi dal foglio codebook), regola del 98, formato di uscita. Il vostro prompt versione 2 ha tutte le variabili del vostro codebook, con le definizioni e gli esempi decisi nella riconciliazione.
+
+"Nessun commento" serve a evitare testo libero nella tabella, che il foglio conterebbe come valore fuori codebook.
+:::
+
+## Esempio didattico · un caso
+
+::: {.columns}
+::: {.column width="55%"}
+### Il messaggio
+
+```text
+caso: M-P00000
+piattaforma: TikTok
+account: dottoressa_esempio
+data: 2026-07-03
+tipo: video
+testo: Tre cucchiai al giorno e la pancia
+sparisce. Link in bio #benessere
+trascrizione: Sono medico da vent'anni...
+[allegato: il video del caso, da Drive]
+```
+:::
+
+::: {.column width="45%"}
+### La risposta
+
+| autorità | invito all'azione | caso |
+|---|---|---|
+| sì | sì | M-P00000 |
+
+::: {.highlight-box}
+In **K2** finiscono i valori; il **codice** in fondo serve a controllare l'ordine.
+:::
+:::
+:::
+
+::: {.notes}
+Caso inventato: account, testo e trascrizione non vengono dal corpus.
+
+Lettura: "Sono medico da vent'anni" nella trascrizione e il camice nel video portano ad "autorità = sì"; "Link in bio" è un invito all'azione. Senza il video e la trascrizione, la sola didascalia avrebbe lasciato "autorità" indecidibile: per questo si allega il file.
+
+Con più casi per messaggio: i blocchi di metadati nello stesso ordine dei file allegati, e lo stesso ordine della colonna A del foglio.
+:::
+
+## Dopo l'incolla: tre controlli
+
+- **Codice del caso** in colonna A colorato: la riga non corrisponde, ricontrollate l'ordine
+- **Valori fuori codebook** in kappa_gemini: risposte fuori formato o con varianti
+- **Risposte mancanti**: celle vuote, contatele nel registro_agente
+
+::: {.notes}
+Il foglio kappa_gemini esclude le celle vuote, quindi una risposta mancante non abbassa il kappa: va contata e dichiarata a parte. Le risposte fuori formato non si correggono a mano nel foglio Gemini: si registra il problema e, se serve, si corregge il prompt nel giro successivo (solo sul campione A).
+:::
+
+## Passo 3 · Gemini sul campione A
+
+- Gemini codifica il campione **A** con il prompt **versione 2**: output in **gemini_A_giro1**
+- **kappa_gemini**: kappa per variabile, confronto con **riconciliato_A**
+- **Matrice di confusione**: dove si concentra l'errore?
+- Revisione del prompt e nuovo giro in **gemini_A_giro2**, poi **giro3**: al massimo **3 giri**
+
+::: {.notes}
+Il kappa dice quanto si è d'accordo; la matrice dice dove non lo si è. Le prossime due slide mostrano come leggerla. Il foglio non calcola la matrice: costruitela con una tabella pivot o con CONTA.PIÙ.SE sulle due colonne (riconciliato e Gemini) della variabile.
 
 Ogni giro va registrato: che cosa è cambiato nel prompt e perché.
 :::
@@ -248,7 +358,7 @@ Modificare il prompt guardando solo i casi sbagliati rischia di adattarlo a quei
 Prompt **finale**, **una sola volta**, su casi che Gemini non ha mai visto: campione **B** (e **C**), più il **mirato** dove c'è.
 :::
 
-- Confronto con **riconciliato_B** (e _C, _mirato): **kappa** per variabile
+- Output in **gemini_B** (e _C, _mirato); **kappa** per variabile in **kappa_gemini**
 - Il mirato si riporta **a parte**, solo per le categorie rare
 - Dopo il test il prompt **non cambia più**
 
@@ -264,8 +374,8 @@ Se il test va male per una variabile, non si torna alla messa a punto: la variab
 ::: {.column width="50%"}
 ### Nella cartella del gruppo
 
-- La **tabella dei kappa**
-- Il **prompt finale**
+- I fogli **kappa** e **kappa_gemini** completi
+- Il **prompt finale** e il **registro_agente**
 :::
 
 ::: {.column width="50%"}

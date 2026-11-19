@@ -340,8 +340,8 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <table class="caption-top">
 <colgroup>
 <col style="width: 10%">
-<col style="width: 32%">
-<col style="width: 57%">
+<col style="width: 40%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -358,28 +358,29 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 </tr>
 <tr class="even">
 <td><strong>2</strong></td>
-<td><strong>riconciliato_X</strong>, <strong>codebook</strong></td>
+<td><strong>riconciliato_X</strong>, <strong>codebook</strong>, <strong>registro_codebook</strong></td>
 <td><strong>riconciliazione</strong>; codebook e prompt <strong>versione 2</strong></td>
 </tr>
 <tr class="odd">
 <td><strong>3</strong></td>
-<td>Gemini, campione <strong>A</strong></td>
-<td><strong>messa a punto</strong>: kappa e matrice, fino a <strong>3 giri</strong></td>
+<td><strong>gemini_A_giro1–3</strong>, <strong>kappa_gemini</strong></td>
+<td><strong>messa a punto</strong> su A: kappa e matrice, fino a <strong>3 giri</strong></td>
 </tr>
 <tr class="even">
 <td><strong>4</strong></td>
-<td>Gemini, campione <strong>B</strong> (C, mirato)</td>
+<td><strong>gemini_B</strong> (C, mirato), <strong>kappa_gemini</strong></td>
 <td><strong>test</strong> del prompt finale, <strong>una sola volta</strong></td>
 </tr>
 <tr class="odd">
 <td><strong>5</strong></td>
 <td>cartella del gruppo, relazione</td>
-<td>tabella dei kappa, prompt finale, sezioni <strong>4.6–4.7</strong></td>
+<td>tabelle dei kappa, prompt finale, sezioni <strong>4.6–4.7</strong></td>
 </tr>
 </tbody>
 </table>
 <aside class="notes">
 <p>L’ordine conta: il passo 4 si fa una volta sola e solo dopo aver chiuso il 3. Se dopo il test cambiate il prompt, quel test non vale più.</p>
+<p>Fogli nuovi nel dataset del gruppo: gemini_A_giro1, gemini_A_giro2, gemini_A_giro3 (un foglio per giro di messa a punto), gemini_B, e gemini_C o gemini_mirato dove ci sono; kappa_gemini, che calcola il kappa tra ogni foglio riconciliato e il foglio Gemini corrispondente; registro_codebook e registro_agente. Nel foglio codificatori ci sono le righe per i fogli riconciliati e per i fogli Gemini: il kappa compare quando entrambi sono spuntati.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -430,7 +431,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <aside class="notes">
 <p>Il foglio vi risparmia i conti, ma all’orale dovete saper spiegare il calcolo.</p>
 <p>Venti casi sono pochi: con un accordo dell’85% e un accordo atteso per caso del 50%, kappa è 0,70 con un margine di circa ±0,31; con quaranta casi, circa ±0,22. Riportate sempre il numero di casi e accorpate le categorie rare: 0,60 è una soglia di lavoro, non una linea precisa.</p>
-<p>Per il confronto con Gemini (passi 3 e 4) il calcolo è lo stesso, ma si fa a mano: una colonna che confronta i due valori (vero/falso) e ne calcola la media per pₒ; per ogni categoria, CONTA.SE sulle due colonne diviso il numero di casi. Chi preferisce può usare una funzione già pronta in R o Python.</p>
+<p>Per il confronto con Gemini (passi 3 e 4) il calcolo è lo stesso e lo fa il foglio kappa_gemini: un blocco per ogni giro su A e uno per ogni campione di test. Le celle vuote sono escluse, quindi le risposte che Gemini non ha dato vanno contate a parte nel registro_agente.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -447,8 +448,8 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <h2>Passo 2 · Riconciliazione e versione 2</h2>
 <ol type="1">
 <li>Per ogni disaccordo: si discute sulla <strong>definizione</strong>, si scrive il valore nel foglio <strong>riconciliato_X</strong></li>
-<li>I fogli originali <strong>non si toccano</strong></li>
-<li>Ogni modifica nel <strong>registro</strong>, nel foglio <strong>codebook</strong> e nel prompt: <strong>versione 2</strong></li>
+<li>I fogli originali <strong>non si toccano</strong>; a fine lavoro spuntate <strong>riconciliato_X</strong> in codificatori</li>
+<li>Ogni modifica nel foglio <strong>registro_codebook</strong>, nel <strong>codebook</strong> e nel prompt: <strong>versione 2</strong></li>
 <li>Kappa tra persone sotto <strong>0,60</strong>: si rivede il codebook e si riprova su <strong>casi nuovi</strong></li>
 </ol>
 <aside class="notes">
@@ -541,7 +542,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <li>Stesso <strong>modello</strong>, stesse <strong>impostazioni</strong>, dall’inizio alla fine</li>
 <li><strong>Formato fisso</strong>: una riga per caso, le colonne del codebook</li>
 <li>Contate le risposte <strong>mancanti</strong> o <strong>fuori formato</strong></li>
-<li>Tutto nel <strong>registro dell’agente</strong>: data, modello, prompt, numero di casi</li>
+<li>Tutto nel foglio <strong>registro_agente</strong>: data, modello, prompt, numero di casi</li>
 </ul>
 <aside class="notes">
 <p>Le regole servono a rendere la codifica riproducibile: un altro gruppo, con lo stesso prompt e lo stesso corpus, dovrebbe ottenere risultati simili. Il modello non è neutro: dati di addestramento, prompt e messa a punto lo guidano insieme (Esposito, 2026). Per questo lo validiamo.</p>
@@ -558,16 +559,193 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
           display:block!important;
       }</style></aside>
 </section>
+<section id="codificare-un-post-con-gemini-che-cosa-serve" class="slide level2">
+<h2>Codificare un post con Gemini: che cosa serve</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Che cosa</th>
+<th>Dove si trova</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Il <strong>file</strong> del post (immagine o video)</td>
+<td>colonna <strong>media</strong> del foglio: il link apre il file su Drive</td>
+</tr>
+<tr class="even">
+<td>I <strong>metadati</strong> del caso</td>
+<td>colonne <strong>A–J</strong>: caso, piattaforma, account, data, tipo, testo, trascrizione</td>
+</tr>
+<tr class="odd">
+<td>Il <strong>prompt versione 2</strong></td>
+<td>definizioni, regole e valori del foglio <strong>codebook</strong></td>
+</tr>
+<tr class="even">
+<td>Il foglio di <strong>destinazione</strong></td>
+<td><strong>gemini_A_giro1</strong> (poi giro2, giro3); per il test <strong>gemini_B</strong></td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Il modello deve vedere lo stesso materiale che avete visto voi: il file e i metadati. Se gli date solo la didascalia, codifica un’altra cosa, e il confronto con il foglio riconciliato non misura più quello che vogliamo.</p>
+<p>Per i gruppi della linea 3 il caso è un commento: i metadati sono il commento, la didascalia del video e l’account; il file è il video (colonna media_video).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="passo-per-passo" class="slide level2">
+<h2>Passo per passo</h2>
+<ol type="1">
+<li>Nuova chat, <strong>stesso modello</strong> per tutti i casi: incollate il <strong>prompt versione 2</strong></li>
+<li>Per ogni caso: <strong>allegate il file</strong> da Drive e incollate i <strong>metadati</strong></li>
+<li><strong>Pochi casi per messaggio</strong>, nello stesso ordine della colonna A</li>
+<li>Chiedete una <strong>tabella</strong>: una riga per caso, le variabili in ordine, il <strong>codice del caso</strong> in fondo</li>
+<li>Copiate la tabella in <strong>K2</strong> del foglio gemini_X e spuntatelo in <strong>codificatori</strong></li>
+<li>Una riga nel <strong>registro_agente</strong>, poi leggete <strong>kappa_gemini</strong></li>
+</ol>
+<aside class="notes">
+<p>Pochi casi per messaggio (per esempio cinque) riducono gli errori di abbinamento tra file e metadati. Una chat nuova per ogni giro: così il modello non si porta dietro le correzioni fatte a voce nei messaggi precedenti, che non sarebbero nel prompt documentato.</p>
+<p>Le celle K2 e successive sono le colonne delle variabili, nello stesso ordine del codebook: per questo la tabella deve seguire quell’ordine. Il codice del caso finisce nella prima colonna libera dopo le variabili e serve solo per il controllo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="esempio-didattico-il-prompt" class="slide level2">
+<h2>Esempio didattico · il prompt</h2>
+<pre class="text"><code>Sei un codificatore per una ricerca universitaria. Per ogni post riceverai
+un file (immagine o video) e i metadati. Guarda il file, leggi testo e
+trascrizione, poi codifica le variabili.
+
+VARIABILI, in quest'ordine
+1. autorità: il personaggio si presenta come esperto (titolo, camice,
+   "da medico")? Valori: sì | no | 98
+2. invito all'azione: il post chiede di fare qualcosa (link, commenta,
+   compra)? Valori: sì | no | 98
+Usa 98 solo se dal materiale non si può decidere.
+
+FORMATO
+Rispondi solo con una tabella: una riga per post, una colonna per
+variabile nell'ordine indicato, come ultima colonna il codice del caso.
+Usa solo i valori ammessi, scritti così. Nessun commento.</code></pre>
+<aside class="notes">
+<p>Due variabili inventate, solo per mostrare la struttura: ruolo, compito, definizioni con i valori ammessi (presi dal foglio codebook), regola del 98, formato di uscita. Il vostro prompt versione 2 ha tutte le variabili del vostro codebook, con le definizioni e gli esempi decisi nella riconciliazione.</p>
+<p>“Nessun commento” serve a evitare testo libero nella tabella, che il foglio conterebbe come valore fuori codebook.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="esempio-didattico-un-caso" class="slide level2">
+<h2>Esempio didattico · un caso</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<h3 id="il-messaggio">Il messaggio</h3>
+<pre class="text"><code>caso: M-P00000
+piattaforma: TikTok
+account: dottoressa_esempio
+data: 2026-07-03
+tipo: video
+testo: Tre cucchiai al giorno e la pancia
+sparisce. Link in bio #benessere
+trascrizione: Sono medico da vent'anni...
+[allegato: il video del caso, da Drive]</code></pre>
+</div><div class="column" style="width:45%;">
+<h3 id="la-risposta">La risposta</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>autorità</th>
+<th>invito all’azione</th>
+<th>caso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>sì</td>
+<td>sì</td>
+<td>M-P00000</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<p>In <strong>K2</strong> finiscono i valori; il <strong>codice</strong> in fondo serve a controllare l’ordine.</p>
+</div>
+</div></div>
+<aside class="notes">
+<p>Caso inventato: account, testo e trascrizione non vengono dal corpus.</p>
+<p>Lettura: “Sono medico da vent’anni” nella trascrizione e il camice nel video portano ad “autorità = sì”; “Link in bio” è un invito all’azione. Senza il video e la trascrizione, la sola didascalia avrebbe lasciato “autorità” indecidibile: per questo si allega il file.</p>
+<p>Con più casi per messaggio: i blocchi di metadati nello stesso ordine dei file allegati, e lo stesso ordine della colonna A del foglio.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="dopo-lincolla-tre-controlli" class="slide level2">
+<h2>Dopo l’incolla: tre controlli</h2>
+<ul>
+<li><strong>Codice del caso</strong> in colonna A colorato: la riga non corrisponde, ricontrollate l’ordine</li>
+<li><strong>Valori fuori codebook</strong> in kappa_gemini: risposte fuori formato o con varianti</li>
+<li><strong>Risposte mancanti</strong>: celle vuote, contatele nel registro_agente</li>
+</ul>
+<aside class="notes">
+<p>Il foglio kappa_gemini esclude le celle vuote, quindi una risposta mancante non abbassa il kappa: va contata e dichiarata a parte. Le risposte fuori formato non si correggono a mano nel foglio Gemini: si registra il problema e, se serve, si corregge il prompt nel giro successivo (solo sul campione A).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="passo-3-gemini-sul-campione-a" class="slide level2">
 <h2>Passo 3 · Gemini sul campione A</h2>
 <ul>
-<li>Gemini codifica il campione <strong>A</strong> con il prompt <strong>versione 2</strong></li>
-<li>Confronto con <strong>riconciliato_A</strong>: <strong>kappa</strong> per variabile</li>
+<li>Gemini codifica il campione <strong>A</strong> con il prompt <strong>versione 2</strong>: output in <strong>gemini_A_giro1</strong></li>
+<li><strong>kappa_gemini</strong>: kappa per variabile, confronto con <strong>riconciliato_A</strong></li>
 <li><strong>Matrice di confusione</strong>: dove si concentra l’errore?</li>
-<li>Revisione del prompt e nuovo giro: al massimo <strong>3 giri</strong> per variabile</li>
+<li>Revisione del prompt e nuovo giro in <strong>gemini_A_giro2</strong>, poi <strong>giro3</strong>: al massimo <strong>3 giri</strong></li>
 </ul>
 <aside class="notes">
-<p>Il kappa dice quanto si è d’accordo; la matrice dice dove non lo si è. Le prossime due slide mostrano come leggerla.</p>
+<p>Il kappa dice quanto si è d’accordo; la matrice dice dove non lo si è. Le prossime due slide mostrano come leggerla. Il foglio non calcola la matrice: costruitela con una tabella pivot o con CONTA.PIÙ.SE sulle due colonne (riconciliato e Gemini) della variabile.</p>
 <p>Ogni giro va registrato: che cosa è cambiato nel prompt e perché.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -681,7 +859,7 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <p>Prompt <strong>finale</strong>, <strong>una sola volta</strong>, su casi che Gemini non ha mai visto: campione <strong>B</strong> (e <strong>C</strong>), più il <strong>mirato</strong> dove c’è.</p>
 </div>
 <ul>
-<li>Confronto con <strong>riconciliato_B</strong> (e _C, _mirato): <strong>kappa</strong> per variabile</li>
+<li>Output in <strong>gemini_B</strong> (e _C, _mirato); <strong>kappa</strong> per variabile in <strong>kappa_gemini</strong></li>
 <li>Il mirato si riporta <strong>a parte</strong>, solo per le categorie rare</li>
 <li>Dopo il test il prompt <strong>non cambia più</strong></li>
 </ul>
@@ -706,8 +884,8 @@ Formato: ### Titolo della notizia · 2–3 righe di descrizione · fonte con dat
 <div class="column" style="width:50%;">
 <h3 id="nella-cartella-del-gruppo">Nella cartella del gruppo</h3>
 <ul>
-<li>La <strong>tabella dei kappa</strong></li>
-<li>Il <strong>prompt finale</strong></li>
+<li>I fogli <strong>kappa</strong> e <strong>kappa_gemini</strong> completi</li>
+<li>Il <strong>prompt finale</strong> e il <strong>registro_agente</strong></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="nella-relazione">Nella relazione</h3>
