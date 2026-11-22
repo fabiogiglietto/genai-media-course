@@ -23,3 +23,7 @@ tograde/
 draft-reviews
 draft-reviews/
 CLAUDE.local.md
+
+# Local secrets (API keys) — never commit
+.Renviron
+.env
