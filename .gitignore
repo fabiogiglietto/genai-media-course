@@ -27,3 +27,5 @@ CLAUDE.local.md
 # Local secrets (API keys) — never commit
 .Renviron
 .env
+
+**/*.quarto_ipynb
