@@ -218,20 +218,37 @@ carica_tutti <- function(percorsi, registro_file, eta_max_ore = 46) {
   riuscita <- \(risposte) map_lgl(risposte, \(r) inherits(r, "httr2_response"))
 
   # Blocks of 50, so an interrupted run keeps what it has already uploaded.
+  n_persi <- 0
   for (blocco in split(mancanti, ceiling(seq_along(mancanti) / 50))) {
+    blocco_iniziale <- blocco
     avvii <- in_parallelo(map(blocco, richiesta_avvio))
     blocco <- blocco[riuscita(avvii)]
     invii <- in_parallelo(map2(blocco, avvii[riuscita(avvii)], richiesta_invio))
     file_api <- map(invii[riuscita(invii)], \(r) resp_body_json(r)$file)
-    # Video is usable only once the API has finished processing it.
+    # Video is usable only once the API has finished processing it. The status
+    # request of some files fails every time: after three failures, or fifteen
+    # minutes in the block, a file is given up, or the loop would never end.
+    errori <- integer(length(file_api))
+    scadenza <- Sys.time() + 15 * 60
     repeat {
       in_corso <- which(map_chr(file_api, "state") == "PROCESSING")
       if (length(in_corso) == 0) break
       Sys.sleep(5)
-      stati <- in_parallelo(map(file_api[in_corso], \(f) gemini_request(paste0(API, "/v1beta/", f$name))))
+      stati <- in_parallelo(map(file_api[in_corso], \(f) {
+        gemini_request(paste0(API, "/v1beta/", f$name)) |> req_retry(max_tries = 2)
+      }))
       file_api[in_corso[riuscita(stati)]] <- map(stati[riuscita(stati)], resp_body_json)
+      falliti <- in_corso[!riuscita(stati)]
+      errori[falliti] <- errori[falliti] + 1
+      persi <- if (Sys.time() > scadenza) in_corso else falliti[errori[falliti] >= 3]
+      for (i in persi) file_api[[i]]$state <- "FAILED"
     }
     attivi <- keep(file_api, \(f) identical(f$state, "ACTIVE"))
+    persi <- setdiff(basename(blocco_iniziale), map_chr(attivi, "displayName"))
+    if (length(persi) > 0) {
+      message("  not usable (upload or processing failed): ", paste(persi, collapse = ", "))
+      n_persi <- n_persi + length(persi)
+    }
     nuovi <- tibble(
       file = map_chr(attivi, "displayName"),
       uri = map_chr(attivi, "uri"),
@@ -241,6 +258,11 @@ carica_tutti <- function(percorsi, registro_file, eta_max_ore = 46) {
     write_csv(nuovi, registro_file, append = file.exists(registro_file))
     validi <- bind_rows(validi, nuovi)
     message("  ", nrow(validi), " files available")
+    # A few unusable files only leave their cases out; many mean the API is
+    # refusing uploads (a quota, an outage), and nothing should run on a remnant.
+    if (n_persi > max(5, 0.05 * length(mancanti))) {
+      stop(n_persi, " of ", length(mancanti), " files could not be uploaded: stopping. A rerun resumes.")
+    }
   }
   select(validi, file, uri, mime)
 }
