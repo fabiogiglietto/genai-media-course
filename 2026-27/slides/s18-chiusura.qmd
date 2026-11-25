@@ -119,7 +119,7 @@ Appendici del modello: A, prompt in tutte le versioni con il registro delle modi
 
 Il modello ha istruzioni in corsivo (➤) per ogni sezione, da cancellare prima della consegna.
 
-Consegna: un solo membro carica il PDF su Moodle per tutto il gruppo, almeno due settimane prima del primo appello dopo il corso.
+Consegna: un solo membro carica il PDF su Moodle per tutto il gruppo, entro domenica 3 gennaio 2027, ore 23:59. È ammesso un giorno di ritardo, con una penalità di 1 punto.
 :::
 
 ## Parole per ogni livello
@@ -232,7 +232,7 @@ Il questionario raccoglie un giudizio sul corso e sul progetto. Anonimo. Le risp
 
 ## Prossimi passi
 
-- **Relazione** di gruppo su Moodle almeno **due settimane prima** del primo appello dopo il corso
+- **Relazione** di gruppo su Moodle entro **domenica 3 gennaio 2027**, ore 23:59
 - **Colloquio orale** individuale sul progetto
 - Dubbi: forum di Moodle o ricevimento
 

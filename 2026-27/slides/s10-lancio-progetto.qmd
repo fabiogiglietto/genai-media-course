@@ -210,7 +210,7 @@ Due momenti di verifica intermedia: il codebook pilota (13 novembre) e la valida
 - **Dichiarazione d'uso dell'IA**
 
 ::: {.notes}
-Criteri della scheda del corso. La relazione vale il 75% del voto. Consegna su Moodle almeno due settimane prima del primo appello dopo il corso.
+Criteri della scheda del corso. La relazione vale il 75% del voto. Consegna su Moodle entro domenica 3 gennaio 2027, ore 23:59; è ammesso un giorno di ritardo, con una penalità di 1 punto.
 
 Il colloquio orale (15%) verte sul progetto, compreso che cosa il gruppo ha delegato all'IA e perché.
 :::

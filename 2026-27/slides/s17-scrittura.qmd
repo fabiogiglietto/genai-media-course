@@ -89,7 +89,7 @@ Appendici del modello: A, prompt in tutte le versioni con il registro delle modi
 
 Il modello ha istruzioni in corsivo (➤) per ogni sezione, da cancellare prima della consegna.
 
-Consegna: un solo membro carica il PDF su Moodle per tutto il gruppo, almeno due settimane prima del primo appello dopo il corso.
+Consegna: un solo membro carica il PDF su Moodle per tutto il gruppo, entro domenica 3 gennaio 2027, ore 23:59. È ammesso un giorno di ritardo, con una penalità di 1 punto.
 :::
 
 ## Scrivere al giusto livello {background-color="#C5612E"}
@@ -187,7 +187,7 @@ Mercoledì l'ultimo incontro: confronto tra gruppi e post-test.
 
 - Ogni gruppo presenta **3 risultati** in **5 minuti**
 - Portate il portatile o il telefono per il **test** e il **questionario**
-- Consegna della relazione su Moodle almeno **due settimane prima del primo appello** dopo il corso
+- Consegna della relazione su Moodle entro **domenica 3 gennaio 2027**, ore 23:59
 
 ::: {.notes}
 Le presentazioni di mercoledì non sono valutate a parte: servono al confronto tra famiglie e linee.
