@@ -13,7 +13,9 @@
 #
 # Inputs
 #   - data/2026-27/gemini-run/gruppi.csv   gruppo,sheet_id (git-ignored: the
-#     sheets are link-shared, so their IDs must never reach the public repo)
+#     sheets are link-shared, so their IDs must never reach the public repo).
+#     An optional third column, media_nei_commenti (sì/no), says whether a
+#     group that codes comments had the video attached; blank means the default
 #   - the group sheet, downloaded as .xlsx through its share link
 #   - the frozen prompt: data/2026-27/gemini-run/<gruppo>/prompt.txt if present,
 #     otherwise the registro_agente row for gemini_B (or the last row)
@@ -45,7 +47,7 @@ MEDIA_DIRS <- c(                  # local copies of the Drive media folders
   here("data", "2026-27", "instagram_media")
 )
 LINGUE <- c("it", "en")           # corpus rows coded; NULL keeps every language
-MEDIA_NEI_COMMENTI <- FALSE       # attach the video when coding comments
+MEDIA_NEI_COMMENTI <- FALSE       # default; gruppi.csv can set it per group
 SOGLIA_KAPPA <- 0.60
 RICHIESTE_AL_MINUTO <- 300
 CARICAMENTI_PARALLELI <- 8
@@ -54,8 +56,12 @@ API <- "https://generativelanguage.googleapis.com"
 
 # --- Small helpers -----------------------------------------------------------
 
-# Sheets exports 98 as "98.0"; coders and Gemini differ in case and spacing.
-norm <- function(x) str_to_lower(str_squish(str_remove(as.character(x), "\\.0$")))
+# Sheets exports 98 as "98.0"; coders and Gemini differ in case, spacing and
+# in straight or typographic apostrophes.
+norm <- function(x) {
+  x <- str_replace_all(str_remove(as.character(x), "\\.0$"), "[\u2018\u2019]", "'")
+  str_to_lower(str_squish(x))
+}
 
 api_key <- function() {
   key <- Sys.getenv("GEMINI_API_KEY")
@@ -95,8 +101,18 @@ cohen_kappa <- function(a, b) {
 
 # --- Group sheet -------------------------------------------------------------
 
+leggi_gruppi <- function() read_csv(file.path(RUN_DIR, "gruppi.csv"), col_types = cols(.default = "c"))
+
+# Whether a group that codes comments had the video attached in its chat test.
+media_nei_commenti <- function(gruppo) {
+  gruppi <- leggi_gruppi()
+  scelta <- if ("media_nei_commenti" %in% names(gruppi)) gruppi$media_nei_commenti[gruppi$gruppo == gruppo] else NA
+  if (length(scelta) != 1 || is.na(scelta) || scelta == "") return(MEDIA_NEI_COMMENTI)
+  norm(scelta) %in% c("sì", "si", "true", "1")
+}
+
 scarica_foglio <- function(gruppo) {
-  gruppi <- read_csv(file.path(RUN_DIR, "gruppi.csv"), col_types = "cc")
+  gruppi <- leggi_gruppi()
   id <- gruppi$sheet_id[gruppi$gruppo == gruppo]
   if (length(id) != 1) stop("Group ", gruppo, " is not in gruppi.csv.")
   dir.create(file.path(RUN_DIR, gruppo), recursive = TRUE, showWarnings = FALSE)
@@ -275,18 +291,23 @@ estrai_risposta <- function(risposta) {
 }
 
 # The prompts ask for a table: one row per case, variables in codebook order,
-# case code last. Returns one value per variable, or NULL when off format.
+# case code last; some add a notes column before the case code. Returns one
+# value per variable, or NULL when off format.
 leggi_risposta <- function(testo, id_caso, variabili) {
   righe <- str_split_1(testo, "\n")
   riga <- righe[str_detect(righe, fixed(id_caso))]
   if (length(riga) == 0) return(NULL)
   riga <- riga[length(riga)]
-  separatore <- if (str_detect(riga, fixed("|"))) "\\|" else "\t"
-  celle <- str_squish(str_split_1(riga, separatore))
-  celle <- celle[celle != ""]
-  celle <- celle[celle != id_caso]
-  if (length(celle) != length(variabili)) return(NULL)
-  set_names(norm(str_remove_all(celle, "[*`]")), variabili)
+  tabella <- str_detect(riga, fixed("|"))
+  celle <- str_squish(str_remove_all(str_split_1(riga, if (tabella) "\\|" else "\t"), "[*`]"))
+  fine <- match(id_caso, celle)
+  if (is.na(fine)) return(NULL)
+  celle <- celle[seq_len(fine - 1)]
+  # A Markdown row opens with a border, which splits into an empty first cell.
+  if (tabella && length(celle) > 0 && celle[1] == "") celle <- celle[-1]
+  n <- length(variabili)
+  if (!length(celle) %in% c(n, n + 1)) return(NULL)
+  set_names(norm(celle[seq_len(n)]), variabili)
 }
 
 # One record per line; a missing file means nothing has been coded yet.
@@ -327,7 +348,8 @@ esegui <- function(gruppo, modo = MODI, max_casi = Inf) {
   casi <- if (modo == "corpus") g$corpus else g$gemini_b
   casi <- filter(casi, !is.na(caso))
   if (modo == "corpus" && !is.null(LINGUE)) casi <- filter(casi, lingua %in% LINGUE)
-  con_media <- !g$commenti || MEDIA_NEI_COMMENTI
+  con_media <- !g$commenti || media_nei_commenti(gruppo)
+  if (g$commenti) message("Comments are coded ", if (con_media) "with" else "without", " the video attached.")
   if (con_media) {
     casi <- mutate(casi, percorso = map_chr(.data[[g$col_media]], trova_media))
     message(sum(is.na(casi$percorso)), " of ", nrow(casi),
