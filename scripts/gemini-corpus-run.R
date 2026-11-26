@@ -75,7 +75,9 @@ gemini_request <- function(url) {
     req_throttle(capacity = RICHIESTE_AL_MINUTO, fill_time_s = 60) |>
     req_retry(
       max_tries = 6,
-      is_transient = \(resp) resp_status(resp) %in% c(429, 500, 503),
+      # A full file store also answers 429, and waiting does not empty it.
+      is_transient = \(resp) resp_status(resp) %in% c(429, 500, 503) &&
+        !str_detect(resp_body_string(resp), "file_storage_bytes"),
       backoff = \(i) min(120, 5 * 2^i)
     ) |>
     req_timeout(600)
@@ -235,7 +237,8 @@ carica_tutti <- function(percorsi, registro_file, eta_max_ore = 46) {
       if (length(in_corso) == 0) break
       Sys.sleep(5)
       stati <- in_parallelo(map(file_api[in_corso], \(f) {
-        gemini_request(paste0(API, "/v1beta/", f$name)) |> req_retry(max_tries = 2)
+        # A status answer is a few bytes: one that takes a minute is not coming.
+        gemini_request(paste0(API, "/v1beta/", f$name)) |> req_retry(max_tries = 2) |> req_timeout(60)
       }))
       file_api[in_corso[riuscita(stati)]] <- map(stati[riuscita(stati)], resp_body_json)
       falliti <- in_corso[!riuscita(stati)]
