@@ -5,9 +5,16 @@
 #
 #   Rscript scripts/gemini-sheet-layout.R G08 <corpus sheetId> <corpus tab index> \
 #       <kappa_gemini tab index> <registro_agente sheetId> \
-#       [corpus grid columns = 26] [note for the header]
+#       [corpus grid columns = 26] [note for the header] [helper tab sheetId]
 #
 # The four numbers come from the live sheet (spreadsheets.get, sheets.properties).
+#
+# Helper tab. A full corpus is too much to send as typed values, so the script
+# also writes foglio_appoggio.csv: the new corpus columns, row for row, plus
+# the final prompt. Uploaded to Drive as a Google Sheet and copied into the
+# group's spreadsheet (sheets.copyTo), it becomes a tab whose sheetId is the
+# last argument: the requests then copy from it, server side, and delete it.
+# Without that argument the values are written inline, which suits a test.
 #
 # Layout (approved on G08, 2026-11-25; the same for every group)
 #   corpus            keeps its name; to the right of the existing columns,
@@ -34,7 +41,8 @@
 #   foglio.xlsx, corpus_validata.csv, corpus_risposte.jsonl
 #   controllo_codifica.csv, plus _*pass*/controllo_codifica.csv for further passes
 # Outputs, same folder (git-ignored)
-#   foglio_req_corpus.json, foglio_req_tab.json, foglio_req_registro.json
+#   foglio_appoggio.csv, foglio_req_corpus.json, foglio_req_tab.json,
+#   foglio_req_registro.json (send them in this order)
 
 suppressPackageStartupMessages(library(here))
 source(here("scripts", "gemini-corpus-run.R"))   # norm, cohen_kappa, leggi_tab, RUN_DIR, MODEL
@@ -70,11 +78,11 @@ larghezza <- function(foglio, c0, c1, px) list(updateDimensionProperties = list(
 nuovo_foglio <- function(id, titolo, indice, righe, colonne = 10) list(addSheet = list(properties = list(
   sheetId = id, title = titolo, index = indice, gridProperties = list(rowCount = righe, columnCount = colonne)
 )))
-g_con_media <- \(gruppo, corpus) !"commento" %in% names(corpus) || media_nei_commenti(gruppo)
 
-costruisci <- function(gruppo, id_corpus, indice_corpus, indice_kappa, id_registro, colonne_griglia = 26, nota = "") {
+costruisci <- function(gruppo, id_corpus, indice_corpus, indice_kappa, id_registro,
+                       colonne_griglia = 26, nota = "", id_appoggio = NA) {
   dir_gruppo <- file.path(RUN_DIR, gruppo)
-  xlsx <- file.path(dir_gruppo, "foglio.xlsx")
+  xlsx <- scarica_foglio(gruppo)               # the sheet as it is now
   corpus <- leggi_tab(xlsx, "corpus") |> mutate(riga = row_number())
   validata <- read_csv(file.path(dir_gruppo, "corpus_validata.csv"), col_types = cols(.default = "c"))
   variabili <- setdiff(names(validata), c("caso", "stato"))
@@ -115,10 +123,23 @@ costruisci <- function(gruppo, id_corpus, indice_corpus, indice_kappa, id_regist
                    backgroundColorStyle = list(rgbColor = list(red = 0.949, green = 0.655, blue = 0.627))),
               "textFormat.bold,userEnteredFormat.backgroundColorStyle")
     ),
-    map(blocchi, \(b) incolla(id_corpus, b$riga[1], c0, pmap(
-      c(list(b$stato), map(variabili, \(v) etichetta(v, b[[v]]))), c
-    ))) |> unname()
+    if (is.na(id_appoggio)) {
+      map(blocchi, \(b) incolla(id_corpus, b$riga[1], c0, pmap(
+        c(list(b$stato), map(variabili, \(v) etichetta(v, b[[v]]))), c
+      ))) |> unname()
+    } else {
+      list(list(copyPaste = list(
+        source = list(sheetId = id_appoggio, startRowIndex = 1, endRowIndex = nrow(corpus) + 1,
+                      startColumnIndex = 0, endColumnIndex = k + 1),
+        destination = list(sheetId = id_corpus, startRowIndex = 1, endRowIndex = nrow(corpus) + 1,
+                           startColumnIndex = c0, endColumnIndex = c0 + k + 1),
+        pasteType = "PASTE_VALUES"
+      )))
+    }
   )
+
+  commenti <- "commento" %in% names(corpus)
+  con_media <- !commenti || media_nei_commenti(gruppo)
 
   # ---- analisi: one row per variable and codebook value. Every data row holds
   # the same formula: it finds its corpus column from the name in A and counts
@@ -135,7 +156,7 @@ costruisci <- function(gruppo, id_corpus, indice_corpus, indice_kappa, id_regist
   registro <- leggi_tab(xlsx, "registro_agente") |> filter(!is.na(`prompt (testo completo o link)`))
   riga_prompt <- slice_tail(if (any(registro$foglio == "gemini_B")) filter(registro, foglio == "gemini_B") else registro, n = 1)
   corretto <- file.exists(file.path(dir_gruppo, "prompt.txt"))
-  versione <- paste0("versione ", replace_na(norm(riga_prompt$`versione del prompt`), "non indicata"),
+  versione <- paste0("versione ", replace_na(str_remove(norm(riga_prompt$`versione del prompt`), "^(versione|v\\.?)\\s*"), "non indicata"),
                      if (corretto) " con correzioni" else "")
   prompt <- paste0("registro_agente, foglio ", riga_prompt$foglio, ", ", versione,
                    if (corretto) " (testo finale nell'ultima riga di registro_agente)" else "")
@@ -228,13 +249,16 @@ costruisci <- function(gruppo, id_corpus, indice_corpus, indice_kappa, id_regist
   date <- map_chr(leggi_risposte(file.path(dir_gruppo, "controllo_risposte.jsonl")), "ora")
   K <- c(
     list("Replica via API della prova sul campione B",
-         sprintf("Stesso prompt (%s), stessi %d casi e stesso confronto con riconciliato_B della prova in chat. %d passaggi indipendenti (ultimo: %s) con %s via API, un caso per richiesta con il file allegato.",
-                 prompt, nrow(passaggi[[1]]), n_p, str_sub(max(date), 1, 10), MODEL),
+         sprintf("Stesso prompt (%s), stessi %d casi e stesso confronto con riconciliato_B della prova in chat. %s con %s via API, un caso per richiesta %s il file allegato.",
+                 prompt, nrow(passaggi[[1]]),
+                 if (n_p == 1) sprintf("Un passaggio (%s)", str_sub(max(date), 1, 10)) else sprintf("%d passaggi indipendenti (ultimo: %s)", n_p, str_sub(max(date), 1, 10)),
+                 MODEL, if (con_media) "con" else "senza"),
          "",
-         c("variabile", "kappa in chat (kappa_gemini)", paste("kappa API, passaggio", seq_len(n_p)),
-           sprintf("accordo API-umano (media dei %d passaggi)", n_p),
-           sprintf("casi con lo stesso valore in tutti i passaggi (su %d)", nrow(passaggi[[1]])),
-           "supera 0,60 in chat", "supera 0,60 via API in tutti i passaggi")),
+         c("variabile", "kappa in chat (kappa_gemini)",
+           if (n_p == 1) "kappa API" else paste("kappa API, passaggio", seq_len(n_p)),
+           if (n_p == 1) "accordo API-umano" else sprintf("accordo API-umano (media dei %d passaggi)", n_p),
+           if (n_p == 1) sprintf("casi codificati (su %d)", nrow(passaggi[[1]])) else sprintf("casi con lo stesso valore in tutti i passaggi (su %d)", nrow(passaggi[[1]])),
+           "supera 0,60 in chat", if (n_p == 1) "supera 0,60 via API" else "supera 0,60 via API in tutti i passaggi")),
     righe_kappa,
     list("", "n.c. = kappa non calcolabile: tutti i casi hanno lo stesso valore.",
          "Nel foglio corpus sono riportate le variabili che superano 0,60 nella prova in chat (colonna B). Le colonne dei passaggi API mostrano quanto quel risultato regge quando lo stesso prompt passa dall'API.")
@@ -254,25 +278,56 @@ costruisci <- function(gruppo, id_corpus, indice_corpus, indice_kappa, id_regist
   file_modifiche <- file.path(dir_gruppo, "prompt_modifiche.txt")
   if (corretto && !file.exists(file_modifiche)) stop("prompt.txt without prompt_modifiche.txt for ", gruppo, ".")
   stati <- map_chr(risposte, "stato")
+  # Cases the run was meant to code: the languages coded and, with media, a file name.
+  attesi <- filter(corpus, !is.na(caso), is.null(LINGUE) | lingua %in% LINGUE)
+  if (con_media) attesi <- filter(attesi, !is.na(.data[[if (commenti) "media_video" else "media"]]))
+  n_attesi <- nrow(attesi)
   riga <- c(
     data = format(as.Date(max(map_chr(risposte, "ora"))), "%d/%m/%Y"),
     foglio = "API: campione B e corpus",
     modello = MODEL,
-    impostazioni = paste0("API, un caso per richiesta, ", if (g_con_media(gruppo, corpus)) "con" else "senza", " il file allegato"),
+    impostazioni = paste0("API, un caso per richiesta, ", if (con_media) "con" else "senza", " il file allegato"),
     `versione del prompt` = versione,
     `prompt (testo completo o link)` = if (corretto) read_file(file.path(dir_gruppo, "prompt.txt")) else riga_prompt$`prompt (testo completo o link)`,
     `numero di casi` = as.character(length(stati)),
-    `risposte mancanti` = as.character(sum(stati == "bloccato")),
+    `risposte mancanti` = as.character(n_attesi - sum(stati != "bloccato")),
     `risposte fuori formato` = as.character(sum(stati == "fuori formato")),
     `che cosa è cambiato nel prompt` = if (corretto) str_trim(read_file(file_modifiche)) else "Nessuna modifica rispetto al prompt registrato dal gruppo.",
     `perché` = if (corretto) "Correzione di errori evidenti prima del passaggio via API. Definizioni e valori delle variabili non sono stati toccati." else ""
   )
   mancanti <- setdiff(names(riga), names(registro))
   if (length(mancanti) > 0) stop("registro_agente lacks the columns: ", paste(mancanti, collapse = ", "))
-  req_registro <- list(list(appendCells = list(
-    sheetId = id_registro, fields = "userEnteredValue",
-    rows = list(list(values = map(names(registro), \(n) list(userEnteredValue = list(stringValue = unname(replace_na(riga[n], "")))))))
-  )))
+
+  # The helper tab: the corpus columns row for row, and the prompt in the
+  # first data row of the column after them.
+  appoggio <- left_join(select(corpus, caso), validata, by = "caso")
+  for (v in variabili) appoggio[[v]] <- etichetta(v, appoggio[[v]])
+  appoggio <- appoggio |>
+    transmute(gemini_stato = stato, across(all_of(variabili), .names = "gemini_{.col}"),
+              prompt = c(riga[["prompt (testo completo o link)"]], rep(NA, n() - 1)))
+  write_csv(appoggio, file.path(dir_gruppo, "foglio_appoggio.csv"), na = "")
+
+  riga_nuova <- nrow(leggi_tab(xlsx, "registro_agente")) + 1     # 0-based: first row after the data
+  col_prompt <- match("prompt (testo completo o link)", names(registro)) - 1
+  cella <- \(n) list(userEnteredValue = list(stringValue = unname(replace_na(riga[n], ""))))
+  req_registro <- if (is.na(id_appoggio)) {
+    list(list(appendCells = list(sheetId = id_registro, fields = "userEnteredValue",
+                                 rows = list(list(values = map(names(registro), cella))))))
+  } else {
+    riga[["prompt (testo completo o link)"]] <- ""
+    list(
+      list(updateCells = list(start = list(sheetId = id_registro, rowIndex = riga_nuova, columnIndex = 0),
+                              rows = list(list(values = map(names(registro), cella))), fields = "userEnteredValue")),
+      list(copyPaste = list(
+        source = list(sheetId = id_appoggio, startRowIndex = 1, endRowIndex = 2,
+                      startColumnIndex = k + 1, endColumnIndex = k + 2),
+        destination = list(sheetId = id_registro, startRowIndex = riga_nuova, endRowIndex = riga_nuova + 1,
+                           startColumnIndex = col_prompt, endColumnIndex = col_prompt + 1),
+        pasteType = "PASTE_VALUES"
+      )),
+      list(deleteSheet = list(sheetId = id_appoggio))
+    )
+  }
   write(toJSON(req_registro, auto_unbox = TRUE), file.path(dir_gruppo, "foglio_req_registro.json"))
 
   write(toJSON(req_corpus, auto_unbox = TRUE), file.path(dir_gruppo, "foglio_req_corpus.json"))
@@ -285,8 +340,9 @@ costruisci <- function(gruppo, id_corpus, indice_corpus, indice_kappa, id_regist
 
 if (sys.nframe() == 0) {
   args <- commandArgs(trailingOnly = TRUE)
-  if (length(args) < 5) stop("Usage: gemini-sheet-layout.R <gruppo> <corpus sheetId> <corpus index> <kappa_gemini index> <registro_agente sheetId> [grid columns] [note]")
+  if (length(args) < 5) stop("Usage: gemini-sheet-layout.R <gruppo> <corpus sheetId> <corpus index> <kappa_gemini index> <registro_agente sheetId> [grid columns] [note] [helper sheetId]")
   costruisci(args[1], as.numeric(args[2]), as.numeric(args[3]), as.numeric(args[4]), as.numeric(args[5]),
              if (length(args) >= 6) as.numeric(args[6]) else 26,
-             if (length(args) >= 7) args[7] else "")
+             if (length(args) >= 7) args[7] else "",
+             if (length(args) >= 8) as.numeric(args[8]) else NA)
 }
